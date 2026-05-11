@@ -1,0 +1,27 @@
+{
+  "name": "@mcity/server",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./dist/main.js",
+  "types": "./dist/main.d.ts",
+  "scripts": {
+    "build": "cmd /c npm run build -w @mcity/shared && tsc -p tsconfig.json",
+    "dev": "cmd /c npm run build -w @mcity/shared && tsx watch src/main.ts",
+    "prepare-client": "tsx src/scripts/prepareClient.ts",
+    "report:missing-assets": "tsx src/scripts/reportMissingAssets.ts",
+    "test": "cmd /c npm run build -w @mcity/shared && vitest run"
+  },
+  "dependencies": {
+    "@mcity/shared": "0.1.0",
+    "better-sqlite3": "^11.10.0",
+    "express": "^4.21.2",
+    "selfsigned": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/express": "^5.0.1",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}

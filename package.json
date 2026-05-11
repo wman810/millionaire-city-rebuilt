@@ -1,0 +1,68 @@
+{
+  "name": "millionaire-city-private-server",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Private server and desktop launcher for Millionaire City 0.501",
+  "main": "apps/desktop/dist/main.js",
+  "author": "Millionaire City Revival contributors",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "cmd /c npm run build -w @mcity/shared && npm run build -w @mcity/server && npm run build -w @mcity/desktop",
+    "dev:server": "cmd /c npm run dev -w @mcity/server",
+    "dev:desktop": "cmd /c npm run dev -w @mcity/desktop",
+    "prepare-client": "cmd /c npm run prepare-client -w @mcity/server",
+    "prepare-runtime": "node scripts/prepareReleaseRuntime.cjs",
+    "package:win": "cmd /c npm run prepare-client && npm run prepare-runtime && npm run build && electron-builder --win zip --x64 --publish never",
+    "package:win:dir": "cmd /c npm run prepare-client && npm run prepare-runtime && npm run build && electron-builder --win dir --x64 --publish never",
+    "report:missing-assets": "cmd /c npm run report:missing-assets -w @mcity/server",
+    "test": "cmd /c npm run test -w @mcity/server",
+    "typecheck": "cmd /c npx tsc -b packages/shared/tsconfig.json apps/server/tsconfig.json apps/desktop/tsconfig.json --pretty false",
+    "lint:unused": "cmd /c npx knip --no-progress --workspace @mcity/server --workspace @mcity/desktop --workspace @mcity/shared --include files,exports --include-entry-exports",
+    "lint:cycles": "cmd /c npx madge --extensions ts --circular apps/server/src apps/desktop/src packages/shared/src"
+  },
+  "devDependencies": {
+    "electron-builder": "^23.0.2"
+  },
+  "dependencies": {
+    "@mcity/shared": "^0.1.0",
+    "better-sqlite3": "^11.10.0",
+    "express": "^4.21.2",
+    "selfsigned": "^3.0.1"
+  },
+  "build": {
+    "appId": "com.millionairecity.rebuilt",
+    "productName": "Millionaire City Rebuilt",
+    "electronVersion": "10.4.7",
+    "asar": false,
+    "npmRebuild": false,
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "package.json",
+      "apps/desktop/dist/**/*",
+      "apps/desktop/assets/**/*",
+      "apps/server/dist/**/*",
+      "apps/server/assets/**/*",
+      "packages/shared/package.json",
+      "packages/shared/dist/**/*",
+      "Millionaire City/**/*",
+      "generated/client/**/*",
+      "generated/runtime/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "zip",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "MillionaireCityRebuilt-${version}-win-${arch}.${ext}"
+    }
+  }
+}

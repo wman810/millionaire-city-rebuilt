@@ -1,0 +1,20 @@
+node_modules/
+dist/
+.turbo/
+.vite/
+coverage/
+tmp/
+generated/
+release/
+apps/server/.data/
+apps/desktop/out/
+apps/desktop/dist/
+/Millionaire City/
+/Decompiled AS Code from Dollars.swf/
+tools/*.exe
+.env
+.env.*
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.tsbuildinfo

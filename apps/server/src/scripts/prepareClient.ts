@@ -1,0 +1,188 @@
+import fs from "fs";
+import path from "path";
+import { spawnSync } from "child_process";
+import { getServerConfig } from "../config.js";
+
+const config = getServerConfig();
+const clientDir = path.dirname(config.privateClientSwfPath);
+const FFDEC_VERSION = "26.0.0";
+const FFDEC_ARCHIVE_URL = `https://github.com/jindrapetrik/jpexs-decompiler/releases/download/version${FFDEC_VERSION}/ffdec_${FFDEC_VERSION}.zip`;
+const ffdecDir = path.join(config.workspaceRoot, "generated", "tools", `ffdec-${FFDEC_VERSION}`);
+const ffdecJarPath = path.join(ffdecDir, "ffdec.jar");
+const ffdecZipPath = path.join(ffdecDir, `ffdec_${FFDEC_VERSION}.zip`);
+const popupGoldSourcePath = path.join(
+  config.workspaceRoot,
+  "Decompiled AS Code from Dollars.swf",
+  "scripts",
+  "com",
+  "dchoc",
+  "dollars",
+  "GUI",
+  "PopupGold.as"
+);
+const popupGoldPatchedSourcePath = path.join(clientDir, "patches", "PopupGold.patched.as");
+const customizerManagerSourcePath = path.join(
+  config.workspaceRoot,
+  "Decompiled AS Code from Dollars.swf",
+  "scripts",
+  "com",
+  "dchoc",
+  "dollars",
+  "utils",
+  "metrics",
+  "CustomizerManager.as"
+);
+const customizerManagerPatchedSourcePath = path.join(clientDir, "patches", "CustomizerManager.patched.as");
+const crossPromotionDefinitionsPath = path.join(config.assetRoot, "Datas", "rules", "crosspromotionDefinitions.xml");
+const popupGoldPatchedSnippet = `         FBCreditsPurchase.getInstance().startPurchaseProcess(this,false);
+`;
+const popupGoldPurchaseBranchPattern =
+  / {9}if\(Config\.FACEBOOK_CREDITS_TO_BUY_GOLD\)\r?\n {9}\{\r?\n {12}FBCreditsPurchase\.getInstance\(\)\.startPurchaseProcess\(this,false\);\r?\n {9}\}\r?\n {9}else\r?\n {9}\{\r?\n {12}onClose\(null\);\r?\n {9}\}\r?\n/;
+const customizerCrossPromotionInitializerPattern = / {9}this\.mUnlockedCrosspromotions = new Array\(\);\r?\n/;
+
+fs.mkdirSync(clientDir, { recursive: true });
+fs.copyFileSync(config.sourceClientSwfPath, config.privateClientSwfPath);
+patchPrivateClientSwf();
+
+const manifestPath = path.join(clientDir, "client-build.json");
+fs.writeFileSync(
+  manifestPath,
+  JSON.stringify(
+    {
+      source: config.sourceClientSwfPath,
+      output: config.privateClientSwfPath,
+      preparedAt: new Date().toISOString(),
+      notes: [
+        "Private client copy isolated from the recovered archive.",
+        "Runtime compatibility provided by the local launcher and HTTPS Facebook shim.",
+        "PopupGold patched to complete Add Gold purchases without enabling the Facebook Credits HUD.",
+        "CustomizerManager patched to treat archived cross-promotion app unlocks as completed locally."
+      ]
+    },
+    null,
+    2
+  )
+);
+
+console.log(`[mcity] Prepared private client copy at ${config.privateClientSwfPath}`);
+
+function patchPrivateClientSwf(): void {
+  ensureFfdecInstalled();
+  writePatchedPopupGoldSource();
+  replaceClassInPrivateClient(
+    "com.dchoc.dollars.GUI.PopupGold",
+    popupGoldPatchedSourcePath,
+    "Failed to patch PopupGold in the private client SWF."
+  );
+  writePatchedCustomizerManagerSource();
+  replaceClassInPrivateClient(
+    "com.dchoc.dollars.utils.metrics.CustomizerManager",
+    customizerManagerPatchedSourcePath,
+    "Failed to patch CustomizerManager in the private client SWF."
+  );
+}
+
+function replaceClassInPrivateClient(className: string, patchedSourcePath: string, errorMessage: string): void {
+  const temporaryOutputPath = path.join(clientDir, "Dollars.private.tmp.swf");
+  if (fs.existsSync(temporaryOutputPath)) {
+    fs.rmSync(temporaryOutputPath, { force: true });
+  }
+
+  runProcess(
+    "java",
+    [
+      "-jar",
+      ffdecJarPath,
+      "-replace",
+      config.privateClientSwfPath,
+      temporaryOutputPath,
+      className,
+      patchedSourcePath
+    ],
+    errorMessage
+  );
+  fs.copyFileSync(temporaryOutputPath, config.privateClientSwfPath);
+  fs.rmSync(temporaryOutputPath, { force: true });
+}
+
+function writePatchedPopupGoldSource(): void {
+  const source = fs.readFileSync(popupGoldSourcePath, "utf8");
+  if (!popupGoldPurchaseBranchPattern.test(source)) {
+    throw new Error("Could not find the expected PopupGold purchase branch in the decompiled source.");
+  }
+
+  const patchedSource = source.replace(popupGoldPurchaseBranchPattern, popupGoldPatchedSnippet);
+  fs.mkdirSync(path.dirname(popupGoldPatchedSourcePath), { recursive: true });
+  fs.writeFileSync(popupGoldPatchedSourcePath, patchedSource);
+}
+
+function writePatchedCustomizerManagerSource(): void {
+  const source = fs.readFileSync(customizerManagerSourcePath, "utf8");
+  if (!customizerCrossPromotionInitializerPattern.test(source)) {
+    throw new Error("Could not find the expected CustomizerManager cross-promotion initializer in the decompiled source.");
+  }
+
+  const crossPromotionIds = loadCrossPromotionIds();
+  const unlockSnippet = [
+    "          this.mUnlockedCrosspromotions = new Array();",
+    ...crossPromotionIds.map((sku) => `          this.mUnlockedCrosspromotions.push(${sku});`)
+  ].join("\n") + "\n";
+
+  const patchedSource = source.replace(customizerCrossPromotionInitializerPattern, unlockSnippet);
+  fs.mkdirSync(path.dirname(customizerManagerPatchedSourcePath), { recursive: true });
+  fs.writeFileSync(customizerManagerPatchedSourcePath, patchedSource);
+}
+
+function loadCrossPromotionIds(): number[] {
+  const xml = fs.readFileSync(crossPromotionDefinitionsPath, "utf8");
+  const ids: number[] = [];
+  for (const match of xml.matchAll(/<Definition\s+sku="([^"]+)"/g)) {
+    const sku = Number(match[1] ?? "0");
+    if (Number.isInteger(sku) && sku > 0) {
+      ids.push(sku);
+    }
+  }
+
+  if (ids.length === 0) {
+    throw new Error(`No cross-promotion definitions found in ${crossPromotionDefinitionsPath}.`);
+  }
+
+  return ids;
+}
+
+function ensureFfdecInstalled(): void {
+  if (fs.existsSync(ffdecJarPath)) {
+    return;
+  }
+
+  fs.mkdirSync(ffdecDir, { recursive: true });
+  runProcess(
+    "powershell",
+    [
+      "-NoProfile",
+      "-Command",
+      [
+        "$ErrorActionPreference='Stop'",
+        "$ProgressPreference='SilentlyContinue'",
+        `Invoke-WebRequest -Uri '${FFDEC_ARCHIVE_URL}' -OutFile '${ffdecZipPath}'`,
+        `Expand-Archive -LiteralPath '${ffdecZipPath}' -DestinationPath '${ffdecDir}' -Force`
+      ].join("; ")
+    ],
+    "Failed to download or extract FFDec."
+  );
+
+  if (!fs.existsSync(ffdecJarPath)) {
+    throw new Error(`FFDec was installed, but ${ffdecJarPath} was not found.`);
+  }
+}
+
+function runProcess(command: string, args: string[], errorMessage: string): void {
+  const result = spawnSync(command, args, {
+    cwd: config.workspaceRoot,
+    stdio: "inherit"
+  });
+
+  if (result.status !== 0) {
+    throw new Error(errorMessage);
+  }
+}
