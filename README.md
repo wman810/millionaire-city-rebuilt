@@ -15,21 +15,20 @@ The SWF still depends on browser `ExternalInterface`, legacy Facebook endpoints,
 - serves a private copy of `Dollars.swf` from `generated/client/Dollars.private.swf`
 - exposes a local HTTPS Facebook shim for the hardcoded `graph.facebook.com` and `api.facebook.com` calls
 
-The desktop app now follows the same model as older Electron Flash clients:
+The desktop app follows the same model as older Electron Flash clients:
 
 - Electron `10.4.7`
 - bundled Pepper Flash binaries under `apps/desktop/assets/flash`
 - `ppapi-flash-path` configured before `ready`
 - `BrowserWindow` created with `webPreferences.plugins = true`
 
-The Electron app itself is now the Flash runtime. There is no external helper-browser requirement.
+The Electron app itself is the Flash runtime, so there is no external helper-browser requirement.
 
 ## Asset Layout
 
-The recovered game cache and decompiled SWF reference code are not tracked with the repository for copyright reasons. Local development expects these folders to exist if you have your own archived copy:
+The recovered game cache and decompiled SWF reference code are not tracked with the repository for copyright reasons. Local development expects this folder to exist if you have your own archived copy:
 
 - `Millionaire City/`
-- `Decompiled AS Code from Dollars.swf/`
 
 Pepper Flash runtime binaries are tracked with the repository:
 
