@@ -55,6 +55,7 @@ function createAdvisorNeighborUniverse(bossGenre: number): JsonObject {
     cityName: "Chocolate Fields",
     companyValue: isCindy ? "115000000" : "100000000",
     hqSkin: isCindy ? "HeadQuarter_03" : "HeadQuarter_02",
+    planeSku: "plane_03",
     plotsType: RONALD_PLOTS_TYPE,
     terrainTiles: expandTileRanges(RONALD_TERRAIN_RANGES),
     roadTiles: expandTileRanges(RONALD_ROAD_RANGES),

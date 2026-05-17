@@ -33,12 +33,52 @@ const customizerManagerSourcePath = path.join(
   "CustomizerManager.as"
 );
 const customizerManagerPatchedSourcePath = path.join(clientDir, "patches", "CustomizerManager.patched.as");
+const friendObjectSourcePath = path.join(
+  config.workspaceRoot,
+  "Decompiled AS Code from Dollars.swf",
+  "scripts",
+  "com",
+  "dchoc",
+  "dollars",
+  "friends",
+  "FriendObject.as"
+);
+const friendObjectPatchedSourcePath = path.join(clientDir, "patches", "FriendObject.patched.as");
 const crossPromotionDefinitionsPath = path.join(config.assetRoot, "Datas", "rules", "crosspromotionDefinitions.xml");
 const popupGoldPatchedSnippet = `         FBCreditsPurchase.getInstance().startPurchaseProcess(this,false);
 `;
 const popupGoldPurchaseBranchPattern =
   / {9}if\(Config\.FACEBOOK_CREDITS_TO_BUY_GOLD\)\r?\n {9}\{\r?\n {12}FBCreditsPurchase\.getInstance\(\)\.startPurchaseProcess\(this,false\);\r?\n {9}\}\r?\n {9}else\r?\n {9}\{\r?\n {12}onClose\(null\);\r?\n {9}\}\r?\n/;
 const customizerCrossPromotionInitializerPattern = / {9}this\.mUnlockedCrosspromotions = new Array\(\);\r?\n/;
+const friendObjectSetPictureUrlPattern =
+  / {6}public function setPictureURL\(param1:String\) : void\r?\n {6}\{\r?\n {9}this\.mUrl = param1;\r?\n {6}\}\r?\n/;
+const friendObjectSetPictureUrlSnippet = `      public function setPictureURL(param1:String) : void
+      {
+         var _loc2_:URLRequest = null;
+         var _loc3_:LoaderContext = null;
+         if(this.mUrl == param1)
+         {
+            return;
+         }
+         this.mUrl = param1;
+         if(this.mLoader != null)
+         {
+            try
+            {
+               this.mLoader.unload();
+            }
+            catch(error:Error)
+            {
+            }
+            if(this.mUrl != null)
+            {
+               _loc2_ = new URLRequest(this.mUrl);
+               _loc3_ = new LoaderContext();
+               this.mLoader.load(_loc2_,_loc3_);
+            }
+         }
+      }
+`;
 
 fs.mkdirSync(clientDir, { recursive: true });
 fs.copyFileSync(config.sourceClientSwfPath, config.privateClientSwfPath);
@@ -56,7 +96,8 @@ fs.writeFileSync(
         "Private client copy isolated from the recovered archive.",
         "Runtime compatibility provided by the local launcher and HTTPS Facebook shim.",
         "PopupGold patched to complete Add Gold purchases without enabling the Facebook Credits HUD.",
-        "CustomizerManager patched to treat archived cross-promotion app unlocks as completed locally."
+        "CustomizerManager patched to treat archived cross-promotion app unlocks as completed locally.",
+        "FriendObject patched to reload an already-loaded NPC portrait after advisor selection changes it."
       ]
     },
     null,
@@ -79,6 +120,12 @@ function patchPrivateClientSwf(): void {
     "com.dchoc.dollars.utils.metrics.CustomizerManager",
     customizerManagerPatchedSourcePath,
     "Failed to patch CustomizerManager in the private client SWF."
+  );
+  writePatchedFriendObjectSource();
+  replaceClassInPrivateClient(
+    "com.dchoc.dollars.friends.FriendObject",
+    friendObjectPatchedSourcePath,
+    "Failed to patch FriendObject in the private client SWF."
   );
 }
 
@@ -131,6 +178,17 @@ function writePatchedCustomizerManagerSource(): void {
   const patchedSource = source.replace(customizerCrossPromotionInitializerPattern, unlockSnippet);
   fs.mkdirSync(path.dirname(customizerManagerPatchedSourcePath), { recursive: true });
   fs.writeFileSync(customizerManagerPatchedSourcePath, patchedSource);
+}
+
+function writePatchedFriendObjectSource(): void {
+  const source = fs.readFileSync(friendObjectSourcePath, "utf8");
+  if (!friendObjectSetPictureUrlPattern.test(source)) {
+    throw new Error("Could not find the expected FriendObject setPictureURL method in the decompiled source.");
+  }
+
+  const patchedSource = source.replace(friendObjectSetPictureUrlPattern, friendObjectSetPictureUrlSnippet);
+  fs.mkdirSync(path.dirname(friendObjectPatchedSourcePath), { recursive: true });
+  fs.writeFileSync(friendObjectPatchedSourcePath, patchedSource);
 }
 
 function loadCrossPromotionIds(): number[] {

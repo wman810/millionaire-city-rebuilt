@@ -283,6 +283,7 @@ describe("Millionaire City server", () => {
 
     expect(advisorProfile.userName).toBe("Cindy");
     expect(advisorProfile.cityname).toBe("Chocolate Fields");
+    expect(advisorProfile.planeSku).toBe("plane_03");
     expect(sheikProfile.cityname).toBe("Sheik&apos;s City");
     expect(advisorHq?.x).toBe("-1");
     expect(advisorHq?.y).toBe("-4");
@@ -340,6 +341,7 @@ describe("Millionaire City server", () => {
 
     expect(ronaldProfile.userName).toBe("Ronald");
     expect(ronaldProfile.cityname).toBe("Chocolate Fields");
+    expect(ronaldProfile.planeSku).toBe("plane_03");
     expect(ronaldHq?.x).toBe("-1");
     expect(ronaldHq?.y).toBe("-4");
     expect(ronaldMine?.Company).toHaveLength(RONALD_LAYOUT_ITEMS.length);
