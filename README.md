@@ -26,9 +26,10 @@ The Electron app itself is the Flash runtime, so there is no external helper-bro
 
 ## Asset Layout
 
-The recovered game cache and decompiled SWF reference code are not tracked with the repository for copyright reasons. Local development expects this folder to exist if you have your own archived copy:
+The recovered game cache and decompiled SWF reference code are required locally but are not tracked with the repository for copyright reasons. Local development expects these folders to exist if you have your own archived copy:
 
-- `Millionaire City/`
+- `Millionaire City/`: recovered game cache served by the local server
+- `Decompiled AS Code from Dollars.swf/`: decompiled ActionScript reference used by `npm run prepare-client` when patching the private SWF copy
 
 Pepper Flash runtime binaries are tracked with the repository:
 
