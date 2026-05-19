@@ -12,7 +12,7 @@ const ffdecJarPath = path.join(ffdecDir, "ffdec.jar");
 const ffdecZipPath = path.join(ffdecDir, `ffdec_${FFDEC_VERSION}.zip`);
 const popupGoldSourcePath = path.join(
   config.workspaceRoot,
-  "decompiled",
+  "client-patch-sources",
   "scripts",
   "com",
   "dchoc",
@@ -23,7 +23,7 @@ const popupGoldSourcePath = path.join(
 const popupGoldPatchedSourcePath = path.join(clientDir, "patches", "PopupGold.patched.as");
 const customizerManagerSourcePath = path.join(
   config.workspaceRoot,
-  "decompiled",
+  "client-patch-sources",
   "scripts",
   "com",
   "dchoc",
@@ -35,7 +35,7 @@ const customizerManagerSourcePath = path.join(
 const customizerManagerPatchedSourcePath = path.join(clientDir, "patches", "CustomizerManager.patched.as");
 const friendObjectSourcePath = path.join(
   config.workspaceRoot,
-  "decompiled",
+  "client-patch-sources",
   "scripts",
   "com",
   "dchoc",
@@ -155,7 +155,7 @@ function replaceClassInPrivateClient(className: string, patchedSourcePath: strin
 function writePatchedPopupGoldSource(): void {
   const source = fs.readFileSync(popupGoldSourcePath, "utf8");
   if (!popupGoldPurchaseBranchPattern.test(source)) {
-    throw new Error("Could not find the expected PopupGold purchase branch in the decompiled source.");
+    throw new Error("Could not find the expected PopupGold purchase branch in the client patch source.");
   }
 
   const patchedSource = source.replace(popupGoldPurchaseBranchPattern, popupGoldPatchedSnippet);
@@ -166,7 +166,7 @@ function writePatchedPopupGoldSource(): void {
 function writePatchedCustomizerManagerSource(): void {
   const source = fs.readFileSync(customizerManagerSourcePath, "utf8");
   if (!customizerCrossPromotionInitializerPattern.test(source)) {
-    throw new Error("Could not find the expected CustomizerManager cross-promotion initializer in the decompiled source.");
+    throw new Error("Could not find the expected CustomizerManager cross-promotion initializer in the client patch source.");
   }
 
   const crossPromotionIds = loadCrossPromotionIds();
@@ -183,7 +183,7 @@ function writePatchedCustomizerManagerSource(): void {
 function writePatchedFriendObjectSource(): void {
   const source = fs.readFileSync(friendObjectSourcePath, "utf8");
   if (!friendObjectSetPictureUrlPattern.test(source)) {
-    throw new Error("Could not find the expected FriendObject setPictureURL method in the decompiled source.");
+    throw new Error("Could not find the expected FriendObject setPictureURL method in the client patch source.");
   }
 
   const patchedSource = source.replace(friendObjectSetPictureUrlPattern, friendObjectSetPictureUrlSnippet);

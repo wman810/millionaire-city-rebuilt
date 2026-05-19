@@ -30,13 +30,13 @@ The recovered game cache is tracked with the repository:
 
 - `assets/`: recovered game cache served by the local server
 
-Only the decompiled ActionScript files required by `npm run prepare-client` are tracked:
+Only the ActionScript files required by `npm run prepare-client` are tracked as client patch sources:
 
-- `decompiled/scripts/com/dchoc/dollars/GUI/PopupGold.as`
-- `decompiled/scripts/com/dchoc/dollars/friends/FriendObject.as`
-- `decompiled/scripts/com/dchoc/dollars/utils/metrics/CustomizerManager.as`
+- `client-patch-sources/scripts/com/dchoc/dollars/GUI/PopupGold.as`
+- `client-patch-sources/scripts/com/dchoc/dollars/friends/FriendObject.as`
+- `client-patch-sources/scripts/com/dchoc/dollars/utils/metrics/CustomizerManager.as`
 
-The rest of the decompiled SWF reference tree is ignored because it is not required to run or prepare the game.
+The full local `decompiled/` SWF reference tree is ignored because it is not required to run or prepare the game.
 
 Pepper Flash runtime binaries are tracked with the repository:
 
