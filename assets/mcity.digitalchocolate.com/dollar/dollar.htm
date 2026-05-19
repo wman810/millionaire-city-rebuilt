@@ -1,0 +1,1870 @@
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+     	<meta http-equiv="X-UA-Compatible" content="IE=8" >
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>Millionaire City</title>
+
+        <link rel="stylesheet" type="text/css" media="screen" href="https://dchoc1-a.akamaihd.net/mcity/0.500/css/main-style.css"/>
+       <!-- <link rel="stylesheet" type="text/css" media="screen" href="https://dchoc1-a.akamaihd.net/mcity/0.500/css/tooltip.css"/> -->
+        <link rel="stylesheet" type="text/css" media="screen" href="https://dchoc1-a.akamaihd.net/mcity/0.500/css/connect.css"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="https://dchoc1-a.akamaihd.net/mcity/0.500/facebox/facebox.css"/>
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+        <script type="text/javascript" src="https://dchoc1-a.akamaihd.net/mcity/0.500/js/jquery-fonteffect-1.0.0.min.js"></script>
+        
+        <script type="text/javascript" src="https://dchoc1-a.akamaihd.net/mcity/0.500/js/md5.js"></script>
+        <script type="text/javascript" src="https://dchoc1-a.akamaihd.net/mcity/0.500/facebox/facebox.js?v=0.500"></script>
+        <script type="text/javascript" src="https://dchoc1-a.akamaihd.net/mcity/0.500/wcrm/wcrm.js?v=0.500"></script>
+        <script type="text/javascript" src="https://dchoc1-a.akamaihd.net/mcity/0.500/js/SocialWall.js?v=0.500"></script>
+       <!-- <script type="text/javascript" src="https://dchoc1-a.akamaihd.net/mcity/0.500/js/tooltip.js"></script> -->
+	</head>
+	
+	<body  style="overflow:hidden;">
+    <div id="fb-root"></div>
+    <script type='text/javascript'>
+    	var $j = jQuery.noConflict();    
+
+        try {
+    	    // Configure stuff for WCRM
+	        wcrmEnvironment = 2;
+	        wcrmProjectId = 7;
+    	    wcrmServerURL = "https://crm.digitalchocolate.com";
+	        wcrmFbUserId = "0";
+	        wcrmUserLevel = 47;
+			wcrmLocale = "en_US";
+    	    wcrmSrc = "";
+    	    wcrmAbVersion = '0';
+            
+            // wrapper for console.log
+            if( typeof console == 'undefined' )
+                console = {log:function(txt){}};
+        } catch(e) {}
+
+        // Initialize fb SDK async
+        // 
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId  : "315455798286",
+                status : true, // check login status
+                cookie : true, // enable cookies to allow the server to access the session
+                xfbml  : true,  // parse XFBML
+                logging: true,
+                oauth : true,
+                channelUrl: "https://mcity.digitalchocolate.com/dollar/channel.html"
+            });
+
+            FB.getLoginStatus( function(response){
+                if(response.authResponse){
+                    $j(document).ready(
+						function() {
+							$j('.dcpopfan_title').FontEffect({outline:true,
+								outlineColor1: "#003964",
+								outlineColor2: "#003964",
+								outlineWeight: 2
+							});
+		                    var TIDS_i18n = {
+		                        'DCSW_ERROR':"Sorry, there was an unexpected error.",
+		                        'DCSW_EMPTY':"You don't have any messages at the moment.",
+		                        'DCSW_ACCEPT':"Accept",
+		                        'DCSW_IGNORE':"Ignore",
+		                        'DCSW_SENDITBACK':"Send gift back?",
+		                        'DCSW_ALL_MESSAGES':"All messages",
+		                        'DCSW_BUSS_PARTNER_TAB':"Business Partners",
+		                        'DCSW_BUSS_PARTNER_TITLE': "%U:",
+		                        'DCSW_BUSS_PARTNER_BODY': "Become my Business Partner to make money faster!",
+		                        'DCSW_BUSS_PARTNER_ACCEPTED': "Congrats - You have a new Business Partner!",
+		                        'DCSW_COLLECTIBLES_TAB':"Collectibles",
+		                        'DCSW_COLLECTIBLES_TITLE':"%U:",
+		                        'DCSW_COLLECTIBLES_BODY':"You got an exciting parcel with a luxurious Collectible!",
+		                        'DCSW_COLLECTIBLES_ACCEPTED':"You got a collectible from your friend!",
+		                        'DCSW_GIFT_TAB':"Free Gifts",
+		                        'DCSW_GIFT_TITLE':"%U:",
+		                        'DCSW_GIFT_BODY':"Here is a free gift to help you out!",
+		                        'DCSW_GIFT_ACCEPTED':"You got the %U!",
+		                        'DCSW_GIFT_EXPIRED':"Oops! Your gift has expired! Check more often to accept gifts.",
+		                        'DCSW_NEIGHBOR_TAB':"Neighbors requests",
+		                        'DCSW_NEIGHBOR_TITLE':"%U:",
+		                        'DCSW_NEIGHBOR_BODY':"Become my neighbor to make money faster!",
+		                        'DCSW_NEIGHBOR_ACCEPTED':"Congrats - You have a new neighbor!",
+
+		                        'DCSW_CREW_TAB':"Staff Invites",
+		                        'DCSW_CREW_TITLE':"%U:", // we put the same title than in any other tab. better done this way
+		                        'DCSW_CREW_BODY':"Please help me to open a new club",
+		                        'DCSW_CREW_ACCEPTED':"Congrats - you were hired!",
+		                        'DCSW_CREW_EXPIRED':"You already accepted this invite",
+								'DCSW_CREW_ALREADY_FILLED': "This position was already filled",
+		                        
+		                        'CREW_NEIGHBORS_NEEDED':"You need more neighbors to accomplish this action", 
+		                        
+		                        'DCSW_EMPTY_GIFTS':"You have no Gifts at the moment. Send gifts to friends here to get some back!",
+		                        'DCSW_EMPTY_NEIGHBORS':"You have no Neighbors request at the moment. Send them here to make more money with your friends!",
+		                        'DCSW_EMPTY_PARTNERS':"You have no Business Partners requests at the moment. Send them here to make more money with your friends!",
+
+                                'DCSW_EMPTY_NEIGHBORS_BUTTON':"Send Neighbors Request",
+                                'DCSW_EMPTY_PARTNERS_BUTTON':"Send Business Partner Request",
+                                'FGT_TITLE':"Send a gift to your friends",
+
+                                'MYNEIGHBORS_TAB':"My Neighbors",
+                                'INVITE_FRIENDS':"Invite friends",
+                                'MNT_TITLE':"Add more neighbors!",
+                                'MNT_SEND_BUTTON':"Add as a neighbor",
+                                'MNT_SEND_REMINDER_BUTTON':"Send reminder",
+                                'MNT_ADDME':"Add me as a neighbor!",
+                                'MNT_PENDING':"Neighbor request pending",
+                                'MNT_REMOVE':"Remove",
+
+                                
+                                'FGT_FGIFT_015': "Rent Accelerator",
+                                
+                                'FGT_FGIFT_006': "Mystery Bday Cake",
+                                
+                                'FGT_FGIFT_020': "Channel middle",
+                                
+                                'FGT_FGIFT_015': "Rent Accelerator",
+                                
+                                'FGT_FGIFT_019': "Platinum Safe",
+                                
+                                'FGT_FGIFT_003': "Mystery Briefcase",
+                                
+                                'FGT_FGIFT_029': "Santa's Sleigh",
+                                
+                                'FGT_FGIFT_028': "Turkey",
+                                
+                                'TID_FGIFT_016': "Mystery safe",
+                                
+                                'FGT_FGIFT_030': "New Year Balloons",
+                                
+                                'FGT_FGIFT_026': "Urban Rockstar",
+                                
+                                'FGT_FGIFT_027': "Millionaire Rockstar",
+                                
+                                'FGT_FGIFT_014': "Sidewalk",
+                                
+                                'FGT_FGIFT_007': "Urban Tree",
+                                
+                                'FGT_FGIFT_018': "Mailbox",
+                                
+                                'FGT_FGIFT_017': "Telephone Box",
+                                
+                                'FGT_FGIFT_023': "Crosschannels",
+                                
+                                'FGT_FGIFT_024': "Upper Channel",
+                                
+                                'FGT_FGIFT_025': "Lower Channel",
+                                
+                                'FGT_FGIFT_021': "Channel left",
+                                
+                                'FGT_FGIFT_022': "Channel right",
+                                
+                                'FGT_FGIFT_008': "Urban Bench",
+                                
+                                'FGT_FGIFT_009': "Bus Stop",
+                                
+                                'FGT_FGIFT_013': "MCity Police",
+                                
+                                'FGT_FGIFT_010': "Ice Cream Cart",
+                                
+                                'FGT_FGIFT_011': "Traffic Lights",
+                                
+                                'FGT_FGIFT_012': "Street Sign",
+                                
+                                'FGT_FGIFT_005': "Spring Flower",
+                                
+                                'FGT_FGIFT_002': "Lemon Tree",
+                                
+                                'FGT_FGIFT_001': "Free move",
+                                
+                                'FGT_FGIFT_004': "2 Free moves",
+                                
+                                'FGT_FGIFT_004_2': "3 Free moves",
+                                
+
+                                'DCSW_EMPTY_PARTNERS_BUTTON': "Send Business Partner Request",
+                                'FGT_SEND_BUTTON': "Send Gift"
+		                    };
+                            i18n.config( TIDS_i18n );
+		                    var SW_config = { 
+		                        'ASSETS_PATH':'https://dchoc1-a.akamaihd.net/mcity/0.500/',
+                                'GIFT_BACK_CALLBACK':launchFacebookRequest,
+                                'LOCALE':'en_US'
+		                    };
+		                    DCSW = new DC_SocialWall("dcsw","dcsw_requests_counter", SW_config );
+		                    
+		                    DCSW.getNewRequests(0, 'LOCAL_HASH_PLACEHOLDER', true);
+		                    
+		                    setInterval("DCSW.getNewRequests(0,  'LOCAL_HASH_PLACEHOLDER', false)", 60000);
+
+                            // neighbors
+                            DCNB = new DC_Neighbors( "neighbors", "0", "LOCAL_HASH_PLACEHOLDER", "LOCAL_OAUTH_TOKEN_PLACEHOLDER", SW_config );
+		                    setInterval("DCNB.reload()", 60000);
+
+		                    if( typeof notifyWCRM == 'function' )
+		                        notifyWCRM("Level", "Session started", "OnIframe", {});
+	                        
+			            	FB.api( "/" + neighbors[starting_suggested_neighbor], function(r){
+			                    if( "error" in r ) {
+			                        //alert(r.error.message);
+			                    } else {
+			                        $j("#username").html(r.name);
+			                    }
+			                });
+			                
+			            	
+	                        clickOnTab("labelFor_gifts");
+	                    	
+
+	            			//-----------------------------------------
+	            			//-------------- VIDEO STUFF --------------
+	            			//-----------------------------------------
+	            			
+	            			var wcrmIngameAdFlash = true;
+	                        window.wcrmIngameAdFlash = true; 
+
+	                        movie = getMovie("flash");
+	                        
+	            			if(wcrmIngameAdFlash == true)
+	            			{
+	            				cbarVideoInit = 
+									function(){
+										console.log("FLASH READY = " + FLASH_READY);
+										if( ("videoAdAvailableResponse" in movie) && ("videoAdCompleteResponse" in movie) && ("videoAdIncompleteResponse" in movie) && FLASH_READY) {
+											window.setUserLocale("en_US");
+											window.checkInGameAdInventory('videoAdAvailableResponse', 'videoAdCompleteResponse','videoAdIncompleteResponse');
+			                            }
+			            				else
+			            				{
+											setTimeout("cbarVideoInit()", 2000);
+			            				}
+									};
+								setTimeout("cbarVideoInit()", 2000);
+	            			}
+						}
+					)
+                 }   
+            } );
+
+            FB.Canvas.setAutoResize(500);
+            FB.XFBML.parse(document.getElementById("fb_pop_fanbox"));
+            
+          };
+
+
+          (function() {
+            var locale = "en_US";
+            if( (locale == '') || (locale == null) ) locale = 'en_US';
+            var e = document.createElement('script');
+            e.src = document.location.protocol + '//connect.facebook.net/' + locale + '/all.js';
+            e.async = true;
+            document.getElementById('fb-root').appendChild(e);
+          }());
+    </script>
+
+    
+		<script type="text/javascript" src="https://crm.digitalchocolate.com/cbar/1.0.10/cbar.js"></script>
+		<script type="text/javascript" src="https://crm.digitalchocolate.com/cbar/1.0.10/ad_provider.js?ts=1325335190126"></script>
+    
+
+    
+	    <div id="EMBEDDED_DIV_ID"></div>
+	    <a href="#" id="mobius_submit" style="display: none;">Mobius</a>
+		<script type="text/javascript">
+            TASKS = {
+                REQUEST_LEVEL: 'RequestLevel',
+                SEND_LEVEL: 'sendLevel'
+            };
+            
+            FLASH_READY = false;
+            GIFTING_INTERSTITIAL_CLOSED = false;
+            SOCIAL_WALL_VISITED = false;
+
+			function flashRequest_Received(task, data) {
+                //console.log("flashRequest_Received: " + task + " :: " + data);
+                
+                if (task == "helpSendFreeGift")
+				{
+					//var params = data.evalJSON();
+	                var params = $j.parseJSON( data );
+					params.action = task;
+					launchFacebookRequest(params);
+				}
+				else if (task == "cashShop")
+				{
+					//var params = data.evalJSON();
+	                var params = $j.parseJSON( data );
+					launchCashShop(params.currencyId);
+				}
+				else if (task == "cashShopStandalone")
+				{
+					launchCashShopStandalone();
+				}
+				else if (task == "postToFeed")
+				{
+					postToFeed(data);
+				}
+				else if (task == "becameFan")
+				{
+					launchBecomeFan();
+				}
+				else if (task == "browserRefresh")
+				{
+					top.location.href = "https://apps.facebook.com/millionairecity/";
+				}
+				else if (task == "facebookCredits") 
+				{
+					launchFacebookCredits(data);
+				}
+				else if(task == "getFBCreditsBalance")
+				{
+					launchGetFBCreditsBalance();
+				}
+				else if (task == "fbRequest") 
+				{
+					//var params = data.evalJSON();
+					var params = $j.parseJSON( data );
+					launchFacebookRequest(params);
+				}
+				else if (task == "openDchocMMA") 
+				{
+					window.open("https://apps.facebook.com/mmaprofighter/?src=xm_ingame_mc");
+				}
+				else if (task == "openURL") 
+				{
+					//var params = data.evalJSON();
+					var params = $j.parseJSON( data );
+					window.open(params.url);
+				}
+				else if (task == "showFacebox")
+				{
+					showFacebox(data);
+				}
+				else if (task == "fedPayment")
+				{
+					fedPayment(data);
+				}
+                else if (task == "showCRM")
+			    {
+					showCRM(data);
+			    }
+				else if (task == "ready")
+			    {
+                    //startSocialWall();
+                    FLASH_READY = true;
+			    }
+                else if (task == TASKS.SEND_LEVEL ) {
+                    var data = $j.parseJSON( data );
+                    unlockFreeGifts( data.level );
+                }
+			}
+
+			function sendTask_to_flash2(task, params) {
+				movie = getMovie("flash");
+				if (movie != null)
+				{
+					movie.externalTaskResponse(task, params);
+				}
+			}
+
+            var tasksBuffer = [];
+			function sendTask_to_flash(task) {
+				movie = getMovie("flash");
+				if (movie != null)
+				{
+                    if( ("externalTaskResponse" in movie) && FLASH_READY ) {
+                        try {
+    					    movie.externalTaskResponse(task);
+                        } catch (e){
+                            tasksBuffer.push( task );
+                        }
+                    } else {
+                        tasksBuffer.push( task );
+                    }
+				}
+			}
+
+            function sendDelayedTaskToFlash() {
+                if(FLASH_READY == false) return;
+
+				var movie = getMovie("flash");
+				if (movie != null) {
+                    if( "externalTaskResponse" in movie ) {
+                        while( tasksBuffer.length > 0 ) {
+                                var delayed_task = tasksBuffer.pop();
+                                movie.externalTaskResponse( delayed_task );
+                        }
+                    }
+                }
+            }
+            setInterval( sendDelayedTaskToFlash , 1000 );
+
+
+
+			function getMovie(name) {
+				if (navigator.appName.indexOf("Microsoft") != -1) return window[name];
+				else return document[name];
+			}
+
+            function showGamePopup(popupSelector, iframeUrl) {
+                $iframeElement = $j("<iframe>Your browser doesn't support inline frames.</iframe>");
+                $iframeElement.attr("src", iframeUrl);
+                $iframeElement.attr("allowTransparency", "true");
+
+                $popup = $j(popupSelector);
+                $container = $j(".container", $popup);
+
+                $j("iframe", $container).remove();
+                $container.append($iframeElement);
+
+                $j($popup).fadeIn();
+            }
+
+            function launchFacebookRequest(params, options, onSuccess ) {
+				params.ref_uid = '0';
+
+                if( options == null )
+				{
+                	var options={};
+				}
+    		    options.method='apprequests';
+
+				options.title = "1";
+				options.message = "2";
+				var onAcceptUrl = "https://mcity.digitalchocolate.com/dollar//SendFacebookRequest?ref_uid=0&hash=LOCAL_HASH_PLACEHOLDER";//&action=" + params.action;
+
+                //if( "send_back" in options && options["send_back"]=="1")
+                    //onAcceptUrl+= "&gift_back=1";
+                
+				var callback = function(response) {
+					crmEvent = "";
+					paramsCrm = {};
+					if ('sku' in params) {
+						paramsCrm.product_detail = params.sku;
+					}
+					if ('product' in params) {
+						paramsCrm.product = params.product;
+					}
+					if (params.action == "investOnFriend") {
+						crmEvent = "FB Investment";
+					} else if (params.action == "sendFreeGift") {
+						crmEvent = "FB Gift";
+						params.product = "Free Gift";
+					} else if (params.action == "acceptGift") {
+						crmEvent = "FB Gift";
+						params.product = "Collectible";
+					} else if (params.action == "partnerAdd") {
+						crmEvent = "FB Business Partner";
+					} else if (params.action == "inviteRequest") {
+						crmEvent = "FB Invite";
+					} else if (params.action == "neighborAdd") {
+						crmEvent = "FB Invite";
+					} else if (params.action == "addCrewToItem") {
+						crmEvent = "FB Crew Invite";
+					}
+					if(response && response.request_ids.length > 0)
+					{
+						for(var i = 0; i < response.request_ids.length; i++)
+						{
+							$j.get(onAcceptUrl + '&request_id=' + response.request_ids[i], function(response2){ 
+								//TODO: if response2.startsWith 1...
+								//alert(response2); 
+							});
+						}
+						if (crmEvent != "") {
+	                    	notifyWCRM("Social", crmEvent, "Sent", {product: params.product, product_detail:params.sku, value : response.request_ids.length });
+						}
+						var baURL = "https://mcity.digitalchocolate.com/dollar//ba?name=requests&ref=0&signed_request=LOCAL_SIGNED_REQUEST_PLACEHOLDER&version=null";
+						$j.get(baURL + '&src=' + response.request_ids.length + '&product=' + params.action, function(response2){});
+
+                        // call the onSuccess function
+                        if( typeof onSuccess != "undefined" )
+                            onSuccess.method.call( onSuccess.object , params );
+
+					} else {
+						if (crmEvent != "") {
+	                    	notifyWCRM("Social", crmEvent, "Cancelled", {product: params.product, product_detail:params.sku});
+						}
+                    }
+
+				    if ('sku' in params) {
+
+                        if( ! $j('#'+params.sku).parent().hasClass('locked-gift') )
+                        {
+                            //$j('#'+params.sku).css('visibility','inherit');
+					        $j('#'+params.sku).each(function()
+								    {
+							        	$j(this).css('visibility','inherit');
+								    }
+						        );
+                        }
+                        $j('#suggested_gift').css('visibility','inherit');
+
+					    if(response && response.request_ids.length > 0)
+                            $j('#gifts_feedback').slideDown('slow').delay(3000).slideUp('slow');
+
+                    }
+
+				};
+
+				crmEvent = "";
+				paramsCrm = {};
+				if ('product' in params) {
+					paramsCrm.product = params.product;
+				}
+				if ('sku' in params) {
+					paramsCrm.product_detail = params.sku;
+				}
+
+				var popupNeedsCallback = false;
+				//params.action = "addCrewToItem";
+				if (params.action == "inviteRequest")
+				{
+					crmEvent = "FB Invite";
+					options.filters = ['app_non_users'];
+					options.title = "Invite your friends to play Millionaire City";
+					options.message = "Hello Friend! Ever dreamed of a visit to a Millionaire City? Well now you can! Create your own Millionaire City next to mine and we'll double the fun!";
+					params.src = "vir_fb_invite";
+				}
+				else if (params.action == "neighborRequest")
+				{
+                   	notifyWCRM("Social", "FB Invite", "Started", paramsCrm);
+
+					popupNeedsCallback = true;
+					params.action = "neighborAdd";
+					options.title   = "Invite your friends to play Millionaire City";
+					options.message = "Become my neighbor to make money faster!";
+					if(params.fExtId != null && params.fExtId != undefined){
+						options.to = params.fExtId;
+						options.data = '{"action":"neighborAdd","ref_uid":"0"}';
+						
+						if (options.title.length > 49) {options.title = options.title.substring(0,45); options.title += '...';}
+						
+						FB.ui(options, callback);
+					}
+					else{
+                    	options.filters = ['all','non_app_users','app_users'];
+
+	                    $j.get("https://mcity.digitalchocolate.com/dollar//info?query" + "&ref_uid=0&hash=LOCAL_HASH_PLACEHOLDER" +  "&action=getNeighborIds_availablesToSendNeighborRequest&oauth_token=LOCAL_OAUTH_TOKEN_PLACEHOLDER",
+	                        function(response)
+	                    	{
+	                    		if(response == null || response == "")
+	                    		{
+									var NoNewNeighboursAvailablePopup = 
+							        	new DCPop( "allGifts", 
+									        	"","Excellent - All your Friends are already playing Millionaire City and are added as your neighbors!", "");
+	
+									NoNewNeighboursAvailablePopup.show();
+	                    		}
+	                    		else
+	                    		{
+	                    			var response_cut = selectNFriendsFromAllFriends([response]);
+		                            var filters = '[{"name":"Invite friends", "user_ids":[' + response_cut + ']}]';
+		                            options.filters = $j.parseJSON( filters );
+		
+		            				if (options.title.length > 49) {options.title = options.title.substring(0,45); options.title += '...';}
+		
+		                			FB.ui( options, callback );
+	                    		}
+	                    	}, "HTML"
+	            		);
+					}
+				}
+				else if (params.action == "partnerRequest")
+				{
+                   	notifyWCRM("Social", "FB Business Partner", "Started", paramsCrm);
+
+					popupNeedsCallback = true;
+					params.action = "partnerAdd";
+					options.title   = "Invite your friend to be your partner";
+					options.message = "Become my Business Partner to make money faster!";
+                    options.filters = ['app_users'];
+
+                    $j.get("https://mcity.digitalchocolate.com/dollar//info?query" + "&ref_uid=0&hash=LOCAL_HASH_PLACEHOLDER" +  "&action=partnersToInclude&useNeighborList=" + params.useNeighborList + "&oauth_token=LOCAL_OAUTH_TOKEN_PLACEHOLDER",
+                        function(response)
+                    	{
+                    		if(response != null && response != undefined && response.length > 0)
+                    		{
+                        		var response_cut = selectNFriendsFromAllFriends([response]);
+	                            var filters = '[{"name":"users", "user_ids":[' + response_cut + ']}]';
+	                            options.filters = $j.parseJSON( filters );
+	
+	            				if (options.title.length > 49) {options.title = options.title.substring(0,45); options.title += '...';}
+	
+	                			FB.ui( options, callback );
+                    		}
+                    		else
+                    		{
+                        		var popup = new DCPop("allPartners", 
+                        				"","Excellent - All your Neighbors are already your business partners!", "");
+                				popup.show();
+                    		}
+                    	}, "HTML"
+            		);
+				}
+				else if (params.action == "investmentRequest")
+				{
+                   	notifyWCRM("Social", "FB Investment", "Started", paramsCrm);
+					crmEvent = "FB Investment";
+					params.action = "investOnFriend";
+					options.title = "Make money by Investing on friends!";
+					options.message = "I have made an investment in you, my friend. Accept it and we can make money together!";
+					params.src = "vir_fb_invest";
+					options.filters = ['app_non_users'];					
+				}
+				else if(params.action == "helpSendFreeGift")
+				{
+					paramsCrm.product = "Collectible";
+					paramsCrm.product_detail = params.sku;
+                   	notifyWCRM("Social", "FB Gift", "Started", paramsCrm);
+                    // these are collectibles!
+					params.action = "acceptGift";
+					options.title = "Send a gift to your friends";
+					options.message = "You got an exciting parcel with a luxurious Collectible!";
+					options.to = '' + params.fExtId;
+					params.src = "vir_fb_gift";
+					params.extId = 0;
+					var gift_sku = params.sku;
+					var action_link = "https://mcity.digitalchocolate.com/dollar//CollectibleSent?gid=" + gift_sku + "&uid=0&receiver="+ params.fExtId +"&hash=LOCAL_HASH_PLACEHOLDER&message_center=1&fb_sig_session_key=null";
+
+
+					var gift_callback = function(response) {
+						if(response != null && response != undefined)
+						$j.get(action_link, function(data) {
+									if(data.charAt(0) == '1')
+										sendTask_to_flash("sendGift:" + gift_sku);
+						}, "HTML" );
+						if(response && response.request_ids.length > 0) {
+		                   	notifyWCRM("Social", "FB Gift", "Sent", { product: "Collectible", product_detail:params.sku, unique_tracking_tag:response.request_ids[0], value : response.request_ids.length });
+						} else {
+		                   	notifyWCRM("Social", "FB Gift", "Cancelled", { product: "Collectible", product_detail:params.sku });
+						}
+
+					};
+
+					paramsJSON = JSON.stringify(params);
+	                options.data = paramsJSON;
+
+					if(options.title.length > 49)
+					{
+						options.title = options.title.substring(0,45);
+						options.title += '...';
+					}
+                    FB.ui( options, gift_callback );
+				} 
+                else if(params.action == "sendFreeGift"){
+                    // these are the REAL gifts!
+                    popupNeedsCallback = true;
+					sendFreeGift(params, options, callback);
+                }
+                else if(params.action == "addCrewToItem")
+                {
+                    paramsCrm.product = "Crew";
+					paramsCrm.product_detail = params.sku;
+					notifyWCRM("Social", "FB Crew Invite", "Started", paramsCrm);
+
+					options.title = "Invite friends";
+					options.message = "Please help me to open a new club";
+					
+					params.src = "vir_fb_crew";
+					params.extId = 0;
+					params.sid = params.sid;
+					// TODO: continue this.
+
+					paramsJSON = JSON.stringify(params);
+	                options.data = paramsJSON;
+
+					popupNeedsCallback = true;
+					
+	                $j.get("https://mcity.digitalchocolate.com/dollar//info?query" +
+	    	                "&ref_uid=0&hash=LOCAL_HASH_PLACEHOLDER" +
+	    	                "&action=getNeighborIds_availableForCrew&useNeighborList=" +
+	    	                params.useNeighborList +
+	    	                "&sid=" + params.sid +
+	    	                "&oauth_token=LOCAL_OAUTH_TOKEN_PLACEHOLDER",
+	                        function(response)
+	                    	{
+	                    		if(response != null && response != undefined && response.length > 0)
+	                    		{
+	                        		var response_cut = selectNFriendsFromAllFriends([response]);
+		                            var filters = '[{"name":"users", "user_ids":[' + response_cut + ']}]';
+		                            options.filters = $j.parseJSON( filters );
+		
+		            				if (options.title.length > 49) {options.title = options.title.substring(0,45); options.title += '...';}
+		
+		                			FB.ui( options, callback );
+	                    		}
+	                    		else
+	                    		{
+	                        		var popup = new DCPop("allPartners", 
+	                        				"", "You need more neighbors to accomplish this action", "");
+	                				popup.show();
+	                    		}
+	                    	}, "HTML"
+	            		);
+                }
+
+				if(options.title.length > 49)
+				{
+					options.title = options.title.substring(0,45);
+					options.title += '...';
+				}
+
+				paramsJSON = JSON.stringify(params);
+                options.data = paramsJSON;
+                if(options.to == undefined && !popupNeedsCallback) {
+					if (crmEvent != "") {
+                    	notifyWCRM("Social", crmEvent, "Started", paramsCrm);
+					}
+                	FB.ui( options, callback );
+                }
+            }
+
+            //TODO: make the send free gifts function here! pass options.to as a parameter
+            function sendFreeGift(params, options, callback) {
+
+	            notifyWCRM("Social", "FB Gift", "Started", { product:"Free Gift", product_detail:params.sku });
+
+				params.extId = 0;
+                params.action = 'sendFreeGift';
+				var gift_sku = params.sku;
+	            var sku_id = gift_sku.split("_").pop();
+
+	            options.method = 'apprequests';
+	            options.title = "Send a gift to your friends";
+				options.message = i18n.get( 'DCSW_GIFT_BODY', {'U': i18n.get( params.tid ) } );
+                
+                /*
+        		if(options.to == null || options.to == undefined) {
+                    options.title = unescape( encodeURIComponent( options.title )); // WTF! FB bug!
+                    options.message = unescape( encodeURIComponent( options.message )); // WTF! FB bug!
+                }
+                */
+                
+
+				params.src = "vir_fb_freegift";
+	            paramsJSON = JSON.stringify(params);
+                options.data = paramsJSON;
+	            if(options.title.length > 49)
+					options.title = options.title.substring(0,45) + '...';
+
+        		if(options.to != null && options.to != undefined)
+        		{
+            		$j.get("https://mcity.digitalchocolate.com/dollar//info?query"+
+	            		"&timeMillis="+(new Date().getTime())+
+	            		"&ref_uid=0&hash=LOCAL_HASH_PLACEHOLDER" +
+	                    "&action=giftSendingToInclude&oauth_token=LOCAL_OAUTH_TOKEN_PLACEHOLDER"+
+	                    "&sku="+gift_sku,
+	            	function(response) {
+		                    var response_splitted = response.split(",");
+		                    for(var i = 0; i < response_splitted.length; i++)
+		                    {
+			                    if(options.to == response_splitted[i])
+			                    {
+				                    FB.ui( options, callback);
+				                    return;
+			                    }
+		                    }
+		                    var popup = new DCPop("giftAlreadySent", "", "You already sent this gift to your friend. Please select another one." , "");
+		                    popup.show();
+		                    if( ! $j('#'+gift_sku).parent().hasClass('locked-gift') )
+		                    {
+						        //$j('#'+gift_sku).css('visibility','inherit');
+						        $j('#'+gift_sku).each(function()
+								    {
+							        	$j(this).css('visibility','inherit');
+								    }
+						        );
+		                        $j('#suggested_gift').css('visibility','inherit');
+		                    }
+	                    }
+                    );
+        		}
+        		else
+        		{
+
+		            $j.get("https://mcity.digitalchocolate.com/dollar//info?query"+
+		            		"&timeMillis="+(new Date().getTime())+
+		            		"&ref_uid=0&hash=LOCAL_HASH_PLACEHOLDER" +
+		                    "&action=giftSendingToInclude&oauth_token=LOCAL_OAUTH_TOKEN_PLACEHOLDER"+
+		                    "&sku="+gift_sku,
+		            	function(response) { 
+		                    var response_splited = response.split("|");
+					        options.filters = [];
+					        var response_splited = selectNFriendsFromAllFriends(response_splited);
+					        var test = 0
+;
+					        options.filters [0] = 'all';
+					        if(response_splited[0] != "") {
+    					        options.filters[0 + test] = {'name':"All Friends", user_ids:response_splited[0]};
+						        if(response_splited[1] != "")
+    						        options.filters[1 + test] = {'name':"Millionaire friends", user_ids:response_splited[1]};
+					        } else {
+						        var allGiftsPopup = 
+						        	new DCPop( "allGifts", 
+								        	"","Well done, You have sent all the gifts for today! You can send more tomorrow.", "");
+					        	allGiftsPopup.show();
+                                return false;
+					        }
+
+                            FB.ui( options, callback);
+                        }, "html" );
+
+        		}
+            }
+
+            function selectNFriendsFromAllFriends(arr)
+            {
+                var magic_number = 400;
+                var response = new Array();
+                for(var i = 0; i < arr.length; i++)
+                {
+                    var friendList = arr[i].split(",");
+                    if(friendList.length <= magic_number)
+                    {
+                        response[i] = arr[i];
+                    }
+                    else
+                    {
+                        var start = Math.round(Math.random()* (friendList.length - magic_number));
+                        var str = "";
+                        for(var j = 0; j < magic_number; j++)
+                        {
+                            str = str + friendList[start + j];
+                            if(j != magic_number -1)
+                                str += ",";
+                        }
+                        response[i] = str;
+                    } 
+                }
+                return response;
+            }
+            
+            function showFacebox(data)
+            {
+	            //var params = data.evalJSON();
+	            var params = $j.parseJSON( data );
+    
+            	var url = params.url;
+            	var title = params.title;
+            	$j.facebox(url, title);
+            	$j(document).bind("close.facebox", hideCashShop);
+            }
+            function fedPayment(data)
+            {
+            	//var params = data.evalJSON();
+	            var params = $j.parseJSON( data );
+
+            	var fedId = params.fed_id;
+            }
+
+			function hideFacebookRequest()
+			{
+                $j(document).trigger('close.facebox');
+            }
+
+            function launchCashShop(currencyId) {
+                var opAppId = "";
+                var title = "";
+                if (currencyId == "dollars") {
+                    opAppId = "null";
+                    title = "Get More Millionaire Dollars";
+                } else if (currencyId == "gold") {
+                    opAppId = "320936bff6755389e4da80e044c86331";
+                    title = "Get More Millionaire Gold";
+                }
+
+                var offerUrl = "http://pub.myofferpal.com/" + opAppId + "/showoffers.action?snuid=0";
+                $j.facebox(offerUrl, title);
+                $j(document).bind("close.facebox", hideCashShop);
+			}
+
+            function launchCashShopStandalone() {
+	       		$j.facebox("http://pub.myofferpal.com/" + "320936bff6755389e4da80e044c86331" + "/showoffers.action?snuid=0", "Get More Millionaire Gold");
+               $j(document).bind("close.facebox", hideCashShop);
+            }
+
+            function launchBecomeFan() {
+                showfan();
+                
+			}
+
+			function launchBookmark() {
+                $j.facebox("https://mcity.digitalchocolate.com/dollar/bookmark.jsp?oauth_token=LOCAL_OAUTH_TOKEN_PLACEHOLDER", "Bookmark Millionaire City");
+			}
+
+			function hideCashShop() {
+				// To make the server check whether currency was updated
+				sendTask_to_flash("pingCurrency");
+
+				$j(document).unbind("close.facebox", hideCashShop);
+				$j("#facebox").fadeOut();
+			}
+			function showCRM(data) {
+			    
+			}
+
+            _wcrm_buffer = [];
+            function notifyWCRM(groupName, eventName, label, params) {
+                if( typeof wcrm_track_event == "function" ) {
+                    while( _wcrm_buffer.length > 0 ) {
+                        var e =  _wcrm_buffer.pop();
+                        wcrm_track_event(e.groupName, e.eventName, e.label, e.params, true, false);
+                    }
+                    wcrm_track_event(groupName, eventName, label, params, true, false);
+                } else {
+                    _wcrm_buffer.push( {'groupName':groupName,'eventName':eventName, 'label':label, 'params':params} );
+                }
+            }
+
+            function notifyWCRM_fromFlash(groupName, eventName, label, jsonParams) {
+                //var params = jsonParams.evalJSON();
+	            var params = $j.parseJSON( jsonParams );
+                notifyWCRM(groupName, eventName, label, params);
+            }
+
+            var trackingHash;
+            var feedRecipientId;
+            
+            
+			function streamCallback(response) {
+				
+				
+				if (response && response.post_id) {
+					
+					
+					//var postRef = response.post_id.split("_")[1];
+					
+					var baURL = "https://mcity.digitalchocolate.com/dollar//ba?name=newsfeed&ref=0&signed_request=LOCAL_SIGNED_REQUEST_PLACEHOLDER&version=null";
+					$j.get(baURL, function(data){});
+					
+					if (typeof notifyWCRM == 'function') {
+                        notifyWCRM("Social", "FB Feed", "Sent", {
+                        	'src': nextFeedId,
+                        	'version': wcrmAbVersion,
+                        	'level': wcrmUserLevel,
+							'ref_uid': wcrmFbUserId,
+                        	'recipient_uids': feedRecipientId,
+                        	'unique_tracking_tag': trackingHash
+                        });    
+					}
+				
+				} else {
+					if (typeof notifyWCRM == 'function') {
+						notifyWCRM("Social", "FB Feed", "Cancelled", {
+							'src': nextFeedId,
+							'version': wcrmAbVersion,
+							'level': wcrmUserLevel,
+							'ref_uid': wcrmFbUserId
+						});
+					}
+				}
+			}
+
+			function postToFeed(feedData) {
+				try {
+					//Parse data sent by client and pass it to Facebook
+					//var data = feedData.evalJSON();
+	                var data = $j.parseJSON( feedData );
+	                
+	                console.log(data);
+	                
+					var ref_uid = 0;
+					var url = 'https://apps.facebook.com/millionairecity/?task=' + data.target_task + '&src=' + data.id + '&ref_uid=' + ref_uid;
+					if (data.sku != undefined && data.sku != null) {
+						url = url + '&sku=' + data.sku;
+					}
+					if (data.target_id != undefined && data.sku != null) {
+						feedRecipientId = data.target_id;
+					} else {
+						feedRecipientId = '0';
+					}
+					
+					trackingHash = $j.md5(url);
+					url += '&unique_tracking_tag=' + trackingHash;
+
+                    var attachment = {
+                        name: data.name,
+                        href: url,
+                        caption: data.caption,
+                        description: data.description,
+                        media:  [
+                            {
+                                type: 'image',
+                                src: 'https://dchoc1-a.akamaihd.net/mcity/0.500/feed/' + data.image_file + '?v=0.500',
+                                href: url
+                            }
+                        ]
+                    };
+
+                    var target_id = null;
+                    if (data.target_id != null && data.target_id != "") {
+                        target_id = data.target_id;
+                    }
+					
+					if(data.caption == "") data.caption = " ";
+
+                    var action_link_text = data.target_text;
+                    if (action_link_text == null || action_link_text == "") {
+                        action_link_text = 'Visit Millionaire City';
+                    }
+                    //var action_links = [{'text':action_link_text, 'href':url }];
+                    var action_link = url;
+
+                    if( $j.browser.msie ) {
+                        // workaround for ie8 xss warning
+                        var parts = url.split("?");
+                        action_link = parts[0] + "/?" + parts[1];
+                    }
+
+                    var action_links = [{'name':action_link_text, 'link':action_link }];
+
+                    // A bit of a hack that should in most cases give us the right title in streamCallback.
+                    nextFeedId = data.id;
+                    notifyWCRM("Social", "FB Feed", "Started", { product: nextFeedId });
+
+                    if(data.id == "vir_fb_investonfriendreminder"){
+                        callback = function(response){
+                            if(response != undefined){
+	                            var url = "http://mcity.digitalchocolate.com/dollar//friend_select?ref_uid=0"
+	            				+ "&hash=LOCAL_HASH_PLACEHOLDER&action=investOnFriendReminder"
+	            				+ "&ids[]=" + target_id;
+	            				jQuery.get(url);
+                            }
+                            streamCallback(response);
+                        }
+                    }
+                    else{
+                        callback = streamCallback;
+                    }
+                    FB.ui( { 
+                            'method':     'feed', 
+                            'to':         target_id,
+                            //'user_message_prompt':    data.user_message_prompt,
+                            'picture':    attachment.media[0].src,
+                            'link':       url + '&ref=nf', //Force reference to news feed, as in the action links
+                            'name':       data.name,
+                            'caption':    data.caption,
+                            'description':data.description,
+
+                            'actions':    action_links
+                           },
+                           callback
+                       );
+
+				} catch (e) { 
+					alert("Error posting to feed " + e.toString()); 
+				} 
+			}
+
+			function launchGetFBCreditsBalance()
+			{
+				jQuery.get("https://mcity.digitalchocolate.com/dollar/get_current_fbc_balance?ref_uid=0&hash=LOCAL_HASH_PLACEHOLDER&ts=" + (new Date().getTime()), function(response)
+					{
+						if(response != null && response != undefined && response != "-1:0")
+						{
+							sendTask_to_flash("fbcreditsCurrentBalance:"+response);
+						}
+						else
+						{
+							sendTask_to_flash("fbcreditsCurrentBalance:0:10");
+						}
+					}
+				);
+			}
+
+			var fbOrderInfo = null;
+		    function launchFacebookCredits(jsonParams) {
+		    	//var params = jsonParams.evalJSON();
+	            var params = $j.parseJSON( jsonParams );
+	            var obj = {
+                    "method": 'pay'
+                };
+                
+	            fbOrderInfo = null;
+                if(params.sku != null && params.sku != undefined) {
+                    obj.order_info = params.type + "|" + params.sku;
+                    if(!isNaN(params.qty)){
+                        var tmpStr = obj.order_info + "|" + params.qty;
+                        if(tmpStr.length < 32){
+                        	obj.order_info = tmpStr;
+                        }
+                    }
+                    obj.purchase_type = "item";
+                    
+                    fbOrderInfo = params.sku;
+                } else {
+                	obj.credits_purchase = true;
+                }
+                
+                try {
+                	FB.ui( obj, callback_fb_credits );
+
+                } catch (err) {
+                    //log.console(err);
+                }
+		      }
+
+		    var callback_fb_credits = function(data) {
+		    	if (data.error_code == undefined) {
+			    	if (fbOrderInfo != null) {
+			    		sendTask_to_flash("messageResponseFacebookCredits:1");
+			    	} else {
+				    	// To make the server check whether currency was updated
+						sendTask_to_flash("pingCurrency");
+			    	}
+		    	}
+		    	else if(data.error_code == 1383010) // This code is USER_CANCELED
+		    	{
+		    		sendTask_to_flash("messageResponseFacebookCredits:-3"); // -3 means the user cancelled the purchase
+		    	}
+		    	else
+		    	{
+		    		sendTask_to_flash("messageResponseFacebookCredits:0");
+		    	}
+		    };
+              
+			function launchFacebookInvite(){
+			    var params = {"action":"neighborRequest"};
+			    launchFacebookRequest(params);
+			}
+
+			function videoWatched(){
+				
+				sendTask_to_flash("addVideoReward");
+				
+			}
+			
+			function checkInGameAd(){
+				window.checkInGameAdInventory('videoAdAvailableResponse', 'videoAdCompleteResponse','videoAdIncompleteResponse');
+			}
+
+			      
+		</script>
+
+		
+
+        <script language='javascript'>
+        $j(document).ready(
+            function() {
+                if( window.DC_SocialWall_disabled!==undefined &&  !DC_SocialWall_disabled ) {
+                    $j("#tab-bar").show();
+                    $j(".tab-label").click( function(e){
+                        var tab_id= $j(this).attr("id");
+                        clickOnTab( tab_id );
+                        return false;
+                    });
+
+                } else {
+                    $j("#tab-bar").hide();
+                }
+
+            }
+            
+        );
+        function clickOnTab( _id ){
+                        var parts = _id.split("_");
+                        var id = parts[1];
+                        $j(".tab-label").removeClass('tab-selected');
+                        $j("#"+_id).addClass('tab-selected');
+                        $j(".tab-content").css("visibility","hidden");
+                        $j( '#'+id ).css("visibility","visible");
+                        $j( '#'+id ).fadeIn();
+                        $j( '#'+id ).css({"z-index":1000});
+                        $j("#gameEmbed").css("visibility","visible");
+                        removeCurtains();
+                        if(id != 'gameEmbed'){
+                        	$j('body').prepend( "<div id='curtain_dcsw' class='curtain'/>" );
+							jQuery("#curtain_dcsw" )
+	                        	.css({ "height":jQuery(document).height(), "width":"100%", "z-index":999} );
+                        }
+                        if( id == 'dcsw' ) {
+                            updateLockedGifts();
+                            DCSW.show();
+                        }
+                        if( id == 'gifts' ) updateLockedGifts();
+                        //if( id == 'neighbors' ) DCNB.render();
+
+                        var task = (id=="gameEmbed") ? "ShowGame" : "HideGame";
+                        sendTask_to_flash( task );
+        }
+
+        function updateLockedGifts(){
+            sendTask_to_flash( TASKS.REQUEST_LEVEL );
+        }
+        function unlockFreeGifts( level ) {
+			DCSW.level_player = level;
+            var level = parseInt(level);
+            $j('.gift-block').each(
+                function(){
+                    var gift_level = parseInt( $j(this).attr('level'));
+                    $j(this).toggleClass('locked-gift', ( level < gift_level ) );
+                }
+            );
+        }
+
+
+        </script>
+
+      	<div id="wcrm_cbar" style='min-height:166px'></div>
+
+		
+
+
+
+
+
+<div id='tab-bar' class='tab-bar-new' style='display:none'>
+	<div id='tab-bar-top' class='tab-bar-new-top'>
+		
+	</div>
+	<div class='mcity_logo' id='mcity_logo'>
+    	<fb:like href="https://www.facebook.com/apps/application.php?id=315455798286" 
+    		send="false" layout="button_count" font="trebuchet ms" colorscheme="light" show_faces="false" style='float:right;margin-top: 35px;margin-right: 140px;'></fb:like> 
+    </div>
+	<div class='tab-bar-new' style="position:absolute;">
+		<span class='tab-label rounded' id='labelFor_gifts'>
+	        <img class='tab-icon' src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/social_wall/general/gift.png'/>
+	        <br/>
+	        Free Gifts
+	    </span>
+		<span class='tab-label rounded' id='labelFor_neighbors'>
+	        <img class='tab-icon' src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/social_wall/general/neighboor.png'/>
+	        <br/>
+	        My Neighbors
+	    </span>
+		<span class='tab-label rounded' id='labelFor_dcsw'>
+	        <img class='tab-icon' src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/social_wall/general/messages.png'/>
+	        <br/>
+	        Messages
+	    </span>
+	    <span id='dcsw_requests_counter' class='counter-new'></span>
+    </div>
+    <script language='JavaScript'>
+        $j(".tab-label").hover(
+            function(){
+                var src = $j(this).find(".tab-icon").attr("src");
+                console.log(src);
+                src = src.replace(".png", "_over.png");
+                $j(this).find(".tab-icon").attr("src",src);
+            },
+            function(){
+                var src = $j(this).find(".tab-icon").attr("src");
+                src = src.replace("_over.png", ".png");
+                $j(this).find(".tab-icon").attr("src",src);
+            }
+        );
+    </script>
+
+    
+</div>
+
+
+
+
+        <div id='neighbors' class='tab-content rounded-shadow' style='visibility: hidden'></div>
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id='gifts' class='tab-content rounded-shadow' style='visibility: hidden; z-index:1000' ready="no">
+            <span class='gifts_close' onclick='closeGiftTab()'>&nbsp;</span><div id='gifts_header'></div>
+           	<div class='gifts_outer'>
+				<div id='gifts_body'>
+					<h1 class='blue-text'>Send a gift to your friends</h1>
+					<div class="gifts_suggestion_box">
+						<div style="display:inline-block;width:128px;margin:10px;" >
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_017.png'/>
+						</div>
+						<div style="display:inline-block;width:360px;">
+							<p class="blue-text"><span id='username'></span> and some other friends  were getting profits sending Free Gifts yesterday</p><br />
+							<div id="gifts_friends_faces"></div>
+							<script>
+								var neighbors = new Array();
+
+
+								starting_suggested_neighbor = Math.floor(Math.random() * neighbors.length) - 5;
+								if(starting_suggested_neighbor < 0) starting_suggested_neighbor = 0;
+								var end = starting_suggested_neighbor +5;
+								if(end > neighbors.length) end = neighbors.length;
+								for (var i=starting_suggested_neighbor; i<end; i++) {
+									document.write(
+										'<img style="padding-right:3px;" src="https://graph.facebook.com/' + neighbors[i] + '/picture" />'
+									);
+								}
+							</script>
+						</div>
+						<div style="display:inline-block;vertical-align:text-bottom;width:150px;height:60px;">
+							<p class='uiButton uiButtonConfirm freeGiftButton' id='suggested_gift' style='top:0px;vertical-align:middle;padding:14px;' tid='FGT_FGIFT_014'>
+								Send Gift
+
+							</p>
+						</div>
+					</div>
+					<h1 class='blue-text'>or choose a gift below!</h1>
+					<div id='gifts_feedback' class='blue-text' style='display:none; text-align:center'>Your gift was sent!</div>
+					<div class='gifts_inner'>
+
+					
+						<div class='gift-block ' level='1'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_openBox.png')">
+							<div class='blue-text freeGiftText'><span>Mystery Briefcase</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_008.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_008_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 1 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_008' level='1' tid='FGT_FGIFT_003'>Send Gift</span>
+							
+						</div>
+					
+						<div class='gift-block ' level='8'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_place.png')">
+							<div class='blue-text freeGiftText'><span>Santa's Sleigh</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_033.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_033_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 8 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_033' level='8' tid='FGT_FGIFT_029'>Send Gift</span>
+							
+								<div class='limited-time'><img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/limited_text.png' /></div>
+							
+						</div>
+					
+						<div class='gift-block ' level='12'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_openBox.png')">
+							<div class='blue-text freeGiftText'><span>Mystery safe</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_019.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_019_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 12 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_019' level='12' tid='TID_FGIFT_016'>Send Gift</span>
+							
+						</div>
+					
+						<div class='gift-block ' level='12'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_place.png')">
+							<div class='blue-text freeGiftText'><span>New Year Balloons</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_034.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_034_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 12 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_034' level='12' tid='FGT_FGIFT_030'>Send Gift</span>
+							
+								<div class='limited-time'><img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/limited_text.png' /></div>
+							
+						</div>
+					
+						<div class='gift-block ' level='0'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_place.png')">
+							<div class='blue-text freeGiftText'><span>Urban Rockstar</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_031.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_031_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 0 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_031' level='0' tid='FGT_FGIFT_026'>Send Gift</span>
+							
+						</div>
+					
+						<div class='gift-block ' level='0'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_place.png')">
+							<div class='blue-text freeGiftText'><span>Millionaire Rockstar</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_030.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_030_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 0 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_030' level='0' tid='FGT_FGIFT_027'>Send Gift</span>
+							
+						</div>
+					
+						<div class='gift-block ' level='3'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_place.png')">
+							<div class='blue-text freeGiftText'><span>Sidewalk</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_017.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_017_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 3 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_017' level='3' tid='FGT_FGIFT_014'>Send Gift</span>
+							
+						</div>
+					
+						<div class='gift-block ' level='5'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_place.png')">
+							<div class='blue-text freeGiftText'><span>Urban Tree</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_010.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_010_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 5 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_010' level='5' tid='FGT_FGIFT_007'>Send Gift</span>
+							
+						</div>
+					
+						<div class='gift-block ' level='8'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_place.png')">
+							<div class='blue-text freeGiftText'><span>Mailbox</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_021.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_021_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 8 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_021' level='8' tid='FGT_FGIFT_018'>Send Gift</span>
+							
+						</div>
+					
+						<div class='gift-block ' level='12'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_place.png')">
+							<div class='blue-text freeGiftText'><span>Telephone Box</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_020.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_020_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 12 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_020' level='12' tid='FGT_FGIFT_017'>Send Gift</span>
+							
+						</div>
+					
+						<div class='gift-block ' level='10'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_place.png')">
+							<div class='blue-text freeGiftText'><span>Crosschannels</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_029.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_029_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 10 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_029' level='10' tid='FGT_FGIFT_023'>Send Gift</span>
+							
+						</div>
+					
+						<div class='gift-block ' level='7'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_place.png')">
+							<div class='blue-text freeGiftText'><span>Upper Channel</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_027.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_027_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 7 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_027' level='7' tid='FGT_FGIFT_024'>Send Gift</span>
+							
+						</div>
+					
+						<div class='gift-block ' level='7'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_place.png')">
+							<div class='blue-text freeGiftText'><span>Lower Channel</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_028.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_028_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 7 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_028' level='7' tid='FGT_FGIFT_025'>Send Gift</span>
+							
+						</div>
+					
+						<div class='gift-block ' level='7'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_place.png')">
+							<div class='blue-text freeGiftText'><span>Channel left</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_025.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_025_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 7 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_025' level='7' tid='FGT_FGIFT_021'>Send Gift</span>
+							
+						</div>
+					
+						<div class='gift-block ' level='7'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_place.png')">
+							<div class='blue-text freeGiftText'><span>Channel right</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_026.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_026_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 7 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_026' level='7' tid='FGT_FGIFT_022'>Send Gift</span>
+							
+						</div>
+					
+						<div class='gift-block ' level='10'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_place.png')">
+							<div class='blue-text freeGiftText'><span>Urban Bench</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_011.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_011_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 10 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_011' level='10' tid='FGT_FGIFT_008'>Send Gift</span>
+							
+						</div>
+					
+						<div class='gift-block ' level='20'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_place.png')">
+							<div class='blue-text freeGiftText'><span>Bus Stop</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_012.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_012_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 20 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_012' level='20' tid='FGT_FGIFT_009'>Send Gift</span>
+							
+						</div>
+					
+						<div class='gift-block ' level='30'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_place.png')">
+							<div class='blue-text freeGiftText'><span>MCity Police</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_016.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_016_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 30 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_016' level='30' tid='FGT_FGIFT_013'>Send Gift</span>
+							
+						</div>
+					
+						<div class='gift-block ' level='40'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_place.png')">
+							<div class='blue-text freeGiftText'><span>Ice Cream Cart</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_013.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_013_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 40 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_013' level='40' tid='FGT_FGIFT_010'>Send Gift</span>
+							
+						</div>
+					
+						<div class='gift-block ' level='15'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_place.png')">
+							<div class='blue-text freeGiftText'><span>Traffic Lights</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_014.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_014_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 15 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_014' level='15' tid='FGT_FGIFT_011'>Send Gift</span>
+							
+						</div>
+					
+						<div class='gift-block ' level='6'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_place.png')">
+							<div class='blue-text freeGiftText'><span>Street Sign</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_015.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_015_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 6 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_015' level='6' tid='FGT_FGIFT_012'>Send Gift</span>
+							
+						</div>
+					
+						<div class='gift-block ' level='15'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_place.png')">
+							<div class='blue-text freeGiftText'><span>Spring Flower</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_006.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_006_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 15 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_006' level='15' tid='FGT_FGIFT_005'>Send Gift</span>
+							
+						</div>
+					
+						<div class='gift-block ' level='1'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_place.png')">
+							<div class='blue-text freeGiftText'><span>Lemon Tree</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_007.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_007_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 1 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_007' level='1' tid='FGT_FGIFT_002'>Send Gift</span>
+							
+						</div>
+					
+						<div class='gift-block ' level='1'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_move.png')">
+							<div class='blue-text freeGiftText'><span>Free move</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_001.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_001_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 1 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_001' level='1' tid='FGT_FGIFT_001'>Send Gift</span>
+							
+						</div>
+					
+						<div class='gift-block ' level='15'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_move.png')">
+							<div class='blue-text freeGiftText'><span>2 Free moves</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_002.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_002_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 15 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_002' level='15' tid='FGT_FGIFT_004'>Send Gift</span>
+							
+						</div>
+					
+						<div class='gift-block ' level='25'
+							style="background-image: url('https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_move.png')">
+							<div class='blue-text freeGiftText'><span>3 Free moves</span></div>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_003.png' 
+								class='unlocked-image'>
+							<img src='https://dchoc1-a.akamaihd.net/mcity/0.500/tabs/free_gifts/fgift_003_locked.png' class='locked-image'>
+							<p><span class='blue-text lockedGiftText'>Level 25 needed</span></p>
+							<span class='uiButton uiButtonConfirm freeGiftButton' id='fgift_003' level='25' tid='FGT_FGIFT_004_2'>Send Gift</span>
+							
+						</div>
+					
+						<script>
+
+						function closeGiftTab()
+						{
+							GIFTING_INTERSTITIAL_CLOSED=true;
+							if(!SOCIAL_WALL_VISITED && DCSW.requests.length>0)
+								clickOnTab("labelFor_dcsw");
+							else
+								clickOnTab("labelFor_gameEmbed");
+
+							removeCurtains();
+						}
+						
+						$j(".freeGiftButton").click( function(){
+							var type = $j(this).attr('id');
+							if( type == '' || type == 'undefined' || type == null )
+								return false;
+							$j(this).css('visibility','hidden');
+							if(type == 'suggested_gift')
+							{
+								type = 'fgift_017';
+							}
+							var params = { "action":"sendFreeGift", sku:type, tid:$j(this).attr('tid') };
+							console.log(params);
+							if(DCNB.userToSendGift > 0)
+							{
+								launchFacebookRequest( params , {'to':DCNB.userToSendGift} );
+								clickOnTab('labelFor_neighbors');
+							}
+							else{
+								launchFacebookRequest( params );
+							}
+							DCNB.userToSendGift = -1;
+						} );
+						</script>
+					</div>
+				</div>
+			</div>
+            <div id='gifts_footer'></div>
+        </div>
+
+
+        <div id='dcsw' class='tab-content rounded-shadow' style='position:absolute;visibility: hidden'></div>
+
+		
+<div id='fan' class='dcpopfan rounded'>
+		<div id="fb-root">
+		</div>
+	<a class='dcpop_close'>&nbsp;</a>
+	<h1 class='dcpopfan_title'>Become a Fan</h1>
+	<p class='dcpopfan_body'>
+		Click the button below to become a fan of Millionaire City.
+		<!-- script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script -->
+		<span id="fb-like-box" style="padding-left=150px;">
+			<fb:fan profile_id="315455798286" stream="0" connections="0" logobar="0" width="250" height="120">
+			</fb:fan>
+		</span>
+	
+	</p>
+
+</div>
+
+<script>
+
+	hidefan = function(){
+        jQuery("#fan").fadeOut();
+        jQuery("#curtain_fan" ).remove();
+        sendTask_to_flash("messageFanPopupClosed");
+    };
+
+    showfan = function(){
+        var pageinfo = FB.Canvas.getPageInfo();
+        var width = parseInt( jQuery("#fan").css("width") );
+        var topValue = parseInt(pageinfo.scrollTop);
+        var leftValue= parseInt(pageinfo.scrollLeft) + (760/2)-(width/2);
+
+        jQuery("#fan").css('top', topValue)
+            .css('left',leftValue)
+            .css('z-index',10000)
+            .fadeIn();
+        jQuery('body').prepend( "<div id='curtain_fan' class='curtain'/>" );
+        jQuery("#curtain_fan" ).css("height", jQuery(document).height() )
+            .css("width",760);
+    };
+	jQuery( '#fan a.dcpop_close' ).click( hidefan );
+</script>
+    	<span id="toolTipBox"></span>  
+		
+		<!--  Embed Flash -->
+		<!-- div id="game-embed" style="background:url(https://dchoc1-a.akamaihd.net/mcity/0.500/pages/Background_loading.png) top center no-repeat; height:600px;" -->
+		<div id="gameEmbed" class='tab-content'>
+				
+			<script type="text/javascript" src="https://dchoc1-a.akamaihd.net/mcity/0.500/js/AC_RunActiveContent.js"></script>
+			<script type="text/javascript">
+			<!--
+		      // Major version of Flash required
+		      var requiredMajorVersion = 9;
+		      // Minor version of Flash required
+		      var requiredMinorVersion = 0;
+		      // Revision of Flash required
+		      var requiredRevision = 115;
+		    // -->
+			</script>
+	
+			<script type="text/javascript">
+	      	<!--
+	      	
+				if (AC_FL_RunContent == 0 || DetectFlashVer == 0) {
+					alert("This page requires AC_RunActiveContent.js.");
+				} else {
+		            var hasRightVersion = DetectFlashVer(requiredMajorVersion, requiredMinorVersion, requiredRevision);
+	    	        if (hasRightVersion) {
+						// embed the flash movie
+						AC_FL_RunContent(
+							'codebase', 'https://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,124,0',
+							'width', '100%',
+							'height', '600',
+							'src', 'https://dchoc1-a.akamaihd.net/mcity/0.500/Dollars?v=0.500',
+							'quality', 'high',
+							'pluginspage', 'https://www.macromedia.com/go/getflashplayer',
+							'align', 'middle',
+							'play', 'true',
+							'loop', 'true',
+							'scale', 'showall',
+							'wmode', 'transparent',
+							'devicefont', 'false',
+							'id', 'flash',
+							'bgcolor', '#fff',
+							'name', 'flash',
+							'menu', 'true',
+							'allowScriptAccess','always',
+							'allowFullScreen','true',
+							'movie', 'https://dchoc1-a.akamaihd.net/mcity/0.500/Dollars?v=0.500',
+							'salign', '',
+							'FlashVars', 'token=LOCAL_GAME_TOKEN_PLACEHOLDER&uid=0&env=prod&fan_page_id=315455798286&oauth_token=LOCAL_OAUTH_TOKEN_PLACEHOLDER&facebook_app_id=315455798286&server=https://mcity.digitalchocolate.com/dollar/&data=https://dchoc1-a.akamaihd.net/mcity/0.500/&game_version=0.500&wcrm_env=2&wcrm_user=0&wcrm_server=https://crm.digitalchocolate.com&wcrm_visible_at=0&swf_version=0&lang=en_US&fed_currency_id=9&fed_url=https://federal.digitalchocolate.com&fed_game_id=Dollar_Facebook&fed_payments=1&fed_post_payment_url=https://mcity.digitalchocolate.com/dollar/close_payment.jsp&analytics_code=UA-23262436-1&useFrictionlessFacebookCredits=true&bartUrl=https://mcity.digitalchocolate.com/bart'
+						); //end AC code
+					} else {  // flash is too old or we can't detect the plugin
+						var alternateContent = 'To play Millionaire City, you need the Adobe Flash Player (v. 9.0.124.0 or better)<br /><a href="http://www.macromedia.com/go/getflash/" target="_blank"><img border=0 alt="Get Flash" src="https://dchoc1-a.akamaihd.net/mcity/0.500/flashinstallpage_en.jpg"/></a>';
+						document.write(alternateContent);  // insert non-flash content
+					}
+				}
+			//-->
+			</script>
+			<noscript>
+	        	You need to enable JavaScript in order to play this game.
+	        </noscript>
+	        
+        </div>
+
+        <!-- WCRM special DIV for fan box -->
+        <div class="fb_resetstyles fb_popupContainer" id="fb_pop_fanbox" style="display: none;">
+        <table class="fb_pop_dialog_table fb_popup" style="width: 480px; height: 246px; left: 140px; top: 125px;">
+               <tbody><tr>
+                 <td class="fb_pop_topleft"></td>
+                 <td class="fb_pop_border"></td>
+                 <td class="fb_pop_topright"></td>
+               </tr>
+               <tr>
+                 <td class="fb_pop_border"></td>
+                 <td id="pop_content" class="fb_pop_content">
+                   <div class="fb_pop_content_container">
+                      <h2 class="fb_resetstyles">
+                        <div class="fb_dialog_icon"></div>
+                        <span id="fb_dialog_header" class="fb_dialog_header">Become a Fan</span>
+                        <div id="fb_dialog_loading_spinner" class="fb_dialog_loading_spinner ">&nbsp;</div>
+                        <a onClick="wcrm_track_event('SCRM','Become a Fan','Cancelled'); document.getElementById('fb_pop_fanbox').style.display = 'none';" href="#" title="close dialog" class="fb_dialog_cancel_button" id="fb_dialog_cancel_button">&nbsp;</a>
+                      </h2>
+                        <div class="fb_dialog_content fb_dialogIFrame platform_dialog_fullheight_page platform_dialog ff3 Locale_es_LA" id="fb_dialog_content">
+                            <div class="platform_dialog_content">
+                                <!-- SET PROFILE ID (app ID) HERE! -->
+                                <fb:fan profile_id="315455798286" stream="0" connections="0" logobar="0" width="250" height="120">
+                                </fb:fan>
+                            </div>
+                            <div class="platform_dialog_buttons">
+                                <label class="uiButton uiButtonConfirm uiButtonLarge">
+                                    <input type="submit" size="0" name="ok" value="Okay" onClick="wcrm_track_event('SCRM','Become a Fan','OK'); document.getElementById('fb_pop_fanbox').style.display = 'none';document.getElementById('wcrm_cbar').src = document.getElementById('wcrm_cbar').src + '&refresh=fan';"></input>
+                                </label>
+                            </div>
+                        </div>
+           </div>
+                 </td>
+                 <td class="fb_pop_border"></td>
+               </tr>
+               <tr>
+                 <td class="fb_pop_bottomleft"></td>
+                 <td class="fb_pop_border"></td>
+                 <td class="fb_pop_bottomright"></td>
+               </tr>
+            </tbody></table>
+        </div>
+
+		<!--        
+        <h3 onclick="launchBookmark();">Bookmark</h3>
+		-->
+
+	
+	
+		<div id="wcrm_footer"></div>
+    
+        <div id="footer">
+            <div id="links">
+                <a href="https://www.facebook.com/apps/application.php?id=315455798286" target="_blank">Millionaire City Fan Page</a> |
+                <a href="https://www.digitalchocolate.com/facebook/termsandconditions/" target="_blank">ToS</a> |
+                <a href="https://www.digitalchocolate.com/privacy-security" target="_blank">Privacy & Security</a> |
+                <a href="https://www.digitalchocolate.com/facebook/millionaire-city-faq/" target="_blank">FAQ</a> |
+                <a href="https://forums.digitalchocolate.com/forumdisplay.php?f=59" target="_blank">Forums</a> |
+                <a href="https://www.digitalchocolate.com/help" target="_blank">Support</a> |
+                <a href="https://www.digitalchocolate.com/facebook/millionaire-city-tips-tricks/" target="_blank">Tips and Tricks</a> |
+                <a href="https://www.twitter.com/millionairegame" target="_blank">Twitter</a>
+            </div>
+            <!-- div id="coupon">
+            	<a href="http://crm.digitalchocolate.com/ovi-store-towerbloxxmc?project_id=7" target="_blank">Enter Coupon Code</a>
+            </div -->
+            <div id="copyright">
+                Millionaire City v.0.500, Copyright © Digital Chocolate 2010. All Rights Reserved
+            </div>
+        </div>
+               
+
+        
+  
+        
+
+        <!-- Google Analytics -->
+		<script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-23262436-1']);
+		  _gaq.push(['_trackPageview', '/']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script>        
+	</body>
+</html>
+ 

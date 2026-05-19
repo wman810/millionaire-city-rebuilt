@@ -1,0 +1,4 @@
+<Settings>
+  <Definition initialDCCoins="380000" becomeFanPopupTime="24" initialDCCash="0" cashToCoins="60000" FBCToCoins="30000" destroyItemProfitPercentage="35" destroyTerrainProfitPercentage="100" popupHelpTimer="540000" popupHelpTimerThreshold="10000" sellPricePercentage="20" helpConstructionMinTime="15" abandonTimePercentage="100" abandonMinTime="60" cancelContractProfitPercentage="50" dailyBonus="5000" dailyBonusMinTime="24" newItemsRev="1" moneyCollectorAreaX="11" moneyCollectorAreaY="11" newToolRev="3" contractSignatorAreaX="11" contractSignatorAreaY="11" incomeMultiplier="2" shopNewItemsTimer="10000" crmPopupTimer="2000" limEdSoldOutShowTime="48" collectibleSlotExpire="8" collectibleMaxUnitsPerItem="99" collectibleUnlockLevel="6" investmentsUnlockLevel="1" sideTabsUnlockLevel="5" collectRewardInCommerceChances="1" unlockMaxPrice="65" unlockMaxPriceFBC="130" />
+</Settings>
+

@@ -1,0 +1,25 @@
+<Definitions>
+  <Definition sku="bc_001" item="briefcase" giftType="cash" value="3000" resname="briefcase_cash" tid="TID_COIN_SYMBOL" />
+  <Definition sku="bc_002" item="briefcase" giftType="cash" value="500" resname="briefcase_cash" tid="TID_COIN_SYMBOL" />
+  <Definition sku="bc_003" item="briefcase" giftType="move" value="2" resname="briefcase_move_2" tid="TID_FGIFT_001_2" />
+  <Definition sku="bc_004" item="briefcase" giftType="cash" value="2000" resname="briefcase_cash" tid="TID_COIN_SYMBOL" />
+  <Definition sku="bc_005" item="briefcase" giftType="move" value="3" resname="briefcase_move_3" tid="TID_FGIFT_001_3" />
+  <Definition sku="bc_006" item="briefcase" giftType="cash" value="1000" resname="briefcase_cash" tid="TID_COIN_SYMBOL" />
+  <Definition sku="bc_007" item="briefcase" giftType="move" value="1" resname="briefcase_move_1" tid="TID_FGIFT_001" />
+  <Definition sku="birth_001" item="birthday_box" giftType="cash" value="10500" resname="birthday_box_cash" tid="TID_COIN_SYMBOL" />
+  <Definition sku="birth_002" item="birthday_box" giftType="cash" value="1500" resname="birthday_box_cash" tid="TID_COIN_SYMBOL" />
+  <Definition sku="birth_003" item="birthday_box" giftType="item" value="decorations_special_12" resname="birthday_box_item" tid="TID_BUILDING_DECORATION_53" />
+  <Definition sku="birth_004" item="birthday_box" giftType="item" value="decorations_tree_19" resname="birthday_box_item" tid="TID_BUILDING_DECORATION_56" />
+  <Definition sku="birth_005" item="birthday_box" giftType="item" value="decorations_statue_07" resname="birthday_box_item" tid="TID_BUILDING_DECORATION_59" />
+  <Definition sku="safe_001" item="safe_box" giftType="cash" value="10000" resname="safe_box_cash" tid="TID_COIN_SYMBOL" />
+  <Definition sku="safe_002" item="safe_box" giftType="cash" value="800" resname="safe_box_cash" tid="TID_COIN_SYMBOL" />
+  <Definition sku="safe_003" item="safe_box" giftType="exp" value="15" resname="safe_box_exp" tid="TID_COLLECTIBLES_REWARD_EXP" />
+  <Definition sku="safe_004" item="safe_box" giftType="item" value="houses_030_001" resname="safe_box_item" tid="TID_BUILDING_HOUSE_65" />
+  <Definition sku="safe_005" item="safe_box" giftType="item" value="decorations_tree_21" resname="safe_box_item" tid="TID_BUILDING_DECORATION_76" />
+  <Definition sku="platinum_001" item="platinum_safe" giftType="cash" value="10000" resname="platinum_safe_cash" tid="TID_COIN_SYMBOL" />
+  <Definition sku="platinum_002" item="platinum_safe" giftType="cash" value="800" resname="platinum_safe_cash" tid="TID_COIN_SYMBOL" />
+  <Definition sku="platinum_003" item="platinum_safe" giftType="exp" value="15" resname="platinum_safe_exp" tid="TID_COLLECTIBLES_REWARD_EXP" />
+  <Definition sku="platinum_004" item="platinum_safe" giftType="item" value="houses_030_001" resname="platinum_safe_item" tid="TID_BUILDING_HOUSE_65" />
+  <Definition sku="platinum_005" item="platinum_safe" giftType="item" value="decorations_tree_21" resname="platinum_safe_item" tid="TID_BUILDING_DECORATION_76" />
+</Definitions>
+

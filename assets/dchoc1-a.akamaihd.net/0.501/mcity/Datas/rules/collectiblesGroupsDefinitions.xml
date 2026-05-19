@@ -1,0 +1,18 @@
+<Definitions>
+  <Definition sku="7" tid="TID_COLLECTIBLES_COLLECTION_NAME_001" reward="decorations_christmas_07" rewardType="item" order="90" />
+  <Definition sku="1" tid="TID_COLLECTIBLES_COLLECTION_NAME_004" reward="HeadQuarter_02" rewardType="hq" order="50" />
+  <Definition sku="2" tid="TID_COLLECTIBLES_COLLECTION_NAME_002" reward="plane_02" rewardType="plane" order="55" />
+  <Definition sku="3" tid="TID_COLLECTIBLES_COLLECTION_NAME_005" reward="HeadQuarter_03" requirements="1" rewardType="hq" order="60" />
+  <Definition sku="4" tid="TID_COLLECTIBLES_COLLECTION_NAME_003" reward="plane_03" requirements="2" rewardType="plane" order="65" />
+  <Definition sku="5" tid="TID_COLLECTIBLES_COLLECTION_NAME_006" reward="HeadQuarter_04" requirements="3" rewardType="hq" order="70" />
+  <Definition sku="6" tid="TID_COLLECTIBLES_COLLECTION_NAME_007" reward="plane_04" requirements="4" rewardType="plane" order="75" />
+  <Definition sku="8" tid="TID_COLLECTIBLES_COLLECTION_NAME_008" reward="decorations_christmas_10" rewardType="item" order="85" />
+  <Definition sku="9" tid="TID_COLLECTIBLES_COLLECTION_NAME_009" reward="decorations_pond_03" rewardType="item" order="80" />
+  <Definition sku="15" tid="TID_COLLECTIBLES_COLLECTION_NAME_015" reward="houses_037_001" rewardType="item" icon="new_items" order="45" />
+  <Definition sku="10" tid="TID_COLLECTIBLES_COLLECTION_NAME_010" reward="food_collection_01" rewardType="set" order="1" tradein="1" commerce="1" />
+  <Definition sku="11" tid="TID_COLLECTIBLES_COLLECTION_NAME_011" reward="sport_collection_01" rewardType="set" order="2" tradein="1" commerce="1" />
+  <Definition sku="12" tid="TID_COLLECTIBLES_COLLECTION_NAME_012" reward="shopping_collection_01" rewardType="set" order="3" tradein="1" commerce="1" />
+  <Definition sku="13" tid="TID_COLLECTIBLES_COLLECTION_NAME_013" reward="entertainmet_collection_01" rewardType="set" order="4" tradein="1" commerce="1" />
+  <Definition sku="14" tid="TID_COLLECTIBLES_COLLECTION_NAME_014" reward="luxury_collection_01" rewardType="set" order="5" tradein="1" commerce="1" />
+</Definitions>
+

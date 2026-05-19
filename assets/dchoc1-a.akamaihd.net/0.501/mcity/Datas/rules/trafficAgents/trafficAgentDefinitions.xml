@@ -1,0 +1,12 @@
+<Definitions>
+	<Definition sku="car_roadster" speed="80" width="28" heigh="14" spawnCondition="commerce_night_club"/>
+	<Definition sku="car_taxi" speed="30" width="28" heigh="14" spawnCondition="commerce_hotel,commerce_casino"/>
+	<Definition sku="car_police" speed="50" width="21" heigh="13" spawnCondition="commerce_bank"/>
+	<Definition sku="scooter" speed="30" width="21" heigh="13" spawnCondition="commerce_pizza"/>
+	
+	<Definition sku="car_01" speed="35" width="21" heigh="13"/>
+	<Definition sku="car_02" speed="50" width="21" heigh="13"/>
+	<Definition sku="car_03" speed="60" width="21" heigh="13"/>	
+	<Definition sku="car_04" speed="50" width="21" heigh="13"/>
+	<Definition sku="car_05" speed="70" width="21" heigh="13"/>
+</Definitions>

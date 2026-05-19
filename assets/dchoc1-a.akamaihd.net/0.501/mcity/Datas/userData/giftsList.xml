@@ -1,0 +1,6 @@
+<giftsList>
+	<Commerce>
+		<gift sku="commerce_pizza" id="1"/>
+		<gift sku="commerce_pizza" id="2"/>
+	</Commerce>	
+</giftsList>

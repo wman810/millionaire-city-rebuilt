@@ -1,0 +1,4 @@
+<MapDefinition>
+  <Definition tileWidth="32" tileHeight="32" areaTileCols="15" areaTileRows="10" miniExpansionsSide="6" expansionsSide="5" />
+</MapDefinition>
+

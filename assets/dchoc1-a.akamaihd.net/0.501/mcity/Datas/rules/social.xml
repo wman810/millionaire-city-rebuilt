@@ -1,0 +1,4 @@
+<Social>
+  <Definition upgradesVisitorExpPerUpgrade="10" upgradesVisitorDCCoinsPerUpgrade="100" upgradesOwnerExtraPercentage="10" RonaldCV="100000000" RonaldInvestPercentage="1" askForHelp_accelerateItem_percent="10" askForHelp_repeatPost_time="12" upgrade_repeatUpgrades_time="12" upgrade_maximunOf_items="5" maxUpgradesPerDay="1500" invest_askForSpeedPost_time="12" invest_remindPost_time="24" superUpgradesVisitorExpPerUpgrade="15" superUpgradesVisitorDCCoinsPerUpgrade="150" superUpgradesOwnerExtraPercentage="12" superUpgradesTimeToAllowReminding="12" askForCash_cooldown_time="24" askForCash_gain_coins="200000" />
+</Social>
+

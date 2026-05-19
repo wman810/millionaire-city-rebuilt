@@ -1,0 +1,18 @@
+<Definitions>
+  <Definition sku="HeadQuarter_02" tid="TID_COLLECTIBLES_REWARD_001" rewardType="hq" feedImg="HeadQuarter_02.jpg" />
+  <Definition sku="HeadQuarter_03" tid="TID_COLLECTIBLES_REWARD_002" rewardType="hq" feedImg="HeadQuarter_03.jpg" />
+  <Definition sku="HeadQuarter_04" tid="TID_COLLECTIBLES_REWARD_003" rewardType="hq" feedImg="HeadQuarter_04.jpg" />
+  <Definition sku="plane_02" tid="TID_COLLECTIBLES_REWARD_004" rewardType="plane" feedImg="Plane_02.jpg" />
+  <Definition sku="plane_03" tid="TID_COLLECTIBLES_REWARD_005" rewardType="plane" feedImg="Plane_03.jpg" />
+  <Definition sku="plane_04" tid="TID_COLLECTIBLES_REWARD_006" rewardType="plane" feedImg="Plane_04.jpg" />
+  <Definition sku="decorations_christmas_07" tid="TID_COLLECTIBLES_REWARD_007" rewardType="item" feedImg="christmas_01.jpg" />
+  <Definition sku="decorations_christmas_10" tid="TID_COLLECTIBLES_REWARD_008" rewardType="item" feedImg="christmas_02.jpg" />
+  <Definition sku="decorations_pond_03" tid="TID_COLLECTIBLES_REWARD_009" rewardType="item" feedImg="japanese_p.jpg" />
+  <Definition sku="houses_037_001" tid="TID_COLLECTIBLES_REWARD_015" rewardType="item" feedImg="cake.jpg" useAdvisor="1" />
+  <Definition sku="food_collection_01" tid="TID_COLLECTIBLES_REWARD_010" rewardType="set" value="0:10000:250" feedImg="RW_XP_cash.jpg" />
+  <Definition sku="sport_collection_01" tid="TID_COLLECTIBLES_REWARD_011" rewardType="set" value="0:20000:750" feedImg="RW_XP_cash.jpg" />
+  <Definition sku="shopping_collection_01" tid="TID_COLLECTIBLES_REWARD_012" rewardType="set" value="0:25000:1350" feedImg="RW_XP_cash.jpg" />
+  <Definition sku="entertainmet_collection_01" tid="TID_COLLECTIBLES_REWARD_013" rewardType="set" value="0:35000:3000" feedImg="RW_XP_cash.jpg" />
+  <Definition sku="luxury_collection_01" tid="TID_COLLECTIBLES_REWARD_014" rewardType="set" value="0:55000:5000" feedImg="RW_XP_cash.jpg" />
+</Definitions>
+

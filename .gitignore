@@ -9,11 +9,11 @@ release/
 apps/server/.data/
 apps/desktop/out/
 apps/desktop/dist/
-/assets/
-/decompiled/
 /Millionaire City/
 /Decompiled AS Code from Dollars.swf/
 tools/*.exe
+desktop.ini
+Thumbs.db
 .env
 .env.*
 *.sqlite

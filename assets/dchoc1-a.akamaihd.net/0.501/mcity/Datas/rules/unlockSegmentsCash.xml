@@ -1,0 +1,10 @@
+<Definitions>
+  <Definition levelStart="0" levelEnd="6" baseCash="1" baseFBC="2" />
+  <Definition levelStart="7" levelEnd="10" baseCash="2" baseFBC="4" />
+  <Definition levelStart="11" levelEnd="14" baseCash="3" baseFBC="6" />
+  <Definition levelStart="15" levelEnd="16" baseCash="4" baseFBC="8" />
+  <Definition levelStart="17" levelEnd="22" baseCash="5" baseFBC="10" />
+  <Definition levelStart="23" levelEnd="27" baseCash="6" baseFBC="12" />
+  <Definition levelStart="27" levelEnd="350" baseCash="7" baseFBC="14" />
+</Definitions>
+

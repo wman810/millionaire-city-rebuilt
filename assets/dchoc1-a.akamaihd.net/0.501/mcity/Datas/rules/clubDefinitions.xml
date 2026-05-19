@@ -1,0 +1,4 @@
+<Definitions>
+  <Definition sku="club_001" tid="TID_BUILDING_CLUB_01" buildingsName="Country Club" shopTab="Houses" level="3" unlockCondition="level" shadowRows="1" baseRows="3" baseCols="5" influenceRatio="6" incomeLevelFactor="0.5" incomeValue="0" contractsTypeSku="32" exp="0" constructionCrew="crew_01" constructionCoins="0" constructionCash="0" constructionFBC="0" companyValue="0" constructionFBCnoCash="2" constructionTime="20" instantBuildType="FBC:A4H" instantBuildFBC="2" incomeXP="0" incomeTime="0" eventOnTime="0" instantBuildFactor="" influenceValue="0" movePriceCoins="600000" showInABTest="mc_crew_mechanics_B" />
+</Definitions>
+

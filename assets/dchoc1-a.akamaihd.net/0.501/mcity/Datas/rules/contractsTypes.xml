@@ -1,0 +1,39 @@
+<ContractsTypes>
+  <Definition sku="1" contractsSkus="1,2,3,154,4,5,6,171,7,8,9" />
+  <Definition sku="2" contractsSkus="10,11,12,155,13,14,15,172,16,17,18" />
+  <Definition sku="3" contractsSkus="19,20,21,156,22,23,24,173,25,26,27" />
+  <Definition sku="4" contractsSkus="28,29,30,157,31,32,33,174,34,35,36" />
+  <Definition sku="5" contractsSkus="37,38,39,158,40,41,42,175,43,44,45" />
+  <Definition sku="6" contractsSkus="46,47,48,159,49,50,51,176,52,53,54" />
+  <Definition sku="7" contractsSkus="55,56,57,160,58,59,60,177,61,62,63" />
+  <Definition sku="8" contractsSkus="64,65,66,161,67,68,69,178,70,71,72" />
+  <Definition sku="9" contractsSkus="73,74,75,162,76,77,78,179,79,80,81" />
+  <Definition sku="10" contractsSkus="82,83,84,163,85,86,87,180,88,89,90" />
+  <Definition sku="11" contractsSkus="91,92,93,164,94,95,96,181,97,98,99" />
+  <Definition sku="12" contractsSkus="100,101,102,165,103,104,105,182,106,107,108" />
+  <Definition sku="13" contractsSkus="109, 110, 111,166, 112, 113, 114, 183, 115, 116, 117" />
+  <Definition sku="14" contractsSkus="118, 119, 120, 167, 121, 122, 123, 184, 124, 125, 126" />
+  <Definition sku="15" contractsSkus="127, 128, 129, 168, 130, 131, 132, 185, 133, 134, 135" />
+  <Definition sku="16" contractsSkus="136, 137, 138, 169, 139, 140, 141, 186, 142, 143, 144" />
+  <Definition sku="17" contractsSkus="145, 146, 147, 170, 148, 149, 150, 187, 151, 152, 153" />
+  <Definition sku="18" contractsSkus="118, 119, 120, 166, 22, 23, 24, 183, 25, 26, 27" />
+  <Definition sku="19" contractsSkus="188, 189, 190, 170, 191, 192, 193, 187, 194, 195, 196" />
+  <Definition sku="20" contractsSkus="197, 198, 199, 169, 200, 201, 202, 186, 203, 204, 205" />
+  <Definition sku="21" contractsSkus="46, 47, 48, 159, 112, 113, 114, 183, 115, 116, 117" />
+  <Definition sku="22" contractsSkus="206, 207, 208, 170, 209, 210, 211, 187, 212, 213, 214" />
+  <Definition sku="23" contractsSkus="215, 216, 217, 170, 218, 219, 220, 187, 221, 222, 223" />
+  <Definition sku="24" contractsSkus="224, 225, 226, 170, 227, 228, 229, 187, 230, 231, 232" />
+  <Definition sku="25" contractsSkus="233, 234, 235, 170, 236, 237, 238, 187, 239, 240, 241" />
+  <Definition sku="26" contractsSkus="242, 243, 244, 170, 245, 246, 247, 187, 248, 249, 250" />
+  <Definition sku="27" contractsSkus="251, 252, 253, 170, 254, 255, 256, 187, 257, 258, 259" />
+  <Definition sku="28" contractsSkus="260,261,262,170,263,264,265,187,266,267,268" />
+  <Definition sku="29" contractsSkus="269,270,271,170,272,273,274,187,275,276,277" />
+  <Definition sku="30" contractsSkus="278,279,280,287,281,282,283,288,284,285,286" />
+  <Definition sku="31" contractsSkus="289,290,291,298,292,293,294,299,295,296,297" />
+  <Definition sku="32" contractsSkus="300,301,302" />
+  <Definition sku="33" contractsSkus="303,304,305,312,306,307,308,313,309,310,311" />
+  <Definition sku="34" contractsSkus="314,315,316,323,317,318,319,324,320,321,322" />
+  <Definition sku="35" contractsSkus="325,326,327,334,328,329,330,335,331,332,333" />
+  <Definition sku="36" contractsSkus="336,337,338,345,339,340,341,346,342,343,344" />
+</ContractsTypes>
+

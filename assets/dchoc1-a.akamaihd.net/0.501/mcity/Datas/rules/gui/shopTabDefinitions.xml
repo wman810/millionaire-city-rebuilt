@@ -1,0 +1,11 @@
+<Definitions>
+	<Definition sku="Houses" tid="TID_BUTTON_HOUSES"/>
+	<Definition sku="Commerces" tid="TID_BUTTON_COMMERCES"/>
+	<Definition sku="Decorations" tid="TID_BUTTON_DECORATIONS"/>
+	<Definition sku="Wonders" tid="TID_BUTTON_WONDERS"/>
+	<Definition sku="Clubs"/>
+	<Definition sku="Bundles"/>
+	<Definition sku="new_items" usesIconOnItemShop="1" feedImg="newitemimage.png" tid="TID_SHOP_TAB_NEW_ITEM"/>
+	<Definition sku="featured" tid="TID_SHOP_TAB_FEATURED_ITEM"/>
+	<Definition sku="limEd"/>
+</Definitions>

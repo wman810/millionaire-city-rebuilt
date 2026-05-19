@@ -1,0 +1,26 @@
+<Definitions>
+  <Definition sku="reward_01" bonusType="exp" bonusValue="80" group="1" chances="20" />
+  <Definition sku="reward_02" bonusType="coins" bonusValue="8000" group="1" chances="40" />
+  <Definition sku="reward_03" bonusType="coins" bonusValue="10000" group="1" chances="40" />
+  <Definition sku="reward_04" bonusType="exp" bonusValue="120" group="2" chances="50" />
+  <Definition sku="reward_05" bonusType="coins" bonusValue="20000" group="2" chances="25" />
+  <Definition sku="reward_06" bonusType="coins" bonusValue="25000" group="2" chances="25" />
+  <Definition sku="reward_07" bonusType="exp" bonusValue="150" group="3" chances="30" />
+  <Definition sku="reward_08" bonusType="coins" bonusValue="30000" group="3" chances="35" />
+  <Definition sku="reward_09" bonusType="coins" bonusValue="35000" group="3" chances="35" />
+  <Definition sku="reward_10" bonusType="exp" bonusValue="190" group="4" chances="40" />
+  <Definition sku="reward_11" bonusType="coins" bonusValue="50000" group="4" chances="30" />
+  <Definition sku="reward_12" bonusType="coins" bonusValue="55000" group="4" chances="30" />
+  <Definition sku="reward_13" bonusType="coins" bonusValue="250000" group="5" chances="40" />
+  <Definition sku="reward_14" bonusType="coins" bonusValue="300000" group="5" chances="30" />
+  <Definition sku="reward_15" bonusType="coins" bonusValue="60000" group="5" chances="30" />
+  <Definition sku="reward_16" bonusType="item" bonusValue="commerce_honey" group="6" chances="100" date="17:05:2011" />
+  <Definition sku="reward_17" bonusType="coins" bonusValue="15000" group="6" chances="100" date="18:05:2011" />
+  <Definition sku="reward_18" bonusType="coins" bonusValue="180000" group="6" chances="100" date="19:05:2011" />
+  <Definition sku="reward_19" bonusType="item" bonusValue="decorations_special_14" group="6" chances="100" date="20:05:2011" />
+  <Definition sku="reward_20" bonusType="item" bonusValue="decorations_font_06" group="6" chances="100" date="21:05:2011" />
+  <Definition sku="reward_21" bonusType="coins" bonusValue="20000" group="6" chances="100" date="22:05:2011" />
+  <Definition sku="reward_22" bonusType="item" bonusValue="houses_014_001" group="6" chances="100" date="23:05:2011" />
+  <Definition sku="reward_23" bonusType="item" bonusValue="houses_030_001" group="6" chances="100" date="24:05:2011" />
+</Definitions>
+

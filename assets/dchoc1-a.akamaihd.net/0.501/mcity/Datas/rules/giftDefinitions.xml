@@ -1,0 +1,35 @@
+<Definitions>
+  <Definition sku="fgift_001" tid="TID_FGIFT_001" tid_server="FGT_FGIFT_001" order="23" giftType="move" action="move" value="1" maxAmount="20" unlockCondition="level" unlockValue="1" disabled="0" />
+  <Definition sku="fgift_002" tid="TID_FGIFT_004" tid_server="FGT_FGIFT_004" order="24" giftType="move" action="move" value="2" maxAmount="20" unlockCondition="level" unlockValue="15" disabled="0" />
+  <Definition sku="fgift_003" tid="TID_FGIFT_004" tid_server="FGT_FGIFT_004_2" order="25" giftType="move" action="move" value="3" maxAmount="20" unlockCondition="level" unlockValue="25" disabled="0" />
+  <Definition sku="fgift_006" tid="TID_FGIFT_005" tid_server="FGT_FGIFT_005" order="21" giftType="item" action="place" value="decorations_tree_30" maxAmount="30" unlockCondition="level" unlockValue="15" disabled="0" />
+  <Definition sku="fgift_007" tid="TID_FGIFT_002" tid_server="FGT_FGIFT_002" order="22" giftType="item" action="place" value="decorations_tree_25" maxAmount="30" unlockCondition="level" unlockValue="1" disabled="0" />
+  <Definition sku="fgift_008" tid="TID_FGIFT_003" tid_server="FGT_FGIFT_003" order="1" giftType="briefcase" action="openBox" maxAmount="10" unlockCondition="level" unlockValue="1" disabled="0" />
+  <Definition sku="fgift_009" tid="TID_FGIFT_006" tid_server="FGT_FGIFT_006" giftType="birthday_box" action="openBox" maxAmount="5" unlockCondition="level" unlockValue="1" disabled="0" expireTime="25:05:2011" />
+  <Definition sku="fgift_010" tid="TID_FGIFT_007" tid_server="FGT_FGIFT_007" order="7" giftType="item" action="place" value="decorations_set_01" maxAmount="5" unlockCondition="level" unlockValue="5" disabled="0" />
+  <Definition sku="fgift_011" tid="TID_FGIFT_008" tid_server="FGT_FGIFT_008" order="15" giftType="item" action="place" value="decorations_set_02" maxAmount="5" unlockCondition="level" unlockValue="10" disabled="0" />
+  <Definition sku="fgift_012" tid="TID_FGIFT_009" tid_server="FGT_FGIFT_009" order="16" giftType="item" action="place" value="decorations_set_04" maxAmount="5" unlockCondition="level" unlockValue="20" disabled="0" />
+  <Definition sku="fgift_013" tid="TID_FGIFT_010" tid_server="FGT_FGIFT_010" order="18" giftType="item" action="place" value="decorations_set_03" maxAmount="5" unlockCondition="level" unlockValue="40" disabled="0" />
+  <Definition sku="fgift_014" tid="TID_FGIFT_011" tid_server="FGT_FGIFT_011" order="19" giftType="item" action="place" value="decorations_set_05" maxAmount="5" unlockCondition="level" unlockValue="15" disabled="0" />
+  <Definition sku="fgift_015" tid="TID_FGIFT_012" tid_server="FGT_FGIFT_012" order="20" giftType="item" action="place" value="decorations_set_06" maxAmount="5" unlockCondition="level" unlockValue="6" disabled="0" />
+  <Definition sku="fgift_016" tid="TID_FGIFT_013" tid_server="FGT_FGIFT_013" order="17" giftType="item" action="place" value="decorations_set_07" maxAmount="5" unlockCondition="level" unlockValue="30" disabled="0" />
+  <Definition sku="fgift_017" tid="TID_FGIFT_014" tid_server="FGT_FGIFT_014" order="6" giftType="item" action="place" value="decorations_set_08" maxAmount="5" unlockCondition="level" unlockValue="3" disabled="0" />
+  <Definition sku="fgift_018" tid="TID_FGIFT_015" tid_server="FGT_FGIFT_015" giftType="rentAcc30" action="rentAccelerator" value="30" maxAmount="20" unlockCondition="level" unlockValue="10" disabled="0" expireTime="01:01:2001" />
+  <Definition sku="fgift_019" tid="TID_FGIFT_016" tid_server="TID_FGIFT_016" order="3" giftType="safe_box" action="openBox" maxAmount="10" unlockCondition="level" unlockValue="12" disabled="0" />
+  <Definition sku="fgift_020" tid="TID_FGIFT_017" tid_server="FGT_FGIFT_017" order="9" giftType="item" action="place" value="decorations_set_09" maxAmount="10" unlockCondition="level" unlockValue="12" disabled="0" />
+  <Definition sku="fgift_021" tid="TID_FGIFT_018" tid_server="FGT_FGIFT_018" order="8" giftType="item" action="place" value="decorations_set_10" maxAmount="10" unlockCondition="level" unlockValue="8" disabled="0" />
+  <Definition sku="fgift_022" tid="TID_FGIFT_015" tid_server="FGT_FGIFT_015" giftType="rentAcc50" action="rentAccelerator" value="50" maxAmount="20" unlockCondition="level" unlockValue="10" disabled="0" expireTime="01:01:2001" />
+  <Definition sku="fgift_023" tid="TID_FGIFT_019" tid_server="FGT_FGIFT_019" giftType="platinum_safe" action="openBox" maxAmount="5" unlockCondition="level" unlockValue="15" disabled="0" expireTime="08:09:2011" />
+  <Definition sku="fgift_024" tid="TID_FGIFT_020" tid_server="FGT_FGIFT_020" giftType="item" action="place" value="decorations_channel_001" maxAmount="5" unlockCondition="level" unlockValue="7" disabled="0" expireTime="01:01:2001" />
+  <Definition sku="fgift_025" tid="TID_FGIFT_021" tid_server="FGT_FGIFT_021" order="13" giftType="item" action="place" value="decorations_channel_002" maxAmount="5" unlockCondition="level" unlockValue="7" disabled="0" />
+  <Definition sku="fgift_026" tid="TID_FGIFT_022" tid_server="FGT_FGIFT_022" order="14" giftType="item" action="place" value="decorations_channel_003" maxAmount="5" unlockCondition="level" unlockValue="7" disabled="0" />
+  <Definition sku="fgift_027" tid="TID_FGIFT_024" tid_server="FGT_FGIFT_024" order="11" giftType="item" action="place" value="decorations_channel_005" maxAmount="5" unlockCondition="level" unlockValue="7" disabled="0" />
+  <Definition sku="fgift_028" tid="TID_FGIFT_025" tid_server="FGT_FGIFT_025" order="12" giftType="item" action="place" value="decorations_channel_006" maxAmount="5" unlockCondition="level" unlockValue="7" disabled="0" />
+  <Definition sku="fgift_029" tid="TID_FGIFT_023" tid_server="FGT_FGIFT_023" order="10" giftType="item" action="place" value="decorations_channel_007" maxAmount="5" unlockCondition="level" unlockValue="10" disabled="0" />
+  <Definition sku="fgift_030" tid="TID_FGIFT_027" tid_server="FGT_FGIFT_027" order="5" giftType="item" action="place" value="decorations_set_11" maxAmount="5" unlockCondition="level" disabled="0" />
+  <Definition sku="fgift_031" tid="TID_FGIFT_026" tid_server="FGT_FGIFT_026" order="4" giftType="item" action="place" value="decorations_set_12" maxAmount="5" unlockCondition="level" disabled="0" />
+  <Definition sku="fgift_032" tid="TID_FGIFT_028" tid_server="FGT_FGIFT_028" order="2" giftType="item" action="place" value="decorations_set_13" maxAmount="5" unlockCondition="level" unlockValue="5" disabled="0" expireTime="02:12:2011" />
+  <Definition sku="fgift_033" tid="TID_FGIFT_029" tid_server="FGT_FGIFT_029" order="2" giftType="item" action="place" value="decorations_set_14" maxAmount="5" unlockCondition="level" unlockValue="8" disabled="0" expireTime="02:01:2012" />
+  <Definition sku="fgift_034" tid="TID_FGIFT_030" tid_server="FGT_FGIFT_030" order="3" giftType="item" action="place" value="decorations_set_15" maxAmount="5" unlockCondition="level" unlockValue="12" disabled="0" expireTime="09:01:2012" />
+</Definitions>
+

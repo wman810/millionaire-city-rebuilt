@@ -1,0 +1,1 @@
+<TrafficAgentManagerDefinition spawnProbabilityMin="50" spawnProbabilityMax="80" spawnAgentsMin="3" spawnAgentsMax="7" spawnAgentsLimit="20" spawnAskForANewAgentTime="10" spawnMinTilesBetweenAgents="3" agentExpireTime="2"/>			

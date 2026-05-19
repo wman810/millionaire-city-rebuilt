@@ -1,0 +1,7 @@
+<Definitions>
+  <Definition sku="HeadQuarter_01" priceCoins="0" priceCash="0" exp="0" level="1" shadowRows="0" />
+  <Definition sku="HeadQuarter_02" priceCoins="0" priceCash="0" exp="0" level="1" shadowRows="1" />
+  <Definition sku="HeadQuarter_03" priceCoins="0" priceCash="0" exp="0" level="1" shadowRows="1" />
+  <Definition sku="HeadQuarter_04" priceCoins="0" priceCash="0" exp="0" level="1" shadowRows="1" />
+</Definitions>
+

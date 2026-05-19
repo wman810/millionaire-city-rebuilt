@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tuner game="safari">
+
+<!-- =================================== ACTIONS =================================== -->
+
+	<actions>
+		<action key="feed_animal" value="1"/>
+		<action key="love_animal" value="2"/>
+	</actions>
+
+<!-- =================================== NEST =================================== -->
+	<nest fix_cost="15">
+	</nest>
+
+<!-- =================================== EXPERIENCE LEVELS =================================== -->
+
+	<experience_levels>
+		<level number="0" limit="0"></level>
+		<level number="1" limit="10">
+			<rewards>
+				<reward type="money" count="1000"/>
+			</rewards>
+		</level>
+		<level number="2" limit="50"></level>
+		<level number="3" limit="200"></level>
+	</experience_levels>
+
+	<tutorial last_step="29">		
+		<rewards>
+			<reward type="xp" count="10"/>
+			<reward type="item" sku="nest" count="1"/>
+		</rewards>
+	</tutorial>
+	
+<!-- =================================== EGGS LIST =================================== -->
+
+	<eggs>
+		<egg sku="egg_A" creates="animal_A" name="Animal A Egg" required_xp="1">
+			<price currency="money" amount="5"/>
+			<price currency="flower" amount="0"/>
+			<price currency="leaf" amount="0"/>
+			<price currency="butterfly" amount="0"/>
+		</egg>
+		<egg sku="egg_B" creates="animal_B" name="Animal B Egg" required_xp="7">
+			<price currency="money" amount="10"/>
+			<price currency="flower" amount="0"/>
+			<price currency="leaf" amount="0"/>
+			<price currency="butterfly" amount="0"/>
+		</egg>
+		<egg sku="egg_C" creates="animal_C" name="Animal C Egg" required_xp="2">
+			<price currency="money" amount="15"/>
+			<price currency="flower" amount="10"/>
+			<price currency="leaf" amount="0"/>
+			<price currency="butterfly" amount="0"/>
+		</egg>
+		<egg sku="egg_D" creates="animal_D" name="Animal D Egg" required_xp="26">
+			<price currency="money" amount="30"/>
+			<price currency="flower" amount="0"/>
+			<price currency="leaf" amount="0"/>
+			<price currency="butterfly" amount="0"/>
+		</egg>
+		<egg sku="egg_E" creates="animal_E" name="Animal E Egg" required_xp="19">
+			<price currency="money" amount="20"/>
+			<price currency="flower" amount="0"/>
+			<price currency="leaf" amount="0"/>
+			<price currency="butterfly" amount="0"/>
+		</egg>
+		<egg sku="egg_F" creates="animal_F" name="Animal F Egg" required_xp="4">
+			<price currency="money" amount="35"/>
+			<price currency="flower" amount="0"/>
+			<price currency="leaf" amount="0"/>
+			<price currency="butterfly" amount="0"/>
+		</egg>
+		<egg sku="egg_G" creates="animal_G" name="Animal G Egg" required_xp="21">
+			<price currency="money" amount="100"/>
+			<price currency="flower" amount="0"/>
+			<price currency="leaf" amount="10"/>
+			<price currency="butterfly" amount="0"/>
+		</egg>
+		<egg sku="egg_H" creates="animal_H" name="Animal H Egg" required_xp="23">
+			<price currency="money" amount="40"/>
+			<price currency="flower" amount="0"/>
+			<price currency="leaf" amount="0"/>
+			<price currency="butterfly" amount="0"/>
+		</egg>
+		<egg sku="egg_I" creates="animal_I" name="Animal I Egg" required_xp="14">
+			<price currency="money" amount="50"/>
+			<price currency="flower" amount="0"/>
+			<price currency="leaf" amount="0"/>
+			<price currency="butterfly" amount="0"/>
+		</egg>
+		<egg sku="egg_J" creates="animal_J" name="Animal J Egg" required_xp="31">
+			<price currency="money" amount="225"/>
+			<price currency="flower" amount="0"/>
+			<price currency="leaf" amount="0"/>
+			<price currency="butterfly" amount="0"/>
+		</egg>
+		<egg sku="egg_K" creates="animal_K" name="Animal K Egg" required_xp="2">
+			<price currency="money" amount="55"/>
+			<price currency="flower" amount="0"/>
+			<price currency="leaf" amount="0"/>
+			<price currency="butterfly" amount="0"/>
+		</egg>
+		<egg sku="egg_L" creates="animal_L" name="Animal L Egg" required_xp="29">
+			<price currency="money" amount="180"/>
+			<price currency="flower" amount="0"/>
+			<price currency="leaf" amount="0"/>
+			<price currency="butterfly" amount="5"/>
+		</egg>
+		<egg sku="egg_M" creates="animal_M" name="Animal M Egg" required_xp="28">
+			<price currency="money" amount="50"/>
+			<price currency="flower" amount="0"/>
+			<price currency="leaf" amount="0"/>
+			<price currency="butterfly" amount="0"/>
+		</egg>
+		<egg sku="egg_N" creates="animal_N" name="Animal N Egg" required_xp="2">
+			<price currency="money" amount="90"/>
+			<price currency="flower" amount="0"/>
+			<price currency="leaf" amount="0"/>
+			<price currency="butterfly" amount="0"/>
+		</egg>
+		<egg sku="egg_O" creates="animal_O" name="O Egg" required_xp="33">
+			<price currency="money" amount="350"/>
+			<price currency="flower" amount="0"/>
+			<price currency="leaf" amount="0"/>
+			<price currency="butterfly" amount="0"/>
+		</egg>
+		<egg sku="egg_tiger" creates="animal_tiger" name="Tiger Egg" required_xp="33">
+			<price currency="money" amount="350"/>
+			<price currency="flower" amount="0"/>
+			<price currency="leaf" amount="0"/>
+			<price currency="butterfly" amount="0"/>
+		</egg>
+		<egg sku="egg_P" creates="animal_P" name="Animal P Egg" required_xp="9">
+			<price currency="money" amount="115"/>
+			<price currency="flower" amount="0"/>
+			<price currency="leaf" amount="0"/>
+			<price currency="butterfly" amount="0"/>
+		</egg>
+		<egg sku="egg_Q" creates="animal_Q" name="Animal Q Egg" required_xp="24">
+			<price currency="money" amount="100"/>
+			<price currency="flower" amount="0"/>
+			<price currency="leaf" amount="50"/>
+			<price currency="butterfly" amount="0"/>
+		</egg>
+		<egg sku="egg_R" creates="animal_R" name="Animal R Egg" required_xp="16">
+			<price currency="money" amount="600"/>
+			<price currency="flower" amount="0"/>
+			<price currency="leaf" amount="0"/>
+			<price currency="butterfly" amount="0"/>
+		</egg>
+		<egg sku="egg_S" creates="animal_S" name="Animal S Egg" required_xp="12">
+			<price currency="money" amount="95"/>
+			<price currency="flower" amount="0"/>
+			<price currency="leaf" amount="0"/>
+			<price currency="butterfly" amount="0"/>
+		</egg>
+		<egg sku="egg_lion" creates="animal_lion" name="Lion Egg" required_xp="34">
+			<price currency="money" amount="1000"/>
+			<price currency="flower" amount="0"/>
+			<price currency="leaf" amount="0"/>
+			<price currency="butterfly" amount="15"/>
+		</egg>
+	</eggs>
+	
+<!-- =================================== ANIMALS LIST =================================== -->
+	<animals>
+		<!-- ANIMAL 01: A -->
+		<animal sku="animal_A" name="Animal A"  
+			slow_growth_speed="500" 
+			energy_duration="60"
+            energy_duration_buffer="15"		
+			happiness_duration="120"
+			feed_xp="3" love_xp="1" >
+			<states>
+				<state id="0" age="50"/>
+				<state id="1" age="150"/>
+				<state id="2" age="100"/>
+			</states>
+			<rewards>
+				<reward type="xp" count="8"/>
+				<reward type="money" count="35"/>
+			</rewards>
+		</animal>
+		<!-- ANIMAL 02: B -->
+		<animal sku="animal_B" name="Animal B"  
+			slow_growth_speed="500" 
+			energy_duration="240"
+            energy_duration_buffer="60"		
+			happiness_duration="180"
+			feed_xp="3" love_xp="1" >
+			<states>
+				<state id="0" age="150"/>
+				<state id="1" age="450"/>
+				<state id="2" age="300"/>
+			</states>
+			<rewards>
+				<reward type="xp" count="20"/>
+				<reward type="money" count="55"/>
+			</rewards>
+		</animal>
+		<!-- ANIMAL 03: C -->
+		<animal sku="animal_C" name="Animal C"  
+			slow_growth_speed="500" 
+			energy_duration="600"
+            energy_duration_buffer="150"		
+			happiness_duration="180"
+			feed_xp="3" love_xp="1" >
+			<states>
+				<state id="0" age="300"/>
+				<state id="1" age="900"/>
+				<state id="2" age="600"/>
+			</states>
+			<rewards>
+				<reward type="xp" count="35"/>
+				<reward type="money" count="60"/>
+			</rewards>
+		</animal>
+		<!-- ANIMAL 04: D -->
+		<animal sku="animal_D" name="Animal D"  
+			slow_growth_speed="500" 
+			energy_duration="1200"
+            energy_duration_buffer="300"		
+			happiness_duration="13500"
+			feed_xp="3" love_xp="1" >
+			<states>
+				<state id="0" age="600"/>
+				<state id="1" age="1800"/>
+				<state id="2" age="1200"/>
+			</states>
+			<rewards>
+				<reward type="xp" count="35"/>
+				<reward type="money" count="62"/>
+			</rewards>
+		</animal>
+		<!-- ANIMAL 05: E -->
+		<animal sku="animal_E" name="Animal E"  
+			slow_growth_speed="500" 
+			energy_duration="3600"
+            energy_duration_buffer="900"		
+			happiness_duration="1800"
+			feed_xp="3" love_xp="1" >
+			<states>
+				<state id="0" age="1200"/>
+				<state id="1" age="3600"/>
+				<state id="2" age="2400"/>
+			</states>
+			<rewards>
+				<reward type="xp" count="55"/>
+				<reward type="money" count="65"/>
+			</rewards>
+		</animal>
+		<!-- ANIMAL 06: F -->
+		<animal sku="animal_F" name="Animal F"  
+			slow_growth_speed="500" 
+			energy_duration="5400"
+            energy_duration_buffer="1350"		
+			happiness_duration="3600"
+			feed_xp="3" love_xp="1" >
+			<states>
+				<state id="0" age="2400"/>
+				<state id="1" age="7200"/>
+				<state id="2" age="4800"/>
+			</states>
+			<rewards>
+				<reward type="xp" count="85"/>
+				<reward type="money" count="104"/>
+			</rewards>
+		</animal>
+		<!-- ANIMAL 07: G -->
+		<animal sku="animal_G" name="Animal G"  
+			slow_growth_speed="500" 
+			energy_duration="10800"
+            energy_duration_buffer="2700"		
+			happiness_duration="3600"
+			feed_xp="3" love_xp="1" >
+			<states>
+				<state id="0" age="2400"/>
+				<state id="1" age="7200"/>
+				<state id="2" age="4800"/>
+			</states>
+			<rewards>
+				<reward type="xp" count="88"/>
+				<reward type="money" count="215"/>
+			</rewards>
+		</animal>
+		<!-- ANIMAL 08: H -->
+		<animal sku="animal_H" name="Animal H"  
+			slow_growth_speed="500" 
+			energy_duration="18000"
+            energy_duration_buffer="4500"		
+			happiness_duration="5400"
+			feed_xp="3" love_xp="1" >
+			<states>
+				<state id="0" age="3600"/>
+				<state id="1" age="10800"/>
+				<state id="2" age="7200"/>
+			</states>
+			<rewards>
+				<reward type="xp" count="120"/>
+				<reward type="money" count="132"/>
+			</rewards>
+		</animal>
+		<!-- ANIMAL 09: I -->
+		<animal sku="animal_I" name="Animal I"  
+			slow_growth_speed="500" 
+			energy_duration="14400"
+            energy_duration_buffer="3600"		
+			happiness_duration="7200"
+			feed_xp="3" love_xp="1" >
+			<states>
+				<state id="0" age="4800"/>
+				<state id="1" age="14400"/>
+				<state id="2" age="9600"/>
+			</states>
+			<rewards>
+				<reward type="xp" count="150"/>
+				<reward type="money" count="145"/>
+			</rewards>
+		</animal>
+		<!-- ANIMAL 10: J -->
+		<animal sku="animal_J" name="Animal J"  
+			slow_growth_speed="500" 
+			energy_duration="21600"
+            energy_duration_buffer="5400"		
+			happiness_duration="7200"
+			feed_xp="3" love_xp="1" >
+			<states>
+				<state id="0" age="4800"/>
+				<state id="1" age="14400"/>
+				<state id="2" age="9600"/>
+			</states>
+			<rewards>
+				<reward type="xp" count="160"/>
+				<reward type="money" count="430"/>
+			</rewards>
+		</animal>
+		<!-- ANIMAL 11: K -->
+		<animal sku="animal_K" name="Animal K"  
+			slow_growth_speed="500" 
+			energy_duration="21600"
+            energy_duration_buffer="5400"		
+			happiness_duration="10800"
+			feed_xp="3" love_xp="1" >
+			<states>
+				<state id="0" age="7200"/>
+				<state id="1" age="21600"/>
+				<state id="2" age="14400"/>
+			</states>
+			<rewards>
+				<reward type="xp" count="200"/>
+				<reward type="money" count="150"/>
+			</rewards>
+		</animal>
+		<!-- ANIMAL 12: L -->
+		<animal sku="animal_L" name="Animal L"  
+			slow_growth_speed="500" 
+			energy_duration="36000"
+            energy_duration_buffer="9000"		
+			happiness_duration="10800"
+			feed_xp="3" love_xp="1" >
+			<states>
+				<state id="0" age="7200"/>
+				<state id="1" age="21600"/>
+				<state id="2" age="14400"/>
+			</states>
+			<rewards>
+				<reward type="xp" count="230"/>
+				<reward type="money" count="470"/>
+			</rewards>
+		</animal>
+		<!-- ANIMAL 13: M -->
+		<animal sku="animal_M" name="Animal M"  
+			slow_growth_speed="500" 
+			energy_duration="43200"
+            energy_duration_buffer="10800"		
+			happiness_duration="16200"
+			feed_xp="3" love_xp="1" >
+			<states>
+				<state id="0" age="10800"/>
+				<state id="1" age="32400"/>
+				<state id="2" age="21600"/>
+			</states>
+			<rewards>
+				<reward type="xp" count="290"/>
+				<reward type="money" count="180"/>
+			</rewards>
+		</animal>
+		<!-- ANIMAL 14: N -->
+		<animal sku="animal_N" name="Animal N"  
+			slow_growth_speed="500" 
+			energy_duration="43200"
+            energy_duration_buffer="10800"		
+			happiness_duration="21600"
+			feed_xp="3" love_xp="1" >
+			<states>
+				<state id="0" age="14400"/>
+				<state id="1" age="43200"/>
+				<state id="2" age="28800"/>
+			</states>
+			<rewards>
+				<reward type="xp" count="350"/>
+				<reward type="money" count="230"/>
+			</rewards>
+		</animal>
+		<!-- ANIMAL 15: O-->
+		<animal sku="animal_O" name="O"  
+			slow_growth_speed="500" 
+			energy_duration="57600"
+            energy_duration_buffer="14400"		
+			happiness_duration="21600"
+			feed_xp="3" love_xp="1" >
+			<states>
+				<state id="0" age="14400"/>
+				<state id="1" age="43200"/>
+				<state id="2" age="28800"/>
+			</states>
+			<rewards>
+				<reward type="xp" count="380"/>
+				<reward type="money" count="900"/>
+			</rewards>
+		</animal>
+		<!-- ANIMAL 15: Tiger -->
+		<animal sku="animal_tiger" name="Tiger"  
+			slow_growth_speed="500" 
+			energy_duration="20"
+            energy_duration_buffer="10"		
+			happiness_duration="40"
+			feed_xp="3" love_xp="1" >
+			<states>
+				<state id="0" age="10"/>
+				<state id="1" age="20"/>
+				<state id="2" age="20"/>
+			</states>
+			<rewards>
+				<reward type="xp" count="380"/>
+				<reward type="money" count="900"/>
+			</rewards>
+		</animal>
+		<!-- ANIMAL 16: P -->
+		<animal sku="animal_P" name="Animal P"  
+			slow_growth_speed="500" 
+			energy_duration="86400"
+            energy_duration_buffer="21600"		
+			happiness_duration="43200"
+			feed_xp="3" love_xp="1" >
+			<states>
+				<state id="0" age="28800"/>
+				<state id="1" age="86400"/>
+				<state id="2" age="57600"/>
+			</states>
+			<rewards>
+				<reward type="xp" count="500"/>
+				<reward type="money" count="380"/>
+			</rewards>
+		</animal>
+		<!-- ANIMAL 17: Q -->
+		<animal sku="animal_Q" name="Animal Q"  
+			slow_growth_speed="500" 
+			energy_duration="86400"
+            energy_duration_buffer="21600"		
+			happiness_duration="43200"
+			feed_xp="3" love_xp="1" >
+			<states>
+				<state id="0" age="28800"/>
+				<state id="1" age="86400"/>
+				<state id="2" age="57600"/>
+			</states>
+			<rewards>
+				<reward type="xp" count="550"/>
+				<reward type="money" count="950"/>
+			</rewards>
+		</animal>
+		<!-- ANIMAL 18: R -->
+		<animal sku="animal_R" name="Animal R"  
+			slow_growth_speed="500" 
+			energy_duration="129600"
+            energy_duration_buffer="32400"		
+			happiness_duration="43200"
+			feed_xp="3" love_xp="1" >
+			<states>
+				<state id="0" age="28800"/>
+				<state id="1" age="86400"/>
+				<state id="2" age="57600"/>
+			</states>
+			<rewards>
+				<reward type="xp" count="600"/>
+				<reward type="money" count="1650"/>
+			</rewards>
+		</animal>
+		<!-- ANIMAL 19: S -->
+		<animal sku="animal_S" name="Animal S"  
+			slow_growth_speed="500" 
+			energy_duration="172800"
+            energy_duration_buffer="43200"		
+			happiness_duration="64800"
+			feed_xp="5" love_xp="1" >
+			<states>
+				<state id="0" age="43200"/>
+				<state id="1" age="129600"/>
+				<state id="2" age="86400"/>
+			</states>
+			<rewards>
+				<reward type="xp" count="650"/>
+				<reward type="money" count="450"/>
+			</rewards>
+		</animal>
+		<!-- ANIMAL 20: LION -->
+		<animal sku="animal_lion" name="Lion" 
+			slow_growth_speed="500" 
+			energy_duration="86400"
+            energy_duration_buffer="21600"		
+			happiness_duration="64800"
+			feed_xp="5" love_xp="1" >
+			<states>
+				<state id="0" age="43200"/>
+				<state id="1" age="129600"/>
+				<state id="2" age="86400"/>
+			</states>
+			<rewards>
+				<reward type="xp" count="800"/>
+				<reward type="money" count="4000"/>
+			</rewards>
+		</animal>
+	</animals>
+	
+<!-- =================================== QUESTS LIST =================================== -->
+
+	<quests>
+		<quest id="feed_animals" name="Feed Animals" required_xp="10" req_quest="1">
+			<objectives>
+				<objective counter_key="feed_tiger" target_value="10" />
+				<objective counter_key="feed_elephant" target_value="5" />
+			</objectives>
+			<rewards>
+				<reward type="item" sku="egg_tiger" count="5"/>
+				<reward type="money" count="1000"/>
+			</rewards>			
+		</quest>
+	</quests>
+
+</tuner>

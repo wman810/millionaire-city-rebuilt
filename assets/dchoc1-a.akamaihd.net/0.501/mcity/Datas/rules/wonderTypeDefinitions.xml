@@ -1,0 +1,5 @@
+<Definitions>	 	    			    	
+	<Definition sku="npcIncome" tidsCount="1"/>
+	<Definition sku="incomeMultiplier" tidsCount="1"/>
+	<Definition sku="influence" tidsCount="2"/>
+</Definitions>

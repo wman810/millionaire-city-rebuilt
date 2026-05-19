@@ -1,0 +1,14 @@
+<services>
+  <Definition sku="move" tid="TID_TOOL_MOVE_FBC" timeDuration="24" priceCoins="0" priceCash="10" priceFBC="20" offerPriceCash="9" offerPriceFBC="18" timeExtra="10" timeExpired="0" timeExpiredBase="0" timeExpiredMax="0" />
+  <Definition sku="moneyCollector" tid="TID_TOOL_RENT_COLLECTOR_FBC" timeDuration="1440" priceCoins="0" priceCash="30" priceFBC="60" offerPriceCash="28" offerPriceFBC="56" timeExtra="0" timeExpired="0" timeExpiredBase="0" timeExpiredMax="0" />
+  <Definition sku="moneyCollector" tid="TID_TOOL_RENT_COLLECTOR_FBC" timeDuration="720" priceCoins="0" priceCash="25" priceFBC="50" offerPriceCash="23" offerPriceFBC="46" timeExtra="0" timeExpired="0" timeExpiredBase="0" timeExpiredMax="0" />
+  <Definition sku="moneyCollector" tid="TID_TOOL_RENT_COLLECTOR_FBC" timeDuration="360" priceCoins="0" priceCash="15" priceFBC="30" offerPriceCash="13" offerPriceFBC="26" timeExtra="0" timeExpired="0" timeExpiredBase="0" timeExpiredMax="0" />
+  <Definition sku="moneyCollector" tid="TID_TOOL_RENT_COLLECTOR_FBC" timeDuration="48" priceCoins="0" priceCash="2" priceFBC="4" offerPriceCash="1" offerPriceFBC="2" timeExtra="0" timeExpired="0" timeExpiredBase="0" timeExpiredMax="0" />
+  <Definition sku="moneyCollector" tid="TID_TOOL_RENT_COLLECTOR_FBC" timeDuration="0.1" priceCoins="0" priceCash="0" priceFBC="0" offerPriceCash="0" offerPriceFBC="0" timeExtra="0" timeExpired="48" timeExpiredBase="48" timeExpiredMax="0" />
+  <Definition sku="contractSignator" tid="TID_POPUP_TITLE_CONTRACTOR1" timeDuration="1440" priceCoins="0" priceCash="90" priceFBC="180" offerPriceCash="85" offerPriceFBC="170" timeExtra="10" timeExpired="0" timeExpiredBase="0" timeExpiredMax="0" />
+  <Definition sku="contractSignator" tid="TID_POPUP_TITLE_CONTRACTOR1" timeDuration="720" priceCoins="0" priceCash="75" priceFBC="150" offerPriceCash="73" offerPriceFBC="146" timeExtra="10" timeExpired="0" timeExpiredBase="0" timeExpiredMax="0" />
+  <Definition sku="contractSignator" tid="TID_POPUP_TITLE_CONTRACTOR1" timeDuration="360" priceCoins="0" priceCash="45" priceFBC="90" offerPriceCash="43" offerPriceFBC="86" timeExtra="10" timeExpired="0" timeExpiredBase="0" timeExpiredMax="0" />
+  <Definition sku="contractSignator" tid="TID_POPUP_TITLE_CONTRACTOR1" timeDuration="48" priceCoins="0" priceCash="6" priceFBC="12" offerPriceCash="5" offerPriceFBC="10" timeExtra="10" timeExpired="0" timeExpiredBase="0" timeExpiredMax="0" />
+  <Definition sku="contractSignator" tid="TID_POPUP_TITLE_CONTRACTOR1" timeDuration="0.1" priceCoins="0" priceCash="0" priceFBC="0" offerPriceCash="0" offerPriceFBC="0" timeExtra="10" timeExpired="48" timeExpiredBase="48" timeExpiredMax="0" />
+</services>
+

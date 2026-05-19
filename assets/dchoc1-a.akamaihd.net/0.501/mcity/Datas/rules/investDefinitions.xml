@@ -1,0 +1,5 @@
+<InvestDefinitions>
+  <Definition time="20" target="4000000" inversion="0" rewardDCCoins="100000" rewardDCCash="0" />
+  <Definition time="20" target="4000000" inversion="0" rewardDCCoins="60000" rewardDCCash="0" showInABTest="16" />
+</InvestDefinitions>
+

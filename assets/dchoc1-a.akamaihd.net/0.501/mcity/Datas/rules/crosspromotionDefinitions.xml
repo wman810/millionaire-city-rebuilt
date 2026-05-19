@@ -1,0 +1,11 @@
+<crosspromotionDefinitions>
+  <Definition sku="1" image="logomma" url="http://apps.facebook.com/mmaprofighter/?src=xm_ingame_mc&amp;ref_gid=7" />
+  <Definition sku="16" image="logohollywood" url="http://apps.facebook.com/hollywoodcity/?src=xm_ingame_mc&amp;ref_gid=7" />
+  <Definition sku="20" image="logovegas" url="http://apps.facebook.com/vegascity/?src=xm_ingame_mc&amp;ref_gid=7" />
+  <Definition sku="19" image="logoisland" url="http://apps.facebook.com/islandgod/?src=xm_ingame_mc&amp;ref_gid=7" />
+  <Definition sku="12" image="logoepic" url="http://apps.facebook.com/epicfighters/?src=xm_ingame_mc&amp;ref_gid=7" />
+  <Definition sku="21" image="logozombie" url="http://apps.facebook.com/zombielane/?src=xm_ingame_mc&amp;ref_gid=7" tidTitle="TID_UNLOCK_ZL_TITLE" tidBody="TID_UNLOCK_ZL_BODY" />
+  <Definition sku="33" image="logoarmy" url="http://apps.facebook.com/armyattack/?src=xm_ingame_mc&amp;ref_gid=7" tidTitle="TID_UNLOCK_AA_TITLE" tidBody="TID_UNLOCK_AA_BODY" />
+  <Definition sku="37" image="logogalaxy" url="http://apps.facebook.com/galaxylife/?src=xm_ingame_mc&amp;ref_gid=7" tidTitle="TID_UNLOCK_GL_TITLE" tidBody="TID_UNLOCK_GL_BODY" />
+</crosspromotionDefinitions>
+

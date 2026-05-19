@@ -1,0 +1,4 @@
+<Definitions>
+  <Definition sku="crew_01" jobs="TID_CREW_01_JOB_01,TID_CREW_01_JOB_02,TID_CREW_01_JOB_03" workerTID="TID_CREW_01_WORKER" FBCprice="5" goldPrice="2" />
+</Definitions>
+

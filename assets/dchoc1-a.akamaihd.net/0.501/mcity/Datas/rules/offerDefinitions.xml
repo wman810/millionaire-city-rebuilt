@@ -1,0 +1,9 @@
+<Definitions>
+  <Definition sku="discount50percent" offerType="discount" amount="0.5" />
+  <Definition sku="discount40percent" offerType="discount" amount="0.4" />
+  <Definition sku="discount30percent" offerType="discount" amount="0.3" />
+  <Definition sku="discount20percent" offerType="discount" amount="0.2" />
+  <Definition sku="discount10percent" offerType="discount" amount="0.1" />
+  <Definition sku="2per1" offerType="bundle" amount="1" />
+</Definitions>
+

@@ -1,0 +1,20 @@
+<Definitions>
+  <Definition sku="levelUp" tid="TID_NEWSFEED_REWARD_PRE_POPUP_LEVEL_UP" rewardType="Exp" rewardAmount="500" expiredTime="7" />
+  <Definition sku="missionReward" tid="TID_NEWSFEED_REWARD_PRE_POPUP_MISSION_REWARD" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+  <Definition sku="askForHelpAsk" expiredTime="7" />
+  <Definition sku="askForHelpHelped" tid="TID_NEWSFEED_REWARD_PRE_POPUP_ASK_FOR_HELP_HELPED" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+  <Definition sku="askForHelpThanks" tid="TID_NEWSFEED_REWARD_PRE_POPUP_ASK_FOR_HELP_THANKS" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+  <Definition sku="becomePartner" tid="TID_NEWSFEED_REWARD_PRE_POPUP_BECOME_PARTNER" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+  <Definition sku="allUpgradesDone" tid="TID_NEWSFEED_REWARD_PRE_POPUP_ALL_UPGRADES_DONE" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+  <Definition sku="endTutorial" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+  <Definition sku="newExpansion" tid="TID_NEWSFEED_REWARD_PRE_POPUP_NEW_EXPANSION" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+  <Definition sku="contractor1" tid="TID_NEWSFEED_REWARD_PRE_POPUP_CONTRACTOR1" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+  <Definition sku="contractor2" tid="TID_NEWSFEED_REWARD_PRE_POPUP_CONTRACTOR2" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+  <Definition sku="contractor3" tid="TID_NEWSFEED_REWARD_PRE_POPUP_CONTRACTOR3" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+  <Definition sku="collectionCompleted" tid="TID_NEWSFEED_REWARD_PRE_POPUP_ALL_UPGRADES_DONE" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+  <Definition sku="collectibleGiftThanks" tid="TID_NEWSFEED_REWARD_PRE_POPUP_ALL_UPGRADES_DONE" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+  <Definition sku="goldBought" tid="TID_NEWSFEED_REWARD_PRE_POPUP_ALL_UPGRADES_DONE" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+  <Definition sku="askForCash" rewardType="DCCoins" rewardAmount="2000" expiredTime="1" />
+  <Definition sku="askForCashThanks" tid="TID_NEWSFEED_REWARD_PRE_POPUP_ALL_UPGRADES_DONE" rewardType="DCCoins" rewardAmount="2000" expiredTime="1" />
+</Definitions>
+

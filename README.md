@@ -26,7 +26,7 @@ The Electron app itself is the Flash runtime, so there is no external helper-bro
 
 ## Asset Layout
 
-The recovered game cache and decompiled SWF reference code are required locally but are not tracked with the repository for copyright reasons. Local development expects these folders to exist if you have your own archived copy:
+The recovered game cache and decompiled SWF reference code are tracked with the repository:
 
 - `assets/`: recovered game cache served by the local server
 - `decompiled/`: decompiled ActionScript reference used by `npm run prepare-client` when patching the private SWF copy
@@ -61,9 +61,9 @@ cmd /c npm run prepare-client
 cmd /c npm run dev:desktop
 ```
 
-## Source-Only Checks
+## Checks
 
-The public source tree can be built and partially tested without the recovered game cache:
+The project can be built and tested after dependencies are installed:
 
 ```powershell
 cmd /c npm install
@@ -71,7 +71,7 @@ cmd /c npm run build
 cmd /c npm run test
 ```
 
-Tests that specifically verify archived asset behavior are skipped when `assets/` is not present. Running the game, preparing the patched private SWF, and packaging a playable local build still require your own local `assets/` and `decompiled/` folders.
+The generated private SWF copy is still recreated locally under `generated/client/` by `npm run prepare-client`.
 
 ## Dependency Warnings
 
