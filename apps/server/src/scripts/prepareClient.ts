@@ -12,7 +12,7 @@ const ffdecJarPath = path.join(ffdecDir, "ffdec.jar");
 const ffdecZipPath = path.join(ffdecDir, `ffdec_${FFDEC_VERSION}.zip`);
 const popupGoldSourcePath = path.join(
   config.workspaceRoot,
-  "Decompiled AS Code from Dollars.swf",
+  "decompiled",
   "scripts",
   "com",
   "dchoc",
@@ -23,7 +23,7 @@ const popupGoldSourcePath = path.join(
 const popupGoldPatchedSourcePath = path.join(clientDir, "patches", "PopupGold.patched.as");
 const customizerManagerSourcePath = path.join(
   config.workspaceRoot,
-  "Decompiled AS Code from Dollars.swf",
+  "decompiled",
   "scripts",
   "com",
   "dchoc",
@@ -35,7 +35,7 @@ const customizerManagerSourcePath = path.join(
 const customizerManagerPatchedSourcePath = path.join(clientDir, "patches", "CustomizerManager.patched.as");
 const friendObjectSourcePath = path.join(
   config.workspaceRoot,
-  "Decompiled AS Code from Dollars.swf",
+  "decompiled",
   "scripts",
   "com",
   "dchoc",

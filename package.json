@@ -49,7 +49,7 @@
       "apps/server/assets/**/*",
       "packages/shared/package.json",
       "packages/shared/dist/**/*",
-      "Millionaire City/**/*",
+      "assets/**/*",
       "generated/client/**/*",
       "generated/runtime/**/*"
     ],

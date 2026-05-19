@@ -2,7 +2,7 @@ import path from "path";
 import { loadCashToCoins, loadGoldPackageRewards } from "../rules.js";
 import type { MutableNode } from "./universe.js";
 
-const RULES_ROOT = path.resolve(__dirname, "../../../../Millionaire City/dchoc1-a.akamaihd.net/0.501/mcity/Datas/rules");
+const RULES_ROOT = path.resolve(__dirname, "../../../../assets/dchoc1-a.akamaihd.net/0.501/mcity/Datas/rules");
 const SETTINGS_PATH = path.join(RULES_ROOT, "settings.xml");
 const GOLD_PACKAGE_REWARDS = loadGoldPackageRewards(path.join(RULES_ROOT, "fbcredits.xml"));
 const CASH_TO_COINS = loadCashToCoins(SETTINGS_PATH);

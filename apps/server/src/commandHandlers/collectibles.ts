@@ -17,7 +17,7 @@ type CollectiblesState = {
   pendingBySid: Map<string, string>;
 };
 
-const RULES_ROOT = path.resolve(__dirname, "../../../../Millionaire City/dchoc1-a.akamaihd.net/0.501/mcity/Datas/rules");
+const RULES_ROOT = path.resolve(__dirname, "../../../../assets/dchoc1-a.akamaihd.net/0.501/mcity/Datas/rules");
 const SETTINGS_PATH = path.join(RULES_ROOT, "settings.xml");
 const XP_TABLE_PATH = path.join(RULES_ROOT, "XPTable.xml");
 const ITEM_CONTRACT_GROUP_BY_SKU = loadItemContractGroupMap(path.join(RULES_ROOT, "itemDefinitions.xml"));

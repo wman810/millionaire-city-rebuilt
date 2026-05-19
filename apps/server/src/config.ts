@@ -20,7 +20,7 @@ export interface ServerConfig {
 }
 
 export function getServerConfig(): ServerConfig {
-  const archiveRoot = path.join(workspaceRoot, "Millionaire City");
+  const archiveRoot = path.join(workspaceRoot, "assets");
   const assetRoot = path.join(archiveRoot, "dchoc1-a.akamaihd.net", "0.501", "mcity");
   const dataRoot = path.join(assetRoot, "Datas");
 
