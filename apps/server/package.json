@@ -5,10 +5,15 @@
   "main": "./dist/main.js",
   "types": "./dist/main.d.ts",
   "scripts": {
+    "prebuild": "node ../../scripts/checkDependencies.cjs tsc",
     "build": "cmd /c npm run build -w @mcity/shared && tsc -p tsconfig.json",
+    "predev": "node ../../scripts/checkDependencies.cjs tsc tsx",
     "dev": "cmd /c npm run build -w @mcity/shared && tsx watch src/main.ts",
+    "preprepare-client": "node ../../scripts/checkDependencies.cjs tsx",
     "prepare-client": "tsx src/scripts/prepareClient.ts",
+    "prereport:missing-assets": "node ../../scripts/checkDependencies.cjs tsx",
     "report:missing-assets": "tsx src/scripts/reportMissingAssets.ts",
+    "pretest": "node ../../scripts/checkDependencies.cjs tsc vitest",
     "test": "cmd /c npm run build -w @mcity/shared && vitest run"
   },
   "dependencies": {

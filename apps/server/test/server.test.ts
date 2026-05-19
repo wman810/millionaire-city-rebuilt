@@ -15,6 +15,27 @@ import { createStarterDecorationItems } from "../src/saveDefaults/starterDecorat
 const activeApps: Array<ReturnType<typeof createServerApp>> = [];
 const HOUSE_COLLECTIBLE_DROP_DIVISOR = 8;
 const EXPECTED_STARTER_DECORATION_SKUS = createStarterDecorationItems("1").map((entry) => String(entry.sku));
+const archivedAssetTest = hasArchivedAssetFiles() ? test : test.skip;
+
+function hasArchivedAssetFiles(): boolean {
+  const config = getServerConfig();
+  const requiredFiles = [
+    path.join(config.assetRoot, "Datas", "rules", "itemDefinitions.xml"),
+    path.join(config.assetRoot, "Datas", "rules", "commerceDefinitions.xml"),
+    path.join(config.assetRoot, "Datas", "rules", "decorationDefinitions.xml"),
+    path.join(config.assetRoot, "Datas", "rules", "wonderDefinitions.xml"),
+    path.join(config.assetRoot, "Datas", "rules", "missionDefinitions.xml"),
+    path.join(config.assetRoot, "Datas", "rules", "XPTable.xml"),
+    path.join(config.assetRoot, "Datas", "rules", "fbcredits.xml"),
+    path.join(config.assetRoot, "Datas", "rules", "collectiblesDefinitions.xml"),
+    path.join(config.assetRoot, "Datas", "rules", "collectiblesGroupsDefinitions.xml"),
+    path.join(config.assetRoot, "Datas", "rules", "collectiblesRewardDefinitions.xml"),
+    path.join(config.assetRoot, "Datas", "feed", "new_feed_upgrades_0.jpg"),
+    path.join(config.assetRoot, "Datas", "Assets", "items", "CommerceTypes", "icons", "commerce_bank.png")
+  ];
+
+  return requiredFiles.every((filePath) => fs.existsSync(filePath));
+}
 
 function stableTestHash(value: string): number {
   let hash = 17;
@@ -3525,7 +3546,7 @@ describe("Millionaire City server", () => {
     }
   });
 
-  test("settles stale early bonus missions from saved poll progress on restart", async () => {
+  archivedAssetTest("settles stale early bonus missions from saved poll progress on restart", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-bonus-missions-"));
     const dbPath = path.join(tempDir, "save.sqlite");
 
@@ -3824,7 +3845,7 @@ describe("Millionaire City server", () => {
     }
   });
 
-  test("removes impossible poll-driven reward state on restart and respects the level derived from xp", async () => {
+  archivedAssetTest("removes impossible poll-driven reward state on restart and respects the level derived from xp", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-mission-sanitize-invalid-"));
     const dbPath = path.join(tempDir, "save.sqlite");
 
@@ -3939,7 +3960,7 @@ describe("Millionaire City server", () => {
     }
   });
 
-  test("demotes saved poll-driven reached missions back to up on restart", async () => {
+  archivedAssetTest("demotes saved poll-driven reached missions back to up on restart", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-mission-demote-reached-"));
     const dbPath = path.join(tempDir, "save.sqlite");
 
@@ -4052,7 +4073,7 @@ describe("Millionaire City server", () => {
     }
   });
 
-  test("serves placeholder feed art for missing mission images", async () => {
+  archivedAssetTest("serves placeholder feed art for missing mission images", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-feed-fallback-"));
     const config = {
       ...getServerConfig(),
@@ -4109,7 +4130,7 @@ describe("Millionaire City server", () => {
     }
   });
 
-  test("serves only archived item definitions and makes archived limited-time items permanent", async () => {
+  archivedAssetTest("serves only archived item definitions and makes archived limited-time items permanent", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-limited-item-rules-"));
     const config = {
       ...getServerConfig(),
@@ -4150,7 +4171,7 @@ describe("Millionaire City server", () => {
     expect(archivedLimEdWonder).not.toContain("unitsAmount=");
   });
 
-  test("serves the bank commerce icon for missing commerce icons", async () => {
+  archivedAssetTest("serves the bank commerce icon for missing commerce icons", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-commerce-icon-fallback-"));
     const config = {
       ...getServerConfig(),
@@ -4345,7 +4366,7 @@ describe("Millionaire City server", () => {
     expect(paymentCommands[0]._dat.awardedGold).toBe("0");
   });
 
-  test("persists purchased gold across restart", async () => {
+  archivedAssetTest("persists purchased gold across restart", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-gold-persist-"));
     const dbPath = path.join(tempDir, "save.sqlite");
 
@@ -4603,7 +4624,7 @@ describe("Millionaire City server", () => {
     expect(html).toContain("messageResponseFacebookCredits:1");
   });
 
-  test("awards a pending house collectible when an eligible level-6 house becomes rent-ready", async () => {
+  archivedAssetTest("awards a pending house collectible when an eligible level-6 house becomes rent-ready", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-house-collectible-award-"));
     const config = {
       ...getServerConfig(),
@@ -5058,7 +5079,7 @@ describe("Millionaire City server", () => {
     expect(pendingEntry?.tupla ?? "").not.toContain("3021:gift_025");
   });
 
-  test("persists collectible plane rewards to the profile plane", async () => {
+  archivedAssetTest("persists collectible plane rewards to the profile plane", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-collectible-plane-reward-"));
     const config = {
       ...getServerConfig(),

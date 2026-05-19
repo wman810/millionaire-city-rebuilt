@@ -41,6 +41,8 @@ Generated client files, SQLite saves, downloaded tools, and local backups are no
 
 ## Quick Start
 
+GitHub source downloads do not include `node_modules/`. Run the install step before any `npm run ...` command.
+
 1. Install dependencies:
 
 ```powershell
@@ -58,6 +60,18 @@ cmd /c npm run prepare-client
 ```powershell
 cmd /c npm run dev:desktop
 ```
+
+## Source-Only Checks
+
+The public source tree can be built and partially tested without the recovered game cache:
+
+```powershell
+cmd /c npm install
+cmd /c npm run build
+cmd /c npm run test
+```
+
+Tests that specifically verify archived asset behavior are skipped when `assets/` is not present. Running the game, preparing the patched private SWF, and packaging a playable local build still require your own local `assets/` and `decompiled/` folders.
 
 ## Notes
 

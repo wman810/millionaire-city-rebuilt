@@ -11,6 +11,7 @@
     }
   },
   "scripts": {
+    "prebuild": "node ../../scripts/checkDependencies.cjs tsc",
     "build": "tsc -p tsconfig.json"
   }
 }

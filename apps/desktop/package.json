@@ -4,8 +4,11 @@
   "private": true,
   "main": "./dist/main.js",
   "scripts": {
+    "prebuild": "node ../../scripts/checkDependencies.cjs tsc",
     "build": "cmd /c npm run build -w @mcity/shared && npm run build -w @mcity/server && tsc -p tsconfig.json",
+    "predev": "node ../../scripts/checkDependencies.cjs tsc electron",
     "dev": "cmd /c npm run build && electron ./dist/main.js",
+    "prestart": "node ../../scripts/checkDependencies.cjs electron",
     "start": "electron ./dist/main.js"
   },
   "devDependencies": {
