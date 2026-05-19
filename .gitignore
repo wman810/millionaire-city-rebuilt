@@ -11,6 +11,27 @@ apps/desktop/out/
 apps/desktop/dist/
 /Millionaire City/
 /Decompiled AS Code from Dollars.swf/
+decompiled/**
+!decompiled/
+!decompiled/scripts/
+decompiled/scripts/**
+!decompiled/scripts/com/
+decompiled/scripts/com/**
+!decompiled/scripts/com/dchoc/
+decompiled/scripts/com/dchoc/**
+!decompiled/scripts/com/dchoc/dollars/
+decompiled/scripts/com/dchoc/dollars/**
+!decompiled/scripts/com/dchoc/dollars/GUI/
+decompiled/scripts/com/dchoc/dollars/GUI/**
+!decompiled/scripts/com/dchoc/dollars/GUI/PopupGold.as
+!decompiled/scripts/com/dchoc/dollars/friends/
+decompiled/scripts/com/dchoc/dollars/friends/**
+!decompiled/scripts/com/dchoc/dollars/friends/FriendObject.as
+!decompiled/scripts/com/dchoc/dollars/utils/
+decompiled/scripts/com/dchoc/dollars/utils/**
+!decompiled/scripts/com/dchoc/dollars/utils/metrics/
+decompiled/scripts/com/dchoc/dollars/utils/metrics/**
+!decompiled/scripts/com/dchoc/dollars/utils/metrics/CustomizerManager.as
 tools/*.exe
 desktop.ini
 Thumbs.db

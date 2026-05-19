@@ -26,10 +26,17 @@ The Electron app itself is the Flash runtime, so there is no external helper-bro
 
 ## Asset Layout
 
-The recovered game cache and decompiled SWF reference code are tracked with the repository:
+The recovered game cache is tracked with the repository:
 
 - `assets/`: recovered game cache served by the local server
-- `decompiled/`: decompiled ActionScript reference used by `npm run prepare-client` when patching the private SWF copy
+
+Only the decompiled ActionScript files required by `npm run prepare-client` are tracked:
+
+- `decompiled/scripts/com/dchoc/dollars/GUI/PopupGold.as`
+- `decompiled/scripts/com/dchoc/dollars/friends/FriendObject.as`
+- `decompiled/scripts/com/dchoc/dollars/utils/metrics/CustomizerManager.as`
+
+The rest of the decompiled SWF reference tree is ignored because it is not required to run or prepare the game.
 
 Pepper Flash runtime binaries are tracked with the repository:
 
