@@ -19,19 +19,16 @@
     "preprepare-client": "node scripts/checkDependencies.cjs tsx",
     "prepare-client": "cmd /c npm run prepare-client -w @mcity/server",
     "prepare-runtime": "node scripts/prepareReleaseRuntime.cjs",
-    "prepackage:win": "node scripts/checkDependencies.cjs tsc tsx electron-builder",
-    "package:win": "cmd /c npm run prepare-client && npm run prepare-runtime && npm run build && electron-builder --win zip --x64 --publish never",
-    "prepackage:win:dir": "node scripts/checkDependencies.cjs tsc tsx electron-builder",
-    "package:win:dir": "cmd /c npm run prepare-client && npm run prepare-runtime && npm run build && electron-builder --win dir --x64 --publish never",
+    "prepackage:win": "node scripts/checkDependencies.cjs tsc tsx",
+    "package:win": "cmd /c npm run prepare-client && npm run prepare-runtime && npm run build && npx --yes electron-builder@26.8.1 --win zip --x64 --publish never",
+    "prepackage:win:dir": "node scripts/checkDependencies.cjs tsc tsx",
+    "package:win:dir": "cmd /c npm run prepare-client && npm run prepare-runtime && npm run build && npx --yes electron-builder@26.8.1 --win dir --x64 --publish never",
     "report:missing-assets": "cmd /c npm run report:missing-assets -w @mcity/server",
     "pretest": "node scripts/checkDependencies.cjs tsc vitest",
     "test": "cmd /c npm run test -w @mcity/server",
     "typecheck": "cmd /c npx tsc -b packages/shared/tsconfig.json apps/server/tsconfig.json apps/desktop/tsconfig.json --pretty false",
     "lint:unused": "cmd /c npx knip --no-progress --workspace @mcity/server --workspace @mcity/desktop --workspace @mcity/shared --include files,exports --include-entry-exports",
     "lint:cycles": "cmd /c npx madge --extensions ts --circular apps/server/src apps/desktop/src packages/shared/src"
-  },
-  "devDependencies": {
-    "electron-builder": "^26.8.1"
   },
   "dependencies": {
     "@mcity/shared": "^0.1.0",

@@ -77,7 +77,7 @@ Tests that specifically verify archived asset behavior are skipped when `assets/
 
 `npm audit` still reports advisories against `electron@10.4.7`. That version is intentionally pinned because newer Electron releases removed the Pepper Flash plugin path this client depends on. Do not run `npm audit fix --force`; it upgrades Electron to a modern version that breaks the Flash runtime.
 
-Some install-time deprecation warnings also come from Electron/native packaging tooling. Keep dependencies updated where they do not affect Flash support, but treat the pinned Electron runtime as a compatibility requirement for this project.
+Some deprecation warnings also come from Electron/native packaging tooling. The release packaging scripts invoke `electron-builder@26.8.1` on demand with `npx`, so packaging may still print warnings from its internal ASAR/glob stack. Those packages are not installed by a normal `npm install` and are not part of the game server/runtime dependency tree.
 
 ## Notes
 
