@@ -73,6 +73,12 @@ cmd /c npm run test
 
 Tests that specifically verify archived asset behavior are skipped when `assets/` is not present. Running the game, preparing the patched private SWF, and packaging a playable local build still require your own local `assets/` and `decompiled/` folders.
 
+## Dependency Warnings
+
+`npm audit` still reports advisories against `electron@10.4.7`. That version is intentionally pinned because newer Electron releases removed the Pepper Flash plugin path this client depends on. Do not run `npm audit fix --force`; it upgrades Electron to a modern version that breaks the Flash runtime.
+
+Some install-time deprecation warnings also come from Electron/native packaging tooling. Keep dependencies updated where they do not affect Flash support, but treat the pinned Electron runtime as a compatibility requirement for this project.
+
 ## Notes
 
 - The recovered original cache is treated as source material and is served read-only.

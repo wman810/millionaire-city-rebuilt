@@ -31,12 +31,12 @@
     "lint:cycles": "cmd /c npx madge --extensions ts --circular apps/server/src apps/desktop/src packages/shared/src"
   },
   "devDependencies": {
-    "electron-builder": "^23.0.2"
+    "electron-builder": "^26.8.1"
   },
   "dependencies": {
     "@mcity/shared": "^0.1.0",
     "better-sqlite3": "^11.10.0",
-    "express": "^4.21.2",
+    "express": "^4.22.2",
     "selfsigned": "^3.0.1"
   },
   "build": {

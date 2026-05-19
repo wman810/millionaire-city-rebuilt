@@ -19,13 +19,13 @@
   "dependencies": {
     "@mcity/shared": "0.1.0",
     "better-sqlite3": "^11.10.0",
-    "express": "^4.21.2",
+    "express": "^4.22.2",
     "selfsigned": "^3.0.1"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.12",
     "@types/express": "^5.0.1",
-    "tsx": "^4.19.4",
+    "tsx": "^4.22.2",
     "typescript": "^5.8.3",
     "vitest": "^3.2.4"
   }
