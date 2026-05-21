@@ -69,8 +69,9 @@ export function createServerApp(config = getServerConfig()): ServerApp {
     res.type("text/plain").send("ok");
   });
 
-  app.get("/launcher", (_req, res) => {
+  app.get("/launcher", (req, res) => {
     const appUrl = `https://127.0.0.1:${config.httpsPort}`;
+    const debugMode = isTruthyQueryValue(req.query.debug) || process.env.MCITY_SWF_DEBUG === "1";
     res.type("html").send(
       renderLauncherHtml({
         appUrl,
@@ -80,7 +81,8 @@ export function createServerApp(config = getServerConfig()): ServerApp {
         oauthToken: "local-oauth-token",
         gameToken: "bootstrap-token",
         facebookAppId: "315455798286",
-        lang: config.launcherLang
+        lang: config.launcherLang,
+        debugMode
       })
     );
   });
@@ -422,6 +424,12 @@ function ensurePrivateClientExists(config: ServerConfig): void {
 
 function dataAssetPath(config: ServerConfig, ...segments: string[]): string {
   return path.join(config.assetRoot, "Datas", ...segments);
+}
+
+function isTruthyQueryValue(value: unknown): boolean {
+  const firstValue = Array.isArray(value) ? value[0] : value;
+  const normalized = String(firstValue ?? "").toLowerCase();
+  return normalized === "1" || normalized === "true" || normalized === "yes";
 }
 
 function createArchivedItemSwfSet(config: ServerConfig): Set<string> {

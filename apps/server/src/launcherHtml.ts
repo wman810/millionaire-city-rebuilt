@@ -9,6 +9,7 @@ interface LauncherOptions {
   gameToken: string;
   facebookAppId: string;
   lang: string;
+  debugMode: boolean;
 }
 
 export function renderLauncherHtml(options: LauncherOptions): string {
@@ -36,7 +37,9 @@ export function renderLauncherHtml(options: LauncherOptions): string {
     analytics_code: "null",
     useFrictionlessFacebookCredits: "false",
     bartUrl: options.serverBaseUrl,
-    allFriendsAreNeighbors: "0"
+    allFriendsAreNeighbors: "0",
+    debugMode: options.debugMode ? "1" : "0",
+    console: options.debugMode ? "1" : "0"
   }).toString();
 
   const cssUrl = `${options.assetsBaseUrl}css/main-style.css`;

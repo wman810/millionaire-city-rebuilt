@@ -8,11 +8,12 @@ import { configureFlash } from "./flash-loader";
 
 const workspaceRoot = path.resolve(__dirname, "../../..");
 const serverDistPath = path.join(workspaceRoot, "apps", "server", "dist", "main.js");
-const launcherUrl = "https://127.0.0.1:31804/launcher";
+const launcherBaseUrl = "https://127.0.0.1:31804/launcher";
 const healthUrl = "https://127.0.0.1:31804/health";
 
 let mainWindow: BrowserWindow | null = null;
 let serverProcess: ChildProcess | null = null;
+let swfDebugMode = process.env.MCITY_SWF_DEBUG === "1";
 
 const flashPluginPath = configureFlash(app);
 
@@ -87,10 +88,26 @@ function openDevToolsForWindow(win: BrowserWindow): void {
   win.webContents.openDevTools({ mode: "right" });
 }
 
+function getLauncherUrl(): string {
+  return swfDebugMode ? `${launcherBaseUrl}?debug=1` : launcherBaseUrl;
+}
+
 function installAppMenu(win: BrowserWindow): void {
   const viewMenu: MenuItemConstructorOptions = {
     label: "View",
     submenu: [
+      {
+        label: "SWF Debug Mode",
+        type: "checkbox",
+        checked: swfDebugMode,
+        click: (menuItem) => {
+          swfDebugMode = menuItem.checked;
+          if (!win.isDestroyed()) {
+            void win.loadURL(getLauncherUrl());
+          }
+        }
+      },
+      { type: "separator" },
       {
         label: "Open DevTools",
         accelerator: "CommandOrControl+Shift+I",
@@ -181,7 +198,7 @@ function renderLoadingHtml(status: string): string {
         <h1>Millionaire City Private Server</h1>
         <p id="status">${escapeHtml(status)}</p>
         <ul>
-          <li>Launcher URL: <code>${launcherUrl}</code></li>
+          <li>Launcher URL: <code>${getLauncherUrl()}</code></li>
           <li>Pepper Flash: <code>${escapeHtml(flashPluginPath)}</code></li>
           <li>Server script: <code>${escapeHtml(serverDistPath)}</code></li>
         </ul>
@@ -277,7 +294,7 @@ async function startEverything(): Promise<void> {
 
   await waitForServer();
   setStatus("Local backend ready. Loading Flash client...");
-  await mainWindow?.loadURL(launcherUrl);
+  await mainWindow?.loadURL(getLauncherUrl());
 }
 
 function resolveNodeExecutable(): string {

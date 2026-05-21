@@ -10,6 +10,8 @@ const FFDEC_ARCHIVE_URL = `https://github.com/jindrapetrik/jpexs-decompiler/rele
 const ffdecDir = path.join(config.workspaceRoot, "generated", "tools", `ffdec-${FFDEC_VERSION}`);
 const ffdecJarPath = path.join(ffdecDir, "ffdec.jar");
 const ffdecZipPath = path.join(ffdecDir, `ffdec_${FFDEC_VERSION}.zip`);
+const dollarsSourcePath = path.join(config.workspaceRoot, "client-patch-sources", "Dollars.as");
+const dollarsPatchedSourcePath = path.join(clientDir, "patches", "Dollars.patched.as");
 const popupGoldSourcePath = path.join(
   config.workspaceRoot,
   "client-patch-sources",
@@ -46,6 +48,14 @@ const friendObjectSourcePath = path.join(
 const friendObjectPatchedSourcePath = path.join(clientDir, "patches", "FriendObject.patched.as");
 const crossPromotionDefinitionsPath = path.join(config.assetRoot, "Datas", "rules", "crosspromotionDefinitions.xml");
 const popupGoldPatchedSnippet = `         FBCreditsPurchase.getInstance().startPurchaseProcess(this,false);
+`;
+const dollarsLoaderInfoPattern = / {9}var _loc1_:Object = smStage\.root\.loaderInfo\.parameters;\r?\n/;
+const dollarsLoaderInfoSnippet = `         var _loc1_:Object = smStage.root.loaderInfo.parameters;
+         if(_loc1_.debugMode == "1" || _loc1_.debugMode == "true")
+         {
+            Config.DEBUG_MODE = true;
+            Config.DEBUG_CONSOLE = true;
+         }
 `;
 const popupGoldPurchaseBranchPattern =
   / {9}if\(Config\.FACEBOOK_CREDITS_TO_BUY_GOLD\)\r?\n {9}\{\r?\n {12}FBCreditsPurchase\.getInstance\(\)\.startPurchaseProcess\(this,false\);\r?\n {9}\}\r?\n {9}else\r?\n {9}\{\r?\n {12}onClose\(null\);\r?\n {9}\}\r?\n/;
@@ -95,6 +105,7 @@ fs.writeFileSync(
       notes: [
         "Private client copy isolated from the recovered archive.",
         "Runtime compatibility provided by the local launcher and HTTPS Facebook shim.",
+        "Dollars patched to enable the original SWF debug mode when the launcher passes debugMode=1.",
         "PopupGold patched to complete Add Gold purchases without enabling the Facebook Credits HUD.",
         "CustomizerManager patched to treat archived cross-promotion app unlocks as completed locally.",
         "FriendObject patched to reload an already-loaded NPC portrait after advisor selection changes it."
@@ -109,6 +120,12 @@ console.log(`[mcity] Prepared private client copy at ${config.privateClientSwfPa
 
 function patchPrivateClientSwf(): void {
   ensureFfdecInstalled();
+  writePatchedDollarsSource();
+  replaceClassInPrivateClient(
+    "Dollars",
+    dollarsPatchedSourcePath,
+    "Failed to patch Dollars in the private client SWF."
+  );
   writePatchedPopupGoldSource();
   replaceClassInPrivateClient(
     "com.dchoc.dollars.GUI.PopupGold",
@@ -150,6 +167,17 @@ function replaceClassInPrivateClient(className: string, patchedSourcePath: strin
   );
   fs.copyFileSync(temporaryOutputPath, config.privateClientSwfPath);
   fs.rmSync(temporaryOutputPath, { force: true });
+}
+
+function writePatchedDollarsSource(): void {
+  const source = fs.readFileSync(dollarsSourcePath, "utf8");
+  if (!dollarsLoaderInfoPattern.test(source)) {
+    throw new Error("Could not find the expected Dollars loaderInfo parameters line in the client patch source.");
+  }
+
+  const patchedSource = source.replace(dollarsLoaderInfoPattern, dollarsLoaderInfoSnippet);
+  fs.mkdirSync(path.dirname(dollarsPatchedSourcePath), { recursive: true });
+  fs.writeFileSync(dollarsPatchedSourcePath, patchedSource);
 }
 
 function writePatchedPopupGoldSource(): void {
