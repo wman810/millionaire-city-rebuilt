@@ -1,7 +1,7 @@
 {
   "name": "millionaire-city-private-server",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Private server and desktop launcher for Millionaire City 0.501",
   "main": "apps/desktop/dist/main.js",
   "author": "Millionaire City Revival contributors",
