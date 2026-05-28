@@ -462,7 +462,7 @@ export class CommandService {
         profile.newToolRev = String(value ?? "0");
         break;
       case "checkmail":
-        profile.checkmail = String(value ?? "0");
+        profile.checkmail = normalizeCheckmailState(profile.checkmail, value);
         break;
       case "ranking":
         profile.ranking = String(value ?? profile.ranking ?? "-1");
@@ -971,4 +971,19 @@ export class CommandService {
 
 function nonEmptyString(value: unknown): string | undefined {
   return typeof value === "string" && value.length > 0 ? value : undefined;
+}
+
+function normalizeCheckmailState(currentValue: unknown, nextValue: unknown): string {
+  const current = parseCheckmailState(currentValue);
+  const next = parseCheckmailState(nextValue);
+  return String(Math.max(current, next));
+}
+
+function parseCheckmailState(value: unknown): number {
+  const parsed = Number(value ?? 0);
+  if (!Number.isFinite(parsed)) {
+    return 0;
+  }
+
+  return Math.min(2, Math.max(0, Math.trunc(parsed)));
 }

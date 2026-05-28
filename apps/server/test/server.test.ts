@@ -4212,6 +4212,33 @@ describe("Millionaire City server", () => {
     expect(buffer.byteLength).toBe(fs.statSync(fallbackPath).size);
   });
 
+  test("accepts local VIP Club email registration and exposes confirmation", async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-vip-email-"));
+    const config = {
+      ...getServerConfig(),
+      dbPath: path.join(tempDir, "save.sqlite"),
+      httpPort: 31927,
+      httpsPort: 31937,
+      facebookHttpsPort: 4467,
+      useHttpsFacebookShim: false
+    };
+
+    const serverApp = createServerApp(config);
+    activeApps.push(serverApp);
+    await serverApp.start();
+
+    const before = await fetch(`http://127.0.0.1:${config.httpPort}/mcity/0.501/Datas/userData/checkMail.html`);
+    expect(await before.text()).toBe("0");
+
+    const submit = await fetch(
+      `http://127.0.0.1:${config.httpPort}/mcity/0.501/Datas/userData/checkSendMail.xml?email=mayor%40example.com`
+    );
+    expect(await submit.text()).toContain("<status>0</status>");
+
+    const after = await fetch(`http://127.0.0.1:${config.httpPort}/mcity/0.501/Datas/userData/checkMail.html`);
+    expect(await after.text()).toBe("1");
+  });
+
   test("accepts invalid signatures in offline mode", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-sig-"));
     const config = {

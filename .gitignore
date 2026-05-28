@@ -25,6 +25,7 @@ client-patch-sources/scripts/com/dchoc/**
 client-patch-sources/scripts/com/dchoc/dollars/**
 !client-patch-sources/scripts/com/dchoc/dollars/GUI/
 client-patch-sources/scripts/com/dchoc/dollars/GUI/**
+!client-patch-sources/scripts/com/dchoc/dollars/GUI/PopupEmail.as
 !client-patch-sources/scripts/com/dchoc/dollars/GUI/PopupGold.as
 !client-patch-sources/scripts/com/dchoc/dollars/friends/
 client-patch-sources/scripts/com/dchoc/dollars/friends/**

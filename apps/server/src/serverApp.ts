@@ -4,7 +4,7 @@ import path from "path";
 import express from "express";
 import https from "https";
 import selfsigned from "selfsigned";
-import { buildCommandEnvelope, buildLoginEnvelope, DEFAULT_SYNC, normalizeIncomingCommandList } from "@mcity/shared";
+import { buildCommandEnvelope, buildLoginEnvelope, DEFAULT_SYNC, normalizeIncomingCommandList, SAVE_TAGS } from "@mcity/shared";
 import type { PacketCommand } from "@mcity/shared";
 import type { JsonObject } from "@mcity/shared/dist/types.js";
 import type { Server } from "http";
@@ -116,6 +116,15 @@ export function createServerApp(config = getServerConfig()): ServerApp {
 
   app.get("/mcity/0.501/Datas/userData/fan.xml", (_req, res) => {
     res.type("application/xml").send('<fan value="2" bookmark="0" />');
+  });
+
+  app.get("/mcity/0.501/Datas/userData/checkSendMail.xml", (_req, res) => {
+    markVipClubEmailSubmitted(repository);
+    res.type("application/xml").send("<response><status>0</status></response>");
+  });
+
+  app.get("/mcity/0.501/Datas/userData/checkMail.html", (_req, res) => {
+    res.type("text/plain").send(isVipClubEmailSubmitted(repository) ? "1" : "0");
   });
 
   app.get("/mcity/0.501/Datas/splash.swf", (_req, res) => {
@@ -637,4 +646,35 @@ function applyOfflinePayment(
 
   repository.setDocument(userId, "universe", universe);
   return awardedGold;
+}
+
+function markVipClubEmailSubmitted(repository: SaveRepository): void {
+  const user = repository.ensureDefaultUser();
+  const universe = repository.getDocument<JsonObject>(user.id, SAVE_TAGS.universe);
+  const profile = getUniverseProfile(universe);
+  if (!profile || String(profile.checkmail ?? "0") === "2") {
+    return;
+  }
+
+  profile.checkmail = "1";
+  repository.setDocument(user.id, SAVE_TAGS.universe, universe);
+}
+
+function isVipClubEmailSubmitted(repository: SaveRepository): boolean {
+  const user = repository.ensureDefaultUser();
+  const universe = repository.getDocument<JsonObject>(user.id, SAVE_TAGS.universe);
+  const profile = getUniverseProfile(universe);
+  return String(profile?.checkmail ?? "0") !== "0";
+}
+
+function getUniverseProfile(universe: JsonObject): JsonObject | undefined {
+  const root = universe.universe;
+  if (!Array.isArray(root)) {
+    return undefined;
+  }
+
+  return root.find(
+    (entry): entry is JsonObject =>
+      Boolean(entry && typeof entry === "object" && Array.isArray((entry as { Profile?: unknown }).Profile))
+  );
 }

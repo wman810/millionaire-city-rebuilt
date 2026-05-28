@@ -23,6 +23,17 @@ const popupGoldSourcePath = path.join(
   "PopupGold.as"
 );
 const popupGoldPatchedSourcePath = path.join(clientDir, "patches", "PopupGold.patched.as");
+const popupEmailSourcePath = path.join(
+  config.workspaceRoot,
+  "client-patch-sources",
+  "scripts",
+  "com",
+  "dchoc",
+  "dollars",
+  "GUI",
+  "PopupEmail.as"
+);
+const popupEmailPatchedSourcePath = path.join(clientDir, "patches", "PopupEmail.patched.as");
 const customizerManagerSourcePath = path.join(
   config.workspaceRoot,
   "client-patch-sources",
@@ -59,6 +70,15 @@ const dollarsLoaderInfoSnippet = `         var _loc1_:Object = smStage.root.load
 `;
 const popupGoldPurchaseBranchPattern =
   / {9}if\(Config\.FACEBOOK_CREDITS_TO_BUY_GOLD\)\r?\n {9}\{\r?\n {12}FBCreditsPurchase\.getInstance\(\)\.startPurchaseProcess\(this,false\);\r?\n {9}\}\r?\n {9}else\r?\n {9}\{\r?\n {12}onClose\(null\);\r?\n {9}\}\r?\n/;
+const popupEmailCheckMailSentPattern =
+  / {15}if\(DollarsGame\.getProfile\(\)\.checkmail == CheckConfirmEmail\.MAIL_UNCHECKED\)\r?\n {15}\{\r?\n {18}DollarsGame\.getProfile\(\)\.checkmail = CheckConfirmEmail\.MAIL_CHECKING;\r?\n {15}\}\r?\n {15}break;\r?\n/;
+const popupEmailCheckMailSentSnippet = `               if(DollarsGame.getProfile().checkmail == CheckConfirmEmail.MAIL_UNCHECKED)
+               {
+                  DollarsGame.getProfile().checkmail = CheckConfirmEmail.MAIL_CHECKING;
+               }
+               CheckConfirmEmail.getInstance().load();
+               break;
+`;
 const customizerCrossPromotionInitializerPattern = / {9}this\.mUnlockedCrosspromotions = new Array\(\);\r?\n/;
 const friendObjectSetPictureUrlPattern =
   / {6}public function setPictureURL\(param1:String\) : void\r?\n {6}\{\r?\n {9}this\.mUrl = param1;\r?\n {6}\}\r?\n/;
@@ -107,6 +127,7 @@ fs.writeFileSync(
         "Runtime compatibility provided by the local launcher and HTTPS Facebook shim.",
         "Dollars patched to enable the original SWF debug mode when the launcher passes debugMode=1.",
         "PopupGold patched to complete Add Gold purchases without enabling the Facebook Credits HUD.",
+        "PopupEmail patched to complete local VIP Club confirmation immediately after a valid email is accepted.",
         "CustomizerManager patched to treat archived cross-promotion app unlocks as completed locally.",
         "FriendObject patched to reload an already-loaded NPC portrait after advisor selection changes it."
       ]
@@ -131,6 +152,12 @@ function patchPrivateClientSwf(): void {
     "com.dchoc.dollars.GUI.PopupGold",
     popupGoldPatchedSourcePath,
     "Failed to patch PopupGold in the private client SWF."
+  );
+  writePatchedPopupEmailSource();
+  replaceClassInPrivateClient(
+    "com.dchoc.dollars.GUI.PopupEmail",
+    popupEmailPatchedSourcePath,
+    "Failed to patch PopupEmail in the private client SWF."
   );
   writePatchedCustomizerManagerSource();
   replaceClassInPrivateClient(
@@ -189,6 +216,17 @@ function writePatchedPopupGoldSource(): void {
   const patchedSource = source.replace(popupGoldPurchaseBranchPattern, popupGoldPatchedSnippet);
   fs.mkdirSync(path.dirname(popupGoldPatchedSourcePath), { recursive: true });
   fs.writeFileSync(popupGoldPatchedSourcePath, patchedSource);
+}
+
+function writePatchedPopupEmailSource(): void {
+  const source = fs.readFileSync(popupEmailSourcePath, "utf8");
+  if (!popupEmailCheckMailSentPattern.test(source)) {
+    throw new Error("Could not find the expected PopupEmail successful mail branch in the client patch source.");
+  }
+
+  const patchedSource = source.replace(popupEmailCheckMailSentPattern, popupEmailCheckMailSentSnippet);
+  fs.mkdirSync(path.dirname(popupEmailPatchedSourcePath), { recursive: true });
+  fs.writeFileSync(popupEmailPatchedSourcePath, patchedSource);
 }
 
 function writePatchedCustomizerManagerSource(): void {
