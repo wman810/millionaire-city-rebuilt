@@ -4239,6 +4239,33 @@ describe("Millionaire City server", () => {
     expect(await after.text()).toBe("1");
   });
 
+  test("accepts WCRM VIP Club registration and exposes WCRM confirmation", async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-vip-wcrm-"));
+    const config = {
+      ...getServerConfig(),
+      dbPath: path.join(tempDir, "save.sqlite"),
+      httpPort: 31928,
+      httpsPort: 31938,
+      facebookHttpsPort: 4468,
+      useHttpsFacebookShim: false
+    };
+
+    const serverApp = createServerApp(config);
+    activeApps.push(serverApp);
+    await serverApp.start();
+
+    const before = await fetch(`http://127.0.0.1:${config.httpPort}/registration/isconfirmed/?fb_user_id=123`);
+    expect(await before.text()).toBe("0");
+
+    const submit = await fetch(
+      `http://127.0.0.1:${config.httpPort}/registration/register/?fb_user_id=123&email=mayor%40example.com&project_id=7`
+    );
+    expect(await submit.text()).toContain("<status>0</status>");
+
+    const after = await fetch(`http://127.0.0.1:${config.httpPort}/registration/isconfirmed/?fb_user_id=123`);
+    expect(await after.text()).toBe("1");
+  });
+
   test("accepts invalid signatures in offline mode", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-sig-"));
     const config = {

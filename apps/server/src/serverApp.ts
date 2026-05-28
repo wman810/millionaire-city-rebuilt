@@ -127,6 +127,15 @@ export function createServerApp(config = getServerConfig()): ServerApp {
     res.type("text/plain").send(isVipClubEmailSubmitted(repository) ? "1" : "0");
   });
 
+  app.get(["/registration/register", "/registration/register/"], (_req, res) => {
+    markVipClubEmailSubmitted(repository);
+    res.type("application/xml").send("<response><status>0</status></response>");
+  });
+
+  app.get(["/registration/isconfirmed", "/registration/isconfirmed/"], (_req, res) => {
+    res.type("text/plain").send(isVipClubEmailSubmitted(repository) ? "1" : "0");
+  });
+
   app.get("/mcity/0.501/Datas/splash.swf", (_req, res) => {
     res.sendFile(config.tutorialSplashPath);
   });
