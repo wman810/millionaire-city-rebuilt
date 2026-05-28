@@ -24,6 +24,7 @@ const ITEM_RULE_FILES = new Set([
   "itemDefinitions.xml",
   "wonderDefinitions.xml"
 ]);
+const REWARD_ONLY_ITEM_SKUS = new Set(["commerce_vip"]);
 
 interface ServerApp {
   config: ServerConfig;
@@ -471,9 +472,13 @@ function createAvailableItemRulesXml(
       return "";
     }
 
-    const patchedAttributes = isLimitedItemDefinition(attributes)
+    let patchedAttributes = isLimitedItemDefinition(attributes)
       ? removeLimitedAvailabilityAttributes(attributes)
       : attributes;
+    if (REWARD_ONLY_ITEM_SKUS.has(sku)) {
+      patchedAttributes = markRewardOnlyItemDefinition(patchedAttributes);
+    }
+
     return `<Definition${patchedAttributes}/>`;
   });
 }
@@ -502,6 +507,19 @@ function getXmlAttribute(attributes: string, name: string): string | undefined {
 
 function removeXmlAttribute(attributes: string, name: string): string {
   return attributes.replace(new RegExp(`\\s+${name}="[^"]*"`, "g"), "");
+}
+
+function markRewardOnlyItemDefinition(attributes: string): string {
+  return upsertXmlAttribute(attributes, "freeGift", "1");
+}
+
+function upsertXmlAttribute(attributes: string, name: string, value: string): string {
+  const pattern = new RegExp(`(\\s+)${name}="[^"]*"`);
+  if (pattern.test(attributes)) {
+    return attributes.replace(pattern, `$1${name}="${value}"`);
+  }
+
+  return `${attributes} ${name}="${value}"`;
 }
 
 function removeLimEdShopTab(attributes: string): string {

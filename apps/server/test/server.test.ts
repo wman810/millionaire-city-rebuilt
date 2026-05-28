@@ -4157,11 +4157,19 @@ describe("Millionaire City server", () => {
     const wonderDefinitions = await (
       await fetch(`http://127.0.0.1:${config.httpPort}/mcity/0.501/Datas/rules/wonderDefinitions.xml`)
     ).text();
+    const missionDefinitions = await (
+      await fetch(`http://127.0.0.1:${config.httpPort}/mcity/0.501/Datas/rules/missionDefinitions.xml`)
+    ).text();
 
     const archivedLimitedHouse = extractDefinitionTag(itemDefinitions, "houses_014_001");
+    const vipClub = extractDefinitionTag(commerceDefinitions, "commerce_vip");
+    const vipMission = extractDefinitionTag(missionDefinitions, "64");
     const archivedLimEdWonder = extractDefinitionTag(wonderDefinitions, "wonder_buda");
 
     expect(archivedLimitedHouse).not.toContain("expireTime=");
+    expect(vipClub).not.toContain("expireTime=");
+    expect(vipClub).toContain('freeGift="1"');
+    expect(vipMission).toContain('rewardType="commerce_vip"');
     expect(findDefinitionTag(itemDefinitions, "houses_015_001")).toBeUndefined();
     expect(findDefinitionTag(commerceDefinitions, "commerce_bollywood")).toBeUndefined();
     expect(findDefinitionTag(decorationDefinitions, "decorations_halloween_03")).toBeUndefined();
