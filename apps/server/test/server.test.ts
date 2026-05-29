@@ -4239,6 +4239,27 @@ describe("Millionaire City server", () => {
     expect(await after.text()).toBe("1");
   });
 
+  test("serves an empty generated gifts list for client startup", async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-gifts-list-"));
+    const config = {
+      ...getServerConfig(),
+      dbPath: path.join(tempDir, "save.sqlite"),
+      httpPort: 31929,
+      httpsPort: 31939,
+      facebookHttpsPort: 4469,
+      useHttpsFacebookShim: false
+    };
+
+    const serverApp = createServerApp(config);
+    activeApps.push(serverApp);
+    await serverApp.start();
+
+    const response = await fetch(`http://127.0.0.1:${config.httpPort}/mcity/0.501/Datas/userData/giftsList.xml`);
+
+    expect(response.headers.get("content-type")).toContain("application/xml");
+    expect(await response.text()).toBe("<giftsList />");
+  });
+
   test("accepts WCRM VIP Club registration and exposes WCRM confirmation", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-vip-wcrm-"));
     const config = {

@@ -1,6 +1,0 @@
-<universe>
-  <Profile exp="100" money="50000" gold="50" level="5" userName="Mayor" tutorialStep="100" profileId="0" cityname="MyCity" />
-  <Plots>
-    <plot id="1" sku="house_001" x="20" y="20" state="1" />
-  </Plots>
-</universe>

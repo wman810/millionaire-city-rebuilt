@@ -118,6 +118,10 @@ export function createServerApp(config = getServerConfig()): ServerApp {
     res.type("application/xml").send('<fan value="2" bookmark="0" />');
   });
 
+  app.get("/mcity/0.501/Datas/userData/giftsList.xml", (_req, res) => {
+    res.type("application/xml").send("<giftsList />");
+  });
+
   app.get("/mcity/0.501/Datas/userData/checkSendMail.xml", (_req, res) => {
     markVipClubEmailSubmitted(repository);
     res.type("application/xml").send("<response><status>0</status></response>");
