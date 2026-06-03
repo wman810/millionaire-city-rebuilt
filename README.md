@@ -16,11 +16,7 @@ No installer is required.
 
 ## Community
 
-Join the Discord server:
-
-```text
-discord.gg/cr6M7UAh4J
-```
+Join the [Millionaire City Rebuilt Discord server](https://discord.gg/cr6M7UAh4J).
 
 ## Save Location
 
