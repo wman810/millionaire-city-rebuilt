@@ -24,6 +24,11 @@ const ITEM_RULE_FILES = new Set([
   "itemDefinitions.xml",
   "wonderDefinitions.xml"
 ]);
+const COLLECTIBLE_RULE_FILES = new Set([
+  "collectiblesDefinitions.xml",
+  "collectiblesGroupsDefinitions.xml",
+  "collectiblesRewardDefinitions.xml"
+]);
 const REWARD_ONLY_ITEM_SKUS = new Set(["commerce_vip"]);
 
 interface ServerApp {
@@ -105,7 +110,9 @@ export function createServerApp(config = getServerConfig()): ServerApp {
 
   app.get("/mcity/0.501/Datas/rules/:fileName", (req, res, next) => {
     const fileName = path.basename(String(req.params.fileName ?? ""));
-    const patchedXml = createAvailableItemRulesXml(config, fileName, archivedItemSwfs);
+    const patchedXml =
+      createAvailableItemRulesXml(config, fileName, archivedItemSwfs) ??
+      createAvailableCollectibleRulesXml(config, fileName, archivedItemSwfs);
     if (!patchedXml) {
       next();
       return;
@@ -490,7 +497,7 @@ function createAvailableItemRulesXml(
       return definitionTag;
     }
 
-    if (!archivedItemSwfs.has(`${sku}.swf`.toLowerCase())) {
+    if (!isArchivedItemDefinitionAvailable(sku, attributes, archivedItemSwfs)) {
       return "";
     }
 
@@ -503,6 +510,120 @@ function createAvailableItemRulesXml(
 
     return `<Definition${patchedAttributes}/>`;
   });
+}
+
+function createAvailableCollectibleRulesXml(
+  config: ServerConfig,
+  fileName: string,
+  archivedItemSwfs: Set<string>
+): string | null {
+  if (!COLLECTIBLE_RULE_FILES.has(fileName)) {
+    return null;
+  }
+
+  const rulesPath = dataAssetPath(config, "rules", fileName);
+  if (!fs.existsSync(rulesPath)) {
+    return null;
+  }
+
+  const available = getAvailableCollectibleRules(config, archivedItemSwfs);
+  const xml = fs.readFileSync(rulesPath, "utf8");
+  return xml.replace(/<Definition\b([^>]*)\/>/g, (definitionTag, attributes: string) => {
+    const sku = getXmlAttribute(attributes, "sku")?.trim();
+    if (!sku) {
+      return definitionTag;
+    }
+
+    if (fileName === "collectiblesGroupsDefinitions.xml") {
+      return available.groupSkus.has(sku) ? definitionTag : "";
+    }
+
+    if (fileName === "collectiblesDefinitions.xml") {
+      const collection = getXmlAttribute(attributes, "collection")?.trim();
+      return collection && available.groupSkus.has(collection) ? definitionTag : "";
+    }
+
+    if (fileName === "collectiblesRewardDefinitions.xml") {
+      return available.rewardSkus.has(sku) ? definitionTag : "";
+    }
+
+    return definitionTag;
+  });
+}
+
+function getAvailableCollectibleRules(
+  config: ServerConfig,
+  archivedItemSwfs: Set<string>
+): { groupSkus: Set<string>; rewardSkus: Set<string> } {
+  const groupsPath = dataAssetPath(config, "rules", "collectiblesGroupsDefinitions.xml");
+  if (!fs.existsSync(groupsPath)) {
+    return { groupSkus: new Set(), rewardSkus: new Set() };
+  }
+
+  const groupSkus = new Set<string>();
+  const rewardSkus = new Set<string>();
+  const advisorVariantItemSkus = getAdvisorVariantItemSkus(config);
+  const xml = fs.readFileSync(groupsPath, "utf8");
+  for (const match of xml.matchAll(/<Definition\b([^>]*)\/>/g)) {
+    const attributes = match[1] ?? "";
+    const groupSku = getXmlAttribute(attributes, "sku")?.trim();
+    const rewardSku = getXmlAttribute(attributes, "reward")?.trim();
+    const rewardType = getXmlAttribute(attributes, "rewardType")?.trim().toLowerCase();
+    if (!groupSku || !rewardSku) {
+      continue;
+    }
+
+    if (
+      rewardType === "item" &&
+      !isArchivedItemSkuAvailable(rewardSku, archivedItemSwfs, advisorVariantItemSkus.has(rewardSku))
+    ) {
+      continue;
+    }
+
+    groupSkus.add(groupSku);
+    rewardSkus.add(rewardSku);
+  }
+
+  return { groupSkus, rewardSkus };
+}
+
+function getAdvisorVariantItemSkus(config: ServerConfig): Set<string> {
+  const itemDefinitionsPath = dataAssetPath(config, "rules", "itemDefinitions.xml");
+  if (!fs.existsSync(itemDefinitionsPath)) {
+    return new Set();
+  }
+
+  const advisorSkus = new Set<string>();
+  const xml = fs.readFileSync(itemDefinitionsPath, "utf8");
+  for (const match of xml.matchAll(/<Definition\b([^>]*)\/>/g)) {
+    const attributes = match[1] ?? "";
+    const sku = getXmlAttribute(attributes, "sku")?.trim();
+    if (sku && getXmlAttribute(attributes, "useAdvisor") != null) {
+      advisorSkus.add(sku);
+    }
+  }
+
+  return advisorSkus;
+}
+
+function isArchivedItemDefinitionAvailable(
+  sku: string,
+  attributes: string,
+  archivedItemSwfs: Set<string>
+): boolean {
+  return isArchivedItemSkuAvailable(sku, archivedItemSwfs, getXmlAttribute(attributes, "useAdvisor") != null);
+}
+
+function isArchivedItemSkuAvailable(sku: string, archivedItemSwfs: Set<string>, usesAdvisor: boolean): boolean {
+  if (archivedItemSwfs.has(`${sku}.swf`.toLowerCase())) {
+    return true;
+  }
+
+  return (
+    usesAdvisor &&
+    archivedItemSwfs.has(`${sku}_Cindy.swf`.toLowerCase()) &&
+    archivedItemSwfs.has(`${sku}_Ronald.swf`.toLowerCase())
+  );
 }
 
 function isLimitedItemDefinition(attributes: string): boolean {

@@ -146,6 +146,7 @@ describe("Millionaire City server", () => {
       | undefined;
     expect(plots?.type).toBe("");
     expect(profileContainer?.tutorialEnd).toBe("0");
+    expect(profileContainer?.bossGenre).toBe("0");
     expect(profileContainer?.DCCash).toBe("0");
     const rivalCompany = companies.find((entry) => entry.whose === "1");
     const rivalItems = rivalCompany?.Company.filter((entry) => Array.isArray(entry.Item)) ?? [];
@@ -311,7 +312,7 @@ describe("Millionaire City server", () => {
     expect(sheikHq?.x).toBe("-1");
     expect(sheikHq?.y).toBe("-3");
     expect(advisorMine?.Company).toHaveLength(RONALD_LAYOUT_ITEMS.length);
-    expect(sheikMine?.Company).toHaveLength(485);
+    expect(sheikMine?.Company).toHaveLength(483);
     expect(advisorPlots?.type).toBe(RONALD_PLOTS_TYPE);
     expect(sheikPlots?.type).toBe("0,2,2,2,0,1,2,2,2,1,1,2,2,2,1,1,2,2,2,1,0,2,2,2,0");
     expect(advisorMine?.Company.some((entry) => entry.sku === "wonder_npc_Ronald")).toBe(true);
@@ -815,6 +816,130 @@ describe("Millionaire City server", () => {
       expect(tutorialHouseState?.mode).toBe("1");
       expect(terrainChunk?.chunk).toContain("5:2");
       expect(terrainChunk?.chunk).toContain("5:3");
+    }
+  });
+
+  test("persists new item placement security gains across restart", async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-item-security-"));
+    const dbPath = path.join(tempDir, "save.sqlite");
+
+    {
+      const config = {
+        ...getServerConfig(),
+        dbPath,
+        httpPort: 34072,
+        httpsPort: 34082,
+        facebookHttpsPort: 4642,
+        useHttpsFacebookShim: false
+      };
+      const serverApp = createServerApp(config);
+      activeApps.push(serverApp);
+      await serverApp.start();
+
+      const universe = serverApp.repository.getDocument<Record<string, unknown>>(1, "universe");
+      const root = universe.universe as Array<Record<string, unknown>>;
+      const profile = root.find((entry) => Array.isArray(entry.Profile)) as Record<string, unknown>;
+      profile.tutorialEnd = "1";
+      profile.exp = "206";
+      profile.DCCash = "116";
+      profile.DCCoins = "500000";
+      profile.companyValue = "550000";
+      serverApp.repository.setDocument(1, "universe", universe);
+
+      const loginPayload = await postForm(config.httpPort, {
+        uid: config.launcherUserId,
+        cmd: "login",
+        version: "0.501",
+        data: "{}",
+        flash_version: "WIN 32,0,0,0"
+      });
+      const token = String(extractCommands(loginPayload)[0]._dat.token);
+      const commands: PacketCommand[] = [];
+      for (let index = 0; index < 5; index += 1) {
+        commands.push({
+          _cmd: "update_item",
+          _dat: {
+            action: "new_item",
+            sid: String(7000 + index),
+            sku: "decorations_special_65",
+            item: {
+              Item: [{ State: [], id: "5" }],
+              sid: String(7000 + index),
+              csid: "1",
+              sku: "decorations_special_65",
+              x: String(index),
+              y: "-1",
+              isSuspended: "0"
+            },
+            security: {
+              expGain: 550,
+              expNow: 206 + (index + 1) * 550,
+              coinsGain: 0,
+              coinsNow: 500000,
+              cashGain: -2,
+              cashNow: 116 - (index + 1) * 2,
+              compValueGain: 120000,
+              compValueNow: 550000 + (index + 1) * 120000
+            }
+          },
+          _cnt: index + 1
+        });
+      }
+      const mutationData = JSON.stringify({
+        _cmdList: commands,
+        _msgCount: 0,
+        _sync: 1
+      });
+      const sig = signPayload(
+        {
+          uid: config.launcherUserId,
+          cmd: "cmdList",
+          version: "0.501",
+          data: mutationData,
+          flash_version: "WIN 32,0,0,0"
+        },
+        token
+      );
+
+      await postForm(config.httpPort, {
+        uid: config.launcherUserId,
+        cmd: "cmdList",
+        version: "0.501",
+        data: mutationData,
+        flash_version: "WIN 32,0,0,0",
+        sig
+      });
+
+      await serverApp.stop();
+      activeApps.pop();
+    }
+
+    {
+      const config = {
+        ...getServerConfig(),
+        dbPath,
+        httpPort: 34073,
+        httpsPort: 34083,
+        facebookHttpsPort: 4643,
+        useHttpsFacebookShim: false
+      };
+      const serverApp = createServerApp(config);
+      activeApps.push(serverApp);
+      await serverApp.start();
+
+      const universe = serverApp.repository.getDocument<Record<string, unknown>>(1, "universe");
+      const root = universe.universe as Array<Record<string, unknown>>;
+      const profile = root.find((entry) => Array.isArray(entry.Profile)) as Record<string, unknown>;
+      const worldContainer = root.find((entry) => Array.isArray(entry.World)) as { World: Array<Record<string, unknown>> };
+      const mineCompany = worldContainer.World.find(
+        (entry: { Company?: Array<Record<string, unknown>>; whose?: string }) =>
+          Array.isArray(entry.Company) && entry.whose === "0"
+      ) as { Company: Array<Record<string, unknown>> };
+
+      expect(profile.exp).toBe("2956");
+      expect(profile.DCCash).toBe("106");
+      expect(profile.companyValue).toBe("1150000");
+      expect(mineCompany.Company.filter((item) => item.sku === "decorations_special_65")).toHaveLength(5);
     }
   });
 
@@ -3167,6 +3292,7 @@ describe("Millionaire City server", () => {
       ) as { Company: Array<Record<string, unknown>>; sid?: string } | undefined;
 
       profile.tutorialEnd = "1";
+      delete profile.bossGenre;
       profile.DCCash = "50";
       profile.companyValue = "550000";
       mineCompany?.Company.push(
@@ -3277,6 +3403,7 @@ describe("Millionaire City server", () => {
         | undefined;
 
       expect(repairedProfile.tutorialEnd).toBe("1");
+      expect(repairedProfile.bossGenre).toBe("0");
       expect(repairedProfile.DCCash).toBe("0");
       expect(repairedProfile.firstMission).toBe("1");
       expect(repairedHq?.x).toBe("-1");
@@ -3845,6 +3972,110 @@ describe("Millionaire City server", () => {
     }
   });
 
+  test("applies delayed mission reward security gains once when expNow is stale", async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-mission-reward-security-"));
+    const config = {
+      ...getServerConfig(),
+      dbPath: path.join(tempDir, "save.sqlite"),
+      httpPort: 34052,
+      httpsPort: 34062,
+      facebookHttpsPort: 4632,
+      useHttpsFacebookShim: false
+    };
+    const serverApp = createServerApp(config);
+    activeApps.push(serverApp);
+    await serverApp.start();
+
+    const universe = serverApp.repository.getDocument<Record<string, unknown>>(1, "universe");
+    const root = universe.universe as Array<Record<string, unknown>>;
+    const profile = root.find((entry) => Array.isArray(entry.Profile)) as
+      | ({ Profile: Array<Record<string, unknown>> } & Record<string, unknown>)
+      | undefined;
+    const missions = profile?.Profile.find((entry) => Array.isArray(entry.Missions)) as
+      | { Missions: Array<Record<string, unknown>> }
+      | undefined;
+
+    expect(profile).toBeTruthy();
+    if (!profile || !missions) {
+      throw new Error("Expected starter profile and missions containers.");
+    }
+
+    profile.tutorialEnd = "1";
+    profile.exp = "756";
+    profile.DCCoins = "1000";
+    profile.DCCash = "10";
+    profile.companyValue = "550000";
+    missions.Missions = [
+      { Up: [], chunk: "" },
+      { Reached: [], chunk: "39" },
+      { Given: [], chunk: "" }
+    ];
+    serverApp.repository.setDocument(1, "universe", universe);
+
+    const loginPayload = await postForm(config.httpPort, {
+      uid: config.launcherUserId,
+      cmd: "login",
+      version: "0.501",
+      data: "{}",
+      flash_version: "WIN 32,0,0,0"
+    });
+    const token = String(extractCommands(loginPayload)[0]._dat.token);
+    const security = {
+      expGain: 2134,
+      expNow: 756,
+      coinsGain: 2500,
+      coinsNow: 1000,
+      cashGain: 5,
+      cashNow: 10,
+      compValueGain: 3000,
+      compValueNow: 550000
+    };
+    const mutationData = JSON.stringify({
+      _cmdList: [
+        { _cmd: "update_missions", _dat: { action: "update", sku: "39", security }, _cnt: 1 },
+        { _cmd: "update_missions", _dat: { action: "update", sku: "39", security }, _cnt: 2 }
+      ],
+      _msgCount: 0,
+      _sync: 1
+    });
+    const sig = signPayload(
+      {
+        uid: config.launcherUserId,
+        cmd: "cmdList",
+        version: "0.501",
+        data: mutationData,
+        flash_version: "WIN 32,0,0,0"
+      },
+      token
+    );
+
+    await postForm(config.httpPort, {
+      uid: config.launcherUserId,
+      cmd: "cmdList",
+      version: "0.501",
+      data: mutationData,
+      flash_version: "WIN 32,0,0,0",
+      sig
+    });
+
+    const saved = serverApp.repository.getDocument<Record<string, unknown>>(1, "universe");
+    const savedProfile = (saved.universe as Array<Record<string, unknown>>).find((entry) =>
+      Array.isArray(entry.Profile)
+    ) as { Profile: Array<Record<string, unknown>> } & Record<string, unknown>;
+    const savedMissions = savedProfile.Profile.find((entry) => Array.isArray(entry.Missions)) as
+      | { Missions: Array<Record<string, unknown>> }
+      | undefined;
+    const given = savedMissions?.Missions.find((entry) => Array.isArray(entry.Given)) as
+      | { chunk?: string }
+      | undefined;
+
+    expect(savedProfile.exp).toBe("2890");
+    expect(savedProfile.DCCoins).toBe("3500");
+    expect(savedProfile.DCCash).toBe("15");
+    expect(savedProfile.companyValue).toBe("553000");
+    expect(given?.chunk).toBe("39");
+  });
+
   archivedAssetTest("removes impossible poll-driven reward state on restart and respects the level derived from xp", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-mission-sanitize-invalid-"));
     const dbPath = path.join(tempDir, "save.sqlite");
@@ -4165,11 +4396,13 @@ describe("Millionaire City server", () => {
     const vipClub = extractDefinitionTag(commerceDefinitions, "commerce_vip");
     const vipMission = extractDefinitionTag(missionDefinitions, "64");
     const archivedLimEdWonder = extractDefinitionTag(wonderDefinitions, "wonder_buda");
+    const advisorVariantRewardHouse = extractDefinitionTag(itemDefinitions, "houses_037_001");
 
     expect(archivedLimitedHouse).not.toContain("expireTime=");
     expect(vipClub).not.toContain("expireTime=");
     expect(vipClub).toContain('freeGift="1"');
     expect(vipMission).toContain('rewardType="commerce_vip"');
+    expect(advisorVariantRewardHouse).toContain('useAdvisor="1"');
     expect(findDefinitionTag(itemDefinitions, "houses_015_001")).toBeUndefined();
     expect(findDefinitionTag(commerceDefinitions, "commerce_bollywood")).toBeUndefined();
     expect(findDefinitionTag(decorationDefinitions, "decorations_halloween_03")).toBeUndefined();
@@ -4177,6 +4410,39 @@ describe("Millionaire City server", () => {
     expect(archivedLimEdWonder).not.toContain('shopTab="limEd"');
     expect(archivedLimEdWonder).not.toContain("releaseTime=");
     expect(archivedLimEdWonder).not.toContain("unitsAmount=");
+  });
+
+  archivedAssetTest("keeps collectible collections with advisor-variant item rewards", async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-collectible-rules-"));
+    const config = {
+      ...getServerConfig(),
+      dbPath: path.join(tempDir, "save.sqlite"),
+      httpPort: 31990,
+      httpsPort: 32000,
+      facebookHttpsPort: 4530,
+      useHttpsFacebookShim: false
+    };
+
+    const serverApp = createServerApp(config);
+    activeApps.push(serverApp);
+    await serverApp.start();
+
+    const groupDefinitions = await (
+      await fetch(`http://127.0.0.1:${config.httpPort}/mcity/0.501/Datas/rules/collectiblesGroupsDefinitions.xml`)
+    ).text();
+    const collectibleDefinitions = await (
+      await fetch(`http://127.0.0.1:${config.httpPort}/mcity/0.501/Datas/rules/collectiblesDefinitions.xml`)
+    ).text();
+    const rewardDefinitions = await (
+      await fetch(`http://127.0.0.1:${config.httpPort}/mcity/0.501/Datas/rules/collectiblesRewardDefinitions.xml`)
+    ).text();
+
+    expect(extractDefinitionTag(groupDefinitions, "15")).toContain('reward="houses_037_001"');
+    expect(extractDefinitionTag(collectibleDefinitions, "gift_057")).toContain('collection="15"');
+    expect(extractDefinitionTag(rewardDefinitions, "houses_037_001")).toContain('useAdvisor="1"');
+    expect(extractDefinitionTag(groupDefinitions, "7")).toContain('reward="decorations_christmas_07"');
+    expect(extractDefinitionTag(collectibleDefinitions, "gift_025")).toContain('collection="7"');
+    expect(extractDefinitionTag(rewardDefinitions, "decorations_christmas_07")).toContain('rewardType="item"');
   });
 
   archivedAssetTest("serves the bank commerce icon for missing commerce icons", async () => {
@@ -5092,9 +5358,10 @@ describe("Millionaire City server", () => {
 
   test("keeps a collected house collectible and clears it from the pending list", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-house-collectible-keep-"));
+    const dbPath = path.join(tempDir, "save.sqlite");
     const config = {
       ...getServerConfig(),
-      dbPath: path.join(tempDir, "save.sqlite"),
+      dbPath,
       httpPort: 31985,
       httpsPort: 31995,
       facebookHttpsPort: 4525,
@@ -5160,6 +5427,136 @@ describe("Millionaire City server", () => {
 
     expect(objectsEntry?.skus).toContain("gift_025");
     expect(pendingEntry?.tupla ?? "").not.toContain("3021:gift_025");
+
+    await serverApp.stop();
+    activeApps.pop();
+
+    const restartedServerApp = createServerApp({
+      ...config,
+      httpPort: 31989,
+      httpsPort: 31999,
+      facebookHttpsPort: 4529
+    });
+    activeApps.push(restartedServerApp);
+    await restartedServerApp.start();
+
+    const restartedCollectiblesList = restartedServerApp.repository.getDocument<Record<string, unknown>>(
+      1,
+      "collectiblesList"
+    ).collectiblesList as Array<Record<string, unknown>>;
+    const restartedObjectsEntry = restartedCollectiblesList.find((entry) => Array.isArray(entry.Objects)) as
+      | { skus?: string }
+      | undefined;
+    const restartedPendingEntry = restartedCollectiblesList.find((entry) => Array.isArray(entry.Pending)) as
+      | { tupla?: string }
+      | undefined;
+
+    expect(restartedObjectsEntry?.skus).toContain("gift_025");
+    expect(restartedPendingEntry?.tupla ?? "").not.toContain("3021:gift_025");
+  });
+
+  test("persists bought collectible pieces across restart", async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-collectible-buy-"));
+    const dbPath = path.join(tempDir, "save.sqlite");
+
+    {
+      const config = {
+        ...getServerConfig(),
+        dbPath,
+        httpPort: 31971,
+        httpsPort: 31981,
+        facebookHttpsPort: 4531,
+        useHttpsFacebookShim: false
+      };
+
+      const serverApp = createServerApp(config);
+      activeApps.push(serverApp);
+      await serverApp.start();
+
+      const universe = serverApp.repository.getDocument<Record<string, unknown>>(1, "universe");
+      const root = universe.universe as Array<Record<string, unknown>>;
+      const profile = root.find((entry) => Array.isArray(entry.Profile)) as Record<string, unknown>;
+      profile.tutorialEnd = "1";
+      profile.DCCash = "100";
+      serverApp.repository.setDocument(1, "universe", universe);
+
+      const loginPayload = await postForm(config.httpPort, {
+        uid: config.launcherUserId,
+        cmd: "login",
+        version: "0.501",
+        data: "{}",
+        flash_version: "WIN 32,0,0,0"
+      });
+      const token = String(extractCommands(loginPayload)[0]._dat.token);
+
+      const buyData = JSON.stringify({
+        _cmdList: [
+          {
+            _cmd: "update_collectible",
+            _dat: {
+              action: "BUY",
+              sid: "-1",
+              sku: "gift_057",
+              security: {
+                cashGain: -3,
+                cashNow: 97
+              }
+            },
+            _cnt: 1
+          }
+        ],
+        _msgCount: 0,
+        _sync: 1
+      });
+
+      await postForm(config.httpPort, {
+        uid: config.launcherUserId,
+        cmd: "cmdList",
+        version: "0.501",
+        data: buyData,
+        flash_version: "WIN 32,0,0,0",
+        sig: signPayload(
+          {
+            uid: config.launcherUserId,
+            cmd: "cmdList",
+            version: "0.501",
+            data: buyData,
+            flash_version: "WIN 32,0,0,0"
+          },
+          token
+        )
+      });
+
+      await serverApp.stop();
+      activeApps.pop();
+    }
+
+    {
+      const config = {
+        ...getServerConfig(),
+        dbPath,
+        httpPort: 31972,
+        httpsPort: 31982,
+        facebookHttpsPort: 4532,
+        useHttpsFacebookShim: false
+      };
+
+      const serverApp = createServerApp(config);
+      activeApps.push(serverApp);
+      await serverApp.start();
+
+      const collectiblesList = serverApp.repository.getDocument<Record<string, unknown>>(1, "collectiblesList")
+        .collectiblesList as Array<Record<string, unknown>>;
+      const objectsEntry = collectiblesList.find((entry) => Array.isArray(entry.Objects)) as
+        | { skus?: string }
+        | undefined;
+      const universe = serverApp.repository.getDocument<Record<string, unknown>>(1, "universe");
+      const root = universe.universe as Array<Record<string, unknown>>;
+      const profile = root.find((entry) => Array.isArray(entry.Profile)) as Record<string, unknown>;
+
+      expect(objectsEntry?.skus).toContain("gift_057");
+      expect(profile.DCCash).toBe("97");
+    }
   });
 
   archivedAssetTest("persists collectible plane rewards to the profile plane", async () => {
@@ -5228,6 +5625,276 @@ describe("Millionaire City server", () => {
 
     expect(profile.planeSku).toBe("plane_02");
     expect(rewardsEntry?.skus).toContain("2");
+  });
+
+  archivedAssetTest("persists collectible HQ skin rewards to the saved headquarters", async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-collectible-hq-reward-"));
+    const dbPath = path.join(tempDir, "save.sqlite");
+
+    {
+      const config = {
+        ...getServerConfig(),
+        dbPath,
+        httpPort: 31975,
+        httpsPort: 31985,
+        facebookHttpsPort: 4535,
+        useHttpsFacebookShim: false
+      };
+
+      const serverApp = createServerApp(config);
+      activeApps.push(serverApp);
+      await serverApp.start();
+
+      const universe = serverApp.repository.getDocument<Record<string, unknown>>(1, "universe");
+      const root = universe.universe as Array<Record<string, unknown>>;
+      const profile = root.find((entry) => Array.isArray(entry.Profile)) as Record<string, unknown>;
+      const worldContainer = root.find((entry) => Array.isArray(entry.World)) as { World: Array<Record<string, unknown>> };
+      const mineCompany = worldContainer.World.find(
+        (entry: { Company?: Array<Record<string, unknown>>; whose?: string }) =>
+          Array.isArray(entry.Company) && entry.whose === "0"
+      ) as { Company: Array<Record<string, unknown>>; sid?: string };
+
+      profile.tutorialEnd = "1";
+      mineCompany.Company.push({
+        Item: [
+          { State: [], id: "4" },
+          {
+            Decorations: [
+              {
+                Decoration: [
+                  { sku: [], id: "HeadQuarter_01" },
+                  { sku: [], id: "HeadQuarter_02" },
+                  { sku: [], id: "HeadQuarter_03" },
+                  { sku: [], id: "HeadQuarter_04" }
+                ],
+                type: "0",
+                currentSku: "HeadQuarter_01",
+                shadowRows: "0"
+              }
+            ]
+          }
+        ],
+        sid: "9904",
+        csid: String(mineCompany.sid ?? "1"),
+        sku: "HeadQuarter",
+        x: "1",
+        y: "1",
+        isSuspended: "0"
+      });
+      serverApp.repository.setDocument(1, "universe", universe);
+
+      const loginPayload = await postForm(config.httpPort, {
+        uid: config.launcherUserId,
+        cmd: "login",
+        version: "0.501",
+        data: "{}",
+        flash_version: "WIN 32,0,0,0"
+      });
+      const token = String(extractCommands(loginPayload)[0]._dat.token);
+
+      const rewardData = JSON.stringify({
+        _cmdList: [
+          {
+            _cmd: "update_collectible",
+            _dat: {
+              action: "GET_REWARD",
+              sku: "1"
+            },
+            _cnt: 1
+          }
+        ],
+        _msgCount: 0,
+        _sync: 1
+      });
+
+      await postForm(config.httpPort, {
+        uid: config.launcherUserId,
+        cmd: "cmdList",
+        version: "0.501",
+        data: rewardData,
+        flash_version: "WIN 32,0,0,0",
+        sig: signPayload(
+          {
+            uid: config.launcherUserId,
+            cmd: "cmdList",
+            version: "0.501",
+            data: rewardData,
+            flash_version: "WIN 32,0,0,0"
+          },
+          token
+        )
+      });
+
+      await serverApp.stop();
+      activeApps.pop();
+    }
+
+    {
+      const config = {
+        ...getServerConfig(),
+        dbPath,
+        httpPort: 31976,
+        httpsPort: 31986,
+        facebookHttpsPort: 4536,
+        useHttpsFacebookShim: false
+      };
+
+      const serverApp = createServerApp(config);
+      activeApps.push(serverApp);
+      await serverApp.start();
+
+      const universe = serverApp.repository.getDocument<Record<string, unknown>>(1, "universe");
+      const worldContainer = (universe.universe as Array<Record<string, unknown>>).find((entry) =>
+        Array.isArray(entry.World)
+      ) as { World: Array<Record<string, unknown>> };
+      const mineCompany = worldContainer.World.find(
+        (entry: { Company?: Array<Record<string, unknown>>; whose?: string }) =>
+          Array.isArray(entry.Company) && entry.whose === "0"
+      ) as { Company: Array<Record<string, unknown>> };
+      const hq = mineCompany.Company.find((entry) => entry.sid === "9904") as
+        | { Item?: Array<Record<string, unknown>> }
+        | undefined;
+      const decorations = hq?.Item?.find((entry) => Array.isArray(entry.Decorations)) as
+        | { Decorations?: Array<Record<string, unknown>> }
+        | undefined;
+      const skin = decorations?.Decorations?.find((entry) => Array.isArray(entry.Decoration)) as
+        | { currentSku?: string; shadowRows?: string }
+        | undefined;
+      const collectiblesList = serverApp.repository.getDocument<Record<string, unknown>>(1, "collectiblesList")
+        .collectiblesList as Array<Record<string, unknown>>;
+      const rewardsEntry = collectiblesList.find((entry) => Array.isArray(entry.Rewards)) as
+        | { skus?: string }
+        | undefined;
+
+      expect(skin?.currentSku).toBe("HeadQuarter_02");
+      expect(skin?.shadowRows).toBe("1");
+      expect(rewardsEntry?.skus).toContain("1");
+    }
+  });
+
+  archivedAssetTest("persists item collectible reward claims from reward placement", async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-collectible-item-reward-"));
+    const dbPath = path.join(tempDir, "save.sqlite");
+
+    {
+      const config = {
+        ...getServerConfig(),
+        dbPath,
+        httpPort: 31973,
+        httpsPort: 31983,
+        facebookHttpsPort: 4533,
+        useHttpsFacebookShim: false
+      };
+
+      const serverApp = createServerApp(config);
+      activeApps.push(serverApp);
+      await serverApp.start();
+
+      const universe = serverApp.repository.getDocument<Record<string, unknown>>(1, "universe");
+      const profile = (universe.universe as Array<Record<string, unknown>>).find((entry) =>
+        Array.isArray(entry.Profile)
+      ) as Record<string, unknown>;
+      profile.tutorialEnd = "1";
+      serverApp.repository.setDocument(1, "universe", universe);
+
+      const collectiblesDocument = createEmptyCollectiblesDocument();
+      (collectiblesDocument.collectiblesList as Array<Record<string, unknown>>).find((entry) =>
+        Array.isArray(entry.Objects)
+      )!.skus = "gift_057,gift_058,gift_059,gift_060";
+      serverApp.repository.setDocument(1, "collectiblesList", collectiblesDocument);
+
+      const loginPayload = await postForm(config.httpPort, {
+        uid: config.launcherUserId,
+        cmd: "login",
+        version: "0.501",
+        data: "{}",
+        flash_version: "WIN 32,0,0,0"
+      });
+      const token = String(extractCommands(loginPayload)[0]._dat.token);
+
+      const rewardItemData = JSON.stringify({
+        _cmdList: [
+          {
+            _cmd: "update_item",
+            _dat: {
+              action: "new_item",
+              sid: "8801",
+              collectible: "15",
+              item: {
+                Item: [{ State: [], id: "5" }],
+                sid: "8801",
+                csid: "1",
+                sku: "houses_037_001",
+                x: "4",
+                y: "5",
+                isSuspended: "0"
+              },
+              dec: "0"
+            },
+            _cnt: 1
+          }
+        ],
+        _msgCount: 0,
+        _sync: 1
+      });
+
+      await postForm(config.httpPort, {
+        uid: config.launcherUserId,
+        cmd: "cmdList",
+        version: "0.501",
+        data: rewardItemData,
+        flash_version: "WIN 32,0,0,0",
+        sig: signPayload(
+          {
+            uid: config.launcherUserId,
+            cmd: "cmdList",
+            version: "0.501",
+            data: rewardItemData,
+            flash_version: "WIN 32,0,0,0"
+          },
+          token
+        )
+      });
+
+      await serverApp.stop();
+      activeApps.pop();
+    }
+
+    {
+      const config = {
+        ...getServerConfig(),
+        dbPath,
+        httpPort: 31974,
+        httpsPort: 31984,
+        facebookHttpsPort: 4534,
+        useHttpsFacebookShim: false
+      };
+
+      const serverApp = createServerApp(config);
+      activeApps.push(serverApp);
+      await serverApp.start();
+
+      const collectiblesList = serverApp.repository.getDocument<Record<string, unknown>>(1, "collectiblesList")
+        .collectiblesList as Array<Record<string, unknown>>;
+      const rewardsEntry = collectiblesList.find((entry) => Array.isArray(entry.Rewards)) as
+        | { skus?: string }
+        | undefined;
+      const objectsEntry = collectiblesList.find((entry) => Array.isArray(entry.Objects)) as
+        | { skus?: string }
+        | undefined;
+      const universe = serverApp.repository.getDocument<Record<string, unknown>>(1, "universe");
+      const worldContainer = (universe.universe as Array<Record<string, unknown>>).find((entry) =>
+        Array.isArray(entry.World)
+      ) as { World: Array<Record<string, unknown>> };
+      const mineCompany = worldContainer.World.find(
+        (entry: { Company?: Array<Record<string, unknown>>; whose?: string }) =>
+          Array.isArray(entry.Company) && entry.whose === "0"
+      ) as { Company: Array<Record<string, unknown>> };
+
+      expect(rewardsEntry?.skus).toContain("15");
+      expect(objectsEntry?.skus).toContain("gift_057");
+      expect(mineCompany.Company.some((entry) => entry.sid === "8801" && entry.sku === "houses_037_001")).toBe(true);
+    }
   });
 
   test("projects pending house collectibles back into the world on restart", async () => {

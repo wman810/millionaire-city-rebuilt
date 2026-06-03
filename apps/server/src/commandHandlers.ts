@@ -35,6 +35,8 @@ import {
   projectPendingCollectiblesOnUniverse,
   readCollectiblesState,
   removePendingFriendCollectible,
+  resolveHeadQuarterRewardSkuForCollectibleClaim,
+  resolveItemRewardCollectibleGroupFromMutation,
   resolvePlaneRewardSkuForCollectibleClaim,
   shouldAwardCollectibleDrop,
   writeCollectiblesState
@@ -42,6 +44,8 @@ import {
 import { decodeAsciiCodes, encodeAsciiCodes, sanitizeForClientXml, sanitizeStoredString, sanitizeUniverseForClient } from "./commandHandlers/encoding.js";
 import {
   applyMoneySecuritySnapshot,
+  applyMoneySecuritySnapshotWithPositiveDeltaFallback,
+  applyPositiveMoneySecurityDeltas,
   hasMoneySecuritySnapshot,
   hasNegativeSecurityDelta,
   reconcilePremiumCurrencyPurchase
@@ -71,6 +75,7 @@ import {
   isUpgradeEligibleItem,
   resolveTargetOwnerId,
   resolveUpgradeOwnerId,
+  setPlayerHeadQuarterSkin,
   type MutableNode
 } from "./commandHandlers/universe.js";
 import { getLocalDayKey, getStoredUpgradeRecords, setStoredUpgradeRecords, VISITOR_UPGRADES_PER_DAY } from "./commandHandlers/upgrades.js";
@@ -296,6 +301,9 @@ export class CommandService {
         case "KEEP":
           this.applyCollectibleKeepMutation(userId, payload);
           break;
+        case "BUY":
+          this.applyCollectibleBuyMutation(userId, payload);
+          break;
         case "SELL":
           this.applyCollectibleSellMutation(userId, payload);
           break;
@@ -310,6 +318,7 @@ export class CommandService {
       }
     }
 
+    this.applyCollectibleMoneySecurity(userId, payload);
     this.repository.incrementSessionSync(userId);
     return {
       _cmd: command._cmd,
@@ -436,7 +445,7 @@ export class CommandService {
         break;
       }
       case "boss_genre":
-        profile.bossGenre = String(value ?? "0");
+        profile.bossGenre = normalizeBossGenreValue(value);
         break;
       case "gameConfig":
         this.applyGameConfigProfileMutation(userId, payload);
@@ -600,6 +609,19 @@ export class CommandService {
     }
   }
 
+  private applyCollectibleBuyMutation(userId: number, payload: Record<string, unknown>): void {
+    const sku = String(payload.sku ?? "");
+    if (sku.length === 0) {
+      return;
+    }
+
+    const collectiblesDocument = this.getNormalizedCollectiblesDocument(userId);
+    const collectibleState = readCollectiblesState(collectiblesDocument);
+    collectibleState.objectCounts.set(sku, (collectibleState.objectCounts.get(sku) ?? 0) + 1);
+    writeCollectiblesState(collectiblesDocument, collectibleState);
+    this.repository.setDocument(userId, SAVE_TAGS.collectibles, collectiblesDocument);
+  }
+
   private applyCollectibleSellMutation(userId: number, payload: Record<string, unknown>): void {
     const sku = String(payload.sku ?? "");
     if (sku.length === 0) {
@@ -639,17 +661,51 @@ export class CommandService {
     this.repository.setDocument(userId, SAVE_TAGS.collectibles, collectiblesDocument);
 
     const planeSku = resolvePlaneRewardSkuForCollectibleClaim(sku);
-    if (!planeSku) {
+    const hqSkinSku = resolveHeadQuarterRewardSkuForCollectibleClaim(sku);
+    if (!planeSku && !hqSkinSku) {
       return;
     }
 
     const universe = this.repository.getDocument<JsonObject>(userId, SAVE_TAGS.universe);
     const profile = getUniverseProfile(universe);
-    if (!profile || String(profile.planeSku ?? "") === planeSku) {
+    let changed = false;
+
+    if (planeSku && profile && String(profile.planeSku ?? "") !== planeSku) {
+      profile.planeSku = planeSku;
+      changed = true;
+    }
+
+    if (hqSkinSku) {
+      changed = setPlayerHeadQuarterSkin(universe, hqSkinSku) || changed;
+    }
+
+    if (changed) {
+      this.repository.setDocument(userId, SAVE_TAGS.universe, universe);
+    }
+  }
+
+  private applyCollectibleRewardItemMutation(userId: number, payload: Record<string, unknown>, itemEntry: MutableNode): void {
+    const groupSku = resolveItemRewardCollectibleGroupFromMutation(payload, itemEntry);
+    if (!groupSku) {
       return;
     }
 
-    profile.planeSku = planeSku;
+    this.applyCollectibleRewardMutation(userId, { sku: groupSku });
+  }
+
+  private applyCollectibleMoneySecurity(userId: number, payload: Record<string, unknown>): void {
+    const security = toRecord(payload.security);
+    if (!hasMoneySecuritySnapshot(security)) {
+      return;
+    }
+
+    const universe = this.repository.getDocument<JsonObject>(userId, SAVE_TAGS.universe);
+    const profile = getUniverseProfile(universe);
+    if (!profile) {
+      return;
+    }
+
+    applyMoneySecuritySnapshotWithPositiveDeltaFallback(profile, security);
     this.repository.setDocument(userId, SAVE_TAGS.universe, universe);
   }
 
@@ -712,18 +768,24 @@ export class CommandService {
 
   private applyItemMutation(userId: number, payload: Record<string, unknown>): PacketCommand[] {
     const universe = this.repository.getDocument<JsonObject>(userId, SAVE_TAGS.universe);
+    const profile = getUniverseProfile(universe);
     const action = String(payload.action ?? "").toLowerCase();
     const sid = String(payload.sid ?? "");
     const incomingItem = extractIncomingItemEntry(payload.item);
+    const security = toRecord(payload.security);
 
     if (sid.length === 0) {
       return [];
     }
 
     const existing = findItemEntry(universe, sid);
+    const beforeSignature = existing ? getItemMutationSignature(existing.itemEntry) : "";
 
     if (action.includes("destroy") || action.includes("sell") || action.includes("remove")) {
       if (existing) {
+        if (profile && hasMoneySecuritySnapshot(security)) {
+          applyMoneySecuritySnapshotWithPositiveDeltaFallback(profile, security);
+        }
         existing.companyChildren.splice(existing.index, 1);
         this.repository.setDocument(userId, SAVE_TAGS.universe, universe);
       }
@@ -811,11 +873,19 @@ export class CommandService {
       normalizeConstructionState(String(itemEntry.sku ?? ""), itemState, Date.now());
     }
     const collectibleSideEffects = this.applyCollectibleProjectionForItemMutation(userId, itemEntry, payload);
+    this.applyCollectibleRewardItemMutation(userId, payload, itemEntry);
     if (isHouseSku(String(itemEntry.sku ?? "")) && itemState && String(itemState.id ?? "") !== "0") {
       const mode = String(itemState.mode ?? "");
       if (mode !== "14" && mode !== "15") {
         normalizeHouseRentState(itemState, itemChildren, Date.now());
       }
+    }
+    if (
+      profile &&
+      hasMoneySecuritySnapshot(security) &&
+      (!existing || beforeSignature !== getItemMutationSignature(itemEntry))
+    ) {
+      applyMoneySecuritySnapshotWithPositiveDeltaFallback(profile, security);
     }
     this.repository.setDocument(userId, SAVE_TAGS.universe, universe);
     return collectibleSideEffects;
@@ -823,6 +893,7 @@ export class CommandService {
 
   private applyMapMutation(userId: number, payload: Record<string, unknown>): void {
     const universe = this.repository.getDocument<JsonObject>(userId, SAVE_TAGS.universe);
+    const profile = getUniverseProfile(universe);
     const mapEntry = getMapEntry(universe);
     if (!mapEntry) {
       return;
@@ -840,6 +911,7 @@ export class CommandService {
     const terrainTiles = parseChunkSet(findElementChild(mapChildren, "Terrain"));
     const roadTiles = parseChunkSet(findElementChild(mapChildren, "Road"));
     const targetSet = tileType === "terrain" ? terrainTiles : roadTiles;
+    const hadTile = targetSet.has(tileKey);
 
     if (action.includes("del") || action.includes("remove")) {
       targetSet.delete(tileKey);
@@ -856,17 +928,23 @@ export class CommandService {
     }
     mapEntry.Map = nextChildren;
 
+    const security = toRecord(payload.security);
+    if (profile && hasMoneySecuritySnapshot(security) && hadTile !== targetSet.has(tileKey)) {
+      applyMoneySecuritySnapshotWithPositiveDeltaFallback(profile, security);
+    }
     this.repository.setDocument(userId, SAVE_TAGS.universe, universe);
   }
 
   private applyPlotsMutation(userId: number, payload: Record<string, unknown>): void {
     const universe = this.repository.getDocument<JsonObject>(userId, SAVE_TAGS.universe);
+    const profile = getUniverseProfile(universe);
     const plotsEntry = getPlotsEntry(universe);
     if (!plotsEntry) {
       return;
     }
 
     const states = getPlotStates(String(plotsEntry.type ?? ""));
+    const beforeType = states.join(",");
     const index = Number(payload.index ?? -1);
     if (!Number.isInteger(index) || index < 0 || index >= states.length) {
       return;
@@ -879,6 +957,10 @@ export class CommandService {
     }
 
     plotsEntry.type = states.join(",");
+    const security = toRecord(payload.security);
+    if (profile && hasMoneySecuritySnapshot(security) && beforeType !== plotsEntry.type) {
+      applyMoneySecuritySnapshotWithPositiveDeltaFallback(profile, security);
+    }
     this.repository.setDocument(userId, SAVE_TAGS.universe, universe);
   }
 
@@ -908,11 +990,13 @@ export class CommandService {
     const up = parseChunkSet(findElementChild(missionChildren, "Up"));
     const reached = parseChunkSet(findElementChild(missionChildren, "Reached"));
     const given = parseChunkSet(findElementChild(missionChildren, "Given"));
+    const wasGiven = given.has(sku);
+    const shouldClaimReward = !wasGiven && (reached.has(sku) || hasNegativeSecurityDelta(security));
 
     up.delete(sku);
-    if (given.has(sku)) {
+    if (wasGiven) {
       reached.delete(sku);
-    } else if (reached.has(sku) || hasNegativeSecurityDelta(security)) {
+    } else if (shouldClaimReward) {
       reached.delete(sku);
       given.add(sku);
     } else {
@@ -922,6 +1006,10 @@ export class CommandService {
     upsertChunkElement(missionChildren, "Up", up);
     upsertChunkElement(missionChildren, "Reached", reached);
     upsertChunkElement(missionChildren, "Given", given);
+
+    if (shouldClaimReward) {
+      applyPositiveMoneySecurityDeltas(profile, security);
+    }
 
     this.repository.setDocument(userId, SAVE_TAGS.universe, universe);
   }
@@ -971,6 +1059,35 @@ export class CommandService {
 
 function nonEmptyString(value: unknown): string | undefined {
   return typeof value === "string" && value.length > 0 ? value : undefined;
+}
+
+function normalizeBossGenreValue(value: unknown): string {
+  return String(value ?? "0").trim() === "1" ? "1" : "0";
+}
+
+function getItemMutationSignature(itemEntry: MutableNode): string {
+  const state = findElementChild(getElementChildren(itemEntry, "Item"), "State");
+  return JSON.stringify({
+    sid: itemEntry.sid ?? "",
+    csid: itemEntry.csid ?? "",
+    sku: itemEntry.sku ?? "",
+    x: itemEntry.x ?? "",
+    y: itemEntry.y ?? "",
+    isSuspended: itemEntry.isSuspended ?? "",
+    state: state ? getStableScalarRecord(state) : {}
+  });
+}
+
+function getStableScalarRecord(value: MutableNode): Record<string, string> {
+  const record: Record<string, string> = {};
+  for (const key of Object.keys(value).sort()) {
+    const entry = value[key];
+    if (Array.isArray(entry) || entry == null || typeof entry === "object") {
+      continue;
+    }
+    record[key] = String(entry);
+  }
+  return record;
 }
 
 function normalizeCheckmailState(currentValue: unknown, nextValue: unknown): string {

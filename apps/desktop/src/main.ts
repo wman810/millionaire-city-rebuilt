@@ -33,6 +33,7 @@ function createWindow(): BrowserWindow {
     width: 1280,
     height: 720,
     title: "Millionaire City Private Server",
+    show: false,
     webPreferences: {
       plugins: true,
       sandbox: false
@@ -54,10 +55,6 @@ function createWindow(): BrowserWindow {
   win.webContents.on("console-message", (_event, level, message, line, sourceId) => {
     console.log(`[renderer:${level}] ${message} (${sourceId}:${line})`);
   });
-
-  void win.loadURL(
-    `data:text/html;charset=utf-8,${encodeURIComponent(renderLoadingHtml("Starting local backend..."))}`
-  );
 
   if (process.env.MCITY_OPEN_DEVTOOLS === "1") {
     openDevToolsForWindow(win);
@@ -157,56 +154,6 @@ function installAppMenu(win: BrowserWindow): void {
   Menu.setApplicationMenu(Menu.buildFromTemplate(menuTemplate));
 }
 
-function renderLoadingHtml(status: string): string {
-  return `<!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="utf-8" />
-      <title>Millionaire City Private Server</title>
-      <style>
-        body {
-          margin: 0;
-          font-family: Georgia, "Times New Roman", serif;
-          background:
-            radial-gradient(circle at top left, rgba(255,255,255,0.85), transparent 30%),
-            linear-gradient(180deg, #e4d6b9 0%, #f5efe6 45%, #e8dfcf 100%);
-          color: #2d2a26;
-        }
-        main {
-          max-width: 760px;
-          margin: 40px auto;
-          padding: 24px 28px;
-          background: rgba(255,250,240,0.96);
-          border: 1px solid rgba(133,92,43,0.25);
-          box-shadow: 0 18px 40px rgba(60,42,17,0.16);
-        }
-        h1 {
-          margin-top: 0;
-          letter-spacing: 0.04em;
-        }
-        p, li {
-          line-height: 1.5;
-        }
-        code {
-          background: rgba(133,92,43,0.08);
-          padding: 2px 6px;
-        }
-      </style>
-    </head>
-    <body>
-      <main>
-        <h1>Millionaire City Private Server</h1>
-        <p id="status">${escapeHtml(status)}</p>
-        <ul>
-          <li>Launcher URL: <code>${getLauncherUrl()}</code></li>
-          <li>Pepper Flash: <code>${escapeHtml(flashPluginPath)}</code></li>
-          <li>Server script: <code>${escapeHtml(serverDistPath)}</code></li>
-        </ul>
-      </main>
-    </body>
-  </html>`;
-}
-
 function setStatus(message: string): void {
   if (!mainWindow || mainWindow.isDestroyed()) {
     return;
@@ -295,6 +242,9 @@ async function startEverything(): Promise<void> {
   await waitForServer();
   setStatus("Local backend ready. Loading Flash client...");
   await mainWindow?.loadURL(getLauncherUrl());
+  if (mainWindow && !mainWindow.isDestroyed()) {
+    mainWindow.show();
+  }
 }
 
 function resolveNodeExecutable(): string {
@@ -348,14 +298,6 @@ async function shutdown(): Promise<void> {
     serverProcess.kill();
     serverProcess = null;
   }
-}
-
-function escapeHtml(value: string): string {
-  return value
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/\"/g, "&quot;");
 }
 
 app.whenReady().then(async () => {

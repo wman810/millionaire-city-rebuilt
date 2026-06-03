@@ -112,6 +112,7 @@ function createStarterUniverse(userExtId = DEFAULT_USER_EXT_ID): JsonObject {
         tutorialEnd: "0",
         companyValue: "550000",
         ranking: "-1",
+        bossGenre: "0",
         firstInvest: "0",
         firstVisit: "0",
         firstPartner: "0",

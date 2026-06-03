@@ -28,6 +28,34 @@ export function applyMoneySecuritySnapshot(profile: MutableNode, security: Recor
   applyMoneySecurityField(profile, security, "companyValue", "compValueNow", "compValueGain");
 }
 
+export function applyMoneySecuritySnapshotWithPositiveDeltaFallback(
+  profile: MutableNode,
+  security: Record<string, unknown> | undefined
+): void {
+  if (!security) {
+    return;
+  }
+
+  applyMoneySecurityFieldWithPositiveDeltaFallback(profile, security, "exp", "expNow", "expGain");
+  applyMoneySecurityFieldWithPositiveDeltaFallback(profile, security, "DCCoins", "coinsNow", "coinsGain");
+  applyMoneySecurityFieldWithPositiveDeltaFallback(profile, security, "DCCash", "cashNow", "cashGain");
+  applyMoneySecurityFieldWithPositiveDeltaFallback(profile, security, "companyValue", "compValueNow", "compValueGain");
+}
+
+export function applyPositiveMoneySecurityDeltas(
+  profile: MutableNode,
+  security: Record<string, unknown> | undefined
+): void {
+  if (!security) {
+    return;
+  }
+
+  applyPositiveMoneySecurityDelta(profile, security, "exp", "expNow", "expGain");
+  applyPositiveMoneySecurityDelta(profile, security, "DCCoins", "coinsNow", "coinsGain");
+  applyPositiveMoneySecurityDelta(profile, security, "DCCash", "cashNow", "cashGain");
+  applyPositiveMoneySecurityDelta(profile, security, "companyValue", "compValueNow", "compValueGain");
+}
+
 export function reconcilePremiumCurrencyPurchase(
   profile: MutableNode,
   payload: Record<string, unknown>,
@@ -102,6 +130,68 @@ function applyMoneySecurityField(
 
   const currentValue = Number(profile[targetKey] ?? "0");
   if (!Number.isFinite(currentValue)) {
+    return;
+  }
+
+  profile[targetKey] = String(currentValue + deltaValue);
+}
+
+function applyMoneySecurityFieldWithPositiveDeltaFallback(
+  profile: MutableNode,
+  security: Record<string, unknown>,
+  targetKey: string,
+  absoluteKey: string,
+  deltaKey: string
+): void {
+  const absoluteValue = Number(security[absoluteKey] ?? Number.NaN);
+  const deltaValue = Number(security[deltaKey] ?? Number.NaN);
+  const currentValue = Number(profile[targetKey] ?? "0");
+
+  if (!Number.isFinite(currentValue)) {
+    return;
+  }
+
+  if (
+    Number.isFinite(deltaValue) &&
+    deltaValue > 0 &&
+    (!Number.isFinite(absoluteValue) || absoluteValue <= currentValue)
+  ) {
+    profile[targetKey] = String(currentValue + deltaValue);
+    return;
+  }
+
+  if (Number.isFinite(absoluteValue)) {
+    profile[targetKey] = String(absoluteValue);
+    return;
+  }
+
+  if (!Number.isFinite(deltaValue) || deltaValue === 0) {
+    return;
+  }
+
+  profile[targetKey] = String(currentValue + deltaValue);
+}
+
+function applyPositiveMoneySecurityDelta(
+  profile: MutableNode,
+  security: Record<string, unknown>,
+  targetKey: string,
+  absoluteKey: string,
+  deltaKey: string
+): void {
+  const deltaValue = Number(security[deltaKey] ?? Number.NaN);
+  if (!Number.isFinite(deltaValue) || deltaValue <= 0) {
+    return;
+  }
+
+  const currentValue = Number(profile[targetKey] ?? "0");
+  if (!Number.isFinite(currentValue)) {
+    return;
+  }
+
+  const absoluteValue = Number(security[absoluteKey] ?? Number.NaN);
+  if (Number.isFinite(absoluteValue) && absoluteValue > currentValue) {
+    profile[targetKey] = String(absoluteValue);
     return;
   }
 

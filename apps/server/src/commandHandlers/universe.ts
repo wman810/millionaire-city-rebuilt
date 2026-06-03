@@ -198,16 +198,22 @@ export function ensureStateElement(children: JsonObject[], attributes: Record<st
 }
 
 export function ensureHeadQuarterDecorations(children: JsonObject[], whose: string): void {
+  const defaultSku = whose === "1" ? "HeadQuarter_02" : "HeadQuarter_01";
   const existing = findElementChild(children, "Decorations");
   if (existing) {
     const decoration = findElementChild(getElementChildren(existing, "Decorations"), "Decoration");
     if (decoration) {
-      decoration.currentSku = whose === "1" ? "HeadQuarter_02" : "HeadQuarter_01";
+      const currentSku = String(decoration.currentSku ?? "");
+      if (!HQ_SKINS.includes(currentSku)) {
+        decoration.currentSku = defaultSku;
+      }
+      decoration.shadowRows = String(decoration.currentSku ?? "") === "HeadQuarter_01" ? "0" : "1";
+      ensureHeadQuarterSkinSkuChildren(decoration);
       return;
     }
   }
 
-  children.push(createHeadQuarterDecorations(whose === "1" ? "HeadQuarter_02" : "HeadQuarter_01"));
+  children.push(createHeadQuarterDecorations(defaultSku));
 }
 
 export function createHeadQuarterDecorations(currentSku: string): JsonObject {
@@ -224,10 +230,65 @@ export function createHeadQuarterDecorations(currentSku: string): JsonObject {
   ]);
 }
 
+export function setPlayerHeadQuarterSkin(universe: JsonObject, skinSku: string): boolean {
+  if (!HQ_SKINS.includes(skinSku)) {
+    return false;
+  }
+
+  const company = getCompanyEntryByWhose(universe, "0");
+  if (!company) {
+    return false;
+  }
+
+  const hq = getElementChildren(company, "Company").find(
+    (entry): entry is MutableNode =>
+      Boolean(entry && typeof entry === "object" && Array.isArray((entry as { Item?: unknown }).Item)) &&
+      String((entry as { sku?: unknown }).sku ?? "") === "HeadQuarter"
+  );
+  if (!hq) {
+    return false;
+  }
+
+  const itemChildren = getElementChildren(hq, "Item");
+  ensureHeadQuarterDecorations(itemChildren, "0");
+  const decorations = findElementChild(itemChildren, "Decorations");
+  const decoration = decorations
+    ? findElementChild(getElementChildren(decorations, "Decorations"), "Decoration")
+    : undefined;
+  if (!decoration) {
+    return false;
+  }
+
+  if (String(decoration.currentSku ?? "") === skinSku) {
+    ensureHeadQuarterSkinSkuChildren(decoration);
+    return false;
+  }
+
+  decoration.currentSku = skinSku;
+  decoration.shadowRows = skinSku === "HeadQuarter_01" ? "0" : "1";
+  ensureHeadQuarterSkinSkuChildren(decoration);
+  return true;
+}
+
 export function isItemElement(entry: MutableNode): boolean {
   return Array.isArray(entry.Item);
 }
 
 export function isHouseSku(sku: string): boolean {
   return sku.startsWith("houses_") || sku === "house_001";
+}
+
+function ensureHeadQuarterSkinSkuChildren(decoration: MutableNode): void {
+  const children = getElementChildren(decoration, "Decoration");
+  const existing = new Set(
+    children
+      .filter((entry) => Boolean(entry && typeof entry === "object" && Array.isArray((entry as { sku?: unknown }).sku)))
+      .map((entry) => String((entry as { id?: unknown }).id ?? ""))
+  );
+
+  for (const sku of HQ_SKINS) {
+    if (!existing.has(sku)) {
+      children.push(createElement("sku", { id: sku }));
+    }
+  }
 }

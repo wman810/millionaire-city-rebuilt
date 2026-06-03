@@ -1,3 +1,4 @@
+import fs from "fs";
 import path from "path";
 import type { JsonObject } from "@mcity/shared/dist/types.js";
 import { createEmptyCollectiblePendingDocument, createEmptyCollectiblesDocument } from "../saveDefaults.js";
@@ -11,6 +12,12 @@ type CollectibleDefinition = {
   contractGroups: string[];
 };
 
+type CollectibleGroupDefinition = {
+  sku: string;
+  rewardSku: string;
+  rewardType: string;
+};
+
 type CollectiblesState = {
   objectCounts: Map<string, number>;
   rewards: Set<string>;
@@ -18,13 +25,37 @@ type CollectiblesState = {
 };
 
 const RULES_ROOT = path.resolve(__dirname, "../../../../assets/dchoc1-a.akamaihd.net/0.501/mcity/Datas/rules");
+const ITEM_ASSETS_ROOT = path.resolve(
+  __dirname,
+  "../../../../assets/dchoc1-a.akamaihd.net/0.501/mcity/Datas/Assets/items"
+);
 const SETTINGS_PATH = path.join(RULES_ROOT, "settings.xml");
 const XP_TABLE_PATH = path.join(RULES_ROOT, "XPTable.xml");
+const ADVISOR_VARIANT_ITEM_SKUS = loadAdvisorVariantItemSkus(path.join(RULES_ROOT, "itemDefinitions.xml"));
+const AVAILABLE_COLLECTIBLE_GROUPS = loadAvailableCollectibleGroupSkus(
+  path.join(RULES_ROOT, "collectiblesGroupsDefinitions.xml"),
+  ITEM_ASSETS_ROOT,
+  ADVISOR_VARIANT_ITEM_SKUS
+);
 const ITEM_CONTRACT_GROUP_BY_SKU = loadItemContractGroupMap(path.join(RULES_ROOT, "itemDefinitions.xml"));
-const COLLECTIBLE_DEFINITIONS = loadCollectibleDefinitions(path.join(RULES_ROOT, "collectiblesDefinitions.xml"));
+const COLLECTIBLE_DEFINITIONS = loadCollectibleDefinitions(
+  path.join(RULES_ROOT, "collectiblesDefinitions.xml"),
+  AVAILABLE_COLLECTIBLE_GROUPS
+);
+const COLLECTIBLE_GROUP_DEFINITIONS_BY_SKU = loadCollectibleGroupDefinitionMap(
+  path.join(RULES_ROOT, "collectiblesGroupsDefinitions.xml"),
+  AVAILABLE_COLLECTIBLE_GROUPS
+);
 const COLLECTIBLE_PLANE_REWARD_BY_GROUP = loadCollectiblePlaneRewardMap(
   path.join(RULES_ROOT, "collectiblesGroupsDefinitions.xml"),
-  path.join(RULES_ROOT, "collectiblesRewardDefinitions.xml")
+  path.join(RULES_ROOT, "collectiblesRewardDefinitions.xml"),
+  AVAILABLE_COLLECTIBLE_GROUPS
+);
+const COLLECTIBLE_HQ_REWARD_BY_GROUP = loadCollectibleRewardMapByType(
+  path.join(RULES_ROOT, "collectiblesGroupsDefinitions.xml"),
+  path.join(RULES_ROOT, "collectiblesRewardDefinitions.xml"),
+  AVAILABLE_COLLECTIBLE_GROUPS,
+  "hq"
 );
 const COLLECTIBLES_BY_CONTRACT_GROUP = groupCollectiblesByContractGroup(COLLECTIBLE_DEFINITIONS);
 const COLLECTIBLE_UNLOCK_LEVEL = loadCollectibleUnlockLevel(SETTINGS_PATH);
@@ -236,6 +267,28 @@ export function resolvePlaneRewardSkuForCollectibleClaim(groupSku: string): stri
   return COLLECTIBLE_PLANE_REWARD_BY_GROUP.get(groupSku);
 }
 
+export function resolveHeadQuarterRewardSkuForCollectibleClaim(groupSku: string): string | undefined {
+  return COLLECTIBLE_HQ_REWARD_BY_GROUP.get(groupSku);
+}
+
+export function resolveItemRewardCollectibleGroupFromMutation(
+  payload: Record<string, unknown>,
+  itemEntry: MutableNode
+): string | undefined {
+  const groupSku = String(payload.collectible ?? "").trim();
+  if (groupSku.length === 0) {
+    return undefined;
+  }
+
+  const group = COLLECTIBLE_GROUP_DEFINITIONS_BY_SKU.get(groupSku);
+  if (!group || group.rewardType !== "item") {
+    return undefined;
+  }
+
+  const itemSku = String(itemEntry.sku ?? "").trim();
+  return itemSku.length === 0 || itemSku === group.rewardSku ? groupSku : undefined;
+}
+
 function upsertSimpleAttributeElement(
   children: JsonObject[],
   tagName: string,
@@ -373,7 +426,7 @@ function loadItemContractGroupMap(filePath: string): Map<string, string> {
   return mapping;
 }
 
-function loadCollectibleDefinitions(filePath: string): CollectibleDefinition[] {
+function loadCollectibleDefinitions(filePath: string, availableGroupSkus: Set<string>): CollectibleDefinition[] {
   return loadDefinitionAttributes(filePath)
     .map((definition) => {
       const sku = definition.sku?.trim() ?? "";
@@ -386,30 +439,136 @@ function loadCollectibleDefinitions(filePath: string): CollectibleDefinition[] {
     })
     .filter(
       (definition) =>
-        definition.sku.length > 0 && definition.collection.length > 0 && definition.contractGroups.length > 0
+        definition.sku.length > 0 &&
+        definition.collection.length > 0 &&
+        availableGroupSkus.has(definition.collection) &&
+        definition.contractGroups.length > 0
     );
 }
 
-function loadCollectiblePlaneRewardMap(groupsPath: string, rewardsPath: string): Map<string, string> {
+function loadCollectibleGroupDefinitionMap(
+  groupsPath: string,
+  availableGroupSkus: Set<string>
+): Map<string, CollectibleGroupDefinition> {
+  const groups = new Map<string, CollectibleGroupDefinition>();
+  for (const definition of loadDefinitionAttributes(groupsPath)) {
+    const sku = definition.sku?.trim() ?? "";
+    const rewardSku = definition.reward?.trim() ?? "";
+    const rewardType = definition.rewardType?.trim().toLowerCase() ?? "";
+    if (sku.length === 0 || rewardSku.length === 0 || !availableGroupSkus.has(sku)) {
+      continue;
+    }
+
+    groups.set(sku, { sku, rewardSku, rewardType });
+  }
+
+  return groups;
+}
+
+function loadCollectiblePlaneRewardMap(
+  groupsPath: string,
+  rewardsPath: string,
+  availableGroupSkus: Set<string>
+): Map<string, string> {
+  return loadCollectibleRewardMapByType(groupsPath, rewardsPath, availableGroupSkus, "plane");
+}
+
+function loadCollectibleRewardMapByType(
+  groupsPath: string,
+  rewardsPath: string,
+  availableGroupSkus: Set<string>,
+  rewardTypeFilter: string
+): Map<string, string> {
   const rewardTypesBySku = new Map<string, string>();
   for (const definition of loadDefinitionAttributes(rewardsPath)) {
     const sku = definition.sku?.trim();
-    const rewardType = definition.rewardType?.trim();
+    const rewardType = definition.rewardType?.trim().toLowerCase();
     if (sku && rewardType) {
       rewardTypesBySku.set(sku, rewardType);
     }
   }
 
-  const planeRewardsByGroup = new Map<string, string>();
+  const rewardsByGroup = new Map<string, string>();
   for (const definition of loadDefinitionAttributes(groupsPath)) {
     const groupSku = definition.sku?.trim();
     const rewardSku = definition.reward?.trim();
-    if (groupSku && rewardSku && rewardTypesBySku.get(rewardSku) === "plane") {
-      planeRewardsByGroup.set(groupSku, rewardSku);
+    if (!groupSku || !rewardSku || !availableGroupSkus.has(groupSku)) {
+      continue;
+    }
+
+    const groupRewardType = definition.rewardType?.trim().toLowerCase();
+    const rewardType = rewardTypesBySku.get(rewardSku) ?? groupRewardType;
+    if (rewardType === rewardTypeFilter) {
+      rewardsByGroup.set(groupSku, rewardSku);
     }
   }
 
-  return planeRewardsByGroup;
+  return rewardsByGroup;
+}
+
+function loadAvailableCollectibleGroupSkus(
+  groupsPath: string,
+  itemAssetsRoot: string,
+  advisorVariantItemSkus: Set<string>
+): Set<string> {
+  const archivedItemSwfs = createArchivedItemSwfSet(itemAssetsRoot);
+  const groupSkus = new Set<string>();
+  for (const definition of loadDefinitionAttributes(groupsPath)) {
+    const groupSku = definition.sku?.trim();
+    const rewardSku = definition.reward?.trim();
+    const rewardType = definition.rewardType?.trim().toLowerCase();
+    if (!groupSku || !rewardSku) {
+      continue;
+    }
+
+    if (
+      rewardType === "item" &&
+      !isArchivedItemSkuAvailable(rewardSku, archivedItemSwfs, advisorVariantItemSkus.has(rewardSku))
+    ) {
+      continue;
+    }
+
+    groupSkus.add(groupSku);
+  }
+
+  return groupSkus;
+}
+
+function loadAdvisorVariantItemSkus(filePath: string): Set<string> {
+  const advisorSkus = new Set<string>();
+  for (const definition of loadDefinitionAttributes(filePath)) {
+    const sku = definition.sku?.trim();
+    if (sku && definition.useAdvisor != null) {
+      advisorSkus.add(sku);
+    }
+  }
+
+  return advisorSkus;
+}
+
+function isArchivedItemSkuAvailable(sku: string, archivedItemSwfs: Set<string>, usesAdvisor: boolean): boolean {
+  if (archivedItemSwfs.has(`${sku}.swf`.toLowerCase())) {
+    return true;
+  }
+
+  return (
+    usesAdvisor &&
+    archivedItemSwfs.has(`${sku}_Cindy.swf`.toLowerCase()) &&
+    archivedItemSwfs.has(`${sku}_Ronald.swf`.toLowerCase())
+  );
+}
+
+function createArchivedItemSwfSet(itemAssetsRoot: string): Set<string> {
+  if (!fs.existsSync(itemAssetsRoot)) {
+    return new Set();
+  }
+
+  return new Set(
+    fs
+      .readdirSync(itemAssetsRoot, { withFileTypes: true })
+      .filter((entry) => entry.isFile() && entry.name.toLowerCase().endsWith(".swf"))
+      .map((entry) => entry.name.toLowerCase())
+  );
 }
 
 function groupCollectiblesByContractGroup(definitions: CollectibleDefinition[]): Map<string, string[]> {

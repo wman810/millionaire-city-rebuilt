@@ -70,6 +70,7 @@ export function normalizeCompletedTutorialUniverse(document: JsonObject, nowMs =
   const needsTutorialRepair = !hasHeadQuarter;
 
   let changed = false;
+  changed = normalizeBossGenre(profile) || changed;
   changed = ensureCompletedTutorialMissionState(profile) || changed;
   changed = normalizeReachedPollMissionState(profile) || changed;
   changed = settleStaleTutorialPollMissions(profile) || changed;
@@ -420,6 +421,16 @@ function isPollMissionSatisfied(rule: PollMissionRule, counts: Map<string, numbe
     return progress > rule.conditionIndex;
   }
   return progress >= rule.eventAmount;
+}
+
+function normalizeBossGenre(profile: JsonObject): boolean {
+  const value = String(profile.bossGenre ?? "").trim();
+  if (value === "0" || value === "1") {
+    return false;
+  }
+
+  profile.bossGenre = "0";
+  return true;
 }
 
 function ensureTutorialItem(
