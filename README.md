@@ -14,6 +14,14 @@ For normal play, use the portable Windows release:
 
 No installer is required.
 
+## Community
+
+Join the Discord server:
+
+```text
+discord.gg/cr6M7UAh4J
+```
+
 ## Save Location
 
 Your local save is stored under:
@@ -23,14 +31,6 @@ generated/data
 ```
 
 Back up this folder before deleting files, resetting your city, or testing experimental builds.
-
-## Known Limitations
-
-- The game is local-only. Online multiplayer and real Facebook integration are not restored.
-- Social, CRM, ad, and old Facebook flows are disabled or handled locally.
-- Gold purchases are free. This revival does not accept real-money payments.
-- Some original assets were not recovered. Items with missing required assets may be unavailable.
-- Modern Chrome, Edge, and Firefox cannot run the SWF because they removed Flash support.
 
 ## Browser Play
 
