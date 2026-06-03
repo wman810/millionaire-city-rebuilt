@@ -1,44 +1,56 @@
-# Millionaire City Private Server
+# Millionaire City Rebuilt
 
-This workspace contains a TypeScript private-server prototype for the `0.501` Millionaire City client.
+Millionaire City Rebuilt is a fan-made local revival of the `0.501` Millionaire City Flash client. It runs the original client with a replacement local server, bundled Flash-capable Electron runtime, and local SQLite save storage.
 
-## Workspace
+This project is not affiliated with Digital Chocolate, Ubisoft, or Facebook.
 
-- `apps/server`: local HTTP game server, HTTPS Facebook shim, SQLite persistence, and the launcher page
-- `apps/desktop`: Electron launcher that starts the server and opens a helper browser runtime
-- `packages/shared`: protocol constants, types, and envelope helpers shared by both apps
+## Download And Play
 
-## Current Runtime Model
+For normal play, use the portable Windows release:
 
-The SWF still depends on browser `ExternalInterface`, legacy Facebook endpoints, and a Flash-capable Chromium runtime. To keep the original recovered assets read-only, the workspace does two things:
+1. Download the latest `MillionaireCityRebuilt-*-portable-win-x64.zip` from GitHub Releases.
+2. Extract the ZIP.
+3. Run `Millionaire City Rebuilt.exe`.
 
-- serves a private copy of `Dollars.swf` from `generated/client/Dollars.private.swf`
-- exposes a local HTTPS Facebook shim for the hardcoded `graph.facebook.com` and `api.facebook.com` calls
+No installer is required.
 
-The desktop app follows the same model as older Electron Flash clients:
+## Save Location
 
-- Electron `10.4.7`
-- bundled Pepper Flash binaries under `apps/desktop/assets/flash`
-- `ppapi-flash-path` configured before `ready`
-- `BrowserWindow` created with `webPreferences.plugins = true`
+Your local save is stored under:
 
-The Electron app itself is the Flash runtime, so there is no external helper-browser requirement.
+```text
+generated/data
+```
 
-## Asset Layout
+Back up this folder before deleting files, resetting your city, or testing experimental builds.
 
-The recovered game cache is tracked with the repository:
+## Known Limitations
 
-- `assets/`: recovered game cache served by the local server
+- The game is local-only. Online multiplayer and real Facebook integration are not restored.
+- Social, CRM, ad, and old Facebook flows are disabled or handled locally.
+- Gold purchases are free because the original Facebook Credits payment system no longer exists.
+- Some original assets were not recovered. Items with missing required assets may be unavailable.
+- Modern Chrome, Edge, and Firefox cannot run the SWF because they removed Flash support.
 
-Pepper Flash runtime binaries are tracked with the repository:
+## Browser Play
 
-- `apps/desktop/assets/flash/`
+The portable release is designed to use the bundled Electron client. Do not run the portable EXE and another browser client at the same time, because both would use the same local save.
 
-Generated client files, SQLite saves, downloaded tools, and local backups are not tracked. They are recreated or updated locally under:
+Advanced users building from source can start only the local server:
 
-- `generated/`
+```powershell
+cmd /c npm run dev:server
+```
 
-## Quick Start
+Then open:
+
+```text
+https://127.0.0.1:31804/launcher
+```
+
+This requires a browser that still supports Flash. The bundled Electron runtime is the recommended way to play.
+
+## Build From Source
 
 GitHub source downloads do not include `node_modules/`. Run the install step before any `npm run ...` command.
 
@@ -65,22 +77,37 @@ cmd /c npm run dev:desktop
 The project can be built and tested after dependencies are installed:
 
 ```powershell
-cmd /c npm install
 cmd /c npm run build
 cmd /c npm run test
 ```
 
-The generated private SWF copy is still recreated locally under `generated/client/` by `npm run prepare-client`.
+To build the portable Windows ZIP:
+
+```powershell
+cmd /c npm run package:win
+```
+
+## Project Layout
+
+- `apps/server`: local HTTP game server, HTTPS Facebook shim, SQLite persistence, and launcher page
+- `apps/desktop`: Electron launcher that starts the server and opens the bundled Flash runtime
+- `packages/shared`: protocol constants, types, and envelope helpers shared by both apps
+- `assets`: recovered game cache served by the local server
+- `apps/desktop/assets/flash`: bundled Pepper Flash runtime binaries
+- `generated`: generated private SWF copy, SQLite save data, downloaded tools, release runtime files, and local backups
+
+## Runtime Model
+
+The original SWF still depends on browser `ExternalInterface`, legacy Facebook endpoints, and a Flash-capable Chromium runtime. The revival handles this by:
+
+- serving a private copy of `Dollars.swf` from `generated/client/Dollars.private.swf`
+- exposing a local HTTPS Facebook shim for hardcoded `graph.facebook.com` and `api.facebook.com` calls
+- launching Electron `10.4.7` with bundled Pepper Flash enabled
+
+The generated private SWF copy is recreated locally by `npm run prepare-client`.
 
 ## Dependency Warnings
 
-`npm audit` still reports advisories against `electron@10.4.7`. That version is intentionally pinned because newer Electron releases removed the Pepper Flash plugin path this client depends on. Do not run `npm audit fix --force`; it upgrades Electron to a modern version that breaks the Flash runtime.
+`npm audit` reports advisories against `electron@10.4.7`. That version is intentionally pinned because newer Electron releases removed the Pepper Flash plugin path this client depends on. Do not run `npm audit fix --force`; it upgrades Electron to a modern version that breaks the Flash runtime.
 
-Some deprecation warnings also come from Electron/native packaging tooling. The release packaging scripts invoke `electron-builder@26.8.1` on demand with `npx`, so packaging may still print warnings from its internal ASAR/glob stack. Those packages are not installed by a normal `npm install` and are not part of the game server/runtime dependency tree.
-
-## Notes
-
-- The recovered original cache is treated as source material and is served read-only.
-- The private client copy is currently generated by the workspace tooling so the launcher never points at the archived original directly.
-- Pepper Flash is bundled from the local archival runtime assets placed in `apps/desktop/assets/flash`.
-- Social, CRM, and ad flows are offline or disabled in local mode.
+Some deprecation warnings also come from Electron/native packaging tooling. The release packaging scripts invoke `electron-builder@26.8.1` on demand with `npx`, so packaging may print warnings from its internal dependency stack.
