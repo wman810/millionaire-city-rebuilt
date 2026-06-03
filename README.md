@@ -1,6 +1,6 @@
 # Millionaire City Rebuilt
 
-Millionaire City Rebuilt is a fan-made local revival of the `0.501` Millionaire City Flash client. It runs the original client with a replacement local server, bundled Flash-capable Electron runtime, and local SQLite save storage.
+Millionaire City Rebuilt is a fan-made local revival of the `0.501` Millionaire City Flash client. It runs the original client with a replacement local server, bundled Flash-capable Electron runtime, and local SQLite save storage. The revival is built with TypeScript, Node.js, Express, Electron, and `better-sqlite3`.
 
 This project is not affiliated with Digital Chocolate, Ubisoft, or Facebook.
 
