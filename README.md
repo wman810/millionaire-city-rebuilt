@@ -28,7 +28,7 @@ Back up this folder before deleting files, resetting your city, or testing exper
 
 - The game is local-only. Online multiplayer and real Facebook integration are not restored.
 - Social, CRM, ad, and old Facebook flows are disabled or handled locally.
-- Gold purchases are free because the original Facebook Credits payment system no longer exists.
+- Gold purchases are free. This revival does not accept real-money payments.
 - Some original assets were not recovered. Items with missing required assets may be unavailable.
 - Modern Chrome, Edge, and Firefox cannot run the SWF because they removed Flash support.
 
