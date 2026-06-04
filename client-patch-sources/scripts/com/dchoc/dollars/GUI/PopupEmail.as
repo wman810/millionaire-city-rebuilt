@@ -277,6 +277,7 @@ package com.dchoc.dollars.GUI
                {
                   DollarsGame.getProfile().checkmail = CheckConfirmEmail.MAIL_CHECKING;
                }
+               CheckConfirmEmail.getInstance().load();
                break;
             case this.MAIL_INVALID:
                this.resetMailFields();

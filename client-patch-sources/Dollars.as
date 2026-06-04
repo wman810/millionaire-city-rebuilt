@@ -84,6 +84,11 @@ package
          smStage = stage;
          smStage.tabChildren = false;
          var _loc1_:Object = smStage.root.loaderInfo.parameters;
+         if(_loc1_.debugMode == "1" || _loc1_.debugMode == "true")
+         {
+            Config.DEBUG_MODE = true;
+            Config.DEBUG_CONSOLE = true;
+         }
          Security.allowInsecureDomain("*");
          Security.allowDomain("*");
          UserDataFacade.getInstance().login();

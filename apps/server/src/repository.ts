@@ -43,6 +43,37 @@ export class SaveRepository {
     return user;
   }
 
+  updateDefaultUserName(name: string): UserRow {
+    const user = this.ensureDefaultUser();
+    this.database.db
+      .prepare("UPDATE users SET name = ? WHERE id = ?")
+      .run(name, user.id);
+
+    return {
+      ...user,
+      name
+    };
+  }
+
+  getMeta(key: string): string | undefined {
+    const row = this.database.db
+      .prepare("SELECT value FROM meta WHERE key = ?")
+      .get(key) as { value: string } | undefined;
+    return row?.value;
+  }
+
+  setMeta(key: string, value: string): void {
+    this.database.db
+      .prepare("INSERT OR REPLACE INTO meta (key, value, updated_at) VALUES (?, ?, ?)")
+      .run(key, value, new Date().toISOString());
+  }
+
+  deleteMeta(key: string): void {
+    this.database.db
+      .prepare("DELETE FROM meta WHERE key = ?")
+      .run(key);
+  }
+
   seedFreshSave(userId: number, userExtId: string): void {
     const bundle = createFreshSaveBundle(userExtId);
     const stmt = this.database.db.prepare(

@@ -61,8 +61,30 @@ function parsePluginVersion(fileName: string): number[] {
 }
 
 function formatPluginVersion(fileName: string): string {
+  if (process.platform === "darwin") {
+    return getMacPluginVersion();
+  }
+  if (process.platform === "linux") {
+    return getLinuxPluginVersion();
+  }
+
   const version = parsePluginVersion(fileName);
   return version.join(".");
+}
+
+function getMacPluginVersion(): string {
+  const plistPath = path.join(FLASH_ASSET_DIR, "PepperFlashPlayer.plugin", "Contents", "Info.plist");
+  const plist = fs.readFileSync(plistPath, "utf8");
+  const match = plist.match(/<key>CFBundleShortVersionString<\/key>\s*<string>([^<]+)<\/string>/);
+  return match?.[1] ?? "34.0.0.231";
+}
+
+function getLinuxPluginVersion(): string {
+  const pluginPath = path.join(FLASH_ASSET_DIR, "libpepflashplayer.so");
+  const bytes = fs.readFileSync(pluginPath);
+  const text = bytes.toString("latin1");
+  const match = text.match(/LNX\s+(\d+),(\d+),(\d+),(\d+)/);
+  return match ? match.slice(1).join(".") : "32.0.0.303";
 }
 
 export function configureFlash(app: App): string {

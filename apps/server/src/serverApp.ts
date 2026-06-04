@@ -11,13 +11,32 @@ import type { Server } from "http";
 import { getServerConfig, type ServerConfig } from "./config.js";
 import { MCityDatabase } from "./database.js";
 import { CommandService } from "./commandHandlers.js";
-import { startFacebookShim, type FacebookShimHandle } from "./facebookShim.js";
+import { startFacebookShim, type FacebookShimHandle, type FacebookShimPicture } from "./facebookShim.js";
 import { renderLauncherHtml } from "./launcherHtml.js";
 import { SaveRepository } from "./repository.js";
-import { loadCashToCoins, loadGoldPackageRewards, type GoldPackageReward } from "./rules.js";
+import { loadCashToCoins, loadGoldPackageRewards, loadLevelXpThresholds, type GoldPackageReward } from "./rules.js";
+import { encodeAsciiCodes } from "./commandHandlers/encoding.js";
+import { DEFAULT_CITY_NAME } from "./saveDefaults/constants.js";
 
 const COMMERCE_ICON_FALLBACK = "commerce_bank.png";
 const COMMERCE_TYPE_SWF_FALLBACK = "common.swf";
+const LOCAL_PROFILE_NAME_MAX_LENGTH = 32;
+const LOCAL_CITY_NAME_MAX_LENGTH = 32;
+const LOCAL_PROFILE_PICTURE_FILE_NAME = "profile-picture";
+const LOCAL_PROFILE_PICTURE_MAX_BYTES = 2 * 1024 * 1024;
+const LOCAL_RESOURCE_ADJUSTMENT_MAX = 999_999_999;
+const LOCAL_PROFILE_PICTURE_MIME_META_KEY = "local_profile_picture_mime";
+const LOCAL_PROFILE_PICTURE_VERSION_META_KEY = "local_profile_picture_version";
+const TRANSPARENT_GIF = Buffer.from(
+  "R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=",
+  "base64"
+);
+const LOCAL_PROFILE_PICTURE_MIME_TYPES = new Set([
+  "image/gif",
+  "image/jpeg",
+  "image/png",
+  "image/webp"
+]);
 const ITEM_RULE_FILES = new Set([
   "commerceDefinitions.xml",
   "decorationDefinitions.xml",
@@ -44,6 +63,26 @@ interface ServerApp {
   stop: () => Promise<void>;
 }
 
+interface LocalProfileResponse {
+  ok: true;
+  userName: string;
+  cityName: string;
+  hasProfilePicture: boolean;
+  profilePictureUrl: string;
+}
+
+interface LocalResourcesResponse {
+  ok: true;
+  money: number;
+  gold: number;
+  paidGold: number;
+  xp: number;
+  level: number;
+  minXp: number;
+  maxXp: number;
+  companyValue: number;
+}
+
 export function createServerApp(config = getServerConfig()): ServerApp {
   const database = new MCityDatabase(config.dbPath);
   const repository = new SaveRepository(database);
@@ -51,6 +90,7 @@ export function createServerApp(config = getServerConfig()): ServerApp {
   const app = express();
   const goldPackageRewards = loadGoldPackageRewards(path.join(config.assetRoot, "Datas", "rules", "fbcredits.xml"));
   const cashToCoins = loadCashToCoins(path.join(config.assetRoot, "Datas", "rules", "settings.xml"));
+  const levelXpThresholds = loadLevelXpThresholds(path.join(config.assetRoot, "Datas", "rules", "XPTable.xml"));
   const archivedItemSwfs = createArchivedItemSwfSet(config);
 
   repository.ensureDefaultUser();
@@ -75,9 +115,52 @@ export function createServerApp(config = getServerConfig()): ServerApp {
     res.type("text/plain").send("ok");
   });
 
+  app.get("/local/profile", (_req, res) => {
+    res.json(createLocalProfileResponse(repository, config));
+  });
+
+  app.post("/local/profile", (req, res) => {
+    try {
+      const payload = req.body as Record<string, unknown>;
+      const response = updateLocalProfile(repository, config, payload);
+      res.json(response);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "Unable to update local profile.";
+      res.status(400).json({ ok: false, error: message });
+    }
+  });
+
+  app.get("/local/resources", (_req, res) => {
+    res.json(createLocalResourcesResponse(repository, levelXpThresholds));
+  });
+
+  app.post("/local/resources/adjust", (req, res) => {
+    try {
+      const payload = req.body as Record<string, unknown>;
+      const response = adjustLocalResources(repository, levelXpThresholds, cashToCoins, payload);
+      res.json(response);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "Unable to adjust local resources.";
+      res.status(400).json({ ok: false, error: message });
+    }
+  });
+
+  app.get("/local/profile-picture", (_req, res) => {
+    const picture = getLocalProfilePicture(repository, config);
+    res.setHeader("cache-control", "no-store");
+    if (picture) {
+      res.type(picture.mimeType);
+      res.sendFile(picture.filePath);
+      return;
+    }
+
+    res.type("image/gif").send(TRANSPARENT_GIF);
+  });
+
   app.get("/launcher", (req, res) => {
     const appUrl = `https://127.0.0.1:${config.httpsPort}`;
     const debugMode = isTruthyQueryValue(req.query.debug) || process.env.MCITY_SWF_DEBUG === "1";
+    const localProfile = createLocalProfileResponse(repository, config);
     res.type("html").send(
       renderLauncherHtml({
         appUrl,
@@ -88,7 +171,10 @@ export function createServerApp(config = getServerConfig()): ServerApp {
         gameToken: "bootstrap-token",
         facebookAppId: "315455798286",
         lang: config.launcherLang,
-        debugMode
+        debugMode,
+        localUserName: localProfile.userName,
+        localCityName: localProfile.cityName,
+        localProfilePictureUrl: localProfile.profilePictureUrl
       })
     );
   });
@@ -390,7 +476,8 @@ export function createServerApp(config = getServerConfig()): ServerApp {
           facebookShim = await startFacebookShim({
             port: config.facebookHttpsPort,
             currentUserId: config.launcherUserId,
-            currentUserName: "Mayor"
+            getCurrentUserName: () => getLocalProfile(repository).userName,
+            getCurrentUserPicture: () => getLocalProfilePicture(repository, config)
           });
         } catch (error) {
           console.warn(`[mcity] Failed to start HTTPS Facebook shim on port ${config.facebookHttpsPort}:`, error);
@@ -780,6 +867,306 @@ function applyOfflinePayment(
 
   repository.setDocument(userId, "universe", universe);
   return awardedGold;
+}
+
+function createLocalProfileResponse(repository: SaveRepository, config: ServerConfig): LocalProfileResponse {
+  const picture = getLocalProfilePicture(repository, config);
+  const localProfile = getLocalProfile(repository);
+  return {
+    ok: true,
+    userName: localProfile.userName,
+    cityName: localProfile.cityName,
+    hasProfilePicture: Boolean(picture),
+    profilePictureUrl: `/local/profile-picture?v=${getLocalProfilePictureVersion(repository, config)}`
+  };
+}
+
+function updateLocalProfile(
+  repository: SaveRepository,
+  config: ServerConfig,
+  payload: Record<string, unknown>
+): LocalProfileResponse {
+  const user = repository.ensureDefaultUser();
+  const currentProfile = getLocalProfile(repository);
+  const userName = payload.userName === undefined
+    ? currentProfile.userName
+    : sanitizeLocalProfileName(payload.userName);
+  const cityName = payload.cityName === undefined
+    ? currentProfile.cityName
+    : sanitizeLocalCityName(payload.cityName);
+
+  repository.updateDefaultUserName(userName);
+  const universe = repository.getDocument<JsonObject>(user.id, SAVE_TAGS.universe);
+  const profile = getUniverseProfile(universe);
+  if (profile) {
+    profile.userName = userName;
+    profile.cityname = cityName;
+    profile.cityNameCodes = encodeAsciiCodes(cityName);
+    repository.setDocument(user.id, SAVE_TAGS.universe, universe);
+  }
+
+  if (payload.clearProfilePicture === true || payload.clearProfilePicture === "true") {
+    clearLocalProfilePicture(repository, config);
+  } else if (typeof payload.profilePictureDataUrl === "string" && payload.profilePictureDataUrl.trim().length > 0) {
+    saveLocalProfilePicture(repository, config, payload.profilePictureDataUrl);
+  }
+
+  return createLocalProfileResponse(repository, config);
+}
+
+function getLocalProfile(repository: SaveRepository): { userName: string; cityName: string } {
+  const user = repository.ensureDefaultUser();
+  try {
+    const universe = repository.getDocument<JsonObject>(user.id, SAVE_TAGS.universe);
+    const profile = getUniverseProfile(universe);
+    const userName = sanitizeLocalProfileName(profile?.userName ?? user.name);
+    const cityName = sanitizeLocalCityName(profile?.cityname ?? DEFAULT_CITY_NAME);
+    return { userName, cityName };
+  } catch {
+    return {
+      userName: sanitizeLocalProfileName(user.name),
+      cityName: DEFAULT_CITY_NAME
+    };
+  }
+}
+
+function sanitizeLocalProfileName(value: unknown): string {
+  const normalized = String(value ?? "")
+    .replace(/[\u0000-\u001F\u007F]/g, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, LOCAL_PROFILE_NAME_MAX_LENGTH);
+  return normalized.length > 0 ? normalized : "Mayor";
+}
+
+function sanitizeLocalCityName(value: unknown): string {
+  const normalized = String(value ?? "")
+    .replace(/[\u0000-\u001F\u007F]/g, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, LOCAL_CITY_NAME_MAX_LENGTH);
+  return normalized.length > 0 ? normalized : DEFAULT_CITY_NAME;
+}
+
+function createLocalResourcesResponse(repository: SaveRepository, levelXpThresholds: number[]): LocalResourcesResponse {
+  const profile = getLocalPlayerUniverseProfile(repository);
+  const xp = readWholeNumber(profile.exp, 0);
+  const explicitLevel = readWholeNumber(profile.level, 0);
+  const level = Math.max(explicitLevel, getLevelFromXp(xp, levelXpThresholds));
+  const xpBounds = getLevelXpBounds(level, levelXpThresholds);
+  return {
+    ok: true,
+    money: readWholeNumber(profile.DCCoins, 0),
+    gold: readWholeNumber(profile.DCCash, 0),
+    paidGold: readWholeNumber(profile.DCCashPaid, 0),
+    xp,
+    level,
+    minXp: xpBounds.minXp,
+    maxXp: xpBounds.maxXp,
+    companyValue: readWholeNumber(profile.companyValue, 0)
+  };
+}
+
+function adjustLocalResources(
+  repository: SaveRepository,
+  levelXpThresholds: number[],
+  cashToCoins: number,
+  payload: Record<string, unknown>
+): LocalResourcesResponse {
+  const resource = String(payload.resource ?? "").trim().toLowerCase();
+  const delta = parseResourceDelta(payload.delta);
+  if (!["money", "gold", "xp"].includes(resource)) {
+    throw new Error("Resource must be money, gold, or xp.");
+  }
+
+  const user = repository.ensureDefaultUser();
+  const universe = repository.getDocument<JsonObject>(user.id, SAVE_TAGS.universe);
+  const profile = getUniverseProfile(universe);
+  if (!profile) {
+    throw new Error("Player profile is missing from the save.");
+  }
+
+  if (resource === "money") {
+    const previousMoney = readWholeNumber(profile.DCCoins, 0);
+    const money = clampWholeNumber(previousMoney + delta);
+    profile.DCCoins = String(money);
+    profile.companyValue = String(clampWholeNumber(readWholeNumber(profile.companyValue, 0) + money - previousMoney));
+  } else if (resource === "gold") {
+    const previousGold = readWholeNumber(profile.DCCash, 0);
+    const gold = clampWholeNumber(previousGold + delta);
+    const paidGold = clampWholeNumber(readWholeNumber(profile.DCCashPaid, 0) + delta);
+    profile.DCCash = String(gold);
+    profile.DCCashPaid = String(Math.min(paidGold, gold));
+    profile.companyValue = String(
+      clampWholeNumber(readWholeNumber(profile.companyValue, 0) + (gold - previousGold) * cashToCoins)
+    );
+  } else {
+    const xp = clampWholeNumber(readWholeNumber(profile.exp, 0) + delta);
+    const level = getLevelFromXp(xp, levelXpThresholds);
+    const explicitLevel = readWholeNumber(profile.level, 0);
+    profile.exp = String(xp);
+    profile.level = String(delta < 0 ? level : Math.max(explicitLevel, level));
+  }
+
+  repository.setDocument(user.id, SAVE_TAGS.universe, universe);
+  return createLocalResourcesResponse(repository, levelXpThresholds);
+}
+
+function getLocalPlayerUniverseProfile(repository: SaveRepository): JsonObject {
+  const user = repository.ensureDefaultUser();
+  const universe = repository.getDocument<JsonObject>(user.id, SAVE_TAGS.universe);
+  const profile = getUniverseProfile(universe);
+  if (!profile) {
+    throw new Error("Player profile is missing from the save.");
+  }
+
+  return profile;
+}
+
+function parseResourceDelta(value: unknown): number {
+  const delta = Number(value);
+  if (!Number.isFinite(delta) || !Number.isInteger(delta) || delta === 0) {
+    throw new Error("Adjustment must be a non-zero whole number.");
+  }
+  if (Math.abs(delta) > LOCAL_RESOURCE_ADJUSTMENT_MAX) {
+    throw new Error(`Adjustment must be between -${LOCAL_RESOURCE_ADJUSTMENT_MAX} and ${LOCAL_RESOURCE_ADJUSTMENT_MAX}.`);
+  }
+
+  return delta;
+}
+
+function readWholeNumber(value: unknown, fallback: number): number {
+  const parsed = Number(value ?? fallback);
+  if (!Number.isFinite(parsed)) {
+    return fallback;
+  }
+
+  return Math.max(0, Math.floor(parsed));
+}
+
+function clampWholeNumber(value: number): number {
+  if (!Number.isFinite(value)) {
+    return 0;
+  }
+
+  return Math.max(0, Math.floor(value));
+}
+
+function getLevelFromXp(exp: number, levelXpThresholds: number[]): number {
+  if (!Number.isFinite(exp) || exp < 0 || levelXpThresholds.length === 0) {
+    return 1;
+  }
+
+  let level = 0;
+  while (level < levelXpThresholds.length) {
+    if (exp < levelXpThresholds[level]) {
+      return Math.max(1, level);
+    }
+    level += 1;
+  }
+
+  return Math.max(1, levelXpThresholds.length);
+}
+
+function getLevelXpBounds(level: number, levelXpThresholds: number[]): { minXp: number; maxXp: number } {
+  if (levelXpThresholds.length === 0) {
+    return { minXp: 0, maxXp: 0 };
+  }
+
+  const normalizedLevel = Math.max(1, Math.floor(level));
+  const minXp = levelXpThresholds[Math.min(normalizedLevel - 1, levelXpThresholds.length - 1)] ?? 0;
+  const maxXp = levelXpThresholds[Math.min(normalizedLevel, levelXpThresholds.length - 1)] ?? minXp;
+  return {
+    minXp: clampWholeNumber(minXp),
+    maxXp: Math.max(clampWholeNumber(minXp), clampWholeNumber(maxXp))
+  };
+}
+
+function saveLocalProfilePicture(repository: SaveRepository, config: ServerConfig, dataUrl: string): void {
+  const match = dataUrl.trim().match(/^data:(image\/(?:gif|jpeg|png|webp));base64,([a-z0-9+/=\r\n]+)$/i);
+  if (!match) {
+    throw new Error("Profile picture must be a PNG, JPEG, GIF, or WebP image.");
+  }
+
+  const mimeType = match[1].toLowerCase();
+  if (!LOCAL_PROFILE_PICTURE_MIME_TYPES.has(mimeType)) {
+    throw new Error("Profile picture must be a PNG, JPEG, GIF, or WebP image.");
+  }
+
+  const bytes = Buffer.from(match[2].replace(/\s/g, ""), "base64");
+  if (bytes.length === 0 || bytes.length > LOCAL_PROFILE_PICTURE_MAX_BYTES) {
+    throw new Error("Profile picture must be between 1 byte and 2 MB.");
+  }
+
+  if (!doesImageMagicMatchMime(bytes, mimeType)) {
+    throw new Error("Profile picture data does not match its image type.");
+  }
+
+  fs.mkdirSync(path.dirname(getLocalProfilePicturePath(config)), { recursive: true });
+  fs.writeFileSync(getLocalProfilePicturePath(config), bytes);
+  repository.setMeta(LOCAL_PROFILE_PICTURE_MIME_META_KEY, mimeType);
+  repository.setMeta(LOCAL_PROFILE_PICTURE_VERSION_META_KEY, String(Date.now()));
+}
+
+function clearLocalProfilePicture(repository: SaveRepository, config: ServerConfig): void {
+  const filePath = getLocalProfilePicturePath(config);
+  if (fs.existsSync(filePath)) {
+    fs.unlinkSync(filePath);
+  }
+
+  repository.deleteMeta(LOCAL_PROFILE_PICTURE_MIME_META_KEY);
+  repository.setMeta(LOCAL_PROFILE_PICTURE_VERSION_META_KEY, String(Date.now()));
+}
+
+function getLocalProfilePicture(repository: SaveRepository, config: ServerConfig): FacebookShimPicture | undefined {
+  const filePath = getLocalProfilePicturePath(config);
+  const mimeType = repository.getMeta(LOCAL_PROFILE_PICTURE_MIME_META_KEY);
+  if (!mimeType || !LOCAL_PROFILE_PICTURE_MIME_TYPES.has(mimeType) || !fs.existsSync(filePath)) {
+    return undefined;
+  }
+
+  return { filePath, mimeType };
+}
+
+function getLocalProfilePicturePath(config: ServerConfig): string {
+  return path.join(path.dirname(config.dbPath), LOCAL_PROFILE_PICTURE_FILE_NAME);
+}
+
+function getLocalProfilePictureVersion(repository: SaveRepository, config: ServerConfig): string {
+  const storedVersion = repository.getMeta(LOCAL_PROFILE_PICTURE_VERSION_META_KEY);
+  if (storedVersion) {
+    return storedVersion;
+  }
+
+  const filePath = getLocalProfilePicturePath(config);
+  if (!fs.existsSync(filePath)) {
+    return "default";
+  }
+
+  return String(Math.floor(fs.statSync(filePath).mtimeMs));
+}
+
+function doesImageMagicMatchMime(bytes: Buffer, mimeType: string): boolean {
+  if (mimeType === "image/png") {
+    return bytes.length >= 8 && bytes.subarray(0, 8).equals(Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]));
+  }
+
+  if (mimeType === "image/jpeg") {
+    return bytes.length >= 3 && bytes[0] === 0xff && bytes[1] === 0xd8 && bytes[2] === 0xff;
+  }
+
+  if (mimeType === "image/gif") {
+    const header = bytes.subarray(0, 6).toString("ascii");
+    return header === "GIF87a" || header === "GIF89a";
+  }
+
+  if (mimeType === "image/webp") {
+    return bytes.length >= 12 &&
+      bytes.subarray(0, 4).toString("ascii") === "RIFF" &&
+      bytes.subarray(8, 12).toString("ascii") === "WEBP";
+  }
+
+  return false;
 }
 
 function markVipClubEmailSubmitted(repository: SaveRepository): void {

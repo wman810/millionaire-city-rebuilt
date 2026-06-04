@@ -11,6 +11,7 @@ import { renderLauncherHtml } from "../src/launcherHtml.js";
 import { createEmptyCollectiblesDocument, normalizeCompletedTutorialUniverse } from "../src/saveDefaults.js";
 import { RONALD_LAYOUT_ITEMS, RONALD_PLOTS_TYPE } from "../src/saveDefaults/ronaldLayout.js";
 import { createStarterDecorationItems } from "../src/saveDefaults/starterDecorations.js";
+import { loadCashToCoins } from "../src/rules.js";
 
 const activeApps: Array<ReturnType<typeof createServerApp>> = [];
 const HOUSE_COLLECTIBLE_DROP_DIVISOR = 8;
@@ -4965,12 +4966,205 @@ describe("Millionaire City server", () => {
       oauthToken: "local-oauth-token",
       gameToken: "bootstrap-token",
       facebookAppId: "315455798286",
-      lang: "en_US"
+      lang: "en_US",
+      debugMode: false,
+      localUserName: "Mayor",
+      localCityName: "Chocolate Fields",
+      localProfilePictureUrl: "/local/profile-picture?v=default"
     });
 
     expect(html).toContain("useFrictionlessFacebookCredits=false");
     expect(html).toContain("fbcreditsCurrentBalance:0:0");
     expect(html).toContain("messageResponseFacebookCredits:1");
+    expect(html).toContain("var thumbnailSize = 50;");
+    expect(html).toContain("localProfileUpdate");
+    expect(html).toContain("local_city_name");
+    expect(html).toContain("Saved. Game profile updated.");
+    expect(html).toContain("localStatsUpdate");
+    expect(html).toContain("companyValue");
+    expect(html).toContain("Saved. Game totals updated.");
+  });
+
+  test("saves local profile name and picture settings", async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-local-profile-"));
+    const config = {
+      ...getServerConfig(),
+      dbPath: path.join(tempDir, "save.sqlite"),
+      httpPort: 31988,
+      httpsPort: 31998,
+      facebookHttpsPort: 4528,
+      useHttpsFacebookShim: false
+    };
+
+    const serverApp = createServerApp(config);
+    activeApps.push(serverApp);
+    await serverApp.start();
+
+    const initial = await fetch(`http://127.0.0.1:${config.httpPort}/local/profile`);
+    expect(initial.status).toBe(200);
+    expect(await initial.json()).toMatchObject({
+      ok: true,
+      userName: "Mayor",
+      cityName: "Chocolate Fields",
+      hasProfilePicture: false
+    });
+
+    const pictureDataUrl = "data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=";
+    const save = await fetch(`http://127.0.0.1:${config.httpPort}/local/profile`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        userName: "Test Mayor",
+        cityName: "Test Town",
+        profilePictureDataUrl: pictureDataUrl
+      })
+    });
+    expect(save.status).toBe(200);
+    expect(await save.json()).toMatchObject({
+      ok: true,
+      userName: "Test Mayor",
+      cityName: "Test Town",
+      hasProfilePicture: true
+    });
+
+    const universe = serverApp.repository.getDocument<Record<string, unknown>>(1, "universe");
+    const profile = (universe.universe as Array<Record<string, unknown>>).find((entry) =>
+      Array.isArray(entry.Profile)
+    ) as Record<string, unknown> | undefined;
+    expect(profile?.userName).toBe("Test Mayor");
+    expect(profile?.cityname).toBe("Test Town");
+    expect(profile?.cityNameCodes).toBe("84,111,109,97,115,32,84,111,119,110");
+    expect(serverApp.repository.ensureDefaultUser().name).toBe("Test Mayor");
+
+    const picture = await fetch(`http://127.0.0.1:${config.httpPort}/local/profile-picture`);
+    expect(picture.status).toBe(200);
+    expect(picture.headers.get("content-type")).toContain("image/gif");
+    expect((await picture.arrayBuffer()).byteLength).toBeGreaterThan(0);
+
+    const clear = await fetch(`http://127.0.0.1:${config.httpPort}/local/profile`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        userName: "Test Mayor",
+        cityName: "Test Town",
+        clearProfilePicture: true
+      })
+    });
+    expect(clear.status).toBe(200);
+    expect(await clear.json()).toMatchObject({
+      ok: true,
+      userName: "Test Mayor",
+      cityName: "Test Town",
+      hasProfilePicture: false
+    });
+  });
+
+  test("adjusts local money, gold, and xp settings", async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-local-resources-"));
+    const config = {
+      ...getServerConfig(),
+      dbPath: path.join(tempDir, "save.sqlite"),
+      httpPort: 31989,
+      httpsPort: 31999,
+      facebookHttpsPort: 4529,
+      useHttpsFacebookShim: false
+    };
+
+    const serverApp = createServerApp(config);
+    activeApps.push(serverApp);
+    await serverApp.start();
+    const cashToCoins = loadCashToCoins(path.join(config.assetRoot, "Datas", "rules", "settings.xml"));
+
+    const initial = await fetch(`http://127.0.0.1:${config.httpPort}/local/resources`);
+    expect(initial.status).toBe(200);
+    expect(await initial.json()).toMatchObject({
+      ok: true,
+      money: 500000,
+      gold: 0,
+      xp: 100,
+      minXp: 0,
+      maxXp: 470,
+      companyValue: 550000
+    });
+
+    const addMoney = await fetch(`http://127.0.0.1:${config.httpPort}/local/resources/adjust`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ resource: "money", delta: 250 })
+    });
+    expect(addMoney.status).toBe(200);
+    expect(await addMoney.json()).toMatchObject({
+      money: 500250,
+      companyValue: 550250
+    });
+
+    const removeMoney = await fetch(`http://127.0.0.1:${config.httpPort}/local/resources/adjust`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ resource: "money", delta: -1000 })
+    });
+    expect(removeMoney.status).toBe(200);
+    expect(await removeMoney.json()).toMatchObject({
+      money: 499250,
+      companyValue: 549250
+    });
+
+    const addGold = await fetch(`http://127.0.0.1:${config.httpPort}/local/resources/adjust`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ resource: "gold", delta: 75 })
+    });
+    expect(addGold.status).toBe(200);
+    expect(await addGold.json()).toMatchObject({
+      gold: 75,
+      paidGold: 75,
+      companyValue: 549250 + 75 * cashToCoins
+    });
+
+    const removeGold = await fetch(`http://127.0.0.1:${config.httpPort}/local/resources/adjust`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ resource: "gold", delta: -100 })
+    });
+    expect(removeGold.status).toBe(200);
+    expect(await removeGold.json()).toMatchObject({
+      gold: 0,
+      paidGold: 0,
+      companyValue: 549250
+    });
+
+    const addXp = await fetch(`http://127.0.0.1:${config.httpPort}/local/resources/adjust`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ resource: "xp", delta: 1000 })
+    });
+    expect(addXp.status).toBe(200);
+    const xpResponse = await addXp.json() as Record<string, unknown>;
+    expect(xpResponse.xp).toBe(1100);
+    expect(Number(xpResponse.level)).toBeGreaterThanOrEqual(1);
+    expect(Number(xpResponse.maxXp)).toBeGreaterThan(Number(xpResponse.minXp));
+
+    const removeXp = await fetch(`http://127.0.0.1:${config.httpPort}/local/resources/adjust`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ resource: "xp", delta: -2000 })
+    });
+    expect(removeXp.status).toBe(200);
+    expect(await removeXp.json()).toMatchObject({
+      xp: 0,
+      level: 1
+    });
+
+    const universe = serverApp.repository.getDocument<Record<string, unknown>>(1, "universe");
+    const profile = (universe.universe as Array<Record<string, unknown>>).find((entry) =>
+      Array.isArray(entry.Profile)
+    ) as Record<string, unknown> | undefined;
+    expect(profile?.DCCoins).toBe("499250");
+    expect(profile?.DCCash).toBe("0");
+    expect(profile?.DCCashPaid).toBe("0");
+    expect(profile?.companyValue).toBe("549250");
+    expect(profile?.exp).toBe("0");
+    expect(profile?.level).toBe("1");
   });
 
   archivedAssetTest("awards a pending house collectible when an eligible level-6 house becomes rent-ready", async () => {

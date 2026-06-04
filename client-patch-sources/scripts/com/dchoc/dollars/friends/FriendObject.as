@@ -73,7 +73,29 @@ package com.dchoc.dollars.friends
       
       public function setPictureURL(param1:String) : void
       {
+         var _loc2_:URLRequest = null;
+         var _loc3_:LoaderContext = null;
+         if(this.mUrl == param1)
+         {
+            return;
+         }
          this.mUrl = param1;
+         if(this.mLoader != null)
+         {
+            try
+            {
+               this.mLoader.unload();
+            }
+            catch(error:Error)
+            {
+            }
+            if(this.mUrl != null)
+            {
+               _loc2_ = new URLRequest(this.mUrl);
+               _loc3_ = new LoaderContext();
+               this.mLoader.load(_loc2_,_loc3_);
+            }
+         }
       }
       
       public function get extId() : String

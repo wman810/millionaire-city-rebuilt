@@ -252,14 +252,7 @@ package com.dchoc.dollars.GUI
          {
             Dollars.smStage.displayState = StageDisplayState.NORMAL;
          }
-         if(Config.FACEBOOK_CREDITS_TO_BUY_GOLD)
-         {
-            FBCreditsPurchase.getInstance().startPurchaseProcess(this,false);
-         }
-         else
-         {
-            onClose(null);
-         }
+         FBCreditsPurchase.getInstance().startPurchaseProcess(this,false);
          MyMetrics.sendMetricNG(MetricConstants.EVENT_ADD_GOLD,MetricConstants.LABEL_ECONOMY_ADD_GOLD_CONTINUE,MetricConstants.PRODUCT_GOLD);
       }
       

@@ -11,27 +11,31 @@
   ],
   "scripts": {
     "prebuild": "node scripts/checkDependencies.cjs tsc",
-    "build": "cmd /c npm run build -w @mcity/shared && npm run build -w @mcity/server && npm run build -w @mcity/desktop",
+    "build": "npm run build -w @mcity/shared && npm run build -w @mcity/server && npm run build -w @mcity/desktop",
     "predev:server": "node scripts/checkDependencies.cjs tsc tsx",
-    "dev:server": "cmd /c npm run dev -w @mcity/server",
+    "dev:server": "npm run dev -w @mcity/server",
     "predev:desktop": "node scripts/checkDependencies.cjs tsc electron",
-    "dev:desktop": "cmd /c npm run dev -w @mcity/desktop",
+    "dev:desktop": "npm run dev -w @mcity/desktop",
     "preprepare-client": "node scripts/checkDependencies.cjs tsx",
-    "prepare-client": "cmd /c npm run prepare-client -w @mcity/server",
+    "prepare-client": "npm run prepare-client -w @mcity/server",
     "prepare-runtime": "node scripts/prepareReleaseRuntime.cjs",
     "prepackage:win": "node scripts/checkDependencies.cjs tsc tsx",
-    "package:win": "cmd /c npm run prepare-client && npm run prepare-runtime && npm run build && npx --yes electron-builder@26.8.1 --win zip --x64 --publish never",
+    "package:win": "npm run prepare-client && npm run prepare-runtime && npm run build && npx --yes electron-builder@26.8.1 --win zip --x64 --publish never",
     "prepackage:win:dir": "node scripts/checkDependencies.cjs tsc tsx",
-    "package:win:dir": "cmd /c npm run prepare-client && npm run prepare-runtime && npm run build && npx --yes electron-builder@26.8.1 --win dir --x64 --publish never",
-    "report:missing-assets": "cmd /c npm run report:missing-assets -w @mcity/server",
+    "package:win:dir": "npm run prepare-client && npm run prepare-runtime && npm run build && npx --yes electron-builder@26.8.1 --win dir --x64 --publish never",
+    "prepackage:linux": "node scripts/checkDependencies.cjs tsc tsx",
+    "package:linux": "npm run prepare-client && npm run prepare-runtime && npm run build && npx --yes electron-builder@26.8.1 --linux zip --x64 --publish never",
+    "prepackage:mac": "node scripts/checkDependencies.cjs tsc tsx",
+    "package:mac": "npm run prepare-client && npm run prepare-runtime && npm run build && npx --yes electron-builder@26.8.1 --mac zip --x64 --publish never",
+    "report:missing-assets": "npm run report:missing-assets -w @mcity/server",
     "pretest": "node scripts/checkDependencies.cjs tsc vitest",
-    "test": "cmd /c npm run test -w @mcity/server",
-    "typecheck": "cmd /c npx tsc -b packages/shared/tsconfig.json apps/server/tsconfig.json apps/desktop/tsconfig.json --pretty false",
-    "lint:unused": "cmd /c npx knip --no-progress --workspace @mcity/server --workspace @mcity/desktop --workspace @mcity/shared --include files,exports --include-entry-exports",
-    "lint:cycles": "cmd /c npx madge --extensions ts --circular apps/server/src apps/desktop/src packages/shared/src"
+    "test": "npm run test -w @mcity/server",
+    "typecheck": "npx tsc -b packages/shared/tsconfig.json apps/server/tsconfig.json apps/desktop/tsconfig.json --pretty false",
+    "lint:unused": "npx knip --no-progress --workspace @mcity/server --workspace @mcity/desktop --workspace @mcity/shared --include files,exports --include-entry-exports",
+    "lint:cycles": "npx madge --extensions ts --circular apps/server/src apps/desktop/src packages/shared/src"
   },
   "dependencies": {
-    "@mcity/shared": "^0.1.0",
+    "@mcity/shared": "^0.1.1",
     "better-sqlite3": "^11.10.0",
     "express": "^4.22.2",
     "selfsigned": "^3.0.1"
@@ -67,6 +71,30 @@
         }
       ],
       "artifactName": "MillionaireCityRebuilt-${version}-portable-win-${arch}.${ext}"
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "zip",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "category": "Game",
+      "artifactName": "MillionaireCityRebuilt-${version}-portable-linux-${arch}.${ext}"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "zip",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "identity": null,
+      "artifactName": "MillionaireCityRebuilt-${version}-portable-mac-${arch}.${ext}"
     }
   }
 }

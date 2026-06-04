@@ -72,6 +72,14 @@ package com.dchoc.dollars.utils.metrics
       {
          super();
          this.mUnlockedCrosspromotions = new Array();
+         this.mUnlockedCrosspromotions.push(1);
+         this.mUnlockedCrosspromotions.push(16);
+         this.mUnlockedCrosspromotions.push(20);
+         this.mUnlockedCrosspromotions.push(19);
+         this.mUnlockedCrosspromotions.push(12);
+         this.mUnlockedCrosspromotions.push(21);
+         this.mUnlockedCrosspromotions.push(33);
+         this.mUnlockedCrosspromotions.push(37);
          this.mStatus = 0;
          this.mVideoAd = false;
          this.mOfferExpireDate = new Date();

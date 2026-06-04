@@ -10,6 +10,9 @@ interface LauncherOptions {
   facebookAppId: string;
   lang: string;
   debugMode: boolean;
+  localUserName: string;
+  localCityName: string;
+  localProfilePictureUrl: string;
 }
 
 export function renderLauncherHtml(options: LauncherOptions): string {
@@ -55,6 +58,9 @@ export function renderLauncherHtml(options: LauncherOptions): string {
   const giftSidewalkUrl = `${options.assetsBaseUrl}tabs/free_gifts/fgift_017.png`;
   const giftBriefcaseUrl = `${options.assetsBaseUrl}tabs/free_gifts/fgift_019.png`;
   const giftBalloonsUrl = `${options.assetsBaseUrl}tabs/free_gifts/fgift_034.png`;
+  const localUserName = escapeHtml(options.localUserName);
+  const localCityName = escapeHtml(options.localCityName);
+  const localProfilePictureUrl = escapeAttribute(options.localProfilePictureUrl);
 
   return `<!DOCTYPE html>
 <html>
@@ -295,6 +301,140 @@ export function renderLauncherHtml(options: LauncherOptions): string {
         font-size: 11px;
       }
 
+      #local_profile_settings {
+        margin-top: 12px;
+        padding: 10px 14px;
+        border: 1px solid #c7e2f4;
+        border-radius: 10px;
+        background: linear-gradient(180deg, #ffffff 0%, #edf8ff 100%);
+        color: #35566f;
+        font-size: 12px;
+      }
+
+      #local_profile_settings summary {
+        color: #1d669f;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      #local_profile_form {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        gap: 12px;
+        margin-top: 10px;
+      }
+
+      #local_resources_form {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid #d7edf8;
+      }
+
+      .local_resource_controls {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: flex-end;
+        gap: 10px;
+      }
+
+      .local_resource_group {
+        display: flex;
+        align-items: flex-end;
+        gap: 5px;
+      }
+
+      .local_profile_field {
+        display: inline-block;
+      }
+
+      .local_profile_field label {
+        display: block;
+        margin-bottom: 4px;
+        color: #4b6f8a;
+        font-weight: bold;
+      }
+
+      #local_profile_name {
+        width: 160px;
+        padding: 4px 6px;
+        border: 1px solid #9fc0d8;
+        border-radius: 6px;
+      }
+
+      #local_city_name {
+        width: 160px;
+        padding: 4px 6px;
+        border: 1px solid #9fc0d8;
+        border-radius: 6px;
+      }
+
+      .local_resource_amount {
+        width: 72px;
+        padding: 4px 6px;
+        border: 1px solid #9fc0d8;
+        border-radius: 6px;
+      }
+
+      .local_resource_group .panel_button {
+        min-width: 0;
+        margin-right: 0;
+        padding: 5px 7px;
+        white-space: nowrap;
+      }
+
+      #local_resources_summary {
+        color: #4b6f8a;
+        font-weight: bold;
+      }
+
+      #local_profile_picture_preview {
+        display: block;
+        flex: 0 0 50px;
+        width: 50px !important;
+        height: 50px !important;
+        max-width: 50px !important;
+        max-height: 50px !important;
+        border: 1px solid #9fc0d8;
+        border-radius: 6px;
+        background: #ffffff;
+        object-fit: cover;
+        overflow: hidden;
+      }
+
+      #local_profile_status {
+        display: block;
+        flex: 1 1 100%;
+        color: #607b91;
+        min-width: 0;
+        line-height: 1.3;
+      }
+
+      #local_profile_status.profile-error {
+        color: #b43737;
+      }
+
+      #local_profile_status.profile-ok {
+        color: #2d7b42;
+      }
+
+      #local_resources_status {
+        color: #607b91;
+        min-width: 190px;
+      }
+
+      #local_resources_status.resources-error {
+        color: #b43737;
+      }
+
+      #local_resources_status.resources-ok {
+        color: #2d7b42;
+      }
+
       #footer {
         margin-top: 16px;
       }
@@ -390,7 +530,7 @@ export function renderLauncherHtml(options: LauncherOptions): string {
                 <img src="${giftSidewalkUrl}" alt="" />
               </div>
               <div style="display:inline-block;width:360px;vertical-align:top;padding-top:18px;">
-                <p class="blue-text"><span id="username">Mayor</span> and other friends would normally appear here through Facebook requests.</p>
+                <p class="blue-text"><span id="username">${localUserName}</span> and other friends would normally appear here through Facebook requests.</p>
                 <br />
                 <p class="blue-text">The original tab shell is preserved, but gifting is disabled in offline single-player mode.</p>
               </div>
@@ -461,16 +601,68 @@ export function renderLauncherHtml(options: LauncherOptions): string {
 
       <div id="wcrm_footer"></div>
 
+      <details id="local_profile_settings">
+        <summary>Local Profile Settings</summary>
+        <div id="local_profile_form">
+          <img id="local_profile_picture_preview" src="${localProfilePictureUrl}" alt="" />
+          <div class="local_profile_field">
+            <label for="local_profile_name">Player Name</label>
+            <input id="local_profile_name" type="text" maxlength="32" value="${localUserName}" />
+          </div>
+          <div class="local_profile_field">
+            <label for="local_city_name">City Name</label>
+            <input id="local_city_name" type="text" maxlength="32" value="${localCityName}" />
+          </div>
+          <div class="local_profile_field">
+            <label for="local_profile_picture">Profile Picture</label>
+            <input id="local_profile_picture" type="file" accept="image/png,image/jpeg,image/gif,image/webp" />
+          </div>
+          <button class="panel_button" id="local_profile_save" type="button">Save Profile</button>
+          <button class="panel_button" id="local_profile_clear_picture" type="button">Remove Picture</button>
+          <span id="local_profile_status"></span>
+        </div>
+        <div id="local_resources_form">
+          <div id="local_resources_summary">Loading money, gold, and XP...</div>
+          <div class="local_resource_controls">
+            <div class="local_resource_group">
+              <div class="local_profile_field">
+                <label for="local_money_amount">Money</label>
+                <input class="local_resource_amount" id="local_money_amount" type="number" min="1" step="1" value="100000" />
+              </div>
+              <button class="panel_button" id="local_money_add" type="button">Add Money</button>
+              <button class="panel_button" id="local_money_remove" type="button">Remove Money</button>
+            </div>
+            <div class="local_resource_group">
+              <div class="local_profile_field">
+                <label for="local_gold_amount">Gold</label>
+                <input class="local_resource_amount" id="local_gold_amount" type="number" min="1" step="1" value="100" />
+              </div>
+              <button class="panel_button" id="local_gold_add" type="button">Add Gold</button>
+              <button class="panel_button" id="local_gold_remove" type="button">Remove Gold</button>
+            </div>
+            <div class="local_resource_group">
+              <div class="local_profile_field">
+                <label for="local_xp_amount">XP</label>
+                <input class="local_resource_amount" id="local_xp_amount" type="number" min="1" step="1" value="1000" />
+              </div>
+              <button class="panel_button" id="local_xp_add" type="button">Add XP</button>
+              <button class="panel_button" id="local_xp_remove" type="button">Remove XP</button>
+            </div>
+          </div>
+          <span id="local_resources_status"></span>
+        </div>
+      </details>
+
       <div id="footer">
         <div id="links">
-          <a href="${options.appUrl}/launcher" target="_blank">Millionaire City Fan Page</a> |
-          <a href="${options.appUrl}/health" target="_blank">ToS</a> |
-          <a href="${options.appUrl}/health" target="_blank">Privacy &amp; Security</a> |
-          <a href="${options.appUrl}/launcher" target="_blank">FAQ</a> |
-          <a href="${options.appUrl}/launcher" target="_blank">Forums</a> |
-          <a href="${options.appUrl}/health" target="_blank">Support</a> |
-          <a href="${options.appUrl}/launcher" target="_blank">Tips and Tricks</a> |
-          <a href="${options.appUrl}/client/Dollars.private.swf" target="_blank">Twitter</a>
+          <a href="javascript:void(0)" onclick="return false;">Millionaire City Fan Page</a> |
+          <a href="javascript:void(0)" onclick="return false;">ToS</a> |
+          <a href="javascript:void(0)" onclick="return false;">Privacy &amp; Security</a> |
+          <a href="javascript:void(0)" onclick="return false;">FAQ</a> |
+          <a href="javascript:void(0)" onclick="return false;">Forums</a> |
+          <a href="javascript:void(0)" onclick="return false;">Support</a> |
+          <a href="javascript:void(0)" onclick="return false;">Tips and Tricks</a> |
+          <a href="javascript:void(0)" onclick="return false;">Twitter</a>
         </div>
         <div id="copyright">
           Millionaire City v.${GAME_VERSION}, Copyright &copy; Digital Chocolate 2010. All Rights Reserved
@@ -798,6 +990,343 @@ export function renderLauncherHtml(options: LauncherOptions): string {
         notify("Flash task: " + task, "status-ok");
       }
 
+      function setLocalProfileStatus(message, isError) {
+        var status = document.getElementById("local_profile_status");
+        if (!status) {
+          return;
+        }
+        status.textContent = message;
+        status.classList.remove("profile-ok");
+        status.classList.remove("profile-error");
+        status.classList.add(isError ? "profile-error" : "profile-ok");
+      }
+
+      function resizeLocalProfilePicture(dataUrl, callback) {
+        var image = new Image();
+        image.onload = function() {
+          var sourceWidth = image.naturalWidth || image.width;
+          var sourceHeight = image.naturalHeight || image.height;
+          if (!sourceWidth || !sourceHeight) {
+            setLocalProfileStatus("Could not read that profile picture size.", true);
+            return;
+          }
+
+          var thumbnailSize = 50;
+          var canvas = document.createElement("canvas");
+          var context = canvas.getContext("2d");
+          var cropSize = Math.min(sourceWidth, sourceHeight);
+          var cropX = Math.floor((sourceWidth - cropSize) / 2);
+          var cropY = Math.floor((sourceHeight - cropSize) / 2);
+          canvas.width = thumbnailSize;
+          canvas.height = thumbnailSize;
+          if (context.imageSmoothingEnabled !== undefined) {
+            context.imageSmoothingEnabled = true;
+          }
+          if (context.imageSmoothingQuality !== undefined) {
+            context.imageSmoothingQuality = "high";
+          }
+          context.clearRect(0, 0, thumbnailSize, thumbnailSize);
+          context.drawImage(image, cropX, cropY, cropSize, cropSize, 0, 0, thumbnailSize, thumbnailSize);
+          callback(canvas.toDataURL("image/png"));
+        };
+        image.onerror = function() {
+          setLocalProfileStatus("Could not load that profile picture.", true);
+        };
+        image.src = dataUrl;
+      }
+
+      function readLocalProfilePicture(callback) {
+        var input = document.getElementById("local_profile_picture");
+        var file = input && input.files && input.files[0] ? input.files[0] : null;
+        if (!file) {
+          callback(null);
+          return;
+        }
+        if (!/^image\\/(png|jpeg|gif|webp)$/.test(file.type)) {
+          setLocalProfileStatus("Use a PNG, JPEG, GIF, or WebP image.", true);
+          return;
+        }
+        if (file.size > 2 * 1024 * 1024) {
+          setLocalProfileStatus("Profile picture must be 2 MB or smaller.", true);
+          return;
+        }
+
+        var reader = new FileReader();
+        reader.onload = function() {
+          resizeLocalProfilePicture(String(reader.result || ""), callback);
+        };
+        reader.onerror = function() {
+          setLocalProfileStatus("Could not read that profile picture.", true);
+        };
+        reader.readAsDataURL(file);
+      }
+
+      function getAbsoluteLocalUrl(path) {
+        if (/^https?:\\/\\//i.test(String(path || ""))) {
+          return path;
+        }
+        return window.location.protocol + "//" + window.location.host + path;
+      }
+
+      function pushLocalProfileToFlash(data) {
+        sendTask_to_flash2("localProfileUpdate", JSON.stringify({
+          userName: data.userName,
+          cityName: data.cityName,
+          profilePictureUrl: getAbsoluteLocalUrl(data.profilePictureUrl)
+        }));
+      }
+
+      function submitLocalProfile(clearPicture) {
+        var nameInput = document.getElementById("local_profile_name");
+        var cityInput = document.getElementById("local_city_name");
+        var payload = {
+          userName: nameInput ? nameInput.value : "",
+          cityName: cityInput ? cityInput.value : ""
+        };
+
+        function postProfile(profilePictureDataUrl) {
+          if (clearPicture) {
+            payload.clearProfilePicture = true;
+          } else if (profilePictureDataUrl) {
+            payload.profilePictureDataUrl = profilePictureDataUrl;
+          }
+
+          fetch("/local/profile", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(payload)
+          })
+            .then(function(response) {
+              return response.json().then(function(data) {
+                if (!response.ok) {
+                  throw new Error(data.error || "Could not save profile.");
+                }
+                return data;
+              });
+            })
+            .then(function(data) {
+              var username = document.getElementById("username");
+              var preview = document.getElementById("local_profile_picture_preview");
+              if (username) {
+                username.textContent = data.userName;
+              }
+              if (nameInput) {
+                nameInput.value = data.userName;
+              }
+              if (cityInput) {
+                cityInput.value = data.cityName;
+              }
+              if (preview) {
+                preview.src = data.profilePictureUrl;
+              }
+              pushLocalProfileToFlash(data);
+              setLocalProfileStatus("Saved. Game profile updated.", false);
+            })
+            .catch(function(error) {
+              setLocalProfileStatus(error.message || "Could not save profile.", true);
+            });
+        }
+
+        if (clearPicture) {
+          postProfile(null);
+          return;
+        }
+
+        readLocalProfilePicture(postProfile);
+      }
+
+      function bindLocalProfileSettings() {
+        var saveButton = document.getElementById("local_profile_save");
+        var clearButton = document.getElementById("local_profile_clear_picture");
+        var input = document.getElementById("local_profile_picture");
+        if (saveButton) {
+          saveButton.addEventListener("click", function() {
+            submitLocalProfile(false);
+          });
+        }
+        if (clearButton) {
+          clearButton.addEventListener("click", function() {
+            submitLocalProfile(true);
+          });
+        }
+        if (input) {
+          input.addEventListener("change", function() {
+            readLocalProfilePicture(function(dataUrl) {
+              var preview = document.getElementById("local_profile_picture_preview");
+              if (preview && dataUrl) {
+                preview.src = dataUrl;
+              }
+            });
+          });
+        }
+      }
+
+      function setLocalResourcesStatus(message, isError) {
+        var status = document.getElementById("local_resources_status");
+        if (!status) {
+          return;
+        }
+        status.textContent = message;
+        status.classList.remove("resources-ok");
+        status.classList.remove("resources-error");
+        status.classList.add(isError ? "resources-error" : "resources-ok");
+      }
+
+      function formatLocalNumber(value) {
+        var number = Number(value || 0);
+        if (!isFinite(number)) {
+          return "0";
+        }
+        return Math.floor(number).toLocaleString("en-US");
+      }
+
+      function updateLocalResourcesSummary(data) {
+        var summary = document.getElementById("local_resources_summary");
+        if (!summary) {
+          return;
+        }
+        summary.textContent =
+          "Money: " + formatLocalNumber(data.money) +
+          " | Gold: " + formatLocalNumber(data.gold) +
+          " | XP: " + formatLocalNumber(data.xp) +
+          " | Level: " + formatLocalNumber(data.level) +
+          " | Company: " + formatLocalNumber(data.companyValue);
+      }
+
+      function getLocalResourceSnapshotValue(data, key) {
+        var value = Number(data && data[key] != null ? data[key] : 0);
+        if (!isFinite(value)) {
+          return 0;
+        }
+        return Math.max(0, Math.floor(value));
+      }
+
+      function pushLocalResourcesToFlash(data) {
+        var task = [
+          "localStatsUpdate",
+          getLocalResourceSnapshotValue(data, "money"),
+          getLocalResourceSnapshotValue(data, "gold"),
+          getLocalResourceSnapshotValue(data, "xp"),
+          Math.max(1, getLocalResourceSnapshotValue(data, "level")),
+          getLocalResourceSnapshotValue(data, "minXp"),
+          getLocalResourceSnapshotValue(data, "maxXp"),
+          getLocalResourceSnapshotValue(data, "companyValue")
+        ].join(":");
+        sendTask_to_flash(task);
+      }
+
+      function loadLocalResources() {
+        fetch("/local/resources")
+          .then(function(response) {
+            return response.json().then(function(data) {
+              if (!response.ok) {
+                throw new Error(data.error || "Could not load resources.");
+              }
+              return data;
+            });
+          })
+          .then(function(data) {
+            updateLocalResourcesSummary(data);
+          })
+          .catch(function(error) {
+            setLocalResourcesStatus(error.message || "Could not load resources.", true);
+          });
+      }
+
+      function readLocalResourceAmount(inputId) {
+        var input = document.getElementById(inputId);
+        var amount = input ? Number(input.value) : 0;
+        if (!isFinite(amount) || Math.floor(amount) !== amount || amount <= 0) {
+          setLocalResourcesStatus("Enter a positive whole number.", true);
+          return null;
+        }
+        return amount;
+      }
+
+      function adjustLocalResource(resource, amount) {
+        fetch("/local/resources/adjust", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ resource: resource, delta: amount })
+        })
+          .then(function(response) {
+            return response.json().then(function(data) {
+              if (!response.ok) {
+                throw new Error(data.error || "Could not adjust resources.");
+              }
+              return data;
+            });
+          })
+          .then(function(data) {
+            updateLocalResourcesSummary(data);
+            pushLocalResourcesToFlash(data);
+            setLocalResourcesStatus("Saved. Game totals updated.", false);
+          })
+          .catch(function(error) {
+            setLocalResourcesStatus(error.message || "Could not adjust resources.", true);
+          });
+      }
+
+      function bindLocalResourceSettings() {
+        var moneyAdd = document.getElementById("local_money_add");
+        var moneyRemove = document.getElementById("local_money_remove");
+        var goldAdd = document.getElementById("local_gold_add");
+        var goldRemove = document.getElementById("local_gold_remove");
+        var xpAdd = document.getElementById("local_xp_add");
+        var xpRemove = document.getElementById("local_xp_remove");
+
+        if (moneyAdd) {
+          moneyAdd.addEventListener("click", function() {
+            var amount = readLocalResourceAmount("local_money_amount");
+            if (amount != null) {
+              adjustLocalResource("money", amount);
+            }
+          });
+        }
+        if (moneyRemove) {
+          moneyRemove.addEventListener("click", function() {
+            var amount = readLocalResourceAmount("local_money_amount");
+            if (amount != null) {
+              adjustLocalResource("money", -amount);
+            }
+          });
+        }
+        if (goldAdd) {
+          goldAdd.addEventListener("click", function() {
+            var amount = readLocalResourceAmount("local_gold_amount");
+            if (amount != null) {
+              adjustLocalResource("gold", amount);
+            }
+          });
+        }
+        if (goldRemove) {
+          goldRemove.addEventListener("click", function() {
+            var amount = readLocalResourceAmount("local_gold_amount");
+            if (amount != null) {
+              adjustLocalResource("gold", -amount);
+            }
+          });
+        }
+        if (xpAdd) {
+          xpAdd.addEventListener("click", function() {
+            var amount = readLocalResourceAmount("local_xp_amount");
+            if (amount != null) {
+              adjustLocalResource("xp", amount);
+            }
+          });
+        }
+        if (xpRemove) {
+          xpRemove.addEventListener("click", function() {
+            var amount = readLocalResourceAmount("local_xp_amount");
+            if (amount != null) {
+              adjustLocalResource("xp", -amount);
+            }
+          });
+        }
+
+        loadLocalResources();
+      }
+
       function bindTabHover() {
         var labels = document.querySelectorAll(".tab-label");
         labels.forEach(function(label) {
@@ -852,6 +1381,8 @@ export function renderLauncherHtml(options: LauncherOptions): string {
       document.getElementById("messages_back_button").addEventListener("click", closeGiftTab);
 
       bindTabHover();
+      bindLocalProfileSettings();
+      bindLocalResourceSettings();
       setInterval(sendDelayedTaskToFlash, 1000);
       showGameOnly();
       setTimeout(function() {
@@ -860,4 +1391,17 @@ export function renderLauncherHtml(options: LauncherOptions): string {
     </script>
   </body>
 </html>`;
+}
+
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function escapeAttribute(value: string): string {
+  return escapeHtml(value);
 }

@@ -2,10 +2,16 @@ import https from "https";
 import express from "express";
 import selfsigned from "selfsigned";
 
+export interface FacebookShimPicture {
+  filePath: string;
+  mimeType: string;
+}
+
 interface FacebookShimOptions {
   port: number;
   currentUserId: string;
-  currentUserName: string;
+  getCurrentUserName: () => string;
+  getCurrentUserPicture?: () => FacebookShimPicture | undefined;
 }
 
 export interface FacebookShimHandle {
@@ -52,9 +58,11 @@ export async function startFacebookShim(options: FacebookShimOptions): Promise<F
     res.json(
       uids.map((uid, index) => ({
         uid,
-        first_name: uid === options.currentUserId ? options.currentUserName : `Friend ${index + 1}`,
+        first_name: uid === options.currentUserId ? options.getCurrentUserName() : `Friend ${index + 1}`,
         last_name: "",
-        pic_square: "https://graph.facebook.com/100/picture",
+        pic_square: uid === options.currentUserId
+          ? `https://graph.facebook.com/${options.currentUserId}/picture`
+          : "https://graph.facebook.com/100/picture",
         locale: "en_US"
       }))
     );
@@ -64,7 +72,16 @@ export async function startFacebookShim(options: FacebookShimOptions): Promise<F
     res.json(true);
   });
 
-  app.get("/:id/picture", (_req, res) => {
+  app.get("/:id/picture", (req, res) => {
+    if (req.params.id === options.currentUserId) {
+      const picture = options.getCurrentUserPicture?.();
+      if (picture) {
+        res.type(picture.mimeType);
+        res.sendFile(picture.filePath);
+        return;
+      }
+    }
+
     res.setHeader("content-type", "image/gif");
     res.send(transparentGif);
   });

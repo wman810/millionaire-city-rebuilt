@@ -30,8 +30,15 @@ client-patch-sources/scripts/com/dchoc/dollars/GUI/**
 !client-patch-sources/scripts/com/dchoc/dollars/friends/
 client-patch-sources/scripts/com/dchoc/dollars/friends/**
 !client-patch-sources/scripts/com/dchoc/dollars/friends/FriendObject.as
+!client-patch-sources/scripts/com/dchoc/dollars/friends/FriendsBarContentFriend.as
+!client-patch-sources/scripts/com/dchoc/dollars/server/
+client-patch-sources/scripts/com/dchoc/dollars/server/**
+!client-patch-sources/scripts/com/dchoc/dollars/server/Server.as
 !client-patch-sources/scripts/com/dchoc/dollars/utils/
 client-patch-sources/scripts/com/dchoc/dollars/utils/**
+!client-patch-sources/scripts/com/dchoc/dollars/utils/Mouse/
+client-patch-sources/scripts/com/dchoc/dollars/utils/Mouse/**
+!client-patch-sources/scripts/com/dchoc/dollars/utils/Mouse/MouseWheelEnabler.as
 !client-patch-sources/scripts/com/dchoc/dollars/utils/metrics/
 client-patch-sources/scripts/com/dchoc/dollars/utils/metrics/**
 !client-patch-sources/scripts/com/dchoc/dollars/utils/metrics/CustomizerManager.as

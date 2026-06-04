@@ -134,11 +134,6 @@ function installAppMenu(win: BrowserWindow): void {
     ]
   };
 
-  const editMenu: MenuItemConstructorOptions = {
-    label: "Edit",
-    submenu: [{ role: "copy" }, { role: "paste" }, { role: "selectAll" }]
-  };
-
   const menuTemplate: MenuItemConstructorOptions[] =
     process.platform === "darwin"
       ? [
@@ -146,10 +141,9 @@ function installAppMenu(win: BrowserWindow): void {
             label: "Millionaire City",
             submenu: [{ role: "about" }, { type: "separator" }, { role: "quit" }]
           },
-          editMenu,
           viewMenu
         ]
-      : [editMenu, viewMenu];
+      : [viewMenu];
 
   Menu.setApplicationMenu(Menu.buildFromTemplate(menuTemplate));
 }
@@ -256,8 +250,10 @@ function resolveNodeExecutable(): string {
   const candidates = [
     process.env.MCITY_NODE_PATH,
     process.env.npm_node_execpath,
-    "C:\\Program Files\\nodejs\\node.exe",
-    "C:\\Program Files (x86)\\nodejs\\node.exe"
+    process.execPath,
+    ...(process.platform === "win32"
+      ? ["C:\\Program Files\\nodejs\\node.exe", "C:\\Program Files (x86)\\nodejs\\node.exe"]
+      : [])
   ].filter((value): value is string => Boolean(value));
 
   for (const candidate of candidates) {
@@ -266,7 +262,7 @@ function resolveNodeExecutable(): string {
     }
   }
 
-  const lookup = spawnSync("where", ["node"], {
+  const lookup = spawnSync(process.platform === "win32" ? "where" : "which", ["node"], {
     encoding: "utf8",
     windowsHide: true
   });
@@ -282,7 +278,7 @@ function resolveNodeExecutable(): string {
   }
 
   throw new Error(
-    "Could not find node.exe for the backend server. Set MCITY_NODE_PATH to your Node installation."
+    "Could not find Node.js for the backend server. Set MCITY_NODE_PATH to your Node installation."
   );
 }
 

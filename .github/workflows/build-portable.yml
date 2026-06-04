@@ -1,0 +1,54 @@
+name: Build Portable Apps
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build ${{ matrix.label }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: Windows x64
+            os: windows-latest
+            package_script: package:win
+            artifact_name: portable-windows-x64
+          - label: Linux x64
+            os: ubuntu-latest
+            package_script: package:linux
+            artifact_name: portable-linux-x64
+          - label: macOS x64
+            os: macos-13
+            package_script: package:mac
+            artifact_name: portable-macos-x64
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build portable package
+        run: npm run ${{ matrix.package_script }}
+
+      - name: Upload portable package
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact_name }}
+          path: release/*.zip
+          if-no-files-found: error

@@ -6,11 +6,11 @@ This project is not affiliated with Digital Chocolate, Ubisoft, or Facebook.
 
 ## Download And Play
 
-For normal play, use the portable Windows release:
+For normal play, use a portable release for your operating system:
 
-1. Download the latest `MillionaireCityRebuilt-*-portable-win-x64.zip` from GitHub Releases.
+1. Download the latest `MillionaireCityRebuilt-*-portable-*-x64.zip` from GitHub Releases.
 2. Extract the ZIP.
-3. Run `Millionaire City Rebuilt.exe`.
+3. Run the included Millionaire City Rebuilt app.
 
 No installer is required.
 
@@ -35,7 +35,7 @@ The portable release is designed to use the bundled Electron client. Do not run 
 Advanced users building from source can start only the local server:
 
 ```powershell
-cmd /c npm run dev:server
+npm run dev:server
 ```
 
 Then open:
@@ -53,19 +53,19 @@ GitHub source downloads do not include `node_modules/`. Run the install step bef
 1. Install dependencies:
 
 ```powershell
-cmd /c npm install
+npm install
 ```
 
 2. Prepare the private client copy:
 
 ```powershell
-cmd /c npm run prepare-client
+npm run prepare-client
 ```
 
 3. Start the desktop app:
 
 ```powershell
-cmd /c npm run dev:desktop
+npm run dev:desktop
 ```
 
 ## Checks
@@ -73,15 +73,19 @@ cmd /c npm run dev:desktop
 The project can be built and tested after dependencies are installed:
 
 ```powershell
-cmd /c npm run build
-cmd /c npm run test
+npm run build
+npm run test
 ```
 
-To build the portable Windows ZIP:
+To build a portable ZIP, run the matching command on that OS:
 
 ```powershell
-cmd /c npm run package:win
+npm run package:win
+npm run package:linux
+npm run package:mac
 ```
+
+Linux and macOS packages should be built on Linux and macOS respectively because the server uses the native `better-sqlite3` module. The GitHub Actions workflow `Build Portable Apps` can build all three x64 ZIPs on matching runners.
 
 ## Project Layout
 
