@@ -62,10 +62,16 @@ npm install
 npm run prepare-client
 ```
 
-3. Start the desktop app:
+For running the desktop client in development, run:
 
 ```powershell
 npm run dev:desktop
+```
+
+For running only the local server in development, run:
+
+```powershell
+npm run dev:server
 ```
 
 ## Project Layout
