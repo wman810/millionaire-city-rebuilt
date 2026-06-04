@@ -73,7 +73,7 @@
           ]
         }
       ],
-      "artifactName": "MillionaireCityRebuilt-${version}-portable-win-${arch}.${ext}"
+      "artifactName": "MillionaireCityRebuilt-${version}-portable-windows-${arch}.${ext}"
     },
     "linux": {
       "target": [

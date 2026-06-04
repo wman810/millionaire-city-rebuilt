@@ -5,6 +5,7 @@ on:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  MCITY_RELEASE_VERSION: 0.1.0
 
 jobs:
   build:
@@ -17,11 +18,11 @@ jobs:
           - label: Windows x64
             os: windows-latest
             package_script: package:win
-            artifact_name: portable-windows-x64
+            artifact_suffix: windows-x64
           - label: Linux x64
             os: ubuntu-latest
             package_script: package:linux
-            artifact_name: portable-linux-x64
+            artifact_suffix: linux-x64
 
     steps:
       - name: Check out repository
@@ -48,6 +49,6 @@ jobs:
       - name: Upload portable package
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.artifact_name }}
+          name: MillionaireCityRebuilt-${{ env.MCITY_RELEASE_VERSION }}-portable-${{ matrix.artifact_suffix }}
           path: release/*.zip
           if-no-files-found: error
