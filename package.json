@@ -43,6 +43,7 @@
   "build": {
     "appId": "com.millionairecity.rebuilt",
     "productName": "Millionaire City Rebuilt",
+    "executableName": "Millionaire City Rebuilt",
     "electronVersion": "10.4.7",
     "asar": false,
     "npmRebuild": false,
