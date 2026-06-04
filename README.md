@@ -18,16 +18,6 @@ No installer is required.
 
 Join the [Millionaire City Rebuilt Discord server](https://discord.gg/cr6M7UAh4J).
 
-## Save Location
-
-Your local save is stored under:
-
-```text
-generated/data
-```
-
-Back up this folder before deleting files, resetting your city, or testing experimental builds.
-
 ## Building
 
 To build from source, install Node.js with npm and a Java runtime first. Node.js 20 and Java 21 are recommended.
