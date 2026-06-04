@@ -22,13 +22,20 @@ Join the [Millionaire City Rebuilt Discord server](https://discord.gg/cr6M7UAh4J
 
 To build from source, install Node.js with npm and a Java runtime first. Node.js 20 and Java 21 are recommended.
 
-1. Install dependencies:
+1. Clone the repository:
+
+```powershell
+git clone https://github.com/wman810/millionaire-city-rebuilt.git
+cd millionaire-city-rebuilt
+```
+
+2. Install dependencies:
 
 ```powershell
 npm install
 ```
 
-2. Prepare the private client copy:
+3. Prepare the private client copy:
 
 ```powershell
 npm run prepare-client
