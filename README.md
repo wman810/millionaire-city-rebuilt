@@ -14,8 +14,6 @@ For normal play, use a portable release for your operating system:
 
 No installer is required.
 
-Apple Silicon Macs should use the macOS x64 ZIP through Rosetta. A native macOS arm64 build is not available because the Flash-capable Electron version is Intel-only.
-
 ## Community
 
 Join the [Millionaire City Rebuilt Discord server](https://discord.gg/cr6M7UAh4J).
