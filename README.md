@@ -46,9 +46,11 @@ https://127.0.0.1:31804/launcher
 
 This requires a browser that still supports Flash. The bundled Electron runtime is the recommended way to play.
 
-## Build From Source
+## Building
 
-GitHub source downloads do not include `node_modules/`. Run the install step before any `npm run ...` command.
+To build from source, install Node.js with npm and a Java runtime first. Node.js 20 and Java 21 are recommended.
+
+GitHub source downloads do not include `node_modules/`, so run the install step before any `npm run ...` command.
 
 1. Install dependencies:
 
