@@ -65,6 +65,7 @@
       "generated/runtime/**/*"
     ],
     "win": {
+      "icon": "apps/desktop/assets/window-icon.ico",
       "target": [
         {
           "target": "zip",
@@ -76,6 +77,7 @@
       "artifactName": "MillionaireCityRebuilt-${version}-portable-win-${arch}.${ext}"
     },
     "linux": {
+      "icon": "apps/desktop/assets/window-icon.png",
       "target": [
         {
           "target": "zip",

@@ -49,6 +49,7 @@ export function renderLauncherHtml(options: LauncherOptions): string {
   const connectCssUrl = `${options.assetsBaseUrl}css/connect.css`;
   const faceboxCssUrl = `${options.assetsBaseUrl}facebox/facebox.css`;
   const loadingBackgroundUrl = `${options.assetsBaseUrl}pages/Background_loading.png`;
+  const faviconUrl = `${options.appUrl}/favicon.ico`;
   const tabSkylineUrl = `${options.assetsBaseUrl}tabs/social_wall/general/skyline.png`;
   const logoUrl = `${options.assetsBaseUrl}tabs/social_wall/general/logo.png`;
   const giftIconUrl = `${options.assetsBaseUrl}tabs/social_wall/general/gift.png`;
@@ -61,6 +62,11 @@ export function renderLauncherHtml(options: LauncherOptions): string {
   const localUserName = escapeHtml(options.localUserName);
   const localCityName = escapeHtml(options.localCityName);
   const localProfilePictureUrl = escapeAttribute(options.localProfilePictureUrl);
+  const localProfileBootstrapJson = escapeScriptJson(JSON.stringify({
+    userName: options.localUserName,
+    cityName: options.localCityName,
+    profilePictureUrl: options.localProfilePictureUrl
+  }));
 
   return `<!DOCTYPE html>
 <html>
@@ -68,6 +74,7 @@ export function renderLauncherHtml(options: LauncherOptions): string {
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Millionaire City</title>
+    <link rel="icon" type="image/x-icon" href="${faviconUrl}" />
     <link rel="stylesheet" type="text/css" href="${cssUrl}" />
     <link rel="stylesheet" type="text/css" href="${connectCssUrl}" />
     <link rel="stylesheet" type="text/css" href="${faceboxCssUrl}" />
@@ -682,6 +689,7 @@ export function renderLauncherHtml(options: LauncherOptions): string {
       var FLASH_READY = false;
       var GIFTING_INTERSTITIAL_CLOSED = false;
       var SOCIAL_WALL_VISITED = false;
+      var INITIAL_LOCAL_PROFILE = ${localProfileBootstrapJson};
       var tasksBuffer = [];
 
       function getMovie(name) {
@@ -979,6 +987,7 @@ export function renderLauncherHtml(options: LauncherOptions): string {
         if (task === "ready") {
           FLASH_READY = true;
           notify("Flash bridge ready.", "status-ok");
+          pushInitialLocalProfileToFlash();
           sendDelayedTaskToFlash();
           return;
         }
@@ -1074,6 +1083,15 @@ export function renderLauncherHtml(options: LauncherOptions): string {
           cityName: data.cityName,
           profilePictureUrl: getAbsoluteLocalUrl(data.profilePictureUrl)
         }));
+      }
+
+      function pushInitialLocalProfileToFlash() {
+        var delays = [0, 500, 1500, 3000];
+        delays.forEach(function(delay) {
+          setTimeout(function() {
+            pushLocalProfileToFlash(INITIAL_LOCAL_PROFILE);
+          }, delay);
+        });
       }
 
       function submitLocalProfile(clearPicture) {
@@ -1404,4 +1422,13 @@ function escapeHtml(value: string): string {
 
 function escapeAttribute(value: string): string {
   return escapeHtml(value);
+}
+
+function escapeScriptJson(value: string): string {
+  return value
+    .replace(/</g, "\\u003c")
+    .replace(/>/g, "\\u003e")
+    .replace(/&/g, "\\u0026")
+    .replace(/\u2028/g, "\\u2028")
+    .replace(/\u2029/g, "\\u2029");
 }

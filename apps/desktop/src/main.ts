@@ -12,6 +12,13 @@ const launcherBaseUrl = "https://127.0.0.1:31804/launcher";
 const healthUrl = "https://127.0.0.1:31804/health";
 const desktopLogPath = path.join(workspaceRoot, "generated", "logs", "desktop.log");
 const facebookShimPort = getFacebookShimPort();
+const appIconPath = path.join(
+  workspaceRoot,
+  "apps",
+  "desktop",
+  "assets",
+  "window-icon.ico"
+);
 
 let mainWindow: BrowserWindow | null = null;
 let serverProcess: ChildProcess | null = null;
@@ -33,6 +40,7 @@ function createWindow(): BrowserWindow {
     width: 1280,
     height: 720,
     title: "Millionaire City Private Server",
+    icon: appIconPath,
     show: false,
     webPreferences: {
       plugins: true,

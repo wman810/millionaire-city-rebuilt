@@ -183,6 +183,10 @@ export function createServerApp(config = getServerConfig()): ServerApp {
     res.sendFile(config.privateClientSwfPath);
   });
 
+  app.get("/favicon.ico", (_req, res) => {
+    res.type("image/x-icon").sendFile(path.join(config.workspaceRoot, "apps", "desktop", "assets", "window-icon.ico"));
+  });
+
   app.get("/crossdomain.xml", (_req, res) => {
     res.type("application/xml").send(`<!DOCTYPE cross-domain-policy SYSTEM "http://www.macromedia.com/xml/dtds/cross-domain-policy.dtd">
 <cross-domain-policy>
@@ -479,7 +483,8 @@ export function createServerApp(config = getServerConfig()): ServerApp {
             port: config.facebookHttpsPort,
             currentUserId: config.launcherUserId,
             getCurrentUserName: () => getLocalProfile(repository).userName,
-            getCurrentUserPicture: () => getLocalProfilePicture(repository, config)
+            getCurrentUserPicture: () => getLocalProfilePicture(repository, config),
+            getCurrentUserPictureVersion: () => getLocalProfilePictureVersion(repository, config)
           });
         } catch (error) {
           console.warn(`[mcity] Failed to start HTTPS Facebook shim on port ${config.facebookHttpsPort}:`, error);

@@ -12,6 +12,7 @@ interface FacebookShimOptions {
   currentUserId: string;
   getCurrentUserName: () => string;
   getCurrentUserPicture?: () => FacebookShimPicture | undefined;
+  getCurrentUserPictureVersion?: () => string;
 }
 
 export interface FacebookShimHandle {
@@ -55,13 +56,15 @@ export async function startFacebookShim(options: FacebookShimOptions): Promise<F
       .map((uid) => uid.trim())
       .filter(Boolean);
 
+    const currentPictureVersion = encodeURIComponent(options.getCurrentUserPictureVersion?.() ?? "default");
+    res.setHeader("cache-control", "no-store");
     res.json(
       uids.map((uid, index) => ({
         uid,
         first_name: uid === options.currentUserId ? options.getCurrentUserName() : `Friend ${index + 1}`,
         last_name: "",
         pic_square: uid === options.currentUserId
-          ? `https://graph.facebook.com/${options.currentUserId}/picture`
+          ? `https://graph.facebook.com/${options.currentUserId}/picture?v=${currentPictureVersion}`
           : "https://graph.facebook.com/100/picture",
         locale: "en_US"
       }))
@@ -73,6 +76,7 @@ export async function startFacebookShim(options: FacebookShimOptions): Promise<F
   });
 
   app.get("/:id/picture", (req, res) => {
+    res.setHeader("cache-control", "no-store");
     if (req.params.id === options.currentUserId) {
       const picture = options.getCurrentUserPicture?.();
       if (picture) {

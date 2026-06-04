@@ -4999,6 +4999,7 @@ describe("Millionaire City server", () => {
     expect(html).toContain("messageResponseFacebookCredits:1");
     expect(html).toContain("var thumbnailSize = 50;");
     expect(html).toContain("localProfileUpdate");
+    expect(html).toContain("INITIAL_LOCAL_PROFILE");
     expect(html).toContain("local_city_name");
     expect(html).toContain("Saved. Game profile updated.");
     expect(html).toContain("localStatsUpdate");
@@ -5054,7 +5055,7 @@ describe("Millionaire City server", () => {
     ) as Record<string, unknown> | undefined;
     expect(profile?.userName).toBe("Test Mayor");
     expect(profile?.cityname).toBe("Test Town");
-    expect(profile?.cityNameCodes).toBe("84,111,109,97,115,32,84,111,119,110");
+    expect(profile?.cityNameCodes).toBe("84,101,115,116,32,84,111,119,110");
     expect(serverApp.repository.ensureDefaultUser().name).toBe("Test Mayor");
 
     const picture = await fetch(`http://127.0.0.1:${config.httpPort}/local/profile-picture`);
@@ -5062,7 +5063,32 @@ describe("Millionaire City server", () => {
     expect(picture.headers.get("content-type")).toContain("image/gif");
     expect((await picture.arrayBuffer()).byteLength).toBeGreaterThan(0);
 
-    const clear = await fetch(`http://127.0.0.1:${config.httpPort}/local/profile`, {
+    await serverApp.stop();
+    activeApps.pop();
+    const restartedConfig = {
+      ...config,
+      httpPort: 32188,
+      httpsPort: 32198
+    };
+    const restartedServerApp = createServerApp(restartedConfig);
+    activeApps.push(restartedServerApp);
+    await restartedServerApp.start();
+
+    const restartedProfile = await fetch(`http://127.0.0.1:${restartedConfig.httpPort}/local/profile`);
+    expect(restartedProfile.status).toBe(200);
+    expect(await restartedProfile.json()).toMatchObject({
+      ok: true,
+      userName: "Test Mayor",
+      cityName: "Test Town",
+      hasProfilePicture: true
+    });
+
+    const restartedPicture = await fetch(`http://127.0.0.1:${restartedConfig.httpPort}/local/profile-picture`);
+    expect(restartedPicture.status).toBe(200);
+    expect(restartedPicture.headers.get("content-type")).toContain("image/gif");
+    expect((await restartedPicture.arrayBuffer()).byteLength).toBeGreaterThan(0);
+
+    const clear = await fetch(`http://127.0.0.1:${restartedConfig.httpPort}/local/profile`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
