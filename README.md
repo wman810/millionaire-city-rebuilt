@@ -28,24 +28,6 @@ generated/data
 
 Back up this folder before deleting files, resetting your city, or testing experimental builds.
 
-## Browser Play
-
-The portable release is designed to use the bundled Electron client. Do not run the portable EXE and another browser client at the same time, because both would use the same local save.
-
-Advanced users building from source can start only the local server:
-
-```powershell
-npm run dev:server
-```
-
-Then open:
-
-```text
-https://127.0.0.1:31804/launcher
-```
-
-This requires a browser that still supports Flash. The bundled Electron runtime is the recommended way to play.
-
 ## Building
 
 To build from source, install Node.js with npm and a Java runtime first. Node.js 20 and Java 21 are recommended.
@@ -73,6 +55,18 @@ For running only the local server in development, run:
 ```powershell
 npm run dev:server
 ```
+
+## Browser Play
+
+The portable release is designed to use the bundled Electron client. Do not run the portable app and another browser client at the same time, because both would use the same local save.
+
+Users building from source can use their own Flash-capable browser by starting only the local server, then opening:
+
+```text
+https://127.0.0.1:31804/launcher
+```
+
+The bundled Electron runtime is the recommended way to play.
 
 ## Project Layout
 
