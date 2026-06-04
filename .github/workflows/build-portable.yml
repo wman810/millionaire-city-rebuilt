@@ -26,10 +26,6 @@ jobs:
             os: macos-15-intel
             package_script: package:mac:x64
             artifact_name: portable-macos-x64
-          - label: macOS arm64
-            os: macos-15
-            package_script: package:mac:arm64
-            artifact_name: portable-macos-arm64
 
     steps:
       - name: Check out repository

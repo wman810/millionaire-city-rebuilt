@@ -29,8 +29,6 @@
     "package:mac": "npm run prepare-client && npm run prepare-runtime && npm run build && npx --yes electron-builder@26.8.1 --mac zip --x64 --publish never",
     "prepackage:mac:x64": "node scripts/checkDependencies.cjs tsc tsx",
     "package:mac:x64": "npm run prepare-client && npm run prepare-runtime && npm run build && npx --yes electron-builder@26.8.1 --mac zip --x64 --publish never",
-    "prepackage:mac:arm64": "node scripts/checkDependencies.cjs tsc tsx",
-    "package:mac:arm64": "npm run prepare-client && npm run prepare-runtime && npm run build && npx --yes electron-builder@26.8.1 --mac zip --arm64 --publish never",
     "report:missing-assets": "npm run report:missing-assets -w @mcity/server",
     "pretest": "node scripts/checkDependencies.cjs tsc vitest",
     "test": "npm run test -w @mcity/server",
