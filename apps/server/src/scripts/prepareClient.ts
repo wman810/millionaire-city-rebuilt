@@ -21,6 +21,12 @@ const ffdecZipPath = path.join(ffdecDir, `ffdec_${FFDEC_VERSION}.zip`);
 
 const clientPatches: ClientPatch[] = [
   {
+    className: "Config",
+    sourcePath: path.join(clientPatchSourcesDir, "Config.as"),
+    note: "Config patched to use local server-backed Facebook/fan data instead of legacy Facebook API requests.",
+    errorMessage: "Failed to patch Config in the private client SWF."
+  },
+  {
     className: "Dollars",
     sourcePath: path.join(clientPatchSourcesDir, "Dollars.as"),
     note: "Dollars patched to enable the original SWF debug mode when the launcher passes debugMode=1.",

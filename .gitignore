@@ -14,6 +14,7 @@ apps/desktop/dist/
 /decompiled/
 client-patch-sources/**
 !client-patch-sources/
+!client-patch-sources/Config.as
 !client-patch-sources/Dollars.as
 !client-patch-sources/scripts/
 client-patch-sources/scripts/**
