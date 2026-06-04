@@ -24,7 +24,7 @@ To build from source, install Node.js with npm and a Java runtime first. Node.js
 
 1. Clone the repository:
 
-```powershell
+```text
 git clone https://github.com/wman810/millionaire-city-rebuilt.git
 cd millionaire-city-rebuilt
 ```
