@@ -237,6 +237,8 @@ export function createServerApp(config = getServerConfig()): ServerApp {
     res.sendFile(config.tutorialSplashPath);
   });
 
+  app.use("/mcity/0.501", createCaseInsensitiveAssetMiddleware(config));
+
   app.get("/mcity/0.501/Datas/feed/:fileName", (req, res, next) => {
     const fileName = path.basename(String(req.params.fileName ?? ""));
     const requestedPath = path.join(config.assetRoot, "Datas", "feed", fileName);
@@ -541,6 +543,117 @@ function ensurePrivateClientExists(config: ServerConfig): void {
 
 function dataAssetPath(config: ServerConfig, ...segments: string[]): string {
   return path.join(config.assetRoot, "Datas", ...segments);
+}
+
+function createCaseInsensitiveAssetMiddleware(config: ServerConfig): express.RequestHandler {
+  const assetRoot = path.resolve(config.assetRoot);
+  const directoryCache = new Map<string, Map<string, string>>();
+
+  return (req, res, next) => {
+    if (req.method !== "GET" && req.method !== "HEAD") {
+      next();
+      return;
+    }
+
+    const resolvedPath = resolveCaseInsensitiveFile(assetRoot, req.path, directoryCache);
+    if (!resolvedPath) {
+      next();
+      return;
+    }
+
+    const exactPath = path.resolve(assetRoot, req.path.replace(/^\/+/, ""));
+    if (resolvedPath !== exactPath) {
+      console.warn(`[mcity] Resolved asset case mismatch: ${req.originalUrl}`);
+    }
+    res.sendFile(resolvedPath);
+  };
+}
+
+function resolveCaseInsensitiveFile(
+  root: string,
+  requestPath: string,
+  directoryCache: Map<string, Map<string, string>>
+): string | undefined {
+  const segments = parseSafeAssetPathSegments(requestPath);
+  if (!segments) {
+    return undefined;
+  }
+
+  let currentPath = root;
+  for (const segment of segments) {
+    const exactPath = path.join(currentPath, segment);
+    if (fs.existsSync(exactPath)) {
+      currentPath = exactPath;
+      continue;
+    }
+
+    const directoryEntries = getDirectoryEntryMap(currentPath, directoryCache);
+    const matchedName = directoryEntries?.get(segment.toLowerCase());
+    if (!matchedName) {
+      return undefined;
+    }
+    currentPath = path.join(currentPath, matchedName);
+  }
+
+  const resolvedPath = path.resolve(currentPath);
+  if (!isPathWithin(root, resolvedPath)) {
+    return undefined;
+  }
+
+  try {
+    return fs.statSync(resolvedPath).isFile() ? resolvedPath : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+function parseSafeAssetPathSegments(requestPath: string): string[] | undefined {
+  let decodedPath: string;
+  try {
+    decodedPath = decodeURIComponent(requestPath);
+  } catch {
+    return undefined;
+  }
+
+  const segments = decodedPath.split(/[\\/]+/).filter(Boolean);
+  if (
+    segments.length === 0 ||
+    segments.some((segment) => segment === "." || segment === ".." || segment.includes("\0"))
+  ) {
+    return undefined;
+  }
+  return segments;
+}
+
+function getDirectoryEntryMap(
+  directoryPath: string,
+  directoryCache: Map<string, Map<string, string>>
+): Map<string, string> | undefined {
+  const resolvedDirectoryPath = path.resolve(directoryPath);
+  const cached = directoryCache.get(resolvedDirectoryPath);
+  if (cached) {
+    return cached;
+  }
+
+  try {
+    if (!fs.statSync(resolvedDirectoryPath).isDirectory()) {
+      return undefined;
+    }
+
+    const entries = new Map<string, string>();
+    for (const entry of fs.readdirSync(resolvedDirectoryPath, { withFileTypes: true })) {
+      entries.set(entry.name.toLowerCase(), entry.name);
+    }
+    directoryCache.set(resolvedDirectoryPath, entries);
+    return entries;
+  } catch {
+    return undefined;
+  }
+}
+
+function isPathWithin(root: string, candidatePath: string): boolean {
+  const relativePath = path.relative(root, candidatePath);
+  return relativePath === "" || (!relativePath.startsWith("..") && !path.isAbsolute(relativePath));
 }
 
 function isTruthyQueryValue(value: unknown): boolean {

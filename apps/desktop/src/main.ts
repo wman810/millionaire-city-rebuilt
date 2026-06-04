@@ -10,10 +10,13 @@ const workspaceRoot = path.resolve(__dirname, "../../..");
 const serverDistPath = path.join(workspaceRoot, "apps", "server", "dist", "main.js");
 const launcherBaseUrl = "https://127.0.0.1:31804/launcher";
 const healthUrl = "https://127.0.0.1:31804/health";
+const desktopLogPath = path.join(workspaceRoot, "generated", "logs", "desktop.log");
 
 let mainWindow: BrowserWindow | null = null;
 let serverProcess: ChildProcess | null = null;
 let swfDebugMode = process.env.MCITY_SWF_DEBUG === "1";
+
+installFileLogging();
 
 const flashPluginPath = configureFlash(app);
 
@@ -198,6 +201,56 @@ function probeHealth(): Promise<boolean> {
 
 function delay(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function installFileLogging(): void {
+  const originalLog = console.log.bind(console);
+  const originalWarn = console.warn.bind(console);
+  const originalError = console.error.bind(console);
+  const originalDebug = console.debug.bind(console);
+
+  const write = (level: string, data: unknown[]) => {
+    try {
+      fs.mkdirSync(path.dirname(desktopLogPath), { recursive: true });
+      const line = `${new Date().toISOString()} ${level} ${data.map(formatLogValue).join(" ")}\n`;
+      fs.appendFileSync(desktopLogPath, line);
+    } catch {
+      // Logging must never prevent the game from starting.
+    }
+  };
+
+  console.log = (...data: unknown[]) => {
+    originalLog(...data);
+    write("INFO", data);
+  };
+  console.warn = (...data: unknown[]) => {
+    originalWarn(...data);
+    write("WARN", data);
+  };
+  console.error = (...data: unknown[]) => {
+    originalError(...data);
+    write("ERROR", data);
+  };
+  console.debug = (...data: unknown[]) => {
+    originalDebug(...data);
+    write("DEBUG", data);
+  };
+
+  console.log(`[desktop] Writing logs to ${desktopLogPath}`);
+}
+
+function formatLogValue(value: unknown): string {
+  if (value instanceof Error) {
+    return value.stack ?? value.message;
+  }
+  if (typeof value === "string") {
+    return value;
+  }
+  try {
+    return JSON.stringify(value);
+  } catch {
+    return String(value);
+  }
 }
 
 async function startEverything(): Promise<void> {

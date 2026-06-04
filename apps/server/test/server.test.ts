@@ -4327,6 +4327,27 @@ describe("Millionaire City server", () => {
     expect(buffer.byteLength).toBeGreaterThan(0);
   });
 
+  archivedAssetTest("serves archived assets with case-insensitive path matching", async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-case-insensitive-assets-"));
+    const config = {
+      ...getServerConfig(),
+      dbPath: path.join(tempDir, "save.sqlite"),
+      httpPort: 31991,
+      httpsPort: 32001,
+      facebookHttpsPort: 4531,
+      useHttpsFacebookShim: false
+    };
+
+    const serverApp = createServerApp(config);
+    activeApps.push(serverApp);
+    await serverApp.start();
+
+    const response = await fetch(`http://127.0.0.1:${config.httpPort}/mcity/0.501/datas/locale/en.txt`);
+    expect(response.status).toBe(200);
+    expect(response.headers.get("content-type")).toContain("text/plain");
+    expect(await response.text()).toContain("Millionaire City");
+  });
+
   test("does not serve item SWF fallbacks for missing main item assets", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-item-fallback-"));
     const config = {
