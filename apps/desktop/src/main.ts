@@ -3,7 +3,7 @@ import fs from "fs";
 import http, { type IncomingMessage } from "http";
 import https from "https";
 import { spawn, spawnSync, type ChildProcess } from "child_process";
-import { app, BrowserWindow, dialog, Menu, type MenuItemConstructorOptions } from "electron";
+import { app, BrowserWindow, dialog, Menu, session, type MenuItemConstructorOptions } from "electron";
 import { configureFlash } from "./flash-loader";
 
 const workspaceRoot = path.resolve(__dirname, "../../..");
@@ -11,6 +11,7 @@ const serverDistPath = path.join(workspaceRoot, "apps", "server", "dist", "main.
 const launcherBaseUrl = "https://127.0.0.1:31804/launcher";
 const healthUrl = "https://127.0.0.1:31804/health";
 const desktopLogPath = path.join(workspaceRoot, "generated", "logs", "desktop.log");
+const facebookShimPort = getFacebookShimPort();
 
 let mainWindow: BrowserWindow | null = null;
 let serverProcess: ChildProcess | null = null;
@@ -24,10 +25,6 @@ if (process.platform === "linux") {
   app.commandLine.appendSwitch("no-sandbox");
 }
 
-app.commandLine.appendSwitch(
-  "host-resolver-rules",
-  "MAP graph.facebook.com 127.0.0.1,MAP api.facebook.com 127.0.0.1"
-);
 app.commandLine.appendSwitch("ignore-certificate-errors");
 app.commandLine.appendSwitch("allow-running-insecure-content");
 
@@ -203,6 +200,24 @@ function delay(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+function getFacebookShimPort(): number {
+  const port = Number(process.env.MCITY_FACEBOOK_PORT ?? "31805");
+  return Number.isInteger(port) && port > 0 && port <= 65535 ? port : 31805;
+}
+
+function installFacebookRequestRedirect(): void {
+  const filter = {
+    urls: ["https://graph.facebook.com/*", "https://api.facebook.com/*"]
+  };
+
+  session.defaultSession.webRequest.onBeforeRequest(filter, (details, callback) => {
+    const originalUrl = new URL(details.url);
+    const redirectURL = `https://127.0.0.1:${facebookShimPort}${originalUrl.pathname}${originalUrl.search}`;
+    console.log(`[desktop] Redirecting Facebook request to local shim: ${originalUrl.host}${originalUrl.pathname}`);
+    callback({ redirectURL });
+  });
+}
+
 function installFileLogging(): void {
   const originalLog = console.log.bind(console);
   const originalWarn = console.warn.bind(console);
@@ -266,7 +281,10 @@ async function startEverything(): Promise<void> {
 
   serverProcess = spawn(nodeExecutable, [serverDistPath], {
     cwd: workspaceRoot,
-    env: process.env,
+    env: {
+      ...process.env,
+      MCITY_FACEBOOK_PORT: String(facebookShimPort)
+    },
     stdio: ["ignore", "pipe", "pipe"]
   });
 
@@ -350,6 +368,7 @@ async function shutdown(): Promise<void> {
 }
 
 app.whenReady().then(async () => {
+  installFacebookRequestRedirect();
   mainWindow = createWindow();
 
   try {

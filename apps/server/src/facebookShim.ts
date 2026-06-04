@@ -100,7 +100,8 @@ export async function startFacebookShim(options: FacebookShimOptions): Promise<F
           name: "subjectAltName",
           altNames: [
             { type: 2, value: "graph.facebook.com" },
-            { type: 2, value: "api.facebook.com" }
+            { type: 2, value: "api.facebook.com" },
+            { type: 7, ip: "127.0.0.1" }
           ]
         }
       ]
