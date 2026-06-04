@@ -4348,30 +4348,6 @@ describe("Millionaire City server", () => {
     expect(await response.text()).toContain("Millionaire City");
   });
 
-  archivedAssetTest("filters startup-unsafe box prize item previews", async () => {
-    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-box-prize-rules-"));
-    const config = {
-      ...getServerConfig(),
-      dbPath: path.join(tempDir, "save.sqlite"),
-      httpPort: 31992,
-      httpsPort: 32002,
-      facebookHttpsPort: 4532,
-      useHttpsFacebookShim: false
-    };
-
-    const serverApp = createServerApp(config);
-    activeApps.push(serverApp);
-    await serverApp.start();
-
-    const response = await fetch(`http://127.0.0.1:${config.httpPort}/mcity/0.501/Datas/rules/boxPrizeDefinition.xml`);
-    expect(response.status).toBe(200);
-    expect(response.headers.get("content-type")).toContain("application/xml");
-    const xml = await response.text();
-    expect(xml).not.toContain('sku="birth_003"');
-    expect(xml).not.toContain('value="decorations_special_12"');
-    expect(xml).toContain('value="decorations_tree_19"');
-  });
-
   test("does not serve item SWF fallbacks for missing main item assets", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-item-fallback-"));
     const config = {

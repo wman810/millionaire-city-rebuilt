@@ -49,7 +49,6 @@ const COLLECTIBLE_RULE_FILES = new Set([
   "collectiblesRewardDefinitions.xml"
 ]);
 const REWARD_ONLY_ITEM_SKUS = new Set(["commerce_vip"]);
-const STARTUP_UNSAFE_BOX_PRIZE_VALUES = new Set(["decorations_special_12"]);
 
 interface ServerApp {
   config: ServerConfig;
@@ -198,7 +197,6 @@ export function createServerApp(config = getServerConfig()): ServerApp {
   app.get("/mcity/0.501/Datas/rules/:fileName", (req, res, next) => {
     const fileName = path.basename(String(req.params.fileName ?? ""));
     const patchedXml =
-      createStartupSafeBoxPrizeXml(config, fileName) ??
       createAvailableItemRulesXml(config, fileName, archivedItemSwfs) ??
       createAvailableCollectibleRulesXml(config, fileName, archivedItemSwfs);
     if (!patchedXml) {
@@ -676,28 +674,6 @@ function createArchivedItemSwfSet(config: ServerConfig): Set<string> {
       .filter((entry) => entry.isFile() && entry.name.toLowerCase().endsWith(".swf"))
       .map((entry) => entry.name.toLowerCase())
   );
-}
-
-function createStartupSafeBoxPrizeXml(config: ServerConfig, fileName: string): string | null {
-  if (fileName !== "boxPrizeDefinition.xml") {
-    return null;
-  }
-
-  const rulesPath = dataAssetPath(config, "rules", fileName);
-  if (!fs.existsSync(rulesPath)) {
-    return null;
-  }
-
-  const xml = fs.readFileSync(rulesPath, "utf8");
-  return xml.replace(/<Definition\b([^>]*)\/>/g, (definitionTag, attributes: string) => {
-    const giftType = getXmlAttribute(attributes, "giftType")?.trim().toLowerCase();
-    const value = getXmlAttribute(attributes, "value")?.trim();
-    if (giftType === "item" && value && STARTUP_UNSAFE_BOX_PRIZE_VALUES.has(value)) {
-      return "";
-    }
-
-    return definitionTag;
-  });
 }
 
 function createAvailableItemRulesXml(
