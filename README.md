@@ -68,25 +68,6 @@ npm run prepare-client
 npm run dev:desktop
 ```
 
-## Checks
-
-The project can be built and tested after dependencies are installed:
-
-```powershell
-npm run build
-npm run test
-```
-
-To build a portable ZIP, run the matching command on that OS:
-
-```powershell
-npm run package:win
-npm run package:linux
-npm run package:mac
-```
-
-Linux and macOS packages should be built on Linux and macOS respectively because the server uses the native `better-sqlite3` module. The GitHub Actions workflow `Build Portable Apps` can build all three x64 ZIPs on matching runners.
-
 ## Project Layout
 
 - `apps/server`: local HTTP game server, HTTPS Facebook shim, SQLite persistence, and launcher page
@@ -95,19 +76,3 @@ Linux and macOS packages should be built on Linux and macOS respectively because
 - `assets`: recovered game cache served by the local server
 - `apps/desktop/assets/flash`: bundled Pepper Flash runtime binaries
 - `generated`: generated private SWF copy, SQLite save data, downloaded tools, release runtime files, and local backups
-
-## Runtime Model
-
-The original SWF still depends on browser `ExternalInterface`, legacy Facebook endpoints, and a Flash-capable Chromium runtime. The revival handles this by:
-
-- serving a private copy of `Dollars.swf` from `generated/client/Dollars.private.swf`
-- exposing a local HTTPS Facebook shim for hardcoded `graph.facebook.com` and `api.facebook.com` calls
-- launching Electron `10.4.7` with bundled Pepper Flash enabled
-
-The generated private SWF copy is recreated locally by `npm run prepare-client`.
-
-## Dependency Warnings
-
-`npm audit` reports advisories against `electron@10.4.7`. That version is intentionally pinned because newer Electron releases removed the Pepper Flash plugin path this client depends on. Do not run `npm audit fix --force`; it upgrades Electron to a modern version that breaks the Flash runtime.
-
-Some deprecation warnings also come from Electron/native packaging tooling. The release packaging scripts invoke `electron-builder@26.8.1` on demand with `npx`, so packaging may print warnings from its internal dependency stack.
