@@ -1,6 +1,6 @@
 {
   "name": "@mcity/server",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "private": true,
   "main": "./dist/main.js",
   "types": "./dist/main.d.ts",
@@ -17,7 +17,7 @@
     "test": "npm run build -w @mcity/shared && vitest run"
   },
   "dependencies": {
-    "@mcity/shared": "0.1.1",
+    "@mcity/shared": "0.1.0",
     "better-sqlite3": "^11.10.0",
     "express": "^4.22.2",
     "selfsigned": "^3.0.1"
