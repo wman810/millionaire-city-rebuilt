@@ -5007,6 +5007,26 @@ describe("Millionaire City server", () => {
     expect(html).toContain("Saved. Game totals updated.");
   });
 
+  test("client local resource updates resynchronize the security baseline", () => {
+    const patchSource = fs.readFileSync(
+      path.join(
+        getServerConfig().workspaceRoot,
+        "client-patch-sources",
+        "scripts",
+        "com",
+        "dchoc",
+        "dollars",
+        "server",
+        "Server.as"
+      ),
+      "utf8"
+    );
+
+    expect(patchSource.replace(/\r\n/g, "\n")).toContain(
+      "_loc2_.update();\n         UserDataFacade.securityInit();"
+    );
+  });
+
   test("saves local profile name and picture settings", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-local-profile-"));
     const config = {

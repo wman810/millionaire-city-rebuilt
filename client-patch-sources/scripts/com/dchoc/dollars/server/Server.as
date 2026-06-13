@@ -563,6 +563,7 @@ package com.dchoc.dollars.server
          _loc2_.maxExp = Math.max(_loc2_.minExp,_loc8_);
          _loc2_.companyValue = Math.max(0,_loc9_);
          _loc2_.update();
+         UserDataFacade.securityInit();
       }
       
       private function applyLocalProfileUpdate(param1:String) : void
@@ -571,6 +572,7 @@ package com.dchoc.dollars.server
          var _loc3_:String = null;
          var _loc4_:String = null;
          var _loc5_:String = null;
+         var _loc6_:Boolean = false;
          if(param1 == null || param1.length == 0)
          {
             return;
@@ -602,6 +604,7 @@ package com.dchoc.dollars.server
          {
             if(DollarsGame.getProfile() != null)
             {
+               _loc6_ = DollarsGame.getProfile().cityname != _loc4_;
                DollarsGame.getProfile().cityname = _loc4_;
             }
             if(DollarsGame.getCurrentRoleID() == DollarsGame.ROLE_OWNER && DollarsGame.getProfileUniverse() != null)
@@ -611,7 +614,7 @@ package com.dchoc.dollars.server
                {
                   HudOwner(DollarsGame.getCurrentWorld().role.hud).setCityName(_loc4_);
                }
-               if(DollarsGame.smInstance != null && DollarsGame.smInstance.mPlane != null)
+               if(_loc6_ && DollarsGame.smInstance != null && DollarsGame.smInstance.mPlane != null)
                {
                   DollarsGame.smInstance.mPlane.removePlane();
                   DollarsGame.smInstance.mPlane.setPlane(DollarsGame.getProfileUniverse().planeSku);
