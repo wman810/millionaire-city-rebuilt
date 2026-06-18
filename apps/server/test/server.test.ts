@@ -4348,6 +4348,17 @@ describe("Millionaire City server", () => {
     expect(await response.text()).toContain("Millionaire City");
   });
 
+  archivedAssetTest("keeps locale text assets LF-only for Flash text parsing", () => {
+    const localePath = path.join(getServerConfig().assetRoot, "Datas", "Locale", "EN.txt");
+    const localeText = fs.readFileSync(localePath, "utf8");
+    const localeLines = localeText.split("\n");
+
+    expect(localeText).not.toContain("\r\n");
+    expect(localeLines[48]).toBe(",");
+    expect(localeLines[49]).toBe(".");
+    expect(localeLines[795]).toBe("$");
+  });
+
   test("does not serve item SWF fallbacks for missing main item assets", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-item-fallback-"));
     const config = {
