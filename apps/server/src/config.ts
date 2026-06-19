@@ -30,7 +30,7 @@ export function getServerConfig(): ServerConfig {
     assetRoot,
     sourceClientSwfPath: path.join(dataRoot, "Dollars.swf"),
     privateClientSwfPath: path.join(workspaceRoot, "generated", "client", "Dollars.private.swf"),
-    tutorialHQPositionsPath: path.join(workspaceRoot, "apps", "server", "assets", "TutorialHQPositions.xml"),
+    tutorialHQPositionsPath: path.join(workspaceRoot, "assets", "recreations", "TutorialHQPositions.xml"),
     tutorialSplashPath: path.join(workspaceRoot, "apps", "server", "assets", "splash.swf"),
     httpPort: Number(process.env.MCITY_HTTP_PORT ?? "31803"),
     httpsPort: Number(process.env.MCITY_HTTPS_PORT ?? "31804"),
