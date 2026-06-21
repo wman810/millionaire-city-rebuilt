@@ -78,6 +78,16 @@ export function renderLauncherHtml(options: LauncherOptions): string {
     <link rel="stylesheet" type="text/css" href="${cssUrl}" />
     <link rel="stylesheet" type="text/css" href="${connectCssUrl}" />
     <link rel="stylesheet" type="text/css" href="${faceboxCssUrl}" />
+    <script>
+      (function() {
+        try {
+          if (localStorage.getItem("mcity.localProfileSettingsVisible") === "0") {
+            document.documentElement.className += " local-profile-settings-hidden";
+          }
+        } catch (error) {
+        }
+      })();
+    </script>
     <style>
       html,
       body {
@@ -316,6 +326,10 @@ export function renderLauncherHtml(options: LauncherOptions): string {
         background: linear-gradient(180deg, #ffffff 0%, #edf8ff 100%);
         color: #35566f;
         font-size: 12px;
+      }
+
+      .local-profile-settings-hidden #local_profile_settings {
+        display: none;
       }
 
       #local_profile_settings summary {
@@ -690,6 +704,7 @@ export function renderLauncherHtml(options: LauncherOptions): string {
       var GIFTING_INTERSTITIAL_CLOSED = false;
       var SOCIAL_WALL_VISITED = false;
       var INITIAL_LOCAL_PROFILE = ${localProfileBootstrapJson};
+      var LOCAL_PROFILE_SETTINGS_STORAGE_KEY = "mcity.localProfileSettingsVisible";
       var tasksBuffer = [];
 
       function getMovie(name) {
@@ -1094,6 +1109,28 @@ export function renderLauncherHtml(options: LauncherOptions): string {
         });
       }
 
+      function getLocalProfileSettingsVisible() {
+        try {
+          return localStorage.getItem(LOCAL_PROFILE_SETTINGS_STORAGE_KEY) !== "0";
+        } catch (error) {
+          return true;
+        }
+      }
+
+      function setLocalProfileSettingsVisible(visible) {
+        var shouldShow = visible !== false;
+        var panel = document.getElementById("local_profile_settings");
+        document.documentElement.classList.toggle("local-profile-settings-hidden", !shouldShow);
+        if (panel) {
+          panel.hidden = !shouldShow;
+        }
+        try {
+          localStorage.setItem(LOCAL_PROFILE_SETTINGS_STORAGE_KEY, shouldShow ? "1" : "0");
+        } catch (error) {
+        }
+        return shouldShow;
+      }
+
       function submitLocalProfile(clearPicture) {
         var nameInput = document.getElementById("local_profile_name");
         var cityInput = document.getElementById("local_city_name");
@@ -1382,6 +1419,8 @@ export function renderLauncherHtml(options: LauncherOptions): string {
       window.videoAdCompleteResponse = videoAdCompleteResponse;
       window.videoAdIncompleteResponse = videoAdIncompleteResponse;
       window.setUserLocale = setUserLocale;
+      window.getLocalProfileSettingsVisible = getLocalProfileSettingsVisible;
+      window.setLocalProfileSettingsVisible = setLocalProfileSettingsVisible;
 
       document.getElementById("labelFor_gifts").addEventListener("click", function() {
         clickOnTab("labelFor_gifts");
@@ -1399,6 +1438,7 @@ export function renderLauncherHtml(options: LauncherOptions): string {
       document.getElementById("messages_back_button").addEventListener("click", closeGiftTab);
 
       bindTabHover();
+      setLocalProfileSettingsVisible(getLocalProfileSettingsVisible());
       bindLocalProfileSettings();
       bindLocalResourceSettings();
       setInterval(sendDelayedTaskToFlash, 1000);

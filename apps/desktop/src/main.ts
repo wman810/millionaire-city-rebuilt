@@ -3,7 +3,7 @@ import fs from "fs";
 import http, { type IncomingMessage } from "http";
 import https from "https";
 import { spawn, spawnSync, type ChildProcess } from "child_process";
-import { app, BrowserWindow, dialog, Menu, session, type MenuItemConstructorOptions } from "electron";
+import { app, BrowserWindow, dialog, Menu, session, type MenuItem, type MenuItemConstructorOptions } from "electron";
 import { configureFlash } from "./flash-loader";
 
 const workspaceRoot = path.resolve(__dirname, "../../..");
@@ -12,6 +12,7 @@ const launcherBaseUrl = "https://127.0.0.1:31804/launcher";
 const healthUrl = "https://127.0.0.1:31804/health";
 const desktopLogPath = path.join(workspaceRoot, "generated", "logs", "desktop.log");
 const facebookShimPort = getFacebookShimPort();
+const localProfileSettingsMenuItemId = "show-local-profile-settings";
 const appIconPath = path.join(
   workspaceRoot,
   "apps",
@@ -23,6 +24,7 @@ const appIconPath = path.join(
 let mainWindow: BrowserWindow | null = null;
 let serverProcess: ChildProcess | null = null;
 let swfDebugMode = process.env.MCITY_SWF_DEBUG === "1";
+let localProfileSettingsVisible = true;
 
 installFileLogging();
 
@@ -62,6 +64,9 @@ function createWindow(): BrowserWindow {
 
   win.webContents.on("console-message", (_event, level, message, line, sourceId) => {
     console.log(`[renderer:${level}] ${message} (${sourceId}:${line})`);
+  });
+  win.webContents.on("did-finish-load", () => {
+    syncLocalProfileSettingsMenuFromPage(win);
   });
 
   if (process.env.MCITY_OPEN_DEVTOOLS === "1") {
@@ -112,6 +117,16 @@ function installAppMenu(win: BrowserWindow): void {
           }
         }
       },
+      {
+        id: localProfileSettingsMenuItemId,
+        label: "Show Local Profile Settings",
+        type: "checkbox",
+        checked: localProfileSettingsVisible,
+        click: (menuItem) => {
+          localProfileSettingsVisible = menuItem.checked;
+          applyLocalProfileSettingsVisibility(win, localProfileSettingsVisible);
+        }
+      },
       { type: "separator" },
       {
         label: "Open DevTools",
@@ -154,6 +169,84 @@ function installAppMenu(win: BrowserWindow): void {
       : [viewMenu];
 
   Menu.setApplicationMenu(Menu.buildFromTemplate(menuTemplate));
+}
+
+function applyLocalProfileSettingsVisibility(win: BrowserWindow, visible: boolean): void {
+  if (win.isDestroyed()) {
+    return;
+  }
+
+  const safeVisible = visible ? "true" : "false";
+  void win.webContents
+    .executeJavaScript(
+      `(() => {
+        const visible = ${safeVisible};
+        if (typeof window.setLocalProfileSettingsVisible === "function") {
+          return window.setLocalProfileSettingsVisible(visible);
+        }
+        try {
+          localStorage.setItem("mcity.localProfileSettingsVisible", visible ? "1" : "0");
+        } catch (error) {
+        }
+        document.documentElement.classList.toggle("local-profile-settings-hidden", !visible);
+        const panel = document.getElementById("local_profile_settings");
+        if (panel) panel.hidden = !visible;
+        return visible;
+      })();`,
+      true
+    )
+    .catch((error: unknown) => {
+      console.debug("[desktop] Failed to update local profile settings visibility:", error);
+    });
+}
+
+function syncLocalProfileSettingsMenuFromPage(win: BrowserWindow): void {
+  if (win.isDestroyed()) {
+    return;
+  }
+
+  void win.webContents
+    .executeJavaScript(
+      `(() => {
+        if (typeof window.getLocalProfileSettingsVisible === "function") {
+          return window.getLocalProfileSettingsVisible();
+        }
+        try {
+          return localStorage.getItem("mcity.localProfileSettingsVisible") !== "0";
+        } catch (error) {
+          return true;
+        }
+      })();`,
+      true
+    )
+    .then((visible: unknown) => {
+      localProfileSettingsVisible = visible !== false;
+      const item = findMenuItemById(Menu.getApplicationMenu(), localProfileSettingsMenuItemId);
+      if (item) {
+        item.checked = localProfileSettingsVisible;
+      }
+    })
+    .catch((error: unknown) => {
+      console.debug("[desktop] Failed to read local profile settings visibility:", error);
+    });
+}
+
+function findMenuItemById(menu: Menu | null, id: string): MenuItem | null {
+  if (!menu) {
+    return null;
+  }
+
+  for (const item of menu.items) {
+    if (item.id === id) {
+      return item;
+    }
+    const nested = findMenuItemById(item.submenu ?? null, id);
+    if (nested) {
+      return nested;
+    }
+  }
+
+  return null;
 }
 
 function setStatus(message: string): void {

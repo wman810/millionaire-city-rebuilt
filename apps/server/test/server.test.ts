@@ -5016,6 +5016,8 @@ describe("Millionaire City server", () => {
     expect(html).toContain("localStatsUpdate");
     expect(html).toContain("companyValue");
     expect(html).toContain("Saved. Game totals updated.");
+    expect(html).toContain("mcity.localProfileSettingsVisible");
+    expect(html).toContain("setLocalProfileSettingsVisible");
   });
 
   test("client local resource updates resynchronize the security baseline", () => {
