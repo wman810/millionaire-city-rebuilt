@@ -132,6 +132,52 @@ export function normalizeCompletedTutorialUniverse(document: JsonObject, nowMs =
   return changed;
 }
 
+export function normalizeIncompleteTutorialUniverse(document: JsonObject): boolean {
+  const profile = getProfileElement(document);
+  const mineCompany = getCompanyElement(document, "0");
+  const mapElement = getMapElement(document);
+
+  if (!profile || !mapElement || String(profile.tutorialEnd ?? "0") === "1") {
+    return false;
+  }
+
+  const mapChildren = getElementChildren(mapElement, "Map");
+  const terrainTiles = parseChunkSet(findElementChild(mapChildren, "Terrain"));
+  const roadTiles = parseChunkSet(findElementChild(mapChildren, "Road"));
+  let changed = false;
+
+  if (mineCompany) {
+    const mineItems = getElementChildren(mineCompany, "Company");
+    for (let index = mineItems.length - 1; index >= 0; index -= 1) {
+      const item = mineItems[index];
+      if (
+        isItemElement(item) &&
+        String(item.sku ?? "") === "decorations_tree_01" &&
+        String(item.x ?? "") === TUTORIAL_COMPLETED_TREE_TILE.x &&
+        String(item.y ?? "") === TUTORIAL_COMPLETED_TREE_TILE.y
+      ) {
+        mineItems.splice(index, 1);
+        changed = true;
+      }
+    }
+  }
+
+  for (const tile of TUTORIAL_COMPLETED_TERRAIN_TILES) {
+    changed = terrainTiles.delete(tile) || changed;
+  }
+
+  for (const tile of TUTORIAL_COMPLETED_ROAD_TILES) {
+    changed = roadTiles.delete(tile) || changed;
+  }
+
+  if (changed) {
+    upsertChunkElement(mapChildren, "Terrain", terrainTiles);
+    upsertChunkElement(mapChildren, "Road", roadTiles);
+  }
+
+  return changed;
+}
+
 function getProfileElement(document: JsonObject): JsonObject | undefined {
   const universe = document.universe;
   if (!Array.isArray(universe)) {

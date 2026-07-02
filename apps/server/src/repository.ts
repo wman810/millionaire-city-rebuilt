@@ -8,7 +8,7 @@ import {
 } from "@mcity/shared";
 import type { JsonObject, LoginResponseData } from "@mcity/shared/dist/types.js";
 import type { SaveBundle } from "./saveDefaults.js";
-import { createFreshSaveBundle, normalizeCompletedTutorialUniverse } from "./saveDefaults.js";
+import { createFreshSaveBundle, normalizeCompletedTutorialUniverse, normalizeIncompleteTutorialUniverse } from "./saveDefaults.js";
 import type { MCityDatabase, SessionRow, UserRow } from "./database.js";
 
 const SAVE_SCHEMA_VERSION = "8";
@@ -204,11 +204,18 @@ export class SaveRepository {
         .run(GAME_CONFIG_DEFAULTS_META_KEY, GAME_CONFIG_DEFAULTS_VERSION, new Date().toISOString());
     }
 
-    if (isTutorialIncomplete(universeDoc) && shouldResetIncompleteTutorialSave(universeDoc)) {
-      const premiumCurrency = extractPremiumCurrencyState(universeDoc);
-      this.seedFreshSave(userId, userExtId);
-      if (premiumCurrency.cash > 0 || premiumCurrency.paidCash > 0) {
-        this.applyPremiumCurrencyCarryover(userId, premiumCurrency.cash, premiumCurrency.paidCash);
+    if (isTutorialIncomplete(universeDoc)) {
+      if (shouldResetIncompleteTutorialSave(universeDoc)) {
+        const premiumCurrency = extractPremiumCurrencyState(universeDoc);
+        this.seedFreshSave(userId, userExtId);
+        if (premiumCurrency.cash > 0 || premiumCurrency.paidCash > 0) {
+          this.applyPremiumCurrencyCarryover(userId, premiumCurrency.cash, premiumCurrency.paidCash);
+        }
+        return;
+      }
+
+      if (normalizeIncompleteTutorialUniverse(universeDoc)) {
+        this.setDocument(userId, SAVE_TAGS.universe, universeDoc);
       }
     }
   }

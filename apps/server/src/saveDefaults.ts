@@ -5,7 +5,7 @@ export {
 } from "./saveDefaults/collectibles.js";
 export { createFreshSaveBundle } from "./saveDefaults/starter.js";
 export { createNeighborUniverse } from "./saveDefaults/neighbors.js";
-export { normalizeCompletedTutorialUniverse } from "./saveDefaults/tutorial.js";
+export { normalizeCompletedTutorialUniverse, normalizeIncompleteTutorialUniverse } from "./saveDefaults/tutorial.js";
 export {
   normalizeConstructionState,
   normalizeHouseRentState

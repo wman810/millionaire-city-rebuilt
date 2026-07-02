@@ -3195,6 +3195,99 @@ describe("Millionaire City server", () => {
     }
   });
 
+  test("removes tutorial-placed map tiles and cypress tree from incomplete tutorial saves on restart", async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-tutorial-map-cleanup-"));
+    const dbPath = path.join(tempDir, "save.sqlite");
+
+    {
+      const config = {
+        ...getServerConfig(),
+        dbPath,
+        httpPort: 31963,
+        httpsPort: 31973,
+        facebookHttpsPort: 4503,
+        useHttpsFacebookShim: false
+      };
+      const serverApp = createServerApp(config);
+      activeApps.push(serverApp);
+      await serverApp.start();
+
+      const universe = serverApp.repository.getDocument<Record<string, unknown>>(1, "universe");
+      const root = universe.universe as Array<Record<string, unknown>>;
+      const worldContainer = root.find((entry) => Array.isArray(entry.World)) as { World: Array<Record<string, unknown>> };
+      const mineCompany = worldContainer.World.find(
+        (entry: { Company?: Array<Record<string, unknown>>; whose?: string }) =>
+          Array.isArray(entry.Company) && entry.whose === "0"
+      ) as { Company: Array<Record<string, unknown>>; sid?: string };
+      const mapContainer = worldContainer.World.find((entry) => Array.isArray(entry.Map)) as {
+        Map: Array<Record<string, unknown>>;
+      };
+      const terrain = mapContainer.Map.find((entry) => Array.isArray(entry.Terrain)) as { chunk?: string };
+      const road = mapContainer.Map.find((entry) => Array.isArray(entry.Road)) as { chunk?: string };
+      const terrainTiles = new Set(String(terrain.chunk ?? "").split(",").filter((tile) => tile.length > 0));
+      const roadTiles = new Set(String(road.chunk ?? "").split(",").filter((tile) => tile.length > 0));
+
+      terrainTiles.add("5:2");
+      terrainTiles.add("5:3");
+      roadTiles.add("3:4");
+      roadTiles.add("4:4");
+      terrain.chunk = Array.from(terrainTiles).join(",");
+      road.chunk = Array.from(roadTiles).join(",");
+      mineCompany.Company.push({
+        Item: [{ State: [], id: "5" }],
+        sid: "5098",
+        csid: String(mineCompany.sid ?? "1"),
+        sku: "decorations_tree_01",
+        x: "4",
+        y: "1",
+        isSuspended: "0"
+      });
+      serverApp.repository.setDocument(1, "universe", universe);
+
+      await serverApp.stop();
+      activeApps.pop();
+    }
+
+    {
+      const config = {
+        ...getServerConfig(),
+        dbPath,
+        httpPort: 31964,
+        httpsPort: 31974,
+        facebookHttpsPort: 4504,
+        useHttpsFacebookShim: false
+      };
+      const serverApp = createServerApp(config);
+      activeApps.push(serverApp);
+      await serverApp.start();
+
+      const universe = serverApp.repository.getDocument<Record<string, unknown>>(1, "universe");
+      const root = universe.universe as Array<Record<string, unknown>>;
+      const profile = root.find((entry) => Array.isArray(entry.Profile)) as Record<string, unknown>;
+      const worldContainer = root.find((entry) => Array.isArray(entry.World)) as { World: Array<Record<string, unknown>> };
+      const mineCompany = worldContainer.World.find(
+        (entry: { Company?: Array<Record<string, unknown>>; whose?: string }) =>
+          Array.isArray(entry.Company) && entry.whose === "0"
+      ) as { Company: Array<Record<string, unknown>> };
+      const mapContainer = worldContainer.World.find((entry) => Array.isArray(entry.Map)) as {
+        Map: Array<Record<string, unknown>>;
+      };
+      const terrain = mapContainer.Map.find((entry) => Array.isArray(entry.Terrain)) as { chunk?: string };
+      const road = mapContainer.Map.find((entry) => Array.isArray(entry.Road)) as { chunk?: string };
+      const terrainTiles = new Set(String(terrain.chunk ?? "").split(",").filter((tile) => tile.length > 0));
+      const roadTiles = new Set(String(road.chunk ?? "").split(",").filter((tile) => tile.length > 0));
+
+      expect(profile.tutorialEnd).toBe("0");
+      expect(terrainTiles.has("4:2")).toBe(true);
+      expect(terrainTiles.has("4:3")).toBe(true);
+      expect(terrainTiles.has("5:2")).toBe(false);
+      expect(terrainTiles.has("5:3")).toBe(false);
+      expect(roadTiles.has("3:4")).toBe(false);
+      expect(roadTiles.has("4:4")).toBe(false);
+      expect(mineCompany.Company.some((item) => item.sid === "5098" && item.sku === "decorations_tree_01")).toBe(false);
+    }
+  });
+
   test("preserves decoration-only incomplete tutorial saves on restart", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-decoration-tutorial-preserve-"));
     const dbPath = path.join(tempDir, "save.sqlite");
