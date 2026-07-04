@@ -23,14 +23,42 @@ const clientPatches: ClientPatch[] = [
   {
     className: "Config",
     sourcePath: path.join(clientPatchSourcesDir, "Config.as"),
-    note: "Config patched to use local server-backed Facebook/fan data instead of legacy Facebook API requests.",
+    note: "Config patched to use local server-backed Facebook/fan data and allow local runtime toggles.",
     errorMessage: "Failed to patch Config in the private client SWF."
   },
   {
     className: "Dollars",
     sourcePath: path.join(clientPatchSourcesDir, "Dollars.as"),
-    note: "Dollars patched to enable the original SWF debug mode when the launcher passes debugMode=1.",
+    note: "Dollars patched to enable original debug mode, climate particles, and classic item designs from launcher FlashVars.",
     errorMessage: "Failed to patch Dollars in the private client SWF."
+  },
+  {
+    className: "com.dchoc.dollars.world.items.ItemDefinition",
+    sourcePath: path.join(clientPatchSourcesDir, "scripts", "com", "dchoc", "dollars", "world", "items", "ItemDefinition.as"),
+    note: "ItemDefinition patched to optionally prefer classic item art symbols before newer *_new exports.",
+    errorMessage: "Failed to patch ItemDefinition in the private client SWF."
+  },
+  {
+    className: "com.dchoc.dollars.world.items.ItemObject",
+    sourcePath: path.join(clientPatchSourcesDir, "scripts", "com", "dchoc", "dollars", "world", "items", "ItemObject.as"),
+    note: "ItemObject patched so live building effect overlays follow the classic item art toggle.",
+    errorMessage: "Failed to patch ItemObject in the private client SWF."
+  },
+  {
+    className: "com.dchoc.dollars.world.items.decorations.ItemDecoration",
+    sourcePath: path.join(
+      clientPatchSourcesDir,
+      "scripts",
+      "com",
+      "dchoc",
+      "dollars",
+      "world",
+      "items",
+      "decorations",
+      "ItemDecoration.as"
+    ),
+    note: "ItemDecoration patched so item skins and flags follow the classic item art toggle.",
+    errorMessage: "Failed to patch ItemDecoration in the private client SWF."
   },
   {
     className: "com.dchoc.dollars.GUI.PopupGold",

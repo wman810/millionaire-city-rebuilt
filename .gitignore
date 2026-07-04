@@ -43,6 +43,15 @@ client-patch-sources/scripts/com/dchoc/dollars/utils/Mouse/**
 !client-patch-sources/scripts/com/dchoc/dollars/utils/metrics/
 client-patch-sources/scripts/com/dchoc/dollars/utils/metrics/**
 !client-patch-sources/scripts/com/dchoc/dollars/utils/metrics/CustomizerManager.as
+!client-patch-sources/scripts/com/dchoc/dollars/world/
+client-patch-sources/scripts/com/dchoc/dollars/world/**
+!client-patch-sources/scripts/com/dchoc/dollars/world/items/
+client-patch-sources/scripts/com/dchoc/dollars/world/items/**
+!client-patch-sources/scripts/com/dchoc/dollars/world/items/ItemDefinition.as
+!client-patch-sources/scripts/com/dchoc/dollars/world/items/ItemObject.as
+!client-patch-sources/scripts/com/dchoc/dollars/world/items/decorations/
+client-patch-sources/scripts/com/dchoc/dollars/world/items/decorations/**
+!client-patch-sources/scripts/com/dchoc/dollars/world/items/decorations/ItemDecoration.as
 tools/*.exe
 desktop.ini
 Thumbs.db

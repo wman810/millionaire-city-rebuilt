@@ -160,6 +160,8 @@ export function createServerApp(config = getServerConfig()): ServerApp {
   app.get("/launcher", (req, res) => {
     const appUrl = `https://127.0.0.1:${config.httpsPort}`;
     const debugMode = isTruthyQueryValue(req.query.debug) || process.env.MCITY_SWF_DEBUG === "1";
+    const climateMode = isTruthyQueryValue(req.query.climate) || process.env.MCITY_USE_CLIMATE === "1";
+    const oldItemDesigns = isTruthyQueryValue(req.query.oldItems) || process.env.MCITY_OLD_ITEM_DESIGNS === "1";
     const localProfile = createLocalProfileResponse(repository, config);
     res.type("html").send(
       renderLauncherHtml({
@@ -172,6 +174,8 @@ export function createServerApp(config = getServerConfig()): ServerApp {
         facebookAppId: "315455798286",
         lang: config.launcherLang,
         debugMode,
+        climateMode,
+        oldItemDesigns,
         localUserName: localProfile.userName,
         localCityName: localProfile.cityName,
         localProfilePictureUrl: localProfile.profilePictureUrl

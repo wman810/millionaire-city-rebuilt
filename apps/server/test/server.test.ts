@@ -5093,12 +5093,16 @@ describe("Millionaire City server", () => {
       facebookAppId: "315455798286",
       lang: "en_US",
       debugMode: false,
+      climateMode: false,
+      oldItemDesigns: false,
       localUserName: "Mayor",
       localCityName: "Chocolate Fields",
       localProfilePictureUrl: "/local/profile-picture?v=default"
     });
 
     expect(html).toContain("useFrictionlessFacebookCredits=false");
+    expect(html).toContain("climateMode=0");
+    expect(html).toContain("oldItemDesigns=0");
     expect(html).toContain("fbcreditsCurrentBalance:0:0");
     expect(html).toContain("messageResponseFacebookCredits:1");
     expect(html).toContain("var thumbnailSize = 50;");

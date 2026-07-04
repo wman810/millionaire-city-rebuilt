@@ -10,6 +10,8 @@ interface LauncherOptions {
   facebookAppId: string;
   lang: string;
   debugMode: boolean;
+  climateMode: boolean;
+  oldItemDesigns: boolean;
   localUserName: string;
   localCityName: string;
   localProfilePictureUrl: string;
@@ -42,6 +44,8 @@ export function renderLauncherHtml(options: LauncherOptions): string {
     bartUrl: options.serverBaseUrl,
     allFriendsAreNeighbors: "0",
     debugMode: options.debugMode ? "1" : "0",
+    climateMode: options.climateMode ? "1" : "0",
+    oldItemDesigns: options.oldItemDesigns ? "1" : "0",
     console: options.debugMode ? "1" : "0"
   }).toString();
 

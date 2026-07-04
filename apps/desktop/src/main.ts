@@ -11,6 +11,7 @@ const serverDistPath = path.join(workspaceRoot, "apps", "server", "dist", "main.
 const launcherBaseUrl = "https://127.0.0.1:31804/launcher";
 const healthUrl = "https://127.0.0.1:31804/health";
 const desktopLogPath = path.join(workspaceRoot, "generated", "logs", "desktop.log");
+const desktopSettingsPath = path.join(workspaceRoot, "generated", "settings", "desktop.json");
 const facebookShimPort = getFacebookShimPort();
 const localProfileSettingsMenuItemId = "show-local-profile-settings";
 const appIconPath = path.join(
@@ -21,9 +22,19 @@ const appIconPath = path.join(
   "window-icon.ico"
 );
 
+interface DesktopSettings {
+  swfDebugMode?: boolean;
+  climateMode?: boolean;
+  oldItemDesigns?: boolean;
+}
+
+const desktopSettings = readDesktopSettings();
+
 let mainWindow: BrowserWindow | null = null;
 let serverProcess: ChildProcess | null = null;
-let swfDebugMode = process.env.MCITY_SWF_DEBUG === "1";
+let swfDebugMode = getEnvBoolean("MCITY_SWF_DEBUG") ?? desktopSettings.swfDebugMode ?? false;
+let climateMode = getEnvBoolean("MCITY_USE_CLIMATE") ?? desktopSettings.climateMode ?? false;
+let oldItemDesigns = getEnvBoolean("MCITY_OLD_ITEM_DESIGNS") ?? desktopSettings.oldItemDesigns ?? false;
 let localProfileSettingsVisible = true;
 
 installFileLogging();
@@ -98,8 +109,80 @@ function openDevToolsForWindow(win: BrowserWindow): void {
   win.webContents.openDevTools({ mode: "right" });
 }
 
+function getEnvBoolean(name: string): boolean | undefined {
+  const value = process.env[name]?.toLowerCase();
+  if (value === "1" || value === "true" || value === "yes") {
+    return true;
+  }
+  if (value === "0" || value === "false" || value === "no") {
+    return false;
+  }
+  return undefined;
+}
+
+function readDesktopSettings(): DesktopSettings {
+  if (!fs.existsSync(desktopSettingsPath)) {
+    return {};
+  }
+
+  try {
+    const value = JSON.parse(fs.readFileSync(desktopSettingsPath, "utf8")) as Record<string, unknown>;
+    return {
+      swfDebugMode: getBooleanSetting(value.swfDebugMode),
+      climateMode: getBooleanSetting(value.climateMode),
+      oldItemDesigns: getBooleanSetting(value.oldItemDesigns)
+    };
+  } catch (error) {
+    console.warn("[desktop] Failed to read desktop settings:", error);
+    return {};
+  }
+}
+
+function getBooleanSetting(value: unknown): boolean | undefined {
+  return typeof value === "boolean" ? value : undefined;
+}
+
+function saveDesktopSettings(): void {
+  try {
+    fs.mkdirSync(path.dirname(desktopSettingsPath), { recursive: true });
+    fs.writeFileSync(
+      desktopSettingsPath,
+      JSON.stringify(
+        {
+          swfDebugMode,
+          climateMode,
+          oldItemDesigns
+        },
+        null,
+        2
+      )
+    );
+  } catch (error) {
+    console.debug("[desktop] Failed to save desktop settings:", error);
+  }
+}
+
+function reloadWithCurrentLauncherOptions(win: BrowserWindow): void {
+  saveDesktopSettings();
+  if (!win.isDestroyed()) {
+    void win.loadURL(getLauncherUrl());
+  }
+}
+
 function getLauncherUrl(): string {
-  return swfDebugMode ? `${launcherBaseUrl}?debug=1` : launcherBaseUrl;
+  const params = new URLSearchParams();
+  if (swfDebugMode) {
+    params.set("debug", "1");
+  }
+  if (climateMode) {
+    params.set("climate", "1");
+  }
+  if (oldItemDesigns) {
+    params.set("oldItems", "1");
+  }
+
+  const query = params.toString();
+  return query ? `${launcherBaseUrl}?${query}` : launcherBaseUrl;
 }
 
 function installAppMenu(win: BrowserWindow): void {
@@ -112,9 +195,25 @@ function installAppMenu(win: BrowserWindow): void {
         checked: swfDebugMode,
         click: (menuItem) => {
           swfDebugMode = menuItem.checked;
-          if (!win.isDestroyed()) {
-            void win.loadURL(getLauncherUrl());
-          }
+          reloadWithCurrentLauncherOptions(win);
+        }
+      },
+      {
+        label: "Snowflake Particles",
+        type: "checkbox",
+        checked: climateMode,
+        click: (menuItem) => {
+          climateMode = menuItem.checked;
+          reloadWithCurrentLauncherOptions(win);
+        }
+      },
+      {
+        label: "Classic Building Designs",
+        type: "checkbox",
+        checked: oldItemDesigns,
+        click: (menuItem) => {
+          oldItemDesigns = menuItem.checked;
+          reloadWithCurrentLauncherOptions(win);
         }
       },
       {

@@ -89,6 +89,14 @@ package
             Config.DEBUG_MODE = true;
             Config.DEBUG_CONSOLE = true;
          }
+         if(_loc1_.climateMode == "1" || _loc1_.climateMode == "true")
+         {
+            Config.USE_CLIMATE = true;
+         }
+         if(_loc1_.oldItemDesigns == "1" || _loc1_.oldItemDesigns == "true")
+         {
+            Config.USE_OLD_ITEM_DESIGNS = true;
+         }
          Security.allowInsecureDomain("*");
          Security.allowDomain("*");
          UserDataFacade.getInstance().login();

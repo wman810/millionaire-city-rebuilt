@@ -72,7 +72,9 @@ package
       
       public static const USE_NEIGHBOR_LIST:Boolean = true;
       
-      public static const USE_CLIMATE:Boolean = false;
+      public static var USE_CLIMATE:Boolean = false;
+      
+      public static var USE_OLD_ITEM_DESIGNS:Boolean = false;
       
       public static const COLLECTIBLE_FEATURE_ENABLED:Boolean = true;
       
