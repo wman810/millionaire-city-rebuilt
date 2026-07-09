@@ -52,7 +52,7 @@ function createWindow(): BrowserWindow {
   const win = new BrowserWindow({
     width: 1280,
     height: 720,
-    title: "Millionaire City Private Server",
+    title: "Millionaire City",
     icon: appIconPath,
     show: false,
     webPreferences: {

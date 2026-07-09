@@ -54,6 +54,7 @@ export function renderLauncherHtml(options: LauncherOptions): string {
   const faceboxCssUrl = `${options.assetsBaseUrl}facebox/facebox.css`;
   const loadingBackgroundUrl = `${options.assetsBaseUrl}pages/Background_loading.png`;
   const faviconUrl = `${options.appUrl}/favicon.ico`;
+  const cbarUrl = `${options.appUrl}/cbar/cbar.htm`;
   const tabSkylineUrl = `${options.assetsBaseUrl}tabs/social_wall/general/skyline.png`;
   const logoUrl = `${options.assetsBaseUrl}tabs/social_wall/general/logo.png`;
   const giftIconUrl = `${options.assetsBaseUrl}tabs/social_wall/general/gift.png`;
@@ -106,7 +107,7 @@ export function renderLauncherHtml(options: LauncherOptions): string {
 
       #page {
         position: relative;
-        width: 980px;
+        width: 760px;
         margin: 0 auto;
         min-height: 780px;
         padding-top: 8px;
@@ -117,6 +118,21 @@ export function renderLauncherHtml(options: LauncherOptions): string {
       #EMBEDDED_DIV_ID,
       #mobius_submit {
         display: none;
+      }
+
+      #wcrm_cbar {
+        width: 760px;
+        height: 131px;
+        margin: 0 auto;
+        overflow: hidden;
+        background: #ffffff;
+      }
+
+      #wcrm_cbar iframe {
+        display: block;
+        width: 760px;
+        height: 131px;
+        border: 0;
       }
 
       #tab-bar {
@@ -201,7 +217,7 @@ export function renderLauncherHtml(options: LauncherOptions): string {
       #gameEmbed {
         visibility: visible;
         position: relative;
-        width: 980px;
+        width: 760px;
         height: 600px;
         margin-top: -1px;
         background: #ffffff url('${loadingBackgroundUrl}') top center no-repeat;
@@ -209,12 +225,12 @@ export function renderLauncherHtml(options: LauncherOptions): string {
       }
 
       #game_frame {
-        width: 980px;
+        width: 760px;
         height: 600px;
       }
 
       object {
-        width: 980px;
+        width: 760px;
         height: 600px;
         display: block;
         background: transparent;
@@ -362,15 +378,22 @@ export function renderLauncherHtml(options: LauncherOptions): string {
 
       .local_resource_controls {
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         align-items: flex-end;
         gap: 10px;
       }
 
       .local_resource_group {
         display: flex;
-        align-items: flex-end;
+        flex: 1 1 190px;
+        flex-wrap: wrap;
+        align-items: flex-start;
         gap: 5px;
+        min-width: 0;
+      }
+
+      .local_resource_group .local_profile_field {
+        flex: 1 1 100%;
       }
 
       .local_profile_field {
@@ -399,16 +422,19 @@ export function renderLauncherHtml(options: LauncherOptions): string {
       }
 
       .local_resource_amount {
-        width: 72px;
+        box-sizing: border-box;
+        width: 100%;
         padding: 4px 6px;
         border: 1px solid #9fc0d8;
         border-radius: 6px;
       }
 
       .local_resource_group .panel_button {
+        flex: 1 1 0;
         min-width: 0;
         margin-right: 0;
-        padding: 5px 7px;
+        padding: 5px 6px;
+        text-align: center;
         white-space: nowrap;
       }
 
@@ -472,6 +498,10 @@ export function renderLauncherHtml(options: LauncherOptions): string {
   <body>
     <div id="fb-root"></div>
     <div id="page">
+      <div id="wcrm_cbar">
+        <iframe title="Digital Chocolate Bar" src="${cbarUrl}" scrolling="no"></iframe>
+      </div>
+
       <div id="tab-bar" class="tab-bar-new">
         <div id="tab-bar-top" class="tab-bar-new-top"></div>
         <div class="mcity_logo" id="mcity_logo"></div>

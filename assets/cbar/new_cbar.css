@@ -1,0 +1,201 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: black;
+	background: white;
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+body{
+	font-family: arial, san-serif;
+}
+
+body.chocolatebar{
+	width:760px;
+	height:131px;
+	overflow:hidden;
+}
+
+.l{
+ float:left;
+}
+
+.rule{
+	display:block;
+	width:1px;
+	height:100%;
+	background: #999;
+        position: relative;
+        left: -1px;
+}
+
+.clearfix{
+ display:block;
+ overflow:hidden;
+}
+
+.content{
+	position:relative;
+	/*height: 112px;*/
+	width: 535px;
+        left: -1px;
+        margin-right: -3px;
+}
+
+
+.mission_message{
+  color:#666;
+  padding-bottom: 5px;
+  font-size:16px;
+  width: 760px;
+  text-align:center;
+}
+
+.mission_details{
+	font-size: 10px;
+	display: block;
+	border-right: 1px solid #999;
+	padding-right:4px;
+	padding-top:4px;
+	height:35px;
+	position:relative;
+	bottom:3px;
+	text-align:right;
+}
+
+.mission_details cite{ 
+	line-height: 13px;
+}
+
+.mission_1x{
+  width:107px;
+  overflow: hidden;
+}
+
+.mission_2x{
+  width:214px;
+  overflow: hidden;
+}
+
+.mission_status_img{
+  padding-left:0px;
+}
+
+
+.mission_number{
+  font-size: 14px;
+  padding-left:3px;
+  font-weight: bold;
+}
+
+.marketing{
+	text-align:center;
+	height: 23px;
+	line-height: 23px;
+	color: #0071BC;
+	font-size: 13px;
+	background-color: #FFF;
+	width: 100%;
+	position: absolute;
+	top:55px;
+}
+
+.hot_chocolate{
+  padding-left:6px;
+  text-decoration: none;
+  color: #0071BC;
+  background: #FFF;
+  display: block;
+}
+
+.hot_chocolate:hover{
+  color: #F16922;
+  text-decoration: underline;
+}
+
+
+.banners{
+	width: 100%;
+	background-color: #FFF;
+	position: absolute;
+	padding-top:5px;
+}
+
+.slot{
+	padding-left:7px;
+}
+
+.last{
+	margin-right: 0px !important;
+	border-right: none;
+}
+
+.maincontainer{
+  width:758px;
+  height:110px;
+  border:1px solid #999;
+  overflow:hidden;
+  /*width:761px;*/
+  margin-bottom: 2px;
+}
+
+.maincontainer_v3{
+  overflow:hidden;  
+  margin: 0px;
+  margin-bottom: -2px;
+}
+
+/* Styles for CBar V3 */
+.banner_container{width:760px;clear: both;overflow: hidden;margin: 0 auto; margin-bottom: 6px; border: 0px solid black; padding: 0;}
+.dc_logo{display: block; bottom: 4px; position: absolute}
+.banner_img{display:block; float: left}
+.banner_separator{width: 4px; height: 1px; float: left}
+.tabs_container{height: 50px; width:758px;clear: both;overflow: hidden;margin: 0;padding:0;border:0}
+#dchoc_logo{height:50px;width:101px;float:left;position:relative; padding-left: 4px;}
+#tabs{width:632px;float:left;margin-left:5px;}
+.tab_heads{list-style-type: none;width: 650px;margin: auto; padding:0}
+.tab_heads li{float:left;}
+.tab_heads li a img{border:0;display:block;}
+.game_items {height: 5px;width:758px;}
+.zl_game{background-color: #814531;}
+.aa_game{background-color: #706B52;}
+.mc_game{background-color: #FFC340;}

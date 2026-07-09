@@ -191,6 +191,14 @@ export function createServerApp(config = getServerConfig()): ServerApp {
     res.type("image/x-icon").sendFile(path.join(config.workspaceRoot, "apps", "desktop", "assets", "window-icon.ico"));
   });
 
+  app.use(
+    "/cbar",
+    express.static(path.join(config.archiveRoot, "cbar"), {
+      fallthrough: true,
+      extensions: ["htm", "html", "css", "png"]
+    })
+  );
+
   app.get("/crossdomain.xml", (_req, res) => {
     res.type("application/xml").send(`<!DOCTYPE cross-domain-policy SYSTEM "http://www.macromedia.com/xml/dtds/cross-domain-policy.dtd">
 <cross-domain-policy>
