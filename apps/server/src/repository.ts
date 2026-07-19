@@ -174,17 +174,24 @@ export class SaveRepository {
       .prepare("SELECT json FROM save_documents WHERE user_id = ? AND tag = ?")
       .get(userId, SAVE_TAGS.gameConfig) as { json: string } | undefined;
 
-    if (!universe || !gameConfig || schemaVersion?.value !== SAVE_SCHEMA_VERSION) {
-      this.seedFreshSave(userId, userExtId);
+    if (!universe || !gameConfig) {
+      this.backupAndSeedFreshSave(userId, userExtId, "missing-save-documents");
       return;
     }
 
-    const universeDoc = JSON.parse(universe.json) as JsonObject;
-    const configDoc = JSON.parse(gameConfig.json) as JsonObject;
+    let universeDoc: JsonObject;
+    let configDoc: JsonObject;
+    try {
+      universeDoc = JSON.parse(universe.json) as JsonObject;
+      configDoc = JSON.parse(gameConfig.json) as JsonObject;
+    } catch {
+      this.backupAndSeedFreshSave(userId, userExtId, "invalid-save-json");
+      return;
+    }
 
     if (isLegacyBrokenUniverse(universeDoc) || isLegacyBrokenGameConfig(configDoc)) {
       console.warn("[mcity] Resetting incompatible save schema to the current starter format.");
-      this.seedFreshSave(userId, userExtId);
+      this.backupAndSeedFreshSave(userId, userExtId, "incompatible-save-schema");
       return;
     }
 
@@ -207,7 +214,7 @@ export class SaveRepository {
     if (isTutorialIncomplete(universeDoc)) {
       if (shouldResetIncompleteTutorialSave(universeDoc)) {
         const premiumCurrency = extractPremiumCurrencyState(universeDoc);
-        this.seedFreshSave(userId, userExtId);
+        this.backupAndSeedFreshSave(userId, userExtId, "incomplete-tutorial-reset");
         if (premiumCurrency.cash > 0 || premiumCurrency.paidCash > 0) {
           this.applyPremiumCurrencyCarryover(userId, premiumCurrency.cash, premiumCurrency.paidCash);
         }
@@ -217,6 +224,11 @@ export class SaveRepository {
       if (normalizeIncompleteTutorialUniverse(universeDoc)) {
         this.setDocument(userId, SAVE_TAGS.universe, universeDoc);
       }
+    }
+
+    if (schemaVersion?.value !== SAVE_SCHEMA_VERSION) {
+      this.setMeta("save_schema_version", SAVE_SCHEMA_VERSION);
+      console.log(`[mcity] Migrated compatible save schema from ${schemaVersion?.value ?? "unknown"} to ${SAVE_SCHEMA_VERSION}.`);
     }
   }
 
@@ -246,6 +258,12 @@ export class SaveRepository {
     profile.DCCashPaid = String(safePaidCash);
     profile.companyValue = String(550000 + safeCash * CASH_TO_COINS);
     this.setDocument(userId, SAVE_TAGS.universe, universe);
+  }
+
+  private backupAndSeedFreshSave(userId: number, userExtId: string, reason: string): void {
+    const backupPath = this.database.createBackup(reason);
+    console.warn(`[mcity] Backed up the existing save to ${backupPath} before resetting it.`);
+    this.seedFreshSave(userId, userExtId);
   }
 }
 

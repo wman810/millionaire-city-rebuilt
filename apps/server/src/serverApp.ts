@@ -83,6 +83,11 @@ interface LocalResourcesResponse {
   companyValue: number;
 }
 
+interface LocalProfilePictureUpload {
+  mimeType: string;
+  bytes: Buffer;
+}
+
 export function createServerApp(config = getServerConfig()): ServerApp {
   const database = new MCityDatabase(config.dbPath);
   const repository = new SaveRepository(database);
@@ -487,68 +492,83 @@ export function createServerApp(config = getServerConfig()): ServerApp {
       return httpsServer;
     },
     async start() {
-      ensurePrivateClientExists(config);
+      try {
+        ensurePrivateClientExists(config);
 
-      if (config.useHttpsFacebookShim) {
-        try {
-          facebookShim = await startFacebookShim({
-            port: config.facebookHttpsPort,
-            currentUserId: config.launcherUserId,
-            getCurrentUserName: () => getLocalProfile(repository).userName,
-            getCurrentUserPicture: () => getLocalProfilePicture(repository, config),
-            getCurrentUserPictureVersion: () => getLocalProfilePictureVersion(repository, config)
-          });
-        } catch (error) {
-          console.warn(`[mcity] Failed to start HTTPS Facebook shim on port ${config.facebookHttpsPort}:`, error);
+        if (config.useHttpsFacebookShim) {
+          try {
+            facebookShim = await startFacebookShim({
+              port: config.facebookHttpsPort,
+              currentUserId: config.launcherUserId,
+              getCurrentUserName: () => getLocalProfile(repository).userName,
+              getCurrentUserPicture: () => getLocalProfilePicture(repository, config),
+              getCurrentUserPictureVersion: () => getLocalProfilePictureVersion(repository, config)
+            });
+            config.facebookHttpsPort = getListeningPort(facebookShim.server, config.facebookHttpsPort);
+          } catch (error) {
+            console.warn(`[mcity] Failed to start HTTPS Facebook shim on port ${config.facebookHttpsPort}:`, error);
+          }
         }
+
+        await new Promise<void>((resolve, reject) => {
+          httpServer = app.listen(config.httpPort, "127.0.0.1");
+          httpServer.once("listening", () => resolve());
+          httpServer.once("error", reject);
+        });
+        if (!httpServer) {
+          throw new Error("HTTP server failed to initialize.");
+        }
+        config.httpPort = getListeningPort(httpServer, config.httpPort);
+
+        httpsServer = https.createServer(createLocalhostTlsOptions(), app);
+        await new Promise<void>((resolve, reject) => {
+          httpsServer?.once("listening", () => resolve());
+          httpsServer?.once("error", reject);
+          httpsServer?.listen(config.httpsPort, "127.0.0.1");
+        });
+        config.httpsPort = getListeningPort(httpsServer, config.httpsPort);
+
+        if (!httpsServer) {
+          throw new Error("HTTP/HTTPS server failed to initialize.");
+        }
+
+        return { httpServer, httpsServer, facebookShim };
+      } catch (error) {
+        await Promise.all([
+          closeListeningServer(httpServer),
+          closeListeningServer(httpsServer),
+          closeListeningServer(facebookShim?.server)
+        ]);
+        httpServer = undefined;
+        httpsServer = undefined;
+        facebookShim = undefined;
+        throw error;
       }
-
-      await new Promise<void>((resolve, reject) => {
-        httpServer = app.listen(config.httpPort, "127.0.0.1");
-        httpServer.once("listening", () => resolve());
-        httpServer.once("error", reject);
-      });
-
-      httpsServer = https.createServer(createLocalhostTlsOptions(), app);
-      await new Promise<void>((resolve, reject) => {
-        httpsServer?.once("listening", () => resolve());
-        httpsServer?.once("error", reject);
-        httpsServer?.listen(config.httpsPort, "127.0.0.1");
-      });
-
-      if (!httpServer || !httpsServer) {
-        throw new Error("HTTP/HTTPS server failed to initialize.");
-      }
-
-      return { httpServer, httpsServer, facebookShim };
     },
     async stop() {
       await Promise.all([
-        new Promise<void>((resolve) => {
-          if (!httpServer) {
-            resolve();
-            return;
-          }
-          httpServer.close(() => resolve());
-        }),
-        new Promise<void>((resolve) => {
-          if (!httpsServer) {
-            resolve();
-            return;
-          }
-          httpsServer.close(() => resolve());
-        }),
-        new Promise<void>((resolve) => {
-          if (!facebookShim) {
-            resolve();
-            return;
-          }
-          facebookShim.server.close(() => resolve());
-        })
+        closeListeningServer(httpServer),
+        closeListeningServer(httpsServer),
+        closeListeningServer(facebookShim?.server)
       ]);
       database.close();
     }
   };
+}
+
+function closeListeningServer(server: Server | https.Server | undefined): Promise<void> {
+  return new Promise((resolve) => {
+    if (!server?.listening) {
+      resolve();
+      return;
+    }
+    server.close(() => resolve());
+  });
+}
+
+function getListeningPort(server: Server | https.Server, fallback: number): number {
+  const address = server.address();
+  return address && typeof address === "object" ? address.port : fallback;
 }
 
 function ensurePrivateClientExists(config: ServerConfig): void {
@@ -1024,6 +1044,12 @@ function updateLocalProfile(
   const cityName = payload.cityName === undefined
     ? currentProfile.cityName
     : sanitizeLocalCityName(payload.cityName);
+  const shouldClearProfilePicture = payload.clearProfilePicture === true || payload.clearProfilePicture === "true";
+  const profilePictureUpload = !shouldClearProfilePicture &&
+    typeof payload.profilePictureDataUrl === "string" &&
+    payload.profilePictureDataUrl.trim().length > 0
+    ? parseLocalProfilePicture(payload.profilePictureDataUrl)
+    : undefined;
 
   repository.updateDefaultUserName(userName);
   const universe = repository.getDocument<JsonObject>(user.id, SAVE_TAGS.universe);
@@ -1035,10 +1061,10 @@ function updateLocalProfile(
     repository.setDocument(user.id, SAVE_TAGS.universe, universe);
   }
 
-  if (payload.clearProfilePicture === true || payload.clearProfilePicture === "true") {
+  if (shouldClearProfilePicture) {
     clearLocalProfilePicture(repository, config);
-  } else if (typeof payload.profilePictureDataUrl === "string" && payload.profilePictureDataUrl.trim().length > 0) {
-    saveLocalProfilePicture(repository, config, payload.profilePictureDataUrl);
+  } else if (profilePictureUpload) {
+    saveLocalProfilePicture(repository, config, profilePictureUpload);
   }
 
   return createLocalProfileResponse(repository, config);
@@ -1212,7 +1238,7 @@ function getLevelXpBounds(level: number, levelXpThresholds: number[]): { minXp: 
   };
 }
 
-function saveLocalProfilePicture(repository: SaveRepository, config: ServerConfig, dataUrl: string): void {
+function parseLocalProfilePicture(dataUrl: string): LocalProfilePictureUpload {
   const match = dataUrl.trim().match(/^data:(image\/(?:gif|jpeg|png|webp));base64,([a-z0-9+/=\r\n]+)$/i);
   if (!match) {
     throw new Error("Profile picture must be a PNG, JPEG, GIF, or WebP image.");
@@ -1232,9 +1258,17 @@ function saveLocalProfilePicture(repository: SaveRepository, config: ServerConfi
     throw new Error("Profile picture data does not match its image type.");
   }
 
+  return { mimeType, bytes };
+}
+
+function saveLocalProfilePicture(
+  repository: SaveRepository,
+  config: ServerConfig,
+  upload: LocalProfilePictureUpload
+): void {
   fs.mkdirSync(path.dirname(getLocalProfilePicturePath(config)), { recursive: true });
-  fs.writeFileSync(getLocalProfilePicturePath(config), bytes);
-  repository.setMeta(LOCAL_PROFILE_PICTURE_MIME_META_KEY, mimeType);
+  fs.writeFileSync(getLocalProfilePicturePath(config), upload.bytes);
+  repository.setMeta(LOCAL_PROFILE_PICTURE_MIME_META_KEY, upload.mimeType);
   repository.setMeta(LOCAL_PROFILE_PICTURE_VERSION_META_KEY, String(Date.now()));
 }
 

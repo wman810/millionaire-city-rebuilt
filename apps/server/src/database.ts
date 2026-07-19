@@ -19,10 +19,12 @@ export interface SessionRow {
 
 export class MCityDatabase {
   readonly db: Database.Database;
+  readonly dbPath: string;
 
   constructor(dbPath: string) {
-    fs.mkdirSync(path.dirname(dbPath), { recursive: true });
-    this.db = new Database(dbPath);
+    this.dbPath = path.resolve(dbPath);
+    fs.mkdirSync(path.dirname(this.dbPath), { recursive: true });
+    this.db = new Database(this.dbPath);
     this.db.pragma("journal_mode = WAL");
     this.init();
   }
@@ -64,5 +66,25 @@ export class MCityDatabase {
 
   close(): void {
     this.db.close();
+  }
+
+  createBackup(reason: string): string {
+    const backupDirectory = path.join(path.dirname(this.dbPath), "backups");
+    fs.mkdirSync(backupDirectory, { recursive: true });
+
+    const extension = path.extname(this.dbPath);
+    const baseName = path.basename(this.dbPath, extension);
+    const timestamp = new Date().toISOString().replace(/[^0-9]/g, "");
+    const safeReason = reason.replace(/[^a-z0-9_-]+/gi, "-").replace(/^-+|-+$/g, "") || "backup";
+    const backupStem = `${baseName}-${timestamp}-${safeReason}`;
+    let backupPath = path.join(backupDirectory, `${backupStem}.sqlite`);
+    let suffix = 1;
+    while (fs.existsSync(backupPath)) {
+      backupPath = path.join(backupDirectory, `${backupStem}-${suffix}.sqlite`);
+      suffix += 1;
+    }
+
+    this.db.prepare("VACUUM INTO ?").run(backupPath);
+    return backupPath;
   }
 }
