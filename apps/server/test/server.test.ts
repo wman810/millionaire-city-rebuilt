@@ -17,6 +17,7 @@ import { loadCashToCoins } from "../src/rules.js";
 const activeApps: Array<ReturnType<typeof createServerApp>> = [];
 const HOUSE_COLLECTIBLE_DROP_DIVISOR = 8;
 const EXPECTED_STARTER_DECORATION_SKUS = createStarterDecorationItems("1").map((entry) => String(entry.sku));
+const EXPECTED_STARTER_DECORATION_VALUE = 299_000;
 const archivedAssetTest = hasArchivedAssetFiles() ? test : test.skip;
 
 function createServerApp(config: ServerConfig): ReturnType<typeof createServerAppBase> {
@@ -228,7 +229,11 @@ describe("Millionaire City server", () => {
     expect(plots?.type).toBe("");
     expect(profileContainer?.tutorialEnd).toBe("0");
     expect(profileContainer?.bossGenre).toBe("0");
+    expect(profileContainer?.exp).toBe("0");
+    expect(profileContainer?.DCCoins).toBe("380000");
     expect(profileContainer?.DCCash).toBe("0");
+    expect(profileContainer?.companyValue).toBe("720000");
+    expect(mineCompany?.DCCoins).toBe("380000");
     const rivalCompany = companies.find((entry) => entry.whose === "1");
     const rivalItems = rivalCompany?.Company.filter((entry) => Array.isArray(entry.Item)) ?? [];
     expect(rivalItems.map((entry) => entry.sku)).toEqual([
@@ -249,23 +254,28 @@ describe("Millionaire City server", () => {
     const roadChunk = mapContainer?.Map.find((entry) => Array.isArray(entry.Road)) as
       | { chunk?: string }
       | undefined;
-    expect(terrainChunk?.chunk).toContain("-1:-3");
-    expect(terrainChunk?.chunk).toContain("2:-1");
-    expect(terrainChunk?.chunk).toContain("-7:-2");
-    expect(terrainChunk?.chunk).toContain("-13:1");
-    expect(terrainChunk?.chunk).toContain("-12:2");
-    expect(terrainChunk?.chunk).toContain("-4:1");
-    expect(terrainChunk?.chunk).toContain("-2:3");
-    expect(terrainChunk?.chunk).toContain("9:-3");
-    expect(terrainChunk?.chunk).toContain("11:-1");
-    expect(terrainChunk?.chunk).toContain("0:1");
-    expect(terrainChunk?.chunk).toContain("1:3");
-    expect(terrainChunk?.chunk).toContain("4:2");
-    expect(terrainChunk?.chunk).toContain("4:3");
-    expect(roadChunk?.chunk).toContain("-7:0");
-    expect(roadChunk?.chunk).toContain("11:0");
-    expect(roadChunk?.chunk).toContain("-1:4");
-    expect(roadChunk?.chunk).toContain("2:4");
+    const terrainTiles = new Set(String(terrainChunk?.chunk ?? "").split(",").filter(Boolean));
+    const roadTiles = new Set(String(roadChunk?.chunk ?? "").split(",").filter(Boolean));
+    expect(terrainTiles.size).toBe(41);
+    expect([...terrainTiles].filter((tile) => roadTiles.has(tile))).toEqual([]);
+    expect(["0:1", "1:1", "0:2", "1:2", "0:3", "1:3"].filter((tile) => terrainTiles.has(tile))).toEqual([]);
+    expect(terrainTiles.has("10:-2")).toBe(false);
+    expect(380_000 + EXPECTED_STARTER_DECORATION_VALUE + terrainTiles.size * 1_000).toBe(720_000);
+    expect(terrainTiles.has("-1:-3")).toBe(true);
+    expect(terrainTiles.has("2:-1")).toBe(true);
+    expect(terrainTiles.has("-7:-2")).toBe(true);
+    expect(terrainTiles.has("-13:1")).toBe(true);
+    expect(terrainTiles.has("-12:2")).toBe(true);
+    expect(terrainTiles.has("-4:1")).toBe(true);
+    expect(terrainTiles.has("-2:3")).toBe(true);
+    expect(terrainTiles.has("9:-3")).toBe(true);
+    expect(terrainTiles.has("11:-1")).toBe(true);
+    expect(terrainTiles.has("4:2")).toBe(true);
+    expect(terrainTiles.has("4:3")).toBe(true);
+    expect(roadTiles.has("-7:0")).toBe(true);
+    expect(roadTiles.has("11:0")).toBe(true);
+    expect(roadTiles.has("-1:4")).toBe(true);
+    expect(roadTiles.has("2:4")).toBe(true);
     expect(startupCommands[1]._dat.gameConfig).toEqual([]);
     expect(startupCommands[1]._dat.music).toBe("1");
     expect(startupCommands[1]._dat.sound).toBe("1");
@@ -4748,9 +4758,9 @@ describe("Millionaire City server", () => {
                 cashGain: 115,
                 compValueGain: 6_900_000,
                 expNow: 0,
-                coinsNow: 500_000,
+                coinsNow: 380_000,
                 cashNow: 115,
-                compValueNow: 7_450_000
+                compValueNow: 7_620_000
               }
             },
             _cnt: 1
@@ -4831,7 +4841,7 @@ describe("Millionaire City server", () => {
 
       expect(profile?.DCCash).toBe("115");
       expect(profile?.DCCashPaid).toBe("100");
-      expect(profile?.companyValue).toBe("7450000");
+      expect(profile?.companyValue).toBe("7620000");
     }
   });
 
@@ -5123,12 +5133,12 @@ describe("Millionaire City server", () => {
     expect(initial.status).toBe(200);
     expect(await initial.json()).toMatchObject({
       ok: true,
-      money: 500000,
+      money: 380000,
       gold: 0,
-      xp: 100,
+      xp: 0,
       minXp: 0,
       maxXp: 470,
-      companyValue: 550000
+      companyValue: 720000
     });
 
     const addMoney = await fetch(`http://127.0.0.1:${config.httpPort}/local/resources/adjust`, {
@@ -5138,8 +5148,8 @@ describe("Millionaire City server", () => {
     });
     expect(addMoney.status).toBe(200);
     expect(await addMoney.json()).toMatchObject({
-      money: 500250,
-      companyValue: 550250
+      money: 380250,
+      companyValue: 720250
     });
 
     const removeMoney = await fetch(`http://127.0.0.1:${config.httpPort}/local/resources/adjust`, {
@@ -5149,8 +5159,8 @@ describe("Millionaire City server", () => {
     });
     expect(removeMoney.status).toBe(200);
     expect(await removeMoney.json()).toMatchObject({
-      money: 499250,
-      companyValue: 549250
+      money: 379250,
+      companyValue: 719250
     });
 
     const addGold = await fetch(`http://127.0.0.1:${config.httpPort}/local/resources/adjust`, {
@@ -5162,7 +5172,7 @@ describe("Millionaire City server", () => {
     expect(await addGold.json()).toMatchObject({
       gold: 75,
       paidGold: 75,
-      companyValue: 549250 + 75 * cashToCoins
+      companyValue: 719250 + 75 * cashToCoins
     });
 
     const removeGold = await fetch(`http://127.0.0.1:${config.httpPort}/local/resources/adjust`, {
@@ -5174,7 +5184,7 @@ describe("Millionaire City server", () => {
     expect(await removeGold.json()).toMatchObject({
       gold: 0,
       paidGold: 0,
-      companyValue: 549250
+      companyValue: 719250
     });
 
     const addXp = await fetch(`http://127.0.0.1:${config.httpPort}/local/resources/adjust`, {
@@ -5184,7 +5194,7 @@ describe("Millionaire City server", () => {
     });
     expect(addXp.status).toBe(200);
     const xpResponse = await addXp.json() as Record<string, unknown>;
-    expect(xpResponse.xp).toBe(1100);
+    expect(xpResponse.xp).toBe(1000);
     expect(Number(xpResponse.level)).toBeGreaterThanOrEqual(1);
     expect(Number(xpResponse.maxXp)).toBeGreaterThan(Number(xpResponse.minXp));
 
@@ -5203,10 +5213,10 @@ describe("Millionaire City server", () => {
     const profile = (universe.universe as Array<Record<string, unknown>>).find((entry) =>
       Array.isArray(entry.Profile)
     ) as Record<string, unknown> | undefined;
-    expect(profile?.DCCoins).toBe("499250");
+    expect(profile?.DCCoins).toBe("379250");
     expect(profile?.DCCash).toBe("0");
     expect(profile?.DCCashPaid).toBe("0");
-    expect(profile?.companyValue).toBe("549250");
+    expect(profile?.companyValue).toBe("719250");
     expect(profile?.exp).toBe("0");
     expect(profile?.level).toBe("1");
   });

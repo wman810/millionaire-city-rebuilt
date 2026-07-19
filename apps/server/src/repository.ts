@@ -9,6 +9,7 @@ import {
 import type { JsonObject, LoginResponseData } from "@mcity/shared/dist/types.js";
 import type { SaveBundle } from "./saveDefaults.js";
 import { createFreshSaveBundle, normalizeCompletedTutorialUniverse, normalizeIncompleteTutorialUniverse } from "./saveDefaults.js";
+import { STARTER_COMPANY_VALUE } from "./saveDefaults/constants.js";
 import type { MCityDatabase, SessionRow, UserRow } from "./database.js";
 
 const SAVE_SCHEMA_VERSION = "8";
@@ -256,7 +257,7 @@ export class SaveRepository {
     const safePaidCash = Number.isFinite(paidCash) ? Math.max(0, paidCash) : 0;
     profile.DCCash = String(safeCash);
     profile.DCCashPaid = String(safePaidCash);
-    profile.companyValue = String(550000 + safeCash * CASH_TO_COINS);
+    profile.companyValue = String(STARTER_COMPANY_VALUE + safeCash * CASH_TO_COINS);
     this.setDocument(userId, SAVE_TAGS.universe, universe);
   }
 

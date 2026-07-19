@@ -10,8 +10,10 @@ import { createElement, leafElement } from "../saveTree.js";
 import {
   DEFAULT_CITY_NAME,
   DEFAULT_CITY_NAME_CODES,
+  STARTER_COIN_BALANCE,
   STARTER_COMPANY_MINE_SID,
   STARTER_COMPANY_RIVAL_SID,
+  STARTER_COMPANY_VALUE,
   STARTER_WORLD_SID
 } from "./constants.js";
 import { createEmptyCollectiblePendingDocument, createEmptyCollectiblesDocument } from "./collectibles.js";
@@ -19,13 +21,18 @@ import { createHorizontalChunk, createRectChunk, createVerticalChunk } from "./g
 import { createCompanyElement, createRivalSaleItem } from "./items.js";
 import { createStarterDecorationItems } from "./starterDecorations.js";
 
+// The covered center tile is restored if the rival townhouse is purchased. It
+// stays grass initially so the client-computed starter company value is $720k.
+const STARTER_TOWNHOUSE_LUXURY_TERRAIN = createRectChunk(9, -3, 3, 3).filter((tile) => tile !== "10:-2");
+
+// Do not seed terrain beneath roads or grass-only decorations. The client sells
+// those overlaps while loading, which otherwise grants an unintended $9,000.
 const STARTER_TERRAIN_TILES = [
-  ...createRectChunk(0, 1, 2, 3),
   ...createRectChunk(-13, 1, 2, 2),
-  ...createRectChunk(-7, -2, 3, 3),
+  ...createRectChunk(-7, -2, 3, 2),
   ...createRectChunk(-1, -3, 4, 3),
   ...createRectChunk(-4, 1, 3, 3),
-  ...createRectChunk(9, -3, 3, 3),
+  ...STARTER_TOWNHOUSE_LUXURY_TERRAIN,
   ...createRectChunk(4, 2, 1, 2)
 ];
 const STARTER_ROAD_TILES = [
@@ -103,14 +110,14 @@ function createStarterUniverse(userExtId = DEFAULT_USER_EXT_ID): JsonObject {
           { PollManager: [] },
           leafElement("Plots", { type: "" })
         ],
-        exp: "100",
-        DCCoins: "500000",
+        exp: "0",
+        DCCoins: String(STARTER_COIN_BALANCE),
         DCCash: "0",
         DCCashPaid: "0",
         cityname: DEFAULT_CITY_NAME,
         cityNameCodes: DEFAULT_CITY_NAME_CODES,
         tutorialEnd: "0",
-        companyValue: "550000",
+        companyValue: String(STARTER_COMPANY_VALUE),
         ranking: "-1",
         bossGenre: "0",
         firstInvest: "0",
@@ -139,7 +146,7 @@ function createStarterUniverse(userExtId = DEFAULT_USER_EXT_ID): JsonObject {
             whose: "0",
             HQLevel: "0",
             exp: "0",
-            DCCoins: "500000",
+            DCCoins: String(STARTER_COIN_BALANCE),
             workers: "0"
           }, createStarterDecorationItems(STARTER_COMPANY_MINE_SID)),
           createCompanyElement({
