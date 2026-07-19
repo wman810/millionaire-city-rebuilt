@@ -116,11 +116,13 @@ export async function startFacebookShim(options: FacebookShimOptions): Promise<F
 
   await new Promise<void>((resolve, reject) => {
     server.once("error", reject);
-    server.listen(options.port, "0.0.0.0", () => resolve());
+    server.listen(options.port, "127.0.0.1", () => resolve());
   });
 
+  const address = server.address();
+  const port = address && typeof address === "object" ? address.port : options.port;
   return {
     server,
-    url: `https://127.0.0.1:${options.port}`
+    url: `https://127.0.0.1:${port}`
   };
 }

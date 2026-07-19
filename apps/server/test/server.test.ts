@@ -1,12 +1,13 @@
 import crypto from "node:crypto";
 import fs from "node:fs";
+import net from "node:net";
 import os from "node:os";
 import path from "node:path";
 import { afterEach, describe, expect, test } from "vitest";
 import type { PacketCommand } from "@mcity/shared";
 import type { JsonObject } from "@mcity/shared/dist/types.js";
-import { createServerApp } from "../src/serverApp.js";
-import { getServerConfig } from "../src/config.js";
+import { createServerApp as createServerAppBase } from "../src/serverApp.js";
+import { getServerConfig, type ServerConfig } from "../src/config.js";
 import { renderLauncherHtml } from "../src/launcherHtml.js";
 import { createEmptyCollectiblesDocument, normalizeCompletedTutorialUniverse } from "../src/saveDefaults.js";
 import { RONALD_LAYOUT_ITEMS, RONALD_PLOTS_TYPE } from "../src/saveDefaults/ronaldLayout.js";
@@ -17,6 +18,15 @@ const activeApps: Array<ReturnType<typeof createServerApp>> = [];
 const HOUSE_COLLECTIBLE_DROP_DIVISOR = 8;
 const EXPECTED_STARTER_DECORATION_SKUS = createStarterDecorationItems("1").map((entry) => String(entry.sku));
 const archivedAssetTest = hasArchivedAssetFiles() ? test : test.skip;
+
+function createServerApp(config: ServerConfig): ReturnType<typeof createServerAppBase> {
+  config.httpPort = 0;
+  config.httpsPort = 0;
+  if (config.useHttpsFacebookShim) {
+    config.facebookHttpsPort = 0;
+  }
+  return createServerAppBase(config);
+}
 
 function hasArchivedAssetFiles(): boolean {
   const config = getServerConfig();
@@ -68,14 +78,84 @@ afterEach(async () => {
 });
 
 describe("Millionaire City server", () => {
+  test("migrates compatible older save schemas without resetting player data", async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-schema-migration-"));
+    const dbPath = path.join(tempDir, "save.sqlite");
+    const config = {
+      ...getServerConfig(),
+      dbPath,
+      useHttpsFacebookShim: false
+    };
+
+    const firstApp = createServerApp(config);
+    activeApps.push(firstApp);
+    const universe = firstApp.repository.getDocument<JsonObject>(1, "universe");
+    const profile = (universe.universe as JsonObject[]).find((entry) => Array.isArray(entry.Profile));
+    expect(profile).toBeTruthy();
+    if (profile) {
+      profile.userName = "Preserved Mayor";
+    }
+    firstApp.repository.setDocument(1, "universe", universe);
+    firstApp.repository.setMeta("save_schema_version", "7");
+    await firstApp.stop();
+    activeApps.pop();
+
+    const restartedApp = createServerApp({ ...config });
+    activeApps.push(restartedApp);
+    const migratedUniverse = restartedApp.repository.getDocument<JsonObject>(1, "universe");
+    const migratedProfile = (migratedUniverse.universe as JsonObject[]).find((entry) => Array.isArray(entry.Profile));
+    expect(migratedProfile?.userName).toBe("Preserved Mayor");
+    expect(restartedApp.repository.getMeta("save_schema_version")).toBe("8");
+  });
+
+  test("rolls back the HTTP listener when HTTPS startup fails", async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-startup-rollback-"));
+    const blocker = net.createServer();
+    await new Promise<void>((resolve, reject) => {
+      blocker.once("error", reject);
+      blocker.listen(0, "127.0.0.1", () => resolve());
+    });
+    const address = blocker.address();
+    expect(address && typeof address === "object").toBe(true);
+    const blockedPort = address && typeof address === "object" ? address.port : 0;
+    const serverApp = createServerAppBase({
+      ...getServerConfig(),
+      dbPath: path.join(tempDir, "save.sqlite"),
+      httpPort: 0,
+      httpsPort: blockedPort,
+      useHttpsFacebookShim: false
+    });
+    activeApps.push(serverApp);
+
+    try {
+      await expect(serverApp.start()).rejects.toMatchObject({ code: "EADDRINUSE" });
+      expect(serverApp.httpServer).toBeUndefined();
+      expect(serverApp.httpsServer).toBeUndefined();
+    } finally {
+      await new Promise<void>((resolve) => blocker.close(() => resolve()));
+    }
+  });
+
+  test("binds the Facebook shim only to the loopback interface", async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-fbshim-bind-"));
+    const config = {
+      ...getServerConfig(),
+      dbPath: path.join(tempDir, "save.sqlite"),
+      useHttpsFacebookShim: true
+    };
+    const serverApp = createServerApp(config);
+    activeApps.push(serverApp);
+    await serverApp.start();
+
+    const address = serverApp.facebookShim?.server.address();
+    expect(address && typeof address === "object" ? address.address : undefined).toBe("127.0.0.1");
+  });
+
   test("returns logOK and startup documents", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-login-"));
     const config = {
       ...getServerConfig(),
       dbPath: path.join(tempDir, "save.sqlite"),
-      httpPort: 31903,
-      httpsPort: 31913,
-      facebookHttpsPort: 4443,
       useHttpsFacebookShim: false
     };
 
@@ -196,9 +276,6 @@ describe("Millionaire City server", () => {
     const config = {
       ...getServerConfig(),
       dbPath: path.join(tempDir, "save.sqlite"),
-      httpPort: 31902,
-      httpsPort: 31912,
-      facebookHttpsPort: 4442,
       useHttpsFacebookShim: false
     };
 
@@ -378,9 +455,6 @@ describe("Millionaire City server", () => {
     const config = {
       ...getServerConfig(),
       dbPath: path.join(tempDir, "save.sqlite"),
-      httpPort: 31901,
-      httpsPort: 31911,
-      facebookHttpsPort: 4441,
       useHttpsFacebookShim: false
     };
 
@@ -508,9 +582,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31904,
-        httpsPort: 31914,
-        facebookHttpsPort: 4444,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -576,9 +647,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31905,
-        httpsPort: 31915,
-        facebookHttpsPort: 4445,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -642,9 +710,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31910,
-        httpsPort: 31920,
-        facebookHttpsPort: 4450,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -746,9 +811,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31911,
-        httpsPort: 31921,
-        facebookHttpsPort: 4451,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -828,9 +890,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 34072,
-        httpsPort: 34082,
-        facebookHttpsPort: 4642,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -919,9 +978,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 34073,
-        httpsPort: 34083,
-        facebookHttpsPort: 4643,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -949,9 +1005,6 @@ describe("Millionaire City server", () => {
     const config = {
       ...getServerConfig(),
       dbPath: path.join(tempDir, "save.sqlite"),
-      httpPort: 31989,
-      httpsPort: 31999,
-      facebookHttpsPort: 4529,
       useHttpsFacebookShim: false
     };
     const serverApp = createServerApp(config);
@@ -1051,9 +1104,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31916,
-        httpsPort: 31926,
-        facebookHttpsPort: 4456,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -1138,9 +1188,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31917,
-        httpsPort: 31927,
-        facebookHttpsPort: 4457,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -1212,9 +1259,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31960,
-        httpsPort: 31970,
-        facebookHttpsPort: 4500,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -1307,9 +1351,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31961,
-        httpsPort: 31971,
-        facebookHttpsPort: 4501,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -1380,9 +1421,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 34010,
-        httpsPort: 34020,
-        facebookHttpsPort: 4600,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -1483,9 +1521,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 34011,
-        httpsPort: 34021,
-        facebookHttpsPort: 4601,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -1556,9 +1591,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 34012,
-        httpsPort: 34022,
-        facebookHttpsPort: 4602,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -1612,9 +1644,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 34013,
-        httpsPort: 34023,
-        facebookHttpsPort: 4603,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -1684,9 +1713,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31962,
-        httpsPort: 31972,
-        facebookHttpsPort: 4502,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -1740,9 +1766,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31963,
-        httpsPort: 31973,
-        facebookHttpsPort: 4503,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -1812,9 +1835,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31918,
-        httpsPort: 31928,
-        facebookHttpsPort: 4458,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -1859,9 +1879,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31919,
-        httpsPort: 31929,
-        facebookHttpsPort: 4459,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -1930,9 +1947,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31940,
-        httpsPort: 31950,
-        facebookHttpsPort: 4480,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -1998,9 +2012,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31941,
-        httpsPort: 31951,
-        facebookHttpsPort: 4481,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -2073,9 +2084,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31944,
-        httpsPort: 31954,
-        facebookHttpsPort: 4484,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -2131,9 +2139,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31945,
-        httpsPort: 31955,
-        facebookHttpsPort: 4485,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -2202,9 +2207,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31946,
-        httpsPort: 31956,
-        facebookHttpsPort: 4486,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -2270,9 +2272,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31947,
-        httpsPort: 31957,
-        facebookHttpsPort: 4487,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -2354,9 +2353,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31948,
-        httpsPort: 31958,
-        facebookHttpsPort: 4488,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -2422,9 +2418,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31949,
-        httpsPort: 31959,
-        facebookHttpsPort: 4489,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -2493,9 +2486,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31942,
-        httpsPort: 31952,
-        facebookHttpsPort: 4482,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -2539,9 +2529,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31943,
-        httpsPort: 31953,
-        facebookHttpsPort: 4483,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -2610,9 +2597,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31960,
-        httpsPort: 31970,
-        facebookHttpsPort: 4490,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -2666,9 +2650,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31961,
-        httpsPort: 31971,
-        facebookHttpsPort: 4491,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -2736,9 +2717,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31964,
-        httpsPort: 31974,
-        facebookHttpsPort: 4494,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -2793,9 +2771,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31965,
-        httpsPort: 31975,
-        facebookHttpsPort: 4495,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -2831,9 +2806,6 @@ describe("Millionaire City server", () => {
     const config = {
       ...getServerConfig(),
       dbPath: path.join(tempDir, "save.sqlite"),
-      httpPort: 31962,
-      httpsPort: 31972,
-      facebookHttpsPort: 4492,
       useHttpsFacebookShim: false
     };
 
@@ -2921,9 +2893,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31922,
-        httpsPort: 31932,
-        facebookHttpsPort: 4462,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -3003,9 +2972,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31923,
-        httpsPort: 31933,
-        facebookHttpsPort: 4463,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -3072,9 +3038,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31908,
-        httpsPort: 31918,
-        facebookHttpsPort: 4448,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -3135,9 +3098,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31909,
-        httpsPort: 31919,
-        facebookHttpsPort: 4449,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -3203,9 +3163,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31963,
-        httpsPort: 31973,
-        facebookHttpsPort: 4503,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -3252,9 +3209,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31964,
-        httpsPort: 31974,
-        facebookHttpsPort: 4504,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -3296,9 +3250,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31961,
-        httpsPort: 31971,
-        facebookHttpsPort: 4501,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -3334,9 +3285,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31962,
-        httpsPort: 31972,
-        facebookHttpsPort: 4502,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -3366,9 +3314,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31911,
-        httpsPort: 31921,
-        facebookHttpsPort: 4451,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -3529,9 +3474,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31935,
-        httpsPort: 31945,
-        facebookHttpsPort: 4475,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -3580,9 +3522,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31936,
-        httpsPort: 31946,
-        facebookHttpsPort: 4476,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -3662,9 +3601,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31947,
-        httpsPort: 31957,
-        facebookHttpsPort: 4477,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -3704,9 +3640,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31948,
-        httpsPort: 31958,
-        facebookHttpsPort: 4478,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -3775,9 +3708,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 34030,
-        httpsPort: 34040,
-        facebookHttpsPort: 4610,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -3817,9 +3747,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 34031,
-        httpsPort: 34041,
-        facebookHttpsPort: 4611,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -3890,9 +3817,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 34032,
-        httpsPort: 34042,
-        facebookHttpsPort: 4612,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -4004,9 +3928,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 34033,
-        httpsPort: 34043,
-        facebookHttpsPort: 4613,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -4071,9 +3992,6 @@ describe("Millionaire City server", () => {
     const config = {
       ...getServerConfig(),
       dbPath: path.join(tempDir, "save.sqlite"),
-      httpPort: 34052,
-      httpsPort: 34062,
-      facebookHttpsPort: 4632,
       useHttpsFacebookShim: false
     };
     const serverApp = createServerApp(config);
@@ -4178,9 +4096,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 34034,
-        httpsPort: 34044,
-        facebookHttpsPort: 4614,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -4222,9 +4137,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 34035,
-        httpsPort: 34045,
-        facebookHttpsPort: 4615,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -4293,9 +4205,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 34036,
-        httpsPort: 34046,
-        facebookHttpsPort: 4616,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -4336,9 +4245,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 34037,
-        httpsPort: 34047,
-        facebookHttpsPort: 4617,
         useHttpsFacebookShim: false
       };
       const serverApp = createServerApp(config);
@@ -4403,9 +4309,6 @@ describe("Millionaire City server", () => {
     const config = {
       ...getServerConfig(),
       dbPath: path.join(tempDir, "save.sqlite"),
-      httpPort: 31924,
-      httpsPort: 31934,
-      facebookHttpsPort: 4464,
       useHttpsFacebookShim: false
     };
 
@@ -4425,9 +4328,6 @@ describe("Millionaire City server", () => {
     const config = {
       ...getServerConfig(),
       dbPath: path.join(tempDir, "save.sqlite"),
-      httpPort: 31991,
-      httpsPort: 32001,
-      facebookHttpsPort: 4531,
       useHttpsFacebookShim: false
     };
 
@@ -4457,9 +4357,6 @@ describe("Millionaire City server", () => {
     const config = {
       ...getServerConfig(),
       dbPath: path.join(tempDir, "save.sqlite"),
-      httpPort: 31925,
-      httpsPort: 31935,
-      facebookHttpsPort: 4465,
       useHttpsFacebookShim: false
     };
 
@@ -4492,9 +4389,6 @@ describe("Millionaire City server", () => {
     const config = {
       ...getServerConfig(),
       dbPath: path.join(tempDir, "save.sqlite"),
-      httpPort: 31989,
-      httpsPort: 31999,
-      facebookHttpsPort: 4529,
       useHttpsFacebookShim: false
     };
 
@@ -4543,9 +4437,6 @@ describe("Millionaire City server", () => {
     const config = {
       ...getServerConfig(),
       dbPath: path.join(tempDir, "save.sqlite"),
-      httpPort: 31990,
-      httpsPort: 32000,
-      facebookHttpsPort: 4530,
       useHttpsFacebookShim: false
     };
 
@@ -4576,9 +4467,6 @@ describe("Millionaire City server", () => {
     const config = {
       ...getServerConfig(),
       dbPath: path.join(tempDir, "save.sqlite"),
-      httpPort: 31926,
-      httpsPort: 31936,
-      facebookHttpsPort: 4466,
       useHttpsFacebookShim: false
     };
 
@@ -4609,9 +4497,6 @@ describe("Millionaire City server", () => {
     const config = {
       ...getServerConfig(),
       dbPath: path.join(tempDir, "save.sqlite"),
-      httpPort: 31927,
-      httpsPort: 31937,
-      facebookHttpsPort: 4467,
       useHttpsFacebookShim: false
     };
 
@@ -4636,9 +4521,6 @@ describe("Millionaire City server", () => {
     const config = {
       ...getServerConfig(),
       dbPath: path.join(tempDir, "save.sqlite"),
-      httpPort: 31929,
-      httpsPort: 31939,
-      facebookHttpsPort: 4469,
       useHttpsFacebookShim: false
     };
 
@@ -4657,9 +4539,6 @@ describe("Millionaire City server", () => {
     const config = {
       ...getServerConfig(),
       dbPath: path.join(tempDir, "save.sqlite"),
-      httpPort: 31928,
-      httpsPort: 31938,
-      facebookHttpsPort: 4468,
       useHttpsFacebookShim: false
     };
 
@@ -4684,9 +4563,6 @@ describe("Millionaire City server", () => {
     const config = {
       ...getServerConfig(),
       dbPath: path.join(tempDir, "save.sqlite"),
-      httpPort: 31906,
-      httpsPort: 31916,
-      facebookHttpsPort: 4446,
       useHttpsFacebookShim: false
     };
 
@@ -4727,9 +4603,6 @@ describe("Millionaire City server", () => {
     const config = {
       ...getServerConfig(),
       dbPath: path.join(tempDir, "save.sqlite"),
-      httpPort: 31907,
-      httpsPort: 31917,
-      facebookHttpsPort: 4447,
       useHttpsFacebookShim: false
     };
 
@@ -4796,9 +4669,6 @@ describe("Millionaire City server", () => {
     const config = {
       ...getServerConfig(),
       dbPath: path.join(tempDir, "save.sqlite"),
-      httpPort: 31921,
-      httpsPort: 31931,
-      facebookHttpsPort: 4461,
       useHttpsFacebookShim: false
     };
 
@@ -4849,9 +4719,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31922,
-        httpsPort: 31932,
-        facebookHttpsPort: 4462,
         useHttpsFacebookShim: false
       };
 
@@ -4917,9 +4784,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31923,
-        httpsPort: 31933,
-        facebookHttpsPort: 4463,
         useHttpsFacebookShim: false
       };
 
@@ -4979,9 +4843,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 32250,
-        httpsPort: 32260,
-        facebookHttpsPort: 45250,
         useHttpsFacebookShim: false
       };
 
@@ -5039,9 +4900,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 32251,
-        httpsPort: 32261,
-        facebookHttpsPort: 45251,
         useHttpsFacebookShim: false
       };
 
@@ -5142,9 +5000,6 @@ describe("Millionaire City server", () => {
     const config = {
       ...getServerConfig(),
       dbPath: path.join(tempDir, "save.sqlite"),
-      httpPort: 31988,
-      httpsPort: 31998,
-      facebookHttpsPort: 4528,
       useHttpsFacebookShim: false
     };
 
@@ -5156,6 +5011,23 @@ describe("Millionaire City server", () => {
     expect(initial.status).toBe(200);
     expect(await initial.json()).toMatchObject({
       ok: true,
+      userName: "Mayor",
+      cityName: "Chocolate Fields",
+      hasProfilePicture: false
+    });
+
+    const invalidSave = await fetch(`http://127.0.0.1:${config.httpPort}/local/profile`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        userName: "Partially Saved Mayor",
+        cityName: "Partially Saved City",
+        profilePictureDataUrl: "not-an-image"
+      })
+    });
+    expect(invalidSave.status).toBe(400);
+    const profileAfterInvalidSave = await fetch(`http://127.0.0.1:${config.httpPort}/local/profile`);
+    expect(await profileAfterInvalidSave.json()).toMatchObject({
       userName: "Mayor",
       cityName: "Chocolate Fields",
       hasProfilePicture: false
@@ -5196,9 +5068,7 @@ describe("Millionaire City server", () => {
     await serverApp.stop();
     activeApps.pop();
     const restartedConfig = {
-      ...config,
-      httpPort: 32188,
-      httpsPort: 32198
+      ...config
     };
     const restartedServerApp = createServerApp(restartedConfig);
     activeApps.push(restartedServerApp);
@@ -5241,9 +5111,6 @@ describe("Millionaire City server", () => {
     const config = {
       ...getServerConfig(),
       dbPath: path.join(tempDir, "save.sqlite"),
-      httpPort: 31989,
-      httpsPort: 31999,
-      facebookHttpsPort: 4529,
       useHttpsFacebookShim: false
     };
 
@@ -5349,9 +5216,6 @@ describe("Millionaire City server", () => {
     const config = {
       ...getServerConfig(),
       dbPath: path.join(tempDir, "save.sqlite"),
-      httpPort: 31984,
-      httpsPort: 31994,
-      facebookHttpsPort: 4524,
       useHttpsFacebookShim: false
     };
 
@@ -5508,9 +5372,6 @@ describe("Millionaire City server", () => {
     const config = {
       ...getServerConfig(),
       dbPath: path.join(tempDir, "save.sqlite"),
-      httpPort: 31945,
-      httpsPort: 31955,
-      facebookHttpsPort: 4545,
       useHttpsFacebookShim: false
     };
 
@@ -5620,9 +5481,6 @@ describe("Millionaire City server", () => {
     const config = {
       ...getServerConfig(),
       dbPath: path.join(tempDir, "save.sqlite"),
-      httpPort: 31946,
-      httpsPort: 31956,
-      facebookHttpsPort: 4546,
       useHttpsFacebookShim: false
     };
 
@@ -5733,9 +5591,6 @@ describe("Millionaire City server", () => {
     const config = {
       ...getServerConfig(),
       dbPath,
-      httpPort: 31985,
-      httpsPort: 31995,
-      facebookHttpsPort: 4525,
       useHttpsFacebookShim: false
     };
 
@@ -5803,10 +5658,7 @@ describe("Millionaire City server", () => {
     activeApps.pop();
 
     const restartedServerApp = createServerApp({
-      ...config,
-      httpPort: 31989,
-      httpsPort: 31999,
-      facebookHttpsPort: 4529
+      ...config
     });
     activeApps.push(restartedServerApp);
     await restartedServerApp.start();
@@ -5834,9 +5686,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31971,
-        httpsPort: 31981,
-        facebookHttpsPort: 4531,
         useHttpsFacebookShim: false
       };
 
@@ -5906,9 +5755,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31972,
-        httpsPort: 31982,
-        facebookHttpsPort: 4532,
         useHttpsFacebookShim: false
       };
 
@@ -5935,9 +5781,6 @@ describe("Millionaire City server", () => {
     const config = {
       ...getServerConfig(),
       dbPath: path.join(tempDir, "save.sqlite"),
-      httpPort: 31988,
-      httpsPort: 31998,
-      facebookHttpsPort: 4528,
       useHttpsFacebookShim: false
     };
 
@@ -6006,9 +5849,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31975,
-        httpsPort: 31985,
-        facebookHttpsPort: 4535,
         useHttpsFacebookShim: false
       };
 
@@ -6104,9 +5944,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31976,
-        httpsPort: 31986,
-        facebookHttpsPort: 4536,
         useHttpsFacebookShim: false
       };
 
@@ -6151,9 +5988,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31973,
-        httpsPort: 31983,
-        facebookHttpsPort: 4533,
         useHttpsFacebookShim: false
       };
 
@@ -6235,9 +6069,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31974,
-        httpsPort: 31984,
-        facebookHttpsPort: 4534,
         useHttpsFacebookShim: false
       };
 
@@ -6276,9 +6107,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31986,
-        httpsPort: 31996,
-        facebookHttpsPort: 4526,
         useHttpsFacebookShim: false
       };
 
@@ -6337,9 +6165,6 @@ describe("Millionaire City server", () => {
       const config = {
         ...getServerConfig(),
         dbPath,
-        httpPort: 31987,
-        httpsPort: 31997,
-        facebookHttpsPort: 4527,
         useHttpsFacebookShim: false
       };
 
