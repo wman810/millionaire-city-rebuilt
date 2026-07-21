@@ -5044,6 +5044,48 @@ describe("Millionaire City server", () => {
     expect(html).toContain("setLocalProfileSettingsVisible");
   });
 
+  test("launcher renders the original social panel shells without custom offline content", () => {
+    const html = renderLauncherHtml({
+      appUrl: "https://127.0.0.1:31804",
+      assetsBaseUrl: "https://127.0.0.1:31804/mcity/0.501/Datas/",
+      serverBaseUrl: "https://127.0.0.1:31804",
+      userId: "100000000000001",
+      oauthToken: "local-oauth-token",
+      gameToken: "bootstrap-token",
+      facebookAppId: "315455798286",
+      lang: "en_US",
+      debugMode: false,
+      climateMode: false,
+      oldItemDesigns: false,
+      localUserName: "Mayor",
+      localCityName: "Chocolate Fields",
+      localProfilePictureUrl: "/local/profile-picture?v=default"
+    });
+
+    expect(html).toContain('id="nb_tabs"');
+    expect(html).toContain('id="dcsw_tabs"');
+    expect(html).toContain('class="gifts_close"');
+    expect(html).toContain('class="nb_close"');
+    expect(html).toContain('class="dcsw_close"');
+    expect(html).toContain("You don't have any messages at the moment.");
+    expect(html).toContain("or choose a gift below!");
+    expect(html).toContain('<span id="username"></span> and some other friends');
+    expect(html).toContain('id="fgift_008"');
+    expect(html).toContain('id="fgift_033"');
+    expect(html).toContain("fgift_033_locked.png");
+    expect(html).toContain("fgift_030_locked.png");
+    expect(html).toContain('id="fgift_003"');
+    expect(html.match(/class="gift-block"/g)).toHaveLength(26);
+    expect(html).not.toContain("neighbors_back_button");
+    expect(html).not.toContain("messages_back_button");
+    expect(html).not.toContain("panel_notice");
+    expect(html).not.toContain("offline_row");
+    expect(html).not.toContain("freeGiftButton panel_button");
+    expect(html).not.toContain("curtain.style.height = document.documentElement.scrollHeight");
+    expect(html).not.toContain("The original tab shell is preserved");
+    expect(html).not.toContain("This panel originally hosted");
+  });
+
   test("launcher blocks external URL opens and omits obsolete plugin download metadata", () => {
     const html = renderLauncherHtml({
       appUrl: "https://127.0.0.1:31804",

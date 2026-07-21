@@ -17,6 +17,44 @@ interface LauncherOptions {
   localProfilePictureUrl: string;
 }
 
+interface OriginalFreeGift {
+  id: string;
+  name: string;
+  level: number;
+  background: "fgift_openBox.png" | "fgift_place.png" | "fgift_move.png";
+  tid: string;
+  limited?: boolean;
+}
+
+const ORIGINAL_FREE_GIFTS: OriginalFreeGift[] = [
+  { id: "fgift_008", name: "Mystery Briefcase", level: 1, background: "fgift_openBox.png", tid: "FGT_FGIFT_003" },
+  { id: "fgift_033", name: "Santa's Sleigh", level: 8, background: "fgift_place.png", tid: "FGT_FGIFT_029", limited: true },
+  { id: "fgift_019", name: "Mystery safe", level: 12, background: "fgift_openBox.png", tid: "TID_FGIFT_016" },
+  { id: "fgift_034", name: "New Year Balloons", level: 12, background: "fgift_place.png", tid: "FGT_FGIFT_030", limited: true },
+  { id: "fgift_031", name: "Urban Rockstar", level: 0, background: "fgift_place.png", tid: "FGT_FGIFT_026" },
+  { id: "fgift_030", name: "Millionaire Rockstar", level: 0, background: "fgift_place.png", tid: "FGT_FGIFT_027" },
+  { id: "fgift_017", name: "Sidewalk", level: 3, background: "fgift_place.png", tid: "FGT_FGIFT_014" },
+  { id: "fgift_010", name: "Urban Tree", level: 5, background: "fgift_place.png", tid: "FGT_FGIFT_007" },
+  { id: "fgift_021", name: "Mailbox", level: 8, background: "fgift_place.png", tid: "FGT_FGIFT_018" },
+  { id: "fgift_020", name: "Telephone Box", level: 12, background: "fgift_place.png", tid: "FGT_FGIFT_017" },
+  { id: "fgift_029", name: "Crosschannels", level: 10, background: "fgift_place.png", tid: "FGT_FGIFT_023" },
+  { id: "fgift_027", name: "Upper Channel", level: 7, background: "fgift_place.png", tid: "FGT_FGIFT_024" },
+  { id: "fgift_028", name: "Lower Channel", level: 7, background: "fgift_place.png", tid: "FGT_FGIFT_025" },
+  { id: "fgift_025", name: "Channel left", level: 7, background: "fgift_place.png", tid: "FGT_FGIFT_021" },
+  { id: "fgift_026", name: "Channel right", level: 7, background: "fgift_place.png", tid: "FGT_FGIFT_022" },
+  { id: "fgift_011", name: "Urban Bench", level: 10, background: "fgift_place.png", tid: "FGT_FGIFT_008" },
+  { id: "fgift_012", name: "Bus Stop", level: 20, background: "fgift_place.png", tid: "FGT_FGIFT_009" },
+  { id: "fgift_016", name: "MCity Police", level: 30, background: "fgift_place.png", tid: "FGT_FGIFT_013" },
+  { id: "fgift_013", name: "Ice Cream Cart", level: 40, background: "fgift_place.png", tid: "FGT_FGIFT_010" },
+  { id: "fgift_014", name: "Traffic Lights", level: 15, background: "fgift_place.png", tid: "FGT_FGIFT_011" },
+  { id: "fgift_015", name: "Street Sign", level: 6, background: "fgift_place.png", tid: "FGT_FGIFT_012" },
+  { id: "fgift_006", name: "Spring Flower", level: 15, background: "fgift_place.png", tid: "FGT_FGIFT_005" },
+  { id: "fgift_007", name: "Lemon Tree", level: 1, background: "fgift_place.png", tid: "FGT_FGIFT_002" },
+  { id: "fgift_001", name: "Free move", level: 1, background: "fgift_move.png", tid: "FGT_FGIFT_001" },
+  { id: "fgift_002", name: "2 Free moves", level: 15, background: "fgift_move.png", tid: "FGT_FGIFT_004" },
+  { id: "fgift_003", name: "3 Free moves", level: 25, background: "fgift_move.png", tid: "FGT_FGIFT_004_2" }
+];
+
 export function renderLauncherHtml(options: LauncherOptions): string {
   const flashVars = new URLSearchParams({
     token: options.gameToken,
@@ -60,10 +98,9 @@ export function renderLauncherHtml(options: LauncherOptions): string {
   const giftIconUrl = `${options.assetsBaseUrl}tabs/social_wall/general/gift.png`;
   const neighborIconUrl = `${options.assetsBaseUrl}tabs/social_wall/general/neighboor.png`;
   const messagesIconUrl = `${options.assetsBaseUrl}tabs/social_wall/general/messages.png`;
-  const giftMysteryUrl = `${options.assetsBaseUrl}tabs/free_gifts/fgift_008.png`;
   const giftSidewalkUrl = `${options.assetsBaseUrl}tabs/free_gifts/fgift_017.png`;
-  const giftBriefcaseUrl = `${options.assetsBaseUrl}tabs/free_gifts/fgift_019.png`;
-  const giftBalloonsUrl = `${options.assetsBaseUrl}tabs/free_gifts/fgift_034.png`;
+  const messageGiftIconUrl = `${options.assetsBaseUrl}tabs/social_wall/general/gift.png`;
+  const messagePartnerIconUrl = `${options.assetsBaseUrl}Assets/missions/icons/visitPartner.png`;
   const localUserName = escapeHtml(options.localUserName);
   const localCityName = escapeHtml(options.localCityName);
   const localProfilePictureUrl = escapeAttribute(options.localProfilePictureUrl);
@@ -72,6 +109,24 @@ export function renderLauncherHtml(options: LauncherOptions): string {
     cityName: options.localCityName,
     profilePictureUrl: options.localProfilePictureUrl
   }));
+  const freeGiftCardsHtml = ORIGINAL_FREE_GIFTS.map((gift) => {
+    const giftImageUrl = `${options.assetsBaseUrl}tabs/free_gifts/${gift.id}.png`;
+    const lockedGiftImageUrl = `${options.assetsBaseUrl}tabs/free_gifts/${gift.id}_locked.png`;
+    const giftBackgroundUrl = `${options.assetsBaseUrl}tabs/free_gifts/${gift.background}`;
+    const limitedBadge = gift.limited
+      ? `<div class="limited-time"><img src="${options.assetsBaseUrl}tabs/free_gifts/limited_text.png" alt="" /></div>`
+      : "";
+
+    return `
+              <div class="gift-block" level="${gift.level}" style="background-image: url('${giftBackgroundUrl}')">
+                <div class="blue-text freeGiftText"><span>${escapeHtml(gift.name)}</span></div>
+                <img src="${giftImageUrl}" class="unlocked-image" alt="" />
+                <img src="${lockedGiftImageUrl}" class="locked-image" alt="" />
+                <p><span class="blue-text lockedGiftText">Level ${gift.level} needed</span></p>
+                <span class="uiButton uiButtonConfirm freeGiftButton" id="${gift.id}" level="${gift.level}" tid="${gift.tid}">Send Gift</span>
+                ${limitedBadge}
+              </div>`;
+  }).join("");
 
   return `<!DOCTYPE html>
 <html>
@@ -236,25 +291,6 @@ export function renderLauncherHtml(options: LauncherOptions): string {
         background: transparent;
       }
 
-      .panel_notice {
-        color: #4b6f8a;
-        font-size: 13px;
-        line-height: 1.45;
-        margin-bottom: 14px;
-      }
-
-      .panel_box {
-        margin: 12px 0;
-        padding: 14px 16px;
-        border: 1px solid #d3ebfb;
-        border-radius: 12px;
-        background: linear-gradient(180deg, #ffffff 0%, #eef8ff 100%);
-      }
-
-      .panel_actions {
-        margin-top: 12px;
-      }
-
       .panel_button {
         display: inline-block;
         min-width: 110px;
@@ -269,73 +305,79 @@ export function renderLauncherHtml(options: LauncherOptions): string {
         text-align: center;
       }
 
-      .panel_button.disabled {
-        opacity: 0.72;
-        cursor: default;
-      }
-
       #gifts,
       #neighbors,
       #dcsw {
         display: none;
         visibility: hidden;
         z-index: 1000;
-      }
-
-      #gifts_body h1,
-      #nb_body h1,
-      #dcsw_body h1 {
-        margin: 0 0 12px;
-        font-size: 22px;
-        font-family: ChallengeBoldLETRegular, Verdana, Arial, sans-serif;
-      }
-
-      #gifts_body p,
-      #nb_body p,
-      #dcsw_body p {
-        text-indent: 0;
-      }
-
-      #dcsw_body,
-      #nb_body {
-        max-height: 360px;
+        height: auto;
       }
 
       #gifts_body {
-        max-height: 430px;
+        overflow: hidden;
       }
 
       #gifts_body .gifts_inner {
-        margin-top: 12px;
+        width: 100%;
+        margin-right: 0;
       }
 
-      #gifts_body .gift-block {
-        margin-right: 8px;
+      #gifts_footer,
+      #dcsw_footer {
+        position: relative;
+        box-sizing: border-box;
+        width: 714px;
+        height: 21px;
+        border: 4px solid #ffffff;
+        border-top: 0;
+        border-radius: 0 0 18px 18px;
+        background: #ffffff none;
       }
 
-      #gifts_body .gift-block span,
-      #gifts_body .gift-block p {
-        text-indent: 0;
+      #gifts_footer::after,
+      #dcsw_footer::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        box-sizing: border-box;
+        border-right: 5px solid #22a9ff;
+        border-bottom: 5px solid #22a9ff;
+        border-left: 5px solid #22a9ff;
+        border-radius: 0 0 14px 14px;
+        content: "";
       }
 
-      .offline_row {
-        padding: 10px 0;
-        border-bottom: 1px solid #e6eef5;
+      .gifts_close,
+      .nb_close,
+      .dcsw_close {
+        z-index: 1;
       }
 
-      .offline_row:last-child {
-        border-bottom: 0;
+      .dcsw_close {
+        background-image: url('${options.assetsBaseUrl}tabs/free_gifts/close.png');
       }
 
-      .offline_title {
-        color: #1d669f;
-        font-weight: bold;
-        margin-bottom: 4px;
+      #nb_footer {
+        cursor: pointer;
       }
 
-      .offline_meta {
-        color: #6e8394;
-        font-size: 11px;
+      .message-empty-icon {
+        width: 64px;
+        height: 64px;
+        object-fit: contain;
+      }
+
+      .curtain {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: auto !important;
+        height: auto !important;
       }
 
       #local_profile_settings {
@@ -552,25 +594,12 @@ export function renderLauncherHtml(options: LauncherOptions): string {
         <span class="nb_close" id="neighbors_close">&nbsp;</span>
         <div id="nb_header"></div>
         <div class="nb_outer">
-          <div id="nb_body">
-            <h1 class="blue-text">My Neighbors</h1>
-            <p class="panel_notice">The original neighbors panel depended on Facebook friends, requests, and Digital Chocolate backend calls. This local build keeps the original wrapper layout, but runs in single-player mode.</p>
-            <div class="panel_box">
-              <div class="offline_row">
-                <div class="offline_title">Neighbors are offline</div>
-                <div class="offline_meta">Local mode returns an empty neighbor list so the city remains playable without Facebook integration.</div>
-              </div>
-              <div class="offline_row">
-                <div class="offline_title">Advisor and missions still work</div>
-                <div class="offline_meta">The world, missions, tutorial, and city save continue to use the local backend.</div>
-              </div>
-            </div>
-            <div class="panel_actions">
-              <span class="panel_button" id="neighbors_back_button">Back to Game</span>
-            </div>
-          </div>
-          <div id="nb_footer"></div>
+          <div id="nb_tabs"></div>
         </div>
+        <div class="nb_outer">
+          <div id="nb_body"></div>
+        </div>
+        <div id="nb_footer"></div>
       </div>
 
       <div id="gifts" class="tab-content rounded-shadow">
@@ -583,74 +612,54 @@ export function renderLauncherHtml(options: LauncherOptions): string {
               <div style="display:inline-block;width:128px;margin:10px;">
                 <img src="${giftSidewalkUrl}" alt="" />
               </div>
-              <div style="display:inline-block;width:360px;vertical-align:top;padding-top:18px;">
-                <p class="blue-text"><span id="username">${localUserName}</span> and other friends would normally appear here through Facebook requests.</p>
+              <div style="display:inline-block;width:360px;">
+                <p class="blue-text"><span id="username"></span> and some other friends were getting profits sending Free Gifts yesterday</p>
                 <br />
-                <p class="blue-text">The original tab shell is preserved, but gifting is disabled in offline single-player mode.</p>
+                <div id="gifts_friends_faces"></div>
               </div>
               <div style="display:inline-block;vertical-align:text-bottom;width:150px;height:60px;">
-                <p class="uiButton uiButtonConfirm freeGiftButton panel_button disabled" id="suggested_gift">Send Gift</p>
+                <p class="uiButton uiButtonConfirm freeGiftButton" id="suggested_gift" style="top:0px;vertical-align:middle;padding:14px;" tid="FGT_FGIFT_014">Send Gift</p>
               </div>
             </div>
 
-            <h1 class="blue-text">Choose a gift below</h1>
-            <div id="gifts_feedback" class="blue-text" style="display:block; text-align:center; margin-bottom:10px;">This feature is currently offline in the private server.</div>
+            <h1 class="blue-text">or choose a gift below!</h1>
+            <div id="gifts_feedback" class="blue-text" style="display:none; text-align:center">Your gift was sent!</div>
             <div class="gifts_inner">
-              <div class="gift-block" style="background-image: url('${options.assetsBaseUrl}tabs/free_gifts/fgift_openBox.png')">
-                <div class="blue-text freeGiftText"><span>Mystery Briefcase</span></div>
-                <img src="${giftMysteryUrl}" class="unlocked-image" alt="" />
-                <p><span class="blue-text lockedGiftText">Offline</span></p>
-                <span class="uiButton uiButtonConfirm freeGiftButton panel_button disabled">Send Gift</span>
-              </div>
-              <div class="gift-block" style="background-image: url('${options.assetsBaseUrl}tabs/free_gifts/fgift_place.png')">
-                <div class="blue-text freeGiftText"><span>Sidewalk</span></div>
-                <img src="${giftSidewalkUrl}" class="unlocked-image" alt="" />
-                <p><span class="blue-text lockedGiftText">Offline</span></p>
-                <span class="uiButton uiButtonConfirm freeGiftButton panel_button disabled">Send Gift</span>
-              </div>
-              <div class="gift-block" style="background-image: url('${options.assetsBaseUrl}tabs/free_gifts/fgift_openBox.png')">
-                <div class="blue-text freeGiftText"><span>Mystery Safe</span></div>
-                <img src="${giftBriefcaseUrl}" class="unlocked-image" alt="" />
-                <p><span class="blue-text lockedGiftText">Offline</span></p>
-                <span class="uiButton uiButtonConfirm freeGiftButton panel_button disabled">Send Gift</span>
-              </div>
-              <div class="gift-block" style="background-image: url('${options.assetsBaseUrl}tabs/free_gifts/fgift_place.png')">
-                <div class="blue-text freeGiftText"><span>New Year Balloons</span></div>
-                <img src="${giftBalloonsUrl}" class="unlocked-image" alt="" />
-                <p><span class="blue-text lockedGiftText">Offline</span></p>
-                <span class="uiButton uiButtonConfirm freeGiftButton panel_button disabled">Send Gift</span>
-              </div>
+${freeGiftCardsHtml}
             </div>
           </div>
-          <div id="gifts_footer"></div>
         </div>
+        <div id="gifts_footer"></div>
       </div>
 
       <div id="dcsw" class="tab-content rounded-shadow">
         <span class="dcsw_close" id="dcsw_close">&nbsp;</span>
         <div id="dcsw_header"></div>
         <div class="dcsw_outer">
-          <div id="dcsw_body">
-            <h1 class="blue-text">Messages</h1>
-            <p class="panel_notice">This panel originally hosted the Digital Chocolate Social Wall. The local server keeps the same wrapper area, but replaces it with a static offline view.</p>
-            <div class="offline_row">
-              <div class="offline_title">No Facebook requests</div>
-              <div class="offline_meta">Gift requests, neighbor invites, and the old social wall are disabled offline. Visiting NPC cities and upgrading their rent buildings is supported locally.</div>
-            </div>
-            <div class="offline_row">
-              <div class="offline_title">Game state is still local and persistent</div>
-              <div class="offline_meta">World loading, tutorial progress, missions, and item placement continue to save to the local SQLite backend.</div>
-            </div>
-            <div class="offline_row">
-              <div class="offline_title">Original wrapper calls stay mapped</div>
-              <div class="offline_meta">The SWF can still call the original wrapper task names without crashing, even though the old social flows are disabled.</div>
-            </div>
-            <div class="panel_actions">
-              <span class="panel_button" id="messages_back_button">Back to Game</span>
-            </div>
-          </div>
-          <div id="dcsw_footer"></div>
+          <div id="dcsw_tabs"></div>
         </div>
+        <div class="dcsw_outer">
+          <div id="dcsw_body">
+            <h1 class="blue-text">You don't have any messages at the moment.</h1>
+            <ul>
+              <li class="row">
+                <img class="message-empty-icon" src="${messageGiftIconUrl}" alt="" />
+                <div class="request_mid_col"><span class="blue-text">You have no Gifts at the moment. Send gifts to friends here to get some back!</span></div>
+                <div class="request_right_col" style="margin-top:20px;">
+                  <span id="sendFreeGifts" class="uiButton uiButtonConfirm uiButtonMedium accept-request-button">Send a gift to your friends</span>
+                </div>
+              </li>
+              <li class="row">
+                <img class="message-empty-icon" src="${messagePartnerIconUrl}" alt="" />
+                <div class="request_mid_col"><span class="blue-text">You have no Business Partners requests at the moment. Send them here to make more money with your friends!</span></div>
+                <div class="request_right_col">
+                  <span id="sendPartnerRequest" class="uiButton uiButtonConfirm uiButtonMedium accept-request-button">Send Business Partner Request</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="dcsw_footer"></div>
       </div>
 
       <div id="wcrm_footer"></div>
@@ -833,8 +842,6 @@ export function renderLauncherHtml(options: LauncherOptions): string {
         var curtain = document.createElement("div");
         curtain.id = "curtain_dcsw";
         curtain.className = "curtain";
-        curtain.style.height = document.documentElement.scrollHeight + "px";
-        curtain.style.width = "100%";
         curtain.style.zIndex = "999";
         document.body.prepend(curtain);
       }
@@ -865,17 +872,14 @@ export function renderLauncherHtml(options: LauncherOptions): string {
           return;
         }
         if (id === "labelFor_gifts") {
-          notify("Free Gifts is offline in local mode.", "status-warn");
           openPanel("gifts", id);
           return;
         }
         if (id === "labelFor_neighbors") {
-          notify("Neighbors panel is offline in local mode.", "status-warn");
           openPanel("neighbors", id);
           return;
         }
         if (id === "labelFor_dcsw") {
-          notify("Messages panel is offline in local mode.", "status-warn");
           openPanel("dcsw", id);
         }
       }
@@ -889,7 +893,14 @@ export function renderLauncherHtml(options: LauncherOptions): string {
       }
 
       function unlockFreeGifts(level) {
-        notify("Gift wrapper synced to level " + level + ".", "status-ok");
+        var playerLevel = parseInt(String(level), 10);
+        if (isNaN(playerLevel)) {
+          playerLevel = 0;
+        }
+        document.querySelectorAll(".gift-block").forEach(function(gift) {
+          var giftLevel = parseInt(gift.getAttribute("level") || "0", 10);
+          gift.classList.toggle("locked-gift", playerLevel < giftLevel);
+        });
       }
 
       function setUserLocale() {
@@ -906,6 +917,10 @@ export function renderLauncherHtml(options: LauncherOptions): string {
 
       function launchFacebookRequest() {
         privateServerUnavailable("fbRequest");
+      }
+
+      function launchFacebookInvite() {
+        launchFacebookRequest({ action: "neighborRequest" });
       }
 
       function launchCashShop() {
@@ -1438,6 +1453,7 @@ export function renderLauncherHtml(options: LauncherOptions): string {
       window.clickOnTab = clickOnTab;
       window.closeGiftTab = closeGiftTab;
       window.launchFacebookRequest = launchFacebookRequest;
+      window.launchFacebookInvite = launchFacebookInvite;
       window.launchBookmark = launchBookmark;
       window.showGamePopup = showGamePopup;
       window.notifyWCRM_fromFlash = notifyWCRM_fromFlash;
@@ -1462,10 +1478,35 @@ export function renderLauncherHtml(options: LauncherOptions): string {
       document.getElementById("gifts_close").addEventListener("click", closeGiftTab);
       document.getElementById("neighbors_close").addEventListener("click", closeGiftTab);
       document.getElementById("dcsw_close").addEventListener("click", closeGiftTab);
-      document.getElementById("neighbors_back_button").addEventListener("click", closeGiftTab);
-      document.getElementById("messages_back_button").addEventListener("click", closeGiftTab);
+      document.getElementById("nb_footer").addEventListener("click", launchFacebookInvite);
+      document.getElementById("sendFreeGifts").addEventListener("click", function() {
+        clickOnTab("labelFor_gifts");
+      });
+      document.getElementById("sendPartnerRequest").addEventListener("click", function() {
+        launchFacebookRequest({ action: "partnerRequest", useNeighborList: "1" });
+      });
+      document.querySelectorAll(".freeGiftButton").forEach(function(button) {
+        button.addEventListener("click", function() {
+          if (button.closest(".locked-gift")) {
+            return;
+          }
+          var giftType = button.getAttribute("id");
+          if (!giftType) {
+            return;
+          }
+          if (giftType === "suggested_gift") {
+            giftType = "fgift_017";
+          }
+          launchFacebookRequest({
+            action: "sendFreeGift",
+            sku: giftType,
+            tid: button.getAttribute("tid") || ""
+          });
+        });
+      });
 
       bindTabHover();
+      unlockFreeGifts(1);
       setLocalProfileSettingsVisible(getLocalProfileSettingsVisible());
       bindLocalProfileSettings();
       bindLocalResourceSettings();
