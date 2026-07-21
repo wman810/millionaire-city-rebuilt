@@ -532,7 +532,6 @@ export function renderLauncherHtml(options: LauncherOptions): string {
           <object id="flash" name="flash" type="application/x-shockwave-flash" data="/client/Dollars.private.swf">
             <param name="movie" value="/client/Dollars.private.swf" />
             <param name="quality" value="high" />
-            <param name="pluginspage" value="https://www.macromedia.com/go/getflashplayer" />
             <param name="align" value="middle" />
             <param name="play" value="true" />
             <param name="loop" value="true" />
@@ -1013,12 +1012,7 @@ export function renderLauncherHtml(options: LauncherOptions): string {
           return;
         }
         if (task === "openURL") {
-          var openUrlPayload = parsePayload(data);
-          if (openUrlPayload.url) {
-            window.open(openUrlPayload.url, "_blank", "noopener");
-          } else {
-            privateServerUnavailable("openURL");
-          }
+          privateServerUnavailable("External links");
           return;
         }
         if (task === "showFacebox") {

@@ -1,3 +1,4 @@
+import crypto from "crypto";
 import path from "path";
 import fs from "fs";
 import http, { type IncomingMessage } from "http";
@@ -10,9 +11,23 @@ const workspaceRoot = path.resolve(__dirname, "../../..");
 const serverDistPath = path.join(workspaceRoot, "apps", "server", "dist", "main.js");
 const launcherBaseUrl = "https://127.0.0.1:31804/launcher";
 const healthUrl = "https://127.0.0.1:31804/health";
+const healthChallengeHeader = "x-mcity-health-challenge";
+const healthProofHeader = "x-mcity-health-proof";
+const serverLaunchSecret = crypto.randomBytes(32).toString("hex");
+const launcherOrigin = new URL(launcherBaseUrl).origin;
 const desktopLogPath = path.join(workspaceRoot, "generated", "logs", "desktop.log");
 const desktopSettingsPath = path.join(workspaceRoot, "generated", "settings", "desktop.json");
 const facebookShimPort = getFacebookShimPort();
+const facebookShimOrigin = `https://127.0.0.1:${facebookShimPort}`;
+const trustedRuntimeOrigins = new Set([launcherOrigin, facebookShimOrigin]);
+const facebookApiHosts = new Set(["graph.facebook.com", "api.facebook.com"]);
+const trustedInternalProtocols = new Set([
+  "about:",
+  "blob:",
+  "chrome-devtools:",
+  "data:",
+  "devtools:"
+]);
 const localProfileSettingsMenuItemId = "show-local-profile-settings";
 const appIconPath = path.join(
   workspaceRoot,
@@ -32,21 +47,22 @@ const desktopSettings = readDesktopSettings();
 
 let mainWindow: BrowserWindow | null = null;
 let serverProcess: ChildProcess | null = null;
+let serverExitError: Error | null = null;
+let localServerAuthenticated = false;
+let shuttingDown = false;
 let swfDebugMode = getEnvBoolean("MCITY_SWF_DEBUG") ?? desktopSettings.swfDebugMode ?? false;
 let climateMode = getEnvBoolean("MCITY_USE_CLIMATE") ?? desktopSettings.climateMode ?? false;
 let oldItemDesigns = getEnvBoolean("MCITY_OLD_ITEM_DESIGNS") ?? desktopSettings.oldItemDesigns ?? false;
 let localProfileSettingsVisible = true;
 
 installFileLogging();
+installCertificatePolicy();
 
 const flashPluginPath = configureFlash(app);
 
 if (process.platform === "linux") {
   app.commandLine.appendSwitch("no-sandbox");
 }
-
-app.commandLine.appendSwitch("ignore-certificate-errors");
-app.commandLine.appendSwitch("allow-running-insecure-content");
 
 function createWindow(): BrowserWindow {
   const win = new BrowserWindow({
@@ -57,9 +73,23 @@ function createWindow(): BrowserWindow {
     show: false,
     webPreferences: {
       plugins: true,
+      nodeIntegration: false,
+      nodeIntegrationInWorker: false,
+      nodeIntegrationInSubFrames: false,
+      enableRemoteModule: false,
+      contextIsolation: true,
+      worldSafeExecuteJavaScript: true,
+      nativeWindowOpen: false,
+      webviewTag: false,
+      webSecurity: true,
+      allowRunningInsecureContent: false,
+      safeDialogs: true,
+      navigateOnDragDrop: false,
+      // Pepper Flash requires the legacy unsandboxed renderer in Electron 10.
       sandbox: false
     }
   });
+  installRendererGuards(win);
   installAppMenu(win);
 
   win.maximize();
@@ -85,6 +115,86 @@ function createWindow(): BrowserWindow {
   }
 
   return win;
+}
+
+function installCertificatePolicy(): void {
+  app.on(
+    "certificate-error",
+    (event, contents, rawUrl, error, _certificate, callback) => {
+      let trusted = false;
+
+      try {
+        const url = new URL(rawUrl);
+        trusted =
+          localServerAuthenticated &&
+          contents === mainWindow?.webContents &&
+          error === "net::ERR_CERT_AUTHORITY_INVALID" &&
+          url.protocol === "https:" &&
+          url.hostname === "127.0.0.1" &&
+          url.username === "" &&
+          url.password === "" &&
+          trustedRuntimeOrigins.has(url.origin);
+      } catch {
+        trusted = false;
+      }
+
+      if (trusted) {
+        event.preventDefault();
+        callback(true);
+        return;
+      }
+
+      console.warn(`[desktop] Rejected certificate error (${error}) for ${formatUrlForLog(rawUrl)}`);
+      callback(false);
+    }
+  );
+}
+
+function installRendererGuards(win: BrowserWindow): void {
+  win.webContents.on("will-navigate", (event, rawUrl) => {
+    if (!isTrustedRendererUrl(rawUrl)) {
+      console.warn(`[desktop] Blocked renderer navigation to ${formatUrlForLog(rawUrl)}`);
+      event.preventDefault();
+    }
+  });
+
+  win.webContents.on("will-redirect", (event, rawUrl) => {
+    if (!isTrustedRendererUrl(rawUrl)) {
+      console.warn(`[desktop] Blocked renderer redirect to ${formatUrlForLog(rawUrl)}`);
+      event.preventDefault();
+    }
+  });
+
+  win.webContents.on("new-window", (event, rawUrl) => {
+    console.warn(`[desktop] Blocked new window for ${formatUrlForLog(rawUrl)}`);
+    event.preventDefault();
+  });
+
+  win.webContents.on("will-attach-webview", (event) => {
+    console.warn("[desktop] Blocked webview attachment.");
+    event.preventDefault();
+  });
+}
+
+function isTrustedRendererUrl(rawUrl: string): boolean {
+  try {
+    const url = new URL(rawUrl);
+    return url.username === "" && url.password === "" && url.origin === launcherOrigin;
+  } catch {
+    return false;
+  }
+}
+
+function formatUrlForLog(rawUrl: string): string {
+  try {
+    const url = new URL(rawUrl);
+    if (url.origin === "null") {
+      return url.protocol;
+    }
+    return `${url.origin}${url.pathname}`;
+  } catch {
+    return "an invalid URL";
+  }
 }
 
 function applyPageZoom(win: BrowserWindow, direction: "in" | "out"): void {
@@ -372,8 +482,12 @@ function setStatus(message: string): void {
 
 async function waitForServer(): Promise<void> {
   for (let attempt = 0; attempt < 60; attempt += 1) {
+    if (serverExitError) {
+      throw serverExitError;
+    }
     const ok = await probeHealth();
-    if (ok) {
+    if (ok && !serverExitError) {
+      localServerAuthenticated = true;
       return;
     }
     await delay(300);
@@ -383,10 +497,25 @@ async function waitForServer(): Promise<void> {
 
 function probeHealth(): Promise<boolean> {
   return new Promise((resolve) => {
-    const request = https.get(healthUrl, { rejectUnauthorized: false }, (response: IncomingMessage) => {
-      response.resume();
-      resolve(response.statusCode === 200);
-    });
+    const challenge = crypto.randomBytes(32).toString("hex");
+    const expectedProof = crypto
+      .createHmac("sha256", serverLaunchSecret)
+      .update(`mcity-health-v1:${challenge}`)
+      .digest("hex");
+    const request = https.get(
+      healthUrl,
+      {
+        rejectUnauthorized: false,
+        headers: { [healthChallengeHeader]: challenge }
+      },
+      (response: IncomingMessage) => {
+        response.resume();
+        resolve(
+          response.statusCode === 200 &&
+            isExpectedHealthProof(response.headers[healthProofHeader], expectedProof)
+        );
+      }
+    );
 
     request.on("error", () => resolve(false));
     request.setTimeout(1000, () => {
@@ -394,6 +523,14 @@ function probeHealth(): Promise<boolean> {
       resolve(false);
     });
   });
+}
+
+function isExpectedHealthProof(value: string | string[] | undefined, expected: string): boolean {
+  if (typeof value !== "string" || !/^[a-f0-9]{64}$/.test(value)) {
+    return false;
+  }
+
+  return crypto.timingSafeEqual(Buffer.from(value, "hex"), Buffer.from(expected, "hex"));
 }
 
 function delay(ms: number): Promise<void> {
@@ -405,16 +542,64 @@ function getFacebookShimPort(): number {
   return Number.isInteger(port) && port > 0 && port <= 65535 ? port : 31805;
 }
 
-function installFacebookRequestRedirect(): void {
-  const filter = {
-    urls: ["https://graph.facebook.com/*", "https://api.facebook.com/*"]
-  };
+function installDefaultSessionSecurity(): void {
+  const runtimeSession = session.defaultSession;
 
-  session.defaultSession.webRequest.onBeforeRequest(filter, (details, callback) => {
-    const originalUrl = new URL(details.url);
-    const redirectURL = `https://127.0.0.1:${facebookShimPort}${originalUrl.pathname}${originalUrl.search}`;
-    console.log(`[desktop] Redirecting Facebook request to local shim: ${originalUrl.host}${originalUrl.pathname}`);
-    callback({ redirectURL });
+  runtimeSession.setPermissionCheckHandler(() => false);
+  runtimeSession.setPermissionRequestHandler((_contents, permission, callback) => {
+    console.warn(`[desktop] Denied renderer permission request: ${permission}`);
+    callback(false);
+  });
+
+  runtimeSession.on("will-download", (event, item) => {
+    console.warn(`[desktop] Blocked download from ${formatUrlForLog(item.getURL())}`);
+    event.preventDefault();
+  });
+
+  // Electron allows only one onBeforeRequest listener, so the Facebook rewrite and
+  // the outbound deny policy must remain combined here.
+  runtimeSession.webRequest.onBeforeRequest((details, callback) => {
+    let url: URL;
+
+    try {
+      url = new URL(details.url);
+    } catch {
+      console.warn(`[desktop] Blocked ${details.resourceType} request with an invalid URL.`);
+      callback({ cancel: true });
+      return;
+    }
+
+    if (
+      url.protocol === "https:" &&
+      url.port === "" &&
+      url.username === "" &&
+      url.password === "" &&
+      facebookApiHosts.has(url.hostname)
+    ) {
+      const redirectURL = `${facebookShimOrigin}${url.pathname}${url.search}`;
+      console.log(`[desktop] Redirecting Facebook request to local shim: ${url.host}${url.pathname}`);
+      callback({ redirectURL });
+      return;
+    }
+
+    if (
+      url.username === "" &&
+      url.password === "" &&
+      trustedRuntimeOrigins.has(url.origin)
+    ) {
+      callback({});
+      return;
+    }
+
+    if (trustedInternalProtocols.has(url.protocol)) {
+      callback({});
+      return;
+    }
+
+    console.warn(
+      `[desktop] Blocked ${details.resourceType} request to ${formatUrlForLog(details.url)}`
+    );
+    callback({ cancel: true });
   });
 }
 
@@ -479,16 +664,25 @@ async function startEverything(): Promise<void> {
 
   const nodeExecutable = resolveNodeExecutable();
 
-  serverProcess = spawn(nodeExecutable, [serverDistPath], {
+  serverExitError = null;
+  localServerAuthenticated = false;
+
+  const launchedProcess = spawn(nodeExecutable, [serverDistPath], {
     cwd: workspaceRoot,
     env: {
       ...process.env,
-      MCITY_FACEBOOK_PORT: String(facebookShimPort)
+      MCITY_DISABLE_FB_SHIM: "0",
+      MCITY_FACEBOOK_PORT: String(facebookShimPort),
+      MCITY_HTTP_PORT: "31803",
+      MCITY_HTTPS_PORT: "31804",
+      MCITY_LAUNCH_SECRET: serverLaunchSecret,
+      MCITY_REQUIRE_FB_SHIM: "1"
     },
     stdio: ["ignore", "pipe", "pipe"]
   });
+  serverProcess = launchedProcess;
 
-  serverProcess.stdout?.on("data", (chunk: Buffer | string) => {
+  launchedProcess.stdout?.on("data", (chunk: Buffer | string) => {
     const text = String(chunk).trim();
     if (text) {
       console.log(`[server] ${text}`);
@@ -496,7 +690,7 @@ async function startEverything(): Promise<void> {
     }
   });
 
-  serverProcess.stderr?.on("data", (chunk: Buffer | string) => {
+  launchedProcess.stderr?.on("data", (chunk: Buffer | string) => {
     const text = String(chunk).trim();
     if (text) {
       console.error(`[server] ${text}`);
@@ -504,11 +698,38 @@ async function startEverything(): Promise<void> {
     }
   });
 
+  launchedProcess.once("error", (error) => {
+    handleServerProcessFailure(`Local backend failed to start: ${error.message}`);
+  });
+  launchedProcess.once("exit", (code, signal) => {
+    if (serverProcess === launchedProcess) {
+      serverProcess = null;
+    }
+    const reason = signal ? `signal ${signal}` : `exit code ${code ?? "unknown"}`;
+    handleServerProcessFailure(`Local backend stopped unexpectedly (${reason}).`);
+  });
+
   await waitForServer();
   setStatus("Local backend ready. Loading Flash client...");
   await mainWindow?.loadURL(getLauncherUrl());
   if (mainWindow && !mainWindow.isDestroyed()) {
     mainWindow.show();
+  }
+}
+
+function handleServerProcessFailure(message: string): void {
+  if (shuttingDown || serverExitError) {
+    return;
+  }
+
+  const wasAuthenticated = localServerAuthenticated;
+  localServerAuthenticated = false;
+  serverExitError = new Error(message);
+  console.error(`[desktop] ${message}`);
+
+  if (wasAuthenticated) {
+    dialog.showErrorBox("Millionaire City Local Backend", message);
+    app.quit();
   }
 }
 
@@ -561,6 +782,8 @@ function resolveBundledNodeExecutable(): string | undefined {
 }
 
 async function shutdown(): Promise<void> {
+  shuttingDown = true;
+  localServerAuthenticated = false;
   if (serverProcess && !serverProcess.killed) {
     serverProcess.kill();
     serverProcess = null;
@@ -568,7 +791,7 @@ async function shutdown(): Promise<void> {
 }
 
 app.whenReady().then(async () => {
-  installFacebookRequestRedirect();
+  installDefaultSessionSecurity();
   mainWindow = createWindow();
 
   try {

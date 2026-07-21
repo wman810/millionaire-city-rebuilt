@@ -137,6 +137,65 @@ describe("Millionaire City server", () => {
     }
   });
 
+  test("requires a launch-secret proof for authenticated health checks", async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-health-proof-"));
+    const launchSecret = "test-launch-secret";
+    const challenge = "a".repeat(64);
+    const serverApp = createServerApp({
+      ...getServerConfig(),
+      dbPath: path.join(tempDir, "save.sqlite"),
+      useHttpsFacebookShim: false,
+      launchSecret
+    });
+    activeApps.push(serverApp);
+    await serverApp.start();
+
+    const unauthenticatedResponse = await fetch(`http://127.0.0.1:${serverApp.config.httpPort}/health`);
+    expect(unauthenticatedResponse.status).toBe(400);
+
+    const response = await fetch(`http://127.0.0.1:${serverApp.config.httpPort}/health`, {
+      headers: { "x-mcity-health-challenge": challenge }
+    });
+    const expectedProof = crypto
+      .createHmac("sha256", launchSecret)
+      .update(`mcity-health-v1:${challenge}`)
+      .digest("hex");
+
+    expect(response.status).toBe(200);
+    expect(response.headers.get("x-mcity-health-proof")).toBe(expectedProof);
+  });
+
+  test("fails closed when the required Facebook shim port is unavailable", async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-required-fbshim-"));
+    const blocker = net.createServer();
+    await new Promise<void>((resolve, reject) => {
+      blocker.once("error", reject);
+      blocker.listen(0, "127.0.0.1", () => resolve());
+    });
+    const address = blocker.address();
+    expect(address && typeof address === "object").toBe(true);
+    const blockedPort = address && typeof address === "object" ? address.port : 0;
+    const serverApp = createServerAppBase({
+      ...getServerConfig(),
+      dbPath: path.join(tempDir, "save.sqlite"),
+      httpPort: 0,
+      httpsPort: 0,
+      facebookHttpsPort: blockedPort,
+      useHttpsFacebookShim: true,
+      requireHttpsFacebookShim: true
+    });
+    activeApps.push(serverApp);
+
+    try {
+      await expect(serverApp.start()).rejects.toMatchObject({ code: "EADDRINUSE" });
+      expect(serverApp.httpServer).toBeUndefined();
+      expect(serverApp.httpsServer).toBeUndefined();
+      expect(serverApp.facebookShim).toBeUndefined();
+    } finally {
+      await new Promise<void>((resolve) => blocker.close(() => resolve()));
+    }
+  });
+
   test("binds the Facebook shim only to the loopback interface", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-fbshim-bind-"));
     const config = {
@@ -4983,6 +5042,58 @@ describe("Millionaire City server", () => {
     expect(html).toContain("Saved. Game totals updated.");
     expect(html).toContain("mcity.localProfileSettingsVisible");
     expect(html).toContain("setLocalProfileSettingsVisible");
+  });
+
+  test("launcher blocks external URL opens and omits obsolete plugin download metadata", () => {
+    const html = renderLauncherHtml({
+      appUrl: "https://127.0.0.1:31804",
+      assetsBaseUrl: "https://127.0.0.1:31804/mcity/0.501/Datas/",
+      serverBaseUrl: "https://127.0.0.1:31804",
+      userId: "100000000000001",
+      oauthToken: "local-oauth-token",
+      gameToken: "bootstrap-token",
+      facebookAppId: "315455798286",
+      lang: "en_US",
+      debugMode: false,
+      climateMode: false,
+      oldItemDesigns: false,
+      localUserName: "Mayor",
+      localCityName: "Chocolate Fields",
+      localProfilePictureUrl: "/local/profile-picture?v=default"
+    });
+
+    expect(html).toContain('if (task === "openURL")');
+    expect(html).toContain('privateServerUnavailable("External links")');
+    expect(html).not.toContain("window.open(");
+    expect(html).not.toContain("openUrlPayload");
+    expect(html).not.toContain("pluginspage");
+    expect(html).not.toContain("www.macromedia.com/go/getflashplayer");
+  });
+
+  test("launcher response sends restrictive browser security headers", async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-launcher-headers-"));
+    const config = {
+      ...getServerConfig(),
+      dbPath: path.join(tempDir, "save.sqlite"),
+      useHttpsFacebookShim: false
+    };
+    const serverApp = createServerApp(config);
+    activeApps.push(serverApp);
+    await serverApp.start();
+
+    const response = await fetch(`http://127.0.0.1:${config.httpPort}/launcher`);
+    const contentSecurityPolicy = response.headers.get("content-security-policy");
+
+    expect(response.status).toBe(200);
+    expect(contentSecurityPolicy).toContain("default-src 'self'");
+    expect(contentSecurityPolicy).toContain("object-src 'self'");
+    expect(contentSecurityPolicy).toContain(
+      "connect-src 'self' https://graph.facebook.com https://api.facebook.com"
+    );
+    expect(contentSecurityPolicy).toContain("base-uri 'none'");
+    expect(contentSecurityPolicy).toContain("frame-ancestors 'none'");
+    expect(response.headers.get("referrer-policy")).toBe("no-referrer");
+    expect(response.headers.get("x-content-type-options")).toBe("nosniff");
   });
 
   test("client local resource updates resynchronize the security baseline", () => {

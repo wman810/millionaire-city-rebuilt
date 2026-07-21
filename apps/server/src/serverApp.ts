@@ -27,6 +27,21 @@ const LOCAL_PROFILE_PICTURE_MAX_BYTES = 2 * 1024 * 1024;
 const LOCAL_RESOURCE_ADJUSTMENT_MAX = 999_999_999;
 const LOCAL_PROFILE_PICTURE_MIME_META_KEY = "local_profile_picture_mime";
 const LOCAL_PROFILE_PICTURE_VERSION_META_KEY = "local_profile_picture_version";
+const HEALTH_CHALLENGE_HEADER = "x-mcity-health-challenge";
+const HEALTH_PROOF_HEADER = "x-mcity-health-proof";
+const LAUNCHER_CONTENT_SECURITY_POLICY = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline'",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob:",
+  "object-src 'self'",
+  "connect-src 'self' https://graph.facebook.com https://api.facebook.com",
+  "frame-src 'self'",
+  "child-src 'self'",
+  "base-uri 'none'",
+  "form-action 'self'",
+  "frame-ancestors 'none'"
+].join("; ");
 const TRANSPARENT_GIF = Buffer.from(
   "R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=",
   "base64"
@@ -112,7 +127,20 @@ export function createServerApp(config = getServerConfig()): ServerApp {
     next();
   });
 
-  app.get("/health", (_req, res) => {
+  app.get("/health", (req, res) => {
+    if (config.launchSecret) {
+      const challenge = req.get(HEALTH_CHALLENGE_HEADER);
+      if (!challenge || !/^[a-f0-9]{64}$/.test(challenge)) {
+        res.status(400).json({ ok: false });
+        return;
+      }
+
+      const proof = crypto
+        .createHmac("sha256", config.launchSecret)
+        .update(`mcity-health-v1:${challenge}`)
+        .digest("hex");
+      res.setHeader(HEALTH_PROOF_HEADER, proof);
+    }
     res.json({ ok: true });
   });
 
@@ -168,6 +196,11 @@ export function createServerApp(config = getServerConfig()): ServerApp {
     const climateMode = isTruthyQueryValue(req.query.climate) || process.env.MCITY_USE_CLIMATE === "1";
     const oldItemDesigns = isTruthyQueryValue(req.query.oldItems) || process.env.MCITY_OLD_ITEM_DESIGNS === "1";
     const localProfile = createLocalProfileResponse(repository, config);
+    res.set({
+      "Content-Security-Policy": LAUNCHER_CONTENT_SECURITY_POLICY,
+      "Referrer-Policy": "no-referrer",
+      "X-Content-Type-Options": "nosniff"
+    });
     res.type("html").send(
       renderLauncherHtml({
         appUrl,
@@ -495,6 +528,10 @@ export function createServerApp(config = getServerConfig()): ServerApp {
       try {
         ensurePrivateClientExists(config);
 
+        if (config.requireHttpsFacebookShim && !config.useHttpsFacebookShim) {
+          throw new Error("The required HTTPS Facebook shim is disabled.");
+        }
+
         if (config.useHttpsFacebookShim) {
           try {
             facebookShim = await startFacebookShim({
@@ -506,6 +543,9 @@ export function createServerApp(config = getServerConfig()): ServerApp {
             });
             config.facebookHttpsPort = getListeningPort(facebookShim.server, config.facebookHttpsPort);
           } catch (error) {
+            if (config.requireHttpsFacebookShim) {
+              throw error;
+            }
             console.warn(`[mcity] Failed to start HTTPS Facebook shim on port ${config.facebookHttpsPort}:`, error);
           }
         }

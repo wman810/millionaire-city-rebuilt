@@ -17,6 +17,8 @@ export interface ServerConfig {
   launcherUserId: string;
   launcherLang: string;
   useHttpsFacebookShim: boolean;
+  requireHttpsFacebookShim: boolean;
+  launchSecret?: string;
 }
 
 export function getServerConfig(): ServerConfig {
@@ -38,6 +40,8 @@ export function getServerConfig(): ServerConfig {
     dbPath: process.env.MCITY_DB_PATH ?? path.join(workspaceRoot, "generated", "data", "mcity.sqlite"),
     launcherUserId: process.env.MCITY_UID ?? "100000000000001",
     launcherLang: process.env.MCITY_LANG ?? "en_US",
-    useHttpsFacebookShim: process.env.MCITY_DISABLE_FB_SHIM === "1" ? false : true
+    useHttpsFacebookShim: process.env.MCITY_DISABLE_FB_SHIM === "1" ? false : true,
+    requireHttpsFacebookShim: process.env.MCITY_REQUIRE_FB_SHIM === "1",
+    launchSecret: process.env.MCITY_LAUNCH_SECRET || undefined
   };
 }
