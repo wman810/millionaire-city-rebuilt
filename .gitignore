@@ -16,6 +16,8 @@ client-patch-sources/**
 !client-patch-sources/
 !client-patch-sources/Config.as
 !client-patch-sources/Dollars.as
+!client-patch-sources/0.338/
+!client-patch-sources/0.338/**
 !client-patch-sources/scripts/
 client-patch-sources/scripts/**
 !client-patch-sources/scripts/com/

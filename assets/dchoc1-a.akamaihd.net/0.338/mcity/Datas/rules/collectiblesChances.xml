@@ -1,0 +1,14 @@
+<Definitions>
+  <Definition hours="0.05" finalResult="1.25" />
+  <Definition hours="0.5" finalResult="2.5" />
+  <Definition hours="1" finalResult="3.75" />
+  <Definition hours="2" finalResult="5.625" />
+  <Definition hours="4" finalResult="3.75" />
+  <Definition hours="8" finalResult="6.6667" />
+  <Definition hours="12" finalResult="12.0833" />
+  <Definition hours="18" finalResult="14.5833" />
+  <Definition hours="24" finalResult="20.8333" />
+  <Definition hours="48" finalResult="13.75" />
+  <Definition hours="72" finalResult="13.75" />
+</Definitions>
+

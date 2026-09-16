@@ -20,6 +20,7 @@
     "@mcity/shared": "0.1.0",
     "better-sqlite3": "^11.10.0",
     "express": "^4.22.2",
+    "jquery": "3.7.1",
     "selfsigned": "^3.0.1"
   },
   "devDependencies": {

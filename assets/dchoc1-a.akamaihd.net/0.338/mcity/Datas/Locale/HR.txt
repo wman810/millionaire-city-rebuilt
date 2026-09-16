@@ -1,0 +1,1754 @@
+Millionaire City
+Učitavanje
+Vrati se u Millionaire City svakog dana i osvoji nagradu sve zanimljivu ogradu! Otvori poklopn pakete i otkrij iznenađenje koje te čeka
+Dostupne su nove nagrade!
+Multi-alat
+Kupi teren: $%U
+Darovi
+Misije
+Ceste
+Dućan
+Upravitelji
+Alat za rušenje
+Početna
+Nadopune
+Kupi
+Trebate %U XP za razinu %U1
+Dolari
+Zlato
+Facebook Credits
+Vrijednost tvrtke
+Naziv grada
+Zvuk uklj.
+Zvuk isklj.
+Glazba uklj.
+Glazba isklj.
+Foto.
+Uvećaj
+Smanji
+Ugovaratelji
+Ugovori
+Premjesti
+Prikupi
+Puni zaslon
+Dodaj zlato
+Dodaj dolare
+Dodaj
+Objavi ulaganje
+Dalje
+Potvrdi
+Natrag
+Saznaj više
+Preskoči
+Odaberi ugovor
+Kvaliteta
+Nagrada
+,
+.
+Vrijednost tvrtke
+Posebno Sjedište
+Zrakoplovstvo 1
+Luksuzno Sjedište
+Zrakoplovstvo 2
+Vrhunsko Sjedište
+Zrakoplovstvo 3
+Zrakoplovstvo 3
+Novogodišnja noć
+Nakit
+Sastojci
+Sportska oprema
+Kupnja
+Zabava
+Luksuz
+Remen
+Dvogled
+Upaljač
+Sat
+Prsten
+Laptop
+Slušalice
+Mobitel
+Sat
+Kopče za manšete
+Luster
+Sunčane naočale
+Papirni avion
+Maska za spavanje
+Pilotska kapa
+Avionski obrok
+Bescarinski parfem
+Karta
+Prtljaga
+Pjenušac
+Krila aviona
+Pilotske naočale
+Model aviona
+Putovnica
+Candy Cane
+Gift Sock
+Xmas Candle
+Elf's Hat
+Vatromet
+Čaše za šampanjac
+Komplet za zabavu
+Novogodišnji baloni
+Smaragd
+Safir
+Rubin
+Dijamant
+Sir
+Riža
+Kruh
+Mlijeko
+Kaciga
+Boksačke rukavice
+Košarkaška lopta
+Bejzbolska rukavica
+Kasa
+Košara za kupnju
+Recept
+Papirna vrećica
+Ulaznica
+M-City majica
+Prodaja ulaznica
+M-City šalica
+Boca viskija
+Stojeća lampa
+Rokoko stolica
+Jacuzzi
+Sjedište - posebno
+Sjedište - luksuzno
+Sjedište - vrhunsko
+Antikni avion
+Cepelin
+Aeromiting
+Velika snježna kugla
+Novogodišnji trg
+Japanski pond
+Nagrada
+Nagrada
+Nagrada
+Nagrada
+Nagrada
+%U XP
+$ %U
+Sjedišta
+Opis sjedišta
+Bungalov
+Dobro održavana kuća od približno 60 kvadrata s 3 sobe i 2 kupaonice.
+Luksuzni bungalov
+Prostrana kuća s 2 sobe, 2 kupaonice, holom, dnevnom sobom, blagovaonicom i kuhinjom.
+Gradska kuća
+Atraktivna kuća s 3 sobe, 2 kupaonice, dnevnom sobom, blagovaonicom i garažom za 1 auto.
+Luks. grad. kuća
+Raskošna trosobna kuća s prednjim i stražnjim dvorištem, dva parkirna mjesta i blagovaonicom.
+Dupleks
+Sjajna kuhinja, dnevna soba, blagovaonica, ostava, praonica, prekrasni vrt i terasa.
+Luksuzni dupleks
+Renovirana kuća s novim tepisima, pločicama i potpuno novim uređajima u kuhinji i opremom u kupaonici.
+Trokatnica
+Interijer od punog drva, kuhinja, dnevna soba, blagovaonica, klimatski uređaj, dvorište i trijem.
+Luksuzna trokatnica
+Podrum za kućne zabave, praonica, spremište, kuhinja, dnevna soba, blagovaonica i dvorište s jacuzzijem.
+Apartmani
+Kompleks na 600 kvadrata sa 6 ljupkih stanova, vrtom i vrtlarom.
+Luks. apartmani
+Kompleks od 6 stanova s bazenom; savršen za obitelj.
+Vila
+Šest objekata s podovima od punog drva, štednjakom, pećnicom, perlicom suđa i rublja i garažom.
+Loft
+Savršen za umjetnike. 100 kvadrata s velikim holom i 2 sobe.
+Luksuzna vila
+Šest zasebnih objekata s garažom za dva automobila, bazenom, saunom, velikom terasom i vrtom.
+Neboder
+20-metarski kompleks sa 6 soba i recepcijom.
+Luksuzni loft
+Sjajan prostor za neženje i glumce. 
+Dvorac
+Impresivan, potpuno obnovljen dvorac iz 19. st. s 500 kvadrata životnog prostora i 14 spavaćih soba.
+Luksuzni neboder
+30-metarski kompleks nudi sjajan pogled iz 8 otmjenih soba.
+Kolonijalna kuća
+Udobna kuća u povijesnom stilu s 4 sobe, svijetlim boravkom i prostranom garažom
+Futuristička
+Luksuzni stanovi u kući budućnosti. High-tech dizajn i mnoštvo sunčališta.
+Super neboder
+Moderni apartmani u 50-metarskoj zgradi. Zapanjujući pogled, bazeni, teretana, restorani i panoramska dizala.
+Eko-kuća
+Ova ekološka kuća okupana prirodnim svjetlom i šarmom ima tri ekološki dizajnirane spavaonice.
+Škotski dvorac
+Prostrani škotski dvorac s 20 spavaonica, dvorkinjom, batlerom, kućnom pomoćnicom, vozačem i duhom.
+Kioko kuća
+Kioko je kompaktna, ali vrlo funkcionalna dvosobna kuća. Zidovi od papira i pod od tatamija uvode nevjerojatnu lakoću u svakodnevni život.
+Kuća harmonije
+Ova kuća u japanskom stilu odiše spokojem. Dizajnirana je na temeljima zena. Savršena je za malu obitelj koja će uživati u Koi jezercu.
+Bavarska kuća
+Ova kuća na tri kata tipične bavarske arhitekture odiše toplinom stanovnika planinskih predjela Njemačke.
+Bavarska kuća II
+Ova kuća izgrađena je da bi ugostila bavarske prinčeve i velikaše. Kuća ponosa i kraljevskog ugleda.
+Bavarska kuća
+Ova kuća na tri kata tipične bavarske arhitekture odiše toplinom stanovnika planinskih predjela Njemačke.
+Bavarska kuća II
+Ova kuća izgrađena je da bi ugostila prinčeve i velikaše Bavarske. Kuća ponosa i kraljevskog ugleda.
+Venecijanska palača
+Otplovite u doba renesanse u ovoj raskošnoj palači iznimne povijesti.
+Toskanska kuća
+Živite kao u snu u ovoj toskanskoj kući s nekoliko terasa i vrtom.
+Kuća na drvetu
+U ovoj originalnoj nastambi s 1 sobom svaki ćete dan proživjeti u skladu s prirodom.
+Luksuzna eko-kuća
+Luksuzna eko-kuća s 3 sobe, sustavom za recikliranje vode, solarnom energijom i savršenom izolacijom.
+Ukleta kuća
+Izdržite u njoj samo jednu noć, i ova će kuća biti vaša zauvijek...
+Kuća-bundeva
+Uživajte u noći vještica u ovoj ljupkoj kući koja je savršena za svaku vješticu u duši.
+Dizajnerska kuća
+Život sa stilom u 2 spavaonice i s mnoštvom svjetlosti.
+Najviši neboder
+Ovaj moderni neboder donosi dašak metropole u vaš grad i ima dovoljno mjesta za sve vaše poslove.
+Luksuzna palača
+Klasična palača u holivudskom stilu za ljude koji dolaze. Osam soba i pet kupaonica ispunit će i najzahtjevnije društvene potrebe.
+Luksuzna palača II
+Zagrlite život na visokoj nozi u nevjerojatno luksuznom zdanju prepunom high-tech naprava. Tu je i privatno kino.
+La Maisonette
+S dvije idilične spavaonice, ova kuća iz snova savršena je za svaku malu obitelj koja voli mir.
+Pariška kuća
+Zgrada s predivno obnovljenim stanovima koji su okupani svjetlošću i odišu šarmom starog svijeta.
+Doseljenička koliba
+Osjećajte se kao prvi doseljenici u ovoj ljupkoj kolibi dovoljnoj za malu obitelj i puricu.
+Chryslerova zgrada
+Neograničene prostorne mogućnosti za sve vrste stanara u ovom mitskom neboderu.
+Bijela kuća
+Ako je dovoljno dobra predsjedniku, dovoljno je dobra i svima nama.
+Kuća medenjaka
+Ništa nije slasnije od kuće medenjaka, savršene za blagdansko doba. Možete je pojesti nakon Božića.
+Koliba Djeda Božićnjaka
+Pozovite stanare u ovu čarobnu finsku kuću kako bi osjetili autentični duh Božića.
+Iglu
+Iznimno ekološki i nevjerojatno topao dom. Dolazi sa psima.
+Božićna kuća
+Uživajte u duhu Božića u ovoj predivnoj i prostranoj kući iz snova.
+Kuća zabave
+Uđite u ovu fantastičnu kuću u kojoj će stanari doslovno skakati od sreće! 
+Futuristički luksuz
+Ova kuća donosi životni sstil budućnosti sa svim visoko tehničkim blagodatima svemirskog doba.
+Blok futurističkog grada
+Osiguraj budući život za svoje stanare u ovom prostornom stanu apartmanskog bloka. U najam su uključene besplatne usluge teleporta, uključujući najam.
+Escorial palača 
+Od sada možete živjeti kao kralj. Da biste povećali profit, potpišite ugovor s koliko god osoba iz kraljevske obitelji želite.
+Španjolska kuća
+Miran život u prirodnom okruženju Španjolske. Stanari će se doslovno zaljubiti u ovu kuću.
+Dom teniske zvijezde
+Igrajte i učite profesionalni tenis u vlastitom domu. Trener uključen.
+Imanje zvijezde F1
+Prostrano imanje iz snova za one koji uživaju u brzom životu.
+Casa Mexicana
+Ponudite svojim stanarima Meskički stil života u ovoj ljupkoj i prostranoj kući.
+Casa Mexicana II
+Ponudite svojim stanarima Meskički stil života u ovoj ljupkoj i prostranoj kući.
+Srednjovjekovni dvorac
+Vaši stanari bit će oduševljeni ovim impozantnim spomenikom sablasnim tajnama i iskonskoj snazi - koji je došao k vama izravno iz Doba tame!
+Kuća u Tudor stilu
+Prekrasni zidovi obloženi drvom i kosi krovovi odvest će vaše stanare natrag u čudesno doba srednjovjekovnog spokoja i jednostavnosti.
+Indijska kuća
+Sjajna robusna kuća koja odražava indijski stil života - dolazi zajedno s prekrasnim vrtom!
+Indijska palača
+Raskošna egzotična palača čeka stanare koji žele uživati sa stilom u ovoj raskošnoj građevini!
+Brazilska kuća
+Sjajno mjesto na kojem se stanari mogu odmoriti - izraz najfinijeg brazilskog stila.
+Brazilski neboder
+Proslavite uspjeh s ovom rijetkom, iznimno visokom građevinom - izrađenom u najfinijem brazilskom stilu!
+Kuća sv. Patrika
+Magično mjesto na kojem se stanari mogu odmoriti, s obiljem zelene zabave na svakom koraku!
+Vilenjačka kućica
+Vaši stanari odlično će se provesti u ovoj kućici na stablu dizajniranoj za najveće uživanje!
+Rascvjetana kuća
+Sve vrvi od cvijeća u ovom nabujalom ambijentu - zaista oduševljavajuća gozba za oči!
+Vrtni apartman
+Predivna zgrada, sa stalnim naglaskom na sjajno svježi vrt - uživajte u čudu pirode!
+Motel
+Gostinske sobe s krevetima u kraljevskoj veličini, besplatnim brzim internetom, arkadama i praonicom za goste.
+Zlatni neboder
+Vinite se u nebo s ovim raskošno ukrašenim neboderom koji dolazi u ograničenoj ponudi. Preko 100 katova besramnog, opipljivog luksuza - u Vegas stilu!
+Indijanski šator
+Okružite se opasnostima u ovom originalnom domu američkih urođenika. Izvrsna atmosfera, život u skladu s prirodom.
+Ranč
+Uživajte u životu Divljeg zapada na ovoj potpuno neovisnoj, predivnoj farmi!
+Seoska kuća
+Šarm engleskog sela oživio je u ovoj ljupkoj kolibi. Vrtlarenje kao opcija.
+Buckinhamska palača
+Vaši će stanari živjeti poput kraljeva u ovom epskom dvorcu. Ovdje im neće nedostajati prostora.
+Luksuzna zgrada
+Vrhunsko mjesto za stanovanje, ova zgrada ima sve i za najzahtjevnije stanare!
+Platinasto imanje
+Najbolja na tržištu, ova zgrada sigurno ne nedostaje na odjelu milijunskih ukrasa.
+Pizzeria
+Kavana
+Cvjećarnica
+Kuglana
+Zlatarnica
+Noćni klub
+Trgovački centar
+Banka
+Bolnica
+Kasino
+Ljubimci
+Stadion
+Dvorana
+Sushi bar
+Pivnica
+Autosalon
+Eko-utočište
+Dućan strave
+Hotel Midas
+Kazalište Hollywood
+Trgovači centar Midas
+Louvre
+Bar Vegas
+Šator
+Dvorac Disneyland
+Brza prehrana
+Radionica Djeda Božićnjaka
+Radionica saonica
+Šator sa šećernom vatom
+Cirkuski šator
+Tvornica robota
+Paella restoran
+Muzej moderne umjet.
+Stadion za bejzbol
+Konjušnice
+Tvornica tekile
+Restoran tacoa
+Zgrada opere
+Bollywoodski studio
+Caipirinha bar
+Dućan s kostimima
+Irski pub
+Dućan s medom
+Juice Bar
+Vegas toranj
+Kapela za vjenčanja
+Vegas hotel
+Saloon
+Rudnik zlata
+Fish&Chips restoran
+Čajana
+Čempres
+Hrast
+Palma
+Fontana
+Naranča
+Japansko stablo
+Veliki vrt
+Jabuka
+Slavoluk pobjede
+Fontana II
+Niska palma
+Slatki javor
+Jezero obilja
+Kaktus
+Breza
+Zlatni javor
+Dječak i baloni
+Srebrni javor
+Drvo oblak
+Bambus
+Slavoluk uspjeha
+Smreka
+Pivski stup
+Pivski šator
+Davidov kip
+Pompeji
+Fontana dei Fiumi
+Vjetrenjača
+Kante za recik.
+Organski vrt
+Ukleto drvo
+Vrt slatkiša
+Groblje zombija
+Zlatno stablo
+Dijamantno stablo
+Privatni aerodrom
+Delux bazen
+Moulin Rouge
+Art Noveau lampa
+Rog obilja
+Klizalište
+Ledena skulptura dupina
+Snjegović
+Klasično bož. drvce
+Bož. drvce s lampicama
+Drvo pod snijegom
+Giant snow globe
+Island God totem
+Zlatno bož. drvce
+Božićne lampice
+Novogodišnji trg
+Vrtuljak
+Panoramski kotač
+Stablo svemirskog doba
+Fontana patuljaka
+Park El Retiro 
+Andaluzijski konj
+Segovijski akvadukt
+Japanski pond
+Mini-golf
+Olimpijski bazen
+Kip svjetskog kupa
+Biljka agava
+Moai skulptura
+Ratnici od terakote
+Egipatski kip
+Kamena glava
+Partenon
+Kip slona
+Indijski paviljon
+Chafa
+Tržnica začina
+Karnevalska splav
+Stablo Amazone
+Guaraná
+Vrč sa zlatom
+Kip vilenjaka
+Fontana djeteline
+Prizemlje
+Hortenzija
+Cvjetno drvo
+Igralište
+Neonski kauboj
+Znak dobrodošlice
+Neonski kaktus
+Kolica sa zlatnim grumenjem
+Natkrivena kola
+Lokomotiva
+TNT
+Znak za metro
+Telefonska govornica
+Nelsonov kip
+Groblje zombija
+Zlatna statua
+Discovery
+Piramida
+Eiffelov toranj
+Kip: Ronald
+Kip: Cindy
+Kip slobode
+Toranj sa satom
+Koloseum
+Drakulin dvorac
+Trezor
+Brojač dana do Nove godine
+Atomium
+Sveta obitelj
+Chichen Itza
+Stonehenge
+Taj-Mahal
+Corcovado 
+Žuta podmornica
+Potrebna razina %U
+Veličina terena:
+Bonus za kuće:
+Prednosti
+Ovo čudo povećava dnevni bonus za %U Dolari.
+Ovo čudo daje vam %U% mogućnosti da umnožite stanarinu.
+Ovo čudo povećava bonus zaradu za %U% za sve vaše kuće.
+Ovo čudo povećava prihod od prodaje za %U%.
+Kupi za:
+Dani
+Dan
+Sati
+Sati
+Min
+S
+Dolari
+Zlato
+dozvole
+%U%
+Besplatno
+Besplatno
+Odustani
+Novo!
+Dodaj prijatelja!
+Čestitamo!
+Razina %U
+Otključano:
+Današnji bonus
+Dođite svaki dan po svoj dnevni bonus!
+%U
+%U zlato
+%U XP
+%U teren
+Nastavi
+OK
+Zgrade
+Kuće
+Poslovi
+Ukrasi
+Čuda
+Italian Week
+Posebno
+Dar
+Podijeli uspjeh
+Da
+Ne
+Gotovo
+Vaša tvrtka
+Postavi Sjedišta
+Kupi zemljište
+Izgradi kuću
+Izgradi cestu
+Odmah izgradi
+Potpiši ugovor
+Kupi ukras
+Prikupi stanarinu
+\nBok, ja sam %U. Dobro došli u grad Čokoladna Polja, u kojem ćete pokrenuti svoj posao s nekretninama.\n\nVaš cilj je da ovaj mali grad pretvorite u metropolu i postanete milijunaš. 
+\nU Millionaire Cityju možete kupovati i unajmljivati kuće da biste zaradili novac i iskustvo dok gradite prekrasan grad.\n\nPrvo postavite svoje sjedište na teren označen strelicom.
+\nPrije gradnje kuće morate kupiti teren.\n\nKliknite Kupi teren i kupite 2 terena koja vam nedostaju.
+\nKliknite Dućan i kupite Bungalov.\n\nZatim ga postavite na teren 2x2.
+\nPrije početka gradnje, gradilište mora biti povezano sa Sjedišta.\n\nOdaberite Ceste i izgradite 2 dijela ceste koji nedostaju da biste povezali kuću s glavnom cestom.
+\nGradnja je započela i potrajat će neko vrijeme.\n\nKliknite Bungalov i prihvatite Odmah izgradi da biste dovršili izgradnju.
+\nVrijeme je za dolazak novih stanara.\n\nKliknite Bungalov i potpišite ugovor o najmu.\n\nNe zaboravite da ugovor košta $90.
+\nDa biste povećali stanarinu, postavite ukras pored kuće.\n\nIdite u Dućan, odaberite karticu Ukrasi, a zatim kupite Čempres i postavite ga pored Bungalov.\n\nPrihod od najma Bungalov sad se povećao za 2%.
+\nMožete uzeti stanarinu!\n\nKliknite Bungalov i naplatite najam.
+\nSada ste naučili osnove zarađivanja!\n\nSljedeći zadaci:\n- izgradite još kuća\n- posjećujte prijatelje\n- klikom na donju tipku Misije možete završavati misije i zarađivati.\n\nSretno!
+Korak %U / %U1
+Odaberi savjetnika
+$
+Odaberite ime
+Upišite NAZIV grada u donje polje i kliknite 'Gotovo'.
+Pizza
+Kupite pizzeriju 'Na prodaju' u blizini Sjedišta. Vratite se ovdje po nagradu. 
+Helping Hand
+Traži pomoć
+\n\nClick on the Wonder under construction and Ask for Help from your friends. Each friend that helps you will make the Wonder finish faster.
+Veličina je važna
+Kupite jedno proširenje! Proširenja vam daju više mjesta za gradnju grada i povećavaju vaše bogatstvo.
+\n\nSavjet: Kupite proširenje klikom na znak 'Proširenje na prodaju' izvan granica grada.
+Odmah izgradi
+Kliknite građevinu u izgradnji da biste je odmah izgradili.
+\n\nSavjet: Izgradi kuću, poveži je sa sjedištem, a zatim dok tajmer odbrojava do kraja klikom na kuću potvrdi trenutnu gradnju!
+Gradnja I
+Izgradite kuću!
+\n\n Savjet: Kupite teren 2x2 klikom na alat Kupi teren. Idite u dućan, odaberite Luksuzni bungalov i postavite je na teren.
+Gradnja II
+Izgradite Gradska kuća za zahtjevnije stanare grada.
+\n\n Savjet: Uz pomoć alata Kupi teren kupite teren željene veličine.  Idite u dućan, odaberite Luksuzni bungalov i postavite je na teren.
+Miris kave
+Izgradite Kavana.
+\n\nSavjet: Postavite poslovni prostor u blizinu kuća da biste povećali broj redovnih kupaca.
+Raširite se
+Raspršite poslovni portfelj kupnjom 5 različitih vrsta poslovnih prostora.
+\n\nSavjet: Prvo kupite teren, a zatim otiđite u dućan i kupite poslovni prostor.
+Zelene ruke I
+Posadite 2 stabla.
+\n\nSavjet: Idite u dućan i kliknite karticu Ukrasi. Kupite stablo i postavite ga u blizinu kuće da biste povećali bonus za kuću. Ponovite taj postupak još jednom!
+San o fontani
+Postavite još 3 Fontane u gradu. Fontane koje već imate u gradu ne računaju se.
+\n\n Savjet: postavite ih u blizinu kuća koje posjedujete da biste povećali bonus za kuće.
+Zelene ruke II
+Izgradite 1 Veliki vrt u svom gradu i neka građani uživaju.
+\n\nSavjet: Postavi ih u blizinu kuća i povećaj bonus za kuće. 
+Luksuzne kuće I
+Izgradite 1 Luks. grad. kuća.
+\n\nSavjet: Postavite je u blizinu poslovnih prostora kako bi posao procvao uz nove kupce! 
+Luksuzne kuće II
+Izgradite 1 Luksuzni dupleks.
+\n\n Savjet: Postavite je u blizinu poslovnih prostora kako bi posao procvao uz nove kupce! 
+San u dvorcu
+Izgradite 2 Dvorci za zahtjevne stanare s A-liste, poput holivudskih zvijezda.
+\n\nSavjet: Postavite ih u blizinu poslovnih prostora kako bi posao procvao uz nove kupce! 
+San o neboderu
+Izgradite 3 Neboderi i unesite u grad okus metropole.
+\n\n Savjet: Neboderi imaju mnogo stanara koji su dobri za posao!
+Svjetsko čudo
+Čuda su izvrsna za velike bonuse! Izgradite 1 Zlatna statua
+\n\nSavjet: Postavite terene 4x4, idite u dućan, odaberite karticu Čuda i kliknite Zlatna statua. Postavite ga na prazan teren. 
+Klijenti pizzerije I
+Povećajte broj klijenata u Pizzeria na 3.
+\n\n Savjet: Prvo kupite teren 2x2 u blizini Pizzeria, zatim idite u dućan, kupite kuću i postavite je na teren. Potpišite ugovor sa stanarima.
+Klijenti pizzerije II
+Izgradite više kuća oko Pizzeria da biste povećali broj kupaca na 10.
+\n\n Savjet: Kupite teren uz Pizzeria, idite u dućan, kupite kuće i potpišite ugovore sa stanarima.
+Klijenti pizzerije III
+Izgradite više kuća oko Pizzeria da biste povećali broj kupaca na 16.
+\n\n Savjet: Kupite teren uz Pizzeria, idite u dućan, kupite kuće i potpišite ugovore sa stanarima.
+Kavopije I
+Povećajte broj osoba u Kavana na 12.
+\n\n Savjet: Izgradite kuće uz Kavana.
+Kavopije I
+Povećajte broj osoba u Kavana na 24.
+\n\n  Savjet: Izgradite kuće uz Kavana.
+Ljubitelji cvijeća
+Izgradite Cvjećarnica i sakupite 30 klijenata.
+\n\n Savjet: Izgradite kuće uz Cvjećarnica.
+Noćne ptice
+Izgradite Noćni klub i organizirajte 36 momačkih zabava.
+\n\n Savjet: Izgradite kuće uz Noćni klub.
+Uredi kuću I
+Postavite ukrase uz bilo koji bungalov koji posjedujete za 12% bonusa za kuću.
+\n\n Savjet: Ukrase potražite u dućanu.
+Uredi kuću II
+Postavite ukrase uz bilo koji bungalov koji posjedujete za 16% bonusa za kuću.
+\n\n Savjet: Ukrase potražite u dućanu.
+Uredi kuću III
+Postavite ukrase uz Gradska kuća za 30% bonusa za kuću.
+\n\n Savjet: Ukrase potražite u dućanu.
+Uredi kuću IV
+Postavite ukrase uz Gradska kuća za 60% bonusa za kuću.
+\n\n Savjet: Ukrase potražite u dućanu.
+Rokerska vila
+Slavni roker 'Billy Dollars' traži Vila s 90% bonusa za kuću.
+\n\nSavjet: Postavite ukrase i povećajte bonus za kuće.
+Uredi dvorac
+Bogati medijski mogul želi predivnu Dvorac. Izgradite je za 110% bonusa.
+\n\n Savjet: Postavite ukrase i povećajte bonus za kuće.
+Promet pizzerije I
+Ostvarite 1 prodaju u pizzeriji i sakupite prihod.
+\n\nSavjet: Više kuća uz pizzeriju donosi veću zaradu.
+Promet pizzerije II
+Ostvarite 5 prodaja u pizzeriji.
+\n\n Savjet: Kliknite pizzeriju nakon što tajmer odbroji 5 puta!
+Promet kavane I
+Ostvarite 10 prodaja u kavani.
+\n\nSavjet: Skupite prihod iz kavane 10 puta!
+Promet kavane II
+Ostvarite 50 prodaja u kavani.
+\n\nSavjet: Skupite prihod iz kavane 50 puta!
+Lovu na sunce I
+Skupite 10 stanarina od svojih kuća.
+\n\n Savjet: Misiju ćete brže završiti sklapanjem kratkoročnih ugovora.
+Lovu na sunce II
+Skupite 50 stanarina od svojih kuća.
+\n\n Savjet: Misiju ćete brže završiti sklapanjem kratkoročnih ugovora.
+Lovu na sunce III
+Skupite 100 stanarina od svojih kuća.
+\n\nSavjet: Misiju ćete brže završiti sklapanjem kratkoročnih ugovora.
+Lovu na sunce IV
+Skupite 200 stanarina od svojih kuća.
+\n\n Savjet: Misiju ćete brže završiti sklapanjem kratkoročnih ugovora.
+Posjet drugim gradovima
+Klikom na traku posjetite druge gradove ili grad u kojem živi %U.
+\n\n Savjet: Posjetite %U svaki dan i osvojite dnevni bonus.
+Prijateljska pomoć I
+Posjećujte gradove prijatelja i u njima nadogradite ukupno 6 kuća.
+\n\n Savjet: Klikom na prijatelja na donjoj traci posjetite njegov grad, a zatim kliknite na njegove kuće da biste ih nadogradili!
+Prijateljska pomoć II
+Posjećujte gradove prijatelja i u njima nadogradite ukupno 20 kuća.
+\n\n Savjet: Klikom na prijatelja na donjoj traci posjetite njegov grad, a zatim kliknite na njegove kuće da biste ih nadogradili!
+Prijateljska pomoć III
+Posjećujte gradove prijatelja i u njima nadogradite ukupno 50 kuća.
+\n\n  Savjet: Klikom na prijatelja na donjoj traci posjetite njegov grad, a zatim kliknite na njegove kuće da biste ih nadogradili!
+Lova do krova I
+Skupite 1.000.000 USD i osjećajte se besramno bogatim.
+\n\n  Savjet: Klikom na 'Dodaj dolare' možete zamijeniti zlatne poluge za dolare!
+Milijunaš I
+Zaradite Vrijednost tvrtke iznad 1.000.000 USD.
+\n\nSavjet: Brzo povećajte protok novca sklapajući kratkoročne ugovore o najmu kuća i zarađujući u poslovnim prostorima!
+Milijunaš II
+Zaradite Vrijednost tvrtke od 5.000.000 USD. Znate kako?
+\n\n Savjet: Brzo povećajte protok novca sklapajući kratkoročne ugovore o najmu kuća i zarađujući u poslovnim prostorima!
+Milijunaš III
+Zaradite Vrijednost tvrtke od 10.000.000 USD. 
+\n\n Savjet: Brzo povećajte protok novca sklapajući kratkoročne ugovore o najmu kuća i zarađujući u poslovnim prostorima!
+ 
+Skupite 600 stanarina od svojih kuća.
+\n\nSavjet: Misiju ćete brže završiti sklapanjem kratkoročnih ugovora.
+Lovu na sunce VI
+Skupite 950 stanarina od svojih kuća. 
+\n\n Savjet: Misiju ćete brže završiti sklapanjem kratkoročnih ugovora.
+Prijateljska pomoć IV
+Posjećujte gradove prijatelja i u njima nadogradite ukupno 650 kuća. 
+\n\n  Savjet: Klikom na prijatelja na donjoj traci posjetite njegov grad, a zatim kliknite na njegove kuće da biste ih nadogradili!
+Prijateljska pomoć V
+Posjećujte gradove prijatelja i u njima nadogradite ukupno 850 kuća.  
+\n\n  Savjet: Klikom na prijatelja na donjoj traci posjetite njegov grad, a zatim kliknite na njegove kuće da biste ih nadogradili!
+Milijunaš IV
+Zaradite Vrijednost tvrtke od 375.000.000 USD. 
+\n\n Savjet: Brzo povećajte protok novca sklapajući kratkoročne ugovore o najmu kuća i zarađujući u poslovnim prostorima!
+Milijunaš V
+Zaradite Vrijednost tvrtke od 475.000.000 USD.  
+\n\n Savjet: Brzo povećajte protok novca sklapajući kratkoročne ugovore o najmu kuća i zarađujući u poslovnim prostorima!
+Lova do krova II
+Skupite 10.000.000 i osjećajte se besramno bogatim. 
+\n\n Savjet: Klikom na 'Dodaj dolare' možete zamijeniti zlatne poluge za dolare!
+Lova do krova III
+Skupite 20.000.000 i osjećajte se besramno bogatim.
+\n\n  Savjet: Klikom na 'Dodaj dolare' možete zamijeniti zlatne poluge za dolare!
+Rokerski ugovor
+Skupite 200 stanarina od ugovora s rock zvijezdom. 
+\n\n Savjet: Izgradite mnogo kuća da biste mogli odjednom potpisati mnogo ugovora!
+Šeik izazov
+Šeik Oilfinger  je slavni milijunaš, lud za cigarama. Povećajte vrijednost tvrtke za više od  900 M USD da bi Šeik Oilfinger vidio tko se valja u bogatstvu!  
+\n\nSavjet: Brzo povećajte protok novca sklapajući kratkoročne ugovore o najmu kuća i zarađujući u poslovnim prostorima!
+Lovu na sunce VII
+Skupite 5000 stanarina od svojih kuća.
+\n\n Savjet: Misiju ćete brže završiti sklapanjem kratkoročnih ugovora.
+Prijateljska pomoć VI
+Posjećujte gradove prijatelja i u njima nadogradite ukupno 2000 kuća. 
+\n\nSavjet: Klikom na prijatelja na donjoj traci posjetite njegov grad, a zatim kliknite na njegove kuće da biste ih nadogradili!
+Milijunaš VI
+Zaradite ukupno Vrijednost tvrtke 2.000.000.000 USD. 
+\n\n Savjet: Brzo povećajte protok novca sklapajući kratkoročne ugovore o najmu kuća i zarađujući u poslovnim prostorima!
+Lova do krova IV
+Skupite 300.000.000 USD i osjećajte se besramno bogatim. 
+ \n\nSavjet: Klikom na 'Dodaj dolare' možete zamijeniti zlatne poluge za dolare!
+Kolonijalni stil
+Postavite ukrase oko Kolonijalna kuća da biste osvoji 360% bonus za kuće. 
+\n\n Savjet: Prije kupnje ukrasa, u dućanu provjerite koliki je bonus za kuće!
+Klijenti banke
+Izgradite Banka i skupite 529 klijenata. 
+\n\n Savjet: Izgradite kuće oko Banka da biste imali više kupaca!
+Kuglaši
+Izgradite Kuglana i sakupite 243 klijenata. 
+\n\n Savjet: Izgradite kuće oko Banka da biste imali više kupaca!
+M-City VIP klub
+Cindy i Ronald članovi su prestižnog VIP kluba u igri Millionaire City kojem se i vi možete pridružiti! Uživajte u ekskluzivnim pogodnostima poput novosti, darova i nagrada. 
+\n\n Savjet: Upišite svoju adresu e-pošte da biste dobili člansku iskaznicu.
+Partnerski odnosi
+Poslovni partneri računaju na vas! Posjetite gradove 40 partnera i neka svima posao procvjeta. 
+\n\n Savjet: partnere možete naći na traci Prijatelji u dnu zaslona igre!
+Ulaganje
+Milijunašu se ulog uvijek isplati. Uložite u 10 prijatelja i uzmite nagradu kad poziv istekne. 
+\n\n Savjet: Pošaljite zahtjeve za ulaganje klikom na ikonu Ulaganja u donjem lijevom kutu zaslona igre.
+Mudro ulaganje
+Mudro ulažite. Postanite guru u svijetu ulaganja s %U uspješna uloga i uzmite nagradu kad poziv istekne. 
+\n\n Savjet: Kad uložite u prijatelja, pošaljite mu podsjetnik klikom na “Portfelj ulaganja”.
+Posjet prijatelju I
+Posjećujte gradove prijatelja i u njima nadogradite ukupno 70 Luks. apartmani. 
+\n\nSavjet: Posjetite gradove prijatelja i kliknite Luks. apartmani, ako je imaju u svom gradu!
+Posjet prijatelju II
+Posjećujte gradove prijatelja i u njima nadogradite ukupno 50 Neboder. 
+\n\nSavjet: Posjetite gradove prijatelja i kliknite Neboder, ako je imaju u svom gradu!
+Posjet prijatelju IV
+Posjećujte gradove prijatelja i u njima nadogradite ukupno 30 Luksuzni neboder. 
+\n\nSavjet: Posjetite gradove prijatelja i kliknite Luksuzni neboder, ako je imaju u svom gradu!
+Posjet prijatelju VI
+Posjećujte gradove prijatelja i u njima nadogradite ukupno 20 Super neboder. 
+\n\nSavjet: Posjetite gradove prijatelja i kliknite Super neboder, ako je imaju u svom gradu!
+Posjet prijatelju III
+Posjećujte gradove prijatelja i u njima nadogradite ukupno 40 Eko-kuća.
+\n\nSavjet: Posjetite gradove prijatelja i kliknite Eko-kuća, ako je imaju u svom gradu!
+Posjet prijatelju V
+Posjećujte gradove prijatelja i u njima nadogradite ukupno 25 Futuristička. 
+\n\nSavjet: Posjetite gradove prijatelja i kliknite Futuristička, ako je imaju u svom gradu!
+Posjet prijatelju VII
+Posjećujte gradove prijatelja i u njima nadogradite ukupno 10 Škotski dvorac. 
+\n\nSavjet: Posjetite gradove prijatelja i kliknite Škotski dvorac, ako je imaju u svom gradu!
+Slatki ljubimci
+Izgradite Ljubimci i prodajte 32 slatka psića. 
+\n\n Savjet: Izgradite više kuća oko Ljubimci da biste povećali broj kupaca!
+Sve što sija
+Izgradite Zlatarnica i prodajte 34 blistava dragulja.  
+\n\n Savjet: Izgradite više kuća oko Zlatarnicada biste povećali broj kupaca!
+Ruka ruku mije I
+Pitajte prijatelje da vam nadograde kuće i uzmite 50 većih stanarina. Dijeliti znači brinuti! 
+\n\nSavjet: Ne zaboravite pozvati prijatelje u Millionaire City kako biste si uzajamno mogli nadograđivati kuće.
+Ruka ruku mije II
+Pitajte prijatelje da vam nadograde kuće i uzmite 100 većih stanarina. Dijeliti znači brinuti!
+\n\n Savjet: Ne zaboravite pozvati prijatelje u Millionaire City kako biste si uzajamno mogli nadograđivati kuće.
+Ruka ruku mije III
+Pitajte prijatelje da vam nadograde kuće i uzmite 200 većih stanarina. Dijeliti znači brinuti! 
+\n\n Savjet: Ne zaboravite pozvati prijatelje u Millionaire City kako biste si uzajamno mogli nadograđivati kuće.
+Ruka ruku mije IV
+Pitajte prijatelje da vam nadograde kuće i uzmite 400 većih stanarina. Dijeliti znači brinuti! 
+\n\n Savjet: Ne zaboravite pozvati prijatelje u Millionaire City kako biste si uzajamno mogli nadograđivati kuće.
+Ruka ruku mije V
+Pitajte prijatelje da vam nadograde kuće i uzmite 800 većih stanarina. Dijeliti znači brinuti! 
+\n\n Savjet: Ne zaboravite pozvati prijatelje u Millionaire City kako biste si uzajamno mogli nadograđivati kuće.
+Ruka ruku mije VI
+Pitajte prijatelje da vam nadograde kuće i uzmite 1600 većih stanarina. Dijeliti znači brinuti! 
+\n\n Savjet: Ne zaboravite pozvati prijatelje u Millionaire City kako biste si uzajamno mogli nadograđivati kuće.
+Ruka ruku mije VII
+Pitajte prijatelje da vam nadograde kuće i uzmite 3200 većih stanarina. Dijeliti znači brinuti!
+\n\n Savjet: Ne zaboravite pozvati prijatelje u Millionaire City kako biste si uzajamno mogli nadograđivati kuće.
+Ruka ruku mije VIII
+Pitajte prijatelje da vam nadograde kuće i uzmite 6400 većih stanarina. Dijeliti znači brinuti! 
+\n\n Savjet: Ne zaboravite pozvati prijatelje u Millionaire City kako biste si uzajamno mogli nadograđivati kuće.
+Ruka ruku mije IX
+Pitajte prijatelje da vam nadograde kuće i uzmite 7400 većih stanarina. Dijeliti znači brinuti! 
+\n\n Savjet: Ne zaboravite pozvati prijatelje kako biste si uzajamno mogli nadograđivati kuće.
+Ruka ruku mije X
+Pitajte prijatelje da vam nadograde kuće i uzmite 8500 većih stanarina. Dijeliti znači brinuti! 
+\n\n Savjet: Ne zaboravite pozvati prijatelje kako biste si uzajamno mogli nadograđivati kuće.
+Presađivanje
+Idite na izbornik Ugovaratelji označen simbolom aktovke pa pomoću alata Premjesti pomaknite stablo na drugo mjesto.
+\n\n Savjet: Alat Premjesti koristan je za preobražaj grada – Možete ga i poslati kao besplatan poklon!
+Misija završena
+Prihod
+XP:
+Vrijeme zarade:
+Vrij. gradnje:
+Utjecaj:
+Stanari:
+Kupci:
+Ako zamoliš prijatelje za pomoć, ubrzat ćeš vrijeme gradnje
+%U prijatelja pomogli su u gradnji i svaki je smanjio ukupno vrijeme gradnje za %U1%
+M-City - postani obožavatelj
+Obožavatelji Millionaire Cityja dobivaju novosti, besplatne darove i mogu otključati Trokatnica!
+Dobro došli!
+Pretekli su vas: %U
+Pomogli su vam: %U
+Uložili su u vaš grad: %U
+Završeno je %U radova.
+%U također želi postati milijunaš, ali treba vašu pomoć.\nMožete li to učiniti?
+Ronald Goldtooth
+Cindy Jewels
+Šeik Oilfinger
+Ronald
+Cindy
+Šeik
+Tu građevinu morate postaviti na teren %U. Kliknite alat Kupi teren.
+Nemate dovoljno zlata za to. Imate samo {0xFF6600}%U{/} zlatne poluge. Za kupnju vam treba još {0xFF6600}%U1{/} poluga.
+Nemate dovoljno novca za to, ali ja ću vam zamijeniti {0xFF6600}%U{/} zlatnih poluga za {0x009932}%U1{/}.
+Nemate dovoljno novca za to. Nudim vam {0x009932}%U{/} za {0xFF6600}%U1{/} zlatnih poluga, ali imate samo {0xFF6600}%U2{/} zlatne poluge.
+Nemate novca
+Nemate zlata
+Pošalji dar
+Kliknite
+Treba %U misija
+Turisti
+Studenti
+Obitelj
+Umirovljenici
+Sportaši
+Piloti
+Hostese
+Umjetnici
+Prijatelji
+Roker
+Nogometaš
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+Pozovi
+Traži pomoć
+Uzmi nagradu
+Zaista želite otkazati ugovor?
+Zaista to želite uništiti?\nDobit ćete: {0x009932}%U{/}
+Stanari više nisu mogli čekati da dođete po novac i napustili su kuću.
+Klikni za obnovu kuće
+Čokoladna Polja
+Pričekajte %U i zatražite brzinu.
+Pričekajte %U i podsjetite.
+Što ćete sljedeće kupiti?
+Napredak u igri Millionaire City
+%U je na razini %U1 u igri Millionaire City i želi to proslaviti dijeleći bonus iskustvo svim prijateljima!
+Osvoji bonus iskustvo
+Koliko pomoći trebate?
+%U treba pomoć pri gradnji %U1, svjetskog čuda
+%U treba pomoć za završetak %U1. I vi možete izgraditi svoj grad zarađujući milijune u igri Millionaire City
+Pomozi %U
+Osjećate li se bogato?
+%U je na naslovnici novina 'Čokoladni list'
+%U je uspješan šef i ubrzo će se početi družiti s bogatima i slavnima u gradu Millionaire City.
+Igraj Millionaire City
+Kakav je osjećaj biti milijunaš?
+%U je milijunaš
+%U je milijunaš u igri Millionaire City. Možete nadmašiti %U i druge prijatelje kupujući kuće, kasina, hotele, zlatarnice i gradeći metropolu: sve je moguće u igri Millionaire City.
+Igraj Millionaire City
+Je li misija bila teška?
+Misija uspješno završena!
+%U je dobio/la veliku nagradu u misiji '%U1' i želi podijeliti bonus dolare koji vas mogu obogatiti!
+Osvoji bonus dolare
+Ugovor je potpisan!
+Nekretnina je povezana!
+Pomozi prijateljima
+Posjetite prijatelje i nadogradite njihove kuće!
+Možete zaraditi novac i iskustvo.
+Ako ne dođete po stanarinu na vrijeme, stanari će otići bez plaćanja!
+Završavajte misije i zarađujte novac
+Zlato možete zamijeniti za novac
+Prihod od poslova ovisi o broju klijenata u njima
+Kupi novcem?
+Kupi zlatom?
+Kupi novcem i uz pomoć ulaganja?
+Dodatni teren
+Za gradnju ove dekoracije trebate slobodni teren.
+Ova zgrada nije povezana s Sjedišta.
+Izgradite potrebne ceste.
+Kupi klikom
+Treba vam %U uspješnih ulaganja
+Ostvarili ste %U uspješnih ulaganja
+Prvo trebate kupiti otključani dodatni teren
+Zaključano
+Veza s poslužiteljem je prekinuta. Osvježite stranicu za nastavak.
+Oprosti, pojavila se neočekivana greška pri učitavanju tvog grada. Molim te, pokušaj kasnije ponovno!
+Pomoć možete tražiti samo jednom u 12 sati
+Nova ulaganja
+Portfelj ulaganja
+Nova ulaganja
+Portfelj ulaganja
+Uloži
+Pomozite {0x009932}%U{/} da pokrene milijunsku tvrtku. Uložite {0x009932}%U1{/} u novu tvrtku danas i ako za {0x009932}%U2{/} dana vrijednost tvrtke naraste na {0x009932}%U3{/}, vratit će vam se {0x009932}%U4{/} od mudro uloženog novca.
+Što biste kupili s milijun dolara?
+%U, želiš li biti milijunaš?
+%U, možeš li izgraditi grad iz snova i pomoći prijatelju? %U1 želi da zaigraš Millionaire City. Prihvati ponudu i izgradi svoj grad dok pomažeš prijatelju da dodatno zaradi.
+Prihvati
+Preos.dana
+Preos.sati
+Objavi požurnicu
+Objavi podsjetnik
+Rezultati
+Koliko je dana preostalo za ulaganje?
+%U, požuri - nedostaje novca!
+Hvala na prihvaćanju ulaganja, ali trebaš više zaraditi je vrijeme istječe!
+Igraj Millionaire City
+Dobar posao!
+Prijatelj je odbio cilj i vi ćete imati koristi od ulaganja! Wall Street čeka na vas!
+Zahvali
+Loš ulog!
+Prijatelj nije ostvario cilj na vrijeme i izgubili ste uloženo!
+Želiš li zaista otkazati ulaganje?
+Vaš je prijatelj uložio u novu tvrtku u igri Millionaire City. Ako povećate vrijednost tvrtke na %U za %U1 dana, vaš će prijatelj basnoslovno zaraditi i zahvaliti vam na tome.
+Ne zaboravi na cilj! Treba mi ta zarada!
+Pomoć
+Basnoslovno zarađujte pomažući prijateljima da pokrenu nove milijunske tvrtke. Kliknite prijatelja da biste vidjeli prijedlog ulaganja i objavite ga na prijateljevom zidu.
+Stanje ulaganja 1: prijatelj još nije prihvatio ulaganje. Podsjetite ga ili otkažite ulaganje da bismo vam vratili novac.
+Stanje ulaganja 2: prijatelj je odbio ulaganje. Otkažite ulaganje da bismo vam vratili novac.
+Stanje ulaganja 3: prijatelj je prihvatio ulaganje.  Provjerite napredak i zamolite prijatelja da 'Požuri'.
+Stanje ulaganja 4: prijatelj je prihvatio ulaganje i pokušao ostvariti cilj ulaganja. Kliknite i provjerite jeste li zaradili ili izgubili novac.
+Ažurirajte Flash
+Ovdje
+Ako se igra ne učita ili imate poteškoća, kliknite OVDJE i ažurirajte Flash.
+Statistika
+Prihvaćeno ulaganja:
+Uspješna ulaganja:
+Postotak uspjeha:
+Nove misije uskoro!
+PRODAJE SE
+PRODAJE SE TEREN
+Postani obožavatelj
+Želiš zahvaliti prijatelju?
+%U1, %U je upravo zaradio mnogo $$$ u igri Millionaire City i želi ti zahvaliti!
+%U je uložio u %U1 što se pokazalo kao mudra odluka. Dobar posao! 
+Igraj Millionaire City
+Ulaganje je uspjelo!
+Bili ste u pravu - isplatilo se uložiti u mene!
+Donijeli ste mudru odluku kad ste uložili u mene! Granica od 4 milijuna dolara ostvarena je i sad ćemo oboje dobiti sjajne bonuse.
+Igraj Millionaire City
+Danas ne možete nadograditi više kuća! Pokušajte sutra!
+Zamjena
+Zamijeni
+Imate:
+Možete trgovati sa:
+Ulaganja
+Zgrade i ukrasi
+Tereni i širenja
+Ukupno
+Gradske kuće
+Fontane
+Neboderi
+Dvorci
+Nabavi zlato
+Odaberi paket:
+Plati Facebook kreditima
+Najbolja vrijednost!
+Digital Chocolate koristi sustav Facebook kredite kao način plaćanja u igri Millionaire City.  Facebook krediti koriste vodeće sustave sigurnosti i zaštite od prijevara u industriji kako biste mogli sigurno kupovati.
+Zaključi ponude
+Unajmi skupljača stanarine
+Ugovor
+Uskoro!
+Želite li zaista premjestiti stavku ovdje?
+Tu je i {0xf33300}BESPLATAN PREMJEŠTAJ{/} za {0xf33300}CIJELI DAN{/}
+Premjesti
+Premjesti
+Mogu vam pomoći pri premještanju.
+Kliknite stavku i postavite je na slobodni teren.
+Ne možete umetati tekst u prikazu na punom zaslonu.\nPrijeći na uobičajeni način?
+%U treba pomoć pri gradnji %U1 
+:
+Dostupno za %U
+Dodaj oznaku
+Poslovni partneri
+Pozovite prijatelje za poslovne partnere i ostvarite pristup boljim nadogradnjama.
+Pošalji zahtjev
+Podsjeti prijatelja
+Odaberite prijatelje koje želite dodati kao poslovne partnere.
+Bok prijatelju! Postani moj poslovni partner u igri Millionaire City kako bismo dobili super nadogradnje zgrada i još brže se obogatili!
+Pošalji zahtjev za poslovno partnerstvo
+Prihvati
+Recite prijatelju da ste pomogli kako bi vam uzvratio/la uslugu!
+Pomogli su
+Prijatelji su pomogli
+Napiši poruku prijateljima
+%U nadogradio/la vaše kuće u igri Millionaire City! - Uzmite bonus dolare!
+%U je posjetio/la vaš grad i nadogradio/la kuće. %U će biti sretan/na ako uzvratite uslugu
+Osvoji bonus dolare
+Pomogli ste %U pri gradnji '%U1'. Recite prijateljima za vaš dobro djelo i oni će vam uzvratiti uslugu.
+Pomogli ste
+Pomogli ste pri gradnji
+Napiši poruku prijateljima
+%U je pomogao/la %U1 u gradnji Millionaire City!
+%U je pomogao/la i %U1 će više zaraditi uz ubrzanu gradnju '%U2'. Možete provjeriti je li gradnja završena.
+Provjeri gradnju
+Gradnja je završena zahvaljujući prijateljima. Zahvalite im.
+Zahvalite
+Gradnja završena
+Želite li zahvaliti prijateljima?
+%U je izgradio/la nove zgrade u svom gradu. Zahvaljujući svojim pomagačima!
+%U je upravo izgradio/la nove zgrade u igri Millionaire City i želi zahvaliti pomagačima dijeleći bonus dolare.
+Osvoji bonus dolare
+Super nadogradnje
+Uspješno ste sklopili nova poslovna partnerstva! Recite prijateljima da imate nove poslovne partnere.
+Podijeli s prijateljima
+Novi partneri
+Želite li poslati poruku prijateljima?
+%U ima nove poslovne partnere u igri Millionaire City!
+%U je sklopio nova poslovna partnerstva u igri Millionaire City i sad ima pravo na 'Super nadogradnje'. Sklopite partnerski ugovor s %U i ostvarite pravo na te prednosti.
+Osvoji bonus dolare
+Novi bonus
+nešto iskustva
+Prijatelj vam je poslao bonus iskustvo
+nešto dolara
+Prijatelj vam je poslao bonus dolare
+Želite li podijeliti bonus iskustvo s prijateljima kako biste proslavili prelazak na novu razinu?
+Misija je dovršena. Želite li podijeliti bonus dolare s prijateljima?
+placeholder
+Možete podijeliti bonus dolare s prijateljima!
+Da biste proslavili rast poslovnog carstva, možete podijeliti bonus dolare s prijateljima!
+Da biste proslavili rast poslovnog carstva, možete podijeliti bonus dolare s prijateljima!
+Možete podijeliti bonus dolare s prijateljima!
+placeholder
+Da biste proslavili rast poslovnog carstva, možete podijeliti bonus dolare s prijateljima!
+Možete podijeliti bonus dolare s prijateljima!
+Možete podijeliti bonus dolare s prijateljima!
+Možete podijeliti bonus dolare s prijateljima!
+Možete podijeliti bonus dolare s prijateljima!
+Možete podijeliti bonus dolare s prijateljima!
+Napiši poruku prijateljima
+%U je počeo/la igrati Millionaire City!
+%U je počeo/la zarađivati u igri Millionaire City i želi podijeliti bonus dolare s prijateljima!
+Osvoji bonus dolare
+Napiši poruku prijateljima
+%U proširuje grad u igri Millionaire City!
+Posao cvjeta i %U je upravo proširio/la grad i želi proslaviti uspjeh dijeleći bonus dolare s prijateljima.
+Osvoji bonus dolare
+Recite prijateljima da ste kupili dodatni teren.
+Novi teren
+Odaberi kooperanta
+Poslali smo vam poruku e-pošte s članskom iskaznicom. Otvorite je, kliknite na poveznicu za pristup u VIP Club i preuzmite svoju nagradu. Ako poruku ne primite unutar 4 sata, ponovite postupak s novom adresom e-pošte.
+Adresa e-pošte
+Ponovo unesite adresu e-pošte
+U e-pošti su se pojavile greške u sintaksi
+Adrese e-pošte nisu jednake
+Račun s tom adresom e-pošte već postoji
+Taj je račun e-pošte već registriran
+Greška domene, provjerite
+Prihvaćam odredbe o privatnosti i sigurnosti
+Otključaj
+Otključajte teretanu!
+Želite ponuditi svojim građanima mjesto za vježbanje i održavanje dobre linije? Dođite vježbati u igri MMA Pro Fighter i otključajte teretanu. Prihvaćate li izazov?
+Otključaj kazalište!
+Svjetlo, kamera, akcija! Otključajte Hollywoodski teatar u igri Hollywood City i osjetite magiju i slavu filmskog biznisa.
+Otključaj Veags Bar!
+U Vegasu nalazi se stol s rukletom s tvojim imenom! Otključaj Vagas bar igrajući Vegas City i zaradi gomilu novca u svijetu kocke.
+Otključaj Island God Totem!
+Traži se: God za daljinski otok sa tužnim stanovnicima. Otključaj Islan God Totem tako da dođeš do razine 5 u Island God u Digital Chocolate.
+Otključaj funkciju patuljka
+Osvoji ovu lijepu Fontanu patuljaka igranjem Epskih boraca što je uzbudljiva fantastična igra iz Digital Chocolate.
+Otključaj groblje zombija!
+Počinje apokalipsa zombija! Otključaj novo groblje zombija igrajući Zombie Lane i otkrij koliko dugo možeš preživjeti napade zombija.
+Otključani antikviteti na razini%U
+Investicije otključane na razini%U
+2 ZA 1
+Kupiš jednu, drugu dobiješ
+%U SNIŽENO
+Besplatno
+Ponuda vrijedi ograničeno vrijeme
+Jesu li ostali još neki susjedi koje morate prihvatiti
+Pridruži se klubu
+Greška pri slanju poruke. Pokušajte poslije.
+Kooperant
+Recite prijateljima da preuređujete grad uz pomoć osobe za preseljenja
+Podijeli trik
+Napiši poruku prijateljima
+%U je unajmio/la osobu za preseljenje i preuređuje grad!
+%U želi podijeliti bonus dolare s prijateljima. Osoba za preseljenja obavit će sve teške poslove da bi vaš grad izgledao još bolje.
+Osvoji bonus dolare
+Kooperant
+Pokažite prijateljima kako posao cvjeta kad stanarinu prikupljate brže no ikada uz pomoć sakupljača stanarine!
+Podijeli trik
+Napiši poruku prijateljima
+%U je prikupio stanarine brže no ikada uz pomoć skupljača stanarine!
+%U želi podijeliti bonus dolare s prijateljima. Ovaj će vam momak olakšati život i ostaviti vam vremena za ostale poslove u igri Millionaire City.
+Osvoji bonus dolare
+Kooperant
+Recite prijateljima koliko je život lakši uz osobu za obnavljanje ugovora!
+Podijeli trik
+Napiši poruku prijateljima
+%U je angažirao/la osobu za obnovu ugovora koja život u igri Millionaire City čini mnogo lakšim!
+%U želi podijeliti bonus dolare s prijateljima. Ova će dama obnavljati vaše ugovore lakše i brže no ikada. Zarađivanje nikad nije bilo lakše.
+Osvoji bonus dolare
+Pozovi prijatelje
+Nedostaju vam prijatelji u igri Millionaire City? Uz njih možete zaraditi više novca i XP-a te brže graditi!
+Pozovi prijatelje
+Pozovi poslovne partnere
+Napravite posao života! Udružite se s prijateljima i zarađujte više novca i XP-a.
+Pozovi poslovne partnere
+Nadogradi kuće za %U!
+Odlazak u susjedne gradove je zabavan, ali to nije samo društveni posjet: klikom na prijateljeve kuće zarađujete još novca i XP-a!
+Posjeti prijatelja
+Zaposli pomoćnika!
+Grad vam je u neredu? Unajmite osobu za preseljenje na 24 sata i preuredite cijeli grad!
+Zaposli pomoćnika
+Zaposli pomoćnika!
+Klikanje vas umara? Unajmite sakupljača stanarine da obavlja prljavi posao umjesto vas!
+Zaposli pomoćnika
+Zaposli pomoćnika!
+Klikanje vas umara? Unajmite osobu za obnavljanje ugovora i olakšajte si život!
+Zaposli pomoćnika
+Zdravlje građana
+Vaši građani sve su zapušteniji. Otključajte posebnu teretanu i pomozite im da žive zdravim životom.
+Izgradi teretanu
+Uložite u prijatelja!
+Pomozite prijatelju da pokrene vlastitu tvrtku. Ako tvrtka uspije na tržištu, ulaganje će vam se deseterostruko isplatiti!
+Uloži
+VIP klub
+Pridružite se Millionaire City VIP klubu i uživajte u ekskluzivnim ponudama, poput darova i nagrada!
+Pridruži se
+Zatraži pomoć!
+Napiši poruku prijateljima
+%U želi da mu/joj nadogradite kuće!
+Izgradite ugled pomažući drugima da izgrade njihovu! Nadogradnjom kuća svojih prijatelja dobivate više dolara i XP-a. Podijelite obilje!
+Nadogradi kuće
+Isprobaj besplatno
+Arhitektonski studio
+%U zahtijeva više iskustva u poslu s nekretninama, ali za {0xFF6600}%U1{/} zlata možete se sastati s arhitektom i nabaviti nacrte.
+Kupi nacrte
+Još %U
+Ovaj sat je čudo! Pokazuje stvarno vrijeme vašim stanovnicima i daje vam %U% mogućnosti da umnožite stanarinu.
+Neodgovoreni zahtjevi
+Sjajno, prijatelj vam je poslao %U darova!
+Prihvati
+Pronašli ste novi predmet iz zbirke!
+Čestitamo, našli ste novi predmet iz zbirke!
+Zadrži
+Daruj
+Pronašli ste predmet iz zbirke!
+Pronašli ste predmet iz zbirke koji već imate. Budite plemeniti i poklonite ga prijatelju!
+Prodaj
+Pokloni
+Odaberite prijatelja za darivanje
+Koga danas želite iznenaditi?
+Pošalji dar
+Čestitamo!
+Čestitamo, prikupili ste sve predmete iz zbirke %U. Vrijeme je za nagradu!
+Zatraži nagradu
+ZAMIJENI
+Najčešća pitanja
+Uspješno ste popunili zbirku i vrijeme je da zablistate! Pohvalite se prijateljima s cool %U i podijelite bonus dolare.
+Podijeli uspjeh
+Kupi predmet iz zbirke!
+Da biste brže popunili zbirku, taj predmet možete kupiti za %U zlata.
+Kupi
+Prijatelji mogu pomoći!
+Dijeliti znači brinuti - zatražite taj predmet od prijatelja!
+Zatraži
+Pošaljite predmet iz zbirke prijatelju!
+%U je upravo poslao/la predmet iz zbirke! To se zove prijatelj!
+Zavirite u ovaj uzbudljivi paket i provjerite možete li naći još luksuznih predmeta u igri Millionaire City.
+Prihvati dar
+Recite prijateljima da tražite te predmete za zbirku kako bi vam pomogli.
+%U0 napokon želi %U1!
+Pošaljite %U1 kad ga nađete i usrećite %U0! Zaigrajte Millionaire City i potražite luksuzne predmete iz zbirke po cijelom gradu.
+Potraži predmete iz zbirke
+Vrijeme je za razmetanje! Strast za sakupljanjem donijela vam je %U, svačiji predmet želja. Podijelite dobre vijesti i bonus dolare!
+%U0 napokon ima %U1!
+ %U0 je završio/la %U1 i želi proslaviti dijeleći bonus dolare. Zaigrajte Millionaire City i tražite predmete iz zbirke po cijelom gradu.
+Osvoji bonus dolare
+Zbirke
+Sef
+Kućna zbirka
+Trgovačka zbirka
+Predmeti iz zbirke
+Već ste prihvatili taj dar.
+Sef je mjesto u kojem čuvate popunjene zbirke. Sretno!
+Čestitamo! Popunili ste sve zbirke\nNove zbirke dolaze uskoro!
+Zaista želite to prodati?\nDobit ćete: {0x009932}%U{/}
+Predmete za zbirku naći ćete sakupljajući najamninu u svom gradu. Možete ih i kupiti, zatražiti od prijatelja, pokloniti prijateljima ili prodati.
+Pratite svoje zbirke u centru zbirki, kojem možete pristupiti klikom na ikonu dara. Možete prihvatiti darove prijatelja na svom Facebook profilu, u odjeljku 'Zahtjevi igara'.
+Kad popunite zbirku, možete zatražiti ekskluzivnu nagradu za svoj grad.
+Sretno!
+Potrebno: %U
+Nabavi
+Nabavi predmet iz zbirke
+Zatražite sljedeće od prijatelja ili to kupite s {0xFF6600}%U{/} zlatnim polugama.
+Zatraži ovaj predmet od prijatelja
+Nemate više sljedećih darova: %U
+Jeste li sigurni da želite %U1 pokloniti %U? Preostalo vam je %U2. 
+Pošalji dar
+Pošalji dar
+Ne možete zadržati više od %U komada
+Posebna ponuda
+Zahvali
+Prijatelji su vam poslali predmete iz zbirke. Podijelite s njima nešto novčića.
+Podijeli novčiće
+Želiš zahvaliti?
+Hvala na predmetu iz zbirke!
+Poklanjanje predmeta iz zbirke pomaže da se predmeti brže sakupe!
+Zaradi bonus dolare
+Zaista to želite uništiti?
+Otključano stavki: %U
+Otključani predmeti iz zbirke!
+Otključana ulaganja!
+Svi prijatelji
+Prijatelji milijunaši
+Preporučeno
+Pomozite prijateljima da pokrenu vlastiti posao. Ako im za %U1 dana vrijednost vrtke naraste za %U,osvojit ćete %U2
+Pošalji zahtjev za ulaganje
+Podsjetnik na ulaganje
+%U ima povjerenja u vas. Imate %U1 da povećate vrijednost tvrtke na ${0x009932}%U2{/}.
+Ulaganje nije uspjelo
+Niste mogli pomoći %U da osvoji novac, ali i dalje možete igrati, uživati u igri i pokazati da ste zaista uspješni
+Ulaganje je završeno
+Dobar posao. Pokazali ste %U da imate smisla za posao.
+Obnovi ugovor
+Ako sad obnovite ugovor s osobom za obnavljanje ugovora, imate pravo na popust.
+Odaberi kooperanta
+Obnovi ugovor
+Ako sad obnovite ugovor sa sakupljačem stanarine, imate pravo na popust.
+Odaberi kooperanta
+Taj način plaćanja trenutno nije dostupan. Pokušajte ponovo poslije ili isprobajte druge načine plaćanja.
+%U XP!
+%U $!
+%U zlata!
+Bolje nagrade svaki uzastopni dan koji igrate!
+Dnevne nagrade!
+Dan %U
+Igraj
+Podijeli bogatstvo
+Recite prijateljima koliko život može biti lagodan kad kupe zlato u igri Millionaire City!\n\nObavijestite prijatelje o tome i podijelite s njima bonus dolare!
+Podijeli s prijateljima
+Napiši poruku prijateljima
+%U je upravo kupio/la zlato u igri Millionaire City!
+%U je upravo kupio/la zlato i može nabaviti najekskluzivnije stvarčice u igri Millionaire City! - Uzmite bonus dolare!
+Zaradi bonus dolare
+Ups, potrošio si svoju zadnju zlatnu polugu. Pribavi više zlata kako bi mogao nastviti živjeti slatki život.
+Completed
+Upravo smo dopunili Millionaire City! Molim, osvježi svoj pretraživač kako bi mogao koristiti dopunjenu verziju
+Nešto je pošlo krivo s Millionaire City, molim, pokušaj osvježiti svoj preglednik!
+Ups, mreža je vjerojatno preopterećena! Molim te pričekaj, ubrzo ćeš moći igrati!
+Nažalost, tvoje zadnje igre ne mogu biti spremljene. Pazi da imaš otvorenu samo jednu igru odjednom!
+Ups, grad tvog prijatelja ima mnogo posjetitelja! Molim, pokušaj ponovno za koji trenutak.
+Besplatan premještaj
+Limun
+Tajanstvena aktovka
+%U besplatnih premještaja
+Proljetni cvijet
+Pohrana
+Inventar
+Koristi
+Ovdje će se prikazati darovi koje ste dobili! \n Sada možete slati sjajne darove prijateljima putem kartice 'Besplatni darovi' u gornjem lijevom kutu!
+Čestitamo! Dobili ste:
+Upravo sam otvorio/la tajni dar!
+Dijeliti znači brinuti. Možete slati najbolje darove svojim prijateljima milijunašima i dobivati darove od njih!
+Zaradi bonus dolare
+%U traži više iskustva u poslu s nekretninama, ali s Facebook kreditima možeš se sastati s arhitektom i od njega dobiti nacrte.
+Nemaš dovoljno Facebook kredita
+Izgleda da trebaš još %U Facebook kredita za taj predmet!
+Dodaj 
+Rano otključavanje
+Postani bogatiji sa susjedima!
+S prijateljima možeš graditi brže i zaraditi više!
+Pozovi susjede
+Postani bogatiji sa susjedima!
+Novo! Ne zaboravi pozvati prijatelje da ti postanu susjedi kako biste brže gradili i više zarađivali!
+Your Brand New City!
+Hi there! I’m your Millionaire Mentor X. I've been helping people make obscene amounts of money for years. Together we will create the most affluent Millionaire City ever! Let’s start with the basics.
+House Boom!
+Rapid growth and expansion is available for those clever enough to invest wisely. I expect you to be savvy as you progress further with my Missions! All of these next missions involve exploiting this expanding market opportunity – make the most of it for maximum growth.
+Garden Glory!
+There are extra Dollars to be made through well placed Decorations – these increase the worth of affected buildings in Bonuses. These next Missions are about maximizing the profit of your real estate with clever landscaping!
+House Boom II!
+You have showed enormous Millionaire potential by getting this far! Now it’s time to invest heavily in Housing and Commerce to develop your City to new heights! I am about to set you many Assignments that will greatly increase your City Value. After completing them your Millionaire City will be worth countless piles of Millionaire Dollars!
+Leisure and Luxury!
+Another key strategy to building a wealthy Millionaire City is to build plenty of places for your Tenants to relax and enjoy themselves. My next Assignments all focus on providing maximum recreation and pleasure activities for your Tenants to spend their Dollars in!
+Culture Cultivation!
+The essence of style lies in elegance, so it is worth nurturing sophistication within your City. The following Assignments all revolve around culture, as it is important to show Class through your Millionaire City design to get even the snobbiest of citizens to spend their Dollars!
+Back In Business!
+The time has come for you to consider your City Value Ranking against your Friendly Rivals. Have you already beaten Me, Cindy/Ronald and the infamous Sheik Oilfinger? Together we motivate each other to new echelons of success! In this set of Assignments I encourage you to focus on expanding Commercial Enterprise for maximum profit.
+Garden Glory II!
+Well done - congratulations for getting this far! You’re now ready for higher level of challenges. Let’s start thinking about tactical Decoration placement again! The art of maximized profit lies in the skillful use of all the land in your City. These next tasks focus on garnishing further with elaborate decorations.
+Leisure and Luxury II!
+There are still many more Commerces available to build to make your Tenants happy. It’s time to focus again on building indulgent places that offer convenience and recreation. An enjoyable, comfortable Millionaire City is ideal for your Tenants and ideal for your profit!
+High Level Lavishness!
+Wow – I am very impressed by your journey so far! Your City Value is a fantastic reflection of your decisions. These next Assignments are designed to really add that extra layer of polished exuberance to your brilliant Millionaire City. Don’t hold back – Go for that extra Dollar!
+Stunning Skyscrapers!
+It’s time to build Big! Skyscrapers are the ultimate demonstration of urban power. When you build your first Skyscraper, you know you have arrived as a powerful real estate magnate. The Next Assignments will revolve around the mighty Skyscraper Buildings available. Good luck and stay ambitious!
+Name The City
+Choose a powerful name for your new City - something that reflects your Millionaire personality!
+Pizza Paradise
+Your Tenants will need somewhere to eat – and Commerce’s are a brilliant source of regular income! Buy the Pizza Commerce that is near your Headquarters.
+Instant Build Magic!
+Clicking on Buildings under construction allows you to build faster – a really useful feature when you can afford it! Create your first Instant Build!
+Tree Time
+Decorations are more than just beautiful. Each has an influence area that increases the worth of affected Buildings. Place 2 Cypress Trees around any House you own, and note how the bonuses go up!
+Customer Cash
+The amount of money each Commerce generates is proportional to the number of Tenants living around it. Set up Houses around the Pizza Commerce, so that at least 5 Customers can begin eating there!
+Join the Club!
+The prestigious Millionaire City VIP Club allows me to send you news, exclusive gifts and prizes via email. Enter your Email for your very own membership card!
+Commerce Collect
+The Pizza Commerce you built is a great success! Regularly checking back to collect your earnings is one of the key methods to accumulating lots of Millionaire City Dollars. Collect 5 Payments from it!
+Bungalow Bonanza
+More demanding Citizens want you to build a Luxury Bungalow! Build one and start getting more dollars and XP immediately.
+Your Friends
+Friends you add to Millionaire City appear in the Ranking Bar across the bottom of the Game. You and they can help each other out to create the most successful City! Visit one of them to see what tactics and strategies they are utilizing.
+A Real Millionaire City!
+Beat your friends in the ranking bar and gather a City Value of 1,000,000 Dollars to prove to me and them just how successfully rich you can be!
+Bungalow Bonus: 12%
+Get a 12% Income Bonus added to a single Bungalow, by using the decorations cleverly.
+World Of Wonder: Gold Statue 
+Wonders are special Buildings - they take a long time to construct but give exceptional bonuses as well. Build the Gold Statue Wonder to increase the Income Bonus by 5% on all Houses you own!
+Rent Collection: 29
+Collect 10 rents from any Houses.
+Commerce Construction: Coffee Shop
+Remember that your Tenants will always need somewhere to relax and drink coffee! Make the most of this market opportunity and build one Coffee Shop.
+House Construction: Townhouse Luxury
+More spacious than the standard Townhouse, this is an ideal place for Tenants to stay who have a few more Millionaire Dollars to spend!
+Upgraded Income Collection: 69
+When you houses are glittering like diamonds, it means your Friends have visited your City and upgraded the houses. Collect 50 rents from these upgraded buildings.
+Commerce Collection: 10 Coffee Shop
+Collect 10 Income Payments from the Coffee Shop.
+Coffee Shop Clients: 31
+Set up Houses around the Coffee Shop, so that at least 12 Customers can visit there regularly.
+Upgrade Friends Townhouse Luxury: 44
+Visit your Friends Cities and Upgrade 25 Townhouse Luxury Houses by clicking on them!
+House Construction: Duplex
+More spacious than the standard Townhouse, this is an ideal place for Tenants with a few more Millionaire Dollars to spend!
+Investment Invitations: 29
+Send out 10 Investment Requests to your Friends, offering to help them start their businesses and get royally rewarded!
+Tool Techniques: Move Tool
+The Move Tool is very handy when you want to rearrange your City. Use it to move a Cypress Tree Decoration.
+Commerce Construction: Sushi Bar
+This Commerce will allow your Tenants another place to eat, and there can never be too many choices! Provide this feast of fresh Sushi to your citizens.
+House Construction: Duplex Luxury
+This model of the Duplex House makes room for a few more Tenants and is an ideal way for you to make more Millionaire Dollars from them.
+Rent Collection: 69
+Collect 50 rents from any Houses.
+Commerce Construction: Flower Shop
+Build a Flower Shop so that your tenants can enjoy the sweet scent of fresh flowers in their luxurious homes. Make the most of this market opportunity.
+Decoration Placement: Windmill
+Wealth comes with responsibility- build a source of renewable energy in your City. With a massive Influence area, the Windmill looks great in any City.
+Upgrade Friends Duplex Luxury: 69
+Visit your Friends Cities and Upgrade 50 Duplex Luxury Houses by clicking on them!
+Decoration Placement: 4 Palms
+Essential for a rich, breathing eco-system are as many plants as you can place! These Palms also have the added bonus of a tropical feel.
+Decoration Placement: 2 Agave Plants
+A pair of these Agave Plants will offer a wide Influence area for your House Income Bonuses and fresh cultivated feel for your City!
+Duplex Luxury Bonus: 30%
+Get a 30% Income Bonus on a single Duplex Luxury by being clever with your Decorations!
+Flower Shop Clients: 49
+Set up Houses around the Flower Shop, so that at least 30 Customers can shop there regularly.
+Decoration Placement: 3 Balloon Boys
+A Guaranteed way to make any area instantly more fun are the Balloon Boys. Buy 3 to get three times more color and fun!
+Millionaire Dollar count: 1,000,019
+Through continued growth, it is possible to accumulate impressive fortunes. Show your potential as a magnate and gather 1,000,000 Millionaire Dollars!
+Commerce Collection: 50 Flower Shop
+Collect 50 Incomes from the Flower Shop.
+Decoration Placement: Silver Maple
+The nature of these beautiful plants offer a large House Income Bonus. Let your Tenants chill in its silvery shadow.
+Investment Successes: 24
+Make 5 successful Investments on Friends. Remember that you both benefit from this deal!
+Decoration Placement: 3 Fountains
+Fresh water features are great for making any City luxuriously flowing. Build 3 for maximum bonuses anywhere in your Millionaire City.
+Decoration Placement: 5 Apple Trees
+Planting these 5 Apple Trees will guarantee organic apples for your selective Tenants! They are great for little gaps around Houses.
+Tool Techniques: Collect Tool
+Collecting individual Rent Payments can sometimes be a chore if you have a lot, but Rent Collector is here to help you! Try him out with a 6 minute free trial.
+House Construction: Three Story Luxury 
+An exemplary place to stay, as this model of the Three Story House offers much more for the discriminatory Tenant.
+Commerce Construction: McDollars
+More Houses means more Tenants, and they will always pay for somewhere to eat delicious fast food. A prospect well worth investing in.
+Investment Invitations: 20 More
+Send out 20 more Investment Requests to your Friends, offering to help them start their businesses and grow your own portfolio at the same time!
+Friend Visit: 59
+Visit Friends Cities at least 40 times. This is a good way to evaluate your competition!
+Contract Collection: 119
+Collect 100 Rents from any Houses and see the Dollars flowing in.
+House Construction: Apartment Block
+Four Stories tall, this House allows many more Tenants to stay - which means many more Millionaire Dollars when you build one!
+Decoration Placement: 6 Orange Trees
+The scent and sight of Orange Trees are sure to tantalize the senses of your Tenants. Plant 6 so you can spread the fruity benefits everywhere!
+Commerce Construction: Pet Shop
+As your Tenants settle into domestic bliss, often they will purchase animal companions. Provide them with a Pet Shop to pamper man’s best friends!
+Upgrade Friends Eco-Home: 79
+Visit your Friends Cities and Upgrade 60 Eco-Home Houses by clicking on them!
+Tool Techniques: Contract Tool
+Similar to the Rent Collector, the Contractor Lady is useful when you have a lot of Rent Contracts to sign all at once. Try her out with a 6 minute free trial!
+Rock Star Contract Collection: 219
+Utilize the Rock Star Contract 200 times by signing in Rock Star Tenants to your Houses.
+Commerce Collection: 100 Pet Shop
+Collect 100 Income Payments from the Pet Shop.
+Upgrade Friends Apartment Block Luxury: 89
+Visit your Friends Cities and Upgrade 70 Apartment Block Luxury Houses by clicking on them!
+Apartment Block Luxury Bonus: 60%
+Get a 60% Income Bonus added to a single Apartment Block Luxury, by shrewdly placing your Decorations in strategic places.
+Pet Shop Clients: 69
+Set up Houses around the Pet Shop, so that at least 50 Customers can visit there regularly.
+Commerce Construction: Bowling Alley
+An extremely fun way for your Tenants to spend their leisure time. Build a Bowling Alley to entertain your Tenants of all ages!
+House Construction: House of Harmony
+A lovely place of peace and quiet with a big front garden, where your Tenants can live in a totally zen environment.
+Friend Visit: 99
+Go to your Friends Cities at least 80 times and have a look at how they are developing. This is a good way to evaluate your own play style!
+Commerce Construction: Jewelry Shop
+Nothing says luxury like Diamonds! Setting up a Jewelry Business is an opportunity not to be missed!
+World of Wonder: Two More
+Wonders are always worth it - they take a long time to construct but the bonuses make them worthwhile. Build any 2 more Wonders of your choice to boost your income!
+Villa Bonus: 90%
+Get a 90% Income Bonus added to a single Villa, by cleverly placing Decorations.
+Bowling Alley Clients: 219
+Set up Houses around the Bowling Alley, so that at least 200 Customers can visit there regularly.
+Expansion!
+The time has come for you to purchase an expansion so you can further extend your ever growing Millionaire City. Buy any that is unlocked and get ready to further expand your Empire!
+Contract Collection: 219
+Collect 200 Rents from any Houses.
+House Construction: Loft Block
+The height of 5 Stories sets this House apart from many others. Invest in one to allow a similarly gigantic number of Tenants to stay all at once!
+Investment Successes: 29
+Complete 10 Investments successfully with Friends. Remember that you both benefit from this business affiliation!
+Commerce Construction: Night Club
+An ideal way to provide night time entertainment, and a brilliant source of income for you. Building a Night Club is the best way to get those party dollars in your pocket.
+Jewelry Store Clients: 169
+Set up Houses around the Jewelry Store, so that at least 150 Customers can visit there regularly.
+Upgrade Friends Loft Block: 119
+Visit your Friends Cities and Upgrade 100 Loft Block Houses by clicking on them!
+Commerce Collection: 150 Bowling Alley
+Collect 150 Income Payments from the Bowling Alley.
+House Construction: 2 Villa Luxury
+A more lavish model of the Villa, which is perfect for allowing more refined Tenants with style to stay. Build a pair to maximize your future profit margins!
+House Construction: 2 Colonial House
+An amazing place for your Tenants that prefer a slower pace of life, with an elegant historical style. Build 2 so that more potential Tenants can experience simplicity.
+Decoration Placement: 6 Art Nouveau Lamps
+These Lamps are sophistication defined! Building 6 will artistically light the way across your Millionaire City.
+Commerce Construction: Mall
+Although far from classically sophisticated, the Mall is certainly a symbol of modern Western Culture and a great way to make many Millionaire Dollars! Give your Tenants somewhere to shop ‘til they drop.
+Villa Luxury Bonus: 100%
+Get a 100% Income Bonus added to a single Villa Luxury, with the cunning use of your Decoration purchases.
+House Construction: 2 Parisian Town House
+24 whole Stories of beautifully polished Parisian style. Construct 2 so that twice as many Tenants can bask in its sumptuous luxury!
+Decoration Placement: 4 Japanese Trees
+A beautiful example of Eastern Culture - they have an unusual wide Influence, so they can be strategically planted to maximize House Income Bonus.
+Decoration Placement: 5 Bamboos
+Represent more Eastern Culture by sowing these 5 Bamboo plants. Their appeal means they have a big Influence!
+Decoration Placement: Big Garden
+Although expensive, the massive Influence and House Income Bonus combined with extraordinary attractiveness make this Big Garden well worth investing in.
+Mall Clients: 269
+Set up Houses around the Mall, so that at least 250 Customers can visit there regularly.
+Friend Visit: 139
+Go to your Friends Cities at least 120 times and have a look at how they are developing. This is a good way to evaluate your own play style and competition!
+Investment Invitations: 30 More
+Send out 30 more Investment Requests to your Friends, offering to help them start their businesses and improve your own portfolio at the same time!
+Decoration Placement: Statue of David
+A rare masterpiece Statue that will look perfect adorning any Millionaire City. Straight from Renaissance Italy – a true work of Art.
+Decoration Placement: 2 Arch of Success
+More indication of Eastern Culture can be benefitted from with this decorative Arch. Build a pair so your Millionaire City can become a Success too!
+Upgrade Friends Parisian Town House: 169
+Visit your Friends Cities and Upgrade 150 Parisian Town Houses by clicking on them!
+Contract Collection: 619
+Acquire 600 elapsed Rental Contracts from any Houses.
+Decoration Placement: Triumph Arch
+Another Decoration that allows massive House Income Bonus and Influence. Building one of these is ideal for increasing City Value.
+Upgrade Friends Skyscraper: 199
+Visit your Friends Cities and Upgrade 180 Skyscraper Houses by clicking on them!
+Commerce Construction: Bank
+All thriving Business and Commercial capitalists need a good Bank to store all of their money! A Bank Commerce will never be out of business.
+Commerce Construction: Hospital
+Looking after your Tenants is of paramount importance, and a Hospital allows strong growth in the long run. Construct a Hospital to keep your Tenants in good health!
+Spy Scheme
+My Friendly Rivals Ronald Goldtooth/Cindy Jewels and Sheik Oilfinger seem to be plotting again. Click on them in the Ranking Bar to access their City’s and have a sneaky peek what they are up to!
+House Construction: Futuristic City Block
+Industry thrives on cutting-edge technology, so allow your Tenants to live in only the most automated environment offered!
+Investment Successes: 39
+Complete 20 Investment Partnerships successfully with Friends! You both benefit from this business affiliation.
+House Construction: 2 Skyscraper Luxury
+Dazzling and designed with maximum efficiency in mind, the Skyscraper Luxury is perfect for creating bustling hives of activity. Build 2 for twice as much capital to be generated!
+Overtake Sheik
+I have known Sheik Oilfinger a long time, but not even I have known him to be this rich! Pass this Mission by developing more Company Value than Sheik!
+Loft Block Luxury Bonus: 150%
+Get a 150% Income Bonus added to a single Loft Block Luxury, by being smart with your Decorations.
+Commerce Collection: 300 Bank
+Obtain 300 Income Payments from the Bank.
+Friend Visit: 169
+Go to your Friends Cities at least 150 times and have a look at how they are developing and progressing. This is a good way to evaluate your own play style!
+House Construction: Chrysler Building
+The Art Deco classic straight from New York is the ideal place to inspire your Tenants working in your City. Invest in one to aggressively expand your profit margins.
+Expansion II!
+The time has come for you to purchase another expansion – the missing piece of your ever expanding Empire. Buy any that is unlocked and get ready to further extend your City.
+Decoration Placement: 20 Gold Maple
+These beautiful Gold Maples are ideal replacements for lesser Decorations, with their added Bonus percentage!
+Hospital Clients: 319
+Set up Houses around the Hospital, so that at least 300 Customers can be treated there regularly.
+Decoration Placement: 10 Spruce
+The Spruce Decoration is an ideal method to make any Millionaire City look more green and healthy. It also offers a healthy Bonus for you!
+Investment Invitations: 40 More
+Send out 40 more Investment Requests to your Friends, offering to help them start their businesses.
+Decoration Placement: 15 Birch Tree
+These are a great way to fill in the little gaps around your Millionaire City, since each of them maintain a strong Influence.
+Upgrade Friends Loft Block Luxury: 319
+Visit your Friends Cities and Upgrade 300 Loft Block Luxury Houses by clicking on them!
+House Construction: Designer House
+The world of Design collides with business in this cutting edge House. Perfect for the modern Tenant.
+House Construction: Chateau
+A gorgeous House to satisfy any Tenant. Looks spectacularly good in any garden area!
+Designer House Bonus: 200%
+Get a 200% Income Bonus added to a single Designer House, by placing Decorations in cunning positions!
+Football Star Contract Collection: 419
+Utilize the Football Star Contract 400 times when signing in Football Star Tenants to your Houses.
+Decoration Placement: 5 Chafa
+Chafas are very special garden Decorations with a massively strong Influence. Perfect for boosting the Bonuses of Houses.
+Commerce Construction: Opera House
+Build a busy Performing Arts centre for your Tenants! Guaranteed to quickly turn into profit with style.
+Friend Visit: 219
+Go to your Friends Cities 200 times and have a look at how they are developing. This is a good way to evaluate your own play style!
+Upgrade Friends Chateau Houses: 369
+Visit your Friends Cities and Upgrade 350 Chateau Houses by clicking on them!
+Decoration Placement: 3 Fountain II
+These Fantastic Fountains offer a wider influence than the first Fountain incarnation - ideal for any garden area or plaza.
+Contract Collection: 1019
+Acquire 1000 elapsed Rental Contracts from any Houses.
+Opera House Clients: 369
+Set up Houses around the Opera House, so that at least 350 Customers can find entertainment there.
+Commerce Collection: 600 Opera House
+Collect 600 Income Payments from the Opera House.
+Decoration Placement: 1 Pond of Wealth
+An amazing water feature that brings tranquility to any City, combined with a massive House Income Bonus!
+World of Wonder: Three More
+They take a long time to construct but the bonuses of built Wonders make them worth the wait! Build any 3 more Wonders of your choice to make your Tenants and Visitors gasp at their amazing scale!
+Commerce Construction: Casino
+Some would say this is an ultimate place for entertainment. Let your Tenants revel in the glitz and glamour whilst handing over their Dollars to You!
+Commerce Construction: Stadium
+An amazing place for your Tenants to view all of the latest live outdoor Sports! Build it as another leisure facility for their use.
+Casino Clients: 419
+Set up Houses around the Casino, so that at least 400 Customers can find entertainment there regularly.
+House Construction: Futuristic
+Straight from the future is this super space-age living facility. The pinnacle of modern architecture, it is complete with massive glass walls for panoramic views.
+Expansion III!
+Another Expansion is needed if you are to fully realize the potential of your Millionaire City! You can only grow through aggressive expanding!
+Upgrade Friends Futuristic Houses: 469
+Visit your Friends Cities and Upgrade 450 Futuristic Houses by clicking on them!
+Investment Successes: 49
+Complete 30 Investment Partnerships successfully with Friends and remember that you both benefit from this business affiliation.
+Commerce Construction: Hotel Midas
+A brilliant place for holidays and vacations, this exclusive luxury Commerce is ideal for the more discerning Tenant.
+Stadium Clients: 419
+Set up Houses around the Stadium, so that at least 400 Customers can go and see live Sports there.
+Hostesses Contract Collection: 519
+Use Hostesses Contract 400 times when signing in Hostess Tenants to your Houses.
+Commerce Construction: Midas Mall
+Building this Commerce results in a gigantic Influence over the neighboring Houses, and is certainly one of the best places your Tenants can spend their money!
+Commerce Collection: 800 Casino
+Obtain 800 Income Payments from the Casino.
+Commerce Collection: 1000 Stadium
+Collect 1000 Income Payments from the Stadium.
+Hotel Midas Clients: 469
+Set up Houses around the Hotel Midas, so that at least 450 Customers can find go and relax there regularly.
+Futuristic House Bonus: 230%
+Get a 230% Income Bonus added to a single Futuristic House, by being shrewd with Decorations!
+Commerce Collection: 1200 Hotel Midas
+Collect 1200 Income Payments from the Hotel Midas.
+Contract Collection: 1269
+Collect 1250 Rents Contracts from any Houses.
+Friend Visit: 319
+Go to your Friends Cities at least 300 times and have a look at how they are developing. This is a good way to size up your competition!
+Midas Mall Clients: 469
+Set up Houses around the Midas Mall, so that at least 450 Customers can go and shop there often.
+Commerce Collection: 1500 Midas Mall
+Collect 1500 Income Payments from the Midas Mall.
+House Construction: Luxury Mansion 
+A beautiful place to stay for the most demanding of Tenants! Polished marble floors and solid Gold window frames add to the abundant sumptuousness.
+Investment Invitations: 50 More
+Send out 50 more Investment Requests to your Friends, offering to help them start their businesses and help your own portfolio at the same time.
+Expansion IV!
+Time to Expand your City again! You can’t have too much space for luxury. Buy any expansion that is currently unlocked.
+Upgrade Friends Luxury Mansion Houses: 519
+Visit your Friends Cities and Upgrade 500 Luxury Mansion Houses by clicking on them!
+Luxury Mansion Bonus: 250%
+Get a 250% Income Bonus added to a single Luxury Mansion, by placing your Decorations in the best areas!
+Commerce Construction: Baseball Stadium
+One of the greatest Commerces available for purchase - absolutely guaranteed to create a massive profit with each payment turnover for you, should you invest.
+Artists Contract Collection: 819
+Use Artists Contract 800 times when signing in Artist Tenants to your Houses.
+House Construction: Luxury Mansion II
+Twice as opulent as the original Luxury Mansion, this is ideal for Tenants who are twice as wealthy as well! Excessively extravagance for those who can afford it.
+Baseball Stadium Clients: 519
+Set up Houses around the Baseball Stadium, so that at least 500 Customers can go and watch Games there!
+Upgrade Friends Luxury Mansion II Houses: 619
+Visit your Friends Cities and Upgrade 600 Luxury Mansion II Houses by clicking on them!
+Luxury Mansion II Bonus: 280%
+Get a 280% Income Bonus added to a single Luxury Mansion II, by being extra clever with Decoration placement.
+Commerce Collection: 1750 Baseball Stadium
+Collect 1750 Income Payments from the Baseball Stadium.
+Friend Visit: 419
+Go to your Friends Cities at least 400 times and have a look at how they are developing. A Chance to size up the competition.
+Contract Collection: 1519
+Collect 1500 Rents from any Houses.
+House Construction: Super Skyscraper
+The next in the Skyscraper range is the Super model of skyscrapers. It will gloriously stand above your other City buildings.
+House Construction: Skyscraper Ultimate
+Habitable by even more Tenants than the Super Skyscraper, the Ultimate offers even more architectural excellence in a brilliant aerodynamic shape.
+Friends Contract Collection: 1019
+Use Friends Contract 1000 times when signing in Friends Tenants to your Houses.
+Investment Successes: 59
+Make 40 successful Investments on Friends and see your portfolio explode!
+Upgrade Friends Super Skyscraper Houses: 719
+Visit your Friends Cities and Upgrade 700 Super Skyscraper Houses by clicking on them!
+House Construction: Highland Castle
+A magnificently beautiful country Castle that offers culturally significant luxury! Just be careful around midnight, this Castle might be haunted…
+Skyscraper Ultimate Bonus: 290%
+Get a 290% Income Bonus added to a single Skyscraper Ultimate, by being a shrewd Decoration placer!
+Contract Collection: 2019
+Acquire 2000 elapsed Rental Contracts from any Houses.
+Expansion V!
+Once again, it is worth buying an unlocked Expansion for your City! Certainly a wise purchase since you’ll need loads of space for your most ambitious real estate ventures to date!
+World of Wonder: Four More
+Wonders always give fantastic Bonuses that make up for their long construction time. Build any 4 more so that your Tenants can enjoy their colossal scale, while you enjoy their colossal Bonuses!
+House Construction: Brazilian Skyscraper
+The pinnacle of the Skyscraper range offers an unprecedented amount of Tenants to stay. Truly the crown jewel of all Skyscrapers, enough to impress any magnate!
+Commerce Collection: 50 Coffee Shop
+Obtain 50 Income Payments from the Coffee Shop.
+Commerce Collection: 100 Flower Shop
+Obtain 50 Income Payments from the Flower Shop. 
+Commerce Collection: 200 Pet Shop
+Obtain 200 Income Payments from the Pet Shop.
+Commerce Collection: 300 Bowling Alley
+Obtain 300 Income Payments from the Bowling Alley.
+Commerce Collection: 600 Bank
+Obtain 600 Income Payments from the Bank.
+Commerce Collection: 800 Opera House
+Obtain 800 Income Payments from the Opera House.
+Commerce Collection: 1000 Casino
+Obtain 1000 Income Payments from the Casino.
+Commerce Collection: 1200 Stadium
+Obtain 1200 Income Payments from the Stadium.
+Commerce Collection: 1500 Hotel Midas
+Obtain 1500 Income Payments from the Hotel Midas.
+Commerce Collection: 2000 Midas Mall
+Obtain 2000 Income Payments from the Midas Mall.
+Commerce Collection: 2500 Baseball Stadium
+Obtain 2500 Income Payments from the Baseball Stadium.
+Pizzeria Clients: 29
+Set up Houses around the Pizzeria, so that at least 10 Customers can visit there regularly.
+Coffee Shop Clients: 43
+Set up Houses around the Coffee Shop, so that at least 24 Customers can visit there regularly.
+Flower Shop Clients: 69
+Set up Houses around the Flower Shop, so that at least 50 Customers can visit there regularly.
+Pet Shop Clients: 99
+Set up Houses around the Pet Shop, so that at least 80 Customers can visit there regularly.
+Bowling Alley Clients: 269
+Set up Houses around the Bowling Alley, so that at least 250 Customers can visit there regularly.
+Jewelry Store Clients: 239
+Set up Houses around the Jewelry Store, so that at least 150 Customers can visit there regularly.
+Mall Clients: 319
+Set up Houses around the Mall, so that at least 300 Customers can visit there regularly.
+Hospital Clients: 369
+Set up Houses around the Hospital, so that at least 350 Customers can be treated there regularly.
+Opera House Clients: 419
+Set up Houses around the Opera House, so that at least 400 Customers can find entertainment there often.
+Casino Clients: 469
+Set up Houses around the Casino, so that at least 450 Customers can find entertainment there regularly.
+Stadium Clients: 469
+Set up Houses around the Stadium, so that at least 450 Customers can find go and see live Sports there often.
+Hotel Midas Clients: 519
+Set up Houses around the Hotel Midas, so that at least 500 Customers can find go and relax there regularly.
+Midas Mall Clients: 519
+Set up Houses around the Midas Mall, so that at least 500 Customers can go and shop there often.
+Baseball Stadium Clients: 569
+Set up Houses around the Baseball Stadium, so that at least 550 Customers can go and watch Games there!
+Upgrade Your Friends Buildings: 25
+Upgrade any 6 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 39
+Upgrade any 20 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 69
+Upgrade any 50 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 119
+Upgrade any 100 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 219
+Upgrade any 200 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 419
+Upgrade any 400 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 669
+Upgrade any 650 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 869
+Upgrade any 850 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 1019
+Upgrade any 1000 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 1269
+Upgrade any 1250 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 1519
+Upgrade any 1500 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 1769
+Upgrade any 1750 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 2019
+Upgrade any 2000 of your Friends Buildings by clicking on them in their City!
+Upgraded Income Collection: 119
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 100 from these specially granted Buildings.
+Upgraded Income Collection: 219
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 200 from these specially granted Buildings.
+Upgraded Income Collection: 419
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 400 from these specially granted Buildings.
+Upgraded Income Collection: 819
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 400 from these specially granted Buildings.
+Upgraded Income Collection: 1219
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 1200 from these specially granted Buildings.
+Upgraded Income Collection: 1619
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 1600 from these specially granted Buildings.
+Upgraded Income Collection: 2019
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 2000 from these specially granted Buildings.
+Upgraded Income Collection: 2519
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 2500 from these specially granted Buildings.
+Upgraded Income Collection: 3019
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 3000 from these specially granted Buildings.
+Upgraded Income Collection: 3519
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 3500 from these specially granted Buildings.
+Upgraded Income Collection: 4019
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 4000 from these specially granted Buildings.
+Upgraded Income Collection: 5019
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 5000 from these specially granted Buildings.
+Upgraded Income Collection: 6419
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 6400 from these specially granted Buildings.
+Upgraded Income Collection: 7419
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 7400 from these specially granted Buildings.
+Upgraded Income Collection: 8519
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 8500 from these specially granted Buildings.
+City Value: 5 Million
+Accumulate a total City Value of 5,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 10 Million
+Accumulate a total City Value of 10,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 50 Million
+Accumulate a total City Value of 50,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 120 Million
+Accumulate a total City Value of 120,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 240 Million
+Accumulate a total City Value of 240,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 500 Million
+Accumulate a total City Value of 500,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 1000 Million
+Accumulate a total City Value of 1000,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 2000 Million
+Accumulate a total City Value of 2000,000,000 Dollars to prove to me and them just how successfully rich you can be!
+Millionaire Dollar count: 5,000,019
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 5,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 10,000,019
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 10,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 20,000,019
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 20,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 40,000,019
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 40,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 80,000,019
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 80,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 150,000,019
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 150,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 250,000,019
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 250,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 400,000,019
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 400,000,000 Millionaire Dollars ready to spend!

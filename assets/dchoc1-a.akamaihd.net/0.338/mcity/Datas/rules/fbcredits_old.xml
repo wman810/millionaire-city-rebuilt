@@ -1,0 +1,7 @@
+<FBcredits>
+	<Definition gold="250" dolars="50" freeGold="60"/>
+	<Definition gold="200" dolars="40" freeGold="40"/>
+	<Definition gold="100" dolars="20" freeGold="15"/>
+	<Definition gold="50" dolars="10" freeGold="5"/>
+	<Definition gold="25" dolars="5" freeGold="0"/>
+</FBcredits>

@@ -1,0 +1,9 @@
+<crosspromotionDefinitions>
+  <Definition sku="1" image="logomma" url="http://apps.facebook.com/mmaprofighter/?src=xm_ingame_mc" />
+  <Definition sku="16" image="logohollywood" url="http://apps.facebook.com/hollywoodcity/?src=xm_ingame_mc" />
+  <Definition sku="20" image="logovegas" url="http://apps.facebook.com/vegascity/?src=xm_ingame_mc" />
+  <Definition sku="19" image="logoisland" url="http://apps.facebook.com/islandgod/?src=xm_ingame_mc" />
+  <Definition sku="12" image="logoepic" url="http://apps.facebook.com/epicfighters/?src=xm_ingame_mc" />
+  <Definition sku="21" image="logozombie" url="http://platform-redirect.vz-modules.net/r/Gadgets/Install/5193/" tidTitle="TID_UNLOCK_ZL_TITLE" tidBody="TID_UNLOCK_ZL_BODY" />
+</crosspromotionDefinitions>
+

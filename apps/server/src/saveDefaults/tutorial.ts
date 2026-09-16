@@ -36,7 +36,11 @@ import {
   isHouseSku,
   isItemElement
 } from "./items.js";
-import { normalizeConstructionState, normalizeHouseRentState } from "./timers.js";
+import {
+  normalizeConstructionState,
+  normalizeHouseRentState,
+  normalizeOfflineTimerState
+} from "./timers.js";
 
 type PollMissionRule = {
   sku: string;
@@ -76,7 +80,7 @@ export function normalizeCompletedTutorialUniverse(document: JsonObject, nowMs =
   changed = settleStaleTutorialPollMissions(profile) || changed;
   changed = migrateBoughtRivalItemsToMine(rivalItems, mineItems, String(mineCompany.sid ?? STARTER_COMPANY_MINE_SID)) || changed;
   changed = repairLegacyTutorialBungalowDuplicate(mineItems, nowMs) || changed;
-  changed = normalizeTimedItemStates(mineItems, nowMs) || changed;
+  changed = normalizeLegacyHouseRentStates(mineItems, nowMs) || changed;
 
   if (needsStarterCashRepair) {
     profile.DCCash = "0";
@@ -130,6 +134,19 @@ export function normalizeCompletedTutorialUniverse(document: JsonObject, nowMs =
   upsertChunkElement(mapChildren, "Terrain", terrainTiles);
   upsertChunkElement(mapChildren, "Road", roadTiles);
   return changed;
+}
+
+export function normalizeCompletedTutorialTimedItems(document: JsonObject, nowMs = Date.now()): boolean {
+  const profile = getProfileElement(document);
+  const mineCompany = getCompanyElement(document, "0");
+  const rivalCompany = getCompanyElement(document, "1");
+  if (!profile || !mineCompany || String(profile.tutorialEnd ?? "0") !== "1") {
+    return false;
+  }
+
+  const mineItems = getElementChildren(mineCompany, "Company");
+  const rivalItems = rivalCompany ? getElementChildren(rivalCompany, "Company") : [];
+  return normalizeTimedItemStates([...mineItems, ...rivalItems], nowMs);
 }
 
 export function normalizeIncompleteTutorialUniverse(document: JsonObject): boolean {
@@ -562,12 +579,37 @@ function normalizeTimedItemStates(items: JsonObject[], nowMs: number): boolean {
       continue;
     }
 
-    if (isHouseSku(String(item.sku ?? "")) && String(state.id ?? "") !== "0") {
+    if (String(item.isSuspended ?? "0") === "1") {
+      continue;
+    }
+
+    if (isHouseSku(String(item.sku ?? "")) && String(state.id ?? "") === "1") {
       changed = normalizeHouseRentState(state, itemChildren, nowMs) || changed;
-    }
-    if (String(state.id ?? "") === "0") {
+    } else if (String(state.id ?? "") === "0") {
       changed = normalizeConstructionState(String(item.sku ?? ""), state, nowMs) || changed;
+    } else {
+      changed = normalizeOfflineTimerState(state, nowMs) || changed;
     }
+  }
+
+  return changed;
+}
+
+function normalizeLegacyHouseRentStates(items: JsonObject[], nowMs: number): boolean {
+  let changed = false;
+
+  for (const item of items) {
+    if (!isItemElement(item) || !isHouseSku(String(item.sku ?? ""))) {
+      continue;
+    }
+
+    const itemChildren = getElementChildren(item, "Item");
+    const state = findElementChild(itemChildren, "State");
+    if (!state || String(state.id ?? "") === "0") {
+      continue;
+    }
+
+    changed = normalizeHouseRentState(state, itemChildren, nowMs) || changed;
   }
 
   return changed;

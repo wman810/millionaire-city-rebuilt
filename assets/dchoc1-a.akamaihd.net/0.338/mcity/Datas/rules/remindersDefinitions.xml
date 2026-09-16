@@ -1,0 +1,12 @@
+<Reminders>
+  <Definition sku="1" feedImg="reminder_advisor1" action="invite" image="reminder_invite" background="reminder_background_02" />
+  <Definition sku="2" feedImg="reminder_advisor1" action="partners" image="reminder_partners" background="reminder_background_02" />
+  <Definition sku="3" feedImg="reminder_advisor1" action="upgrades" background="reminder_background_02" />
+  <Definition sku="4" feedImg="reminder_advisor5" action="tool_move" image="reminder_move" />
+  <Definition sku="5" feedImg="reminder_advisor4" action="tool_collect" image="reminder_collect" />
+  <Definition sku="6" feedImg="reminder_advisor3" action="tool_contract" image="reminder_contract" />
+  <Definition sku="7" feedImg="reminder_advisor1" action="none" />
+  <Definition sku="8" feedImg="reminder_advisor1" action="invest" background="reminder_background_02" />
+  <Definition sku="9" feedImg="reminder_advisor1" action="goToMissions" missionSku="64" />
+</Reminders>
+

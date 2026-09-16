@@ -1,4 +1,21 @@
 export const GAME_VERSION = "0.501";
+export const ORIGINAL_GAME_VERSION = "0.338";
+export const DEFAULT_GAME_VARIANT = "current" as const;
+export const GAME_VARIANTS = {
+  current: {
+    gameVersion: GAME_VERSION,
+    label: "Current revival version"
+  },
+  original: {
+    gameVersion: ORIGINAL_GAME_VERSION,
+    label: "Original archived version"
+  }
+} as const;
+export type GameVariant = keyof typeof GAME_VARIANTS;
+
+export function isGameVariant(value: unknown): value is GameVariant {
+  return typeof value === "string" && Object.prototype.hasOwnProperty.call(GAME_VARIANTS, value);
+}
 export const DEFAULT_USER_ID = 1;
 export const DEFAULT_USER_EXT_ID = "100000000000001";
 export const DEFAULT_ADVISOR_IDS = "100,101";
@@ -40,6 +57,7 @@ export const MUTATION_COMMANDS = [
 export const NOOP_COMMANDS = [
   "ask_for_help",
   "ask_for_cash",
+  "help_accelerate",
   "postReward",
   "invest_cancel",
   "invest_get_inversion",

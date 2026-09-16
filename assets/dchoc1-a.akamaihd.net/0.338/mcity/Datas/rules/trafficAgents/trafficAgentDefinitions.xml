@@ -1,0 +1,14 @@
+<Definitions>
+	<Definition sku="car_hotel" speed="30" width="28" heigh="14" spawnCondition="commerce_hotel"/>
+	<Definition sku="car_club" speed="40" width="28" heigh="14" spawnCondition="commerce_night_club"/>
+	<Definition sku="car_casino" speed="50" width="28" heigh="14" spawnCondition="commerce_casino"/>
+	<Definition sku="car_01" speed="30" width="21" heigh="13"/>	
+	<Definition sku="car_02" speed="50" width="21" heigh="13"/>
+	<Definition sku="car_03" speed="60" width="21" heigh="13"/>	
+	<Definition sku="car_04" speed="50" width="21" heigh="13"/>
+	<Definition sku="car_05" speed="70" width="21" heigh="13"/>
+	<!-- <Definition sku="Cars_Halloween_01" speed="30" width="21" heigh="13"/> -->	
+	<!-- <Definition sku="Cars_Halloween_02" speed="50" width="21" heigh="13"/> -->
+	<!-- <Definition sku="Cars_Halloween_03" speed="60" width="21" heigh="13"/> -->	
+	<!-- <Definition sku="Cars_Horror_shop" speed="30" width="28" heigh="14"/> -->	
+</Definitions>

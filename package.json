@@ -2,7 +2,7 @@
   "name": "millionaire-city-private-server",
   "private": true,
   "version": "0.1.0",
-  "description": "Private server and desktop launcher for Millionaire City 0.501",
+  "description": "Private server and desktop launcher for Millionaire City 0.338 and 0.501",
   "main": "apps/desktop/dist/main.js",
   "author": "Millionaire City Revival contributors",
   "workspaces": [
@@ -40,6 +40,7 @@
     "@mcity/shared": "^0.1.0",
     "better-sqlite3": "^11.10.0",
     "express": "^4.22.2",
+    "jquery": "3.7.1",
     "selfsigned": "^3.0.1"
   },
   "build": {

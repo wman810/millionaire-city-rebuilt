@@ -1,0 +1,20 @@
+<Definitions>
+  <Definition sku="1" name="No early unlock" enabled="0" />
+  <Definition sku="2" name="Early unlock" enabled="0" />
+  <Definition sku="3" name="No gold items" enabled="0" />
+  <Definition sku="4" name="Gold items in shop" enabled="0" />
+  <Definition sku="5" name="Gold mission reward" enabled="0" />
+  <Definition sku="6" name="No shop tabs" enabled="0" />
+  <Definition sku="7" enabled="0" />
+  <Definition sku="8" name="Free tools" enabled="0" />
+  <Definition sku="9" name="Cheaper expansions" enabled="0" />
+  <Definition sku="10" name="Special offers" enabled="0" />
+  <Definition sku="11" enabled="0" />
+  <Definition sku="12" enabled="0" />
+  <Definition sku="13" name="Start in low quality" enabled="0" />
+  <Definition sku="14" name="More gold items in shop" enabled="0" />
+  <Definition sku="15" name="Investment Unlock by level" enabled="0" />
+  <Definition sku="16" name="Investments Gold rewards and New Investments mission" enabled="0" />
+  <Definition sku="17" name="Alternative Tutorial music" enabled="0" />
+</Definitions>
+

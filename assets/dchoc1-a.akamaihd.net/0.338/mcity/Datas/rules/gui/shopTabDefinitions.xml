@@ -1,0 +1,8 @@
+<Definitions>
+	<Definition sku="Houses"/>
+	<Definition sku="Commerces"/>
+	<Definition sku="Decorations"/>
+	<Definition sku="Wonders"/>
+	<Definition sku="new_items" usesIconOnItemShop="1" feedImg="newitemimage.png"/>
+	<Definition sku="featured"/>
+</Definitions>

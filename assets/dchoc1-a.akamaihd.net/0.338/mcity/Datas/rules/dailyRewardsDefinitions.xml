@@ -1,0 +1,18 @@
+<Definitions>
+  <Definition sku="reward_01" bonusType="exp" bonusValue="80" group="1" chances="20" />
+  <Definition sku="reward_02" bonusType="coins" bonusValue="8000" group="1" chances="40" />
+  <Definition sku="reward_03" bonusType="coins" bonusValue="10000" group="1" chances="40" />
+  <Definition sku="reward_04" bonusType="exp" bonusValue="120" group="2" chances="50" />
+  <Definition sku="reward_05" bonusType="coins" bonusValue="20000" group="2" chances="25" />
+  <Definition sku="reward_06" bonusType="coins" bonusValue="25000" group="2" chances="25" />
+  <Definition sku="reward_07" bonusType="exp" bonusValue="150" group="3" chances="30" />
+  <Definition sku="reward_08" bonusType="coins" bonusValue="30000" group="3" chances="35" />
+  <Definition sku="reward_09" bonusType="coins" bonusValue="35000" group="3" chances="35" />
+  <Definition sku="reward_10" bonusType="exp" bonusValue="190" group="4" chances="40" />
+  <Definition sku="reward_11" bonusType="coins" bonusValue="50000" group="4" chances="30" />
+  <Definition sku="reward_12" bonusType="coins" bonusValue="55000" group="4" chances="30" />
+  <Definition sku="reward_13" bonusType="coins" bonusValue="250000" group="5" chances="40" />
+  <Definition sku="reward_14" bonusType="coins" bonusValue="300000" group="5" chances="30" />
+  <Definition sku="reward_15" bonusType="cash" bonusValue="1" group="5" chances="30" />
+</Definitions>
+

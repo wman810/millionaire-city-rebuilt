@@ -4,7 +4,14 @@ import path from "path";
 import express from "express";
 import https from "https";
 import selfsigned from "selfsigned";
-import { buildCommandEnvelope, buildLoginEnvelope, DEFAULT_SYNC, normalizeIncomingCommandList, SAVE_TAGS } from "@mcity/shared";
+import {
+  buildCommandEnvelope,
+  buildLoginEnvelope,
+  DEFAULT_SYNC,
+  GAME_VERSION,
+  normalizeIncomingCommandList,
+  SAVE_TAGS
+} from "@mcity/shared";
 import type { PacketCommand } from "@mcity/shared";
 import type { JsonObject } from "@mcity/shared/dist/types.js";
 import type { Server } from "http";
@@ -29,13 +36,25 @@ const LOCAL_PROFILE_PICTURE_MIME_META_KEY = "local_profile_picture_mime";
 const LOCAL_PROFILE_PICTURE_VERSION_META_KEY = "local_profile_picture_version";
 const HEALTH_CHALLENGE_HEADER = "x-mcity-health-challenge";
 const HEALTH_PROOF_HEADER = "x-mcity-health-proof";
+const LAUNCH_TOKEN_QUERY_PARAMETER = "launchToken";
+const LAUNCH_TOKEN_HEADER = "x-mcity-launch-token";
+const LAUNCH_SESSION_COOKIE = "mcity_launch_session";
+const SENSITIVE_LOG_QUERY_PARAMETERS = new Set([
+  "access_token",
+  "hash",
+  "launchToken",
+  "oauth_token",
+  "sig",
+  "signed_request",
+  "token"
+]);
 const LAUNCHER_CONTENT_SECURITY_POLICY = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline'",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob:",
   "object-src 'self'",
-  "connect-src 'self' https://graph.facebook.com https://api.facebook.com",
+  "connect-src 'self'",
   "frame-src 'self'",
   "child-src 'self'",
   "base-uri 'none'",
@@ -64,6 +83,16 @@ const COLLECTIBLE_RULE_FILES = new Set([
   "collectiblesRewardDefinitions.xml"
 ]);
 const REWARD_ONLY_ITEM_SKUS = new Set(["commerce_vip"]);
+// These recovered old-version variants share localized TIDs with newer shop entries.
+const HIDDEN_DUPLICATE_SHOP_ITEM_SKUS = new Set([
+  "commerces_eco_resort",
+  "decorations_tree_17",
+  "houses_012_002",
+  "houses_012_003",
+  "houses_015_001_bavarian",
+  "houses_015_002_bavarian",
+  "wonder_new_year"
+]);
 
 interface ServerApp {
   config: ServerConfig;
@@ -104,16 +133,34 @@ interface LocalProfilePictureUpload {
 }
 
 export function createServerApp(config = getServerConfig()): ServerApp {
-  const database = new MCityDatabase(config.dbPath);
-  const repository = new SaveRepository(database);
-  const commands = new CommandService(repository);
-  const app = express();
-  const goldPackageRewards = loadGoldPackageRewards(path.join(config.assetRoot, "Datas", "rules", "fbcredits.xml"));
-  const cashToCoins = loadCashToCoins(path.join(config.assetRoot, "Datas", "rules", "settings.xml"));
-  const levelXpThresholds = loadLevelXpThresholds(path.join(config.assetRoot, "Datas", "rules", "XPTable.xml"));
-  const archivedItemSwfs = createArchivedItemSwfSet(config);
+  const processVariant = getServerConfig().gameVariant;
+  if (config.gameVariant !== processVariant) {
+    throw new Error(
+      `The ${config.gameVariant} server config cannot run while the process is configured for ${processVariant}. ` +
+      `Set MCITY_GAME_VARIANT=${config.gameVariant} before starting the server.`
+    );
+  }
 
-  repository.ensureDefaultUser();
+  const app = express();
+  const assetRoute = config.assetRoute;
+  const dataRoute = `${assetRoute}/Datas`;
+  const launcherDataRoute = `/mcity/${GAME_VERSION}/Datas`;
+  const clientSwfUrl = `/client/${config.gameVersion}/Dollars.private.swf`;
+  const goldPackageRewards = loadGoldPackageRewards(path.join(config.dataRoot, "rules", "fbcredits.xml"));
+  const cashToCoins = loadCashToCoins(path.join(config.dataRoot, "rules", "settings.xml"));
+  const levelXpThresholds = loadLevelXpThresholds(path.join(config.dataRoot, "rules", "XPTable.xml"));
+  const archivedItemSwfs = createArchivedItemSwfSet(config);
+  const database = new MCityDatabase(config.dbPath);
+  const repository = new SaveRepository(database, config.gameVariant);
+  const commands = new CommandService(repository);
+  const launchSessionProof = createLaunchSessionProof(config.launchSecret);
+
+  try {
+    repository.ensureDefaultUser();
+  } catch (error) {
+    database.close();
+    throw error;
+  }
 
   app.disable("x-powered-by");
   app.use(express.urlencoded({ extended: false, limit: "5mb" }));
@@ -123,7 +170,7 @@ export function createServerApp(config = getServerConfig()): ServerApp {
       next();
       return;
     }
-    console.log(`[http] ${req.method} ${req.originalUrl}`);
+    console.log(`[http] ${req.method} ${sanitizeRequestUrlForLog(req.originalUrl)}`);
     next();
   });
 
@@ -146,6 +193,14 @@ export function createServerApp(config = getServerConfig()): ServerApp {
 
   app.all("/event/track", (_req, res) => {
     res.type("text/plain").send("ok");
+  });
+
+  app.use("/local", (req, res, next) => {
+    if (!isLaunchAuthorized(req, launchSessionProof)) {
+      res.status(403).json({ ok: false, error: "Launcher authorization required." });
+      return;
+    }
+    next();
   });
 
   app.get("/local/profile", (_req, res) => {
@@ -190,8 +245,107 @@ export function createServerApp(config = getServerConfig()): ServerApp {
     res.type("image/gif").send(TRANSPARENT_GIF);
   });
 
+  app.get("/local/jquery.min.js", (_req, res) => {
+    res.type("application/javascript").sendFile(
+      path.join(config.workspaceRoot, "node_modules", "jquery", "dist", "jquery.min.js")
+    );
+  });
+
+  app.get("/local/social-wall.js", (_req, res) => {
+    const socialWallPath = path.join(config.launcherAssetRoot, "Datas", "js", "SocialWall.js");
+    if (!fs.existsSync(socialWallPath)) {
+      res.status(404).end();
+      return;
+    }
+    const source = fs
+      .readFileSync(socialWallPath, "utf8")
+      .replaceAll("https://graph.facebook.com/", "/local/social-picture/");
+    res.setHeader("cache-control", "no-store");
+    res.type("application/javascript").send(source);
+  });
+
+  app.get("/local/social-picture/:id/picture", (req, res) => {
+    res.setHeader("cache-control", "no-store");
+    const socialPicture = getLocalSocialPicture(repository, config, String(req.params.id ?? ""));
+    if (socialPicture) {
+      res.type(socialPicture.mimeType).sendFile(socialPicture.filePath);
+      return;
+    }
+    res.type("image/gif").send(TRANSPARENT_GIF);
+  });
+
+  app.use("/dollar", (req, res, next) => {
+    if (!isLaunchAuthorized(req, launchSessionProof)) {
+      res.status(403).json({ success: 0 });
+      return;
+    }
+    next();
+  });
+
+  app.get("/dollar/info", (req, res) => {
+    if (String(req.query.action ?? "") !== "getNeighborAllInfo") {
+      res.status(400).json({ neighbors: [] });
+      return;
+    }
+    res.json({
+      neighbors: [
+        { non_neighbors: [] },
+        { pending: [] },
+        { neighbors: [100, 101] }
+      ]
+    });
+  });
+
+  app.all("/dollar/AcceptFacebookRequest", (req, res) => {
+    if (String(req.query.action ?? "") === "request") {
+      res.json({ success: 1, data: [] });
+      return;
+    }
+    res.type("text/plain").send("1");
+  });
+
+  app.all("/dollar/friend_select", (_req, res) => {
+    res.type("text/plain").send("1");
+  });
+
   app.get("/launcher", (req, res) => {
-    const appUrl = `https://127.0.0.1:${config.httpsPort}`;
+    if (config.launchSecret) {
+      const launcherUrl = new URL(req.originalUrl, "https://127.0.0.1");
+      const queryLaunchToken = launcherUrl.searchParams.get(LAUNCH_TOKEN_QUERY_PARAMETER);
+      const suppliedLaunchToken = queryLaunchToken ?? req.get(LAUNCH_TOKEN_HEADER);
+      let hasLaunchSession = isLaunchAuthorized(req, launchSessionProof);
+
+      if (suppliedLaunchToken) {
+        if (!hasLaunchSession && !safeSecretEquals(suppliedLaunchToken, config.launchSecret)) {
+          res.status(403).type("text/plain").send("Launcher authorization failed.");
+          return;
+        }
+
+        if (!hasLaunchSession) {
+          res.cookie(LAUNCH_SESSION_COOKIE, launchSessionProof, {
+            httpOnly: true,
+            path: "/",
+            sameSite: "strict",
+            secure: true
+          });
+          hasLaunchSession = true;
+        }
+        if (queryLaunchToken != null) {
+          launcherUrl.searchParams.delete(LAUNCH_TOKEN_QUERY_PARAMETER);
+          res.redirect(303, `${launcherUrl.pathname}${launcherUrl.search}`);
+          return;
+        }
+      }
+
+      if (!hasLaunchSession) {
+        res.status(403).type("text/plain").send("Launcher authorization required.");
+        return;
+      }
+    }
+
+    const appUrl = req.secure
+      ? `https://127.0.0.1:${config.httpsPort}`
+      : `http://127.0.0.1:${config.httpPort}`;
     const debugMode = isTruthyQueryValue(req.query.debug) || process.env.MCITY_SWF_DEBUG === "1";
     const climateMode = isTruthyQueryValue(req.query.climate) || process.env.MCITY_USE_CLIMATE === "1";
     const oldItemDesigns = isTruthyQueryValue(req.query.oldItems) || process.env.MCITY_OLD_ITEM_DESIGNS === "1";
@@ -204,7 +358,10 @@ export function createServerApp(config = getServerConfig()): ServerApp {
     res.type("html").send(
       renderLauncherHtml({
         appUrl,
-        assetsBaseUrl: `${appUrl}/mcity/0.501/Datas/`,
+        assetsBaseUrl: `${appUrl}/mcity/${GAME_VERSION}/Datas/`,
+        gameAssetsBaseUrl: `${appUrl}${dataRoute}/`,
+        gameVersion: config.gameVersion,
+        clientSwfUrl,
         serverBaseUrl: appUrl,
         userId: config.launcherUserId,
         oauthToken: "local-oauth-token",
@@ -216,12 +373,13 @@ export function createServerApp(config = getServerConfig()): ServerApp {
         oldItemDesigns,
         localUserName: localProfile.userName,
         localCityName: localProfile.cityName,
-        localProfilePictureUrl: localProfile.profilePictureUrl
+        localProfilePictureUrl: localProfile.profilePictureUrl,
+        advisorName: getLocalAdvisorName(repository)
       })
     );
   });
 
-  app.get("/client/Dollars.private.swf", (_req, res) => {
+  app.get([clientSwfUrl, "/client/Dollars.private.swf"], (_req, res) => {
     res.sendFile(config.privateClientSwfPath);
   });
 
@@ -244,11 +402,11 @@ export function createServerApp(config = getServerConfig()): ServerApp {
 </cross-domain-policy>`);
   });
 
-  app.get("/mcity/0.501/Datas/rules/TutorialHQPositions.xml", (_req, res) => {
+  app.get(`${dataRoute}/rules/TutorialHQPositions.xml`, (_req, res) => {
     res.sendFile(config.tutorialHQPositionsPath);
   });
 
-  app.get("/mcity/0.501/Datas/rules/:fileName", (req, res, next) => {
+  app.get(`${dataRoute}/rules/:fileName`, (req, res, next) => {
     const fileName = path.basename(String(req.params.fileName ?? ""));
     const patchedXml =
       createAvailableItemRulesXml(config, fileName, archivedItemSwfs) ??
@@ -261,24 +419,32 @@ export function createServerApp(config = getServerConfig()): ServerApp {
     res.type("application/xml").send(patchedXml);
   });
 
-  app.get("/mcity/0.501/Datas/userData/fan.xml", (_req, res) => {
+  app.get(`${dataRoute}/userData/fan.xml`, (_req, res) => {
     res.type("application/xml").send('<fan value="2" bookmark="0" />');
   });
 
-  app.get("/mcity/0.501/Datas/userData/giftsList.xml", (_req, res) => {
+  app.get(`${dataRoute}/userData/giftsList.xml`, (_req, res) => {
     res.type("application/xml").send("<giftsList />");
   });
 
-  app.get("/mcity/0.501/Datas/userData/checkSendMail.xml", (_req, res) => {
+  app.get(`${dataRoute}/userData/checkSendMail.xml`, (req, res) => {
+    if (!isLaunchAuthorized(req, launchSessionProof)) {
+      res.status(403).end();
+      return;
+    }
     markVipClubEmailSubmitted(repository);
     res.type("application/xml").send("<response><status>0</status></response>");
   });
 
-  app.get("/mcity/0.501/Datas/userData/checkMail.html", (_req, res) => {
+  app.get(`${dataRoute}/userData/checkMail.html`, (_req, res) => {
     res.type("text/plain").send(isVipClubEmailSubmitted(repository) ? "1" : "0");
   });
 
-  app.get(["/registration/register", "/registration/register/"], (_req, res) => {
+  app.get(["/registration/register", "/registration/register/"], (req, res) => {
+    if (!isLaunchAuthorized(req, launchSessionProof)) {
+      res.status(403).end();
+      return;
+    }
     markVipClubEmailSubmitted(repository);
     res.type("application/xml").send("<response><status>0</status></response>");
   });
@@ -287,15 +453,128 @@ export function createServerApp(config = getServerConfig()): ServerApp {
     res.type("text/plain").send(isVipClubEmailSubmitted(repository) ? "1" : "0");
   });
 
-  app.get("/mcity/0.501/Datas/splash.swf", (_req, res) => {
+  app.get(`${dataRoute}/splash.swf`, (_req, res) => {
     res.sendFile(config.tutorialSplashPath);
   });
 
-  app.use("/mcity/0.501", createCaseInsensitiveAssetMiddleware(config));
+  app.get(
+    [
+      `${launcherDataRoute}/tabs/social_wall/general/:fileName`,
+      `${launcherDataRoute}/tabs/social_wall/explosions/:fileName`,
+      `${launcherDataRoute}/tabs/social_wall/free_gifts/:fileName`
+    ],
+    (req, res, next) => {
+      const fileName = path.basename(String(req.params.fileName ?? ""));
+      const requestedPath = path.join(config.launcherAssetRoot, "Datas", ...req.path
+        .split("/")
+        .slice(-4, -1), fileName);
+      if (fs.existsSync(requestedPath)) {
+        next();
+        return;
+      }
 
-  app.get("/mcity/0.501/Datas/feed/:fileName", (req, res, next) => {
+      const category = req.path.split("/").at(-2);
+      const fallbackFolder = category === "free_gifts" ? "freegifts" : "socialwall";
+      const fallbackPath = path.join(
+        config.archiveRoot,
+        "dchoc1-a.akamaihd.net",
+        "0.338",
+        "mcity",
+        "Datas",
+        fallbackFolder,
+        fileName
+      );
+      if (fs.existsSync(fallbackPath)) {
+        res.sendFile(fallbackPath);
+        return;
+      }
+      next();
+    }
+  );
+
+  app.get(`${launcherDataRoute}/tabs/social_wall/neighbors/icon_invite_pending.png`, (_req, res, next) => {
+    const fallbackPath = path.join(
+      config.launcherAssetRoot,
+      "Datas",
+      "tabs",
+      "social_wall",
+      "neighbors",
+      "icon_invite.png"
+    );
+    if (fs.existsSync(fallbackPath)) {
+      res.sendFile(fallbackPath);
+      return;
+    }
+    next();
+  });
+
+  app.get(`${launcherDataRoute}/tabs/free_gifts/:fileName`, (req, res, next) => {
     const fileName = path.basename(String(req.params.fileName ?? ""));
-    const requestedPath = path.join(config.assetRoot, "Datas", "feed", fileName);
+    const requestedPath = path.join(
+      config.launcherAssetRoot,
+      "Datas",
+      "tabs",
+      "free_gifts",
+      fileName
+    );
+    if (fs.existsSync(requestedPath)) {
+      next();
+      return;
+    }
+    const fallbackPath = path.join(
+      config.archiveRoot,
+      "dchoc1-a.akamaihd.net",
+      "0.338",
+      "mcity",
+      "Datas",
+      "freegifts",
+      fileName
+    );
+    if (fs.existsSync(fallbackPath)) {
+      res.sendFile(fallbackPath);
+      return;
+    }
+    next();
+  });
+
+  app.get(`${launcherDataRoute}/pages/:fileName`, (req, res, next) => {
+    const fileName = path.basename(String(req.params.fileName ?? ""));
+    const requestedPath = path.join(config.launcherAssetRoot, "Datas", "pages", fileName);
+    if (fs.existsSync(requestedPath)) {
+      next();
+      return;
+    }
+    const fallbackPath = path.join(
+      config.archiveRoot,
+      "dchoc1-a.akamaihd.net",
+      "0.338",
+      "mcity",
+      "Datas",
+      "pages",
+      fileName
+    );
+    if (fs.existsSync(fallbackPath)) {
+      res.sendFile(fallbackPath);
+      return;
+    }
+    next();
+  });
+
+  if (config.gameVariant === "original") {
+    app.use(
+      `/mcity/${GAME_VERSION}`,
+      express.static(config.launcherAssetRoot, {
+        fallthrough: true,
+        extensions: ["swf", "xml", "txt", "png", "jpg", "css", "js"]
+      })
+    );
+  }
+
+  app.use(assetRoute, createCaseInsensitiveAssetMiddleware(config));
+
+  app.get(`${dataRoute}/feed/:fileName`, (req, res, next) => {
+    const fileName = path.basename(String(req.params.fileName ?? ""));
+    const requestedPath = path.join(config.dataRoot, "feed", fileName);
     if (fs.existsSync(requestedPath)) {
       res.sendFile(requestedPath);
       return;
@@ -303,7 +582,7 @@ export function createServerApp(config = getServerConfig()): ServerApp {
 
     const extension = path.extname(fileName).toLowerCase();
     if (extension === ".jpg" || extension === ".jpeg") {
-      const fallbackPath = path.join(config.assetRoot, "Datas", "feed", "new_feed_upgrades_0.jpg");
+      const fallbackPath = path.join(config.dataRoot, "feed", "new_feed_upgrades_0.jpg");
       if (fs.existsSync(fallbackPath)) {
         console.warn(`[mcity] Missing feed asset: ${req.originalUrl}; serving ${path.basename(fallbackPath)}`);
         res.sendFile(fallbackPath);
@@ -312,7 +591,7 @@ export function createServerApp(config = getServerConfig()): ServerApp {
     }
 
     if (extension === ".png") {
-      const fallbackPath = path.join(config.assetRoot, "Datas", "feed", "newitemimage.png");
+      const fallbackPath = path.join(config.dataRoot, "feed", "newitemimage.png");
       if (fs.existsSync(fallbackPath)) {
         console.warn(`[mcity] Missing feed asset: ${req.originalUrl}; serving ${path.basename(fallbackPath)}`);
         res.sendFile(fallbackPath);
@@ -323,7 +602,7 @@ export function createServerApp(config = getServerConfig()): ServerApp {
     next();
   });
 
-  app.get("/mcity/0.501/Datas/Assets/items/CommerceTypes/icons/:fileName", (req, res, next) => {
+  app.get(`${dataRoute}/Assets/items/CommerceTypes/icons/:fileName`, (req, res, next) => {
     const fileName = path.basename(String(req.params.fileName ?? ""));
     if (!fileName.toLowerCase().endsWith(".png")) {
       next();
@@ -346,7 +625,7 @@ export function createServerApp(config = getServerConfig()): ServerApp {
     next();
   });
 
-  app.get("/mcity/0.501/Datas/Assets/missions/icons/:fileName", (req, res, next) => {
+  app.get(`${dataRoute}/Assets/missions/icons/:fileName`, (req, res, next) => {
     const fileName = path.basename(String(req.params.fileName ?? ""));
     if (!fileName.toLowerCase().endsWith(".png")) {
       next();
@@ -369,7 +648,7 @@ export function createServerApp(config = getServerConfig()): ServerApp {
     next();
   });
 
-  app.get("/mcity/0.501/Datas/Assets/items/CommerceTypes/:fileName", (req, res, next) => {
+  app.get(`${dataRoute}/Assets/items/CommerceTypes/:fileName`, (req, res, next) => {
     const fileName = path.basename(String(req.params.fileName ?? ""));
     if (!fileName.toLowerCase().endsWith(".swf")) {
       next();
@@ -393,25 +672,39 @@ export function createServerApp(config = getServerConfig()): ServerApp {
   });
 
   app.use(
-    "/mcity/0.501",
+    assetRoute,
     express.static(config.assetRoot, {
       fallthrough: true,
       extensions: ["swf", "xml", "txt", "png", "jpg", "css", "js"]
     })
   );
 
-  app.use("/mcity/0.501", (req, res) => {
+  app.use(assetRoute, (req, res) => {
     console.warn(`[mcity] Missing asset: ${req.originalUrl}`);
     res.status(404).end();
   });
 
   app.post("/Game", (req, res) => {
+    if (!isLaunchAuthorized(req, launchSessionProof)) {
+      sendGameRejection(res, "authorization", DEFAULT_SYNC, true);
+      return;
+    }
+
     const user = repository.ensureDefaultUser();
     const uid = String(req.body.uid ?? "");
     const cmd = String(req.body.cmd ?? "");
+    const version = String(req.body.version ?? "");
 
-    if (uid !== user.ext_id && uid !== String(user.id)) {
-      console.warn(`[game] Ignoring uid mismatch for private server session: received=${uid} expected=${user.ext_id}/${user.id}`);
+    if (uid !== config.launcherUserId) {
+      console.warn(`[game] Rejected uid mismatch: received=${uid} expected=${config.launcherUserId}`);
+      sendGameRejection(res, "uid", repository.getSession(user.id)?.sync ?? DEFAULT_SYNC, cmd === "login");
+      return;
+    }
+
+    if (version !== config.gameVersion) {
+      console.warn(`[game] Rejected game version: received=${version} expected=${config.gameVersion}`);
+      sendGameRejection(res, "version", repository.getSession(user.id)?.sync ?? DEFAULT_SYNC, cmd === "login");
+      return;
     }
 
     if (cmd === "login") {
@@ -428,34 +721,38 @@ export function createServerApp(config = getServerConfig()): ServerApp {
       return;
     }
 
+    const session = repository.getSession(user.id);
+    if (!session || !isSignatureValid(req.body, session.token)) {
+      console.warn(`[game] Rejected signature mismatch for cmd=${cmd}.`);
+      sendGameRejection(res, "signature", session?.sync ?? DEFAULT_SYNC);
+      return;
+    }
+
     if (cmd === "payments") {
-      const paymentData = safeJsonParse<JsonObject>(String(req.body.data ?? "{}"), {});
+      const paymentData = parseJsonObject(String(req.body.data ?? ""));
+      if (!paymentData) {
+        sendGameRejection(res, "payload", session.sync);
+        return;
+      }
+
       const awardedGold = applyOfflinePayment(repository, user.id, paymentData, goldPackageRewards, cashToCoins);
       const sync = awardedGold > 0
         ? repository.incrementSessionSync(user.id)
         : repository.getSession(user.id)?.sync ?? DEFAULT_SYNC;
-      res.type("application/xml").send(
-        buildCommandEnvelope(
-          [
-            {
-              _cmd: "payments",
-              _dat: {
-                success: "1",
-                unavailableOffline: "1",
-                privateServerFreePurchase: "1",
-                awardedGold: String(awardedGold)
-              }
-            }
-          ],
-          -1,
-          sync
-        )
-      );
+      const rawMsgCount = Number(paymentData._msgCount ?? -1);
+      const msgCount = Number.isFinite(rawMsgCount) ? rawMsgCount : -1;
+      const paymentResponse = {
+        _cmd: "payments",
+        _dat: {
+          unavailableOffline: "1",
+          privateServerFreePurchase: "1",
+          awardedGold: String(awardedGold)
+        },
+        success: "1",
+        _sync: sync
+      } as PacketCommand & { success: string };
+      res.type("application/xml").send(buildCommandEnvelope([paymentResponse], msgCount, sync));
       return;
-    }
-
-    if (!isSignatureValid(req.body, repository.getSession(user.id)?.token ?? "")) {
-      console.warn(`[game] Ignoring signature mismatch for cmd=${cmd}.`);
     }
 
     if (cmd !== "cmdList") {
@@ -474,7 +771,12 @@ export function createServerApp(config = getServerConfig()): ServerApp {
       return;
     }
 
-    const payload = safeJsonParse<JsonObject>(String(req.body.data ?? "{}"), {});
+    const payload = parseJsonObject(String(req.body.data ?? ""));
+    if (!payload || Number(payload._sync) !== DEFAULT_SYNC || !Array.isArray(payload._cmdList)) {
+      console.warn(`[game] Rejected invalid or out-of-sync cmdList payload.`);
+      sendGameRejection(res, "sync", repository.getSession(user.id)?.sync ?? DEFAULT_SYNC);
+      return;
+    }
     const packetCommands = normalizeIncomingCommandList(payload);
     console.log(`[game] cmdList ${packetCommands.map((entry) => entry._cmd).join(", ")}`);
     let msgCount = typeof payload._msgCount === "number" ? payload._msgCount : Number(payload._msgCount ?? -1);
@@ -619,7 +921,7 @@ function ensurePrivateClientExists(config: ServerConfig): void {
 }
 
 function dataAssetPath(config: ServerConfig, ...segments: string[]): string {
-  return path.join(config.assetRoot, "Datas", ...segments);
+  return path.join(config.dataRoot, ...segments);
 }
 
 function createCaseInsensitiveAssetMiddleware(config: ServerConfig): express.RequestHandler {
@@ -782,6 +1084,9 @@ function createAvailableItemRulesXml(
       ? removeLimitedAvailabilityAttributes(attributes)
       : attributes;
     if (REWARD_ONLY_ITEM_SKUS.has(sku)) {
+      patchedAttributes = markRewardOnlyItemDefinition(patchedAttributes);
+    }
+    if (HIDDEN_DUPLICATE_SHOP_ITEM_SKUS.has(sku)) {
       patchedAttributes = markRewardOnlyItemDefinition(patchedAttributes);
     }
 
@@ -964,9 +1269,95 @@ function safeJsonParse<T>(value: string, fallback: T): T {
   }
 }
 
+function sanitizeRequestUrlForLog(originalUrl: string): string {
+  try {
+    const parsed = new URL(originalUrl, "http://127.0.0.1");
+    for (const key of [...parsed.searchParams.keys()]) {
+      if (SENSITIVE_LOG_QUERY_PARAMETERS.has(key)) {
+        parsed.searchParams.set(key, "[redacted]");
+      }
+    }
+    return `${parsed.pathname}${parsed.search}`;
+  } catch {
+    return originalUrl.split("?", 1)[0] ?? "/";
+  }
+}
+
+function parseJsonObject(value: string): JsonObject | undefined {
+  try {
+    const parsed = JSON.parse(value) as unknown;
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+      return undefined;
+    }
+    return parsed as JsonObject;
+  } catch {
+    return undefined;
+  }
+}
+
+function createLaunchSessionProof(launchSecret: string | undefined): string {
+  if (!launchSecret) {
+    return "";
+  }
+  return crypto
+    .createHmac("sha256", launchSecret)
+    .update("mcity-launch-session-v1")
+    .digest("hex");
+}
+
+function isLaunchAuthorized(req: express.Request, expectedProof: string): boolean {
+  if (!expectedProof) {
+    return true;
+  }
+  const suppliedProof = readCookie(req.get("cookie"), LAUNCH_SESSION_COOKIE);
+  return suppliedProof != null && safeSecretEquals(suppliedProof, expectedProof);
+}
+
+function readCookie(cookieHeader: string | undefined, name: string): string | undefined {
+  if (!cookieHeader) {
+    return undefined;
+  }
+  for (const part of cookieHeader.split(";")) {
+    const separatorIndex = part.indexOf("=");
+    if (separatorIndex < 0 || part.slice(0, separatorIndex).trim() !== name) {
+      continue;
+    }
+    try {
+      return decodeURIComponent(part.slice(separatorIndex + 1).trim());
+    } catch {
+      return undefined;
+    }
+  }
+  return undefined;
+}
+
+function safeSecretEquals(left: string, right: string): boolean {
+  const leftBytes = Buffer.from(left, "utf8");
+  const rightBytes = Buffer.from(right, "utf8");
+  return leftBytes.length === rightBytes.length && crypto.timingSafeEqual(leftBytes, rightBytes);
+}
+
+function sendGameRejection(
+  res: express.Response,
+  reason: string,
+  sync: number,
+  isLogin = false
+): void {
+  const response: PacketCommand = {
+    _cmd: isLogin ? "logKO" : "logOut",
+    _dat: {
+      success: "false",
+      reason
+    },
+    _sync: sync
+  };
+  const envelope = isLogin ? buildLoginEnvelope(response) : buildCommandEnvelope([response], -1, sync);
+  res.status(403).type("application/xml").send(envelope);
+}
+
 function isSignatureValid(rawBody: Record<string, unknown>, sessionToken: string): boolean {
   if (!sessionToken) {
-    return true;
+    return false;
   }
 
   const provided = String(rawBody.sig ?? "");
@@ -981,7 +1372,7 @@ function isSignatureValid(rawBody: Record<string, unknown>, sessionToken: string
 
   const serialized = params.map(({ key, value }) => `${key}=${value}`).join("&");
   const expected = crypto.createHash("md5").update(`${serialized}${sessionToken}Host4h`).digest("hex");
-  return expected === provided || provided === "pass";
+  return safeSecretEquals(expected, provided);
 }
 
 function createLocalhostTlsOptions(): https.ServerOptions {
@@ -1123,6 +1514,14 @@ function getLocalProfile(repository: SaveRepository): { userName: string; cityNa
       userName: sanitizeLocalProfileName(user.name),
       cityName: DEFAULT_CITY_NAME
     };
+  }
+}
+
+function getLocalAdvisorName(repository: SaveRepository): "Cindy" | "Ronald" {
+  try {
+    return Number(getLocalPlayerUniverseProfile(repository).bossGenre ?? 0) === 1 ? "Cindy" : "Ronald";
+  } catch {
+    return "Ronald";
   }
 }
 
@@ -1330,6 +1729,30 @@ function getLocalProfilePicture(repository: SaveRepository, config: ServerConfig
   }
 
   return { filePath, mimeType };
+}
+
+function getLocalSocialPicture(
+  repository: SaveRepository,
+  config: ServerConfig,
+  socialId: string
+): FacebookShimPicture | undefined {
+  if (socialId === config.launcherUserId) {
+    return getLocalProfilePicture(repository, config);
+  }
+
+  let fileName: string | undefined;
+  if (socialId === "100") {
+    const profile = getLocalPlayerUniverseProfile(repository);
+    fileName = Number(profile.bossGenre ?? 0) === 1 ? "Cindy.png" : "Ronald.png";
+  } else if (socialId === "101") {
+    fileName = "Sheik.png";
+  }
+
+  if (!fileName) {
+    return undefined;
+  }
+  const filePath = path.join(config.launcherAssetRoot, "Datas", "Assets", "npcs", fileName);
+  return fs.existsSync(filePath) ? { filePath, mimeType: "image/png" } : undefined;
 }
 
 function getLocalProfilePicturePath(config: ServerConfig): string {

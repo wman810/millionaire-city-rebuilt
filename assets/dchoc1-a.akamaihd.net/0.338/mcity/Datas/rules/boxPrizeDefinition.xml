@@ -1,0 +1,10 @@
+<Definitions>
+  <Definition sku="bc_001" item="briefcase" giftType="cash" value="3000" />
+  <Definition sku="bc_002" item="briefcase" giftType="gold" value="1" />
+  <Definition sku="bc_003" item="briefcase" giftType="move" value="2" />
+  <Definition sku="bc_004" item="briefcase" giftType="cash" value="2000" />
+  <Definition sku="bc_005" item="briefcase" giftType="move" value="3" />
+  <Definition sku="bc_006" item="briefcase" giftType="cash" value="1000" />
+  <Definition sku="bc_007" item="briefcase" giftType="move" value="1" />
+</Definitions>
+

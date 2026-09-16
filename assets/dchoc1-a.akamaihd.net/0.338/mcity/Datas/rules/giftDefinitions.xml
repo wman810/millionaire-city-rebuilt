@@ -1,0 +1,9 @@
+<Definitions>
+  <Definition sku="fgift_001" tid="TID_FGIFT_001" tid_server="FGT_FGIFT_001" order="1" giftType="move" value="1" maxAmount="20" unlockCondition="level" unlockValue="1" disabled="0" />
+  <Definition sku="fgift_002" tid="TID_FGIFT_004" tid_server="FGT_FGIFT_004" order="2" giftType="move" value="2" maxAmount="20" unlockCondition="level" unlockValue="15" disabled="0" />
+  <Definition sku="fgift_003" tid="TID_FGIFT_004" tid_server="FGT_FGIFT_004_2" order="3" giftType="move" value="3" maxAmount="20" unlockCondition="level" unlockValue="25" disabled="0" />
+  <Definition sku="fgift_008" tid="TID_FGIFT_003" tid_server="FGT_FGIFT_003" order="4" giftType="briefcase" maxAmount="10" unlockCondition="level" unlockValue="1" disabled="0" />
+  <Definition sku="fgift_007" tid="TID_FGIFT_002" tid_server="FGT_FGIFT_002" order="5" giftType="item" value="decorations_tree_25" maxAmount="30" unlockCondition="level" unlockValue="1" disabled="0" />
+  <Definition sku="fgift_006" tid="TID_FGIFT_005" tid_server="FGT_FGIFT_005" order="5" giftType="item" value="decorations_tree_30" maxAmount="30" unlockCondition="level" unlockValue="15" disabled="0" />
+</Definitions>
+

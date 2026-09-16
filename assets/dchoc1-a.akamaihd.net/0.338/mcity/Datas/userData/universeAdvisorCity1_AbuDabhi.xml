@@ -1,0 +1,1548 @@
+<Universe>
+  <Profile exp="2394230" DCCoins="33599" DCCash="137" cityname="Sheik`s City" tutorialEnd="1" companyValue="660944599" millionNewsFeed="1" ranking="9" bossGenre="0" firstInvest="0" firstVisit="0" planeSku="plane_04">
+    <Missions>
+      <Reached chunk=""/>
+      <Up chunk="17,18,21,23,24,27,29,30,35,39,5,54,55,"/>
+      <Given chunk="46,45,44,2,43,1,12,10,53,8,9,11,4,16,14,26,25,6,7,13,52,51,15,"/>
+    </Missions>
+    <PollManager>
+      <Count chunk="earncompanyValue/5,buycommerce_pizza/1,earnDCCoins/2,builddecorations_font_03/4,buildDecorations_tree/323,buildcommerce_coffee/3,buildCommerces/26,builddecorations_font_02/12,buyExpansion/14,buildhouses_008_001/14,buildhouses_003_002/7,bonushouses_001/2,buildhouses_001_002/18,buildhouses_002_001/2,buildhouses_002_002/2,buildhouses_009_001/2,"/>
+    </PollManager>
+    <Managers/>
+    <Plots type="0,2,2,2,0,1,2,2,2,1,1,2,2,2,1,1,2,2,2,1,0,2,2,2,0"/>
+  </Profile>
+  <World sid="1">
+    <Company sid="1" wsid="1" whose="0">
+      <Item sid="290" csid="1" sku="decorations_tree_02" type="2" x="-41" y="-23" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="323" csid="1" sku="decorations_tree_01" type="2" x="-26" y="-26" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="820" csid="1" sku="commerce_casino" type="1" x="-24" y="-28" isSuspended="0">
+        <State id="1" mode="4" time="111953"/>
+      </Item>
+      <Item sid="321" csid="1" sku="decorations_tree_01" type="2" x="-11" y="-23" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="262" csid="1" sku="decorations_tree_03" type="2" x="29" y="-24" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="264" csid="1" sku="decorations_tree_03" type="2" x="29" y="-27" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="818" csid="1" sku="houses_009_001" type="0" x="16" y="-28" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="819" csid="1" sku="houses_009_001" type="0" x="23" y="-28" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="261" csid="1" sku="decorations_tree_03" type="2" x="31" y="-22" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="263" csid="1" sku="decorations_tree_03" type="2" x="32" y="-26" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="319" csid="1" sku="decorations_tree_01" type="2" x="-42" y="-17" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="683" csid="1" sku="commerce_pet_shop" type="1" x="-28" y="-18" isSuspended="0">
+        <State id="1" mode="4" time="51953"/>
+      </Item>
+      <Item sid="684" csid="1" sku="commerce_bank" type="1" x="-24" y="-18" isSuspended="0">
+        <State id="1" mode="4" time="172031"/>
+      </Item>
+      <Item sid="685" csid="1" sku="houses_003_002" type="0" x="-28" y="-12" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="686" csid="1" sku="houses_003_001" type="0" x="-28" y="-14" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="687" csid="1" sku="houses_005_001" type="0" x="-18" y="-18" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="688" csid="1" sku="houses_007_002" type="0" x="-19" y="-14" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="689" csid="1" sku="houses_007_002" type="0" x="-24" y="-14" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="690" csid="1" sku="decorations_tree_02" type="2" x="-16" y="-11" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="691" csid="1" sku="houses_003_002" type="0" x="-19" y="-11" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="693" csid="1" sku="decorations_tree_02" type="2" x="-24" y="-11" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="694" csid="1" sku="houses_005_001" type="0" x="-23" y="-11" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="695" csid="1" sku="houses_005_002" type="0" x="-21" y="-19" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="497" csid="1" sku="decorations_font_03" type="2" x="-1" y="-20" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="498" csid="1" sku="decorations_font_03" type="2" x="-1" y="-14" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="499" csid="1" sku="houses_008_001" type="0" x="-4" y="-14" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="500" csid="1" sku="decorations_tree_03" type="2" x="-2" y="-11" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="501" csid="1" sku="decorations_tree_03" type="2" x="-3" y="-11" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="502" csid="1" sku="decorations_tree_03" type="2" x="-4" y="-11" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="503" csid="1" sku="commerce_jewellery_shop" type="1" x="-8" y="-14" isSuspended="0">
+        <State id="1" mode="4" time="172031"/>
+      </Item>
+      <Item sid="504" csid="1" sku="decorations_tree_06" type="2" x="-5" y="-11" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="505" csid="1" sku="decorations_tree_06" type="2" x="-6" y="-11" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="506" csid="1" sku="decorations_tree_06" type="2" x="-7" y="-11" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="507" csid="1" sku="decorations_tree_06" type="2" x="-8" y="-11" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="508" csid="1" sku="houses_007_002" type="0" x="-13" y="-14" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="509" csid="1" sku="decorations_font_02" type="2" x="-15" y="-14" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="510" csid="1" sku="decorations_tree_06" type="2" x="-14" y="-12" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="511" csid="1" sku="decorations_tree_06" type="2" x="-15" y="-12" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="512" csid="1" sku="decorations_tree_06" type="2" x="-15" y="-11" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="513" csid="1" sku="decorations_tree_06" type="2" x="-14" y="-11" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="514" csid="1" sku="decorations_tree_06" type="2" x="-12" y="-11" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="515" csid="1" sku="decorations_tree_06" type="2" x="-13" y="-11" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="516" csid="1" sku="decorations_tree_06" type="2" x="-11" y="-11" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="517" csid="1" sku="decorations_tree_06" type="2" x="-10" y="-11" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="518" csid="1" sku="houses_003_002" type="0" x="8" y="-14" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="519" csid="1" sku="decorations_tree_03" type="2" x="7" y="-14" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="520" csid="1" sku="decorations_tree_03" type="2" x="7" y="-13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="521" csid="1" sku="houses_007_001" type="0" x="12" y="-14" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="522" csid="1" sku="commerce_pizza" type="1" x="3" y="-14" isSuspended="0">
+        <State id="1" mode="4" time="111953"/>
+      </Item>
+      <Item sid="523" csid="1" sku="commerce_hospital" type="1" x="10" y="-18" isSuspended="0">
+        <State id="1" mode="4" time="51953"/>
+      </Item>
+      <Item sid="524" csid="1" sku="houses_005_002" type="0" x="7" y="-20" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="525" csid="1" sku="houses_005_002" type="0" x="3" y="-20" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="526" csid="1" sku="decorations_tree_03" type="2" x="5" y="-16" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="527" csid="1" sku="decorations_tree_03" type="2" x="4" y="-16" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="528" csid="1" sku="decorations_tree_03" type="2" x="3" y="-16" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="529" csid="1" sku="decorations_tree_03" type="2" x="7" y="-16" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="530" csid="1" sku="decorations_tree_03" type="2" x="8" y="-16" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="531" csid="1" sku="decorations_tree_03" type="2" x="9" y="-16" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="532" csid="1" sku="decorations_tree_01" type="2" x="10" y="-19" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="533" csid="1" sku="decorations_tree_01" type="2" x="11" y="-20" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="534" csid="1" sku="decorations_tree_01" type="2" x="13" y="-20" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="535" csid="1" sku="decorations_tree_01" type="2" x="14" y="-20" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="536" csid="1" sku="decorations_tree_01" type="2" x="12" y="-20" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="537" csid="1" sku="decorations_tree_01" type="2" x="12" y="-19" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="538" csid="1" sku="decorations_tree_01" type="2" x="11" y="-19" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="539" csid="1" sku="decorations_tree_01" type="2" x="13" y="-19" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="540" csid="1" sku="decorations_tree_01" type="2" x="14" y="-19" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="541" csid="1" sku="commerce_shopping_mall" type="1" x="-8" y="-18" isSuspended="0">
+        <State id="1" mode="4" time="111953"/>
+      </Item>
+      <Item sid="542" csid="1" sku="decorations_tree_02" type="2" x="-2" y="-16" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="543" csid="1" sku="decorations_tree_02" type="2" x="-2" y="-18" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="544" csid="1" sku="decorations_tree_02" type="2" x="-2" y="-17" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="545" csid="1" sku="houses_005_002" type="0" x="-15" y="-20" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="546" csid="1" sku="houses_007_001" type="0" x="-12" y="-20" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="547" csid="1" sku="decorations_font_02" type="2" x="-12" y="-17" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="548" csid="1" sku="decorations_tree_01" type="2" x="-10" y="-17" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="549" csid="1" sku="decorations_tree_01" type="2" x="-10" y="-16" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="550" csid="1" sku="decorations_tree_01" type="2" x="-14" y="-16" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="551" csid="1" sku="decorations_tree_01" type="2" x="-15" y="-16" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="813" csid="1" sku="houses_001_002" type="0" x="-8" y="-20" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="814" csid="1" sku="houses_001_002" type="0" x="-6" y="-20" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="815" csid="1" sku="houses_001_002" type="0" x="-4" y="-20" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="816" csid="1" sku="decorations_tree_02" type="2" x="-2" y="-19" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="817" csid="1" sku="decorations_tree_02" type="2" x="-2" y="-20" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="257" csid="1" sku="decorations_tree_03" type="2" x="27" y="-14" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="260" csid="1" sku="decorations_tree_03" type="2" x="29" y="-18" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="662" csid="1" sku="commerce_pet_shop" type="1" x="23" y="-18" isSuspended="0">
+        <State id="1" mode="4" time="111953"/>
+      </Item>
+      <Item sid="663" csid="1" sku="houses_007_001" type="0" x="26" y="-18" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="664" csid="1" sku="decorations_tree_03" type="2" x="29" y="-17" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="665" csid="1" sku="decorations_tree_03" type="2" x="29" y="-16" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="666" csid="1" sku="decorations_tree_03" type="2" x="29" y="-15" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="667" csid="1" sku="decorations_tree_03" type="2" x="28" y="-15" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="668" csid="1" sku="decorations_tree_03" type="2" x="27" y="-15" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="669" csid="1" sku="houses_005_001" type="0" x="15" y="-18" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="670" csid="1" sku="houses_005_001" type="0" x="19" y="-18" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="671" csid="1" sku="decorations_tree_03" type="2" x="18" y="-18" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="672" csid="1" sku="decorations_tree_03" type="2" x="18" y="-17" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="673" csid="1" sku="decorations_tree_03" type="2" x="18" y="-16" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="674" csid="1" sku="houses_007_001" type="0" x="23" y="-14" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="675" csid="1" sku="decorations_tree_03" type="2" x="26" y="-14" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="676" csid="1" sku="decorations_tree_03" type="2" x="26" y="-15" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="677" csid="1" sku="decorations_tree_03" type="2" x="25" y="-15" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="678" csid="1" sku="decorations_tree_03" type="2" x="24" y="-15" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="679" csid="1" sku="decorations_tree_03" type="2" x="23" y="-15" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="680" csid="1" sku="decorations_font_02" type="2" x="26" y="-13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="681" csid="1" sku="houses_005_002" type="0" x="15" y="-14" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="682" csid="1" sku="houses_005_002" type="0" x="19" y="-14" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="258" csid="1" sku="decorations_tree_03" type="2" x="33" y="-14" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="259" csid="1" sku="decorations_tree_03" type="2" x="33" y="-17" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="291" csid="1" sku="decorations_tree_02" type="2" x="-35" y="-7" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="293" csid="1" sku="decorations_tree_02" type="2" x="-41" y="7" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="315" csid="1" sku="decorations_tree_01" type="2" x="-34" y="-2" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="552" csid="1" sku="commerce_flower_shop" type="1" x="-18" y="-3" isSuspended="0">
+        <State id="1" mode="4" time="111953"/>
+      </Item>
+      <Item sid="553" csid="1" sku="commerce_jewellery_shop" type="1" x="-30" y="-3" isSuspended="0">
+        <State id="1" mode="4" time="51953"/>
+      </Item>
+      <Item sid="554" csid="1" sku="houses_008_001" type="0" x="-18" y="6" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="555" csid="1" sku="decorations_tree_01" type="2" x="-16" y="9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="556" csid="1" sku="decorations_tree_01" type="2" x="-17" y="9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="557" csid="1" sku="decorations_tree_01" type="2" x="-18" y="9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="558" csid="1" sku="houses_008_001" type="0" x="-18" y="-7" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="559" csid="1" sku="decorations_tree_01" type="2" x="-20" y="-7" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="560" csid="1" sku="decorations_tree_01" type="2" x="-19" y="-7" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="561" csid="1" sku="decorations_tree_01" type="2" x="-19" y="-6" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="562" csid="1" sku="decorations_tree_01" type="2" x="-20" y="-6" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="563" csid="1" sku="decorations_tree_01" type="2" x="-20" y="-5" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="564" csid="1" sku="decorations_tree_01" type="2" x="-19" y="-5" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="565" csid="1" sku="houses_003_002" type="0" x="-23" y="-6" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="566" csid="1" sku="decorations_tree_06" type="2" x="-16" y="1" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="567" csid="1" sku="decorations_tree_06" type="2" x="-17" y="1" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="568" csid="1" sku="decorations_tree_06" type="2" x="-17" y="2" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="569" csid="1" sku="decorations_tree_06" type="2" x="-16" y="2" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="570" csid="1" sku="decorations_tree_06" type="2" x="-16" y="3" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="571" csid="1" sku="decorations_tree_06" type="2" x="-17" y="3" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="572" csid="1" sku="decorations_tree_06" type="2" x="-17" y="4" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="573" csid="1" sku="decorations_tree_06" type="2" x="-16" y="4" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="574" csid="1" sku="houses_005_002" type="0" x="-30" y="1" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="575" csid="1" sku="houses_005_002" type="0" x="-27" y="1" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="576" csid="1" sku="houses_005_001" type="0" x="-30" y="6" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="577" csid="1" sku="houses_005_001" type="0" x="-27" y="6" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="578" csid="1" sku="houses_007_002" type="0" x="-22" y="6" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="579" csid="1" sku="decorations_tree_01" type="2" x="-19" y="9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="580" csid="1" sku="decorations_tree_01" type="2" x="-20" y="9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="581" csid="1" sku="decorations_tree_01" type="2" x="-21" y="9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="582" csid="1" sku="decorations_tree_01" type="2" x="-22" y="9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="583" csid="1" sku="decorations_tree_01" type="2" x="-23" y="9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="584" csid="1" sku="decorations_tree_01" type="2" x="-23" y="8" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="585" csid="1" sku="decorations_tree_01" type="2" x="-23" y="7" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="586" csid="1" sku="decorations_tree_01" type="2" x="-23" y="6" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="587" csid="1" sku="decorations_tree_01" type="2" x="-25" y="9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="588" csid="1" sku="decorations_tree_01" type="2" x="-26" y="9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="589" csid="1" sku="decorations_tree_01" type="2" x="-27" y="9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="590" csid="1" sku="decorations_tree_01" type="2" x="-28" y="9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="591" csid="1" sku="decorations_tree_01" type="2" x="-29" y="9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="592" csid="1" sku="decorations_tree_01" type="2" x="-30" y="9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="593" csid="1" sku="commerce_night_club" type="1" x="-23" y="2" isSuspended="0">
+        <State id="1" mode="4" time="111953"/>
+      </Item>
+      <Item sid="594" csid="1" sku="decorations_tree_01" type="2" x="-19" y="4" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="595" csid="1" sku="decorations_tree_01" type="2" x="-19" y="3" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="596" csid="1" sku="decorations_tree_01" type="2" x="-19" y="2" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="597" csid="1" sku="decorations_font_02" type="2" x="-26" y="-3" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="598" csid="1" sku="decorations_tree_03" type="2" x="-26" y="-1" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="599" csid="1" sku="decorations_tree_03" type="2" x="-25" y="-1" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="600" csid="1" sku="houses_005_002" type="0" x="-21" y="-3" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="601" csid="1" sku="decorations_tree_02" type="2" x="-22" y="0" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="602" csid="1" sku="decorations_tree_02" type="2" x="-22" y="-1" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="603" csid="1" sku="decorations_tree_02" type="2" x="-22" y="-2" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="604" csid="1" sku="decorations_tree_02" type="2" x="-22" y="-3" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="605" csid="1" sku="decorations_tree_06" type="2" x="-23" y="-3" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="606" csid="1" sku="decorations_tree_06" type="2" x="-23" y="-2" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="607" csid="1" sku="decorations_tree_06" type="2" x="-23" y="-1" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="608" csid="1" sku="decorations_tree_06" type="2" x="-23" y="0" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="609" csid="1" sku="houses_006_001" type="0" x="-29" y="-10" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="610" csid="1" sku="decorations_tree_03" type="2" x="-30" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="611" csid="1" sku="decorations_tree_03" type="2" x="-30" y="-9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="612" csid="1" sku="decorations_tree_03" type="2" x="-30" y="-8" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="613" csid="1" sku="decorations_font_02" type="2" x="-27" y="-7" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="614" csid="1" sku="decorations_tree_03" type="2" x="-27" y="-5" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="615" csid="1" sku="decorations_tree_03" type="2" x="-26" y="-5" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="616" csid="1" sku="decorations_tree_03" type="2" x="-25" y="-5" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="617" csid="1" sku="decorations_tree_03" type="2" x="-25" y="-6" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="618" csid="1" sku="decorations_tree_03" type="2" x="-25" y="-7" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="619" csid="1" sku="houses_003_002" type="0" x="-30" y="-7" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="620" csid="1" sku="decorations_tree_03" type="2" x="-30" y="-5" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="621" csid="1" sku="decorations_tree_03" type="2" x="-28" y="-5" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="692" csid="1" sku="decorations_tree_02" type="2" x="-24" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="243" csid="1" sku="decorations_font_02" type="2" x="0" y="2" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="244" csid="1" sku="decorations_tree_05" type="2" x="0" y="1" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="324" csid="1" sku="HeadQuarter" type="0" x="-1" y="-3" isSuspended="0">
+        <Decorations>
+          <Decoration type="0" currentSku="HeadQuarter_04" shadowRows="0"/>
+        </Decorations>
+        <State id="4"/>
+      </Item>
+      <Item sid="327" csid="1" sku="decorations_tree_05" type="2" x="0" y="4" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="328" csid="1" sku="houses_008_002" type="0" x="3" y="1" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="329" csid="1" sku="houses_008_002" type="0" x="-5" y="1" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="330" csid="1" sku="houses_008_002" type="0" x="-1" y="6" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="331" csid="1" sku="houses_008_002" type="0" x="3" y="6" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="332" csid="1" sku="houses_008_002" type="0" x="-5" y="6" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="333" csid="1" sku="houses_008_002" type="0" x="7" y="1" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="334" csid="1" sku="houses_008_002" type="0" x="7" y="6" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="335" csid="1" sku="houses_008_002" type="0" x="11" y="1" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="336" csid="1" sku="houses_008_002" type="0" x="11" y="6" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="337" csid="1" sku="houses_008_002" type="0" x="-15" y="1" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="338" csid="1" sku="houses_008_002" type="0" x="-11" y="1" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="339" csid="1" sku="houses_008_002" type="0" x="-15" y="6" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="340" csid="1" sku="houses_008_002" type="0" x="-11" y="6" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="341" csid="1" sku="decorations_tree_03" type="2" x="-7" y="1" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="342" csid="1" sku="decorations_tree_03" type="2" x="-7" y="2" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="343" csid="1" sku="decorations_tree_03" type="2" x="-7" y="3" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="344" csid="1" sku="decorations_tree_03" type="2" x="-7" y="4" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="345" csid="1" sku="decorations_tree_03" type="2" x="-7" y="6" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="346" csid="1" sku="decorations_tree_03" type="2" x="-7" y="7" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="347" csid="1" sku="decorations_tree_03" type="2" x="-7" y="8" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="348" csid="1" sku="decorations_tree_03" type="2" x="-7" y="9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="349" csid="1" sku="houses_008_002" type="0" x="-15" y="-8" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="350" csid="1" sku="houses_008_002" type="0" x="-11" y="-8" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="351" csid="1" sku="decorations_tree_03" type="2" x="-13" y="-9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="352" csid="1" sku="decorations_tree_03" type="2" x="-14" y="-9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="353" csid="1" sku="decorations_tree_03" type="2" x="-15" y="-9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="354" csid="1" sku="decorations_tree_03" type="2" x="-9" y="-9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="355" csid="1" sku="decorations_tree_03" type="2" x="-8" y="-9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="356" csid="1" sku="decorations_font_03" type="2" x="-1" y="-9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="366" csid="1" sku="houses_008_002" type="0" x="-5" y="-9" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="367" csid="1" sku="decorations_tree_03" type="2" x="-2" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="368" csid="1" sku="decorations_tree_03" type="2" x="-3" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="369" csid="1" sku="decorations_tree_03" type="2" x="-4" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="370" csid="1" sku="decorations_tree_03" type="2" x="-5" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="371" csid="1" sku="decorations_tree_03" type="2" x="-3" y="-5" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="372" csid="1" sku="decorations_tree_03" type="2" x="-4" y="-5" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="373" csid="1" sku="decorations_tree_03" type="2" x="-5" y="-5" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="374" csid="1" sku="decorations_font_02" type="2" x="-7" y="-8" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="375" csid="1" sku="decorations_tree_05" type="2" x="-7" y="-9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="376" csid="1" sku="decorations_tree_05" type="2" x="-7" y="-6" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="377" csid="1" sku="decorations_tree_01" type="2" x="-6" y="-5" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="378" csid="1" sku="decorations_tree_01" type="2" x="-7" y="-5" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="379" csid="1" sku="houses_008_002" type="0" x="3" y="-9" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="380" csid="1" sku="decorations_tree_03" type="2" x="4" y="-5" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="381" csid="1" sku="decorations_tree_03" type="2" x="5" y="-5" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="382" csid="1" sku="decorations_tree_03" type="2" x="6" y="-5" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="383" csid="1" sku="decorations_tree_03" type="2" x="6" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="384" csid="1" sku="decorations_tree_03" type="2" x="5" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="385" csid="1" sku="decorations_tree_03" type="2" x="4" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="386" csid="1" sku="decorations_tree_03" type="2" x="3" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="387" csid="1" sku="houses_008_002" type="0" x="7" y="-8" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="388" csid="1" sku="houses_008_002" type="0" x="11" y="-8" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="389" csid="1" sku="decorations_tree_03" type="2" x="14" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="390" csid="1" sku="decorations_tree_03" type="2" x="14" y="-9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="391" csid="1" sku="decorations_tree_03" type="2" x="13" y="-9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="392" csid="1" sku="decorations_tree_03" type="2" x="12" y="-9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="393" csid="1" sku="decorations_tree_03" type="2" x="11" y="-9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="394" csid="1" sku="decorations_tree_03" type="2" x="10" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="395" csid="1" sku="decorations_tree_03" type="2" x="9" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="396" csid="1" sku="decorations_tree_03" type="2" x="7" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="397" csid="1" sku="decorations_tree_03" type="2" x="8" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="398" csid="1" sku="decorations_tree_05" type="2" x="7" y="-9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="399" csid="1" sku="decorations_tree_05" type="2" x="9" y="-9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="400" csid="1" sku="commerce_bank" type="1" x="3" y="-3" isSuspended="0">
+        <State id="1" mode="4" time="111953"/>
+      </Item>
+      <Item sid="401" csid="1" sku="commerce_coffee" type="1" x="-4" y="-3" isSuspended="0">
+        <State id="1" mode="4" time="51953"/>
+      </Item>
+      <Item sid="402" csid="1" sku="commerce_pizza" type="1" x="-7" y="-3" isSuspended="0">
+        <State id="1" mode="4" time="51953"/>
+      </Item>
+      <Item sid="403" csid="1" sku="decorations_font_02" type="2" x="-9" y="-3" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="404" csid="1" sku="decorations_font_02" type="2" x="6" y="-3" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="405" csid="1" sku="decorations_tree_05" type="2" x="6" y="-1" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="406" csid="1" sku="decorations_tree_05" type="2" x="-9" y="-1" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="407" csid="1" sku="commerce_bowling" type="1" x="-13" y="-3" isSuspended="0">
+        <State id="1" mode="4" time="172031"/>
+      </Item>
+      <Item sid="408" csid="1" sku="decorations_tree_03" type="2" x="-14" y="-3" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="409" csid="1" sku="decorations_tree_03" type="2" x="-14" y="-2" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="410" csid="1" sku="decorations_tree_03" type="2" x="-14" y="-1" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="411" csid="1" sku="commerce_flower_shop" type="1" x="8" y="-3" isSuspended="0">
+        <State id="1" mode="4" time="172031"/>
+      </Item>
+      <Item sid="412" csid="1" sku="commerce_pizza" type="1" x="11" y="-3" isSuspended="0">
+        <State id="1" mode="4" time="172031"/>
+      </Item>
+      <Item sid="252" csid="1" sku="decorations_tree_03" type="2" x="28" y="3" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="254" csid="1" sku="decorations_tree_03" type="2" x="27" y="-5" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="255" csid="1" sku="decorations_tree_03" type="2" x="27" y="-2" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="413" csid="1" sku="houses_008_002" type="0" x="17" y="0" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="414" csid="1" sku="houses_008_001" type="0" x="15" y="6" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="415" csid="1" sku="houses_008_001" type="0" x="19" y="6" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="416" csid="1" sku="houses_008_001" type="0" x="15" y="-5" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="417" csid="1" sku="houses_008_001" type="0" x="18" y="-5" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="418" csid="1" sku="houses_008_001" type="0" x="21" y="-5" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="419" csid="1" sku="houses_008_001" type="0" x="15" y="-9" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="420" csid="1" sku="houses_008_001" type="0" x="18" y="-9" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="421" csid="1" sku="houses_008_001" type="0" x="21" y="-9" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="422" csid="1" sku="decorations_tree_01" type="2" x="18" y="6" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="423" csid="1" sku="decorations_tree_01" type="2" x="18" y="7" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="424" csid="1" sku="decorations_tree_01" type="2" x="18" y="8" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="425" csid="1" sku="decorations_tree_01" type="2" x="15" y="9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="426" csid="1" sku="decorations_tree_01" type="2" x="16" y="9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="427" csid="1" sku="decorations_tree_01" type="2" x="17" y="9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="428" csid="1" sku="decorations_tree_01" type="2" x="18" y="9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="429" csid="1" sku="decorations_tree_01" type="2" x="19" y="9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="430" csid="1" sku="decorations_tree_01" type="2" x="20" y="9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="431" csid="1" sku="decorations_tree_01" type="2" x="21" y="9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="432" csid="1" sku="decorations_tree_01" type="2" x="18" y="4" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="433" csid="1" sku="decorations_tree_01" type="2" x="19" y="4" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="434" csid="1" sku="decorations_tree_01" type="2" x="20" y="4" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="435" csid="1" sku="decorations_tree_01" type="2" x="21" y="4" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="436" csid="1" sku="decorations_tree_01" type="2" x="21" y="3" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="437" csid="1" sku="decorations_tree_01" type="2" x="21" y="2" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="438" csid="1" sku="decorations_tree_01" type="2" x="21" y="1" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="439" csid="1" sku="decorations_tree_01" type="2" x="21" y="0" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="440" csid="1" sku="decorations_tree_01" type="2" x="21" y="-1" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="441" csid="1" sku="decorations_tree_01" type="2" x="20" y="-1" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="442" csid="1" sku="decorations_tree_01" type="2" x="19" y="-1" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="443" csid="1" sku="decorations_tree_01" type="2" x="18" y="-1" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="444" csid="1" sku="decorations_tree_01" type="2" x="17" y="-1" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="445" csid="1" sku="decorations_tree_01" type="2" x="16" y="-1" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="446" csid="1" sku="decorations_tree_01" type="2" x="15" y="-1" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="447" csid="1" sku="decorations_font_02" type="2" x="15" y="1" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="448" csid="1" sku="decorations_tree_05" type="2" x="15" y="0" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="449" csid="1" sku="decorations_tree_05" type="2" x="15" y="3" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="450" csid="1" sku="decorations_tree_05" type="2" x="15" y="4" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="451" csid="1" sku="commerce_pet_shop" type="1" x="22" y="7" isSuspended="0">
+        <State id="1" mode="4" time="51953"/>
+      </Item>
+      <Item sid="452" csid="1" sku="commerce_coffee" type="1" x="25" y="-1" isSuspended="0">
+        <State id="1" mode="4" time="111953"/>
+      </Item>
+      <Item sid="453" csid="1" sku="houses_007_002" type="0" x="23" y="2" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="454" csid="1" sku="decorations_tree_05" type="2" x="23" y="5" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="455" csid="1" sku="decorations_tree_05" type="2" x="25" y="5" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="456" csid="1" sku="decorations_tree_03" type="2" x="27" y="2" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="457" csid="1" sku="decorations_tree_03" type="2" x="27" y="3" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="458" csid="1" sku="decorations_tree_03" type="2" x="27" y="4" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="459" csid="1" sku="decorations_tree_03" type="2" x="27" y="5" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="460" csid="1" sku="decorations_tree_03" type="2" x="29" y="4" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="461" csid="1" sku="decorations_tree_03" type="2" x="28" y="4" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="462" csid="1" sku="decorations_tree_03" type="2" x="28" y="5" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="463" csid="1" sku="decorations_tree_03" type="2" x="29" y="5" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="464" csid="1" sku="decorations_tree_01" type="2" x="24" y="-1" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="465" csid="1" sku="decorations_tree_01" type="2" x="23" y="-1" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="466" csid="1" sku="decorations_tree_01" type="2" x="23" y="0" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="467" csid="1" sku="decorations_tree_01" type="2" x="24" y="0" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="468" csid="1" sku="decorations_tree_01" type="2" x="24" y="1" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="469" csid="1" sku="decorations_tree_01" type="2" x="23" y="1" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="470" csid="1" sku="houses_007_002" type="0" x="26" y="7" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="471" csid="1" sku="decorations_tree_02" type="2" x="25" y="7" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="472" csid="1" sku="decorations_tree_02" type="2" x="25" y="8" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="473" csid="1" sku="decorations_tree_02" type="2" x="25" y="9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="474" csid="1" sku="decorations_font_02" type="2" x="24" y="-5" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="475" csid="1" sku="decorations_tree_04" type="2" x="25" y="-3" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="476" csid="1" sku="decorations_tree_04" type="2" x="24" y="-3" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="477" csid="1" sku="decorations_tree_03" type="2" x="24" y="-7" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="478" csid="1" sku="decorations_tree_03" type="2" x="25" y="-7" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="479" csid="1" sku="decorations_tree_03" type="2" x="25" y="-8" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="480" csid="1" sku="decorations_tree_03" type="2" x="24" y="-8" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="481" csid="1" sku="decorations_tree_03" type="2" x="24" y="-9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="482" csid="1" sku="decorations_tree_03" type="2" x="25" y="-9" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="483" csid="1" sku="decorations_tree_03" type="2" x="27" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="484" csid="1" sku="decorations_tree_03" type="2" x="26" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="485" csid="1" sku="decorations_tree_03" type="2" x="25" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="486" csid="1" sku="decorations_tree_03" type="2" x="24" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="487" csid="1" sku="decorations_tree_03" type="2" x="23" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="488" csid="1" sku="decorations_tree_03" type="2" x="22" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="489" csid="1" sku="decorations_tree_03" type="2" x="21" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="490" csid="1" sku="decorations_tree_03" type="2" x="20" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="491" csid="1" sku="decorations_tree_03" type="2" x="19" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="492" csid="1" sku="decorations_tree_03" type="2" x="18" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="493" csid="1" sku="decorations_tree_03" type="2" x="17" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="494" csid="1" sku="decorations_tree_03" type="2" x="16" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="495" csid="1" sku="decorations_tree_03" type="2" x="15" y="-10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="249" csid="1" sku="decorations_tree_03" type="2" x="33" y="5" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="250" csid="1" sku="decorations_tree_03" type="2" x="32" y="3" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="251" csid="1" sku="decorations_tree_03" type="2" x="30" y="4" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="253" csid="1" sku="decorations_tree_03" type="2" x="30" y="-1" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="256" csid="1" sku="decorations_tree_03" type="2" x="30" y="-7" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="312" csid="1" sku="decorations_tree_01" type="2" x="-33" y="15" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="696" csid="1" sku="houses_007_002" type="0" x="-17" y="10" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="697" csid="1" sku="houses_007_002" type="0" x="-21" y="10" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="700" csid="1" sku="decorations_tree_01" type="2" x="-17" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="701" csid="1" sku="decorations_tree_01" type="2" x="-18" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="702" csid="1" sku="decorations_tree_01" type="2" x="-19" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="703" csid="1" sku="decorations_tree_01" type="2" x="-21" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="704" csid="1" sku="decorations_tree_01" type="2" x="-22" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="705" csid="1" sku="decorations_tree_01" type="2" x="-23" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="706" csid="1" sku="decorations_tree_01" type="2" x="-22" y="10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="707" csid="1" sku="decorations_tree_01" type="2" x="-23" y="10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="708" csid="1" sku="decorations_font_02" type="2" x="-23" y="11" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="709" csid="1" sku="houses_005_001" type="0" x="-27" y="17" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="710" csid="1" sku="houses_003_001" type="0" x="-27" y="15" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="711" csid="1" sku="houses_003_001" type="0" x="-30" y="15" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="712" csid="1" sku="commerce_pizza" type="1" x="-27" y="11" isSuspended="0">
+        <State id="1" mode="4" time="51953"/>
+      </Item>
+      <Item sid="713" csid="1" sku="decorations_tree_02" type="2" x="-25" y="10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="714" csid="1" sku="decorations_tree_02" type="2" x="-26" y="10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="715" csid="1" sku="decorations_tree_02" type="2" x="-27" y="10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="716" csid="1" sku="commerce_shopping_mall" type="1" x="-23" y="15" isSuspended="0">
+        <State id="1" mode="4" time="111953"/>
+      </Item>
+      <Item sid="717" csid="1" sku="decorations_tree_01" type="2" x="-16" y="15" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="718" csid="1" sku="decorations_tree_01" type="2" x="-16" y="17" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="741" csid="1" sku="houses_001_002" type="0" x="-16" y="18" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="742" csid="1" sku="houses_002_001" type="0" x="-20" y="18" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="743" csid="1" sku="houses_002_001" type="0" x="-23" y="18" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="622" csid="1" sku="houses_008_001" type="0" x="-5" y="10" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="623" csid="1" sku="houses_008_001" type="0" x="-2" y="10" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="624" csid="1" sku="houses_008_001" type="0" x="1" y="10" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="625" csid="1" sku="decorations_tree_01" type="2" x="3" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="626" csid="1" sku="decorations_tree_01" type="2" x="2" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="627" csid="1" sku="decorations_tree_01" type="2" x="1" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="628" csid="1" sku="decorations_tree_01" type="2" x="0" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="629" csid="1" sku="decorations_tree_01" type="2" x="-2" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="630" csid="1" sku="decorations_tree_01" type="2" x="-3" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="631" csid="1" sku="decorations_tree_01" type="2" x="-4" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="632" csid="1" sku="decorations_tree_01" type="2" x="-5" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="633" csid="1" sku="houses_007_002" type="0" x="5" y="10" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="634" csid="1" sku="houses_007_002" type="0" x="-10" y="10" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="635" csid="1" sku="houses_007_001" type="0" x="9" y="10" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="636" csid="1" sku="houses_007_001" type="0" x="-13" y="10" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="637" csid="1" sku="houses_005_002" type="0" x="12" y="10" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="638" csid="1" sku="decorations_tree_03" type="2" x="11" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="639" csid="1" sku="decorations_tree_03" type="2" x="9" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="640" csid="1" sku="decorations_tree_03" type="2" x="8" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="641" csid="1" sku="decorations_tree_03" type="2" x="7" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="642" csid="1" sku="decorations_tree_03" type="2" x="6" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="643" csid="1" sku="decorations_tree_03" type="2" x="5" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="644" csid="1" sku="decorations_tree_03" type="2" x="-7" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="645" csid="1" sku="decorations_tree_03" type="2" x="-8" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="646" csid="1" sku="decorations_tree_03" type="2" x="-9" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="647" csid="1" sku="decorations_tree_03" type="2" x="-10" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="648" csid="1" sku="decorations_tree_03" type="2" x="-11" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="649" csid="1" sku="decorations_tree_03" type="2" x="-13" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="650" csid="1" sku="commerce_pizza" type="1" x="-15" y="15" isSuspended="0">
+        <State id="1" mode="4" time="172031"/>
+      </Item>
+      <Item sid="651" csid="1" sku="commerce_coffee" type="1" x="12" y="15" isSuspended="0">
+        <State id="1" mode="4" time="172031"/>
+      </Item>
+      <Item sid="652" csid="1" sku="commerce_pet_shop" type="1" x="-5" y="15" isSuspended="0">
+        <State id="1" mode="4" time="111953"/>
+      </Item>
+      <Item sid="653" csid="1" sku="houses_005_001" type="0" x="9" y="15" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="654" csid="1" sku="houses_005_001" type="0" x="5" y="15" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="655" csid="1" sku="houses_005_001" type="0" x="-2" y="15" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="656" csid="1" sku="houses_005_001" type="0" x="1" y="15" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="657" csid="1" sku="houses_005_001" type="0" x="-12" y="15" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="658" csid="1" sku="houses_005_001" type="0" x="-9" y="15" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="659" csid="1" sku="decorations_tree_03" type="2" x="8" y="15" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="660" csid="1" sku="decorations_tree_03" type="2" x="8" y="16" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="661" csid="1" sku="decorations_tree_03" type="2" x="8" y="17" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="698" csid="1" sku="decorations_tree_01" type="2" x="-14" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="699" csid="1" sku="decorations_tree_01" type="2" x="-15" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="737" csid="1" sku="houses_001_002" type="0" x="-8" y="18" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="738" csid="1" sku="houses_001_002" type="0" x="-10" y="18" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="739" csid="1" sku="houses_001_001" type="0" x="-12" y="18" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="740" csid="1" sku="houses_001_001" type="0" x="-14" y="18" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="785" csid="1" sku="houses_004_001" type="0" x="-5" y="18" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="786" csid="1" sku="houses_004_001" type="0" x="-2" y="18" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="787" csid="1" sku="houses_004_001" type="0" x="1" y="18" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="788" csid="1" sku="houses_004_002" type="0" x="5" y="18" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="789" csid="1" sku="commerce_shopping_mall" type="1" x="10" y="18" isSuspended="0">
+        <State id="1" mode="4" time="172031"/>
+      </Item>
+      <Item sid="266" csid="1" sku="decorations_tree_03" type="2" x="28" y="11" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="267" csid="1" sku="decorations_tree_03" type="2" x="28" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="271" csid="1" sku="decorations_tree_03" type="2" x="24" y="17" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="272" csid="1" sku="decorations_tree_03" type="2" x="28" y="18" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="719" csid="1" sku="commerce_pizza" type="1" x="25" y="10" isSuspended="0">
+        <State id="1" mode="4" time="51953"/>
+      </Item>
+      <Item sid="720" csid="1" sku="decorations_tree_03" type="2" x="26" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="721" csid="1" sku="decorations_tree_03" type="2" x="25" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="722" csid="1" sku="houses_005_002" type="0" x="20" y="10" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="723" csid="1" sku="houses_001_002" type="0" x="23" y="12" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="724" csid="1" sku="decorations_font_02" type="2" x="23" y="10" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="725" csid="1" sku="houses_006_001" type="0" x="15" y="10" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="726" csid="1" sku="decorations_tree_01" type="2" x="18" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="727" csid="1" sku="decorations_tree_01" type="2" x="17" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="728" csid="1" sku="decorations_tree_01" type="2" x="16" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="729" csid="1" sku="decorations_tree_01" type="2" x="15" y="13" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="730" csid="1" sku="houses_007_002" type="0" x="15" y="15" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="731" csid="1" sku="houses_005_001" type="0" x="20" y="15" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="732" csid="1" sku="decorations_tree_03" type="2" x="23" y="15" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="733" csid="1" sku="decorations_tree_03" type="2" x="23" y="16" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="734" csid="1" sku="decorations_tree_03" type="2" x="23" y="17" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="735" csid="1" sku="houses_001_002" type="0" x="22" y="18" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="736" csid="1" sku="houses_001_002" type="0" x="20" y="18" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="790" csid="1" sku="houses_004_002" type="0" x="16" y="18" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="265" csid="1" sku="decorations_tree_03" type="2" x="32" y="11" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="268" csid="1" sku="decorations_tree_03" type="2" x="30" y="15" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="269" csid="1" sku="decorations_tree_03" type="2" x="30" y="17" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="311" csid="1" sku="decorations_tree_01" type="2" x="-42" y="26" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="744" csid="1" sku="houses_002_002" type="0" x="-30" y="22" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="745" csid="1" sku="houses_002_002" type="0" x="-27" y="22" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="746" csid="1" sku="houses_003_001" type="0" x="-23" y="22" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="747" csid="1" sku="houses_003_001" type="0" x="-20" y="22" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="748" csid="1" sku="houses_003_002" type="0" x="-23" y="24" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="749" csid="1" sku="houses_003_002" type="0" x="-20" y="24" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="750" csid="1" sku="decorations_tree_01" type="2" x="-25" y="25" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="751" csid="1" sku="decorations_tree_01" type="2" x="-26" y="25" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="752" csid="1" sku="decorations_tree_01" type="2" x="-27" y="25" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="753" csid="1" sku="decorations_tree_01" type="2" x="-28" y="25" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="754" csid="1" sku="decorations_tree_01" type="2" x="-29" y="25" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="755" csid="1" sku="decorations_tree_01" type="2" x="-30" y="25" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="793" csid="1" sku="houses_001_001" type="0" x="13" y="22" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="794" csid="1" sku="houses_001_002" type="0" x="5" y="22" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="795" csid="1" sku="houses_001_002" type="0" x="8" y="22" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="796" csid="1" sku="houses_001_002" type="0" x="10" y="22" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="797" csid="1" sku="decorations_tree_01" type="2" x="12" y="22" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="798" csid="1" sku="decorations_tree_01" type="2" x="12" y="23" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="799" csid="1" sku="decorations_tree_01" type="2" x="7" y="23" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="800" csid="1" sku="houses_001_001" type="0" x="5" y="24" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="801" csid="1" sku="houses_001_001" type="0" x="7" y="24" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="802" csid="1" sku="houses_001_001" type="0" x="9" y="24" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="803" csid="1" sku="houses_001_002" type="0" x="12" y="24" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="804" csid="1" sku="houses_001_002" type="0" x="14" y="24" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="807" csid="1" sku="decorations_tree_01" type="2" x="11" y="24" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="808" csid="1" sku="houses_001_001" type="0" x="2" y="22" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="809" csid="1" sku="houses_001_001" type="0" x="-3" y="24" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="810" csid="1" sku="houses_001_002" type="0" x="1" y="24" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="811" csid="1" sku="houses_001_002" type="0" x="-2" y="22" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="812" csid="1" sku="houses_001_002" type="0" x="-4" y="22" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="273" csid="1" sku="decorations_tree_03" type="2" x="24" y="21" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="274" csid="1" sku="decorations_tree_03" type="2" x="28" y="21" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="275" csid="1" sku="decorations_tree_03" type="2" x="29" y="24" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="276" csid="1" sku="decorations_tree_03" type="2" x="23" y="23" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="277" csid="1" sku="decorations_tree_03" type="2" x="24" y="28" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="278" csid="1" sku="decorations_tree_03" type="2" x="27" y="27" isSuspended="0">
+        <State id="5"/>
+      </Item>
+      <Item sid="791" csid="1" sku="houses_001_001" type="0" x="17" y="22" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="792" csid="1" sku="houses_001_001" type="0" x="15" y="22" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="805" csid="1" sku="houses_001_002" type="0" x="17" y="24" isSuspended="0">
+        <State id="1" mode="1" time="0"/>
+      </Item>
+      <Item sid="806" csid="1" sku="decorations_tree_01" type="2" x="16" y="25" isSuspended="0">
+        <State id="5"/>
+      </Item>
+    </Company>
+    <Company sid="2" wsid="1" whose="1"/>
+    <Map sid="1" wsid="1">
+      <Terrain chunk="-1:-3,0:-3,1:-3,2:-3,4:2,4:3,-1:-1,-1:-2,0:-2,1:-2,2:-2,2:-1,1:-1,0:-1,5:3,5:2,9:-3,10:-3,11:-3,9:-2,10:-2,11:-2,9:-1,10:-1,11:-1,-4:1,-3:1,-2:1,-4:2,-3:2,-2:2,-4:3,-3:3,-2:3,-7:-3,-6:-3,-5:-3,-7:-2,-6:-2,-5:-2,-7:-1,-6:-1,-5:-1,-13:1,-12:1,-13:2,-12:2,3:4,3:2,3:1,4:1,3:3,5:1,6:1,7:1,8:1,9:1,10:1,11:1,11:2,10:2,9:2,8:2,7:2,"/>
+      <Terrain chunk="6:2,6:3,7:3,8:3,10:3,11:3,9:3,11:4,9:4,8:4,10:4,7:4,6:4,5:4,4:4,11:6,11:7,11:8,11:9,10:9,10:8,10:7,10:6,9:6,9:7,9:8,9:9,8:9,8:8,8:7,8:6,7:6,7:7,7:8,7:9,6:6,6:7,6:8,6:9,5:9,5:7,5:6,5:8,4:9,4:7,4:8,4:6,3:6,3:7,3:8,3:9,12:1,13:1,14:1,14:2,13:2,12:2,12:3,13:3,14:3,14:4,13:4,12:4,14:6,"/>
+      <Terrain chunk="13:6,12:6,12:7,13:7,14:7,13:8,12:8,14:8,14:9,13:9,12:9,2:6,2:7,2:8,2:9,1:9,1:7,1:6,1:8,0:9,0:8,0:7,0:6,-1:6,-1:7,-1:8,-1:9,-2:4,-2:6,-2:7,-2:8,-2:9,-3:9,-3:8,-3:7,-3:6,-3:4,-4:4,-4:6,-4:7,-4:8,-4:9,-5:1,-5:2,-5:3,-5:4,-5:6,-5:7,-5:8,-5:9,-8:9,-8:7,-8:8,-8:6,-8:4,-8:3,-8:2,-8:1,-9:1,-9:2,-9:3,-9:4,-9:6,-9:7,"/>
+      <Terrain chunk="-9:8,-9:9,-10:9,-10:7,-10:8,-10:6,-10:4,-10:3,-10:2,-10:1,-11:1,-11:2,-11:3,-11:4,-11:6,-11:7,-11:8,-11:9,-12:9,-12:8,-12:7,-12:6,-12:4,-12:3,-13:3,-13:4,-13:6,-13:7,-13:8,-13:9,-14:9,-15:9,-15:8,-14:8,-14:7,-15:7,-15:6,-14:6,-15:4,-14:4,-14:3,-15:3,-15:2,-14:2,-14:1,-15:1,13:-1,12:-1,12:-2,13:-2,13:-3,12:-3,8:-1,5:-1,4:-1,3:-1,3:-2,4:-2,5:-2,8:-2,8:-3,5:-3,4:-3,3:-3,"/>
+      <Terrain chunk="-3:-1,-2:-1,-2:-2,-2:-3,-3:-3,-4:-3,-4:-2,-3:-2,-4:-1,-10:-1,-11:-1,-12:-1,-13:-1,-13:-2,-12:-2,-11:-2,-10:-2,-10:-3,-11:-3,-12:-3,-13:-3,-15:-5,-14:-5,-13:-5,-12:-5,-11:-5,-10:-5,-9:-5,-8:-5,7:-5,8:-5,9:-5,10:-5,11:-5,12:-5,13:-5,14:-5,14:-6,13:-6,12:-6,11:-6,10:-6,9:-6,8:-6,7:-6,6:-6,5:-6,3:-6,4:-6,-2:-6,-3:-6,-4:-6,-5:-6,-8:-6,-9:-6,-10:-6,-12:-6,-11:-6,-13:-6,-14:-6,-15:-6,-15:-7,-15:-8,-13:-8,"/>
+      <Terrain chunk="-13:-7,-14:-7,-14:-8,-12:-7,-12:-8,-11:-8,-11:-7,-10:-7,-10:-8,-9:-8,-9:-7,-8:-8,-8:-7,-5:-7,-4:-7,-3:-7,-2:-7,3:-7,4:-7,5:-7,6:-7,7:-7,8:-7,9:-7,10:-7,11:-7,12:-7,13:-7,14:-7,14:-8,13:-8,12:-8,11:-8,10:-8,9:-8,8:-8,6:-8,7:-8,5:-8,4:-8,3:-8,-2:-8,-3:-8,-4:-8,-5:-8,-4:-9,-5:-9,-3:-9,-2:-9,3:-9,4:-9,5:-9,6:-9,15:8,15:7,15:6,16:6,17:6,19:6,20:6,21:6,21:7,20:7,19:7,"/>
+      <Terrain chunk="17:7,16:7,16:8,17:8,19:8,20:8,21:8,22:7,23:7,24:7,27:7,26:7,28:7,29:7,28:8,27:8,29:8,26:8,24:8,23:8,22:8,22:9,23:9,24:9,26:9,27:9,28:9,29:9,17:3,18:3,19:3,20:3,20:2,20:1,20:0,19:0,18:0,17:0,17:1,17:2,18:2,19:2,19:1,18:1,23:2,23:3,23:4,24:4,24:3,24:2,25:-1,26:-1,27:-1,27:0,26:0,25:0,25:1,25:2,25:3,25:4,26:3,26:4,26:2,26:1,"/>
+      <Terrain chunk="27:1,23:-3,22:-3,21:-3,20:-3,19:-3,18:-3,17:-3,16:-3,15:-3,15:-4,16:-4,17:-4,18:-4,19:-4,20:-4,21:-4,22:-4,23:-4,23:-5,22:-5,21:-5,20:-5,19:-5,18:-5,17:-5,16:-5,15:-5,23:-7,22:-7,21:-7,20:-7,19:-7,18:-7,17:-7,16:-7,15:-7,15:-8,16:-8,17:-8,18:-8,19:-8,20:-8,21:-8,22:-8,23:-8,23:-9,22:-9,21:-9,19:-9,20:-9,18:-9,17:-9,16:-9,15:-9,-2:-12,-3:-12,-4:-12,-5:-12,-6:-12,-7:-12,-8:-12,-10:-12,-11:-12,"/>
+      <Terrain chunk="-12:-12,-13:-12,-12:-13,-13:-13,-11:-13,-10:-13,-8:-13,-7:-13,-6:-13,-5:-13,-4:-13,-3:-13,-2:-13,-3:-14,-2:-14,-4:-14,-5:-14,-6:-14,-7:-14,-8:-14,-10:-14,-11:-14,-12:-14,-13:-14,-3:-20,-4:-20,-5:-20,-6:-20,-7:-20,-8:-20,-8:-19,-8:-18,-8:-17,-8:-16,-7:-16,-6:-16,-5:-16,-4:-16,-3:-16,-3:-18,-3:-19,-4:-19,-5:-19,-6:-19,-7:-19,-7:-18,-5:-18,-4:-18,-6:-18,-7:-17,-5:-17,-4:-17,-3:-17,-6:-17,-15:-17,-15:-18,-15:-19,-15:-20,-14:-20,-13:-20,-12:-20,-11:-20,-10:-20,-10:-19,"/>
+      <Terrain chunk="-10:-18,-13:-17,-14:-17,-14:-18,-14:-19,-13:-19,-12:-19,-11:-19,-11:-18,-12:-18,-13:-18,3:-18,3:-17,3:-19,3:-20,4:-20,5:-20,7:-20,8:-20,9:-20,10:-20,9:-19,8:-19,7:-19,5:-19,4:-19,4:-18,4:-17,10:-16,11:-16,12:-16,13:-16,14:-16,14:-17,14:-18,13:-18,12:-18,13:-17,12:-17,11:-17,10:-17,9:-17,7:-17,8:-17,5:-17,5:-18,7:-18,8:-18,9:-18,10:-18,11:-18,14:-12,14:-13,14:-14,13:-14,12:-14,12:-12,13:-12,13:-13,12:-13,10:-13,10:-14,9:-14,8:-14,"/>
+      <Terrain chunk="8:-13,9:-13,5:-14,5:-13,5:-12,4:-12,3:-12,3:-13,3:-14,4:-14,4:-13,-16:8,-22:8,-21:8,-20:8,-19:8,-18:8,-17:8,-16:7,-17:7,-18:7,-19:7,-20:7,-21:7,-22:7,-22:6,-21:6,-20:6,-19:6,-18:6,-17:6,-16:6,-20:4,-21:4,-22:4,-23:4,-23:3,-22:3,-21:3,-20:3,-20:2,-21:2,-22:2,-23:2,-19:0,-20:0,-21:0,-21:-1,-20:-1,-19:-1,-18:-1,-17:-1,-16:-1,-16:-2,-17:-2,-18:-2,-19:-2,-20:-2,-21:-2,-21:-3,-20:-3,-19:-3,-18:-3,-17:-3,"/>
+      <Terrain chunk="-16:-3,-16:-5,-16:-6,-16:-7,-17:-7,-18:-7,-18:-5,-17:-5,-17:-6,-18:-6,-21:-5,-22:-6,-23:-6,-23:-5,-22:-5,-21:-6,-25:6,-25:7,-25:8,-30:7,-30:6,-30:8,-29:6,-28:6,-27:6,-26:6,-26:7,-26:8,-27:8,-28:8,-29:8,-29:7,-28:7,-27:7,-25:4,-26:4,-27:4,-28:4,-29:4,-30:4,-30:3,-30:2,-30:1,-30:-1,-30:-2,-30:-3,-29:-3,-28:-3,-27:-3,-25:1,-25:2,-25:3,-26:3,-28:3,-29:3,-27:3,-26:2,-27:2,-28:2,-29:2,-29:1,-28:1,-27:1,-26:1,"/>
+      <Terrain chunk="-29:-1,-28:-1,-27:-1,-27:-2,-28:-2,-29:-2,-30:-6,-29:-6,-28:-6,-28:-7,-29:-7,-30:-7,-29:-10,-28:-10,-27:-10,-26:-10,-26:-9,-26:-8,-27:-8,-28:-8,-29:-8,-29:-9,-28:-9,-27:-9,-15:12,-15:11,-15:10,-14:10,-13:10,-12:10,-11:10,-10:10,-9:10,-8:10,-7:10,-7:11,-8:11,-9:11,-10:11,-11:11,-12:11,-13:11,-14:11,-14:12,-12:12,-13:12,-11:12,-10:12,-9:12,-8:12,-7:12,-5:10,-4:10,-3:10,-2:10,-1:10,0:10,1:10,2:10,3:10,3:11,1:11,0:11,2:11,"/>
+      <Terrain chunk="-1:11,-2:11,-3:11,-4:11,-5:11,-5:12,-4:12,-3:12,-2:12,-1:12,1:12,0:12,2:12,3:12,5:10,6:10,7:10,8:10,9:10,10:10,11:10,12:10,13:10,14:10,14:11,13:11,12:11,11:11,10:11,9:11,8:11,7:11,6:11,5:11,5:12,6:12,7:12,9:12,8:12,10:12,11:12,12:12,13:12,14:12,13:13,14:13,12:13,14:19,14:18,14:17,14:16,14:15,13:15,12:15,11:15,10:15,9:15,7:15,6:15,5:15,5:16,5:17,5:18,5:19,"/>
+      <Terrain chunk="6:19,7:19,10:19,11:19,12:19,13:19,13:18,13:17,13:16,12:16,11:16,10:16,9:16,7:16,6:16,6:17,6:18,7:18,10:18,11:18,12:18,12:17,11:17,10:17,9:17,7:17,3:15,2:15,1:15,0:15,-1:15,-2:15,-3:15,-4:15,-5:15,-5:16,-5:17,-5:18,-5:19,-4:19,-3:19,-2:19,-1:19,0:19,1:19,2:19,3:19,3:18,3:16,1:16,2:16,0:16,-1:16,3:17,-2:16,-3:16,-4:16,-4:17,-4:18,-3:18,-1:18,-2:18,0:18,1:18,"/>
+      <Terrain chunk="2:18,2:17,1:17,0:17,-1:17,-2:17,-3:17,-7:15,-8:15,-9:15,-10:15,-11:15,-12:15,-13:15,-14:15,-15:15,-15:16,-15:17,-15:18,-15:19,-14:19,-13:19,-12:19,-11:19,-10:19,-9:19,-8:19,-7:19,-7:18,-7:17,-7:16,-8:16,-9:16,-10:16,-11:16,-12:16,-13:16,-14:16,-14:17,-14:18,-13:18,-12:18,-11:18,-10:18,-9:18,-8:18,-8:17,-9:17,-10:17,-11:17,-12:17,-13:17,15:-11,16:-11,17:-11,19:-11,20:-11,21:-11,21:-12,20:-12,19:-12,17:-12,16:-12,15:-12,"/>
+      <Terrain chunk="15:-13,16:-13,17:-13,19:-13,20:-13,21:-13,20:-14,21:-14,19:-14,17:-14,16:-14,15:-14,21:-16,20:-16,19:-16,17:-16,16:-16,15:-16,15:-17,16:-17,17:-17,19:-17,20:-17,21:-17,21:-18,20:-18,19:-18,17:-18,16:-18,15:-18,23:-11,24:-11,25:-11,26:-11,27:-11,25:-12,24:-12,23:-12,23:-13,24:-13,25:-13,25:-14,24:-14,23:-14,28:-16,27:-16,26:-16,25:-16,24:-16,23:-16,28:-17,27:-17,26:-17,25:-17,24:-17,23:-17,28:-18,27:-18,26:-18,25:-18,24:-18,23:-18,-17:-11,-18:-11,"/>
+      <Terrain chunk="-19:-11,-21:-11,-22:-11,-23:-11,-24:-12,-24:-13,-24:-14,-23:-14,-22:-14,-21:-14,-19:-14,-18:-14,-17:-14,-16:-14,-16:-13,-16:-12,-17:-12,-18:-12,-19:-12,-21:-12,-22:-12,-23:-12,-23:-13,-22:-13,-21:-13,-19:-13,-18:-13,-17:-13,-26:-11,-27:-11,-28:-11,-28:-14,-27:-14,-26:-14,-26:-13,-26:-12,-27:-12,-28:-12,-28:-13,-27:-13,-26:-16,-26:-18,-26:-17,-28:-16,-27:-16,-27:-17,-27:-18,-28:-17,-28:-18,-16:-18,-16:-17,-16:-16,-17:-16,-18:-16,-19:-16,-20:-16,-21:-16,-22:-16,-23:-16,-24:-16,-24:-17,-24:-18,-21:-19,-20:-19,"/>
+      <Terrain chunk="-19:-19,-17:-18,-17:-17,-18:-17,-19:-17,-20:-17,-21:-17,-22:-17,-23:-17,-23:-18,-22:-18,-21:-18,-20:-18,-19:-18,-18:-18,-19:-10,-18:-10,-17:-10,-21:-10,-22:-10,-23:-10,-23:-9,-22:-9,-21:-9,-16:12,-16:11,-16:10,-17:10,-17:11,-17:12,-18:11,-18:10,-18:12,-19:12,-19:11,-19:10,-21:10,-20:10,-20:11,-20:12,-21:12,-21:11,-25:13,-26:13,-27:13,-25:11,-25:12,-26:12,-27:12,-27:11,-26:11,-16:19,-16:18,-16:16,-18:15,-19:15,-20:15,-21:15,-22:15,-23:15,-23:16,-23:17,-23:18,-23:19,"/>
+      <Terrain chunk="-22:19,-21:19,-20:19,-19:19,-18:19,-18:18,-19:18,-20:18,-21:18,-22:18,-22:17,-22:16,-21:16,-20:16,-19:16,-18:16,-18:17,-19:17,-20:17,-21:17,-25:19,-26:19,-27:19,-27:18,-26:18,-25:18,-25:17,-26:17,-27:17,-25:16,-26:16,-27:16,-28:16,-29:16,-30:16,-25:15,-26:15,-27:15,-28:15,-29:15,-30:15,15:18,15:19,15:16,15:15,16:15,15:17,17:15,18:15,18:16,18:17,18:18,18:19,17:19,16:18,16:19,17:18,17:17,17:16,16:16,16:17,15:12,15:11,15:10,"/>
+      <Terrain chunk="18:12,18:11,18:10,17:10,16:10,16:11,17:11,17:12,16:12,20:19,20:18,20:17,20:16,20:15,21:15,22:15,22:17,23:18,23:19,22:18,22:19,21:19,21:18,21:17,21:16,22:16,27:12,27:11,27:10,26:10,25:10,22:10,21:10,20:10,20:11,20:12,20:13,21:13,22:13,24:13,23:13,26:12,26:11,25:11,22:11,21:11,21:12,23:12,22:12,24:12,25:12,-23:20,-22:20,-20:20,-21:20,-19:20,-18:20,-18:25,-18:24,-18:23,-19:22,-18:22,-20:22,-21:22,"/>
+      <Terrain chunk="-22:22,-23:22,-23:23,-23:24,-23:25,-22:25,-21:25,-20:25,-19:25,-19:24,-21:24,-22:24,-22:23,-20:23,-20:24,-19:23,-21:23,-25:24,-25:23,-25:22,-30:23,-30:22,-29:22,-30:24,-28:22,-27:22,-26:22,-26:23,-26:24,-27:24,-28:24,-29:24,-28:23,-27:23,-29:23,-5:20,-4:20,-3:20,-1:20,-2:20,0:20,2:20,3:20,1:20,-4:22,-3:22,-2:22,-1:22,2:22,3:22,3:23,2:25,1:25,-2:25,-3:25,-4:23,-3:23,-2:23,-1:23,2:23,2:24,1:24,-2:24,-3:24,"/>
+      <Terrain chunk="6:20,5:20,7:20,10:20,11:20,12:20,13:20,15:20,16:20,17:20,14:20,18:20,18:22,17:22,16:22,15:22,14:22,13:22,11:22,10:22,9:22,7:22,6:22,8:22,5:22,5:23,5:24,5:25,6:25,7:25,8:25,10:25,9:25,11:25,12:25,13:25,14:25,15:25,17:25,18:25,18:24,17:24,16:24,15:24,14:24,13:24,12:24,10:24,9:24,8:24,7:24,6:24,6:23,8:23,9:23,10:23,11:23,13:23,14:23,15:23,16:23,17:23,18:23,28:-28,"/>
+      <Terrain chunk="28:-27,28:-26,28:-25,27:-25,26:-25,25:-25,24:-25,23:-25,23:-27,23:-28,23:-26,24:-26,25:-26,26:-26,27:-26,27:-27,26:-27,24:-27,25:-27,27:-28,26:-28,25:-28,24:-28,21:-25,20:-25,19:-25,18:-25,17:-25,21:-28,20:-28,19:-28,18:-28,17:-28,16:-28,16:-26,16:-27,16:-25,17:-27,18:-27,19:-27,20:-27,21:-27,21:-26,20:-26,19:-26,18:-26,17:-26,-24:-28,-23:-28,-22:-28,-21:-28,-20:-28,-19:-28,-19:-27,-19:-26,-21:-26,-20:-26,-22:-26,-23:-26,-24:-26,-23:-27,-22:-27,-21:-27,-20:-27,"/>
+      <Terrain chunk="-24:-27,"/>
+      <Road chunk="2:1,-1:1,-1:4,2:4,2:3,2:2,-1:2,-1:3,-1:0,-2:0,-3:0,-4:0,-5:0,-6:0,-7:0,0:0,1:0,2:0,4:0,3:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,-8:0,-9:0,-10:0,-11:0,-12:0,-13:0,-14:0,-15:0,12:0,13:0,14:0,12:5,13:5,14:5,11:5,10:5,9:5,8:5,7:5,6:5,5:5,3:5,4:5,2:5,1:5,0:5,-1:5,-2:5,-3:5,-4:5,-5:5,-6:5,-7:5,-8:5,-9:5,-10:5,-11:5,"/>
+      <Road chunk="-12:5,-13:5,-14:5,-15:5,-6:9,-6:8,-6:7,-6:6,-6:4,-6:3,-6:2,-6:1,3:-4,4:-4,5:-4,6:-4,7:-4,8:-4,9:-4,10:-4,11:-4,12:-4,13:-4,14:-4,2:-4,1:-4,0:-4,-1:-4,-2:-4,-4:-4,-3:-4,-5:-4,-6:-4,-7:-4,-9:-4,-10:-4,-11:-4,-8:-4,-12:-4,-13:-4,-14:-4,-15:-4,-2:-5,3:-5,-15:-1,-15:-2,-15:-3,14:-1,14:-2,14:-3,15:5,16:5,18:5,17:5,19:5,20:5,22:5,21:5,22:6,23:6,24:6,25:6,26:6,27:6,"/>
+      <Road chunk="28:6,29:6,15:-2,16:-2,17:-2,19:-2,20:-2,18:-2,21:-2,22:-2,23:-2,24:-2,25:-2,26:-2,26:-3,26:-4,26:-5,26:-6,26:-7,26:-8,26:-9,27:-9,28:-9,29:-9,22:4,22:3,22:2,22:1,22:0,22:-1,17:4,25:-6,24:-6,23:-6,22:-6,21:-6,19:-6,20:-6,18:-6,17:-6,16:-6,15:-6,2:-5,2:-6,2:-7,2:-8,2:-9,2:-10,2:-11,2:-12,2:-13,2:-14,2:-15,2:-16,2:-17,2:-18,2:-19,2:-20,1:-15,0:-15,-1:-15,-2:-15,-3:-15,-4:-15,"/>
+      <Road chunk="-5:-15,-6:-15,-7:-15,-8:-15,-9:-15,-10:-15,-11:-15,-12:-15,-13:-15,-14:-15,-15:-15,-9:-14,-9:-13,-9:-12,-9:-11,3:-15,4:-15,5:-15,6:-15,7:-15,9:-15,8:-15,10:-15,11:-15,12:-15,13:-15,14:-15,-9:-16,-9:-17,-9:-18,-9:-19,-9:-20,11:-14,11:-13,11:-12,6:-20,6:-19,6:-18,6:-17,6:-16,-13:-16,-16:-4,-17:-4,-18:-4,-19:-4,-20:-4,-21:-4,-22:-4,-23:-4,-24:-4,-25:-4,-26:-4,-27:-4,-28:-4,-29:-4,-30:-4,-24:-5,-24:-6,-24:-7,-24:-8,-24:-3,-24:-2,-24:-1,-24:0,"/>
+      <Road chunk="-24:1,-24:2,-24:3,-24:4,-24:5,-24:6,-24:7,-24:8,-24:9,-16:5,-17:5,-18:5,-19:5,-20:5,-21:5,-22:5,-23:5,-25:5,-26:5,-27:5,-28:5,-29:5,-30:5,-16:0,-17:0,-18:0,-18:2,-18:1,-18:3,-18:4,-25:-8,-25:-9,-25:-10,-25:0,-26:0,-27:0,-28:0,-29:0,-30:0,-19:1,-21:1,-22:1,-23:1,-20:1,-29:-5,-6:10,-6:11,-6:12,-6:13,-6:14,-6:15,-6:16,-6:17,-6:18,-6:19,-5:14,-4:14,-3:14,-2:14,-1:14,0:14,1:14,2:14,4:14,"/>
+      <Road chunk="5:14,3:14,6:14,7:14,8:14,9:14,10:14,11:14,12:14,13:14,14:14,-7:14,-8:14,-9:14,-10:14,-11:14,-13:14,-12:14,-14:14,-15:14,4:10,4:11,4:12,4:13,4:15,4:16,4:17,4:18,4:19,-1:13,-12:13,10:13,29:-19,28:-19,27:-19,26:-19,25:-19,24:-19,23:-19,22:-19,22:-18,22:-17,22:-16,15:-15,16:-15,17:-15,18:-15,19:-15,20:-15,21:-15,22:-15,22:-14,22:-13,22:-12,22:-11,22:-20,18:-14,18:-13,18:-12,18:-11,-16:-15,-17:-15,-18:-15,-19:-15,"/>
+      <Road chunk="-20:-15,-25:-11,-25:-12,-25:-13,-25:-14,-25:-15,-25:-16,-25:-17,-25:-18,-25:-19,-25:-20,-24:-15,-23:-15,-22:-15,-21:-15,-26:-15,-27:-15,-28:-15,-29:-15,-30:-15,-20:-14,-20:-13,-20:-12,-20:-11,-20:-10,-20:-9,-16:14,-17:14,-18:14,-19:14,-20:14,-21:14,-22:14,-23:14,-24:14,-25:14,-26:14,-27:14,-28:14,-30:14,-29:14,-24:10,-24:11,-24:12,-24:13,-24:15,-24:16,-24:17,-24:18,-24:19,-16:13,-20:13,-17:15,-17:16,-17:17,-17:18,-17:19,29:14,28:14,27:14,26:14,24:14,25:14,15:14,"/>
+      <Road chunk="16:14,17:14,18:14,19:14,20:14,21:14,22:14,23:14,19:19,19:18,19:17,19:16,19:15,19:10,19:11,19:12,19:13,27:13,19:20,19:21,19:22,19:24,19:23,19:25,19:26,19:28,19:27,19:29,29:26,28:26,27:26,26:26,25:26,24:26,23:26,22:26,21:26,20:26,18:26,17:26,15:26,14:26,13:26,16:26,12:26,11:26,10:26,9:26,8:26,7:26,6:26,5:26,4:26,4:20,4:21,4:22,4:23,4:24,4:25,18:21,17:21,16:21,15:21,14:21,"/>
+      <Road chunk="12:21,11:21,13:21,10:21,9:21,8:21,7:21,6:21,5:21,-6:20,-6:21,3:21,2:21,1:21,0:21,-1:21,-2:21,-3:21,-4:21,-5:21,3:26,2:26,1:26,0:26,-1:26,-2:26,-3:26,-4:26,-5:26,-6:26,-6:25,-6:24,-6:23,-6:22,-17:20,-17:21,-17:22,-17:23,-17:24,-17:25,-7:26,-8:26,-9:26,-10:26,-11:26,-12:26,-13:26,-14:26,-15:26,-16:26,-17:26,-18:21,-20:21,-21:21,-19:21,-23:21,-22:21,-24:21,-24:20,-25:21,-26:21,-27:21,-28:21,-29:21,"/>
+      <Road chunk="-30:21,-18:26,-20:26,-19:26,-24:26,-23:26,-22:26,-21:26,-25:26,-26:26,-27:26,-28:26,-29:26,-30:26,-24:22,-24:23,-24:24,-24:25,20:20,21:20,22:20,23:20,-16:20,-15:20,-14:20,-13:20,-11:20,-12:20,-10:20,-9:20,-8:20,-7:20,22:-21,22:-22,22:-23,22:-24,22:-25,22:-26,22:-27,22:-28,6:-21,6:-22,6:-23,6:-24,6:-25,6:-26,6:-27,6:-28,-9:-21,-8:-21,-7:-21,-6:-21,-5:-21,-4:-21,-2:-21,-1:-21,0:-21,-3:-21,1:-21,2:-21,-25:-21,-25:-22,-25:-23,-25:-24,"/>
+      <Road chunk="-25:-25,-25:-27,-25:-28,-25:-29,-25:-26,"/>      
+    </Map>
+  </World>
+</Universe>

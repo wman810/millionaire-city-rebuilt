@@ -1,0 +1,6 @@
+<NPCDefinitions>
+  <Definition name="Ronald" xp="135629" companyValue="100000000" url="Ronald.png" />
+  <Definition name="Cindy" xp="135629" companyValue="100000000" url="Cindy.png" />
+  <Definition name="Sheik" xp="135629" companyValue="900000000" url="Sheik.png" />
+</NPCDefinitions>
+

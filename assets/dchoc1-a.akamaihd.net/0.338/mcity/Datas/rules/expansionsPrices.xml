@@ -1,0 +1,27 @@
+<Expansions>
+  <Definition DCCoins="4000000" DCCash="29" InversorsSuccessful="1" ABDCCoins="1000000" ABDCCash="19" ABInversorsSuccessful="1" />
+  <Definition DCCoins="6000000" DCCash="39" InversorsSuccessful="2" ABDCCoins="3000000" ABDCCash="29" ABInversorsSuccessful="2" />
+  <Definition DCCoins="7000000" DCCash="49" InversorsSuccessful="3" />
+  <Definition DCCoins="9000000" DCCash="69" InversorsSuccessful="4" />
+  <Definition DCCoins="30000000" DCCash="79" InversorsSuccessful="5" />
+  <Definition DCCoins="36000000" DCCash="99" InversorsSuccessful="6" />
+  <Definition DCCoins="42000000" DCCash="99" InversorsSuccessful="7" />
+  <Definition DCCoins="48000000" DCCash="99" InversorsSuccessful="8" />
+  <Definition DCCoins="60000000" DCCash="99" InversorsSuccessful="10" />
+  <Definition DCCoins="72000000" DCCash="99" InversorsSuccessful="12" />
+  <Definition DCCoins="84000000" DCCash="199" InversorsSuccessful="14" />
+  <Definition DCCoins="96000000" DCCash="199" InversorsSuccessful="16" />
+  <Definition DCCoins="180000000" DCCash="199" InversorsSuccessful="20" />
+  <Definition DCCoins="195000000" DCCash="199" InversorsSuccessful="24" />
+  <Definition DCCoins="210000000" DCCash="199" InversorsSuccessful="28" />
+  <Definition DCCoins="228000000" DCCash="199" InversorsSuccessful="32" />
+  <Definition DCCoins="300000000" DCCash="199" InversorsSuccessful="48" />
+  <Definition DCCoins="360000000" DCCash="199" InversorsSuccessful="64" />
+  <Definition DCCoins="420000000" DCCash="199" InversorsSuccessful="80" />
+  <Definition DCCoins="480000000" DCCash="199" InversorsSuccessful="96" />
+  <Definition DCCoins="540000000" DCCash="199" InversorsSuccessful="96" />
+  <Definition DCCoins="500000000" DCCash="199" InversorsSuccessful="96" />
+  <Definition DCCoins="500000000" DCCash="199" InversorsSuccessful="96" />
+  <Definition DCCoins="800000000" DCCash="199" InversorsSuccessful="96" />
+</Expansions>
+

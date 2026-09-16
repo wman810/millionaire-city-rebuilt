@@ -1,6 +1,9 @@
 import path from "path";
+import { getActiveDataRoot } from "../config.js";
 
-export const RULES_ROOT = path.resolve(__dirname, "../../../../assets/dchoc1-a.akamaihd.net/0.501/mcity/Datas/rules");
+export const DATA_ROOT = getActiveDataRoot();
+export const RULES_ROOT = path.join(DATA_ROOT, "rules");
+export const ITEM_ASSETS_ROOT = path.join(DATA_ROOT, "Assets", "items");
 export const SETTINGS_PATH = path.join(RULES_ROOT, "settings.xml");
 export const CONTRACTS_PATH = path.join(RULES_ROOT, "contracts.xml");
 export const ITEM_DEFINITIONS_PATH = path.join(RULES_ROOT, "itemDefinitions.xml");

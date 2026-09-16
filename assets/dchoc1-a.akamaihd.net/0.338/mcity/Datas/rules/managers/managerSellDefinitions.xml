@@ -1,0 +1,5 @@
+<Definitions>
+	<Definition sku="default" level = "1" successPercentage="20"/>						
+	<Definition sku="junior01" level = "1" successPercentage="2"/>
+	<Definition sku="junior02" level = "2" successPercentage="2"/>
+</Definitions>

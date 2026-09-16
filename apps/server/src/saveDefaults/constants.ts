@@ -1,3 +1,5 @@
+import { DEFAULT_GAME_VARIANT, type GameVariant } from "@mcity/shared";
+
 export const DEFAULT_CITY_NAME = "Chocolate Fields";
 export const DEFAULT_CITY_NAME_CODES = "67,104,111,99,111,108,97,116,101,32,70,105,101,108,100,115";
 export const DEFAULT_ABANDON_MINUTES = 60;
@@ -7,6 +9,31 @@ export const STARTER_COMPANY_MINE_SID = "1";
 export const STARTER_COMPANY_RIVAL_SID = "2";
 export const STARTER_COIN_BALANCE = 380000;
 export const STARTER_COMPANY_VALUE = 720000;
+export const ORIGINAL_STARTER_COIN_BALANCE = 200000;
+// The recovered 0.338 backend parsed settings.xml's initialDCCash="2.5"
+// through JSONObject.getInt(), producing two whole cash units.
+export const ORIGINAL_STARTER_CASH_BALANCE = 2;
+export const ORIGINAL_STARTER_COMPANY_VALUE = 660000;
+
+export interface StarterEconomy {
+  coins: number;
+  cash: number;
+  companyValue: number;
+}
+
+export function getStarterEconomy(variant: GameVariant = DEFAULT_GAME_VARIANT): StarterEconomy {
+  return variant === "original"
+    ? {
+        coins: ORIGINAL_STARTER_COIN_BALANCE,
+        cash: ORIGINAL_STARTER_CASH_BALANCE,
+        companyValue: ORIGINAL_STARTER_COMPANY_VALUE
+      }
+    : {
+        coins: STARTER_COIN_BALANCE,
+        cash: 0,
+        companyValue: STARTER_COMPANY_VALUE
+      };
+}
 export const NPC_PRIMARY_USER_ID = 100;
 export const NPC_SHEIK_USER_ID = 101;
 export const TUTORIAL_COMPLETED_HQ_TILE = { x: "-1", y: "-3" };

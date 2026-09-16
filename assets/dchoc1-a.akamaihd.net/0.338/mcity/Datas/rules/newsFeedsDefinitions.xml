@@ -1,0 +1,18 @@
+<Definitions>
+  <Definition sku="levelUp" rewardType="Exp" rewardAmount="500" expiredTime="7" />
+  <Definition sku="missionReward" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+  <Definition sku="askForHelpAsk" expiredTime="7" />
+  <Definition sku="askForHelpHelped" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+  <Definition sku="askForHelpThanks" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+  <Definition sku="becomePartner" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+  <Definition sku="allUpgradesDone" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+  <Definition sku="endTutorial" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+  <Definition sku="newExpansion" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+  <Definition sku="contractor1" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+  <Definition sku="contractor2" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+  <Definition sku="contractor3" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+  <Definition sku="collectionCompleted" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+  <Definition sku="collectibleGiftThanks" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+  <Definition sku="goldBought" rewardType="DCCoins" rewardAmount="2000" expiredTime="7" />
+</Definitions>
+

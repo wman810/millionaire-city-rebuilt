@@ -99,12 +99,12 @@ export function resolveUpgradeOwnerId(payload: Record<string, unknown>, sid: str
   }
 
   const advisorUniverse = createNeighborUniverse(100, 0);
-  if (advisorUniverse && findItemEntry(advisorUniverse, sid)) {
+  if (advisorUniverse && isUpgradeEligibleItem(advisorUniverse, sid)) {
     return 100;
   }
 
   const sheikUniverse = createNeighborUniverse(101, 0);
-  if (sheikUniverse && findItemEntry(sheikUniverse, sid)) {
+  if (sheikUniverse && isUpgradeEligibleItem(sheikUniverse, sid)) {
     return 101;
   }
 

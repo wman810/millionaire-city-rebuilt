@@ -1,0 +1,5 @@
+<Definitions>
+  <Definition sku="Exp" />
+  <Definition sku="DCCoins" clickSoundFx="Income_Sound" />
+</Definitions>
+

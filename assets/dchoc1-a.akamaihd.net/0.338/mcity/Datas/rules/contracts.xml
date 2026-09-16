@@ -1,0 +1,253 @@
+<Contracts>
+  <Definition sku="1" name="Family" level="1" habitantes="3" incomeXp="1" costCoins="90" incomeCoins="350" incomeTime="0.05" icon="contract_01" />
+  <Definition sku="2" name="Students" level="1" habitantes="3" incomeXp="3" costCoins="500" incomeCoins="1230" incomeTime="0.5" icon="contract_02" />
+  <Definition sku="3" name="Tourists" level="1" habitantes="3" incomeXp="7" costCoins="750" incomeCoins="1570" incomeTime="1" icon="contract_03" />
+  <Definition sku="4" name="Pensioners" level="1" habitantes="3" incomeXp="15" costCoins="1062.5" incomeCoins="4300" incomeTime="4" icon="contract_04" />
+  <Definition sku="5" name="Athletes" level="1" habitantes="3" incomeXp="20.4722" costCoins="1250" incomeCoins="5800" incomeTime="8" icon="contract_05" />
+  <Definition sku="6" name="Pilots" level="4" habitantes="5" incomeXp="29.3125" costCoins="3750" incomeCoins="8500" incomeTime="12" icon="contract_06" />
+  <Definition sku="7" name="Hostesses" level="1" habitantes="3" incomeXp="55.8333" costCoins="5000" incomeCoins="12000" incomeTime="24" icon="contract_07" />
+  <Definition sku="8" name="Artists" level="3" habitantes="5" incomeXp="61.4167" costCoins="6250" incomeCoins="17000" incomeTime="48" icon="contract_08" />
+  <Definition sku="9" name="Friends" level="1" habitantes="3" incomeXp="72.025" costCoins="7500" incomeCoins="20700" incomeTime="72" icon="contract_09" />
+  <Definition sku="10" name="Family" level="1" habitantes="4" incomeXp="1" costCoins="90" incomeCoins="402.5" incomeTime="0.05" icon="contract_01" />
+  <Definition sku="11" name="Students" level="1" habitantes="4" incomeXp="3" costCoins="500" incomeCoins="1414.5" incomeTime="0.5" icon="contract_02" />
+  <Definition sku="12" name="Tourists" level="3" habitantes="6" incomeXp="7" costCoins="750" incomeCoins="1805.5" incomeTime="1" icon="contract_03" />
+  <Definition sku="13" name="Pensioners" level="1" habitantes="4" incomeXp="15" costCoins="1062.5" incomeCoins="4945" incomeTime="4" icon="contract_04" />
+  <Definition sku="14" name="Athletes" level="1" habitantes="4" incomeXp="20.4722" costCoins="1250" incomeCoins="6670" incomeTime="8" icon="contract_05" />
+  <Definition sku="15" name="Pilots" level="1" habitantes="4" incomeXp="29.3125" costCoins="3750" incomeCoins="9775" incomeTime="12" icon="contract_06" />
+  <Definition sku="16" name="Hostesses" level="4" habitantes="6" incomeXp="55.8333" costCoins="5000" incomeCoins="13800" incomeTime="24" icon="contract_07" />
+  <Definition sku="17" name="Artists" level="1" habitantes="4" incomeXp="61.4167" costCoins="6250" incomeCoins="19550" incomeTime="48" icon="contract_08" />
+  <Definition sku="18" name="Friends" level="1" habitantes="4" incomeXp="72.025" costCoins="7500" incomeCoins="23805" incomeTime="72" icon="contract_09" />
+  <Definition sku="19" name="Family" level="4" habitantes="7" incomeXp="1" costCoins="97.5" incomeCoins="980" incomeTime="0.05" icon="contract_01" />
+  <Definition sku="20" name="Students" level="1" habitantes="5" incomeXp="3" costCoins="540" incomeCoins="3444" incomeTime="0.5" icon="contract_02" />
+  <Definition sku="21" name="Tourists" level="1" habitantes="5" incomeXp="7" costCoins="810" incomeCoins="4340" incomeTime="1" icon="contract_03" />
+  <Definition sku="22" name="Pensioners" level="3" habitantes="7" incomeXp="15" costCoins="1147.5" incomeCoins="12040" incomeTime="4" icon="contract_04" />
+  <Definition sku="23" name="Athletes" level="1" habitantes="5" incomeXp="20.4722" costCoins="1350" incomeCoins="16240" incomeTime="8" icon="contract_05" />
+  <Definition sku="24" name="Pilots" level="1" habitantes="5" incomeXp="29.3125" costCoins="4050" incomeCoins="23800" incomeTime="12" icon="contract_06" />
+  <Definition sku="25" name="Hostesses" level="1" habitantes="5" incomeXp="55.8333" costCoins="5400" incomeCoins="33600" incomeTime="24" icon="contract_07" />
+  <Definition sku="26" name="Artists" level="1" habitantes="5" incomeXp="61.4167" costCoins="6750" incomeCoins="47600" incomeTime="48" icon="contract_08" />
+  <Definition sku="27" name="Friends" level="1" habitantes="5" incomeXp="72.025" costCoins="8100" incomeCoins="57960" incomeTime="72" icon="contract_09" />
+  <Definition sku="28" name="Family" level="1" habitantes="6" incomeXp="1" costCoins="97.5" incomeCoins="1050" incomeTime="0.05" icon="contract_01" />
+  <Definition sku="29" name="Students" level="7" habitantes="8" incomeXp="3" costCoins="540" incomeCoins="3690" incomeTime="0.5" icon="contract_02" />
+  <Definition sku="30" name="Tourists" level="1" habitantes="6" incomeXp="7" costCoins="810" incomeCoins="4650" incomeTime="1" icon="contract_03" />
+  <Definition sku="31" name="Pensioners" level="1" habitantes="6" incomeXp="15" costCoins="1147.5" incomeCoins="12900" incomeTime="4" icon="contract_04" />
+  <Definition sku="32" name="Athletes" level="8" habitantes="8" incomeXp="20.4722" costCoins="1350" incomeCoins="17400" incomeTime="8" icon="contract_05" />
+  <Definition sku="33" name="Pilots" level="1" habitantes="6" incomeXp="29.3125" costCoins="4050" incomeCoins="25500" incomeTime="12" icon="contract_06" />
+  <Definition sku="34" name="Hostesses" level="1" habitantes="6" incomeXp="55.8333" costCoins="5400" incomeCoins="36000" incomeTime="24" icon="contract_07" />
+  <Definition sku="35" name="Artists" level="1" habitantes="6" incomeXp="61.4167" costCoins="6750" incomeCoins="51000" incomeTime="48" icon="contract_08" />
+  <Definition sku="36" name="Friends" level="1" habitantes="6" incomeXp="72.025" costCoins="8100" incomeCoins="62100" incomeTime="72" icon="contract_09" />
+  <Definition sku="37" name="Family" level="1" habitantes="5" incomeXp="1" costCoins="97.5" incomeCoins="1382.5" incomeTime="0.05" icon="contract_01" />
+  <Definition sku="38" name="Students" level="1" habitantes="5" incomeXp="3.2552" costCoins="540" incomeCoins="4858.5" incomeTime="0.5" icon="contract_02" />
+  <Definition sku="39" name="Tourists" level="12" habitantes="7" incomeXp="6.25" costCoins="810" incomeCoins="6122.5" incomeTime="1" icon="contract_03" />
+  <Definition sku="40" name="Pensioners" level="1" habitantes="5" incomeXp="23.9583" costCoins="1147.5" incomeCoins="16985" incomeTime="4" icon="contract_04" />
+  <Definition sku="41" name="Athletes" level="1" habitantes="5" incomeXp="45.8333" costCoins="1350" incomeCoins="22910" incomeTime="8" icon="contract_05" />
+  <Definition sku="42" name="Pilots" level="1" habitantes="5" incomeXp="65.625" costCoins="4050" incomeCoins="33575" incomeTime="12" icon="contract_06" />
+  <Definition sku="43" name="Hostesses" level="13" habitantes="7" incomeXp="125" costCoins="5400" incomeCoins="47400" incomeTime="24" icon="contract_07" />
+  <Definition sku="44" name="Artists" level="1" habitantes="5" incomeXp="137.5" costCoins="6750" incomeCoins="67150" incomeTime="48" icon="contract_08" />
+  <Definition sku="45" name="Friends" level="1" habitantes="5" incomeXp="161.25" costCoins="8100" incomeCoins="81765" incomeTime="72" icon="contract_09" />
+  <Definition sku="46" name="Family" level="1" habitantes="6" incomeXp="1" costCoins="97.5" incomeCoins="1435" incomeTime="0.05" icon="contract_01" />
+  <Definition sku="47" name="Students" level="14" habitantes="8" incomeXp="3.2552" costCoins="540" incomeCoins="5043" incomeTime="0.5" icon="contract_02" />
+  <Definition sku="48" name="Tourists" level="1" habitantes="6" incomeXp="6.25" costCoins="810" incomeCoins="6355" incomeTime="1" icon="contract_03" />
+  <Definition sku="49" name="Pensioners" level="15" habitantes="8" incomeXp="23.9583" costCoins="1147.5" incomeCoins="17630" incomeTime="4" icon="contract_04" />
+  <Definition sku="50" name="Athletes" level="1" habitantes="6" incomeXp="45.8333" costCoins="1350" incomeCoins="23780" incomeTime="8" icon="contract_05" />
+  <Definition sku="51" name="Pilots" level="1" habitantes="6" incomeXp="65.625" costCoins="4050" incomeCoins="34850" incomeTime="12" icon="contract_06" />
+  <Definition sku="52" name="Hostesses" level="1" habitantes="6" incomeXp="125" costCoins="5400" incomeCoins="49200" incomeTime="24" icon="contract_07" />
+  <Definition sku="53" name="Artists" level="1" habitantes="6" incomeXp="137.5" costCoins="6750" incomeCoins="69700" incomeTime="48" icon="contract_08" />
+  <Definition sku="54" name="Friends" level="1" habitantes="6" incomeXp="161.25" costCoins="8100" incomeCoins="84870" incomeTime="72" icon="contract_09" />
+  <Definition sku="55" name="Family" level="10" habitantes="10" incomeXp="1" costCoins="112.5" incomeCoins="945" incomeTime="0.05" icon="contract_01" />
+  <Definition sku="56" name="Students" level="1" habitantes="8" incomeXp="3" costCoins="660" incomeCoins="3321" incomeTime="0.5" icon="contract_02" />
+  <Definition sku="57" name="Tourists" level="1" habitantes="8" incomeXp="7" costCoins="990" incomeCoins="4185" incomeTime="1" icon="contract_03" />
+  <Definition sku="58" name="Pensioners" level="1" habitantes="8" incomeXp="15" costCoins="1402.5" incomeCoins="11610" incomeTime="4" icon="contract_04" />
+  <Definition sku="59" name="Athletes" level="1" habitantes="8" incomeXp="20.4722" costCoins="1650" incomeCoins="15660" incomeTime="8" icon="contract_05" />
+  <Definition sku="60" name="Pilots" level="1" habitantes="8" incomeXp="29.3125" costCoins="4950" incomeCoins="22950" incomeTime="12" icon="contract_06" />
+  <Definition sku="61" name="Hostesses" level="1" habitantes="8" incomeXp="55.8333" costCoins="6600" incomeCoins="32400" incomeTime="24" icon="contract_07" />
+  <Definition sku="62" name="Artists" level="1" habitantes="8" incomeXp="61.4167" costCoins="8250" incomeCoins="45900" incomeTime="48" icon="contract_08" />
+  <Definition sku="63" name="Friends" level="9" habitantes="10" incomeXp="72.025" costCoins="9900" incomeCoins="55890" incomeTime="72" icon="contract_09" />
+  <Definition sku="64" name="Family" level="1" habitantes="9" incomeXp="1" costCoins="112.5" incomeCoins="962.5" incomeTime="0.05" icon="contract_01" />
+  <Definition sku="65" name="Students" level="1" habitantes="9" incomeXp="3.2552" costCoins="660" incomeCoins="3382.5" incomeTime="0.5" icon="contract_02" />
+  <Definition sku="66" name="Tourists" level="1" habitantes="9" incomeXp="6.25" costCoins="990" incomeCoins="4262.5" incomeTime="1" icon="contract_03" />
+  <Definition sku="67" name="Pensioners" level="1" habitantes="9" incomeXp="23.9583" costCoins="1402.5" incomeCoins="11825" incomeTime="4" icon="contract_04" />
+  <Definition sku="68" name="Athletes" level="1" habitantes="9" incomeXp="45.8333" costCoins="1650" incomeCoins="15950" incomeTime="8" icon="contract_05" />
+  <Definition sku="69" name="Pilots" level="12" habitantes="11" incomeXp="65.625" costCoins="4950" incomeCoins="23375" incomeTime="12" icon="contract_06" />
+  <Definition sku="70" name="Hostesses" level="1" habitantes="9" incomeXp="125" costCoins="6600" incomeCoins="33000" incomeTime="24" icon="contract_07" />
+  <Definition sku="71" name="Artists" level="11" habitantes="11" incomeXp="137.5" costCoins="8250" incomeCoins="46750" incomeTime="48" icon="contract_08" />
+  <Definition sku="72" name="Friends" level="1" habitantes="9" incomeXp="161.25" costCoins="9900" incomeCoins="56925" incomeTime="72" icon="contract_09" />
+  <Definition sku="73" name="Family" level="1" habitantes="20" incomeXp="1" costCoins="105" incomeCoins="1242.5" incomeTime="0.05" icon="contract_01" />
+  <Definition sku="74" name="Students" level="1" habitantes="20" incomeXp="4.3403" costCoins="580" incomeCoins="4366.5" incomeTime="0.5" icon="contract_02" />
+  <Definition sku="75" name="Tourists" level="1" habitantes="20" incomeXp="8.3333" costCoins="870" incomeCoins="5502.5" incomeTime="1" icon="contract_03" />
+  <Definition sku="76" name="Pensioners" level="1" habitantes="20" incomeXp="31.9444" costCoins="1232.5" incomeCoins="15265" incomeTime="4" icon="contract_04" />
+  <Definition sku="77" name="Athletes" level="1" habitantes="20" incomeXp="61.1111" costCoins="1450" incomeCoins="20590" incomeTime="8" icon="contract_05" />
+  <Definition sku="78" name="Pilots" level="1" habitantes="20" incomeXp="87.5" costCoins="4350" incomeCoins="30175" incomeTime="12" icon="contract_06" />
+  <Definition sku="79" name="Hostesses" level="1" habitantes="20" incomeXp="166.6667" costCoins="5800" incomeCoins="42600" incomeTime="24" icon="contract_07" />
+  <Definition sku="80" name="Artists" level="1" habitantes="20" incomeXp="183.3333" costCoins="7250" incomeCoins="60350" incomeTime="48" icon="contract_08" />
+  <Definition sku="81" name="Friends" level="1" habitantes="20" incomeXp="215" costCoins="8700" incomeCoins="73485" incomeTime="72" icon="contract_09" />
+  <Definition sku="82" name="Family" level="1" habitantes="28" incomeXp="1.5054" costCoins="105" incomeCoins="1680" incomeTime="0.05" icon="contract_01" />
+  <Definition sku="83" name="Students" level="1" habitantes="28" incomeXp="14.4748" costCoins="580" incomeCoins="5904" incomeTime="0.5" icon="contract_02" />
+  <Definition sku="84" name="Tourists" level="1" habitantes="28" incomeXp="27.7917" costCoins="870" incomeCoins="7440" incomeTime="1" icon="contract_03" />
+  <Definition sku="85" name="Pensioners" level="1" habitantes="28" incomeXp="106.5347" costCoins="1232.5" incomeCoins="20640" incomeTime="4" icon="contract_04" />
+  <Definition sku="86" name="Athletes" level="1" habitantes="28" incomeXp="203.8056" costCoins="1450" incomeCoins="27840" incomeTime="8" icon="contract_05" />
+  <Definition sku="87" name="Pilots" level="1" habitantes="28" incomeXp="291.8125" costCoins="4350" incomeCoins="40800" incomeTime="12" icon="contract_06" />
+  <Definition sku="88" name="Hostesses" level="1" habitantes="28" incomeXp="555.8333" costCoins="5800" incomeCoins="57600" incomeTime="24" icon="contract_07" />
+  <Definition sku="89" name="Artists" level="1" habitantes="28" incomeXp="611.4167" costCoins="7250" incomeCoins="81600" incomeTime="48" icon="contract_08" />
+  <Definition sku="90" name="Friends" level="1" habitantes="28" incomeXp="717.025" costCoins="8700" incomeCoins="99360" incomeTime="72" icon="contract_09" />
+  <Definition sku="91" name="Family" level="1" habitantes="25" incomeXp="3.0085" costCoins="105" incomeCoins="1400" incomeTime="0.05" icon="contract_01" />
+  <Definition sku="92" name="Students" level="1" habitantes="25" incomeXp="28.928" costCoins="580" incomeCoins="4920" incomeTime="0.5" icon="contract_02" />
+  <Definition sku="93" name="Tourists" level="1" habitantes="25" incomeXp="55.5417" costCoins="870" incomeCoins="6200" incomeTime="1" icon="contract_03" />
+  <Definition sku="94" name="Pensioners" level="1" habitantes="25" incomeXp="212.9097" costCoins="1232.5" incomeCoins="17200" incomeTime="4" icon="contract_04" />
+  <Definition sku="95" name="Athletes" level="1" habitantes="25" incomeXp="407.3056" costCoins="1450" incomeCoins="23200" incomeTime="8" icon="contract_05" />
+  <Definition sku="96" name="Pilots" level="1" habitantes="25" incomeXp="583.1875" costCoins="4350" incomeCoins="34000" incomeTime="12" icon="contract_06" />
+  <Definition sku="97" name="Hostesses" level="1" habitantes="25" incomeXp="1110.8333" costCoins="5800" incomeCoins="48000" incomeTime="24" icon="contract_07" />
+  <Definition sku="98" name="Artists" level="1" habitantes="25" incomeXp="1221.9167" costCoins="7250" incomeCoins="68000" incomeTime="48" icon="contract_08" />
+  <Definition sku="99" name="Friends" level="1" habitantes="25" incomeXp="1432.975" costCoins="8700" incomeCoins="82800" incomeTime="72" icon="contract_09" />
+  <Definition sku="100" name="Family" level="1" habitantes="30" incomeXp="7.5224" costCoins="105" incomeCoins="2170" incomeTime="0.05" icon="contract_01" />
+  <Definition sku="101" name="Students" level="1" habitantes="30" incomeXp="72.3307" costCoins="580" incomeCoins="6150" incomeTime="0.5" icon="contract_02" />
+  <Definition sku="102" name="Tourists" level="1" habitantes="30" incomeXp="138.875" costCoins="870" incomeCoins="7750" incomeTime="1" icon="contract_03" />
+  <Definition sku="103" name="Pensioners" level="1" habitantes="30" incomeXp="532.3542" costCoins="1232.5" incomeCoins="21500" incomeTime="4" icon="contract_04" />
+  <Definition sku="104" name="Athletes" level="1" habitantes="30" incomeXp="1018.4167" costCoins="1450" incomeCoins="29000" incomeTime="8" icon="contract_05" />
+  <Definition sku="105" name="Pilots" level="1" habitantes="30" incomeXp="1458.1875" costCoins="4350" incomeCoins="42500" incomeTime="12" icon="contract_06" />
+  <Definition sku="106" name="Hostesses" level="1" habitantes="30" incomeXp="2777.5" costCoins="5800" incomeCoins="60000" incomeTime="24" icon="contract_07" />
+  <Definition sku="107" name="Artists" level="1" habitantes="30" incomeXp="3055.25" costCoins="7250" incomeCoins="85000" incomeTime="48" icon="contract_08" />
+  <Definition sku="108" name="Friends" level="1" habitantes="30" incomeXp="3582.975" costCoins="8700" incomeCoins="103500" incomeTime="72" icon="contract_09" />
+  <Definition sku="109" name="Family" level="1" habitantes="6" incomeXp="3.0085" costCoins="105" incomeCoins="2100" incomeTime="0.05" icon="contract_01" />
+  <Definition sku="110" name="Students" level="1" habitantes="6" incomeXp="28.928" costCoins="580" incomeCoins="7380" incomeTime="0.5" icon="contract_02" />
+  <Definition sku="111" name="Tourists" level="1" habitantes="6" incomeXp="55.5417" costCoins="870" incomeCoins="9300" incomeTime="1" icon="contract_03" />
+  <Definition sku="112" name="Pensioners" level="1" habitantes="6" incomeXp="212.9097" costCoins="1232.5" incomeCoins="25800" incomeTime="4" icon="contract_04" />
+  <Definition sku="113" name="Athletes" level="1" habitantes="6" incomeXp="407.3056" costCoins="1450" incomeCoins="34800" incomeTime="8" icon="contract_05" />
+  <Definition sku="114" name="Pilots" level="1" habitantes="6" incomeXp="583.1875" costCoins="4350" incomeCoins="51000" incomeTime="12" icon="contract_06" />
+  <Definition sku="115" name="Hostesses" level="1" habitantes="6" incomeXp="1110.8333" costCoins="5800" incomeCoins="72000" incomeTime="24" icon="contract_07" />
+  <Definition sku="116" name="Artists" level="1" habitantes="6" incomeXp="1221.9167" costCoins="7250" incomeCoins="102000" incomeTime="48" icon="contract_08" />
+  <Definition sku="117" name="Friends" level="1" habitantes="6" incomeXp="1432.975" costCoins="8700" incomeCoins="124200" incomeTime="72" icon="contract_09" />
+  <Definition sku="118" name="Family" level="1" habitantes="7" incomeXp="3.0085" costCoins="105" incomeCoins="2380" incomeTime="0.05" icon="contract_01" />
+  <Definition sku="119" name="Students" level="1" habitantes="7" incomeXp="28.928" costCoins="580" incomeCoins="8364" incomeTime="0.5" icon="contract_02" />
+  <Definition sku="120" name="Tourists" level="1" habitantes="7" incomeXp="55.5417" costCoins="870" incomeCoins="10540" incomeTime="1" icon="contract_03" />
+  <Definition sku="121" name="Pensioners" level="1" habitantes="7" incomeXp="212.9097" costCoins="1232.5" incomeCoins="29240" incomeTime="4" icon="contract_04" />
+  <Definition sku="122" name="Athletes" level="1" habitantes="7" incomeXp="407.3056" costCoins="1450" incomeCoins="39440" incomeTime="8" icon="contract_05" />
+  <Definition sku="123" name="Pilots" level="1" habitantes="7" incomeXp="583.1875" costCoins="4350" incomeCoins="57800" incomeTime="12" icon="contract_06" />
+  <Definition sku="124" name="Hostesses" level="1" habitantes="7" incomeXp="1110.8333" costCoins="5800" incomeCoins="81600" incomeTime="24" icon="contract_07" />
+  <Definition sku="125" name="Artists" level="1" habitantes="7" incomeXp="1221.9167" costCoins="7250" incomeCoins="115600" incomeTime="48" icon="contract_08" />
+  <Definition sku="126" name="Friends" level="1" habitantes="7" incomeXp="1432.975" costCoins="8700" incomeCoins="140760" incomeTime="72" icon="contract_09" />
+  <Definition sku="127" name="Family" level="1" habitantes="35" incomeXp="7.5224" costCoins="120" incomeCoins="1540" incomeTime="0.05" icon="contract_01" />
+  <Definition sku="128" name="Students" level="1" habitantes="35" incomeXp="72.3307" costCoins="600" incomeCoins="5412" incomeTime="0.5" icon="contract_02" />
+  <Definition sku="129" name="Tourists" level="1" habitantes="35" incomeXp="138.875" costCoins="900" incomeCoins="6820" incomeTime="1" icon="contract_03" />
+  <Definition sku="130" name="Pensioners" level="1" habitantes="35" incomeXp="532.3542" costCoins="1275" incomeCoins="18920" incomeTime="4" icon="contract_04" />
+  <Definition sku="131" name="Athletes" level="1" habitantes="35" incomeXp="1018.4167" costCoins="1500" incomeCoins="25520" incomeTime="8" icon="contract_05" />
+  <Definition sku="132" name="Pilots" level="1" habitantes="35" incomeXp="1458.1875" costCoins="4500" incomeCoins="37400" incomeTime="12" icon="contract_06" />
+  <Definition sku="133" name="Hostesses" level="1" habitantes="35" incomeXp="2777.5" costCoins="6000" incomeCoins="52800" incomeTime="24" icon="contract_07" />
+  <Definition sku="134" name="Artists" level="1" habitantes="35" incomeXp="3055.25" costCoins="7500" incomeCoins="74800" incomeTime="48" icon="contract_08" />
+  <Definition sku="135" name="Friends" level="1" habitantes="35" incomeXp="3582.975" costCoins="9000" incomeCoins="91080" incomeTime="72" icon="contract_09" />
+  <Definition sku="136" name="Family" level="1" habitantes="50" incomeXp="18.0556" costCoins="240" incomeCoins="3150" incomeTime="0.05" icon="contract_01" />
+  <Definition sku="137" name="Students" level="1" habitantes="50" incomeXp="173.6111" costCoins="1200" incomeCoins="11070" incomeTime="0.5" icon="contract_02" />
+  <Definition sku="138" name="Tourists" level="1" habitantes="50" incomeXp="333.3333" costCoins="1800" incomeCoins="13950" incomeTime="1" icon="contract_03" />
+  <Definition sku="139" name="Pensioners" level="1" habitantes="50" incomeXp="1277.7778" costCoins="2550" incomeCoins="38700" incomeTime="4" icon="contract_04" />
+  <Definition sku="140" name="Athletes" level="1" habitantes="50" incomeXp="2444.4444" costCoins="3000" incomeCoins="52200" incomeTime="8" icon="contract_05" />
+  <Definition sku="141" name="Pilots" level="1" habitantes="50" incomeXp="3500" costCoins="9000" incomeCoins="76500" incomeTime="12" icon="contract_06" />
+  <Definition sku="142" name="Hostesses" level="1" habitantes="50" incomeXp="6666.6667" costCoins="12000" incomeCoins="108000" incomeTime="24" icon="contract_07" />
+  <Definition sku="143" name="Artists" level="1" habitantes="50" incomeXp="7333.3333" costCoins="15000" incomeCoins="153000" incomeTime="48" icon="contract_08" />
+  <Definition sku="144" name="Friends" level="1" habitantes="50" incomeXp="8600" costCoins="18000" incomeCoins="186300" incomeTime="72" icon="contract_09" />
+  <Definition sku="145" name="Family" level="1" habitantes="5" incomeXp="18.0556" costCoins="240" incomeCoins="5075" incomeTime="0.05" icon="contract_01" />
+  <Definition sku="146" name="Students" level="1" habitantes="5" incomeXp="173.6111" costCoins="1200" incomeCoins="17835" incomeTime="0.5" icon="contract_02" />
+  <Definition sku="147" name="Tourists" level="1" habitantes="5" incomeXp="333.3333" costCoins="1800" incomeCoins="22475" incomeTime="1" icon="contract_03" />
+  <Definition sku="148" name="Pensioners" level="1" habitantes="5" incomeXp="1277.7778" costCoins="2550" incomeCoins="62350" incomeTime="4" icon="contract_04" />
+  <Definition sku="149" name="Athletes" level="1" habitantes="5" incomeXp="2444.4444" costCoins="3000" incomeCoins="84100" incomeTime="8" icon="contract_05" />
+  <Definition sku="150" name="Pilots" level="1" habitantes="5" incomeXp="3500" costCoins="9000" incomeCoins="123250" incomeTime="12" icon="contract_06" />
+  <Definition sku="151" name="Hostesses" level="1" habitantes="5" incomeXp="6666.6667" costCoins="12000" incomeCoins="174000" incomeTime="24" icon="contract_07" />
+  <Definition sku="152" name="Artists" level="1" habitantes="5" incomeXp="7333.3333" costCoins="15000" incomeCoins="246500" incomeTime="48" icon="contract_08" />
+  <Definition sku="153" name="Friends" level="1" habitantes="5" incomeXp="8600" costCoins="18000" incomeCoins="300150" incomeTime="72" icon="contract_09" />
+  <Definition sku="154" name="Rock Star" level="1" habitantes="5" incomeXp="10" costCoins="937.5" incomeCoins="2572" incomeTime="2" icon="contract_10" />
+  <Definition sku="155" name="Rock Star" level="1" habitantes="6" incomeXp="10" costCoins="937.5" incomeCoins="2957.8" incomeTime="2" icon="contract_10" />
+  <Definition sku="156" name="Rock Star" level="1" habitantes="7" incomeXp="10" costCoins="1012.5" incomeCoins="7201.6" incomeTime="2" icon="contract_10" />
+  <Definition sku="157" name="Rock Star" level="1" habitantes="8" incomeXp="10" costCoins="1012.5" incomeCoins="7716" incomeTime="2" icon="contract_10" />
+  <Definition sku="158" name="Rock Star" level="1" habitantes="7" incomeXp="12.1875" costCoins="1012.5" incomeCoins="10159.4" incomeTime="2" icon="contract_10" />
+  <Definition sku="159" name="Rock Star" level="1" habitantes="8" incomeXp="16.25" costCoins="1012.5" incomeCoins="10545.2" incomeTime="2" icon="contract_10" />
+  <Definition sku="160" name="Rock Star" level="1" habitantes="10" incomeXp="5.4438" costCoins="1237.5" incomeCoins="6944.4" incomeTime="2" icon="contract_10" />
+  <Definition sku="161" name="Rock Star" level="1" habitantes="11" incomeXp="12.1875" costCoins="1237.5" incomeCoins="7073" incomeTime="2" icon="contract_10" />
+  <Definition sku="162" name="Rock Star" level="1" habitantes="20" incomeXp="16.25" costCoins="1087.5" incomeCoins="9130.6" incomeTime="2" icon="contract_10" />
+  <Definition sku="163" name="Rock Star" level="1" habitantes="28" incomeXp="54.1937" costCoins="1087.5" incomeCoins="12345.6" incomeTime="2" icon="contract_10" />
+  <Definition sku="164" name="Rock Star" level="1" habitantes="25" incomeXp="108.3062" costCoins="1087.5" incomeCoins="10288" incomeTime="2" icon="contract_10" />
+  <Definition sku="165" name="Rock Star" level="1" habitantes="30" incomeXp="270.8062" costCoins="1087.5" incomeCoins="12860" incomeTime="2" icon="contract_10" />
+  <Definition sku="166" name="Rock Star" level="1" habitantes="6" incomeXp="108.3062" costCoins="1087.5" incomeCoins="15432" incomeTime="2" icon="contract_10" />
+  <Definition sku="167" name="Rock Star" level="1" habitantes="7" incomeXp="108.3062" costCoins="1087.5" incomeCoins="17489.6" incomeTime="2" icon="contract_10" />
+  <Definition sku="168" name="Rock Star" level="1" habitantes="35" incomeXp="270.8062" costCoins="1125" incomeCoins="11316.8" incomeTime="2" icon="contract_10" />
+  <Definition sku="169" name="Rock Star" level="1" habitantes="50" incomeXp="650" costCoins="2250" incomeCoins="23148" incomeTime="2" icon="contract_10" />
+  <Definition sku="170" name="Rock Star" level="1" habitantes="5" incomeXp="650" costCoins="2250" incomeCoins="37294" incomeTime="2" icon="contract_10" />
+  <Definition sku="171" name="Football Star" level="16" habitantes="6" incomeXp="42.9219" costCoins="4500" incomeCoins="11000" incomeTime="18" icon="contract_11" />
+  <Definition sku="172" name="Football Star" level="16" habitantes="7" incomeXp="42.9219" costCoins="4500" incomeCoins="12650" incomeTime="18" icon="contract_11" />
+  <Definition sku="173" name="Football Star" level="16" habitantes="8" incomeXp="42.9219" costCoins="4860" incomeCoins="30800" incomeTime="18" icon="contract_11" />
+  <Definition sku="174" name="Football Star" level="16" habitantes="9" incomeXp="42.9219" costCoins="4860" incomeCoins="33000" incomeTime="18" icon="contract_11" />
+  <Definition sku="175" name="Football Star" level="16" habitantes="8" incomeXp="96.0937" costCoins="4860" incomeCoins="43450" incomeTime="18" icon="contract_11" />
+  <Definition sku="176" name="Football Star" level="16" habitantes="9" incomeXp="128.125" costCoins="4860" incomeCoins="45100" incomeTime="18" icon="contract_11" />
+  <Definition sku="177" name="Football Star" level="16" habitantes="12" incomeXp="42.9219" costCoins="5940" incomeCoins="29700" incomeTime="18" icon="contract_11" />
+  <Definition sku="178" name="Football Star" level="16" habitantes="13" incomeXp="96.0937" costCoins="5940" incomeCoins="30250" incomeTime="18" icon="contract_11" />
+  <Definition sku="179" name="Football Star" level="16" habitantes="24" incomeXp="128.125" costCoins="5220" incomeCoins="39050" incomeTime="18" icon="contract_11" />
+  <Definition sku="180" name="Football Star" level="16" habitantes="32" incomeXp="427.2969" costCoins="5220" incomeCoins="52800" incomeTime="18" icon="contract_11" />
+  <Definition sku="181" name="Football Star" level="16" habitantes="29" incomeXp="853.9531" costCoins="5220" incomeCoins="44000" incomeTime="18" icon="contract_11" />
+  <Definition sku="182" name="Football Star" level="16" habitantes="33" incomeXp="2135.2031" costCoins="5220" incomeCoins="55000" incomeTime="18" icon="contract_11" />
+  <Definition sku="183" name="Football Star" level="16" habitantes="7" incomeXp="853.9531" costCoins="5220" incomeCoins="66000" incomeTime="18" icon="contract_11" />
+  <Definition sku="184" name="Football Star" level="16" habitantes="8" incomeXp="853.9531" costCoins="5220" incomeCoins="74800" incomeTime="18" icon="contract_11" />
+  <Definition sku="185" name="Football Star" level="16" habitantes="39" incomeXp="2135.2031" costCoins="5400" incomeCoins="48400" incomeTime="18" icon="contract_11" />
+  <Definition sku="186" name="Football Star" level="16" habitantes="54" incomeXp="5125" costCoins="10800" incomeCoins="99000" incomeTime="18" icon="contract_11" />
+  <Definition sku="187" name="Football Star" level="16" habitantes="6" incomeXp="5125" costCoins="10800" incomeCoins="159500" incomeTime="18" icon="contract_11" />
+  <Definition sku="188" name="Family" level="1" habitantes="4" incomeXp="18.0556" costCoins="900" incomeCoins="5250" incomeTime="0.05" icon="contract_01" />
+  <Definition sku="189" name="Students" level="1" habitantes="4" incomeXp="173.6111" costCoins="7000" incomeCoins="18450" incomeTime="0.5" icon="contract_02" />
+  <Definition sku="190" name="Tourists" level="1" habitantes="4" incomeXp="333.3333" costCoins="10500" incomeCoins="23250" incomeTime="1" icon="contract_03" />
+  <Definition sku="191" name="Pensioners" level="1" habitantes="4" incomeXp="1277.7778" costCoins="14875" incomeCoins="64500" incomeTime="4" icon="contract_04" />
+  <Definition sku="192" name="Athletes" level="1" habitantes="4" incomeXp="2444.4444" costCoins="17500" incomeCoins="87000" incomeTime="8" icon="contract_05" />
+  <Definition sku="193" name="Pilots" level="1" habitantes="4" incomeXp="3500" costCoins="52500" incomeCoins="127500" incomeTime="12" icon="contract_06" />
+  <Definition sku="194" name="Hostesses" level="1" habitantes="4" incomeXp="6666.6667" costCoins="70000" incomeCoins="180000" incomeTime="24" icon="contract_07" />
+  <Definition sku="195" name="Artists" level="1" habitantes="4" incomeXp="7333.3333" costCoins="87500" incomeCoins="255000" incomeTime="48" icon="contract_08" />
+  <Definition sku="196" name="Friends" level="1" habitantes="4" incomeXp="8600" costCoins="105000" incomeCoins="310500" incomeTime="72" icon="contract_09" />
+  <Definition sku="197" name="Family" level="1" habitantes="70" incomeXp="22.5694" costCoins="1050" incomeCoins="14000" incomeTime="0.05" icon="contract_01" />
+  <Definition sku="198" name="Students" level="1" habitantes="70" incomeXp="217.0139" costCoins="9000" incomeCoins="49200" incomeTime="0.5" icon="contract_02" />
+  <Definition sku="199" name="Tourists" level="1" habitantes="70" incomeXp="416.6667" costCoins="13500" incomeCoins="62000" incomeTime="1" icon="contract_03" />
+  <Definition sku="200" name="Pensioners" level="1" habitantes="70" incomeXp="1597.2222" costCoins="19125" incomeCoins="172000" incomeTime="4" icon="contract_04" />
+  <Definition sku="201" name="Athletes" level="1" habitantes="70" incomeXp="3055.5556" costCoins="22500" incomeCoins="232000" incomeTime="8" icon="contract_05" />
+  <Definition sku="202" name="Pilots" level="1" habitantes="70" incomeXp="4375" costCoins="67500" incomeCoins="340000" incomeTime="12" icon="contract_06" />
+  <Definition sku="203" name="Hostesses" level="1" habitantes="70" incomeXp="8333.3333" costCoins="90000" incomeCoins="480000" incomeTime="24" icon="contract_07" />
+  <Definition sku="204" name="Artists" level="1" habitantes="70" incomeXp="9166.6667" costCoins="112500" incomeCoins="680000" incomeTime="48" icon="contract_08" />
+  <Definition sku="205" name="Friends" level="1" habitantes="70" incomeXp="10750" costCoins="135000" incomeCoins="828000" incomeTime="72" icon="contract_09" />
+  <Definition sku="206" name="Family" level="1" habitantes="10" incomeXp="22.5694" costCoins="1500" incomeCoins="17500" incomeTime="0.05" icon="contract_01" />
+  <Definition sku="207" name="Students" level="1" habitantes="10" incomeXp="217.0139" costCoins="15000" incomeCoins="61500" incomeTime="0.5" icon="contract_02" />
+  <Definition sku="208" name="Tourists" level="1" habitantes="10" incomeXp="416.6667" costCoins="22500" incomeCoins="77500" incomeTime="1" icon="contract_03" />
+  <Definition sku="209" name="Pensioners" level="1" habitantes="10" incomeXp="1597.2222" costCoins="31875" incomeCoins="215000" incomeTime="4" icon="contract_04" />
+  <Definition sku="210" name="Athletes" level="1" habitantes="10" incomeXp="3055.5556" costCoins="37500" incomeCoins="290000" incomeTime="8" icon="contract_05" />
+  <Definition sku="211" name="Pilots" level="1" habitantes="10" incomeXp="4375" costCoins="112500" incomeCoins="425000" incomeTime="12" icon="contract_06" />
+  <Definition sku="212" name="Hostesses" level="1" habitantes="10" incomeXp="8333.3333" costCoins="150000" incomeCoins="600000" incomeTime="24" icon="contract_07" />
+  <Definition sku="213" name="Artists" level="1" habitantes="10" incomeXp="9166.6667" costCoins="187500" incomeCoins="850000" incomeTime="48" icon="contract_08" />
+  <Definition sku="214" name="Friends" level="1" habitantes="10" incomeXp="10750" costCoins="225000" incomeCoins="1035000" incomeTime="72" icon="contract_09" />
+  <Definition sku="215" name="Family" level="1" habitantes="90" incomeXp="22.5694" costCoins="1575" incomeCoins="18200" incomeTime="0.05" icon="contract_01" />
+  <Definition sku="216" name="Students" level="1" habitantes="90" incomeXp="217.0139" costCoins="18000" incomeCoins="63960" incomeTime="0.5" icon="contract_02" />
+  <Definition sku="217" name="Tourists" level="1" habitantes="90" incomeXp="416.6667" costCoins="27000" incomeCoins="80600" incomeTime="1" icon="contract_03" />
+  <Definition sku="218" name="Pensioners" level="1" habitantes="90" incomeXp="1597.2222" costCoins="38250" incomeCoins="223600" incomeTime="4" icon="contract_04" />
+  <Definition sku="219" name="Athletes" level="1" habitantes="90" incomeXp="3055.5556" costCoins="45000" incomeCoins="301600" incomeTime="8" icon="contract_05" />
+  <Definition sku="220" name="Pilots" level="1" habitantes="90" incomeXp="4375" costCoins="135000" incomeCoins="442000" incomeTime="12" icon="contract_06" />
+  <Definition sku="221" name="Hostesses" level="1" habitantes="90" incomeXp="8333.3333" costCoins="180000" incomeCoins="624000" incomeTime="24" icon="contract_07" />
+  <Definition sku="222" name="Artists" level="1" habitantes="90" incomeXp="9166.6667" costCoins="225000" incomeCoins="884000" incomeTime="48" icon="contract_08" />
+  <Definition sku="223" name="Friends" level="1" habitantes="90" incomeXp="10750" costCoins="270000" incomeCoins="1076400" incomeTime="72" icon="contract_09" />
+  <Definition sku="224" name="Family" level="1" habitantes="105" incomeXp="22.5694" costCoins="1575" incomeCoins="22750" incomeTime="0.05" icon="contract_01" />
+  <Definition sku="225" name="Students" level="1" habitantes="105" incomeXp="217.0139" costCoins="18000" incomeCoins="79950" incomeTime="0.5" icon="contract_02" />
+  <Definition sku="226" name="Tourists" level="1" habitantes="105" incomeXp="416.6667" costCoins="27000" incomeCoins="100750" incomeTime="1" icon="contract_03" />
+  <Definition sku="227" name="Pensioners" level="1" habitantes="105" incomeXp="1597.2222" costCoins="38250" incomeCoins="279500" incomeTime="4" icon="contract_04" />
+  <Definition sku="228" name="Athletes" level="1" habitantes="105" incomeXp="3055.5556" costCoins="45000" incomeCoins="377000" incomeTime="8" icon="contract_05" />
+  <Definition sku="229" name="Pilots" level="1" habitantes="105" incomeXp="4375" costCoins="135000" incomeCoins="552500" incomeTime="12" icon="contract_06" />
+  <Definition sku="230" name="Hostesses" level="1" habitantes="105" incomeXp="8333.3333" costCoins="180000" incomeCoins="780000" incomeTime="24" icon="contract_07" />
+  <Definition sku="231" name="Artists" level="1" habitantes="105" incomeXp="9166.6667" costCoins="225000" incomeCoins="1105000" incomeTime="48" icon="contract_08" />
+  <Definition sku="232" name="Friends" level="1" habitantes="105" incomeXp="10750" costCoins="270000" incomeCoins="1345500" incomeTime="72" icon="contract_09" />
+  <Definition sku="233" name="Family" level="1" habitantes="105" incomeXp="22.5694" costCoins="1575" incomeCoins="18200" incomeTime="0.05" icon="contract_01" />
+  <Definition sku="234" name="Students" level="1" habitantes="105" incomeXp="217.0139" costCoins="18000" incomeCoins="63960" incomeTime="0.5" icon="contract_02" />
+  <Definition sku="235" name="Tourists" level="1" habitantes="105" incomeXp="416.6667" costCoins="27000" incomeCoins="80600" incomeTime="1" icon="contract_03" />
+  <Definition sku="236" name="Pensioners" level="1" habitantes="105" incomeXp="1597.2222" costCoins="38250" incomeCoins="223600" incomeTime="4" icon="contract_04" />
+  <Definition sku="237" name="Athletes" level="1" habitantes="105" incomeXp="3055.5556" costCoins="45000" incomeCoins="301600" incomeTime="8" icon="contract_05" />
+  <Definition sku="238" name="Pilots" level="1" habitantes="105" incomeXp="4375" costCoins="135000" incomeCoins="442000" incomeTime="12" icon="contract_06" />
+  <Definition sku="239" name="Hostesses" level="1" habitantes="105" incomeXp="8333.3333" costCoins="180000" incomeCoins="624000" incomeTime="24" icon="contract_07" />
+  <Definition sku="240" name="Artists" level="1" habitantes="105" incomeXp="9166.6667" costCoins="225000" incomeCoins="884000" incomeTime="48" icon="contract_08" />
+  <Definition sku="241" name="Friends" level="1" habitantes="105" incomeXp="10750" costCoins="270000" incomeCoins="1076400" incomeTime="72" icon="contract_09" />
+  <Definition sku="242" name="Family" level="1" habitantes="30" incomeXp="22.5694" costCoins="1260" incomeCoins="21000" incomeTime="0.05" icon="contract_01" />
+  <Definition sku="243" name="Students" level="1" habitantes="30" incomeXp="217.0139" costCoins="14400" incomeCoins="73800" incomeTime="0.5" icon="contract_02" />
+  <Definition sku="244" name="Tourists" level="1" habitantes="30" incomeXp="416.6667" costCoins="21600" incomeCoins="93000" incomeTime="1" icon="contract_03" />
+  <Definition sku="245" name="Pensioners" level="1" habitantes="30" incomeXp="1597.2222" costCoins="30600" incomeCoins="258000" incomeTime="4" icon="contract_04" />
+  <Definition sku="246" name="Athletes" level="1" habitantes="30" incomeXp="3055.5556" costCoins="36000" incomeCoins="348000" incomeTime="8" icon="contract_05" />
+  <Definition sku="247" name="Pilots" level="1" habitantes="30" incomeXp="4375" costCoins="108000" incomeCoins="510000" incomeTime="12" icon="contract_06" />
+  <Definition sku="248" name="Hostesses" level="1" habitantes="30" incomeXp="8333.3333" costCoins="144000" incomeCoins="720000" incomeTime="24" icon="contract_07" />
+  <Definition sku="249" name="Artists" level="1" habitantes="30" incomeXp="9166.6667" costCoins="180000" incomeCoins="1020000" incomeTime="48" icon="contract_08" />
+  <Definition sku="250" name="Friends" level="1" habitantes="30" incomeXp="10750" costCoins="216000" incomeCoins="1242000" incomeTime="72" icon="contract_09" />
+</Contracts>
+

@@ -1,0 +1,6 @@
+<Definitions>
+  <Definition minHouses="1" giftsAmount="1" />
+  <Definition minHouses="50" giftsAmount="2" />
+  <Definition minHouses="100" giftsAmount="3" />
+</Definitions>
+

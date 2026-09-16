@@ -1,3 +1,4 @@
+import { DEFAULT_GAME_VARIANT, type GameVariant } from "@mcity/shared";
 import type { JsonObject } from "@mcity/shared/dist/types.js";
 import { createBuiltItem } from "./items.js";
 
@@ -62,9 +63,93 @@ const STARTER_DECORATION_LAYOUT = [
   ["2162", "decorations_tree_01", "-42", "-17"],
   ["2163", "decorations_tree_01", "-11", "-23"],
   ["2166", "decorations_tree_02", "18", "-25"],
-  ["2169", "decorations_tree_01", "-34", "-2"]
+  ["2169", "decorations_tree_01", "-34", "-2"],
+  ["264", "decorations_tree_03", "29", "-27"],
+  ["258", "decorations_tree_03", "33", "-14"],
+  ["267", "decorations_tree_03", "28", "13"],
+  ["272", "decorations_tree_03", "28", "18"],
+  ["265", "decorations_tree_03", "32", "11"],
+  ["303", "decorations_tree_01", "-2", "21"]
 ] as const;
 
-export function createStarterDecorationItems(companySid: string): JsonObject[] {
-  return STARTER_DECORATION_LAYOUT.map(([sid, sku, x, y]) => createBuiltItem(sid, companySid, sku, x, y));
+// Exact recovered 0.338 starter layout. Keeping this separate lets the newer
+// starter retain its established remapped SIDs while sharing all 67 objects.
+const ORIGINAL_STARTER_DECORATION_LAYOUT = [
+  ["290", "decorations_tree_02", "-41", "-23"],
+  ["323", "decorations_tree_01", "-26", "-26"],
+  ["288", "decorations_tree_02", "7", "-25"],
+  ["321", "decorations_tree_01", "-11", "-23"],
+  ["262", "decorations_tree_03", "29", "-24"],
+  ["264", "decorations_tree_03", "29", "-27"],
+  ["283", "decorations_tree_02", "18", "-25"],
+  ["261", "decorations_tree_03", "31", "-22"],
+  ["263", "decorations_tree_03", "32", "-26"],
+  ["319", "decorations_tree_01", "-42", "-17"],
+  ["289", "decorations_tree_02", "-28", "-18"],
+  ["285", "decorations_tree_02", "8", "-16"],
+  ["287", "decorations_tree_02", "-9", "-16"],
+  ["257", "decorations_tree_03", "27", "-14"],
+  ["260", "decorations_tree_03", "29", "-18"],
+  ["279", "decorations_tree_02", "17", "-17"],
+  ["258", "decorations_tree_03", "33", "-14"],
+  ["259", "decorations_tree_03", "33", "-17"],
+  ["291", "decorations_tree_02", "-35", "-7"],
+  ["293", "decorations_tree_02", "-41", "7"],
+  ["315", "decorations_tree_01", "-34", "-2"],
+  ["152", "decorations_tree_01", "-17", "1"],
+  ["294", "decorations_tree_02", "-29", "2"],
+  ["317", "decorations_tree_01", "-21", "-10"],
+  ["50", "decorations_tree_01", "8", "8"],
+  ["54", "decorations_tree_02", "-11", "7"],
+  ["148", "decorations_tree_01", "-6", "7"],
+  ["149", "decorations_tree_01", "12", "6"],
+  ["153", "decorations_tree_01", "-15", "-4"],
+  ["154", "decorations_tree_01", "9", "-7"],
+  ["155", "decorations_tree_02", "12", "-8"],
+  ["158", "decorations_tree_02", "14", "7"],
+  ["197", "decorations_tree_01", "1", "-7"],
+  ["242", "decorations_tree_02", "3", "6"],
+  ["243", "decorations_font_02", "0", "2"],
+  ["244", "decorations_tree_05", "0", "1"],
+  ["241", "decorations_tree_02", "19", "-4"],
+  ["252", "decorations_tree_03", "28", "3"],
+  ["254", "decorations_tree_03", "27", "-5"],
+  ["255", "decorations_tree_03", "27", "-2"],
+  ["249", "decorations_tree_03", "33", "5"],
+  ["250", "decorations_tree_03", "32", "3"],
+  ["251", "decorations_tree_03", "30", "4"],
+  ["253", "decorations_tree_03", "30", "-1"],
+  ["256", "decorations_tree_03", "30", "-7"],
+  ["312", "decorations_tree_01", "-33", "15"],
+  ["295", "decorations_tree_02", "-18", "13"],
+  ["301", "decorations_tree_02", "-6", "15"],
+  ["305", "decorations_tree_01", "12", "13"],
+  ["266", "decorations_tree_03", "28", "11"],
+  ["267", "decorations_tree_03", "28", "13"],
+  ["270", "decorations_tree_03", "26", "14"],
+  ["271", "decorations_tree_03", "24", "17"],
+  ["272", "decorations_tree_03", "28", "18"],
+  ["265", "decorations_tree_03", "32", "11"],
+  ["268", "decorations_tree_03", "30", "15"],
+  ["269", "decorations_tree_03", "30", "17"],
+  ["311", "decorations_tree_01", "-42", "26"],
+  ["307", "decorations_tree_01", "-28", "26"],
+  ["300", "decorations_tree_02", "9", "22"],
+  ["303", "decorations_tree_01", "-2", "21"],
+  ["273", "decorations_tree_03", "24", "21"],
+  ["274", "decorations_tree_03", "28", "21"],
+  ["275", "decorations_tree_03", "29", "24"],
+  ["276", "decorations_tree_03", "23", "23"],
+  ["277", "decorations_tree_03", "24", "28"],
+  ["278", "decorations_tree_03", "27", "27"]
+] as const;
+
+export function createStarterDecorationItems(
+  companySid: string,
+  gameVariant: GameVariant = DEFAULT_GAME_VARIANT
+): JsonObject[] {
+  const layout = gameVariant === "original"
+    ? ORIGINAL_STARTER_DECORATION_LAYOUT
+    : STARTER_DECORATION_LAYOUT;
+  return layout.map(([sid, sku, x, y]) => createBuiltItem(sid, companySid, sku, x, y));
 }

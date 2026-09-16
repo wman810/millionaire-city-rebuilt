@@ -1,0 +1,1754 @@
+Millionaire City
+Yükleniyor
+Millionaire City'ye günlük olarak dönün ve hergün hoş bir ödül kazanın! Hediye kutularını açın ve sizi bekleyen süprizleri görün
+Yeni Ödüller Hazır!
+Çok İşlevli Araç
+Arazi satın al: %U$
+Koleksiyon Parçaları
+Görevler
+Yol aracı
+Mağaza
+Müdürler
+Yıkma aracı
+Ana Sayfa
+Yükseltmeler
+Satın al
+%U1. seviyeye ulaşmak için %U XP'ye ihtiyacınız var.
+Millionaire Doları
+Millionaire Altını
+Facebook Credits
+Şirket Değeri
+Şehir Adı
+Ses Açık
+Ses Kapalı
+Müzik Açık
+Müzik Kapalı
+Fotoğraf
+Yakınlaştır
+Uzaklaştır
+Kiracılar
+Sözleşmeler
+Taşı
+Topla
+Tam Ekran
+Altın Ekle
+Dolar Ekle
+Ekle
+Yatırımı Yayınla
+Sonraki
+Onayla
+Geri
+Ayrıntılı Bilgi
+Atla
+Sözleşme Seç
+Kalite
+Ödül
+,
+.
+Şirket Değeri
+Noel I
+Özel HQ
+Havacilik 1
+Lüks HQ
+Havacilik 2
+Benzersiz HQ
+Havacilik 3
+Yılbaşı Arifesi
+Mücevher
+Malzemeler
+Spor aletleri
+Alışveriş
+Eğlence
+Lüks
+Kemer
+Mikroskop
+Çakmak
+Saat
+Yüzük
+Dizüstü Bilgisayar
+Kulakluk
+Cep Telefonu
+Saat
+Kol Düğmesi
+Şamdan
+Güneş Gözlüğü
+Kağıt Uçak
+Uyku Maskesi
+Pilot Şapkası
+Havayolu Yemeği
+Vergisiz Parfüm
+Bilet
+Valiz
+Şampanya
+Havayolu Kanatları
+Pilot Güneş Gözlükleri
+Model Uçak
+Pasaport
+Baston Şeker
+Hediye Çorap
+Noel Mumu
+Elf Şapkası
+Havai Fişekler
+Şampanya Bardakları
+Parti Seti
+Yeni Yıl Balonları
+Zümrüt
+Zafir
+Yakut
+Elmas
+Peynir
+Pirinç
+Yuvarlak Ekmek
+Süt
+Kask
+Boks Eldivenleri
+Basketbol Topu
+Beyzbol Eldiveni
+Yazar Kasa
+Pazar Sepeti
+Alışveriş Fişi
+Kağıt Torba
+Bilet
+M-City tişörtü
+Gişe
+M-City Bardağı
+Bourbon Şişesi
+Ayaklı Lamba
+Rokoko Sandalye
+Jakuzi
+Özel Genel Merkez
+Lüks Genel Merkez
+Benzersiz Genel Merkez
+Antik Uçak
+Zeplin
+Havacılık Gösterisi
+Büyük kar küre
+Yeni Yıl Plazası
+Japon Gölü
+Ödül
+Ödül
+Ödül
+Ödül
+Ödül
+%U XP
+$ %U
+Genel Merkez
+Genel Merkez açıklaması
+Bungalow
+3 yatak odası, 2 banyo ve yaklaşık 60 metre karelik boş alanı ile bakımlı müstakil bina.
+Lüks Bungalow
+Giriş holü, oturma odası, yemek odası ve mutfak alanları ile 2 yatak odalı ve 2 banyolu geniş ev.
+Konak
+Aile odası, oturma odası, yemek odası ve 1 araba garajı ile 3 yatak odalı ve 2 banyolu etkileyici ev.
+Lüks Konak
+Ön ve arka terasları, iki park alanı ve yemek odası ile üç yatak odalı enfes bir ev.
+Dubleks
+Mükemmel bir mutfak, oturma odası, yemek odası, kiler, çamaşır odası, güzel bir bahçe ve teras.
+Lüks Dubleks
+Yeni halılarla, yeni yer döşemeleri ile ve mutfak ve banyoda en modern elektrikli aletlerle donatılmış yenilenmiş bir ev.
+Üç Katlı
+Meşe ağacından iç mekanlar, mutfak, oturma odası, yemek odası, klima, teras ve avlu.
+Lüks Üç Katlı
+Ev sineması için bodrum katı, çamaşır odası, depolama odası, mutfak, oturma odası, yemek odası ve jakuzili teras.
+Apartman
+Bahçe içinde 6 daireye bölünmüş 600 metrekarelik bir yapı; bahçıvan mevcuttur.
+Lüks Apartman
+Yüzme havuzlu 6 dairelik bir yapı; ailelere çok uygundur.
+Villa
+Meşe ağacı zemin, soba, fırın, bulaşık makinesi ve garajlı altı adet müstakil yapı.
+Çatıkatı
+Sanatçılar için idealdir. Büyük salonu ve 2 yatak odası ile 100 metre karelik alan üzerindedir.
+Lüks Villa
+İki araba garajı kapasiteli altı adet müstakil bina. Binada bir yüzme havuzu, sauna, büyük bir teras ve bahçe bulunmaktadır.
+Gökdelen
+6 yatak odalı ve resepsiyonlu 20 metre yüksekliğinde bina.
+Lüks Çatıkatı
+Bekarlar veya aktörler için mükemmel bir alandır.
+Şato
+Etkileyici bir 19. yüzyıl şatosu; 500 metre kare yaşama alanı ve 14 yatak odası tamamen restore edilmiştir.
+Lüks Gökdelen
+30 metre yüksekliğinde bina ve 8 eşsiz yatak odasından mükemmel bir manzara.
+Tarihi Ev
+Antik stil ve rahatlık, 4 yatak odası, aydınlık oturma odası ve geniş bahçe.
+Fütürist
+Geleceğin evindeki lüks daireler. İleri teknoloji tasarım seçenekleri ve güneşlenme terasları.
+Süper Gökdelen
+50 metre yüksekliğindeki binada modern apartmanlar. Mükemmel manzara, yüzme havuzları, jimnastik salonu, restoranlar ve panoramik asansörler.
+Ekolojik Ev
+Bu ekolojik ev, doğal ışık ve cazibe doludur. Üç adet doğa dostu odası bulunmaktadır.
+Kale
+Bu İskoç tarzı kalede istemediğiniz kadar boş alan bulunmaktadır. 20 yatak odası, temizlikçi, kahya, uşak, sürücü ve bir hayalet fiyata dahildir.
+Kioko Evi
+Kioko evi, küçük fakat  iki yatak odası ile işlevseldir. Kağıt duvarlar ve tatami zemin, gündelik yaşama canlılık katar.
+Uyum Evi
+Bu Japon tarzı ev huzur doludur. Zen'e göre inşa edilmiştir.Koi havuzundan keyif almak isteyen küçük aileler içindir.
+Bayern Evi
+Bu tipik Bavyera evi Almanya dağlarında yaşayan insanların sıcaklığını temsil eder .Üç depolu bu ev Bavyera Mimarisine dayalıdır.
+Bayern Evi II
+Bu ev Bavyera soyundan Fürsten ve Herzöge için inşa edilmiştir.Asalaet ve şeref dolu bir ev.
+Bayern Evi
+Bu tipik Bavyera evi Almanya dağlarında yaşayan insanların sıcaklığını temsil eder .Üç depolu bu ev Bavyera Mimarisine dayalıdır.
+Bayern Evi II
+Bu ev Bavyera soyundan Fürsten ve Herzöge için inşa edilmiştir.Asalaet ve şeref dolu bir ev.
+Venedik Sarayı
+Tarihi ve görkemli  Venedik sarayı ile sizi  Rönesans dönemine götürecek bir zaman yolculuğuna çıkın. 
+Toskan Evi
+Çok sayıda balkon ve bahçesi ile bu kır evinde düşlerinizi gerçeğe dönüştürün.
+Ağaç ev
+Bu orijinal konutta bir yatak odası ile birlikte her gün doğa ile iç içe yaşama şansı vardır.
+Eko Lüks Ev
+Bu lüks eko evde 3 yatak odası ile birlikte su dönüştürme sistemi, güneş enerjisi  ve maksimum yalıtım vardır.
+Hayaletli Ev
+Bu evin içinde bir gece geçirebilirseniz sonsuza kadar sizin olacak…
+Balkabağı Evi
+Cadılar bayramınızı, her cadıya uygun bu büyüleyici evde geçirin.
+Tasarımcı Evi
+2 yatak odası ve çok sayıda ışık ile en iyi şekilde yaşayın.
+En Yüksek Gökdelen
+Bu modern gökdelen metropol hissini şehrinize taşır. Gelişen işlerinizin tamamı için yeterli alan.
+Lüks Konak
+Gelenler için klasik Hollywood tarzı konak. Yüksek sosyal ihtiyaçları karşılayan sekiz yatak odası ve beş banyo.
+Lüks Konak II
+Bu son derece lüks konakta sosyete hayatına katılın. Yüksek teknoloji ürünü eşyalar ve özel sinema salonu dahil.
+Dubleks
+İki pastoral yatak odası ile bu ev huzur isteyen küçük bir aile için rüyalarının evi gibidir.
+Paris Şehir Evi
+Bu binada çok güzel bir şekilde yenilendirilmiş, bol ışıklı ve eski dünyanın sihrine sahip daireler var.
+Seyyah Kulübesi
+Bir aile ve hindiye uygun bir odası olan bu büyüleyici kulübede seyyahlar gibi yaşayın.
+Chrysler Binası
+Bir ikon olmuş bu gökdelende her türden kullanıcı için sonsuz yer fırsatı
+Beyaz Saray
+Başkan için yeterince iyiyse, bizim için de iyidir
+Pasta Ev 
+Bu Pasta Evden daha lezzetli hiçbir şey yok, tatiller için mükemmel. Noel bitiğinde yiyebilirsiniz.
+Santa'nın mekanı
+Finlandiya'dan gelen bu sihirli evde keyifli, özel bir noel geçirmek için apartman sakinlerini çağırın.
+İglo
+Son derece ekolojik ve şaşırtıcı derece sıcak. Köpekler dahildir.
+Noel Evi
+Bu güzel ve geniş rüya evinde Noel ruhunun tadını çıkartın.
+Eğlence Evi
+Bu hayal gibi eve girin ve ev halkına eğlence taşıyın! 
+Fütüristik Delüks
+Bu ev, tüm ileri teknoloji ve yaşam çağı özellikleri ile geleceğin yaşam tarzını sunuyor.
+Fütüristik Şehir Bloğu
+Bu ferah apartmanda kiracılarınıza gelecekte yaşama şansı sunun. Kiraya ücretsiz ışınlanma hizmeti dahildir.
+Escorial Sarayı
+Bu sizin kral gibi yaşama fırsatınız. En yüksek kazanç için istediğiniz kadar kraliyet kiracısını yerleştirin.
+İspanyol Evi
+İspanya'nın kırlarında huzur dolu bir hayat. Kiracılarınız bu eve aşık olacak!
+Tenis Yıldızının Evi
+Profesyonel tenisi kendi istediğiniz gibi yaşayın ve eğitimini alın. Eğitmen dahildir.
+F1 Yıldızının Malikhanesi
+Hızlı yaşayanlar için ferah, hayalleri süsleyen bir malikhane.
+Casa Mexicana
+Bu büyüleyici ve ferah evde kiracılarına Meksika hayatı sun.
+Casa Mexicana II
+Bu büyüleyici ve ferah evde kiracılarına Meksika hayatı sun.
+Ortaçağ Kalesi
+Kiracılarınız garip sırlar ve salt gücün hüküm sürdüğü muhteşem dakikalarla kesinlikle çılgına dönecek - Karanlık Çağlar'dan kopup geldi!
+Tudor Tarzı Ev
+Güzel yarı ahşap duvarları ve dik çatıları kiracılarınızı hoş Ortaçağ sakinliğinin ve basitliğinin olduğu bir döneme götürecek. 
+Hindu Evi
+Hindu yaşam tarzını yansıtan göz alıcı dayanıklı bir ev - güzel bir bahçe ile tamamlayın!
+Hindu Sarayı
+Şatafatlı ve egzotik Saray, bu geniş binada kalmayı seçen kiracılarınızı bekliyor.
+Brezilya Evi
+Kiracılarınızın dinlenebileceği büyüleyici bir yer -  bu ev Brezilya konutları arasında en iyi olanıdır.
+Brezilya Gökdeleni
+Bu ender ve yüksek yapı ile başarınızı kutlayın - En ince Brezilya stilinde döşenmiştir!
+St. Patrick'in Evi
+Kiracılarınızın dinlenmesi için herşeyin yeşil neşeye boyandığı büyülü bir yer!
+Cüce Cinin Ağaç Evi
+Kiracılarınızın en fazla eğlence için tasarlanmış bu ağaç evde mükemmel bir zaman geçirmesini sağlayın!
+Çiçek Evi
+Bu hayat dolu ortamda - gerçektende her anlamda çoşkulu bir eğlence- çiçekler her yeri sarıyor!
+Bahçe Apartmanı
+Mükemmel canlı bahçesine vurgunun iyice yerleştiği güzel bir bina - doğanın mucizesinin tadını çıkarın!
+Otel
+Kraliçe boyu yataklar, ücretsiz yüksek hızlı Internet, oyun odası ve konuk çamaşırhanesi olan konuk odası.
+Altın Gökdelen
+Sınırlı, müsrifçe döşenmiş gökdelenle tavanı yükseltin. Vegas tarzı zenginliği ve konforu gözler önüne seren 100'den fazla kat!
+Kızılderili Çadırı
+Bu gerçek Amerikan Yerli Evi ile uçlarda yaşayın. Mükemmel atmosfer, doğaya yakın.
+Büyük Çiftlik Evi
+Bu olağanüstü çiftlikte kimseye ihtiyaç duymadan Vahşi Batı hayat tarzının keyfini çıkarın!
+Kır Evi
+İngiliz kırlarının büyüsü bu sevimli kulübede hayat buluyor. Bahçe isteğe bağlıdır.
+Buckinham Sarayı
+Kiracılarınız bu harika kalede bir kraliçe gibi yaşayabilir. Alanı çok geniştir.
+Lüks Konut
+Bu bina en talepkar kiracıların bile isteyebilecekleri herşeye sahiptir.
+Platin Konak
+Piyasadakilerin en iyisi, bu Konak da lüks adına hiç birşeyden kaçınılmamış!
+Pizzacı
+Kahveci
+Çiçekçi
+Bowling
+Kuyumcu
+Gece Kulübü
+Alışveriş Merkezi
+Banka
+Hastane
+Kumarhane
+Pet Shop
+Stadyum
+Jimnastik Salonu
+Sushi Barı
+Bräuhaus
+İtalyan Araba Mağazası
+Eko Sığınak
+Korku Mağazası
+Midas Oteli 
+Sinema Hollywood
+Midas AVM
+Louvre
+Vegas Barı
+Şükran günü çadırı
+Fairytale Şatosu
+McDollars
+Elf Oyuncak Dükkanı
+Kızak Mağazası
+Pamuk Şekeri Çadırı
+Sirk Çadırı
+Robot Fabrikası
+Paella Restoran
+Modern Sanat Müzesi
+Beyzbol Stadyumu
+Arta Binme Ahırları
+Tekila Fabrikası
+Tako Restoranı
+Opera Evi
+Bollywood Stüdyosu
+Caipirinha Barı
+Kostüm mağazası
+irlanda Barı
+Bal Dükkanı
+Meyve Suyu Barı
+Vegas Kulesi
+Evlenme Kilisesi
+Vegas Oteli
+Bar
+Altın Madeni
+Balık&Cips restoranı
+Çay ocağı
+Selvi Ağacı
+Meşe Ağacı 
+Palmiye
+Fıskiye
+Portakal Ağacı
+Japon Ağacı
+Büyük Bahçe
+Elma Ağacı
+Zafer Takı
+Fıskiye II
+Küçük Palmiye
+Akçaağaç
+Havuz
+Kaktüs
+Huş Ağacı
+Altın Akçaağaç
+Baloncu Çocuk
+Gümüş Akçaağaç
+Bulut Ağacı
+Bambu
+Başarı Kemeri
+Çam Ağacı
+Bira Festivali Sütunu
+Bierzelt
+David Heykeli
+Comitium Kalıntıları
+Fontana di Fiumi
+Yel değirmeni
+Geri Dönüşüm İstasyonu
+Organik Bahçe
+Lanetli Ağaç
+Hediye Ver Yoksa Karışmam Bahçesi
+Zombi Mezarlığı
+Altın Ağacı
+Elmas Ağacı
+Özel Havaalanı
+Lüks Havuz
+Moulin Rouge
+Ar Nuvo Lamba
+Bolluk Boynuzu
+Buz Pateni Sahası
+Buz Kalıp
+Kardan adam
+Klasik Ağacı
+Işıklı Ağacı
+Kardan Ağaç
+Büyük kar küre
+Island God Totemi 
+Altın Ağacı
+Noel Işığı
+Yeni Yıl Plazası
+Zincir Atlıkarınca
+Dönme Dolap
+Yaşam Çağı Ağacı
+Elf Fıskiyesi
+El Retiro Parkı
+Endülüs At Heykeli
+Segoavia Su Kemeri
+Japon Gölü
+Mini Golf
+Olimpik Havuz
+Dünya Kupası Heykeli
+Sabır Otu (Agave)
+Moai Heykeli
+Xian Savaşçıları
+Eski Mısır Heykeli
+Olmec Kafası
+Panteon
+Fil Heykeli
+Hindu Çardağı
+Chafa
+Baharatçı
+Karnaval Salı
+Amazon ağacı
+Guarana bitkisi
+Altın Kazanı
+Cüce Cin Heykeli
+Yonca Çeşmesi
+Çiçek bahçesi
+Ortanca
+Çiçek Açmış Ağaç
+Çocuk Parkı
+Neon Kovboy
+Hoş geldin Tabelası
+Neon Kaktüs
+Altın Külçesi Dolu Araba
+Vahşi Batı At Arabası
+Lokomotif
+TNT
+Tünel işareti
+Telefon kulübesi
+Nelson sütunu
+Zombi Mezarlığı
+Altın Heykel
+Discovery
+Piramit
+Eiffel Kulesi
+Ronald'ın Heykeli
+Cindy'nin Heykeli
+Özgürlük Anıtı
+Chronos Kulesi
+Colosseo
+Drakula'nın Kalesi
+Dollars Bin
+Yeni Yıl Saati
+Atomiyum
+La Sagrada Familia
+Chichen Itza
+Stonehenge
+Tac Mahal
+Corcovado 
+Sarı denizaltı
+%U Seviye
+Arazi Boyutu:
+Ev Bonusu:
+Manfaat
+Bu Anıt, Günlük Bonus'u %U Dolar   arttırır.
+Bu Alamet-i farika %U% kira gelirinizi ikiye katlamanızı mümkün kılar.
+Bu Anıt, sahip olduğunuz bütün evlerin Gelir Bonus'unu %U% arttırır.
+Bu Anıt, Ticari Yapılardan Elde Edilen Geliri %U% arttırır.
+Satın Al:
+Gün
+Gün
+Saat
+Saat
+Dak.
+Sn.
+Dolar  
+Altın
+izinler
+%U%
+Ücretsiz
+Ücretsiz
+İptal
+Yeni!
+Arkadaş Ekle!
+Tebrikler!
+Seviye %U
+Şimdi açıldı:
+Bugünün Günlük Bonusu
+Günlük bonusunuzu almak için her gün gelin!
+%U
+%U Altın
+%U XP
+%U Arazi
+Devam Et
+Tamam
+Binalar
+Evler
+Ticari Yapılar
+Dekorasyonlar
+Anıtlar
+Italian Week
+Specials
+Hediye 
+Başarınızı paylaşın
+Evet
+Hayır
+Tamam
+Şirketiniz
+Genel Merkez'yı Yerleştir
+Arazi Satın Al 
+Ev Yap
+Yol Yap
+Hemen Yap
+Sözleşme İmzala
+Dekorasyon Al
+Kirayı Topla
+\nMerhaba, benim adım %U. Bu, kendi emlak işinize başlayacağınız Chocolate Fields şehri.\n\nAmacınız ise bu küçük şehri büyük bir metropol haline getirmek ve milyoner olmak.
+\nMillionaire City'de güzel bir şehir kurarken aynı zamanda para ve deneyim kazanmak için ev satın alabilir ya da kiralayabilirsiniz.\n\nOkla gösterilen alana Genel Merkezinizi (HQ) yerleştirerek başlayın.
+\nBir ev inşa etmeden önce arazisini satın almanız gerekir.\n\nArazi Satın Al aracına tıklayın ve eksik iki araziyi alın.
+\nMağaza aracına tıklayın ve bir Bungalow alın.\n\nArdından 2x2 arazinin üzerine yerleştirin.
+\nİnşaat başlamadan önce şantiye alanının Genel Merkez'e bağlanması gerekir.\n\nYol aracını seçin ve evi ana yol ile birleştirmek için eksik iki yol parçasını inşa edin.
+\nİnşaat başladı, bitmesi biraz zaman alacak.\n\n Bungalow'a tıklayın ve inşaatı bitirmek için Hemen Yap'ı seçin.
+\nArtık ilk kiracılarınla tanışma zamanı.\n\nBungalow'a tıklayın ve bir kira sözleşmesi imzalayın.\n\nBu sözleşmenin 90$ masrafı olduğunu unutmayın.
+\nKira bedelini arttırmak için sahibi olduğunuz evin yanına bir dekorasyon yerleştirin.\n\nMağaza'ya gidin ve Dekorasyon sekmesini seçin, ardından bir Selvi Ağacı satın alın ve Bungalow'un yanına yerleştirin.\n\nBungalow'un gelir bonusunun %2 arttığına dikkat edin.
+\nKiran toplanmaya hazır!\n\nToplamak için Bungalow 'a tıklayın.
+\nArtık, para kazanmanın temel ilkelerini öğrendiniz!\n\nSonraki görevlerin:\n- Daha çok ev yap\n- Arkadaşlarını ziyaret et\n- Aşağıdaki Görevler düğmesine tıklayarak görevleri tamamlayabilir ve para kazanabilirsin.\n\nBol şans!
+İlerleme %U / %U1
+Danışman Seç
+$
+Adlandır
+Aşağıdaki alana şehrinin ADINI yaz ve 'Tamam' düğmesine tıkla.
+Pizzalicious
+Genel Merkez yakınındaki 'Satılık' Pizzacıyı satın al. Ödünülünü almak için buraya geri dön. 
+Yardımsever
+Yardım İsteyin
+\n\nİnşa edilmekte olan Anıt'a tıklayın ve arkadaşlarınızdan Yardım İsteyin. Ne kadar çok arkadaşınız yardım ederse Anıt o kadar kısa zamanda tamamlanacaktır.
+Boyut Önemlidir
+Bir genişleme satın al! Genişlemeler Şehrini daha kolay bir şekilde büyütebilmene ve daha kolay zengin olmana yardımcı olur.
+\n\nİpucu: Şehrinin sınırları dışındaki 'Satılık Genişleme' tabelasına tıklayarak satın alabilirsin.
+Hemen Yap
+Hemen Yap özelliğini kullanmak için yapımı süren bir binaya tıkla.
+\n\nİpucu: Bir Ev inşa et, HQ’ya bağla ve inşaat zamanlayıcısı geri sayımı bittikten sonra Eve tıklayarak Anında İnşa’yı onayla!
+İnşaat I
+Bir Ev inşa et!
+\n\nİpucu: Arazi Satın Alma aracı ile 2x2 bir arazi satın al. Mağazaya git, Lüks Bungalow seç ve araziye yerleştir.
+İnşaat II
+Şehirdeki daha talepkar kişiler için bir Konak inşa et.
+\n\n İpucu: Arazi Satın Alma aracı ile doğru boyutta arazi satın al. Mağazaya giderek Lüks Bungalow seç ve arazinin üzerine yerleştir.
+Coffeelicious
+Bir Kahveci inşa et.
+\n\nİpucu: Ticari yapılarınızdan alışveriş yapacak müşteri sayısını arttırmak için Ticari yapıları evlere mümkün olduğunca yakın inşa et.
+Çeşitlilik
+5 farklı Ticari yapıya sahip olarak iş portföyünüzü genişlet.
+\n\nİpucu: İlk önce arazileri satın al, Mağazaya git ve ardından Ticari yapıları satın al.
+Yeşil Dokunuş I
+2 Ağaç ek.
+\n\nİpucu: Mağazaya giderek Dekorasyonlar sekmesini seç. Bir Ağaç satın al ve Evin Bonusunu arttırmak için ağacı bir evin yanına yerleştir. Bu işlemi tekrarla!
+Fıskiye Rüyası
+Şehrinin çevresine 3 tane daha Fıskiyeler yerleştir. Şehrinide mevcut olabilecek çeşmeler sayılmayacaktır.
+\n\n İpucu: Ev Bonuslarını arttırmak için bunları sahip olduğun evlerin yakınına yerleştir.
+Yeşil Dokunuş II
+Şehrinde yaşayanların keyfini çıkartabilmeleri için 1 Büyük Bahçe inşa et.
+\n\nİpucu: Ev Bonuslarını artırmak için bunları Evlerin yakınına yerleştir.
+Lüks Evler I
+1 Lüks Konak inşa et.
+\n\nİpucu: Ticari yapılarının müşteri sayısını arttırabilmek için Ticari binalarına yakın bir yere inşa et!
+Lüks Evler II
+1 Lüks Dubleks inşa et.
+\n\nİpucu: Ticari yapılarının müşteri sayısını arttırabilmek için Ticari binalarına yakın bir yere inşa et!
+Şato Rüyası
+Hollywood'dan gelen film yıldızları gibi üst sınıf vatandaşlarını memnun etmek için 2 Şatolar inşa et.
+\n\nİpucu: Ticari yapılarının müşteri sayısını arttırabilmek için Ticari binalarına yakın bir yere inşa et! 
+Gökdelen Rüyası
+Şehrine metropol hissi katmak için 3 Gökdelenler inşa et.
+\n\n İpucu: Gökdelenlerde Ticari yapıların için de çok değerli olabilecek çok sayıda insan yaşar!
+Dünya Harikası
+Anıtlar ile büyük Bonuslar elde edilir! 1 Altın Heykel inşa et
+\n\nİpucu: İlk olarak 4x4 bir arazi al, ardından Mağazaya giderek Anıtlar sekmesini seç ve Altın Heykel üzerine tıkla. Boş arazinin üzerine yerleştir. 
+Pizzalicious Müşterileri I
+Pizzacı'in müşteri sayısını 3'e çıkart.
+\n\n İpucu: İlk olarak Pizzacı yanında 2x2 bir arazi satın al, ardından Mağazaya giderek bir Ev al ve araziye yerleştir. Kiracılara sahip olmak için bir kontrat imzala.
+Pizzalicious Müşterileri II
+Müşteri sayısını 10'a çıkartmak için Pizzacı çevresinde daha fazla Ev inşa et.
+\n\n İpucu: Pizzacı yanında arazi satın al, Mağazaya giderek Evleri satın al ve evleri kiraya vermek için kontrat yap.
+Pizzalicious Müşterileri III
+Müşteri sayısını 16'ya çıkartmak için Pizzacı çevresinde daha fazla Ev inşa et.
+\n\n İpucu: Pizzacı yanında arazi satın al, Mağazaya giderek Evleri satın al ve evleri kiraya vermek için kontrat yap.
+Coffeelicious Müşterileri I
+Kahveci'in müşteri sayısını 12'ye çıkart.
+\n\n İpucu: Kahveci yanında daha fazla ev inşa et.
+Coffeelicious Müşterileri II
+Kahveci'in müşteri sayısını 24'e çıkart.
+\n\n İpucu: Kahveci yanında daha fazla ev inşa et.
+Çiçekçi Müşterileri
+Bir Çiçekçi inşa et ve 30 müşteri topla.
+\n\n İpucu: Çiçekçi çevresinde ev inşa et.
+Gece Kulübü Müşterileri
+Bir Gece Kulübü inşa et ve 36 parti düzenle.
+\n\n İpucu: Gece Kulübü çevresinde ev inşa et.
+Evi Güzelleştirin I
+%12 Ev Bonusu almak için sahibi olduğun Bungalowlardan birinin yanına Dekorasyonlar yerleştir.
+\n\n İpucu: Dekorasyonlara Mağazadan ulaşabilirsin.
+Evi Güzelleştirin II
+%16 Ev Bonusu almak için sahibi olduğun Bungalowlardan birinin yanına Dekorasyonlar yerleştir.
+\n\n İpucu: Dekorasyonlara Mağazadan ulaşabilirsin.
+Evi Güzelleştirin III
+%30 Ev Bonusu almak için sahibi olduğun Konak yanına Dekorasyonlar yerleştir.
+\n\n İpucu: Dekorasyonlara Mağazadan ulaşabilirsin.
+Evi Güzelleştirin IV
+%60 Ev Bonusu almak için sahibi olduğun Konak yanına Dekorasyonlar yerleştir.
+\n\n İpucu: Dekorasyonlara Mağazadan ulaşabilirsin.
+Rock Yıldızı Villası
+Ünlü Rock Yıldızı'Billy Dollars' %90 Ev Bonusuna sahip bir Villa arıyor.
+\n\nİpucu: Ev Bonuslarını dekorasyonlarla arttır.
+Şatoyu Güzelleştirin
+Zengin bir Medya Patronu %110 Ev Bonusuna sahip göz alıcı bir Şato arıyor.
+\n\nİpucu: Ev Bonuslarını dekorasyonlarla arttır.
+Pizzalicious Satışı I
+Pizzacının gelirini toplayıp bir Pizza Satışı düzenle.
+\n\nİpucu: Pizzacının çevresinde ne kadar çok eviniz olursa o kadar çok para kazanırsın!
+Pizzalicious Satışı II
+5 defa Pizza Satışı etkinliği düzenle.
+\n\n İpucu: Sayaç 5 defa tamamlandıktan sonra Pizzacıya tıkla!
+Coffeelicious Satışı I
+10 defa Kahve Satışı etkinliği düzenle.
+\n\n İpucu: Kafeden elde edilen geliri 10 defa topla!
+Coffeelicious Satışı II
+50 defa Kahve Satışı etkinliği düzenle.
+\n\n İpucu: Kafeden elde edilen geliri 50 defa topla!
+Bana Kiranı Göster I
+Sahip olduğunuz evlerden 10 kira topla.
+\n\n İpucu: Görevi daha çabuk bitirmek için kısa süreli Sözleşmeleri kullan.
+Bana Kiranı Göster II
+Sahip olduğunuz evlerden 50 kira topla.
+\n\n İpucu: Görevi daha çabuk bitirmek için kısa süreli Sözleşmeleri kullan.
+Bana Kiranı Göster III
+Sahip olduğunuz evlerden 100 kira topla.
+\n\n İpucu: Görevi daha çabuk bitirmek için kısa süreli Sözleşmeleri kullan.
+Bana Kiranı Göster IV
+Sahip olduğunuz evlerden 200 kira topla.
+\n\n İpucu: Görevi daha çabuk bitirmek için kısa süreli Sözleşmeleri kullan.
+Diğer Şehirleri Ziyaret Edin
+Arkadaşlarının şehirlerini ya da %U'nin şehrini ziyaret etmek için oyunun altındaki çubuğa tıkla.
+\n\n İpucu: Günlük Bonus kazanmak için %U'nin şehrini her gün ziyaret et.
+Arkadaşlarınıza Yardım Edin I
+Arkadaşlarının şehirlerini ziyaret et ve Şehirlerinde toplam 6 evi geliştir.
+\n\nİpucu: Ziyaret etmek için aşağıdaki çubuk üzerindeki arkadaşlarından birine tıkla ve ardından evlerini geliştirmek için arkadaşlarının evlerinin üzerine tıkla!
+Arkadaşlarınıza Yardım Edin II
+Arkadaşlarının şehirlerini ziyaret et ve Şehirlerinde toplam 20 evi geliştir.
+\n\nİpucu: Ziyaret etmek için aşağıdaki çubuk üzerindeki arkadaşlarından birine tıkla ve ardından evlerini geliştirmek için arkadaşlarının evlerinin üzerine tıkla!
+Arkadaşlarınıza Yardım Edin III
+Arkadaşlarının şehirlerini ziyaret et ve Şehirlerinde toplam 50 evi geliştir.
+\n\nİpucu: Ziyaret etmek için aşağıdaki çubuk üzerindeki arkadaşlarından birine tıkla ve ardından evlerini geliştirmek için arkadaşlarının evlerinin üzerine tıkla!
+Nakit Kraldır I
+1.000.000 $ Millionaire Doları biriktirereke kendini zengin hisset.
+\n\nİpucu: 'Dolar Ekle' düğmesine tıklayarak Altın Külçelerinizi Millionaire Dolarına dönüştürebilirsin!
+Artık Zenginsiniz I
+Toplam Şirket Değeri 1.000.000 $'a ulaş.
+\n\n İpucu: Nakit akışını hızlandırmak için daha kısa süreli Ev Kontratlarını ve Ticari Yapıları tercih et!
+Artık Zenginsiniz II
+Toplam Şirket Değeri 5.000.000 $'a ulaş. Bunu başarabilir misin?
+\n\n İpucu: Nakit akışını hızlandırmak için daha kısa süreli Ev Kontratlarını ve Ticari Yapıları tercih et!
+Artık Zenginsiniz III
+ToplamŞirket Değeri 10.000.000 $'a ulaş. 
+\n\n İpucu: Nakit akışını hızlandırmak için daha kısa süreli Ev Kontratlarını ve Ticari Yapıları tercih et!
+Bana Kiranı Göster V
+Sahip olduğun evlerden 600 kira topla.
+\n\n İpucu: Görevi daha çabuk bitirmek için kısa süreli Sözleşmeleri kullan.
+Bana Kiranı Göster VI
+Sahip olduğun evlerden 950 kira topla. 
+\n\n İpucu: Görevi daha çabuk bitirmek için kısa süreli Sözleşmeleri kullan.
+Arkadaşlarınıza Yardım Edin IV
+Arkadaşlarının şehirlerini ziyaret et ve Şehirlerinde toplam 650 evi geliştir.
+\n\nİpucu: Ziyaret etmek için aşağıdaki çubuk üzerindeki arkadaşlarından birine tıkla ve ardından evlerini geliştirmek için arkadaşlarının evlerinin üzerine tıkla!
+Arkadaşlarınıza Yardım Edin V
+Arkadaşlarının şehirlerini ziyaret et ve Şehirlerinde toplam 850 evi geliştir.
+\n\nİpucu: Ziyaret etmek için aşağıdaki çubuk üzerindeki arkadaşlarından birine tıkla ve ardından evlerini geliştirmek için arkadaşlarının evlerinin üzerine tıkla!
+Artık Zenginsiniz IV
+Toplam Şirket Değeri 375.000.000 $'a ulaş. 
+\n\n İpucu: Nakit akışını hızlandırmak için daha kısa süreli Ev Kontratlarını ve Ticari Yapıları tercih et!
+Artık Zenginsiniz V
+Toplam Şirket Değeri 475.000.000 $'a ulaş. 
+\n\n İpucu: Nakit akışını hızlandırmak için daha kısa süreli Ev Kontratlarını ve Ticari Yapıları tercih et!
+Nakit Kraldır II
+10.000.000 $ Millionaire Doları biriktir ve kendini zengin hisset.
+\n\nİpucu: 'Dolar Ekle' düğmesine tıklayarak Altın Külçelerini Millionaire Dolarına dönüştürebilirsin!
+Nakit Kraldır III
+20.000.000 $ Millionaire Doları biriktir ve kendini zengin hisset.
+\n\nİpucu: 'Dolar Ekle' düğmesine tıklayarak Altın Külçelerini Millionaire Dolarına dönüştürebilirsin!
+Rock Yıldızı Sözleşmesi
+Rock Yıldızı Kontratından 200 kira topla 
+\n\n İpucu: Aynı anda birden fazla kontrat imzalamak için birden fazla ev inşa et!
+Sheik görevi
+Sheik Oilfinger puroları çok seven ünlü bir milyonerdir. Şirket değerini 900 M $'a çıkart ve Sheik Oilfinger'ye kimin en zengin olduğunu göster!  
+\n\nİpucu: Nakit akışını arttırmak için kısa süreli Ev Kontratları ve Ticari Yapı Kontratları kullan!
+Bana Kiranı Göster VII
+Sahip olduğun evlerden 5000 kira topla. 
+\n\n İpucu: Görevi daha çabuk bitirmek için kısa süreli Sözleşmeleri kullan.
+Arkadaşlarınıza Yardım Edin VI
+Arkadaşlarının şehirlerini ziyaret et ve Şehirlerinde toplam 2000 evi geliştir. 
+\n\nİpucu: Ziyaret etmek için aşağıdaki çubuk üzerindeki arkadaşlarından birine tıkla ve ardından evlerini geliştirmek için arkadaşlarının evlerinin üzerine tıkla!
+Artık Zenginsiniz VI
+Toplam Şirket Değeri 2.000.000.000 $'a ulaş. 
+\n\n İpucu: Nakit akışını hızlandırmak için daha kısa süreli Ev Kontratlarını ve Ticari Yapıları tercih et!
+Nakit Kraldır III
+300.000.000 $ Millionaire Doları biriktir ve kendini zengin hisset. 
+\n\nİpucu: 'Dolar Ekle' düğmesine tıklayarak Altın Külçelerini Millionaire Dolarına dönüştürebilirsin!
+Tarihi Evi Güzelleştirin
+%360 Ev Bonusu kazanmak için Tarihi Ev yanına dekorasyonlar yerleştir.
+\n\n İpucu: Bir Dekorasyon satın almadan önce Mağaza'daki Ev Bonusunu kontrol et!
+Banka Müşterileri
+Banka inşa et ve 529 müşteri topla. 
+\n\n İpucu: Müşteri sayısını arttırmak için Banka çevresinde daha fazla ev inşa et!
+Bowling Müşterileri
+Bowling inşa et ve 243 müşteri topla. 
+\n\n İpucu: Müşteri sayısını arttırmak için Banka çevresinde daha fazla ev inşa et!
+M-City'nin Lüks Kulübü
+Cindy ve Ronald prestijli Millionaire City VIP Club'ın eski üyeleri, artık sen de katılabilirsin! Haberler, hediyeler ve ödüller gibi benzersiz özelliklerden yararlan. 
+\n\n İpucu: E-Posta adresini gir ve üyelik kartını alın.
+Görev Tamamlandı 
+İş Ortakların ana güveniyor! 40 İş Ortağınızın şehirlerini ziyaret ederek işlerini büyüt.
+\n\n İpucu: Oyun ekranının altındaki Arkadaşlar Çubuğundan Ortaklarına ulaşabilirsin!
+Yatırım Yapma
+Milyonerler için her yatırımın bir karşılığı vardır. Davetini kabul eden 10 arkadaşına yatırım yap ve davetin süresi dolduğunda ödülünü al. 
+\n\n İpucu: Oyun ekranının alt sol kısmındaki Yatırımlar simgesine tıklayarak Yatırım Talepleri gönderebilirsin.
+Akıllı Yatırım
+Akıllı yatırımlar yap. %U adet başarılı yatırım yaparak bir yatırım uzmanı ol ve davetiyenin süresi dolduğunda ödülünü alın. 
+\n\n İpucu: Bir arkadaşına yatırım yaptığında 'Yatırımlar Portföyüne' tıklayarak arkadaşına bir hatırlatma mesajı gönderebilirsin.
+Arkadaş Ziyareti I
+Arkadaşlarınızın şehirlerini ziyaret edin ve toplamda 70 Lüks Apartman yükseltin. 
+\n\nİpucu: Arkadaşlarınızın şehirlerini ziyaret edin ve varsa Lüks Apartman üzerine tıklayın!
+Arkadaş Ziyareti II
+Arkadaşlarının şehirlerini ziyaret ederek toplam 50 Gökdelen'i geliştir. 
+\n\nİpucu: Arkadaşlarının şehirlerini ziyaret et ve varsa Gökdelen üzerine tıkla!
+Arkadaş Ziyareti IV
+Arkadaşlarının şehirlerini ziyaret ederek toplam 30 Lüks Gökdelen'i geliştir. 
+\n\nİpucu: Arkadaşlarının şehirlerini ziyaret et ve varsa Lüks Gökdelen üzerine tıkla!
+Arkadaş Ziyareti VI
+Arkadaşlarının şehirlerini ziyaret ederek toplam 20 Süper Gökdelen'i geliştir. 
+\n\nİpucu: Arkadaşlarının şehirlerini ziyaret et ve varsa Süper Gökdelen üzerine tıkla!
+Arkadaş Ziyareti III
+Arkadaşlarının şehirlerini ziyaret ederek toplam 40 Ekolojik Ev'i geliştir. 
+\n\nİpucu: Arkadaşlarının şehirlerini ziyaret et ve varsa Ekolojik Ev üzerine tıkla!
+Arkadaş Ziyareti V
+Arkadaşlarının şehirlerini ziyaret ederek toplam 25 Fütürist'i geliştir. 
+\n\nİpucu: Arkadaşlarının şehirlerini ziyaret et ve varsa Fütürist üzerine tıkla!
+Arkadaş Ziyareti VII
+Arkadaşlarının şehirlerini ziyaret ederek toplam 10 Kale'i geliştir. 
+\n\nİpucu: Arkadaşlarının şehirlerini ziyaret et ve varsa Kale üzerine tıkla!
+Pet Shop Müşterileri
+Pet Shop inşa et ve 32 adet sevimli yavru köpek sat.
+\n\n İpucu: Müşteri sayısını arttırmak için Pet Shop çevresinde daha fazla ev inşa et!
+Kuyumcu Müşterileri
+Kuyumcu inşa et ve 34 adet parlak mücevher sat.  
+\n\n İpucu: Müşteri sayısını arttırmak için Kuyumcu çevresinde daha fazla ev inşa et!
+Paylaşılan Teklif I
+Arkadaşlarından, senin evlerini geliştirmelerini iste ve ardından 50 gelişmiş kira topla. Paylaşmak güzeldir! 
+\n\n İpucu: Birbirlerinin evlerini yükseltmenin keyfini çıkartırken sana katılmaları için  Arkadaşlarını Millionaire City oynamaya davet etmeyi unutma.
+Paylaşılan Teklif II
+Arkadaşlarından, senin evlerini geliştirmelerini iste ve ardından 100 gelişmiş kira topla. Paylaşmak güzeldir! 
+\n\n İpucu: Birbirlerinin evlerini yükseltmenin keyfini çıkartırken sana katılmaları için  Arkadaşlarını Millionaire City oynamaya davet etmeyi unutma.
+Paylaşılan Teklif III
+Arkadaşlarından, senin evlerini geliştirmelerini iste ve ardından 200 gelişmiş kira topla. Paylaşmak güzeldir! 
+\n\n İpucu: Birbirlerinin evlerini yükseltmenin keyfini çıkartırken sana katılmaları için  Arkadaşlarını Millionaire City oynamaya davet etmeyi unutma.
+Paylaşılan Teklif IV
+Arkadaşlarından, senin evlerini geliştirmelerini iste ve ardından 400 gelişmiş kira topla. Paylaşmak güzeldir! 
+\n\n İpucu: Birbirlerinin evlerini yükseltmenin keyfini çıkartırken sana katılmaları için  Arkadaşlarını Millionaire City oynamaya davet etmeyi unutma.
+Paylaşılan Teklif V
+Arkadaşlarından, senin evlerini geliştirmelerini iste ve ardından 800 gelişmiş kira topla. Paylaşmak güzeldir! 
+\n\n İpucu: Birbirlerinin evlerini yükseltmenin keyfini çıkartırken sana katılmaları için  Arkadaşlarını Millionaire City oynamaya davet etmeyi unutma.
+Paylaşılan Teklif VI
+Arkadaşlarından, senin evlerini geliştirmelerini iste ve ardından 1600 gelişmiş kira topla. Paylaşmak güzeldir! 
+\n\n İpucu: Birbirlerinin evlerini yükseltmenin keyfini çıkartırken sana katılmaları için  Arkadaşlarını Millionaire City oynamaya davet etmeyi unutma.
+Paylaşılan Teklif VII
+Arkadaşlarından, senin evlerini geliştirmelerini iste ve ardından 3200 gelişmiş kira topla. Paylaşmak güzeldir! 
+\n\n İpucu: Birbirlerinin evlerini yükseltmenin keyfini çıkartırken sana katılmaları için  Arkadaşlarını Millionaire City oynamaya davet etmeyi unutma.
+Paylaşılan Teklif VIII
+Arkadaşlarından, senin evlerini geliştirmelerini iste ve ardından 6400 gelişmiş kira topla. Paylaşmak güzeldir!
+\n\n İpucu: Birbirlerinin evlerini yükseltmenin keyfini çıkartırken sana katılmaları için  Arkadaşlarını Millionaire City oynamaya davet etmeyi unutma.
+Paylaşılan Teklif IX
+Arkadaşlarından, senin evlerini geliştirmelerini iste ve ardından 7400 gelişmiş kira topla. Paylaşmak güzeldir! 
+\n\n İpucu: Birbirlerinin evlerini yükseltmenin keyfini çıkartırken sana katılmaları için  Arkadaşlarını Millionaire City oynamaya davet etmeyi unutma.
+Paylaşılan Teklif X
+Arkadaşlarından, senin evlerini geliştirmelerini iste ve ardından 8500 gelişmiş kira topla. Paylaşmak güzeldir! 
+\n\n İpucu: Birbirlerinin evlerini yükseltmenin keyfini çıkartırken sana katılmaları için  Arkadaşlarını Millionaire City oynamaya davet etmeyi unutma.
+Taşıma
+Evrak Çantası simgesi ile vurgulanan Müteahhitler menüsüne git ve mevcut Ağacı başka bir konuma taşımak için Taşı aracını kullan. 
+\n\n İpucu: Taşı aracı, Şehrini yeniden düzenlerken oldukça kullanışlıdır – Aynı zamanda Ücretsiz Hediye olarak da gönderebilirsin!
+Mission Completed
+Gelir
+XP:
+Kira Zamanı:
+İnşaat Süresi:
+Etki:
+Kiracılar:
+Müşteriler:
+Arkadaşlarından yardım isteyerek inşa etme süresini hızlandırabilirsin
+%U arkadaşınız bu binanın inşaatına yardım etti ve toplam inşaat süresi %U1% kısaldı.
+Millionaire City'nin Fanı Olun
+Millionaire City fanları, en son haberlerden kısa zamanda haberdar olur, özel Ücretsiz Hediyeler kazanabilir ve Üç Katlı evini inşa edebilir!  
+Hoş geldiniz!
+Sıralamada sizi %U arkadaşınız geçti.
+%U arkadaşınız size yardım etti.
+%U arkadaşınız şehrinizde yatırım yaptı.
+%U inşaat tamamlandı.
+%U de milyoner olmaya çalışıyor ancak yardımınıza ihtiyacı var.\nOna yardımcı olabilir misiniz?
+Ronald Goldtooth
+Cindy Jewels
+Sheik Oilfinger
+Ronald
+Cindy
+Sheik
+Bu binayı, %U arazi üzerine yerleştirmelisiniz. Tümünü satın almak için Arazi Satın Al aracını kullanın.
+Bu öğeyi almak için {0xFF6600}%U1{/} daha fazla altın çubuk alman gerekiyor gibi
+Bu öğeyi almak için {0x009932}%U1{/} daha fazla nakit paraya ihtiyacın var gibi görünüyor. Bu kadar dolar için {0xFF6600}%U{/}  Altın Çubuk değiştokuş edebilirsin.
+Bunu satın almak için yeterli Nakitiniz yok. {0xFF6600}%U1{/} Altın külçesi için size {0x009932}%U{/} Nakit verirdim ancak sadece {0xFF6600}%U2{/} Altın külçeniz var.
+Nakit Yetersiz
+Altın Yetersiz
+Hediye Gönder
+Buraya Tıklayın
+%U. Görevin Tamamlanması Gerekir
+Turistler
+Öğrenciler
+Aile
+Pansiyonerler
+Sporcular
+Pilotlar
+Hostesler
+Sanatçılar
+Arkadaşlar
+Rock Yıldızı
+Futbol Yıldızı
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+Davet Edin
+Yardım İsteyin
+Ödül Alın
+Sözleşmeyi iptal etmek istediğinizden emin misiniz?
+Bunu yıkmak istediğinizden emin misiniz?\nAlacağınız Miktar: {0x009932}%U{/}
+Kiracılar, kirayı almaya gelmenizi beklemekten sıkıldı ve evi terk ettiler.
+Evi onarmak için tıklayın.
+Chocolate Fields
+Hızlandırmak için %U beklemeniz gerekir.
+Hatırlatmak için %U beklemeniz gerekir.
+Şimdi ne satın alacaksınız?
+Millionaire City'de Seviye Atlamak.
+%U, şimdi Millionaire City'de %U1. Seviyeye ulaştı ve başarısını kutlamak için arkadaşlarıyla Deneyim Bonusunu paylaşmak istiyor!
+Deneyim Bonusunu Al
+Ne kadar yardıma ihtiyacınız var?
+%U'in, %U1 - Dünya Harikasını inşa etmek için yardıma ihtiyacı var.
+%U'in %U1'i tamamlamak için yardıma ihtiyacı var. Millionaire City'de milyonlar kazanırken kendi şehrinizi de inşa edebilirsiniz.
+%U'ya Yardım Et
+Şimdi kendinizi zengin hissediyor musunuz?
+Vay, %U 'Chocolate Street Magazininin' kapağına çıkmış!
+%U başarılı bir patron ve yakında Millionaire City'deki zengin ve ünlü kişilerle takılmaya başlayacak.
+Millionaire City Oyna
+Zengin olmak nasıl bir his?
+%U bir Milyoner
+%U, Millionaire City'deki milyonerlerden biri. Ev, kumarhane, otel, kuyumcu satın alarak ve bir metropol inşa ederek %U'yu ve diğer arkadaşlarınızı geçebilirsiniz: bunların hepsi Millionaire City'de mümkün.
+Millionaire City Oyna
+Görevi tamamlamak zor muydu?
+Görev başarıyla tamamlandı!
+%U, '%U1' görevini tamamlayarak büyük bir ödül kazandı ve sizi zengin edebilecek Dolarlarını sizinle paylaşmak istiyor!
+Dolar Bonusu Al
+Sözleşme imzalandı!
+Bina Bağlandı!
+Arkadaş Yükseltmesi
+Arkadaşlarınızın şehirlerini ziyaret edin ve evlerini yükseltin!
+Nakit ve Deneyim kazanırsınız.
+Kirayı toplamakta geç kalırsanız kiracılar ödeme yapmadan ayrılacaktır!
+Nakit kazanmak için görevleri tamamlamayı unutmayın
+Altın külçenizi Nakit karşılığında bozdurabileceğinizi unutmayın
+Ticari Yapılardan elde edilen gelir, sahip olduğunuz müşteri sayısına bağlıdır
+Nakitle al?
+Altınla al?
+Nakitle ve Yatırımların yardımıyla al?
+Genişletme Al
+Bu dekoru inşa edebilmek için boş araziye ihtiyacınız var.
+Bu bina, Genel Merkez'e bağlı değil.
+Bağlamak için yol yapın.
+Satın almak için tıklayın
+%U adet başarılı yatırıma ihtiyacınız var
+%U adet başarılı yatırımınız var
+İlk olarak açık genişletmeyi satın almanız gerekir
+Kilitli
+Şehriniz, sunucu ile eşzamanlı değil. Lütfen devam etmek için sayfayı yenileyin.
+Üzgünüz, şehriniz yüklenirken beklenmeyen bir hata oluştu. Lütfen tekrar deneyin!
+Sadece 12 saatte bir yardım isteyebilirsiniz.
+Yeni Yatırımlar
+Yatırım Portföyü
+Yeni Yatırımlar
+Yatırım Portföyü
+Yatırım Yap
+{0x009932}%U{/}'nin milyon dolarlık bir şirket kurmasına yardım edin. Şimdi yeni şirkete  {0x009932}%U1{/} yatırım yapın ve şayet  {0x009932}%U2{/} günde Şirket Değeri  {0x009932}%U3{/}'e yükselirse küçük yatırımınız için  {0x009932}%U4{/} kazanacaksınız.
+Bir Milyon Dolar ile ne satın alırdınız?
+%U, bir Milyoner olmak istiyor musun?
+%U, rüya şehrini inşa edebilir ve arkadaşına yardım edebilir misin? %U1, Millionaire City'de bir şehir inşa etmek istiyor. Teklifi kabul edebilir ve şehrini inşa ederken ekstra para kazanmak için arkadaşına yardım edebilirsin.
+Kabul Et
+Gün Kaldı
+Saat Kaldı
+Acele Etmesini Söyleyin
+Hatırlat 
+Sonuçlar
+Yatırımda kaç gün kaldı?
+%U, acele et-daha fazla paraya ihtiyacım var!
+Yatırımı kabul ettiğin için teşekkür ederim ancak zaman dolduğundan daha fazla para kazanman gerekiyor!
+Millionaire City Oyna
+Tebrikler!
+Arkadaşınız hedefine ulaştı, yatırımınızdan para kazandınız! Wall Street'de çalışmalısınız!
+Teşekkür Edin
+Kötü Yatırım!
+Arkadaşınız zamanında hedefine ulaşamadı, dolayısıyla yatırımınızı kaybettiniz!
+Yatırımı iptal etmek istediğinden emin misin?
+Arkadaşınızın Millionaire City'deki yeni şirketinize yatırım yaptığını unutmayın. %U1 gün içinde şirket değeriniz %U'a ulaşırsa arkadaşınız çok para kazanacak ve kesinlikle size minnettar olacak.
+Hedefini hatırla!! Paramı geri istiyorum!
+Yardım
+Arkadaşlarınızın yeni Milyon Dolarlık şirketlere başlamalarına yardım ederek çok para kazanın. 'Yatırım Talebi Gönder' -düğmesine tıklayarak iyi bir iş insanı olabileceğini düşündüğünüz arkadaşlarınızı seçin ve kendilerine davetiye gönderin.
+Yatırım Durumu 1: Arkadaşınız yatırımınızı henüz kabul etmedi. Arkadaşınıza hatırlatın veya 'Yatırım Portföyü'nüzde yer açmak için yatırımı iptal edin.
+Yatırım Durumu 2: Bu, arkadaşınızın yatırımı geri çevirdiği anlamına gelmektedir. Bu durumda, 'Yatırım Portföyünde' yer açmak için yatırımı iptal edebilirsiniz.
+Yatırım Durumu 3: Arkadaşınızın yatırımı kabul etti. Yatırımın nasıl ilerlediğini kontrol edebilir ve arkadaşınızdan 'Acele' etmesini isteyebilirsiniz.
+Yatırım Durumu 4: Bu, arkadaşınızın yatırımı kabul ettiği anlamına gelmektedir! Para kazanıp kazanmadığınızı görmek için tıklayın.
+Flash sürümünüzü güncelleyin
+Burada
+Oyun yüklenmezse ya da sorun yaşarsanız lütfen BURAYA tıklayarak Flash sürümünüzü yükseltin.
+İstatistikler
+Kabul Edilen Yatırımlar:
+Başarılı Yatırımlar:
+Başarı Yüzdesi:
+Yakında yeni görevler geliyor!
+SATILIK
+SATILIK GENİŞLETME
+Fan Olun
+Arkadaşınıza 'Teşekkür Etmek' ister misiniz?
+%U, az önce Millionaire City'de binlerce $$$ kazandı ve %U1'e 'Teşekkür' etmek istiyor!
+%U, oldukça zekice görünen bir yatırım olan %U1'e para yatırdı. Tebrikler! 
+Millionaire City Oyna
+Yatırım Başarısı!
+Haklıydınız - Yatırımınıza değerdim!
+Bana yatırım yapmakla akıllıca davrandınız! 4 milyon dolar sınırına ulaştım, şimdi ikimizde bu işin meyvelerini alacağız.
+Millionaire City Oyna
+Bugün daha fazla evi yükseltemezsiniz! Yarın yeniden deneyin!
+Nakit Bozdurma
+Bozdurma
+Elinizdeki Miktar:
+Bozdurabileceğiniz Miktar:
+Yatırımlarınız
+Binalar ve Dekorlar
+Araziler ve Genişletmeler
+Toplam
+Köşkler
+Fıskiyeler
+Gökdelenler
+Şatolar
+Millionaire Altını Al
+Paket Seç:
+Facebook Kredileri ile Öde
+En İyi Fiyat!
+Digital Chocolate, Millionaire City'de ödemeler için Facebook'un kendisine ait Kredi sistemini kullanıyor. Facebook Kredileri, güvenle satın alabilmeniz için sektörde öncü güvenlik ve dolandırıcılığı önleme sistemlerini kullanmaktadır.
+Tam Teklifler
+Sözleşmeli Kira Toplayıcısı
+Sözleşme
+Yakında!
+Binanızı buraya taşımak istediğinizden emin misiniz?
+{0xf33300}TAM GÜN{/} için {0xf33300}ÜCRETSİZ TAŞIMA{/} da alabilirsiniz.
+Binaları Taşı
+Binaları Taşı
+Binaları taşımanıza yardımcı olabilirim.
+Bir binaya tıklayın ve ardından boş bir araziye taşıyın.
+Tam ekran modunda metin giremezsiniz.\nNormal moda geçmek ister misiniz?
+%U'nin %U1'i inşa etmek için yardıma ihtiyacı var.
+:
+%U'da Mevcut
+Yerimlerine Ekle
+İş Ortakları 
+Arkadaşlarınızdan sizinle ortak olmalarını isteyin ve daha iyi yükseltmelere ulaşın.
+Talep Gönder
+Arkadaşınıza Hatırlatın
+Sizi ortak olarak eklemesini istediğiniz arkadaşlarınızı seçin
+Merhaba Dostum! Millionaire City'de iş ortağım ol ve ikimiz de binalarımıza süper yükseltmeler yapalım ve daha hızlı Milyoner olalım!
+İş Ortaklığı Talebi Gönder
+Kabul Et
+Şimdi arkadaşınızın ona yardım ettiğinizi öğrenmesini sağlayın ki o da size yardım edebilsin!
+Yardımı Paylaş
+Arkadaşınız Yardım Etti
+Arkadaşlarınıza bir mesaj gönderin
+%U Millionaire City'deki evlerini yükseltti! - Dolar Bonusu kazanabilirsiniz!
+%U şehrinizi ziyaret etti ve evlerinizi yükseltti. Teşekkür etmek için siz de %U'ye yardım edebilirsiniz.
+Bonus Dolar Al
+%U'in '%U1'i inşa etmesine yardım ettiniz. Arkadaşınıza ne kadar iyi bir arkadaş olduğunuzu söyleyin ve onlar da size yardım etsin.
+Gelen Yardımı Paylaş
+Gelen İnşaat Yardımı
+Arkadaşlarınıza bir mesaj gönderin
+%U, %U1'in Millionaire City inşa etmesine yardım etti!
+%U, '%U2'nin inşaatını hızlandırarak %U1'in daha fazla para kazanmasına yardım etti. Oraya giderek bitip bitmediğini kontrol edebilirsiniz.
+Bonus Dolar Al
+Arkadaşlarınız sayesinde yeni binanız inşa edildi. Onlara 'Teşekkür' edin.
+Teşekkürleri Paylaş
+Bina Tamamlandı
+Arkadaşlarınıza 'Teşekkür' etmek istiyor musunuz?
+%U'nin şehrinde yeni binalar inşa edildi. Yardım edenlere teşekkürler!
+%U'nin şehrinde yeni binalar inşa etti ve dolar bonusunu paylaşarak yardım edenlere teşekkür etmek istiyor!
+Dolar Bonusu Al
+Süper Yükseltmeler
+Başarıyla yeni bir ortak edindiniz! Arkadaşlarınıza şirketinizin yeni bir iş ortağı olduğunu haber verin.
+Arkadaşlarınızla Paylaşın
+Yeni Ortaklar
+Arkadaşlarınıza bir mesaj göndermek ister misiniz?
+%U Millionaire City'de yeni iş ortakları edindi!
+%U Millionaire City'de yeni iş ortakları edindi ve artık 'Süper Yükseltmeler' yapabilir. Siz de %U ile ortak olup bunlardan yararlanabilirsiniz.
+Bonus Dolar Al
+Yeni Bonus
+deneyim
+Arkadaşınız size Deneyim Bonusu gönderdi.
+dolar
+Arkadaşınız size Dolar Bonusu gönderdi.
+Seviye atlamanızı kutlamak için arkadaşlarınıza biraz Deneyim Bonus'u göndermek ister misiniz?
+Görev tamamlandı, arkadaşlarınıza biraz Deneyim Bonus'u göndermek ister misiniz?
+placeholder
+Arkadaşlarınıza Dolar Bonusu vermeye devam edebilirsiniz!
+Büyüyen iş imparatorluğunuzu kutlamak için arkadaşlarınızla Dolar Bonusu paylaşabilirsiniz!
+Büyüyen iş imparatorluğunuzu kutlamak için arkadaşlarınızla Dolar Bonusu paylaşabilirsiniz!
+Arkadaşlarınıza Dolar Bonusu gönderebilirsiniz!
+placeholder
+Büyüyen iş imparatorluğunuzu kutlamak için arkadaşlarınızla Dolar Bonusu paylaşabilirsiniz!
+Arkadaşlarınıza Dolar Bonusu vermeye devam edebilirsiniz!
+Arkadaşlarınıza Dolar Bonusu vermeye devam edebilirsiniz!
+Arkadaşlarınıza Dolar Bonusu vermeye devam edebilirsiniz!
+Arkadaşlarınıza Dolar Bonusu vermeye devam edebilirsiniz!
+Arkadaşlarınıza Dolar Bonusu vermeye devam edebilirsiniz!
+Arkadaşlarınıza mesaj gönderin
+%U Millionaire City oynamaya başladı!
+%U, Millionaire City oynayarak zenginleşmeye başladı ve Dolar Bonusunu arkadaşlarıyla paylaşmak istiyor!
+Bonus Dolar Al
+Arkadaşlarınıza mesaj gönderin
+%U, Millionaire City'deki şehrini genişletiyor!
+İşler büyüyor, %U şehrini genişletti ve arkadaşlarına bonus dolar vererek başarısını kutlamak istiyor.
+Bonus Dolar Al
+Şimdi, arkadaşlarınıza yeni bir genişletme satın aldığınızı haber verin.
+Yeni Genişletme
+Kiracı Seç
+Üyelik kartınızı size e-posta vasıtasıyla gönderdik. Bunu açın, VIP Kulübüne katılmak için bağlantıya tıklayın ve ödülünüzü alın. Bu e-postayı 4 saat içinde almamanız halinde lütfen farklı bir e-posta hesabı ile yeniden deneyin.
+E-Posta Adresi
+E-Posta Adresini Yeniden Girin
+E-Postada söz dizimi hatası var
+E-Posta adresleri aynı değil
+Bu e-posta adresine ait bir hesap daha önce oluşturulmuş
+Bu e-posta daha önce kaydedilmiş
+Alan adı hatası, lütfen kontrol edin
+Gizlilik ve  Güvenlik Şartlarını kabul ediyorum
+Aç
+Jimnastik Salonunu Aç!
+Şehir sakinlerine egzersiz yapma ve sağlıklı kalma şansı mı vermek istiyorsunuz? MMA Pro Fighter oyunundaki egzersizi yaparak Jimnastik Salonu'nu açabilirsiniz. Tehlikeye hazır mısınız?
+Tiyatronun kilidini aç!
+Işıklar, kamera, motor! Hollywood Şehrini oynayarak Hollywood Tiyatrosu`nun kilidini aç ve sanat dünyasının sihrini ve ününü keşfet.
+Vegas Barının Kilidini Açın!
+Vegas'da üzerinde adınız yazılı bir rulet masası var! Vegas City oyununu oynayarak Vegas Bar'ın kilidini açın ve dünyanın kumarhaneler başkentinde parsayı götürün.
+Island God Totemin Kilidini Açın!
+Aranıyor: Cana yakın insanların yaşadığı uzak bir adada bir tanrı. Digital Chocolate Island God'da 5. seviyeye gelerek Island God toteminin kilidini açın.
+Elf Fıskiyesinin Kilidini Aç
+Digital Chocolate'ın heyecan veren bir fantezi oyunu olan Destansı Savaşçılar ile oynayarak bu güzel Elf Fıskiyesini al.
+Zombi Mezarlığının kilidini aç!
+Bu bir Zombi kıyameti! Zombie Lane oynayarak Zombi Mezarlığının kilidini aç ve bir zombi saldırısına karşı ne kadar ayakta kalabileceğini öğren.
+%U seviyede kilitsiz tahsil edilebilirler
+%U seviyede kilitsiz yatırımlar
+1 YERİNE 2
+Bir alana ikincisi bedava
+%U indirim
+Bedava
+Sınırlı süre teklifi
+Kabul edilmeyi bekleyen daha fazla komşun var mı?
+Kulübe Katıl
+E-Posta gönderme başarısız. Lütfen daha sonra deneyin.
+Müteahhit
+Arkadaşlarınıza Taşıyıcı Adam yardımıyla şehrinizi yeniden düzenlemekte olduğunuzu gösterin!
+Bu İpucunu Paylaş
+Arkadaşına mesaj gönder
+%U, Taşıyıcı Adamı tuttu ve şehrini yeniden düzenliyor!
+%U, Bonus Dolarlarını arkadaşları ile paylaşmak istiyor. Taşıyıcı Adam, sizin için ağır işleri yapacak ve şehriniz çok daha karizmatik görünecek.
+Dolar Bonusu Al
+Müteahhit
+Arkadaşlarınıza Kira Toplayıcı yardımıyla kiraları çok daha hızlı toplayarak işlerinizi canlandırdığınızı gösterin!
+Bu İpucunu Paylaş
+Arkadaşına mesaj gönder
+%U, Kira Toplayıcısının yardımıyla kiraları hiç olmadığı kadar hızlı topladı!
+%U, Bonus Dolarlarını arkadaşları ile paylaşmak istiyor. Bu Adam hayatınızı kolaylaştıracak ve Millionaire City'deki diğer işlerinize zaman kalmasını sağlayacak.
+Dolar Bonusu Al
+Müteahhit
+Arkadaşlarınıza Sözleşme Yenileme Görevlisi yardımıyla hayatın ne kadar kolaylaşabileceğini gösterin!
+Bu İpucunu Paylaş
+Arkadaşına mesaj gönder
+%U, Sözleşme Yenileme Görevlisini tutarak Millionaire City'deki hayatını kolaylaştırdı!
+%U, Bonus Dolarlarını arkadaşları ile paylaşmak istiyor. Bu Hanım, sözleşmelerinizi kolaylıkla ve hızla yenileyecek ve hayatınızı kolaylaştıracaktır.
+Dolar Bonusu Al
+Davet Edin
+Millionaire City'de arkadaşlarınızı mı özlüyorsunuz? Arkadaşlarınızla birlikte çok daha fazla dolar, deneyim kazanabilir ve daha hızlı inşa edersiniz!
+Arkadaşlarınızı Davet Edin
+İş Ortağı Bulun
+Hayatınızın anlaşmasını yapın! Daha fazla para ve deneyim kazanmak için bir arkadaşınız ile ortak olun.
+İş Ortağı Bulun
+%U'ya evlerini yükseltirken yardım edin!
+Komşu şehirleri ziyaret etmek eğlencelidir ancak bu, sadece sosyal bir ziyaret değildir; daha fazla para ve deneyim kazanmak için arkadaşlarınızın evlerine tıklayın.
+Arkadaşınızı Ziyaret Edin
+Yardım Alın!
+Şehriniz çok mu kötü durumda? Hareketli İşçiyi 24 saat içinçalıştırın ve tüm şehrinizi yeniden düzenleyin!
+Yardım Alın
+Yardım Alın!
+Tıklamaktan sıkıldınız mı? Sıkıldığınız işi sizin için yapması amacıyla kira toplayıcıyı işe alın!
+Yardım Alın
+Yardım Alın!
+Tıklamaktan sıkıldınız mı? Yaşamınızı kolaylaştırmak için Kontrat Yenileyici elemanı işe alın!
+Yardım Alın
+Sağlıklı Vatandaşlar
+Vatandaşlarınız formunu kaybetmiş. Bu özel jimnastik salonunun kilidini açın ve onların daha sağlıklı yaşamalarını sağlayın.
+Jmnastik Salonunu Alın
+Bir arkadaşınıza yatırım yapın!
+Arkadaşınızın kendi şirketini başlatmasına yardımcı olun.Eğer şirket başarılı olursa yatırımınız en az 100'a katlayacaktır!
+Yatırım Yapın
+VIP Klübü
+Saygın Millionaire City VIP Klübe katılın ve hediyeler ve ödüller gibi özel ayrıcalıklardan yararlanın!
+Katılın
+Yardım İsteyin!
+Arkadaşlarınıza bir mesaj ekleyin
+%U sizden evlerini iyileştirmenizi istiyor!
+Diğerleri için inşa ederek şöhretinizi oluşturun! Arkadaşlarınızın evlerini iyileştirerek daha fazla Dollar ve XP kazanırsınız. Zenginliğinizi paylaşın!
+Evleri İyileştir
+Ücretsiz Deneme
+Mimari Stüdyo
+%U emlak işinde daha fazla deneyim sahip olması gereklidir, fakat {0xFF6600}%U1{/} Altın ile Mimar ile buluşabilir ve ayrıntılı planı alabilirsiniz.
+Ayrıntılı Planları Satın Al
+%U Kaldı
+Bu saat ise vatandaşlarınıza gerçek zamanı gösteren ve kira gelirinizi ikiye katlamanızı sağlayan %U%başka bir alamet-i farikadır!
+Bekleyen Hediye Talepleri
+Ne kadar güzel, arkadaşınız size %U gönderdi!
+Kabul et
+Yeni bir Koleksiyon Parçası buldunuz!
+Tebrikler, Yeni bir Koleksiyon Parçası buldunuz.
+Kullan
+Hediye et
+Bir Koleksiyon parçası buldunuz!
+Sahip olduğunuz bir Koleksiyon parçası buldunuz. Asil bir Milyoner olun ve buna ihtiyacı olan bir arkadaşınıza hediye edin!
+Sat
+Hediye et
+Koleksiyon parçasını hediye edeceğiniz arkadaşınızı seçin.
+Arkadaşına bir koleksiyon parçası gönder!
+Hediye Gönder
+Tebrikler!
+Tebrikler, %U koleksiyonundaki tüm parçaları tamamladınız. Şimdi ödül alma zamanı!
+Ödülü Al
+TAKAS
+Tebrikler!
+Başarıyla bir koleksiyonu tamamladınız ve şimdi parıldama zamanı! Arkadaşlarınıza yeni %U'yi anlatın ve bonus dolarlarınızı paylaşın.
+Başarıyı Paylaş
+Koleksiyon Parçası Satın Al!
+Koleksiyonu daha kısa sürede tamamlamak için bu Koleksiyon Parçasını %U Altın karşılığında satın alabilirsiniz.
+Satın al
+Arkadaşlarınız yardım edebilir!
+Paylaşmak özen göstermektir - Bu parçayı arkadaşlarınızdan isteyin!
+İste
+Arkadaşınıza bir Koleksiyon Parçası gönderin!
+%U az önce size bir Koleksiyon Parçası gönderdi! Ne kadar iyi bir arkadaş!
+Bu heyecan dolu parsele bakın ve Millionaire City'de daha fazla eşsiz Koleksiyon Parçası bulup bulamayacağınızı görün.
+Hediyeyi Kabul Et
+Bu Koleksiyon Parçasını aradığınızı arkadaşlarınıza bildirerek yardım isteyin.
+%U0 gerçekten bir %U1 istiyor!
+%U1 göndererek %U0 mutlu edin! Millionaire City oyununa gidin ve kasabadaki lüks koleksiyon parçalarını bulun.
+Koleksiyon Parçası Gönder
+Şimdi övünme zamanı! Gerçek bir Milyoner gibi koleksiyon yaptınız ve şu an herkesin istediği %U'nin sahibisiniz. İyi haberleri ve bonus dolarları paylaşın!
+%U0 sonunda %U1'ye sahip!
+%U0, %U1'yi tamamladı ve bonus dolarlarını paylaşarak kutlamak istiyor. Millionaire City'ye gidin ve kasabada nadir Koleksiyon Parçalarını bulun.
+Bonus Dolar Al
+Koleksiyonlar
+Kasa
+Ev Koleksiyonu
+Ticari Koleksiyon
+Koleksiyon Parçaları
+Bu hediyeye daha önceden kabul ettiniz.
+Biten koleksiyonlarınızı sakladığınız kasa dairesi. Bol Şans!
+Tebrikler! Tüm koleksiyonları tamamladın\nYeni koleksiyonlar yakında geliyor!
+Bunu satmak istediğinizden emin misiniz?
+Şehrinizden aldığınız kira ve ticaret gelirleri ile koleksiyon eşyaları bulabilirsiniz. Daha fazla oynayın, daha fazla eve ve işe sahip olun, bu eşyaları bulma şansınızı arttırın. Ayrıca bu eşyaları satın alabilir, arkadaşlarınızdan isteyebilir ya da onlara hediye edebilirsiniz.
+Hediye simgesine tıklayarak açabileceğiniz Koleksiyonlar penceresinde koleksiyonlarınızı kontrol edebilirsiniz. Arkadaşlarınızın size gönderdiği hediyeleri Facebook sayfanızdaki 'Oyun İstekleri' bölümünden kabul edebilirsiniz.
+99 parça kabul edebilirsiniz ancak bir koleksiyon tamamlaşım olmanız gerekir. Geri kalanı arkadaşlarınızla paylaşmanız içindir!
+Bir ev koleksiyonu tamamladığınızdai şehriniz için özel Ödül talebinde bulunabilirsiniz. Bir Ticari Koleksiyon tamamladığınızda, ekstra para ve deneyim puanları için satış yapabilirsiniz. İyi Şanslar!
+%U Gerekli.
+Al
+Koleksiyon Parçası Al
+Bu öğeyi arkadaşlarınızdan isteyin veya {0xFF6600}%U{/} Altın Çubuk kullanarak satın alın.
+Bu eşyayı arkadaşlarınızdan isteyin
+%U öğesini hediye ediyorsunuz.
+%U öğesine %U1 arkadaşınıza hediye etmek istediğinizden emin misiniz? %U2 kaldı
+Hediye Gönder
+Hediye Gönder
+%U kopyadan fazlasını saklayamazsınız
+Özel Teklif
+Teşekkür Edin!
+Arkadaşlarınızdan Koleksiyon parçaları aldınız, paranızın bir kısmını arkadaşlarınızla paylaşın.
+Bozuk Para Paylaş
+Teşekkür etmek' mi istiyorsunuz?
+Koleksiyon parçası hediye ettiğiniz için teşekkür ederiz!
+Koleksiyon parçaları hediye etmeniz Koleksiyonları daha hızlı tamamlamanıza yardım eder!
+Bonus Dolar Al
+Bunu imha etmek istediğinizden emin misiniz?
+%U öğelerinin kilidi açıldı
+Koleksiyon parçaları kilidini açın!
+Yatırımların kilidini açın!
+Tüm Arkadaşlar
+Millionaire Arkadaşları
+Önerilen
+Arkadaşlarınızın işe başlamalarına yardım edin. %U1 gün içinde Şirket Değerleri %U artarsa Genişletmeleri daha ucuza satın alacak ve %U2 ödül alacaksınız!
+Yatırım Talebi Gönder
+Yatırım Hatırlatıcı
+Arkadaşınız %U Size güveniyor! Şirket Değerini $%U2'e çıkartmak için %U1 var. Acele Edin!
+Yatırım Başarısız
+Size yaptığı yatırımdan ödül alabilmesi için %U'ya yeterince hızlı yardım edemediniz. %U'ya iyi bir iş adamı olmak için herşeye sahip olduğunusu gösterin ve Mcity'de milyoner olun!
+Başarılı Yatırım
+Mükemmel! %U'ya 20 gün içinde 4000000$ kazanarak ne kadar iyi bir iş adamı olduğunuzu gösterdiniz! Tebrikler.
+Yükleniciyi Yenile
+Oops, Sözleşme Yenileyicinin sözleşmesi bitti. Anlaşmanızı şimdi yenilerseniz iyi bir indirim yapacak!
+Anlaşma Seç
+Yükleniciyi Yenile
+Oops, Kira Toplayıcının sözleşmesi bitti. Anlaşmanızı şimdi yenilerseniz iyi bir indirim yapacak!
+Anlaşma Seç
+Bu ödeme yöntemi şu anda kullanılamıyor. Lütfen daha sonra tekrar deneyin ya da diğer ödeme yöntemlerini kullanın.
+%U XP!
+%U $!
+%U Altın!
+Oynadığınız bir sonraki günde daha iyi ödüller!
+Günlük Ödüller!
+Gün %U
+Oyna
+Sağlık Paylaş
+Millionaire City Gold satın aldığınızda yaşamın ne kadar kolay olduğunu arkadaşlarınıza bildirin!\n\nArkadaşlarınıza anlatabilir ve arkadaşlarınızla bonus dolarları paylaşabilirsiniz!
+Arkadaşlarınla paylaş
+Arkadaşlarına bir mesaj ekle
+%U Millionaire City'de biraz önce altın satın aldı! 
+%U Millionaire City'deki en özel eşyaları almak için biraz önce altın satın aldı! - Bonus Dolarlar vardır!
+Bonus Dolar Al
+Hoop, son altın çubuğunu harcadın. Şimdi daha fazla altın sahibi ol ve tatlı yaşamın keyfini sürmeye devam et!
+Completed
+Millionaire City'i şimdi güncelledik. Lütfen tarayıcınızı yenileyin ve güncellenen sürüme göz atın.
+Millionaire City'de bir hata oluştu, lütfen tarayıcınızı yenilemeyi deneyin!
+Hoop, ağ meşgul gibi. Lütfen bekleyin, birazdan oyuna başlayabileceksiniz!
+Maalesef, son eylemleriniz kaydedilemedi. Bir açılışta sadece bir oyun hakkınızın olduğunu unutmayın!
+Hoop, arkadaşınızın şehrinde çok fazla ziyaretçi var! Lütfen bir dakika içinde yeniden deneyin.
+Ücretsiz Film
+Limon Ağacı
+Gizli Evrak Çantası
+%U Ücretsiz taşıma
+Bahar Çiçeği
+Depolama
+Stok
+Kullan
+Aldığınız Hediyeler burada görünecektir! \n Artık sol üst köşedeki 'Ücretsiz Hediyeler' sekmesinden arkadaşlarınıza süper hediyeler gönderebilirsiniz!
+Tebrikler! Şunu kazandın:
+Az önce Gizemli bir Hediye aldım!
+Paylaşmak güzeldir. Sen de Milyoner arkadaşlarına hediye gönderebilir ya da onların gönderdikleri hediyeleri kabul edebilirsin!
+Bonus Dolar Al
+%U için gayrimenkul işinde daha fazla deneyim gerekir, ancak Facebook Kredileri kullanarak mimarla tanışıp planları elde edebilirsin.
+Yeterli Facebook Kredisi yok
+Bu parçayı almak için %U Facebook Kredisi daha gerekiyor!
+Ekle 
+Erken aç
+Komşularla zenginleş!
+Arkadaşlarınla inşaatları daha hızlı tamamlayıp daha çok para kazanabilirsin!
+Komşu Çağır
+Komşularla zenginleş!
+Yeni! Arkadaşlarını komşu olmaya davet ederek inşaatları daha hızlı tamamla ve daha çok para kazan!
+Your Brand New City!
+Hi there! I’m your Millionaire Mentor X. I've been helping people make obscene amounts of money for years. Together we will create the most affluent Millionaire City ever! Let’s start with the basics.
+House Boom!
+Rapid growth and expansion is available for those clever enough to invest wisely. I expect you to be savvy as you progress further with my Missions! All of these next missions involve exploiting this expanding market opportunity – make the most of it for maximum growth.
+Garden Glory!
+There are extra Dollars to be made through well placed Decorations – these increase the worth of affected buildings in Bonuses. These next Missions are about maximizing the profit of your real estate with clever landscaping!
+House Boom II!
+You have showed enormous Millionaire potential by getting this far! Now it’s time to invest heavily in Housing and Commerce to develop your City to new heights! I am about to set you many Assignments that will greatly increase your City Value. After completing them your Millionaire City will be worth countless piles of Millionaire Dollars!
+Leisure and Luxury!
+Another key strategy to building a wealthy Millionaire City is to build plenty of places for your Tenants to relax and enjoy themselves. My next Assignments all focus on providing maximum recreation and pleasure activities for your Tenants to spend their Dollars in!
+Culture Cultivation!
+The essence of style lies in elegance, so it is worth nurturing sophistication within your City. The following Assignments all revolve around culture, as it is important to show Class through your Millionaire City design to get even the snobbiest of citizens to spend their Dollars!
+Back In Business!
+The time has come for you to consider your City Value Ranking against your Friendly Rivals. Have you already beaten Me, Cindy/Ronald and the infamous Sheik Oilfinger? Together we motivate each other to new echelons of success! In this set of Assignments I encourage you to focus on expanding Commercial Enterprise for maximum profit.
+Garden Glory II!
+Well done - congratulations for getting this far! You’re now ready for higher level of challenges. Let’s start thinking about tactical Decoration placement again! The art of maximized profit lies in the skillful use of all the land in your City. These next tasks focus on garnishing further with elaborate decorations.
+Leisure and Luxury II!
+There are still many more Commerces available to build to make your Tenants happy. It’s time to focus again on building indulgent places that offer convenience and recreation. An enjoyable, comfortable Millionaire City is ideal for your Tenants and ideal for your profit!
+High Level Lavishness!
+Wow – I am very impressed by your journey so far! Your City Value is a fantastic reflection of your decisions. These next Assignments are designed to really add that extra layer of polished exuberance to your brilliant Millionaire City. Don’t hold back – Go for that extra Dollar!
+Stunning Skyscrapers!
+It’s time to build Big! Skyscrapers are the ultimate demonstration of urban power. When you build your first Skyscraper, you know you have arrived as a powerful real estate magnate. The Next Assignments will revolve around the mighty Skyscraper Buildings available. Good luck and stay ambitious!
+Name The City
+Choose a powerful name for your new City - something that reflects your Millionaire personality!
+Pizza Paradise
+Your Tenants will need somewhere to eat – and Commerce’s are a brilliant source of regular income! Buy the Pizza Commerce that is near your Headquarters.
+Instant Build Magic!
+Clicking on Buildings under construction allows you to build faster – a really useful feature when you can afford it! Create your first Instant Build!
+Tree Time
+Decorations are more than just beautiful. Each has an influence area that increases the worth of affected Buildings. Place 2 Cypress Trees around any House you own, and note how the bonuses go up!
+Customer Cash
+The amount of money each Commerce generates is proportional to the number of Tenants living around it. Set up Houses around the Pizza Commerce, so that at least 5 Customers can begin eating there!
+Join the Club!
+The prestigious Millionaire City VIP Club allows me to send you news, exclusive gifts and prizes via email. Enter your Email for your very own membership card!
+Commerce Collect
+The Pizza Commerce you built is a great success! Regularly checking back to collect your earnings is one of the key methods to accumulating lots of Millionaire City Dollars. Collect 5 Payments from it!
+Bungalow Bonanza
+More demanding Citizens want you to build a Luxury Bungalow! Build one and start getting more dollars and XP immediately.
+Your Friends
+Friends you add to Millionaire City appear in the Ranking Bar across the bottom of the Game. You and they can help each other out to create the most successful City! Visit one of them to see what tactics and strategies they are utilizing.
+A Real Millionaire City!
+Beat your friends in the ranking bar and gather a City Value of 1,000,000 Dollars to prove to me and them just how successfully rich you can be!
+Bungalow Bonus: 12%
+Get a 12% Income Bonus added to a single Bungalow, by using the decorations cleverly.
+World Of Wonder: Gold Statue 
+Wonders are special Buildings - they take a long time to construct but give exceptional bonuses as well. Build the Gold Statue Wonder to increase the Income Bonus by 5% on all Houses you own!
+Rent Collection: 17
+Collect 10 rents from any Houses.
+Commerce Construction: Coffee Shop
+Remember that your Tenants will always need somewhere to relax and drink coffee! Make the most of this market opportunity and build one Coffee Shop.
+House Construction: Townhouse Luxury
+More spacious than the standard Townhouse, this is an ideal place for Tenants to stay who have a few more Millionaire Dollars to spend!
+Upgraded Income Collection: 57
+When you houses are glittering like diamonds, it means your Friends have visited your City and upgraded the houses. Collect 50 rents from these upgraded buildings.
+Commerce Collection: 10 Coffee Shop
+Collect 10 Income Payments from the Coffee Shop.
+Coffee Shop Clients: 19
+Set up Houses around the Coffee Shop, so that at least 12 Customers can visit there regularly.
+Upgrade Friends Townhouse Luxury: 32
+Visit your Friends Cities and Upgrade 25 Townhouse Luxury Houses by clicking on them!
+House Construction: Duplex
+More spacious than the standard Townhouse, this is an ideal place for Tenants with a few more Millionaire Dollars to spend!
+Investment Invitations: 17
+Send out 10 Investment Requests to your Friends, offering to help them start their businesses and get royally rewarded!
+Tool Techniques: Move Tool
+The Move Tool is very handy when you want to rearrange your City. Use it to move a Cypress Tree Decoration.
+Commerce Construction: Sushi Bar
+This Commerce will allow your Tenants another place to eat, and there can never be too many choices! Provide this feast of fresh Sushi to your citizens.
+House Construction: Duplex Luxury
+This model of the Duplex House makes room for a few more Tenants and is an ideal way for you to make more Millionaire Dollars from them.
+Rent Collection: 57
+Collect 50 rents from any Houses.
+Commerce Construction: Flower Shop
+Build a Flower Shop so that your tenants can enjoy the sweet scent of fresh flowers in their luxurious homes. Make the most of this market opportunity.
+Decoration Placement: Windmill
+Wealth comes with responsibility- build a source of renewable energy in your City. With a massive Influence area, the Windmill looks great in any City.
+Upgrade Friends Duplex Luxury: 57
+Visit your Friends Cities and Upgrade 50 Duplex Luxury Houses by clicking on them!
+Decoration Placement: 4 Palms
+Essential for a rich, breathing eco-system are as many plants as you can place! These Palms also have the added bonus of a tropical feel.
+Decoration Placement: 2 Agave Plants
+A pair of these Agave Plants will offer a wide Influence area for your House Income Bonuses and fresh cultivated feel for your City!
+Duplex Luxury Bonus: 30%
+Get a 30% Income Bonus on a single Duplex Luxury by being clever with your Decorations!
+Flower Shop Clients: 37
+Set up Houses around the Flower Shop, so that at least 30 Customers can shop there regularly.
+Decoration Placement: 3 Balloon Boys
+A Guaranteed way to make any area instantly more fun are the Balloon Boys. Buy 3 to get three times more color and fun!
+Millionaire Dollar count: 1,000,007
+Through continued growth, it is possible to accumulate impressive fortunes. Show your potential as a magnate and gather 1,000,000 Millionaire Dollars!
+Commerce Collection: 50 Flower Shop
+Collect 50 Incomes from the Flower Shop.
+Decoration Placement: Silver Maple
+The nature of these beautiful plants offer a large House Income Bonus. Let your Tenants chill in its silvery shadow.
+Investment Successes: 12
+Make 5 successful Investments on Friends. Remember that you both benefit from this deal!
+Decoration Placement: 3 Fountains
+Fresh water features are great for making any City luxuriously flowing. Build 3 for maximum bonuses anywhere in your Millionaire City.
+Decoration Placement: 5 Apple Trees
+Planting these 5 Apple Trees will guarantee organic apples for your selective Tenants! They are great for little gaps around Houses.
+Tool Techniques: Collect Tool
+Collecting individual Rent Payments can sometimes be a chore if you have a lot, but Rent Collector is here to help you! Try him out with a 6 minute free trial.
+House Construction: Three Story Luxury 
+An exemplary place to stay, as this model of the Three Story House offers much more for the discriminatory Tenant.
+Commerce Construction: McDollars
+More Houses means more Tenants, and they will always pay for somewhere to eat delicious fast food. A prospect well worth investing in.
+Investment Invitations: 20 More
+Send out 20 more Investment Requests to your Friends, offering to help them start their businesses and grow your own portfolio at the same time!
+Friend Visit: 47
+Visit Friends Cities at least 40 times. This is a good way to evaluate your competition!
+Contract Collection: 107
+Collect 100 Rents from any Houses and see the Dollars flowing in.
+House Construction: Apartment Block
+Four Stories tall, this House allows many more Tenants to stay - which means many more Millionaire Dollars when you build one!
+Decoration Placement: 6 Orange Trees
+The scent and sight of Orange Trees are sure to tantalize the senses of your Tenants. Plant 6 so you can spread the fruity benefits everywhere!
+Commerce Construction: Pet Shop
+As your Tenants settle into domestic bliss, often they will purchase animal companions. Provide them with a Pet Shop to pamper man’s best friends!
+Upgrade Friends Eco-Home: 67
+Visit your Friends Cities and Upgrade 60 Eco-Home Houses by clicking on them!
+Tool Techniques: Contract Tool
+Similar to the Rent Collector, the Contractor Lady is useful when you have a lot of Rent Contracts to sign all at once. Try her out with a 6 minute free trial!
+Rock Star Contract Collection: 207
+Utilize the Rock Star Contract 200 times by signing in Rock Star Tenants to your Houses.
+Commerce Collection: 100 Pet Shop
+Collect 100 Income Payments from the Pet Shop.
+Upgrade Friends Apartment Block Luxury: 77
+Visit your Friends Cities and Upgrade 70 Apartment Block Luxury Houses by clicking on them!
+Apartment Block Luxury Bonus: 60%
+Get a 60% Income Bonus added to a single Apartment Block Luxury, by shrewdly placing your Decorations in strategic places.
+Pet Shop Clients: 57
+Set up Houses around the Pet Shop, so that at least 50 Customers can visit there regularly.
+Commerce Construction: Bowling Alley
+An extremely fun way for your Tenants to spend their leisure time. Build a Bowling Alley to entertain your Tenants of all ages!
+House Construction: House of Harmony
+A lovely place of peace and quiet with a big front garden, where your Tenants can live in a totally zen environment.
+Friend Visit: 87
+Go to your Friends Cities at least 80 times and have a look at how they are developing. This is a good way to evaluate your own play style!
+Commerce Construction: Jewelry Shop
+Nothing says luxury like Diamonds! Setting up a Jewelry Business is an opportunity not to be missed!
+World of Wonder: Two More
+Wonders are always worth it - they take a long time to construct but the bonuses make them worthwhile. Build any 2 more Wonders of your choice to boost your income!
+Villa Bonus: 90%
+Get a 90% Income Bonus added to a single Villa, by cleverly placing Decorations.
+Bowling Alley Clients: 207
+Set up Houses around the Bowling Alley, so that at least 200 Customers can visit there regularly.
+Expansion!
+The time has come for you to purchase an expansion so you can further extend your ever growing Millionaire City. Buy any that is unlocked and get ready to further expand your Empire!
+Contract Collection: 207
+Collect 200 Rents from any Houses.
+House Construction: Loft Block
+The height of 5 Stories sets this House apart from many others. Invest in one to allow a similarly gigantic number of Tenants to stay all at once!
+Investment Successes: 17
+Complete 10 Investments successfully with Friends. Remember that you both benefit from this business affiliation!
+Commerce Construction: Night Club
+An ideal way to provide night time entertainment, and a brilliant source of income for you. Building a Night Club is the best way to get those party dollars in your pocket.
+Jewelry Store Clients: 157
+Set up Houses around the Jewelry Store, so that at least 150 Customers can visit there regularly.
+Upgrade Friends Loft Block: 107
+Visit your Friends Cities and Upgrade 100 Loft Block Houses by clicking on them!
+Commerce Collection: 150 Bowling Alley
+Collect 150 Income Payments from the Bowling Alley.
+House Construction: 2 Villa Luxury
+A more lavish model of the Villa, which is perfect for allowing more refined Tenants with style to stay. Build a pair to maximize your future profit margins!
+House Construction: 2 Colonial House
+An amazing place for your Tenants that prefer a slower pace of life, with an elegant historical style. Build 2 so that more potential Tenants can experience simplicity.
+Decoration Placement: 6 Art Nouveau Lamps
+These Lamps are sophistication defined! Building 6 will artistically light the way across your Millionaire City.
+Commerce Construction: Mall
+Although far from classically sophisticated, the Mall is certainly a symbol of modern Western Culture and a great way to make many Millionaire Dollars! Give your Tenants somewhere to shop ‘til they drop.
+Villa Luxury Bonus: 100%
+Get a 100% Income Bonus added to a single Villa Luxury, with the cunning use of your Decoration purchases.
+House Construction: 2 Parisian Town House
+12 whole Stories of beautifully polished Parisian style. Construct 2 so that twice as many Tenants can bask in its sumptuous luxury!
+Decoration Placement: 4 Japanese Trees
+A beautiful example of Eastern Culture - they have an unusual wide Influence, so they can be strategically planted to maximize House Income Bonus.
+Decoration Placement: 5 Bamboos
+Represent more Eastern Culture by sowing these 5 Bamboo plants. Their appeal means they have a big Influence!
+Decoration Placement: Big Garden
+Although expensive, the massive Influence and House Income Bonus combined with extraordinary attractiveness make this Big Garden well worth investing in.
+Mall Clients: 257
+Set up Houses around the Mall, so that at least 250 Customers can visit there regularly.
+Friend Visit: 127
+Go to your Friends Cities at least 120 times and have a look at how they are developing. This is a good way to evaluate your own play style and competition!
+Investment Invitations: 30 More
+Send out 30 more Investment Requests to your Friends, offering to help them start their businesses and improve your own portfolio at the same time!
+Decoration Placement: Statue of David
+A rare masterpiece Statue that will look perfect adorning any Millionaire City. Straight from Renaissance Italy – a true work of Art.
+Decoration Placement: 2 Arch of Success
+More indication of Eastern Culture can be benefitted from with this decorative Arch. Build a pair so your Millionaire City can become a Success too!
+Upgrade Friends Parisian Town House: 157
+Visit your Friends Cities and Upgrade 150 Parisian Town Houses by clicking on them!
+Contract Collection: 607
+Acquire 600 elapsed Rental Contracts from any Houses.
+Decoration Placement: Triumph Arch
+Another Decoration that allows massive House Income Bonus and Influence. Building one of these is ideal for increasing City Value.
+Upgrade Friends Skyscraper: 187
+Visit your Friends Cities and Upgrade 180 Skyscraper Houses by clicking on them!
+Commerce Construction: Bank
+All thriving Business and Commercial capitalists need a good Bank to store all of their money! A Bank Commerce will never be out of business.
+Commerce Construction: Hospital
+Looking after your Tenants is of paramount importance, and a Hospital allows strong growth in the long run. Construct a Hospital to keep your Tenants in good health!
+Spy Scheme
+My Friendly Rivals Ronald Goldtooth/Cindy Jewels and Sheik Oilfinger seem to be plotting again. Click on them in the Ranking Bar to access their City’s and have a sneaky peek what they are up to!
+House Construction: Futuristic City Block
+Industry thrives on cutting-edge technology, so allow your Tenants to live in only the most automated environment offered!
+Investment Successes: 27
+Complete 20 Investment Partnerships successfully with Friends! You both benefit from this business affiliation.
+House Construction: 2 Skyscraper Luxury
+Dazzling and designed with maximum efficiency in mind, the Skyscraper Luxury is perfect for creating bustling hives of activity. Build 2 for twice as much capital to be generated!
+Overtake Sheik
+I have known Sheik Oilfinger a long time, but not even I have known him to be this rich! Pass this Mission by developing more Company Value than Sheik!
+Loft Block Luxury Bonus: 150%
+Get a 150% Income Bonus added to a single Loft Block Luxury, by being smart with your Decorations.
+Commerce Collection: 300 Bank
+Obtain 300 Income Payments from the Bank.
+Friend Visit: 157
+Go to your Friends Cities at least 150 times and have a look at how they are developing and progressing. This is a good way to evaluate your own play style!
+House Construction: Chrysler Building
+The Art Deco classic straight from New York is the ideal place to inspire your Tenants working in your City. Invest in one to aggressively expand your profit margins.
+Expansion II!
+The time has come for you to purchase another expansion – the missing piece of your ever expanding Empire. Buy any that is unlocked and get ready to further extend your City.
+Decoration Placement: 20 Gold Maple
+These beautiful Gold Maples are ideal replacements for lesser Decorations, with their added Bonus percentage!
+Hospital Clients: 307
+Set up Houses around the Hospital, so that at least 300 Customers can be treated there regularly.
+Decoration Placement: 10 Spruce
+The Spruce Decoration is an ideal method to make any Millionaire City look more green and healthy. It also offers a healthy Bonus for you!
+Investment Invitations: 40 More
+Send out 40 more Investment Requests to your Friends, offering to help them start their businesses.
+Decoration Placement: 15 Birch Tree
+These are a great way to fill in the little gaps around your Millionaire City, since each of them maintain a strong Influence.
+Upgrade Friends Loft Block Luxury: 307
+Visit your Friends Cities and Upgrade 300 Loft Block Luxury Houses by clicking on them!
+House Construction: Designer House
+The world of Design collides with business in this cutting edge House. Perfect for the modern Tenant.
+House Construction: Chateau
+A gorgeous House to satisfy any Tenant. Looks spectacularly good in any garden area!
+Designer House Bonus: 200%
+Get a 200% Income Bonus added to a single Designer House, by placing Decorations in cunning positions!
+Football Star Contract Collection: 407
+Utilize the Football Star Contract 400 times when signing in Football Star Tenants to your Houses.
+Decoration Placement: 5 Chafa
+Chafas are very special garden Decorations with a massively strong Influence. Perfect for boosting the Bonuses of Houses.
+Commerce Construction: Opera House
+Build a busy Performing Arts centre for your Tenants! Guaranteed to quickly turn into profit with style.
+Friend Visit: 207
+Go to your Friends Cities 200 times and have a look at how they are developing. This is a good way to evaluate your own play style!
+Upgrade Friends Chateau Houses: 357
+Visit your Friends Cities and Upgrade 350 Chateau Houses by clicking on them!
+Decoration Placement: 3 Fountain II
+These Fantastic Fountains offer a wider influence than the first Fountain incarnation - ideal for any garden area or plaza.
+Contract Collection: 1007
+Acquire 1000 elapsed Rental Contracts from any Houses.
+Opera House Clients: 357
+Set up Houses around the Opera House, so that at least 350 Customers can find entertainment there.
+Commerce Collection: 600 Opera House
+Collect 600 Income Payments from the Opera House.
+Decoration Placement: 1 Pond of Wealth
+An amazing water feature that brings tranquility to any City, combined with a massive House Income Bonus!
+World of Wonder: Three More
+They take a long time to construct but the bonuses of built Wonders make them worth the wait! Build any 3 more Wonders of your choice to make your Tenants and Visitors gasp at their amazing scale!
+Commerce Construction: Casino
+Some would say this is an ultimate place for entertainment. Let your Tenants revel in the glitz and glamour whilst handing over their Dollars to You!
+Commerce Construction: Stadium
+An amazing place for your Tenants to view all of the latest live outdoor Sports! Build it as another leisure facility for their use.
+Casino Clients: 407
+Set up Houses around the Casino, so that at least 400 Customers can find entertainment there regularly.
+House Construction: Futuristic
+Straight from the future is this super space-age living facility. The pinnacle of modern architecture, it is complete with massive glass walls for panoramic views.
+Expansion III!
+Another Expansion is needed if you are to fully realize the potential of your Millionaire City! You can only grow through aggressive expanding!
+Upgrade Friends Futuristic Houses: 457
+Visit your Friends Cities and Upgrade 450 Futuristic Houses by clicking on them!
+Investment Successes: 37
+Complete 30 Investment Partnerships successfully with Friends and remember that you both benefit from this business affiliation.
+Commerce Construction: Hotel Midas
+A brilliant place for holidays and vacations, this exclusive luxury Commerce is ideal for the more discerning Tenant.
+Stadium Clients: 407
+Set up Houses around the Stadium, so that at least 400 Customers can go and see live Sports there.
+Hostesses Contract Collection: 507
+Use Hostesses Contract 400 times when signing in Hostess Tenants to your Houses.
+Commerce Construction: Midas Mall
+Building this Commerce results in a gigantic Influence over the neighboring Houses, and is certainly one of the best places your Tenants can spend their money!
+Commerce Collection: 800 Casino
+Obtain 800 Income Payments from the Casino.
+Commerce Collection: 1000 Stadium
+Collect 1000 Income Payments from the Stadium.
+Hotel Midas Clients: 457
+Set up Houses around the Hotel Midas, so that at least 450 Customers can find go and relax there regularly.
+Futuristic House Bonus: 230%
+Get a 230% Income Bonus added to a single Futuristic House, by being shrewd with Decorations!
+Commerce Collection: 1200 Hotel Midas
+Collect 1200 Income Payments from the Hotel Midas.
+Contract Collection: 1257
+Collect 1250 Rents Contracts from any Houses.
+Friend Visit: 307
+Go to your Friends Cities at least 300 times and have a look at how they are developing. This is a good way to size up your competition!
+Midas Mall Clients: 457
+Set up Houses around the Midas Mall, so that at least 450 Customers can go and shop there often.
+Commerce Collection: 1500 Midas Mall
+Collect 1500 Income Payments from the Midas Mall.
+House Construction: Luxury Mansion 
+A beautiful place to stay for the most demanding of Tenants! Polished marble floors and solid Gold window frames add to the abundant sumptuousness.
+Investment Invitations: 50 More
+Send out 50 more Investment Requests to your Friends, offering to help them start their businesses and help your own portfolio at the same time.
+Expansion IV!
+Time to Expand your City again! You can’t have too much space for luxury. Buy any expansion that is currently unlocked.
+Upgrade Friends Luxury Mansion Houses: 507
+Visit your Friends Cities and Upgrade 500 Luxury Mansion Houses by clicking on them!
+Luxury Mansion Bonus: 250%
+Get a 250% Income Bonus added to a single Luxury Mansion, by placing your Decorations in the best areas!
+Commerce Construction: Baseball Stadium
+One of the greatest Commerces available for purchase - absolutely guaranteed to create a massive profit with each payment turnover for you, should you invest.
+Artists Contract Collection: 807
+Use Artists Contract 800 times when signing in Artist Tenants to your Houses.
+House Construction: Luxury Mansion II
+Twice as opulent as the original Luxury Mansion, this is ideal for Tenants who are twice as wealthy as well! Excessively extravagance for those who can afford it.
+Baseball Stadium Clients: 507
+Set up Houses around the Baseball Stadium, so that at least 500 Customers can go and watch Games there!
+Upgrade Friends Luxury Mansion II Houses: 607
+Visit your Friends Cities and Upgrade 600 Luxury Mansion II Houses by clicking on them!
+Luxury Mansion II Bonus: 280%
+Get a 280% Income Bonus added to a single Luxury Mansion II, by being extra clever with Decoration placement.
+Commerce Collection: 1750 Baseball Stadium
+Collect 1750 Income Payments from the Baseball Stadium.
+Friend Visit: 407
+Go to your Friends Cities at least 400 times and have a look at how they are developing. A Chance to size up the competition.
+Contract Collection: 1507
+Collect 1500 Rents from any Houses.
+House Construction: Super Skyscraper
+The next in the Skyscraper range is the Super model of skyscrapers. It will gloriously stand above your other City buildings.
+House Construction: Skyscraper Ultimate
+Habitable by even more Tenants than the Super Skyscraper, the Ultimate offers even more architectural excellence in a brilliant aerodynamic shape.
+Friends Contract Collection: 1007
+Use Friends Contract 1000 times when signing in Friends Tenants to your Houses.
+Investment Successes: 47
+Make 40 successful Investments on Friends and see your portfolio explode!
+Upgrade Friends Super Skyscraper Houses: 707
+Visit your Friends Cities and Upgrade 700 Super Skyscraper Houses by clicking on them!
+House Construction: Highland Castle
+A magnificently beautiful country Castle that offers culturally significant luxury! Just be careful around midnight, this Castle might be haunted…
+Skyscraper Ultimate Bonus: 290%
+Get a 290% Income Bonus added to a single Skyscraper Ultimate, by being a shrewd Decoration placer!
+Contract Collection: 2007
+Acquire 2000 elapsed Rental Contracts from any Houses.
+Expansion V!
+Once again, it is worth buying an unlocked Expansion for your City! Certainly a wise purchase since you’ll need loads of space for your most ambitious real estate ventures to date!
+World of Wonder: Four More
+Wonders always give fantastic Bonuses that make up for their long construction time. Build any 4 more so that your Tenants can enjoy their colossal scale, while you enjoy their colossal Bonuses!
+House Construction: Brazilian Skyscraper
+The pinnacle of the Skyscraper range offers an unprecedented amount of Tenants to stay. Truly the crown jewel of all Skyscrapers, enough to impress any magnate!
+Commerce Collection: 50 Coffee Shop
+Obtain 50 Income Payments from the Coffee Shop.
+Commerce Collection: 100 Flower Shop
+Obtain 50 Income Payments from the Flower Shop. 
+Commerce Collection: 200 Pet Shop
+Obtain 200 Income Payments from the Pet Shop.
+Commerce Collection: 300 Bowling Alley
+Obtain 300 Income Payments from the Bowling Alley.
+Commerce Collection: 600 Bank
+Obtain 600 Income Payments from the Bank.
+Commerce Collection: 800 Opera House
+Obtain 800 Income Payments from the Opera House.
+Commerce Collection: 1000 Casino
+Obtain 1000 Income Payments from the Casino.
+Commerce Collection: 1200 Stadium
+Obtain 1200 Income Payments from the Stadium.
+Commerce Collection: 1500 Hotel Midas
+Obtain 1500 Income Payments from the Hotel Midas.
+Commerce Collection: 2000 Midas Mall
+Obtain 2000 Income Payments from the Midas Mall.
+Commerce Collection: 2500 Baseball Stadium
+Obtain 2500 Income Payments from the Baseball Stadium.
+Pizzeria Clients: 17
+Set up Houses around the Pizzeria, so that at least 10 Customers can visit there regularly.
+Coffee Shop Clients: 31
+Set up Houses around the Coffee Shop, so that at least 24 Customers can visit there regularly.
+Flower Shop Clients: 57
+Set up Houses around the Flower Shop, so that at least 50 Customers can visit there regularly.
+Pet Shop Clients: 87
+Set up Houses around the Pet Shop, so that at least 80 Customers can visit there regularly.
+Bowling Alley Clients: 257
+Set up Houses around the Bowling Alley, so that at least 250 Customers can visit there regularly.
+Jewelry Store Clients: 227
+Set up Houses around the Jewelry Store, so that at least 150 Customers can visit there regularly.
+Mall Clients: 307
+Set up Houses around the Mall, so that at least 300 Customers can visit there regularly.
+Hospital Clients: 357
+Set up Houses around the Hospital, so that at least 350 Customers can be treated there regularly.
+Opera House Clients: 407
+Set up Houses around the Opera House, so that at least 400 Customers can find entertainment there often.
+Casino Clients: 457
+Set up Houses around the Casino, so that at least 450 Customers can find entertainment there regularly.
+Stadium Clients: 457
+Set up Houses around the Stadium, so that at least 450 Customers can find go and see live Sports there often.
+Hotel Midas Clients: 507
+Set up Houses around the Hotel Midas, so that at least 500 Customers can find go and relax there regularly.
+Midas Mall Clients: 507
+Set up Houses around the Midas Mall, so that at least 500 Customers can go and shop there often.
+Baseball Stadium Clients: 557
+Set up Houses around the Baseball Stadium, so that at least 550 Customers can go and watch Games there!
+Upgrade Your Friends Buildings: 13
+Upgrade any 6 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 27
+Upgrade any 20 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 57
+Upgrade any 50 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 107
+Upgrade any 100 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 207
+Upgrade any 200 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 407
+Upgrade any 400 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 657
+Upgrade any 650 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 857
+Upgrade any 850 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 1007
+Upgrade any 1000 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 1257
+Upgrade any 1250 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 1507
+Upgrade any 1500 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 1757
+Upgrade any 1750 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 2007
+Upgrade any 2000 of your Friends Buildings by clicking on them in their City!
+Upgraded Income Collection: 107
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 100 from these specially granted Buildings.
+Upgraded Income Collection: 207
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 200 from these specially granted Buildings.
+Upgraded Income Collection: 407
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 400 from these specially granted Buildings.
+Upgraded Income Collection: 807
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 400 from these specially granted Buildings.
+Upgraded Income Collection: 1207
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 1200 from these specially granted Buildings.
+Upgraded Income Collection: 1607
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 1600 from these specially granted Buildings.
+Upgraded Income Collection: 2007
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 2000 from these specially granted Buildings.
+Upgraded Income Collection: 2507
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 2500 from these specially granted Buildings.
+Upgraded Income Collection: 3007
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 3000 from these specially granted Buildings.
+Upgraded Income Collection: 3507
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 3500 from these specially granted Buildings.
+Upgraded Income Collection: 4007
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 4000 from these specially granted Buildings.
+Upgraded Income Collection: 5007
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 5000 from these specially granted Buildings.
+Upgraded Income Collection: 6407
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 6400 from these specially granted Buildings.
+Upgraded Income Collection: 7407
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 7400 from these specially granted Buildings.
+Upgraded Income Collection: 8507
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 8500 from these specially granted Buildings.
+City Value: 5 Million
+Accumulate a total City Value of 5,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 10 Million
+Accumulate a total City Value of 10,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 50 Million
+Accumulate a total City Value of 50,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 120 Million
+Accumulate a total City Value of 120,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 240 Million
+Accumulate a total City Value of 240,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 500 Million
+Accumulate a total City Value of 500,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 1000 Million
+Accumulate a total City Value of 1000,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 2000 Million
+Accumulate a total City Value of 2000,000,000 Dollars to prove to me and them just how successfully rich you can be!
+Millionaire Dollar count: 5,000,007
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 5,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 10,000,007
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 10,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 20,000,007
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 20,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 40,000,007
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 40,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 80,000,007
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 80,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 150,000,007
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 150,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 250,000,007
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 250,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 400,000,007
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 400,000,000 Millionaire Dollars ready to spend!

@@ -1,0 +1,8 @@
+<Definitions>
+	<Definition sku="bank"/> 	    			    
+	<Definition sku="gym"/>
+	<Definition sku="food"/>
+	<Definition sku="shop"/>
+	<Definition sku="services"/>
+	<Definition sku="car"/>
+</Definitions>

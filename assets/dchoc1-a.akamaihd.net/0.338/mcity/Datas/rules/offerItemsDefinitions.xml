@@ -1,0 +1,8 @@
+<Definitions>
+  <Definition sku="decorations_special_04" offer_sku="2for1" expireTime="3" />
+  <Definition sku="decorations_tree_11" offer_sku="2for1" expireTime="3" />
+  <Definition sku="commerce_casino" offer_sku="discount20percent" expireTime="3" />
+  <Definition sku="commerce_sushi" offer_sku="discount30percent" expireTime="3" />
+  <Definition sku="houses_011_003" offer_sku="discount50percent" expireTime="3" />
+</Definitions>
+

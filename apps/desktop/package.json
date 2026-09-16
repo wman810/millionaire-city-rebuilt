@@ -11,6 +11,9 @@
     "prestart": "node ../../scripts/checkDependencies.cjs electron",
     "start": "electron ./dist/main.js"
   },
+  "dependencies": {
+    "@mcity/shared": "0.1.0"
+  },
   "devDependencies": {
     "electron": "10.4.7",
     "typescript": "^5.8.3"

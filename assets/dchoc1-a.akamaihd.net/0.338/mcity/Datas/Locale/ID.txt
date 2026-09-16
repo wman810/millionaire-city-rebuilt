@@ -1,0 +1,1777 @@
+Millionaire City
+Memuat
+Kembali ke Millionaire City tiap hari dan dapatkan imbalan yg makin keren tiap hari! Buka kotak hadiah dan singkap kejutan yg menunggumu
+Tersedia Imbalan Baru!
+Multi-Tool
+Beli Plot: $%U
+Benda Koleksi
+Misi
+Pembuat jalan
+Toko
+Manajer
+Alat pembongkar
+Beranda
+Peningkatan
+Beli
+Anda perlu %U XP untuk mencapai Level %U1
+Dolar Millionaire
+Emas Millionaire
+Facebook Credits
+Nilai Perusahaan
+Nama Kota
+Suara Aktif
+Suara Nonaktif
+Musik Hidup
+Musik Mati
+Foto
+Perbesar
+Perkecil
+Kontraktor
+Kontrak
+Pindah
+Tagih
+Layar penuh
+Tambah Emas
+Tambah Dolar
+Tambah
+Umumkan Investasi
+Berikut
+Konfirm
+Kembali
+Baca Lagi
+Lewati
+Pilih Kontrak
+Kualitas
+Imbalan
+,
+.
+Nilai Perusahaan
+Natal I
+MB Spesial
+Dirgantara 1
+MB Mewah
+Dirgantara 2
+MB Termewah
+Dirgantara 3
+Malam Tahun Baru
+Perhiasan
+Bahan Baku
+Peralatan Olah-Raga
+Belanja
+Hiburan
+Mewah
+Sabuk
+Teropong
+Pemantik
+Jam Tangan
+Cincin
+Laptop
+Headphone
+Ponsel
+Jam
+Manset
+Lampu Gantung
+Kacamata Hitam
+Pesawat Kertas
+Masker Tidur
+Topi Pilot
+Hidangan Pesawat
+Parfum Bebas Bea
+Tiket
+Koper
+Sampanye
+Wing Maskapai
+Kacamata Pilot
+Pesawat Model
+Paspor
+Permen Tongkat
+Kaus Kaki Hadiah
+Lilin Natal
+Topi Kurcaci
+Kembang Api
+Gelas Sampanye
+Paket Pesta
+Balon Tahun Baru
+Zamrud
+Safir
+Batu Delima
+Intan
+Keju
+Nasi
+Roti
+Susu
+Helm
+Sarung Tinju
+Bola Basket
+Sarung Tangan Baseball
+Mesin Kasir
+Keranjang Pasar
+Kwitansi
+Kantung Kertas
+Tiket
+Kaos M-City
+Tempat Jual Karcis
+Cangkir M-City
+Botol Bourbon
+Tiang Lampu
+Kursi Roccoco
+Jacuzzi
+Khusus Markas Besar
+Mewah Markas Besar
+Termewah Markas Besar
+Pesawat Antik
+Zeppelin
+Pameran Dirgantara
+Bola salju raksasa
+Plaza Tahun Baru
+Kolam Jepang
+Imbalan
+Imbalan
+Imbalan
+Imbalan
+Imbalan
+%U XP
+$ %U
+Kantor Pusat
+Deskripsi Kantor Pusat
+Bungalow
+Gedung terpisah yang dirawat dengan baik dengan 3 kamar tidur, 2 kamar mandi, dan kira-kira 60 meter ruangan.
+Bungalow Mewah
+Rumah dengan 2 tempat ridur luas,2 kamar mandi dengan aula masuk, ruang tamu, ruang makanm dan dapur.
+Townhouse
+Rumah menarik 3 kamar tidur, 2 kamar mandi dengan ruang keluarga, ruang tamu, ruang makan, dan garasi 1 mobil.
+Townhouse Mewah
+Rumah menyenangkan dengan tiga kamar tidur dengan beranda depan dan belakang, 2 ruang parkir, dan ruang makan.
+Dupleks
+Dapur lengkap, ruang tamu, ruang makan, pantri, ruang cuci, taman dan teras cantik
+Dupleks Mewah
+Rumah yang telah dipugar dengan karpet baru, lantai ubin bari, dan perabot baru di dapur dan kamar mandi.
+Rumah Tiga Lantai
+Interior kayu, dapur, ruang tamu, ruang makan, AC, teras, dan dek.
+Tiga Lantai Mewah
+Lantai dasar utk ruang hiburan keluarga, ruang laundry, gudang, ruang tamu, ruang makan, dan balai dengan bak air panas.
+Blok Apartemen
+Kompleks apartemen seluas 600 m² dengan 6 unit cantik, taman, termasuk tukang kebun.
+Blok Apt. Mewah
+Kompleks apartemen 6 unit dengan kolam renang, cocok untuk keluarga.
+Vil
+Enam unit rumah terpisah dgn lantai kayu, dapur, oven, mesin cuci piring, mesin cuci, dan garasi.
+Loft Block
+Cocok untuk seniman, luas 100 m² dengan aula luas dan 2 kamar tidur.
+Vila Mewah
+Enam unit rumah terpisah dgn dua garasi. Kompleks termasuk kolam renang, sauna, teras besar, dan taman.
+Pencakar Langit
+Kompleks gedung tinggi 20 meter dengan 6 kamar tidur dan ruang penerimaan.
+Loft Block Mewah
+Ruang luas untuk bujangan dan aktor.
+Kastil
+Kastil menakjubkan abad ke-19, dipugar lengkap dengan ruang untuk beraktivitas seluas 500 meter dan 14 kamar tidur.
+P. Langit Mewah
+Kompeks gedung tinggi 30 meter dengan pemandangan indah dari 8 kamar tidur yang bergaya.
+Rumah Kolonial
+Bergaya historis dan nyaman, 4 kamar tidur, ruang tamu bercahaya dan garasi yang luas.
+Futuristik
+Flat mewah dalam rumah bergaya masa depan. Pilihan desain teknologi tinggi dan beberapa ruang berjemur.
+P. Langit Super
+Apartemen modern dalam gedung setinggi 50 m. Pemandangan indah, kolam renang, gym, restoran dan lift panoramik.
+Rumah Hijau
+Rumah ramah lingkungan ini penuh dengan cahaya alami dan daya tarik. Termasuk di dalamnya tiga kamar tidur yang juga ramah lingkungan.
+Kastil Dataran Tinggi
+Kastil bergaya Skotlandia ini punya banyak ruang. Termasuk di dalamnya 20 kamar tidur, pembersih, pelayan khusus, pembantu, pengemudi, dan hantu.
+Rumah Kioko
+Rumah Kioko ringkas tapi sangat fungsional dengan dua kamar tidur. Dinding kertas dan lantai tatami memberi kesan luar biasa ringan dalam kehidupan sehari-hari.
+Rumah Harmoni
+Rumah gaya Jepang ini penuh ketenangan. Dirancang sesuai prinsip Zen, rumah ini cocok untuk keluarga kecil yang menikmati mengurus kolam Koi.
+Rumah Bayern
+Rumah khas Bavaria ini mewakili kehangatan mereka yang tinggal di pegunungan tinggi Jerman. Rumah bertingkat 3 didasari Arsitektur Bavaria.
+Rumah Bayern II
+Rumah ini dibuat untuk Fürsten dan Herzöge dari Keturunan Ningrat Bavaria. Rumah kebanggaan dan martabat kerajaan.
+Rumah Bayern
+Rumah khas Bavaria ini mewakili kehangatan mereka yang tinggal di pegunungan tinggi Jerman. Rumah bertingkat 3 didasari Arsitektur Bavaria.
+Rumah Bayern II
+Rumah ini dibuat untuk Fürsten dan Herzöge dari Keturunan Ningrat Bavaria. Rumah kebanggaan dan martabat kerajaan.
+Istana Venesia
+Kembali ke jaman Renaisans dengan istana Venesia yang bersejarah dan penuh kemegahan ini.
+Rumah Tuscan
+Wujudkan impian dengan rumah desa berteras banyak dan bertaman ini.
+Rumah Pohon
+Tempat tinggal unik ini memiliki satu kamar tidur dan kesempatan untuk hidup alami  setiap hari.
+Rumah Hijau Mewah
+Rumah hijau ini memiliki 3 kamar tidur, sistem daur ulang air,  tenaga surya dan insulasi maksimum.
+Rumah Hantu
+Kau dapat memiliki rumah ini selamanya jika dapat bertahan satu malam saja di dalamnya…
+Rumah Labu
+Nikmati Halloween di rumah menarik yang cocok untuk tukang sihir yang bercita-cita tinggi.
+Rumah Perancang
+Hidup penuh gaya dengan 2 kamar tidur bermandikan cahaya.
+Pencakar Langit Terhebat
+Pencakar langit modern ini menghadirkan suasana metropolis di kotamu. Ada cukup ruang untuk semua bisnismu'.
+Rumah Mewah
+Rumah Besar Klasik Hollywood utk orang2 yg baru datang. Delapan kmr  tidur & 5  kmr mandi utk menjawab kebutuhan sosial.
+Luxury Mansion II
+Sambut kehidupan tingkat tinggi di rumah maha mewah ini. Termasuk perabot hitech dan bioskop film pribadi.
+Apartemen
+Dua kamar tidur yang indah membuatnya menjadi rumah idaman bagi keluarga kecil manapun yang cinta akan kedamaian.
+Rumah Bandar Paris
+Bangunan apartemen ini memiliki apartemen sudah direnovasi dengan sangat indah, yang penuh cahaya dan pesona dunia lama.
+Pondok Pengelana
+Hiduplah seperti pengelana dalam gubuk yang gaya ini dengan ruang untuk keluarga  dan seekor kalkun.
+Gedung Chrysler
+Kesempatan memperoleh ruang tak terbatas untuk semua penyewa dalam gedung pencakar langit termahsyur ini.
+Gedung Putih
+Jika memang cukup bagus untuk didiami presiden, maka pasti juga cukup hebat untuk kita semua
+Rumah Roti Jahe
+Tak ada yang lebih lezat dari Rumah Roti Jahe ini, sempurna untuk liburan. Nikmatilah setelah Natal.
+Gua Santa
+Undanglah penyewamu untuk menikmati semangat Natal sejati dalam rumah ajaib dari Finlandia ini
+Igloo
+Sangat ramah lingkungan dan benar-benar hangat. Sudah termasuk anjing.
+Rumah Natal
+Nikmati semangat Natal dalam rumah impian yang cantik dan luas ini.
+Rumah Hiburan
+Masuki rumah fantastis dan hibur penyewa dengan berbagai kegembiraan!
+Futuristik Mewah
+Rumah ini memberimu gaya hidup futuristik dgn semua kenyamanan teknologi tinggi era ruang angkasa.
+Blok Kota Futuristik
+Berikan kehidupan masa depan kepada penyewamu dgn blok apartemen luas ini. Sewa termasuk jasa teleportasi gratis.
+Istana Escorial
+Kini kamu berpeluang utk hidup bagai raja. Isilah dgn sebanyak mungkin penyewa kerajaan utk keuntungan maksimal. 
+Rumah Spanyol
+Hidup tenteram di pedesaan Spanyol. Penyewamu akan jatuh cinta pada rumah ini!
+Rumah Bintang Tenis
+Hidup dan berlatih tenis profesional di rumahmu sendiri. Termasuk pelatih.
+Istana Bintang F1
+Istana impian yg luas utk mereka yg bergaya hidup cepat.
+Casa Mexicana
+Tawarkan pada para penyewa anda gaya hidup Meksiko pada rumah yang menawan dan luas ini.
+Casa Mexicana II
+Tawarkan pada para penyewa anda gaya hidup Meksiko pada rumah yang menawan dan luas ini.
+Kastil Abad Pertengahan
+Penyewamu pasti senang dgn monumen gagah yg penuh misteri dan kekuatan ini - dibawa langsung dari Zaman Kegelapan!
+Rumah Gaya Tudor
+Dinding indah setengah kayu dan atap curam memberi penyewamu keanggunan Abad Pertengahan yg tenang dan sederhana
+Rumah India
+Rumah kokoh yg mencerminkan gaya hidup India - lengkap dgn taman yg indah!
+Istana India
+Istana yg mewah dan eksotis ini menunggu penyewa yg ingin tinggal bergaya di bangunan luas ini!
+Rumah Brazil
+Tempat hebat utk penyewamu bersantai - rumah ini adalah perumahan Brazil yg terbaik.
+Gedung Brazil
+Rayakan kesuksesanmu dgn bangunan super tinggi yg langka ini - diciptakan dgn gaya Brazil terbaik!
+Rumah Santo Patrick
+Tempat ajaib utk penyewamu beristirahat, dgn keriaan hijau di mana2!
+Rumah Pohon Peri
+Biarkan penyewamu bersenang2 di rumah pohon yg dirancang utk kegembiraan maksimal!
+Rumah Mekar
+Bunga2an di mana2 di lingkungan subur ini - benar2 pesta raya utk semua indera!
+Apartemen Taman
+Gedung indah yang menekankan segarnya  taman - nikmatilah keajaiban alam ini!
+Losmen
+Dgn Kamar Tidur Tamu yg dilengkapi ranjang besar, internet cepat gratis, ruang hiburan dan cuci pakaian. 
+Pencakar Langit Emas
+Jangkau langit dgn Pencakar Langit yg mewah dan terbatas ini. Lebih dari 100 lantai mewah yg memanjakan - gaya Vegas!
+Tenda Indian
+Bertualanglah dgn rumah Penduduk Asli Amerika ini. Suasana hebat, dekat dgn alam.
+Ranca
+Nikmati gaya hidup Koboi secara swadaya penuh di peternakan indah ini!
+Pondok Desa
+Pesona pedesaan Inggris hadir di pondok cantik ini. Berkebun bisa jadi pilihan.
+Istana Buckingham
+Penyewamu dapat hidup seperti ratu di kastil megah ini. Tersedia ruang luas.
+Hunian Mewah
+Hunian Terhebat utk ditinggali, mampu memenuhi semua tuntutan penyewa!
+Istana Platinum
+Terbaik di pasaran, istana ini punya pernik Mewah berlimpah!
+Pizzaria
+Gerai Kopi
+Toko Bunga
+Bowling
+Perhiasan
+Klub Malam
+Mall
+Bank
+Rumah Sakit
+Kasino
+Toko Hewan
+Stadion
+Gim
+Bar Sushi
+Bräuhaus
+Bengkel Mobil Italia
+Resor Hijau
+Toko Horor
+Hotel Midas
+Teater Hollywood
+Mall Midas
+Louvre
+Bar Vegas
+Tenda Thanksgiving
+Kastil Fairytale
+McDollars
+Mainan Kurcaci
+Kereta Salju
+Permen Arum Manis
+Tenda Sirkus
+Pabrik Robot
+Restoran Paella
+Musium Seni Moderen
+Stadion Baseball
+Istal Kuda Pacu
+Pabrik Tequila
+Restaurant Taco
+Gedung Opera
+Studio Bollywood
+Bar Caipirinha
+Toko kostum
+Pub Irlandia
+Toko Madu
+Bar Jus
+Menara Vegas
+Kapel Pernikahan
+Hotel Vegas
+Saloon
+Tambang Emas
+Restoran Fish&Chips
+Warung Teh
+Pohon Cypress
+Pohon Ek
+Palm
+Air Mancur
+Pohon Jeruk
+Pohon Jepang
+Taman Besar
+Pohon Apel
+Triumph Arch
+Air Mancur II
+Palm Mini
+Pohon Sugar Maple
+Telaga Kemakmuran
+Kaktus
+Pohon Birch
+Maple Emas
+Anak Balon
+Maple Perak
+Cemara Jepang
+Bambu
+Gerbang Kesuksesan
+Pohon Pinus
+Tiang Beerfest
+Bierzelt
+Patung David
+Reruntuhan Comitium
+Fontana di Fiumi
+Kincir Angin
+Stasiun Daur Ulang
+Taman Organik
+Pohon Terkutuk
+Taman Trick or Treat
+Kuburan Zombie
+Pohon Emas
+Pohon Berlian
+Bandara Jet Pribadi
+Kolam Renang Mewah
+Moulin Rouge
+Lampu Art Noveau
+Tanduk Harta
+Seluncur Es
+Patung Es
+Manusia Salju
+Pohon Klasik
+Pohon Berlampu
+Pohon Bersalju
+Bola salju raksasa
+Totem Island God
+Pohon Emas
+Lampu Natal
+Plaza Tahun Baru
+Korsel
+Komidi Putar 
+Pohon Era Ruang Angkasa
+Air Mancur Peri
+Taman El Retiro
+Patung Kuda Andalusia
+Kanal Segovia
+Kolam Jepang
+Golf Mini
+Kolam Olimpiade
+Patung Piala Dunia
+Tanaman Agave
+Patung Moai
+Ksatria Xian
+Patung Mesir
+Kepala Olmec
+Parthenon
+Patung Gajah
+Gazebo India
+Pohon Chafa
+Pasar Rempah
+Mobil Karnaval
+Pohon Amazon
+Tanaman Guaraná
+Emas Sebelanga
+Patung Peri
+Air Mancur Semanggi
+Parter
+Hortensia
+Pohon Berbunga
+Taman Bermain
+Koboi Neon
+Papan Penyambutan
+Kaktus Neon
+Kereta Bijih Emas
+Kereta Koboi
+Lokomotif
+TNT
+Rambu Subway
+Bilik Telepon
+Tiang Nelson
+Kuburan Zombie
+Patung Emas
+Discovery
+Piramida
+Menara Eiffel
+Patung Ronald
+Patung Cindy
+Patung Liberty
+Menara Chronos
+Colosseo
+Kastil Drakula
+Dollars Bin
+Konter Tahun Baru
+Atomium
+Sagrada Família
+Chichen Itza
+Stonehenge
+Taj-Mahal
+Corcovado
+Kapal Selam Kuning
+Perlu Level %U
+Ukuran Petak:
+Bonus Rumah:
+Avantajlar
+Monumen ini menambah Bonus Harian sebesar %U Dolar.
+Benda Ajaib ini memberimu %U% kemungkinan utk menggandakan sewamu.
+Monumen ini menambah Bonus Pendapatan sebesar %U% pada semua Rumah yang Anda miliki.
+Keajaiban ini meningkatkan Pemasukan Komersial sebesar %U%.
+Beli Seharga:
+Hari
+Hari
+Jam
+Jam
+Mnt
+Dtk
+Dolar
+Emas
+izin
+%U%
+Gratis
+Gratis
+Batal
+Baru!
+Tmbh Teman!
+Selamat!
+Tingkat %U
+Buka kunci sekarang:
+Bonus Harian Hari Ini
+Kunjungi setiap hari untuk memperoleh bonus harian!
+%U
+%U Emas
+%U XP
+%U Petak
+Lanjutkan
+OK
+Gedung
+Rumah
+Komersial
+Dekorasi
+Monumen
+Pekan Paskah
+Specials
+Hadiah
+Berbagi sukses
+Ya
+Tdk
+Beres
+Perusahaan Anda
+Tempatkan Kantor Pusat
+Beli Petak
+Bangun Rumah
+Bangun Jalan
+Bangun Seketika
+Teken Kontrak
+Beli Dekorasi
+Tarik Sewa
+\nHalo, nama saya %U. Ini adalah Ladang Cokelat, kota tempat memulai bisnis realestatmu yang sebenarnya.\n\nTujuanmu adalah mengubah kota kecil ini menjadi metropolitan dan menjadi jutawan.
+\nDi Millionaire City, kau dapat membeli dan menyewa rumah untuk memperoleh uang dan pengalaman sambil membangun kota yang indah.\n\nMulailah dengan menempatkan Kantor Pusat di petak yang ditunjukkan tanda panah.
+\nSebelum kau dapat membangun rumah, kau perlu membeli beberapa petak kosong.\n\nKlik alat Beli Petak dan beli 2 petak yang hilang.
+\nKlik pada alat Toko dan beli Bungalow.\n\nLalu letakkan pada petak 2x2.
+\nSebelum konstruksi dimulai, lokasi konstruksi harus terhubung ke Kantor Pusat.\n\nPilih alat Jalan dan bangun 2 potongan jalan yang hilang untuk menghubungkan rumah ke jalan utama.
+\nKonstruksi telah dimulai, butuh beberapa saat untuk selesai.\n\nKlik pada Bungalow dan terima Bangun Seketika untuk menyelesaikan konstruksi.
+\nWaktunya menarik penyewa pertama.\n\nKlik pada Bungalow dan tanda tangani kontrak sewa.\n\nPerhatikan bahwa kontrak ini berharga $90.
+\nUntuk meningkatkan uang sewa, tempatkan dekorasi di sebelah rumah milikmu.\n\nKunjungi Toko dan pilih tab Dekorasi, lalu beli Pohon Cypress dan tempatkan di sebelah Bungalow.\n\nPerhatikan bahwa Bungalow sekarang memiliki bonus pendapatan sebesar 2%.
+\nUang sewamu siap ditagih!\n\nKlik pada Bungalow untuk menagihnya.
+\nKau kini telah menguasai dasar-dasar menghasilkan uang!\n\nTugas berikutnya:\n- Bangun lebih banyak rumah\n- Kunjungi teman\n- Kau dapat menyelesaikan misi dan menghasilkan uang dengan mengklik tombol Misi di bawah.\n\nSemoga beruntung!
+Langkah %U / %U1
+Pilih Penasehat
+$
+Beri Nama
+Tulis NAMA kota pada kotak di bawah ini dan klik 'Done'.
+Pizzalicious
+Beli resto Pizza yg 'Dijual' dekat dgn Kantor Pusat. Kembali ke sini utk ambil imbalan. 
+Bantuan
+Minta Bantuan
+\n\nKlik pada Monumen yang sedang dibangun dan Minta Bantuan dari teman-teman. Setiap teman yang membantumu akan membuat Monumen lebih cepat selesai.
+Ukuran Itu Penting
+Beli satu perluasan! Perluasan memberimu ruang lebih utk membangun Kotamu dan membuatmu makin kaya.
+\n\nTips: Belilah dgn cara mengeklik tanda 'Perluasan Dijual' di luar pagar batas kotamu.
+Bangun Seketika
+Klik pada properti yg sedang dibangun utk Bangun Cepat
+\n\nTips: Bangun Rumah, hubungkan ke HQ, lalu setelah penghitung waktu pembangunan mulai menghitung mundur, klik Rumah untuk mengkonfirmasi Pembangunan Instan!
+Membangun I
+Bangun Rumah!
+\n\n Tips: Beli tanah 2x2 dgn perkakas Beli Tanah. Pergilah ke Toko, pilih Bungalow Mewah dan letakkan pada tanah.
+Membangun II
+Bangunlah Townhouse utk penduduk kota berselera tinggi.
+\n\n Tips: Beli tanah yg pas dgn perkakas Beli Tanah. Pergilah ke Toko, pilih Bungalow Mewah dan letakkan pada tanah.
+Coffeelicious
+Bangunlah Gerai Kopi.
+\n\nTips: Tempatkan Usahamu dekat dgn rumah utk menambah pelanggan yg berbelanja ke sana.
+Diversifikasi
+Ragamkan portfolio bisnismu dgn memiliki 5 Usaha berbeda.
+\n\nTips: Siapkan tanah dulu, pergi ke Toko lalu beli Usaha.
+Jalur Hijau I
+Tanam 2 pohon.
+\n\nTips: Pergi ke Toko dan pilih tab Dekorasi. Beli sebuah Pohon dan letakkan dekat Rumah utk menambah Bonus Rumah. Lakukan sekali lagi!
+Air Mancur Impian
+Tanam 3 Air Mancur lagi di sekitar kotamu. Air mancur yg sudah ada di kotamu tidak dihitung.
+\n\n Tips: Letakkan dekat Rumah milikmu utk menambah Bonus Rumah.
+Jalur Hijau II
+Bangun 1 Taman Besar di Kotamu agar pendudukmu bisa menikmatinya.
+\n\nTips: Tempatkan di dekat Rumah lainnya yang kamu miliki untuk meningkatkan Bonus Rumah.
+Rumah Mewah I
+Bangun 1 Townhouse Mewah.
+\n\nTips: Letakkan dekat Usaha, agar Usaha itu mendapat pelanggan baru!
+Rumah Mewah II
+Bangun 1 Dupleks Mewah.
+\n\n Tips: Letakkan dekat Usaha, agar Usaha itu mendapat pelanggan baru!
+Kastil Impian
+Bangun 2 Kastil utk memuaskan penduduk kelas A, seperti bintang film Hollywood.
+\n\nTips: Letakkan dekat Usaha, agar Usaha itu mendapat pelanggan baru! 
+Pencakar Langit
+Bangun 3 Pencakar Langit utk memberi kotamu kesan metropolis.
+\n\n Tips: Pencakar Langit punya banyak Penyewa yg berguna utk Usaha milikmu!
+Keajaiban Dunia
+Keajaiban memberi banyak Bonus! Bangun 1 Patung Emas
+\n\nTips: siapkan tanah 4x4 dulu, lalu pergilah ke Toko dan pilih tab Keajaiban dan klik  Patung Emas. Letakkan di tanah kosong. 
+Klien Pizzalicious I
+Tingkatkan jumlah klien jadi 3 di Pizzaria.
+\n\n Tips: Beli dulu tanah 2x2 di dekat Pizzaria lalu pergilah ke Toko, beli Rumah dan letakkan di tanah tadi. Tanda tangani kontrak utk mendapat Penyewa.
+Klien Pizzalicious II
+Bangun Rumah lagi di sekitar Pizzaria utk menambah pelanggan menjadi 10.
+\n\n Tips: Beli tanah di sebelah  Pizzaria, pergilah ke Toko, beli Rumah dan tanda tangani kontrak utk mendapat Penyewa.
+Klien Pizzalicious III
+Bangun Rumah lagi di sekitar Pizzaria utk menambah pelanggan menjadi 16.
+\n\n Tips: Beli tanah di sebelah  Pizzaria, pergilah ke Toko, beli Rumah dan tanda tangani kontrak utk mendapat Penyewa.
+Klien Coffeelicious I
+Tambah pelanggan menjadi 12 di Gerai Kopi.
+\n\n Tips: Bangun Rumah di sebelah Gerai Kopi.
+Klien Coffeelicious II
+Tambah pelanggan menjadi 24 di Gerai Kopi.
+\n\n Tips: Bangun Rumah di sebelah Gerai Kopi.
+Klien Toko Bunga
+Bangun sebuah Toko Bunga dan kumpulkan 30 klien.
+Bangun sebuah Toko Bunga dan kumpulkan 30 klien. \n\n Tips: Bangun Rumah di sebelah Toko Bunga.
+Klien Klub Malam
+Bangun sebuah Klub Malam dan adakan 36 pesta bujangan di sana.
+\n\n Tips: Bangun Rumah di sebelah Klub Malam.
+Hias Rumah I
+Bangun Dekorasi di sebelah Bungalow milikmu utk meraih 12% Bonus Rumah.
+\n\n Tips: Dekorasi bisa didapat di Toko.
+Hias Rumah II
+Bangun Dekorasi di sebelah Bungalow milikmu utk meraih 16% Bonus Rumah.
+\n\n Tips: Dekorasi bisa didapat di Toko.
+Hias Rumah III
+Bangun Dekorasi di sebelah Townhouse utk meraih 30% Bonus Rumah.
+\n\n Tips: Dekorasi bisa didapat di Toko.
+Hias Rumah IV
+Bangun Dekorasi di sebelah Townhouse utk meraih 60% Bonus Rumah.
+\n\n Tips: Dekorasi bisa didapat di Toko.
+Vila Bintang Rock
+Bintang Rock terkenal 'Billy Dollars' sedang mencari Vil dgn 90%  Bonus Rumah.
+\n\nTips: Tambah Bonus Rumah dgn Dekorasi.
+Hias Kastil
+Raja media kaya ingin membeli Kastil yg keren, bangunlah dgn 110% Bonus Rumah.
+\n\n Tips: Tambah Bonus Rumah dgn Dekorasi.
+Promo Pizzalicious I
+Adakan 1 Obral resto Pizza dgn memungut penghasilan dari resto Pizza
+\n\nTips: Makin banyak rumah di dekat resto Pizza makin banyak uang yg kamu dapat!
+Promo Pizzalicious II
+Adakan Obral resto Pizza 5 kali.
+\n\n Tips: Klik resto Pizza setelah pengukur Waktu menghitung mundur 5 kali!
+Promo Coffeelicious I
+Adakan Obral Kopi 10 kali.
+\n\nTips: Pungut penghasilan dari Warung Kopi 10 kali!
+Promo Coffeelicious II
+Adakan Obral Kopi 50 kali.
+\n\nTips: Pungut penghasilan dari Warung Kopi 50 kali!
+Mana Uang Sewaku I
+Kumpulkan 10 sewa dari Rumahmu.
+\n\n Tips: Gunakan Kontrak jangka pendek agar Misi cepat selesai.
+Mana Uang Sewaku II
+Kumpulkan 50 sewa dari Rumahmu.
+\n\n Tips: Gunakan Kontrak jangka pendek agar Misi cepat selesai.
+Mana Uang Sewaku III
+Kumpulkan 100 sewa dari Rumah milikmu.
+\n\nTips: Gunakan Kontrak cepat agar Misi cepat selesai.
+Mana Uang Sewaku IV
+Kumpulkan 200 sewa dari Rumah milikmu.
+\n\nTips: Gunakan Kontrak jangka pendek agar Misi cepat selesai.
+Kunjungi Kota lain
+Kunjungi Kota temanmu atau kota %U dgn mengeklik bilah di bawah game.
+\n\n Tips: Kunjungi %U setiap hari utk mendapat Bonus Harian.
+Bantu Teman I
+Kunjungi Kota temanmu dan tingkatkan total 6 Rumah di Kota mereka semua.
+\n\nTips: Klik Teman pada bilah di bawah ini utk berkunjung lalu klik rumah teman utk meningkatkannya!
+Bantu Teman II
+Kunjungi Kota temanmu dan tingkatkan total 20 Rumah di kota mereka semua.
+\n\nTips: Klik Teman pada bilah di bawah ini utk berkunjung lalu klik rumah teman utk meningkatkannya!
+Bantu Teman III
+Kunjungi Kota temanmu dan tingkatkan total 50 Rumah di kota mereka semua.
+\n\nTips: Klik Teman pada bilah di bawah ini  lalu tingkatkan rumah mereka dgn mengekliknya!
+Uang Berkuasa I
+Hemat hingga $1.000.000 Dolar Millionaire dan rasakan enaknya jadi kaya.
+\n\n Tips: Kamu bisa menukar Emas Batangan menjadi Dolar Millionaire dengan mengeklik tombol 'Tambah Dolar'!
+Kau Seorang Jutawan I
+Bangun sejumlah total Nilai Perusahaan di atas $1.000.000.
+\n\nTips: Ambil dari Kontrak Rumah jangka pendek dan Usaha utk meningkatkan alur kas dgn cepat!
+Kau Seorang Jutawan II
+Dapatkan total Nilai Perusahaan sebesar $5.000.000. Kamu mampu?
+\n\n Tips: Ambil dari Kontrak Rumah jangka pendek dan Usaha utk meningkatkan alur kas dgn cepat!
+Kau Seorang Jutawan III
+Dapatkan total Nilai Perusahaan sebesar $10.000.000.
+\n\n Tips: Ambil dari Kontrak Rumah jangka pendek dan Usaha utk meningkatkan alur kas dgn cepat!
+Mana Uang Sewaku V
+Pungut 600 sewa dari rumah milikmu. 
+\n\n Tips: Gunakan Kontrak jangka pendek agar Misi cepat selesai.
+Mana Uang Sewaku VI
+Pungut 950 sewa dari rumah milikmu.
+\n\n Tips: Gunakan Kontrak cepat agar Misi cepat selesai.
+Bantu Teman IV
+Kunjungi kota temanmu dan tingkatkan total 650 Rumah di kota mereka semua. 
+\n\nTips: Klik Teman pada bilah di bawah ini utk berkunjung ke Kota mereka lalu tingkatkan rumah dgn mengekliknya!
+Bantu Teman V
+Kunjungi kota temanmu dan tingkatkan total 850 Rumah di kota mereka semua.
+\n\nTips: Klik Teman pada bilah di bawah ini utk berkunjung ke Kota mereka lalu tingkatkan rumah dgn mengekliknya!
+Kau Seorang Jutawan IV
+Dapatkan total Nilai Perusahaan sebesar  $375.000.000. 
+\n\n Tips: Ambil dari Kontrak Rumah jangka pendek dan Usaha utk meningkatkan alur kas dgn cepat!
+Kau Seorang Jutawan V
+Dapatkan total Nilai Perusahaan  sebesar $475.000.000.
+\n\n Tips: Ambil dari Kontrak Rumah jangka pendek dan Usaha utk meningkatkan alur kas dgn cepat!
+Uang Berkuasa II
+Dapatkan $1.000.000 Dolar Millionaire dan rasakan enaknya jadi kaya. 
+\n\n Tips: Kamu bisa menukar Emas Batangan menjadi Dolar Millionaire dengan mengeklik tombol 'Tambah Dolar'!
+Uang Berkuasa III
+Hemat hingga $20.000.000 Dolar Millionaire dan rasakan enaknya jadi kaya.
+\n\n Tips: Kamu bisa menukar Emas Batangan menjadi Dolar Millionaire dengan mengeklik tombol 'Tambah Dolar'!
+Kontrak Bintang Rock
+Pungut 200 sewa dari Kontrak Bintang Rock. 
+\n\n Tips: bangun banyak Rumah utk mengaktifkan banyak Kontrak sekaligus!
+Tantangan Sheik
+Sheik Oilfinger adalah jutawan beken pencinta cerutu. Buat Nilai Perusahaan menjadi di atas $900 Juta dan tunjukkan pada Sheik Oilfinger siapa yg terkaya! 
+\n\nTips: Ambil dari Kontrak Rumah jangka pendek dan Usaha utk meningkatkan alur kas dgn cepat!
+Mana Uang Sewaku VII
+Pungut 5.000 sewa dari rumah milikmu. 
+\n\n Tips: Gunakan Kontrak jangka pendek agar Misi cepat selesai.
+Bantu Teman VI
+Kunjungi kota temanmu dan tingkatkan total 2000 rumah di kota mereka semua.
+\n\nTips: Klik Teman pada bilah di bawah ini utk berkunjung ke Kota mereka lalu tingkatkan rumah dgn mengekliknya!
+Kau Seorang Jutawan VI
+Dapatkan total Nilai Perusahaan  sebesar $2.000.000.000. 
+\n\n Tips: Ambil dari Kontrak rumah jangka pendek dan Usaha utk meningkatkan alur kas dgn cepat!
+Uang Berkuasa IV
+Hemat hingga $300.000.000 Dolar Millionaire dan rasakan enaknya jadi kaya.
+\n\n Tips: Kamu bisa menukar Emas Batangan menjadi Dolar Millionaire dengan mengeklik tombol 'Tambah Dolar'!
+Hias Rumah Kolonial
+Bangun dekorasi di sebelah Rumah Kolonial utk meraih Bonus Rumah 360%. 
+\n\n Tips: Periksa Bonus Rumah di Toko sebelum kamu membeli Dekorasi!
+Nasabah Bank
+Bangun sebuah Bank dan kumpulkan 529 klien.
+\n\n Tips: Bangun Rumah di sekitar Bank utk mengumpulkan Pelanggan!
+Pelanggan Bowling
+Bangun sebuah Bowling dan kumpulkan 243 klien.
+\n\n Tips: Bangun Rumah di sekitar Bank utk mengumpulkan Pelanggan!
+Klub Lounge M-City
+Cindy dan Ronald sudah menjadi anggota Millionaire City VIP Club yg bergengsi dan kamu bisa ikutan juga! Nikmati manfaat eksklusif seperti berita, kado dan hadiah.
+\n\n Tips: Masukkan Emailmu dan dapatkan kartu anggotamu.
+Misi Selesai
+Mitra Bisnismu mengandalkanmu! Kembangkan bisnis dengan berkunjung ke 40 Kota Mitra Bisnis. 
+\n\n Tips: Kamu bisa menemukan Mitramu pada Bilah Teman di bawah layar game ini!
+Berinvestasi
+Berinvestasi selalu bermanfaat utk Jutawan. Bervestasilah pada  10 teman yang menerima undanganmu dan dapatkan imbalan saat undangan kedaluwarsa. 
+\n\n Tips: Kirimkan Permohonan Invetasi dgn mengeklik ikon Investasi di sisi kiri bawah layar game.
+Investasi Cerdas
+Lakukan investasi cerdas. Jadilah pakar investasi dgn melakukan %U investasi sukses dan raih imbalan saat undangan kedaluwarsa. 
+\n\n Tips: Setelah kamu berinvestasi pada seorang teman, kirim pengingat dgn mengeklik “Portfolio Investasi”.
+Kunjungan Sahabat I
+Kunjungi Kota Temanmu dan tingkatkan 70 Blok Apt. Mewah utk seluruh Kota mereka.
+\n\nTips: Kunjungi Kota teman dan klik pada Blok Apt. Mewah jika mereka memilikinya!
+Kunjungan Sahabat II
+Kunjungi kota temanmu dan tingkatkan 50 Pencakar Langit utk seluruh kota mereka.
+\n\nTips: Kunjungi Kota teman dan klik pada Pencakar Langit jika mereka memilikinya!
+Kunjungan Sahabat IV
+Kunjungi kota temanmu dan tingkatkan 30 P. Langit Mewah utk seluruh kota mereka.
+\n\nTips: Kunjungi Kota teman dan klik pada P. Langit Mewah jika mereka memilikinya!
+Kunjungan Sahabat VI
+Kunjungi kota temanmu dan tingkatkan 20 P. Langit Super utk seluruh kota mereka.
+\n\nTips: Kunjungi Kota teman dan klik pada P. Langit Super jika mereka memilikinya!
+Kunjungan Sahabat III
+Kunjungi kota temanmu dan tingkatkan 40 Rumah Hijau utk seluruh kota mereka. 
+\n\nTips: Kunjungi Kota teman dan klik pada Rumah Hijau jika mereka memilikinya!
+Kunjungan Sahabat V
+Kunjungi kota temanmu dan tingkatkan 25 Futuristik utk seluruh kota mereka.
+\n\nTips: Kunjungi Kota teman dan klik pada Futuristik jika mereka memilikinya!
+Kunjungan Sahabat VII
+Kunjungi kota temanmu dan tingkatkan 10 Kastil Dataran Tinggi utk seluruh kota mereka. 
+\n\nTips: Kunjungi Kota teman dan klik pada Kastil Dataran Tinggi jika mereka memilikinya!
+Klien Toko Hewan
+Bangun sebuah  Toko Hewan dan jual 32 anak Anjing lucu. 
+\n\n Tips: Bangun Rumah lagi di dekat Toko Hewan utk menambah Pelanggan!
+Klien Toko Perhiasan
+Bangun sebuah  Perhiasan dan jual 34 perhiasan berkilau. 
+\n\n Tips: Bangun Rumah lagi di dekat Perhiasan utk menambah Pelanggan!
+Mari Berbagi I
+Minta temanmu meningkatkan Rumahmu dan dapatkan 50 sewa naik. Berbagi tandanya sayang! 
+\n\nTips: Jangan lupa undang Temanmu utk bermain Millionaire City agar dapat bersama2 meningkatkan Rumah masing2.
+Mari Berbagi II
+Minta temanmu meningkatkan rumahmu dan dapatkan 100 sewa naik. Berbagi tandanya sayang! 
+\n\nTips: Jangan lupa undang Temanmu utk bermain Millionaire City agar dapat bersama2 meningkatkan Rumah masing2.
+Mari Berbagi III
+Minta temanmu meningkatkan rumahmu dan dapatkan 200 sewa naik. Berbagi tandanya sayang! 
+\n\nTips: Jangan lupa undang Temanmu utk bermain Millionaire City agar dapat bersama2 meningkatkan Rumah masing2.
+Mari Berbagi IV
+Minta temanmu meningkatkan rumahmu dan dapatkan 400 sewa naik. Berbagi tandanya sayang!
+\n\nTips: Jangan lupa undang Temanmu utk bermain Millionaire City agar dapat bersama2 meningkatkan Rumah masing2.
+Mari Berbagi V
+Minta temanmu meningkatkan rumahmu dan dapatkan 800 sewa naik. Berbagi tandanya sayang!
+\n\nTips: Jangan lupa undang Temanmu utk bermain Millionaire City agar dapat bersama2 meningkatkan Rumah masing2.
+Mari Berbagi VI
+Minta temanmu meningkatkan rumahmu dan dapatkan 1.600 sewa naik. Berbagi tandanya sayang!
+\n\nTips: Jangan lupa undang Temanmu utk bermain Millionaire City agar dapat bersama2 meningkatkan Rumah masing2.
+Mari Berbagi VII
+Minta temanmu meningkatkan rumahmu dan dapatkan 3.200 sewa naik. Berbagi tanda sayang!
+\n\nTips: Jangan lupa undang Temanmu utk bermain Millionaire City agar dapat bersama2 meningkatkan Rumah masing2.
+Mari Berbagi VIII
+Minta temanmu meningkatkan rumahmu dan dapatkan 6.400 sewa naik. Berbagi tandanya sayang! 
+\n\nTips: Jangan lupa undang Temanmu utk bermain Millionaire City agar dapat bersama2 meningkatkan Rumah masing2.
+Mari Berbagi IX
+Minta temanmu meningkatkan rumahmu dan dapatkan 7.400 sewa naik. Berbagi tanda sayang!
+\n\nTips: Jangan lupa undang Temanmu agar dapat bersama2 meningkatkan Rumah masing2.
+Mari Berbagi X
+Minta temanmu meningkatkan rumahmu dan dapatkan 8.500 sewa naik. Berbagi tanda sayang! 
+\n\nTip: Jangan lupa undang Temanmu agar dapat bersama2 meningkatkan Rumah masing2.
+Mencangkok
+Bukalah menu Kontraktor yg ditandai ikon Koper dan gunakan perkakas Pindah utk memindahkan Pohon ke tempat lain. 
+\n\n Tips: Perkakas Pindah berguna utk menata kembali Kotamu – Juga bisa dikirim sebagai Hadiah Gratis!
+Mission Completed
+Pendapatan
+XP:
+Wkt Pendapatan:
+Wkt Membangun:
+Pengaruh:
+Penyewa:
+Pelanggan:
+Kamu dapat mempercepat waktu pembangunan dengan meminta bantuan dari temanmu
+%U teman telah membantumu membangun bangunan ini dan tiap orang mengurangi %U1% waktu membangun total 
+Jadilah Penggemar Millionaire City
+Penggemar Millionaire City mendapatkan berita terbaru, Hadiah Gratis spesial, dan dapat membuka kunci rumah Rumah Tiga Lantai!
+Selamat Datang Kembali!
+%U teman melewati peringkatmu.
+%U teman membantumu.
+%U teman berinvestasi di kotamu.
+%U konstruksi telah selesai.
+%U juga mencoba menjadi jutawan, tapi perlu bantuanmu.\nDapatkah kau membantu?
+Ronald Goldtooth
+Cindy Jewels
+Sheik Oilfinger
+Ronald
+Cindy
+Sheik
+Kau harus menempatkan gedung ini pada petak %U. Gunakan alat Beli Petak untuk memperolehnya.
+Sepertinya kamu perlu {0xFF6600}%U1{/} Batang Emas lagi utk mendapat benda ini
+Sepertinya kamu perlu {0x009932}%U1{/} uang lagi utk mendapat benda ini. Kamu dapat menukar {0xFF6600}%U{/} Batang Emas utk uang sejumlah itu.
+Kau tidak punya cukup Uang Tunai untuk membelinya. Aku bisa memberi Uang Tunai {0x009932}%U{/} untuk {0xFF6600}%U1{/} batang Emas, tapi kau hanya punya {0xFF6600}%U2{/} batang Emas.
+Uang Tunai Tidak Cukup
+Emas Tidak Cukup
+Kirim Hadiah
+Klik di Sini
+Perlu Misi %U
+Turis
+Mahasiswa
+Keluarga
+Pensiunan
+Atlet
+Pilot
+Pramutama
+Artis 
+Teman
+Bintang Rock
+Bintang Sepak Bola
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+Undang
+Minta Bantuan
+Ambil Hadiah
+Yakin ingin membatalkan kontrak?
+Yakin ingin membongkar ini?\nKau akan mendapatkan: {0x009932}%U{/}
+Penghuni bosan menunggumu menarik uang sewa, sehingga mereka meninggalkan rumah.
+Klik untuk memugar rumah
+Ladang Cokelat
+Kau perlu menunggu %U untuk meminta kecepatan.
+Kau perlu menunggu %U untuk mengingatkan
+Apa yang akan kau beli berikutnya?
+Meningkatkan Level di Millionaire City.
+%U kini berada pada Level %U1 di Millionaire City dan untuk merayakan suksesnya ingin berbagi Bonus Pengalaman ke semua teman!
+Dapatkan Pengalaman
+Berapa banyak bantuan yang kau butuhkan?
+%U perlu bantuan membangun %U1 - Keajaiban Dunia.
+%U perlu bantuan menyelesaikan %U1. Kau dapat membangun kotamu sendiri sambil meraup jutaan di Millionaire City.
+Bantu %U
+Kau merasa kaya sekarang?
+Wow, %U ada di halaman depan 'Koran Jalan Cokelat'
+%U adalah bos yang sukses dan segera akan bergaul dengan orang-orang kaya dan terkenal di Millionaire City.
+Mainkan Millionaire City
+Bagaimana rasanya jadi jutawan?
+%U seorang Jutawan
+%U seorang jutawan di Millionaire City. Kau bisa mengalahkan %U dan temanmu yang lain dengan membeli rumah, kasino, hotel, toko perhiasan, dan membangun metropolitan: semuanya mungkin di Millionaire City.
+Mainkan Millionaire City
+Sulitkah menyelesaikan misi ini?
+Misi berhasil diselesaikan!
+%U mendapatkan imbalan besar dengan menyelesaikan misi '%U1' dan ingin berbagi sebagian bonus Dolar yang bisa membuat Kau kaya!
+Dapatkan  Dolar
+Kontrak Diteken!
+Properti Terhubung!
+Peningkatan Teman
+Kunjungi kota temanmu dan pugar rumah-rumah mereka!
+Kau dapatkan Uang Tunai dan Pengalaman.
+Jika kau telat menarik uang sewa, penghuni akan kabur tanpa membayar!
+Ingat selesaikan misi untuk mendapatkan Uang Tunai
+Ingatlah bahwa kau dapat menukar Emasmu dengan Uang Tunai
+Pendapatan dari perdagangan bergantung pada jumlah pelanggan yang Kau miliki
+Beli dgn Tunai?
+Beli dgn Emas?
+Beli dgn Uang Tunai & bantuan Investasi?
+Beli Perluasan
+Kau perlu lahan kosong untuk membangun dekorasi ini.
+Gedung ini tidak terhubung ke Kantor Pusat.
+Bangun jalan untuk menghubungkan.
+Klik untuk membeli
+Kau perlu %U investasi yang berhasil
+Kau memiliki %U investasi yang berhasil
+Belilah perluasan yang sudah terbuka kuncinya.
+Terkunci
+Kotamu tidak sinkron dengan server. Silahkan reload halaman untuk untuk melanjutkan.
+Maaf, terjadi kesalahan yg tak disengaja dalam memuat kotamu. Cobalah lagi nanti!
+Kau hanya dapat meminta bantuan setiap 12 jam sekali.
+Investasi Baru
+Portofolio Investasi
+Investasi Baru
+Portofolio Investasi
+Investasikan
+Bantu {0x009932}%U{/} memulai perusahaan jutaan dolar. Investasikan {0x009932}%U1{/} di perusahaan itu sekarang dan jika dalam {0x009932}%U2{/} hari Nilai Perusahaan menjadi {0x009932}%U3{/} kau akan memperoleh {0x009932}%U4{/} karena investasimu yang cerdas.
+Apa yang akan kau beli dengan Sejuta Dolar?
+%U, kau ingin menjadi Jutawan?
+%U, dapatkah kau membangun kota impianmu dan membantu temanmu? %U1 ingin kau membangun kota di Millionaire City. Kau dapat menerima tawaran itu dan membangun kotamu sambil membantu teman mendapat uang tambahan.
+Terima
+Sisa hari
+Sisa jam
+Publikasikan Ayo Cepat!
+Publikasikan Pengingat
+Hasil
+Berapa hari lagi sisa investasi?
+%U, ayo cepat - butuh uang lebih banyak!
+Terima kasih telah menerima investasi namun kau perlu menghasilkan lebih banyak uang karena waktunya hampir habis!
+Mainkan Millionaire City
+Selamat!
+Temanmu mencapai tujuannya, kau mendapatkan keuntungan dari investasimu! Kau harusnya bekerja di Wall Street!
+Ucapkan Terima Kasih
+Investasi Payah!
+Temanmu tidak dapat mencapai tujuan tepat waktu, jadi kau kehilangan investasimu!
+Kamu yakin ingin membatalkan investasi ini?
+Ingatlah, temanmu berinvestasi di perusahaan barumu di Millionaire City. Jika kau dapat mengelola nilai perusahaan sebesar %U dalam %U1 hari, temanmu akan dapat banyak uang dan pastinya akan berterima kasih kepadamu.
+Ingatkan tujuanmu!! Aku ingin keuntunganku kembali!
+Bantuan
+Rauplah uang dalam jumlah banyak dengan membantu teman Kamu memulai perusahaan bernilai Jutaan Dolar yang baru. Klik tombol 'Kirim Permintaan Investasi' untuk memilih teman-teman yang akan menadi pengusaha yang berhasil dan kirim undangan kepada mereka.
+Status Investasi 1: Teman Kamu belum menerima investasi. Ingatkan temanmu atau batalkan investasi untuk memberi ruang pada 'Portofolio Investasi'.
+Status Investasi 2: Ini artinya temanmu telah menolak investasi.  Jika ini terjadi, Kamu bisa membatalkannya untuk memberi ruang pada pada 'Portofolio Investasi'.
+Status Investasi 3: Temanmu telah menerima investasi. Kamu bisa memeriksa kemajuan investasi dengan meminta temanmu untuk 'Mempercepat'.
+Status Investasi 4: Ini artinya bahwa temanmu telah menerima investasi! Klik untuk melihat apakah Kamu memperoleh uang atau tidak.
+Mutakhirkan versi Flash-mu
+Di sini
+Jika permainan tidak memuat atau kau mengalami masalah, harap mutakhirkan versi Flash-mu dengan mengklik DI SINI.
+Statistik
+Investasi Diterima:
+Investasi Berhasil:
+Persentase Keberhasilan:
+Misi baru segera hadir!
+DIJUAL
+PERLUASAN DIJUAL
+Jadilah Penggemar
+Ingin mengucapkan 'Terima Kasih' ke teman-temanmu?
+%U baru saja menghasilkan $$$ di Millionaire City dan ingin mengucapkan 'Terima Kasih' kepada %U1!
+%U menginvestasikan uang di %U1 yang terbukti merupakan investasi yang sangat cerdas. Selamat! 
+Mainkan Millionaire City
+Investasi Sukses!
+Kamu benar - Aku pantas menerima investasimu!
+Kamu berinvestasi dgn cerdas padaku! Telah kucapai batas 4 Juta Dolar dan kini kita berdua menerima manfaat.
+Mainkan Millionaire City
+Kau tidak dapat memugar lebih banyak rumah hari ini! Coba lagi besok!
+Penukaran Uang Tunai
+Tukar
+Kau memiliki:
+Kau bisa menukarkan:
+Investasi
+Gedung dan Dekorasi
+Petak dan Ekspansi
+Total
+Rumah Bandar
+Air Mancur
+Pencakar Langit
+Kastil
+Dapatkan Emas Millionaire
+Pilih Paket:
+Bayar dengan Kredit Facebook
+Paling Hemat!
+Digital Chocolate memakai sistem Kredit Facebook dari Facebook sebagai solusi pembayaran di Millionaire City.  Kredit Facebook memakai sistem keamanan dan pencegahan penipuan terkemuka di industri untuk mengamankan pembelian Anda.
+Penawaran Lengkap
+Penagih Sewa Kontrak
+Kontrak
+Segera Hadir!
+Yakin ingin memindahkan propertimu di sini?
+Kau juga dapat memperoleh {0xf33300}FREE MOVES{/} selama {0xf33300}FULL DAY{/}.
+Pindahkan Properti
+Pindahkan Properti
+Aku dapat membantumu memindahkan propertimu.
+Klik pada properti dan kemudian tempatkan pada petak kosong.
+Kau tidak dapat memasukkan teks dalam mode layar penuh.\nPindah ke mode normal?
+%U perlu bantuan membangun %U1 .
+:
+Tersedia dalam %U
+Tambahkan Bookmark
+Mitra Bisnis
+Minta temanmu menjadi mitra bisnis dan dapatkan akses ke peningkatan yang lebih baik.
+Kirim Permintaan
+Ingatkan temanmu
+Pilih teman untuk ditambahkan sebagai mitra bisnimu
+Halo Teman! Jadilah mitra bisnisku di Millionaire City dan kita berdua bisa melakukan pemugaran hebat atas bangunan dan menjadi Jutawan lebih cepat lagi!
+Kirim Permintaan Mitra Bisnis
+Terima
+Sekarang beri tahu temanmu bahwa kau telah membantu sehingga ia bisa membalas bantuanmu!
+Bantuan Berbagi Selesai
+Bantuan Teman
+Tambah pesan ke temanmu
+%U baru saja memugar rumahmu  di Millionaire City! - Tersedia Bonus Dolar!
+%U mengunjungi kota dan memugar rumahmu. Kau dapat membantu %U dengan membalas bantuannya.
+Dapatkan Bonus Dolar
+Kau membantu %U membangun '%U1'. Beri tahu temanmu bahwa kau adalah teman yang baik dan mereka akan membalas kebaikanmu.
+Bantuan Berbagi Diberikan
+Bantuan Konstruksi Diberikan
+Tambah pesan ke temanmu
+%U membantu %U1 membangun di Millionaire City!
+%U baru saja membantu %U1 membuat lebih banyak uang dengan mempercepat konstruksi '%U2'. Kau bisa melihat dan memeriksanya jika sudah selesai.
+Dapatkan Bonus Dolar
+Berkat temanmu, bangunan baru selesai dibangun. Ucapkan 'Terima kasih' kepada mereka.
+Bagikan Terima Kasih
+Gedung Selesai
+Mau bilang 'Terima Kasih' ke teman-temanmu?
+%U punya gedung baru di kotanya. Terima kasih untuk yang sudah membantu!
+%U baru saja menyelesaikan gedung baru di Millionaire City dan ingin berterima kasih kepada yang telah membantu dengan membagikan beberapa bonus dolar.
+Dapatkan Bonus Dolar
+Peningkatan Super
+Kau berhasil menarik mitra baru! Izinkan teman-temanmu mengetahui bahwa perusahaanmu punya mitra bisnis yang baru.
+Bagikan dengan Teman
+Mitra Baru
+Kirim pesan ke teman-temanmu?
+%U punya mitra bisnis baru di Millionaire City!
+%U baru saja menarik mitra bisnis baru di Millionaire City dan sekarang bisa melakukan 'Peningkatan Super'. Kau juga bisa bermitra dengan %U dan mendapatkan manfaat ini.
+Dapatkan Bonus Dolar
+Bonus Baru
+sedikit pengalaman
+Temanmu memberimu Bonus Pengalaman
+beberapa dolar
+Temanmu memberimu Bonus Dolar
+Untuk merayakan kenaikan levelmu, maukah memberi sedikit bonus Pengalaman ke teman-temanmu?
+Misi selesai, berikan sedikit bonus Dolar kepada teman-temanmu?
+placeholder
+Anda masih bisa memberikan beberapa Dolar Bonus kepada teman-teman!
+Untuk merayakan kerajaan bisnismu yang berkembang, kau dapat berbagi sedikit bonus Dolar kepada teman-temanmu!
+Untuk merayakan kerajaan bisnismu yang berkembang, kau dapat berbagi sedikit bonus Dolar kepada teman-temanmu!
+Kau masih dapat memberi sedikit Bonus Dolar kepada teman-temanmu!
+placeholder
+Untuk merayakan kerajaan bisnismu yang berkembang, kau dapat berbagi sedikit bonus Dolar kepada teman-temanmu!
+Anda masih bisa memberikan beberapa Dolar Bonus kepada teman-teman!
+Anda masih bisa memberikan beberapa Dolar Bonus kepada teman-teman!
+Anda masih bisa memberikan beberapa Dolar Bonus kepada teman-teman!
+Kamu masih bisa memberikan beberapa Dolar Bonus kepada teman-teman!
+Kamu masih bisa memberikan beberapa Dolar Bonus kepada teman-teman!
+Tambah pesan ke temanmu
+%U mulai bermain Millionaire City!
+%U baru jadi orang kaya di Millionaire City dan ingin berbagi sedikit Bonus Dolar ke teman-teman!
+Dapatkan Bonus Dolar
+Tambah pesan ke temanmu
+%U memperluas kotanya di Millionaire City!
+Bisnis sedang berkembang dan %U baru saja memperluas kota dan ingin merayakan keberhasilan dengan memberi sedikit bonus dolar kepada teman-teman.
+Dapatkan Bonus Dolar
+Sekarang beri tahu teman-teman bahwa kau baru saja membeli perluasan tanah.
+Perluasan Baru
+Pilih Kontraktor
+Kami telah mengirim email bersama dengan kartu keanggotaan Anda. Bukalah, dan klik tautannya untuk bergabung dengan Klub VIP dan dapatkan imbalan Anda. Jika Anda tidak menerima email ini dalam 4 jam, harap coba lagi dengan akun email berbeda.
+Alamat Email
+Masukkan kembali email
+Ada beberapa kesalahan sintaks dalam email
+Email tidak sama
+Akun dengan alamat email ini sudah ada
+Akun email ini sudah terdaftar
+Gawal domain, harap periksa lagi.
+Saya terima Persyaratan Privasi dan Keamanan
+Buka Kunci
+Buka kunci Gym!
+Ingin menawarkan wargamu kesempatan berolahraga dan tetap bugar? Kau dapat membuka kunci The Gym dengan berlatih di permainan MMA Pro Fighter. Siap menerima tantangannya?
+Buka gerbang Teater!
+Cahaya, kamera, action! Buka gerbang Teater Hollywood dengan memainkan Hollywood City dan rasakan keajaiban serta kemasyhuran bisnis film.
+Buka Kunci Bar Vegas!
+Ada meja rolet bertuliskan namamu di Vegas! Buka kunci Bar Vegas dgn memainkan Vegas City dan raup uang di pusat judi dunia.
+Buka Kunci Totem Island God !
+Dicari: Dewa utk pulau terpencil berpenduduk ramah. Buka kunci Totem Island God dgn mencapai level 5 di Island God dari Digital Chocolate.
+Buka Kunci Air Mancur Peri
+Dapatkan Air Mancur Peri yg indah ini dgn bermain Epic Fighters, game fantasi yg hebat dari Digital Chocolate.
+Buka Akses Pemakaman Zombie!
+Wabah Zombie tiba! Buka akses Pemakaman Zombie dengan bermain Zombie Lane dan ketahui berapa lama kamu dapat bertahan terhadap serangan zombie.
+Barang-barang koleksi dapat dibuka pada level %U
+Investasi-investasi dapat dibuka pada level %U
+2 UNTUK 1
+Beli satu, gratis yang kedua
+Diskon %U
+Gratis
+Penawaran untuk waktu yang terbatas
+Apakah Anda masih memiliki permintaan untuk menjadi tetangga?
+Gabung ke Klub
+Galat mengirim email. Silakan coba lagi nanti.
+Kontraktor
+Tunjukkan ke teman-teman bahwa Anda sedang mengatur ulang kota Anda dengan Si Pemindah!
+Bagikan Trik Ini
+Tambahkan pesan ke teman Anda
+%U baru saja menyewa Si Pemindah dan sedang mengatur ulang kota!
+%U ingin berbagi bebrapa Dolar Bonus ke teman-teman. Si Pemindah akan melakukan semua pemindahan untuk Anda dan kota Anda akan semakin keren.
+Dapatkan Bonus Dolar
+Kontraktor
+Tunjukkan kepada teman-teman cara mengembangkan bisnis dengan menarik sewa lebih cepat daripada sebelumnya dengan  Tenaga Kolektor!
+Bagikan Trik Ini
+Tambahkan pesan ke teman Anda
+%U baru saja menarik uang sewa lebih cepat daripada sebelumnya dengan Tenaga Kolektor!
+%U ingin membagikan beberapa Dolar Bonus ke teman-teman. Orang ini akan membuat hidup Anda jadi lebih mudah dan memberi waktu luang untuk mengatur bisnis Anda yang lain di Millionaire City.
+Dapatkan Bonus Dolar
+Kontraktor
+Beri tahu teman-teman Anda enaknya hidup dengan Tenaga Perpanjangan Kontrak!
+Bagikan Trik Ini
+Tambahkan pesan ke teman-teman Anda
+%U baru saja membuat hidupnya lebih mudah di Millionaire City dengan menyewa Tenaga Perpanjangan Kontrak!
+%U ingin membagikan beberapa Dolar Bonus ke teman-teman. Tenaga ini akan memperpanjang kontrak Anda lebih mudah dan cepat daripada sebelumnya, mendulang uang tidak pernah semudah ini.
+Dapatkan Bonus Dolar
+Undang teman-teman
+Teman-teman Anda belum ikut bermain di Millionaire City? Dengan teman-teman Anda bisa meraup dolar lebih banyak, lebih banyak XP, dan membangun lebih cepat!
+Undang teman-teman
+Dapatkan Mitra Bisnis
+Buatlah kesepakatan cemerlang sekali seumur hidup! Bermitralah dengan teman-teman Anda untuk mendapatkan uang dan XP lebih banyak.
+Dapatkan mitra bisnis
+Bantu %U!
+Mengunjungi kota-kota tetangga sangat mengasyikkan, namun ini tidak sekadar kunjungan sosial, klik rumah teman Anda untuk mendapatkan uang tunai dan XP lebih banyak!
+Kunjungi teman
+Cari Bantuan!
+Kotamu kacau? Bayar Si Pemindah untuk 24 jam dan atur kembali seluruh kotamu!
+Cari Bantuan!
+Cari Bantuan!
+Lelah mengklik? Bayar Tenaga Kolektor untuk melakukan pekerjaan kotor itu untukmu!
+Cari Bantuan!
+Cari Bantuan!
+Lelah mengklik? Bayar si Pemanjang Kontrak  untuk memudahkan hidupmu!
+Cari Bantuan!
+Rakyat Sehat
+Rakyatmu tidak bugar lagi. Buka kunci usaha Gym khusus dan bantu mereka menjalani kehidupan yang sehat.
+Dapatkan Gym
+Investasikan pada Teman!
+Bantu temanmu untuk memulai perusahaannya sendiri. Jika perusahaan sukses besar, investasimu akan  bernilai 100x lipat!
+Investasikan
+Klub VIP
+Jadilah anggota Klub VIP Millionaire City yang bergengsi dan nikmati manfaat eksklusif seperti bingkisan dan hadiah!
+Jadi anggota
+Mintalah Bantuan!
+Tambahkan pesan kepada temanmu
+%U memintamu untuk memugar rumahnya!
+Bangun reputasimu dengan membantu orang lain membangun reputasi mereka! Dengan memugar rumah temanmu, kau dapat lebih banyak Dolar dan XP. Ayo berbagi kekayaan!
+Pugar Rumah
+Coba Gratis
+Studio Arsitek
+%U butuh pengalaman lebih  dalam bisnis realestat, tapi dengan {0xFF6600}%U1{/} Emas kau bisa bertemu dengan Arsitek dan dapatkan cetak birunya.
+Beli Cetak Biru
+Sisa %U
+Jam ini Benda Ajaib! Jam ini menunjukkan waktu nyata pd pendudukmu dan memberimu %u% kemungkinan utk menggandakan sewamu.
+Permohonan Hadiah Tertunda
+Bukan main, temanmu telah mengirim hadiah %U kepadamu!
+Terima
+Kamu menemukan Benda Koleksi Baru!
+Selamat, kamu menemukan Benda Koleksi Baru!
+Simpan
+Hadiah
+kamu menemukan Benda Koleksi!
+Kamu menemukan Benda Koleksi yang sudah kamu miliki. Jadilah Jutawan mulia dan berikan kepada temanmu sebagai hadiah !
+Jual
+Hadiah
+Pilih teman untuk dihadiahi Benda Koleksi
+Kirim Benda Koleksi ke Temanmu!
+Kirim Hadiah
+Selamat!
+Selamat, kamu sudah mengkoleksi semua benda dari koleksi %U. Waktunya mengklaim hadiah!
+Klaim Hadiah
+BARTER
+Bagus!
+Kamu berhasil melengkapi sebuah koleksi dan sekarang waktunya bersinar! Beri tahu temanmu tentang %U barumu yang heboh dan bagikan bonus dolar.
+Berbagi Sukses
+Beli Benda Koleksi!
+Untuk mempercepat pengumpulan, kamu dapat membeli Benda Koleksi ini dengan Emas %U.
+Beli
+Teman bisa menolong!
+Berbagi tandanya sayang - mintalah Benda Koleksi ini dari teman!
+Minta
+Kirim Hadiah benda Koleksi kepada Temanmu!!
+%U baru saja memberimu hadiah Benda Koleksi! Teman yang baik!
+Periksalah parsel menarik ini dan lihat apakah kamu bisa menemukan Benda Koleksi mewah di Millionaire City.
+Terima Hadiah
+Mintalah bantuan dengan memberitahu temanmu bahwa kamu sedang mencari Benda Koleksi ini.
+%U0 sangat menginginkan %U1!
+Buatlah %U0 senang dgn mengirim %U1! Pergilah ke Millionaire City utk menemukan Benda Koleksi mewah di sekitar kota.
+Kirim Benda Koleksi
+Waktunya sesumbar! Kamu mengkoleksi seperti jutawan sejati dan akhirnya menemukan %U yang diinginkan semua orang. Bagikan kabar baik ini dan bonus dolar!
+%U0 akhirnya mendapatkan %U1!
+ %U0 menyelesaikan %U1 ingin merayakan dengan memberi bonus dolar. Kunjungilah Millionaire City dan temukan Benda Koleksi Mewah di sekitar kota.
+Ambil Bonus Dolar
+Koleksi
+Lemari Besi
+Koleksi Rumah
+Koleksi Usaha
+Benda Koleksi
+Kamu sudah pernah menerima hadiah ini
+Ruang penyimpanan adalah tempat kamu menyimpan semua koleksi jadimu. Semoga beruntung!
+Selamat! Koleksimu telah lengkap semua\nKoleksi baru akan datang segera!
+Yakin ingin menjual ini?
+Temukan Benda Koleksi dgn menagih sewa dan hasil dagang di kotamu. Makin sering bermain dan makin banyak rumah dan perdagangan yg dimiliki, makin besar peluang mendapatkannya. Kamu dapat juga membelinya, meminta dari teman atau menghadiahkannnya kpd teman.
+Pantau koleksimu di jendela Koleksi yang dapat dibuka dengan mengklik ikon kotak hadiah. Kamu bisa menerima hadiah dari teman melalui profil Facebook, pada bagian 'Permintaan Game'.
+Kamu bisa menyimpan hingga 99 item, namun kamu hanya perlu melengkapi satu koleksi. Sisanya untuk berbagi dengan teman-teman!
+Bila Koleksi Rumah sudah lengkap, kamu dpt menagih Hadiah eksklusif utk Kotamu. Bila Koleksi Perdagangan sudah lengkap, kamu dpt menukarnya dgn uang tunai dan XP. Semoga berhasil!
+Memerlukan %U.
+Ambil
+Ambil Benda Koleksi
+Mintalah benda ini dari temanmu atau belilah dgn {0xFF6600}%U{/} Batang Emas.
+Mintalah benda ini dari temanmu
+Kamu tak punya lagi %U untuk dihadiahkan.
+Yakin mau menghadiahkan  %U kepada %U1? Milikmu tinggal %U2. 
+Kirim Hadiah
+Kirim Hadiah
+Tak boleh menyimpan lebih dari %U salinan
+Penawaran Khusus
+Ucapkan Terima Kasih!
+Kamu mendapat Benda Koleksi dari temanmu, berbagilah koin dgn mereka.
+Berbagi Koin
+Mau mengucapkan 'Terima Kasih'?
+Terima Kasih sudah memberiku Benda Koleksi!
+Menghadiahkan Benda Koleksi mempercepat lengkapnya Koleksi!
+Ambil Bonus Dolar
+Yakin ingin merobohkan ini?
+Kunci barang %U terbuka
+Kunci Benda Koleksi Terbuka!
+Kunci Investasi Terbuka!
+Semua Teman
+Teman-Teman Millionaire
+Disarankan
+Bantulah temanmu memulai bisnis mereka. Jika mereka memperoleh Nilai Perusahaan hingga %U dalam waktu %U1 hari, kamu akan memperoleh Ekspansi yang murah dan imbalan %U2!
+Kirim Permohonan Investasi
+Pengingat Investasi
+Teman kamu %U mengandalkanmu! Kamu punya %U1 tersisa untuk mencapai Nilai Perusahaan sebesar $%U2. Buruan!
+Investasi Gagal
+Kamu tidak cukup cepat membantu %U memperoleh imbalan dari berinvestasi pada usahamu. Tunjukkan kepada %U bahwa kamu masih mampu menjadi pebisnis andal dan meraup uang jutaan di MCity!
+Investasi Berhasil
+Selamat! Kamu telah menunjukkan kepada %U bahwa kamu adalah pebisnis jempolan dengan meraih $4.000.000 dalam 20 hari! Selamat.
+Perpanjang Kontraktor
+Ups, kontrak dengan Pemanjang Sewa sudah habis. Jika kamu memperpanjang perjanjian sekarang, kamu akan mendapatkan diskon menarik!
+Pilih Perjanjian
+Perpanjang Kontraktor
+Ups, kontrak dengan Penagih Sewa sudah habis. Jika kamu memperpanjang perjanjian sekarang, kamu akan mendapatkan diskon menarik!
+Pilih Perjanjian
+Metode pembayaran ini sekarang tidak tersedia. Harap coba lagi nanti atau gunakan metode pembayaran yang lain.
+%U XP!
+%U $!
+%U Emas!
+Hadiah semakin meningkat jika Anda bermain setiap hari!
+Hadiah Harian!
+Hari %U
+Main
+Bagikan Kekayaan
+Beri tahu teman-teman kemudahan yang bisa diperoleh jika mereka membeli Emas Millionaire City!\n\nCeritakan kepada teman dan bagikan dolar bonus kepada mereka!
+Bagikan kepada Teman
+Tambahkan pesan ke teman-teman
+%U baru saja membeli emas di Millionaire City! 
+%U baru saja membeli emas untuk memperoleh barang paling eksklusif di Millionaire City! - Bonus Dolar Bonus tersedia!
+Dapatkan Bonus Dolar
+Ups, kamu sudah menghabiskan Batang Emasmu. Dapatkan Emas lagi sekarang utk tetap bisa hidup nyaman!
+Completed
+Kami baru saja membarukan Millionaire City. Muat ulang perambanmu dan lihat versi terbarunya  
+Terjadi kesalahan pada Millionaire City, silahkan muat ulang perambanmu!
+Ups, agaknya jaringan sibuk. Mohon tunggu, kamu bisa segera bermain lagi! 
+Sayangnya aksi terakhirmu gagal disimpan. Pastikan hanya satu game yang terbuka!
+Ups, kota temanmu sedang banyak pengunjung! Cobalah sebentar lagi.
+Pindah gratis
+Pohon lemon
+Tas Misterius
+%U Pindah gratis
+Bunga Musim Semi
+Penyimpanan
+Inventaris
+Gunakan
+Hadiah yang kamu terima akan tampil di sini! \n Kini kamu dapat mengirim hadiah keren kepada teman melalui tab “Hadiah Gratis” di sudut kiri atas!
+Selamat! Kamu dapat:
+Aku baru membuka Hadiah Misterius!
+Berbagi tandanya sayang - Kamu juga bisa mengirim dan menerima Hadiah keren dgn sesama Jutawan!
+Dapatkan Dolar Bonus
+%U membutuhkan lebih banyak pengalaman dalam bisnis properti, tapi dengan Kredit Facebook, kamu dapat bertemu dengan arsitek dan mendapatkan denah.
+Kredit Facebook tidak cukup
+Sepertinya kamu membutuhkan %U Kredit Facebook lagi untuk mendapatkan barang ini!
+Tambah 
+Buka Akses Awal
+Menjadi lebih kaya bersama tetangga!
+Kamu dapat lebih cepat membangun dan menghasilkan lebih banyak uang bersama temanmu!
+Undang Tetangga
+Menjadi lebih kaya bersama tetangga!
+Baru! Ingatlah untuk mengundang temanmu agar menjadi tetangga sehingga dapat membangun lebih cepat dan menghasilkan lebih banyak uang!
+Your Brand New City!
+Hi there! I’m your Millionaire Mentor X. I've been helping people make obscene amounts of money for years. Together we will create the most affluent Millionaire City ever! Let’s start with the basics.
+House Boom!
+Rapid growth and expansion is available for those clever enough to invest wisely. I expect you to be savvy as you progress further with my Missions! All of these next missions involve exploiting this expanding market opportunity – make the most of it for maximum growth.
+Garden Glory!
+There are extra Dollars to be made through well placed Decorations – these increase the worth of affected buildings in Bonuses. These next Missions are about maximizing the profit of your real estate with clever landscaping!
+House Boom II!
+You have showed enormous Millionaire potential by getting this far! Now it’s time to invest heavily in Housing and Commerce to develop your City to new heights! I am about to set you many Assignments that will greatly increase your City Value. After completing them your Millionaire City will be worth countless piles of Millionaire Dollars!
+Leisure and Luxury!
+Another key strategy to building a wealthy Millionaire City is to build plenty of places for your Tenants to relax and enjoy themselves. My next Assignments all focus on providing maximum recreation and pleasure activities for your Tenants to spend their Dollars in!
+Culture Cultivation!
+The essence of style lies in elegance, so it is worth nurturing sophistication within your City. The following Assignments all revolve around culture, as it is important to show Class through your Millionaire City design to get even the snobbiest of citizens to spend their Dollars!
+Back In Business!
+The time has come for you to consider your City Value Ranking against your Friendly Rivals. Have you already beaten Me, Cindy/Ronald and the infamous Sheik Oilfinger? Together we motivate each other to new echelons of success! In this set of Assignments I encourage you to focus on expanding Commercial Enterprise for maximum profit.
+Garden Glory II!
+Well done - congratulations for getting this far! You’re now ready for higher level of challenges. Let’s start thinking about tactical Decoration placement again! The art of maximized profit lies in the skillful use of all the land in your City. These next tasks focus on garnishing further with elaborate decorations.
+Leisure and Luxury II!
+There are still many more Commerces available to build to make your Tenants happy. It’s time to focus again on building indulgent places that offer convenience and recreation. An enjoyable, comfortable Millionaire City is ideal for your Tenants and ideal for your profit!
+High Level Lavishness!
+Wow – I am very impressed by your journey so far! Your City Value is a fantastic reflection of your decisions. These next Assignments are designed to really add that extra layer of polished exuberance to your brilliant Millionaire City. Don’t hold back – Go for that extra Dollar!
+Stunning Skyscrapers!
+It’s time to build Big! Skyscrapers are the ultimate demonstration of urban power. When you build your first Skyscraper, you know you have arrived as a powerful real estate magnate. The Next Assignments will revolve around the mighty Skyscraper Buildings available. Good luck and stay ambitious!
+Name The City
+Choose a powerful name for your new City - something that reflects your Millionaire personality!
+Pizza Paradise
+Your Tenants will need somewhere to eat – and Commerce’s are a brilliant source of regular income! Buy the Pizza Commerce that is near your Headquarters.
+Instant Build Magic!
+Clicking on Buildings under construction allows you to build faster – a really useful feature when you can afford it! Create your first Instant Build!
+Tree Time
+Decorations are more than just beautiful. Each has an influence area that increases the worth of affected Buildings. Place 2 Cypress Trees around any House you own, and note how the bonuses go up!
+Customer Cash
+The amount of money each Commerce generates is proportional to the number of Tenants living around it. Set up Houses around the Pizza Commerce, so that at least 5 Customers can begin eating there!
+Join the Club!
+The prestigious Millionaire City VIP Club allows me to send you news, exclusive gifts and prizes via email. Enter your Email for your very own membership card!
+Commerce Collect
+The Pizza Commerce you built is a great success! Regularly checking back to collect your earnings is one of the key methods to accumulating lots of Millionaire City Dollars. Collect 5 Payments from it!
+Bungalow Bonanza
+More demanding Citizens want you to build a Luxury Bungalow! Build one and start getting more dollars and XP immediately.
+Your Friends
+Friends you add to Millionaire City appear in the Ranking Bar across the bottom of the Game. You and they can help each other out to create the most successful City! Visit one of them to see what tactics and strategies they are utilizing.
+A Real Millionaire City!
+Beat your friends in the ranking bar and gather a City Value of 1,000,000 Dollars to prove to me and them just how successfully rich you can be!
+Bungalow Bonus: 12%
+Get a 12% Income Bonus added to a single Bungalow, by using the decorations cleverly.
+World Of Wonder: Gold Statue 
+Wonders are special Buildings - they take a long time to construct but give exceptional bonuses as well. Build the Gold Statue Wonder to increase the Income Bonus by 5% on all Houses you own!
+Rent Collection: 16
+Collect 10 rents from any Houses.
+Commerce Construction: Coffee Shop
+Remember that your Tenants will always need somewhere to relax and drink coffee! Make the most of this market opportunity and build one Coffee Shop.
+House Construction: Townhouse Luxury
+More spacious than the standard Townhouse, this is an ideal place for Tenants to stay who have a few more Millionaire Dollars to spend!
+Upgraded Income Collection: 56
+When you houses are glittering like diamonds, it means your Friends have visited your City and upgraded the houses. Collect 50 rents from these upgraded buildings.
+Commerce Collection: 10 Coffee Shop
+Collect 10 Income Payments from the Coffee Shop.
+Coffee Shop Clients: 18
+Set up Houses around the Coffee Shop, so that at least 12 Customers can visit there regularly.
+Upgrade Friends Townhouse Luxury: 31
+Visit your Friends Cities and Upgrade 25 Townhouse Luxury Houses by clicking on them!
+House Construction: Duplex
+More spacious than the standard Townhouse, this is an ideal place for Tenants with a few more Millionaire Dollars to spend!
+Investment Invitations: 16
+Send out 10 Investment Requests to your Friends, offering to help them start their businesses and get royally rewarded!
+Tool Techniques: Move Tool
+The Move Tool is very handy when you want to rearrange your City. Use it to move a Cypress Tree Decoration.
+Commerce Construction: Sushi Bar
+This Commerce will allow your Tenants another place to eat, and there can never be too many choices! Provide this feast of fresh Sushi to your citizens.
+House Construction: Duplex Luxury
+This model of the Duplex House makes room for a few more Tenants and is an ideal way for you to make more Millionaire Dollars from them.
+Rent Collection: 56
+Collect 50 rents from any Houses.
+Commerce Construction: Flower Shop
+Build a Flower Shop so that your tenants can enjoy the sweet scent of fresh flowers in their luxurious homes. Make the most of this market opportunity.
+Decoration Placement: Windmill
+Wealth comes with responsibility- build a source of renewable energy in your City. With a massive Influence area, the Windmill looks great in any City.
+Upgrade Friends Duplex Luxury: 56
+Visit your Friends Cities and Upgrade 50 Duplex Luxury Houses by clicking on them!
+Decoration Placement: 4 Palms
+Essential for a rich, breathing eco-system are as many plants as you can place! These Palms also have the added bonus of a tropical feel.
+Decoration Placement: 2 Agave Plants
+A pair of these Agave Plants will offer a wide Influence area for your House Income Bonuses and fresh cultivated feel for your City!
+Duplex Luxury Bonus: 30%
+Get a 30% Income Bonus on a single Duplex Luxury by being clever with your Decorations!
+Flower Shop Clients: 36
+Set up Houses around the Flower Shop, so that at least 30 Customers can shop there regularly.
+Decoration Placement: 3 Balloon Boys
+A Guaranteed way to make any area instantly more fun are the Balloon Boys. Buy 3 to get three times more color and fun!
+Millionaire Dollar count: 1,000,006
+Through continued growth, it is possible to accumulate impressive fortunes. Show your potential as a magnate and gather 1,000,000 Millionaire Dollars!
+Commerce Collection: 50 Flower Shop
+Collect 50 Incomes from the Flower Shop.
+Decoration Placement: Silver Maple
+The nature of these beautiful plants offer a large House Income Bonus. Let your Tenants chill in its silvery shadow.
+Investment Successes: 11
+Make 5 successful Investments on Friends. Remember that you both benefit from this deal!
+Decoration Placement: 3 Fountains
+Fresh water features are great for making any City luxuriously flowing. Build 3 for maximum bonuses anywhere in your Millionaire City.
+Decoration Placement: 5 Apple Trees
+Planting these 5 Apple Trees will guarantee organic apples for your selective Tenants! They are great for little gaps around Houses.
+Tool Techniques: Collect Tool
+Collecting individual Rent Payments can sometimes be a chore if you have a lot, but Rent Collector is here to help you! Try him out with a 6 minute free trial.
+House Construction: Three Story Luxury 
+An exemplary place to stay, as this model of the Three Story House offers much more for the discriminatory Tenant.
+Commerce Construction: McDollars
+More Houses means more Tenants, and they will always pay for somewhere to eat delicious fast food. A prospect well worth investing in.
+Investment Invitations: 20 More
+Send out 20 more Investment Requests to your Friends, offering to help them start their businesses and grow your own portfolio at the same time!
+Friend Visit: 46
+Visit Friends Cities at least 40 times. This is a good way to evaluate your competition!
+Contract Collection: 106
+Collect 100 Rents from any Houses and see the Dollars flowing in.
+House Construction: Apartment Block
+Four Stories tall, this House allows many more Tenants to stay - which means many more Millionaire Dollars when you build one!
+Decoration Placement: 6 Orange Trees
+The scent and sight of Orange Trees are sure to tantalize the senses of your Tenants. Plant 6 so you can spread the fruity benefits everywhere!
+Commerce Construction: Pet Shop
+As your Tenants settle into domestic bliss, often they will purchase animal companions. Provide them with a Pet Shop to pamper man’s best friends!
+Upgrade Friends Eco-Home: 66
+Visit your Friends Cities and Upgrade 60 Eco-Home Houses by clicking on them!
+Tool Techniques: Contract Tool
+Similar to the Rent Collector, the Contractor Lady is useful when you have a lot of Rent Contracts to sign all at once. Try her out with a 6 minute free trial!
+Rock Star Contract Collection: 206
+Utilize the Rock Star Contract 200 times by signing in Rock Star Tenants to your Houses.
+Commerce Collection: 100 Pet Shop
+Collect 100 Income Payments from the Pet Shop.
+Upgrade Friends Apartment Block Luxury: 76
+Visit your Friends Cities and Upgrade 70 Apartment Block Luxury Houses by clicking on them!
+Apartment Block Luxury Bonus: 60%
+Get a 60% Income Bonus added to a single Apartment Block Luxury, by shrewdly placing your Decorations in strategic places.
+Pet Shop Clients: 56
+Set up Houses around the Pet Shop, so that at least 50 Customers can visit there regularly.
+Commerce Construction: Bowling Alley
+An extremely fun way for your Tenants to spend their leisure time. Build a Bowling Alley to entertain your Tenants of all ages!
+House Construction: House of Harmony
+A lovely place of peace and quiet with a big front garden, where your Tenants can live in a totally zen environment.
+Friend Visit: 86
+Go to your Friends Cities at least 80 times and have a look at how they are developing. This is a good way to evaluate your own play style!
+Commerce Construction: Jewelry Shop
+Nothing says luxury like Diamonds! Setting up a Jewelry Business is an opportunity not to be missed!
+World of Wonder: Two More
+Wonders are always worth it - they take a long time to construct but the bonuses make them worthwhile. Build any 2 more Wonders of your choice to boost your income!
+Villa Bonus: 90%
+Get a 90% Income Bonus added to a single Villa, by cleverly placing Decorations.
+Bowling Alley Clients: 206
+Set up Houses around the Bowling Alley, so that at least 200 Customers can visit there regularly.
+Expansion!
+The time has come for you to purchase an expansion so you can further extend your ever growing Millionaire City. Buy any that is unlocked and get ready to further expand your Empire!
+Contract Collection: 206
+Collect 200 Rents from any Houses.
+House Construction: Loft Block
+The height of 5 Stories sets this House apart from many others. Invest in one to allow a similarly gigantic number of Tenants to stay all at once!
+Investment Successes: 16
+Complete 10 Investments successfully with Friends. Remember that you both benefit from this business affiliation!
+Commerce Construction: Night Club
+An ideal way to provide night time entertainment, and a brilliant source of income for you. Building a Night Club is the best way to get those party dollars in your pocket.
+Jewelry Store Clients: 156
+Set up Houses around the Jewelry Store, so that at least 150 Customers can visit there regularly.
+Upgrade Friends Loft Block: 106
+Visit your Friends Cities and Upgrade 100 Loft Block Houses by clicking on them!
+Commerce Collection: 150 Bowling Alley
+Collect 150 Income Payments from the Bowling Alley.
+House Construction: 2 Villa Luxury
+A more lavish model of the Villa, which is perfect for allowing more refined Tenants with style to stay. Build a pair to maximize your future profit margins!
+House Construction: 2 Colonial House
+An amazing place for your Tenants that prefer a slower pace of life, with an elegant historical style. Build 2 so that more potential Tenants can experience simplicity.
+Decoration Placement: 6 Art Nouveau Lamps
+These Lamps are sophistication defined! Building 6 will artistically light the way across your Millionaire City.
+Commerce Construction: Mall
+Although far from classically sophisticated, the Mall is certainly a symbol of modern Western Culture and a great way to make many Millionaire Dollars! Give your Tenants somewhere to shop ‘til they drop.
+Villa Luxury Bonus: 100%
+Get a 100% Income Bonus added to a single Villa Luxury, with the cunning use of your Decoration purchases.
+House Construction: 2 Parisian Town House
+11 whole Stories of beautifully polished Parisian style. Construct 2 so that twice as many Tenants can bask in its sumptuous luxury!
+Decoration Placement: 4 Japanese Trees
+A beautiful example of Eastern Culture - they have an unusual wide Influence, so they can be strategically planted to maximize House Income Bonus.
+Decoration Placement: 5 Bamboos
+Represent more Eastern Culture by sowing these 5 Bamboo plants. Their appeal means they have a big Influence!
+Decoration Placement: Big Garden
+Although expensive, the massive Influence and House Income Bonus combined with extraordinary attractiveness make this Big Garden well worth investing in.
+Mall Clients: 256
+Set up Houses around the Mall, so that at least 250 Customers can visit there regularly.
+Friend Visit: 126
+Go to your Friends Cities at least 120 times and have a look at how they are developing. This is a good way to evaluate your own play style and competition!
+Investment Invitations: 30 More
+Send out 30 more Investment Requests to your Friends, offering to help them start their businesses and improve your own portfolio at the same time!
+Decoration Placement: Statue of David
+A rare masterpiece Statue that will look perfect adorning any Millionaire City. Straight from Renaissance Italy – a true work of Art.
+Decoration Placement: 2 Arch of Success
+More indication of Eastern Culture can be benefitted from with this decorative Arch. Build a pair so your Millionaire City can become a Success too!
+Upgrade Friends Parisian Town House: 156
+Visit your Friends Cities and Upgrade 150 Parisian Town Houses by clicking on them!
+Contract Collection: 606
+Acquire 600 elapsed Rental Contracts from any Houses.
+Decoration Placement: Triumph Arch
+Another Decoration that allows massive House Income Bonus and Influence. Building one of these is ideal for increasing City Value.
+Upgrade Friends Skyscraper: 186
+Visit your Friends Cities and Upgrade 180 Skyscraper Houses by clicking on them!
+Commerce Construction: Bank
+All thriving Business and Commercial capitalists need a good Bank to store all of their money! A Bank Commerce will never be out of business.
+Commerce Construction: Hospital
+Looking after your Tenants is of paramount importance, and a Hospital allows strong growth in the long run. Construct a Hospital to keep your Tenants in good health!
+Spy Scheme
+My Friendly Rivals Ronald Goldtooth/Cindy Jewels and Sheik Oilfinger seem to be plotting again. Click on them in the Ranking Bar to access their City’s and have a sneaky peek what they are up to!
+House Construction: Futuristic City Block
+Industry thrives on cutting-edge technology, so allow your Tenants to live in only the most automated environment offered!
+Investment Successes: 26
+Complete 20 Investment Partnerships successfully with Friends! You both benefit from this business affiliation.
+House Construction: 2 Skyscraper Luxury
+Dazzling and designed with maximum efficiency in mind, the Skyscraper Luxury is perfect for creating bustling hives of activity. Build 2 for twice as much capital to be generated!
+Overtake Sheik
+I have known Sheik Oilfinger a long time, but not even I have known him to be this rich! Pass this Mission by developing more Company Value than Sheik!
+Loft Block Luxury Bonus: 150%
+Get a 150% Income Bonus added to a single Loft Block Luxury, by being smart with your Decorations.
+Commerce Collection: 300 Bank
+Obtain 300 Income Payments from the Bank.
+Friend Visit: 156
+Go to your Friends Cities at least 150 times and have a look at how they are developing and progressing. This is a good way to evaluate your own play style!
+House Construction: Chrysler Building
+The Art Deco classic straight from New York is the ideal place to inspire your Tenants working in your City. Invest in one to aggressively expand your profit margins.
+Expansion II!
+The time has come for you to purchase another expansion – the missing piece of your ever expanding Empire. Buy any that is unlocked and get ready to further extend your City.
+Decoration Placement: 20 Gold Maple
+These beautiful Gold Maples are ideal replacements for lesser Decorations, with their added Bonus percentage!
+Hospital Clients: 306
+Set up Houses around the Hospital, so that at least 300 Customers can be treated there regularly.
+Decoration Placement: 10 Spruce
+The Spruce Decoration is an ideal method to make any Millionaire City look more green and healthy. It also offers a healthy Bonus for you!
+Investment Invitations: 40 More
+Send out 40 more Investment Requests to your Friends, offering to help them start their businesses.
+Decoration Placement: 15 Birch Tree
+These are a great way to fill in the little gaps around your Millionaire City, since each of them maintain a strong Influence.
+Upgrade Friends Loft Block Luxury: 306
+Visit your Friends Cities and Upgrade 300 Loft Block Luxury Houses by clicking on them!
+House Construction: Designer House
+The world of Design collides with business in this cutting edge House. Perfect for the modern Tenant.
+House Construction: Chateau
+A gorgeous House to satisfy any Tenant. Looks spectacularly good in any garden area!
+Designer House Bonus: 200%
+Get a 200% Income Bonus added to a single Designer House, by placing Decorations in cunning positions!
+Football Star Contract Collection: 406
+Utilize the Football Star Contract 400 times when signing in Football Star Tenants to your Houses.
+Decoration Placement: 5 Chafa
+Chafas are very special garden Decorations with a massively strong Influence. Perfect for boosting the Bonuses of Houses.
+Commerce Construction: Opera House
+Build a busy Performing Arts centre for your Tenants! Guaranteed to quickly turn into profit with style.
+Friend Visit: 206
+Go to your Friends Cities 200 times and have a look at how they are developing. This is a good way to evaluate your own play style!
+Upgrade Friends Chateau Houses: 356
+Visit your Friends Cities and Upgrade 350 Chateau Houses by clicking on them!
+Decoration Placement: 3 Fountain II
+These Fantastic Fountains offer a wider influence than the first Fountain incarnation - ideal for any garden area or plaza.
+Contract Collection: 1006
+Acquire 1000 elapsed Rental Contracts from any Houses.
+Opera House Clients: 356
+Set up Houses around the Opera House, so that at least 350 Customers can find entertainment there.
+Commerce Collection: 600 Opera House
+Collect 600 Income Payments from the Opera House.
+Decoration Placement: 1 Pond of Wealth
+An amazing water feature that brings tranquility to any City, combined with a massive House Income Bonus!
+World of Wonder: Three More
+They take a long time to construct but the bonuses of built Wonders make them worth the wait! Build any 3 more Wonders of your choice to make your Tenants and Visitors gasp at their amazing scale!
+Commerce Construction: Casino
+Some would say this is an ultimate place for entertainment. Let your Tenants revel in the glitz and glamour whilst handing over their Dollars to You!
+Commerce Construction: Stadium
+An amazing place for your Tenants to view all of the latest live outdoor Sports! Build it as another leisure facility for their use.
+Casino Clients: 406
+Set up Houses around the Casino, so that at least 400 Customers can find entertainment there regularly.
+House Construction: Futuristic
+Straight from the future is this super space-age living facility. The pinnacle of modern architecture, it is complete with massive glass walls for panoramic views.
+Expansion III!
+Another Expansion is needed if you are to fully realize the potential of your Millionaire City! You can only grow through aggressive expanding!
+Upgrade Friends Futuristic Houses: 456
+Visit your Friends Cities and Upgrade 450 Futuristic Houses by clicking on them!
+Investment Successes: 36
+Complete 30 Investment Partnerships successfully with Friends and remember that you both benefit from this business affiliation.
+Commerce Construction: Hotel Midas
+A brilliant place for holidays and vacations, this exclusive luxury Commerce is ideal for the more discerning Tenant.
+Stadium Clients: 406
+Set up Houses around the Stadium, so that at least 400 Customers can go and see live Sports there.
+Hostesses Contract Collection: 506
+Use Hostesses Contract 400 times when signing in Hostess Tenants to your Houses.
+Commerce Construction: Midas Mall
+Building this Commerce results in a gigantic Influence over the neighboring Houses, and is certainly one of the best places your Tenants can spend their money!
+Commerce Collection: 800 Casino
+Obtain 800 Income Payments from the Casino.
+Commerce Collection: 1000 Stadium
+Collect 1000 Income Payments from the Stadium.
+Hotel Midas Clients: 456
+Set up Houses around the Hotel Midas, so that at least 450 Customers can find go and relax there regularly.
+Futuristic House Bonus: 230%
+Get a 230% Income Bonus added to a single Futuristic House, by being shrewd with Decorations!
+Commerce Collection: 1200 Hotel Midas
+Collect 1200 Income Payments from the Hotel Midas.
+Contract Collection: 1256
+Collect 1250 Rents Contracts from any Houses.
+Friend Visit: 306
+Go to your Friends Cities at least 300 times and have a look at how they are developing. This is a good way to size up your competition!
+Midas Mall Clients: 456
+Set up Houses around the Midas Mall, so that at least 450 Customers can go and shop there often.
+Commerce Collection: 1500 Midas Mall
+Collect 1500 Income Payments from the Midas Mall.
+House Construction: Luxury Mansion 
+A beautiful place to stay for the most demanding of Tenants! Polished marble floors and solid Gold window frames add to the abundant sumptuousness.
+Investment Invitations: 50 More
+Send out 50 more Investment Requests to your Friends, offering to help them start their businesses and help your own portfolio at the same time.
+Expansion IV!
+Time to Expand your City again! You can’t have too much space for luxury. Buy any expansion that is currently unlocked.
+Upgrade Friends Luxury Mansion Houses: 506
+Visit your Friends Cities and Upgrade 500 Luxury Mansion Houses by clicking on them!
+Luxury Mansion Bonus: 250%
+Get a 250% Income Bonus added to a single Luxury Mansion, by placing your Decorations in the best areas!
+Commerce Construction: Baseball Stadium
+One of the greatest Commerces available for purchase - absolutely guaranteed to create a massive profit with each payment turnover for you, should you invest.
+Artists Contract Collection: 806
+Use Artists Contract 800 times when signing in Artist Tenants to your Houses.
+House Construction: Luxury Mansion II
+Twice as opulent as the original Luxury Mansion, this is ideal for Tenants who are twice as wealthy as well! Excessively extravagance for those who can afford it.
+Baseball Stadium Clients: 506
+Set up Houses around the Baseball Stadium, so that at least 500 Customers can go and watch Games there!
+Upgrade Friends Luxury Mansion II Houses: 606
+Visit your Friends Cities and Upgrade 600 Luxury Mansion II Houses by clicking on them!
+Luxury Mansion II Bonus: 280%
+Get a 280% Income Bonus added to a single Luxury Mansion II, by being extra clever with Decoration placement.
+Commerce Collection: 1750 Baseball Stadium
+Collect 1750 Income Payments from the Baseball Stadium.
+Friend Visit: 406
+Go to your Friends Cities at least 400 times and have a look at how they are developing. A Chance to size up the competition.
+Contract Collection: 1506
+Collect 1500 Rents from any Houses.
+House Construction: Super Skyscraper
+The next in the Skyscraper range is the Super model of skyscrapers. It will gloriously stand above your other City buildings.
+House Construction: Skyscraper Ultimate
+Habitable by even more Tenants than the Super Skyscraper, the Ultimate offers even more architectural excellence in a brilliant aerodynamic shape.
+Friends Contract Collection: 1006
+Use Friends Contract 1000 times when signing in Friends Tenants to your Houses.
+Investment Successes: 46
+Make 40 successful Investments on Friends and see your portfolio explode!
+Upgrade Friends Super Skyscraper Houses: 706
+Visit your Friends Cities and Upgrade 700 Super Skyscraper Houses by clicking on them!
+House Construction: Highland Castle
+A magnificently beautiful country Castle that offers culturally significant luxury! Just be careful around midnight, this Castle might be haunted…
+Skyscraper Ultimate Bonus: 290%
+Get a 290% Income Bonus added to a single Skyscraper Ultimate, by being a shrewd Decoration placer!
+Contract Collection: 2006
+Acquire 2000 elapsed Rental Contracts from any Houses.
+Expansion V!
+Once again, it is worth buying an unlocked Expansion for your City! Certainly a wise purchase since you’ll need loads of space for your most ambitious real estate ventures to date!
+World of Wonder: Four More
+Wonders always give fantastic Bonuses that make up for their long construction time. Build any 4 more so that your Tenants can enjoy their colossal scale, while you enjoy their colossal Bonuses!
+House Construction: Brazilian Skyscraper
+The pinnacle of the Skyscraper range offers an unprecedented amount of Tenants to stay. Truly the crown jewel of all Skyscrapers, enough to impress any magnate!
+Commerce Collection: 50 Coffee Shop
+Obtain 50 Income Payments from the Coffee Shop.
+Commerce Collection: 100 Flower Shop
+Obtain 50 Income Payments from the Flower Shop. 
+Commerce Collection: 200 Pet Shop
+Obtain 200 Income Payments from the Pet Shop.
+Commerce Collection: 300 Bowling Alley
+Obtain 300 Income Payments from the Bowling Alley.
+Commerce Collection: 600 Bank
+Obtain 600 Income Payments from the Bank.
+Commerce Collection: 800 Opera House
+Obtain 800 Income Payments from the Opera House.
+Commerce Collection: 1000 Casino
+Obtain 1000 Income Payments from the Casino.
+Commerce Collection: 1200 Stadium
+Obtain 1200 Income Payments from the Stadium.
+Commerce Collection: 1500 Hotel Midas
+Obtain 1500 Income Payments from the Hotel Midas.
+Commerce Collection: 2000 Midas Mall
+Obtain 2000 Income Payments from the Midas Mall.
+Commerce Collection: 2500 Baseball Stadium
+Obtain 2500 Income Payments from the Baseball Stadium.
+Pizzeria Clients: 16
+Set up Houses around the Pizzeria, so that at least 10 Customers can visit there regularly.
+Coffee Shop Clients: 30
+Set up Houses around the Coffee Shop, so that at least 24 Customers can visit there regularly.
+Flower Shop Clients: 56
+Set up Houses around the Flower Shop, so that at least 50 Customers can visit there regularly.
+Pet Shop Clients: 86
+Set up Houses around the Pet Shop, so that at least 80 Customers can visit there regularly.
+Bowling Alley Clients: 256
+Set up Houses around the Bowling Alley, so that at least 250 Customers can visit there regularly.
+Jewelry Store Clients: 226
+Set up Houses around the Jewelry Store, so that at least 150 Customers can visit there regularly.
+Mall Clients: 306
+Set up Houses around the Mall, so that at least 300 Customers can visit there regularly.
+Hospital Clients: 356
+Set up Houses around the Hospital, so that at least 350 Customers can be treated there regularly.
+Opera House Clients: 406
+Set up Houses around the Opera House, so that at least 400 Customers can find entertainment there often.
+Casino Clients: 456
+Set up Houses around the Casino, so that at least 450 Customers can find entertainment there regularly.
+Stadium Clients: 456
+Set up Houses around the Stadium, so that at least 450 Customers can find go and see live Sports there often.
+Hotel Midas Clients: 506
+Set up Houses around the Hotel Midas, so that at least 500 Customers can find go and relax there regularly.
+Midas Mall Clients: 506
+Set up Houses around the Midas Mall, so that at least 500 Customers can go and shop there often.
+Baseball Stadium Clients: 556
+Set up Houses around the Baseball Stadium, so that at least 550 Customers can go and watch Games there!
+Upgrade Your Friends Buildings: 12
+Upgrade any 6 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 26
+Upgrade any 20 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 56
+Upgrade any 50 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 106
+Upgrade any 100 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 206
+Upgrade any 200 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 406
+Upgrade any 400 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 656
+Upgrade any 650 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 856
+Upgrade any 850 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 1006
+Upgrade any 1000 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 1256
+Upgrade any 1250 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 1506
+Upgrade any 1500 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 1756
+Upgrade any 1750 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 2006
+Upgrade any 2000 of your Friends Buildings by clicking on them in their City!
+Upgraded Income Collection: 106
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 100 from these specially granted Buildings.
+Upgraded Income Collection: 206
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 200 from these specially granted Buildings.
+Upgraded Income Collection: 406
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 400 from these specially granted Buildings.
+Upgraded Income Collection: 806
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 400 from these specially granted Buildings.
+Upgraded Income Collection: 1206
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 1200 from these specially granted Buildings.
+Upgraded Income Collection: 1606
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 1600 from these specially granted Buildings.
+Upgraded Income Collection: 2006
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 2000 from these specially granted Buildings.
+Upgraded Income Collection: 2506
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 2500 from these specially granted Buildings.
+Upgraded Income Collection: 3006
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 3000 from these specially granted Buildings.
+Upgraded Income Collection: 3506
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 3500 from these specially granted Buildings.
+Upgraded Income Collection: 4006
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 4000 from these specially granted Buildings.
+Upgraded Income Collection: 5006
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 5000 from these specially granted Buildings.
+Upgraded Income Collection: 6406
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 6400 from these specially granted Buildings.
+Upgraded Income Collection: 7406
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 7400 from these specially granted Buildings.
+Upgraded Income Collection: 8506
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 8500 from these specially granted Buildings.
+City Value: 5 Million
+Accumulate a total City Value of 5,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 10 Million
+Accumulate a total City Value of 10,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 50 Million
+Accumulate a total City Value of 50,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 120 Million
+Accumulate a total City Value of 120,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 240 Million
+Accumulate a total City Value of 240,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 500 Million
+Accumulate a total City Value of 500,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 1000 Million
+Accumulate a total City Value of 1000,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 2000 Million
+Accumulate a total City Value of 2000,000,000 Dollars to prove to me and them just how successfully rich you can be!
+Millionaire Dollar count: 5,000,006
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 5,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 10,000,006
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 10,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 20,000,006
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 20,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 40,000,006
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 40,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 80,000,006
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 80,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 150,000,006
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 150,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 250,000,006
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 250,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 400,000,006
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 400,000,000 Millionaire Dollars ready to spend!
+Rumah Kue Irlandia
+Gedung Taman
+Memadukan taman hidrofonik, toko, apartemen untuk tempat tinggal, dan plaza yang terhubung dengan jembatan udara.
+Rumah Hijau
+Tanaman tumbuh subur memenuhi segala penjuru Rumah hijau ini, nikmati keajaiban alam.
+Pencakar langit kembar empat
+Menara 4 blok yang masing-masing disangga tiang pusat besar.
+Rumah Boot
+Rumah jati berbentuk sepatu!
+Rumah terbalik
+Rumah keluarga berfasilitas lengkap, nyaman, dan semuanya serba terbalik
+Toko Buku Raksasa
+Dunia Keranjang Besar
+Menara Miring Wanaka
+Magic Tap
+Menara Telur Paskah
+Sambut penyewa ke gedung berbentuk Telur yang unik ini.
+Rumah Telur
+Penyewa dan anak-anaknya akan menyukai tinggal di rumah telur yang mungil ini.
+Toko Kue
+Keranjang Telur
+Kelinci Paskah
+Telur Paskah

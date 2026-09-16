@@ -1,0 +1,28 @@
+<Expansions>
+  <Definition unlockedOrder="4" Composition="0" />
+  <Definition unlockedOrder="3" Composition="1" />
+  <Definition unlockedOrder="3" Composition="2,3" />
+  <Definition unlockedOrder="3" Composition="4" />
+  <Definition unlockedOrder="4" Composition="5" />
+  <Definition unlockedOrder="3" Composition="6" />
+  <Definition unlockedOrder="2" Composition="7" />
+  <Definition unlockedOrder="1" Composition="8,9" />
+  <Definition unlockedOrder="2" Composition="10" />
+  <Definition unlockedOrder="3" Composition="11" />
+  <Definition unlockedOrder="3" Composition="12,18" />
+  <Definition unlockedOrder="1" Composition="13,19" />
+  <Definition unlockedOrder="0" Composition="14,15,20,21" />
+  <Definition unlockedOrder="1" Composition="16,22" />
+  <Definition unlockedOrder="3" Composition="17,23" />
+  <Definition unlockedOrder="3" Composition="24" />
+  <Definition unlockedOrder="2" Composition="25" />
+  <Definition unlockedOrder="1" Composition="26,27" />
+  <Definition unlockedOrder="2" Composition="28" />
+  <Definition unlockedOrder="3" Composition="29" />
+  <Definition unlockedOrder="4" Composition="30" />
+  <Definition unlockedOrder="3" Composition="31" />
+  <Definition unlockedOrder="3" Composition="32,33" />
+  <Definition unlockedOrder="3" Composition="34" />
+  <Definition unlockedOrder="4" Composition="35" />
+</Expansions>
+

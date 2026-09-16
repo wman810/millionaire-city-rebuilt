@@ -1,0 +1,14 @@
+<ContractsNames>
+  <Definition sku="Tourists" />
+  <Definition sku="Students" />
+  <Definition sku="Family" />
+  <Definition sku="Pensioners" />
+  <Definition sku="Athletes" />
+  <Definition sku="Pilots" />
+  <Definition sku="Hostesses" />
+  <Definition sku="Artists" />
+  <Definition sku="Friends" />
+  <Definition sku="Rock Star" />
+  <Definition sku="Football Star" />
+</ContractsNames>
+

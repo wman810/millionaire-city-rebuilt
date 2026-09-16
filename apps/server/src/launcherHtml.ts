@@ -3,6 +3,9 @@ import { GAME_VERSION } from "@mcity/shared";
 interface LauncherOptions {
   appUrl: string;
   assetsBaseUrl: string;
+  gameAssetsBaseUrl?: string;
+  gameVersion?: string;
+  clientSwfUrl?: string;
   serverBaseUrl: string;
   userId: string;
   oauthToken: string;
@@ -15,6 +18,7 @@ interface LauncherOptions {
   localUserName: string;
   localCityName: string;
   localProfilePictureUrl: string;
+  advisorName?: string;
 }
 
 interface OriginalFreeGift {
@@ -56,6 +60,9 @@ const ORIGINAL_FREE_GIFTS: OriginalFreeGift[] = [
 ];
 
 export function renderLauncherHtml(options: LauncherOptions): string {
+  const gameAssetsBaseUrl = options.gameAssetsBaseUrl ?? options.assetsBaseUrl;
+  const gameVersion = options.gameVersion ?? GAME_VERSION;
+  const clientSwfUrl = options.clientSwfUrl ?? "/client/Dollars.private.swf";
   const flashVars = new URLSearchParams({
     token: options.gameToken,
     uid: options.userId,
@@ -64,8 +71,10 @@ export function renderLauncherHtml(options: LauncherOptions): string {
     oauth_token: options.oauthToken,
     facebook_app_id: options.facebookAppId,
     server: options.serverBaseUrl,
-    data: options.assetsBaseUrl,
-    game_version: GAME_VERSION,
+    data: gameAssetsBaseUrl,
+    game_version: gameVersion,
+    xml_version: gameVersion,
+    usr_level: "1",
     wcrm_env: "2",
     wcrm_user: options.userId,
     wcrm_server: options.serverBaseUrl,
@@ -99,8 +108,6 @@ export function renderLauncherHtml(options: LauncherOptions): string {
   const neighborIconUrl = `${options.assetsBaseUrl}tabs/social_wall/general/neighboor.png`;
   const messagesIconUrl = `${options.assetsBaseUrl}tabs/social_wall/general/messages.png`;
   const giftSidewalkUrl = `${options.assetsBaseUrl}tabs/free_gifts/fgift_017.png`;
-  const messageGiftIconUrl = `${options.assetsBaseUrl}tabs/social_wall/general/gift.png`;
-  const messagePartnerIconUrl = `${options.assetsBaseUrl}Assets/missions/icons/visitPartner.png`;
   const localUserName = escapeHtml(options.localUserName);
   const localCityName = escapeHtml(options.localCityName);
   const localProfilePictureUrl = escapeAttribute(options.localProfilePictureUrl);
@@ -109,6 +116,10 @@ export function renderLauncherHtml(options: LauncherOptions): string {
     cityName: options.localCityName,
     profilePictureUrl: options.localProfilePictureUrl
   }));
+  const advisorNameJson = escapeScriptJson(JSON.stringify(options.advisorName ?? "Ronald"));
+  const launcherUserIdJson = escapeScriptJson(JSON.stringify(options.userId));
+  const socialAssetsPathJson = escapeScriptJson(JSON.stringify(options.assetsBaseUrl.replace(/\/$/, "")));
+  const launcherLocaleJson = escapeScriptJson(JSON.stringify(options.lang));
   const freeGiftCardsHtml = ORIGINAL_FREE_GIFTS.map((gift) => {
     const giftImageUrl = `${options.assetsBaseUrl}tabs/free_gifts/${gift.id}.png`;
     const lockedGiftImageUrl = `${options.assetsBaseUrl}tabs/free_gifts/${gift.id}_locked.png`;
@@ -138,6 +149,8 @@ export function renderLauncherHtml(options: LauncherOptions): string {
     <link rel="stylesheet" type="text/css" href="${cssUrl}" />
     <link rel="stylesheet" type="text/css" href="${connectCssUrl}" />
     <link rel="stylesheet" type="text/css" href="${faceboxCssUrl}" />
+    <script src="${options.appUrl}/local/jquery.min.js"></script>
+    <script src="${options.appUrl}/local/social-wall.js"></script>
     <script>
       (function() {
         try {
@@ -192,6 +205,7 @@ export function renderLauncherHtml(options: LauncherOptions): string {
 
       #tab-bar {
         position: relative;
+        z-index: 1001;
         display: block;
         overflow: hidden;
         height: 65px;
@@ -314,60 +328,14 @@ export function renderLauncherHtml(options: LauncherOptions): string {
         height: auto;
       }
 
-      #gifts_body {
-        overflow: hidden;
-      }
-
-      #gifts_body .gifts_inner {
-        width: 100%;
-        margin-right: 0;
-      }
-
-      #gifts_footer,
-      #dcsw_footer {
-        position: relative;
-        box-sizing: border-box;
-        width: 714px;
-        height: 21px;
-        border: 4px solid #ffffff;
-        border-top: 0;
-        border-radius: 0 0 18px 18px;
-        background: #ffffff none;
-      }
-
-      #gifts_footer::after,
-      #dcsw_footer::after {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        box-sizing: border-box;
-        border-right: 5px solid #22a9ff;
-        border-bottom: 5px solid #22a9ff;
-        border-left: 5px solid #22a9ff;
-        border-radius: 0 0 14px 14px;
-        content: "";
-      }
-
       .gifts_close,
       .nb_close,
       .dcsw_close {
         z-index: 1;
       }
 
-      .dcsw_close {
-        background-image: url('${options.assetsBaseUrl}tabs/free_gifts/close.png');
-      }
-
       #nb_footer {
         cursor: pointer;
-      }
-
-      .message-empty-icon {
-        width: 64px;
-        height: 64px;
-        object-fit: contain;
       }
 
       .curtain {
@@ -571,8 +539,8 @@ export function renderLauncherHtml(options: LauncherOptions): string {
 
       <div id="gameEmbed" class="tab-content">
         <div id="game_frame">
-          <object id="flash" name="flash" type="application/x-shockwave-flash" data="/client/Dollars.private.swf">
-            <param name="movie" value="/client/Dollars.private.swf" />
+          <object id="flash" name="flash" type="application/x-shockwave-flash" data="${clientSwfUrl}">
+            <param name="movie" value="${clientSwfUrl}" />
             <param name="quality" value="high" />
             <param name="align" value="middle" />
             <param name="play" value="true" />
@@ -590,17 +558,7 @@ export function renderLauncherHtml(options: LauncherOptions): string {
         <noscript>You need to enable JavaScript in order to play this game.</noscript>
       </div>
 
-      <div id="neighbors" class="tab-content rounded-shadow">
-        <span class="nb_close" id="neighbors_close">&nbsp;</span>
-        <div id="nb_header"></div>
-        <div class="nb_outer">
-          <div id="nb_tabs"></div>
-        </div>
-        <div class="nb_outer">
-          <div id="nb_body"></div>
-        </div>
-        <div id="nb_footer"></div>
-      </div>
+      <div id="neighbors" class="tab-content rounded-shadow"></div>
 
       <div id="gifts" class="tab-content rounded-shadow">
         <span class="gifts_close" id="gifts_close">&nbsp;</span>
@@ -632,35 +590,7 @@ ${freeGiftCardsHtml}
         <div id="gifts_footer"></div>
       </div>
 
-      <div id="dcsw" class="tab-content rounded-shadow">
-        <span class="dcsw_close" id="dcsw_close">&nbsp;</span>
-        <div id="dcsw_header"></div>
-        <div class="dcsw_outer">
-          <div id="dcsw_tabs"></div>
-        </div>
-        <div class="dcsw_outer">
-          <div id="dcsw_body">
-            <h1 class="blue-text">You don't have any messages at the moment.</h1>
-            <ul>
-              <li class="row">
-                <img class="message-empty-icon" src="${messageGiftIconUrl}" alt="" />
-                <div class="request_mid_col"><span class="blue-text">You have no Gifts at the moment. Send gifts to friends here to get some back!</span></div>
-                <div class="request_right_col" style="margin-top:20px;">
-                  <span id="sendFreeGifts" class="uiButton uiButtonConfirm uiButtonMedium accept-request-button">Send a gift to your friends</span>
-                </div>
-              </li>
-              <li class="row">
-                <img class="message-empty-icon" src="${messagePartnerIconUrl}" alt="" />
-                <div class="request_mid_col"><span class="blue-text">You have no Business Partners requests at the moment. Send them here to make more money with your friends!</span></div>
-                <div class="request_right_col">
-                  <span id="sendPartnerRequest" class="uiButton uiButtonConfirm uiButtonMedium accept-request-button">Send Business Partner Request</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div id="dcsw_footer"></div>
-      </div>
+      <div id="dcsw" class="tab-content rounded-shadow"></div>
 
       <div id="wcrm_footer"></div>
 
@@ -728,7 +658,7 @@ ${freeGiftCardsHtml}
           <a href="javascript:void(0)" onclick="return false;">Twitter</a>
         </div>
         <div id="copyright">
-          Millionaire City v.${GAME_VERSION}, Copyright &copy; Digital Chocolate 2010. All Rights Reserved
+          Millionaire City v.${gameVersion}, Copyright &copy; Digital Chocolate 2010. All Rights Reserved
         </div>
       </div>
     </div>
@@ -746,8 +676,56 @@ ${freeGiftCardsHtml}
       var GIFTING_INTERSTITIAL_CLOSED = false;
       var SOCIAL_WALL_VISITED = false;
       var INITIAL_LOCAL_PROFILE = ${localProfileBootstrapJson};
+      var LOCAL_ADVISOR_NAME = ${advisorNameJson};
+      var LOCAL_USER_ID = ${launcherUserIdJson};
       var LOCAL_PROFILE_SETTINGS_STORAGE_KEY = "mcity.localProfileSettingsVisible";
       var tasksBuffer = [];
+      var $j = window.jQuery;
+      var LOCAL_SOCIAL_USERS = {
+        "100": { id: "100", name: LOCAL_ADVISOR_NAME },
+        "101": { id: "101", name: "Sheik" }
+      };
+      var FB = {
+        init: function() {},
+        getLoginStatus: function(callback) {
+          if (typeof callback === "function") {
+            callback({ authResponse: { userID: LOCAL_USER_ID } });
+          }
+        },
+        api: function(path) {
+          var args = Array.prototype.slice.call(arguments, 1);
+          var callback = args.filter(function(value) { return typeof value === "function"; }).pop();
+          var requestPath = String(path || "").split("?")[0];
+          var response;
+          if (requestPath === "/me/apprequests") {
+            response = { data: [] };
+          } else if (requestPath === "/me/friends") {
+            response = { data: [LOCAL_SOCIAL_USERS["100"], LOCAL_SOCIAL_USERS["101"]] };
+          } else {
+            var socialId = requestPath.replace(/^\\//, "");
+            response = LOCAL_SOCIAL_USERS[socialId] || { id: socialId, name: "" };
+          }
+          if (typeof callback === "function") {
+            setTimeout(function() { callback(response); }, 0);
+          }
+          return response;
+        },
+        ui: function(options, callback) {
+          var recipient = options && options.to ? String(options.to) : "100";
+          if (typeof callback === "function") {
+            setTimeout(function() {
+              callback({ request_ids: ["local-" + recipient], to: [recipient] });
+            }, 0);
+          }
+        },
+        Canvas: {
+          getPageInfo: function() { return { scrollTop: 0, scrollLeft: 0 }; },
+          setSize: function() {}
+        },
+        Event: { subscribe: function() {} },
+        XFBML: { parse: function() {} }
+      };
+      window.FB = FB;
 
       function getMovie(name) {
         return document[name] || document.getElementById(name) || window[name] || null;
@@ -760,7 +738,7 @@ ${freeGiftCardsHtml}
       }
 
       function notify(text, className) {
-        setStatus("Private Server ${GAME_VERSION}", text, className || "");
+        setStatus("Private Server ${gameVersion}", text, className || "");
       }
 
       function sendTask_to_flash2(task, params) {
@@ -802,9 +780,8 @@ ${freeGiftCardsHtml}
         }
       }
 
-      function privateServerUnavailable(task) {
-        notify("Offline mode: " + task + " is disabled.", "status-warn");
-        sendTask_to_flash("Private server: " + task + " is disabled.");
+      function privateServerUnavailable() {
+        return undefined;
       }
 
       function removeCurtains() {
@@ -861,6 +838,9 @@ ${freeGiftCardsHtml}
         }
         showCurtain();
         sendTask_to_flash("HideGame");
+        if (panelId === "dcsw" && window.DCSW && typeof window.DCSW.show === "function") {
+          window.DCSW.show();
+        }
         if (panelId === "gifts" || panelId === "dcsw") {
           updateLockedGifts();
         }
@@ -915,12 +895,98 @@ ${freeGiftCardsHtml}
         return undefined;
       }
 
-      function launchFacebookRequest() {
-        privateServerUnavailable("fbRequest");
+      function launchFacebookRequest(params, options, onSuccess) {
+        var requestParams = params || {};
+        var requestOptions = options || {};
+        requestOptions.method = "apprequests";
+        requestOptions.title = requestOptions.title || "Millionaire City";
+        requestOptions.message = requestOptions.message || "Millionaire City";
+        if (requestParams.fExtId != null) {
+          requestOptions.to = String(requestParams.fExtId);
+        }
+        FB.ui(requestOptions, function(response) {
+          if (!response || !response.request_ids || response.request_ids.length === 0) {
+            return;
+          }
+          if (onSuccess && typeof onSuccess.method === "function") {
+            onSuccess.method.call(onSuccess.object, requestParams);
+          }
+          if (requestParams.sku && window.jQuery) {
+            window.jQuery("#gifts_feedback").stop(true, true).slideDown("slow").delay(3000).slideUp("slow");
+          }
+        });
       }
 
       function launchFacebookInvite() {
         launchFacebookRequest({ action: "neighborRequest" });
+      }
+
+      function initializeOriginalSocialPanels() {
+        if (typeof window.DC_SocialWall !== "function" || typeof window.DC_Neighbors !== "function") {
+          return;
+        }
+        window.i18n.config({
+          DCSW_ERROR: "Sorry, there was an unexpected error.",
+          DCSW_EMPTY: "You don't have any messages at the moment.",
+          DCSW_ACCEPT: "Accept",
+          DCSW_IGNORE: "Ignore",
+          DCSW_SENDITBACK: "Send gift back?",
+          DCSW_ALL_MESSAGES: "All messages",
+          DCSW_BUSS_PARTNER_TAB: "Business Partners",
+          DCSW_BUSS_PARTNER_TITLE: "%U:",
+          DCSW_BUSS_PARTNER_BODY: "Become my Business Partner to make money faster!",
+          DCSW_BUSS_PARTNER_ACCEPTED: "Congrats - You have a new Business Partner!",
+          DCSW_COLLECTIBLES_TAB: "Collectibles",
+          DCSW_COLLECTIBLES_TITLE: "%U:",
+          DCSW_COLLECTIBLES_BODY: "You got an exciting parcel with a luxurious Collectible!",
+          DCSW_COLLECTIBLES_ACCEPTED: "You got a collectible from your friend!",
+          DCSW_GIFT_TAB: "Free Gifts",
+          DCSW_GIFT_TITLE: "%U:",
+          DCSW_GIFT_BODY: "Here is a free gift to help you out!",
+          DCSW_GIFT_ACCEPTED: "You got the %U!",
+          DCSW_GIFT_EXPIRED: "Oops! Your gift has expired! Check more often to accept gifts.",
+          DCSW_NEIGHBOR_TAB: "Neighbors requests",
+          DCSW_NEIGHBOR_TITLE: "%U:",
+          DCSW_NEIGHBOR_BODY: "Become my neighbor to make money faster!",
+          DCSW_NEIGHBOR_ACCEPTED: "Congrats - You have a new neighbor!",
+          DCSW_CREW_TAB: "Staff Invites",
+          DCSW_CREW_TITLE: "%U:",
+          DCSW_CREW_BODY: "Please help me to open a new club",
+          DCSW_CREW_ACCEPTED: "Congrats - you were hired!",
+          DCSW_CREW_EXPIRED: "You already accepted this invite",
+          DCSW_CREW_ALREADY_FILLED: "This position was already filled",
+          CREW_NEIGHBORS_NEEDED: "You need more neighbors to accomplish this action",
+          DCSW_EMPTY_GIFTS: "You have no Gifts at the moment. Send gifts to friends here to get some back!",
+          DCSW_EMPTY_NEIGHBORS: "You have no Neighbors request at the moment. Send them here to make more money with your friends!",
+          DCSW_EMPTY_PARTNERS: "You have no Business Partners requests at the moment. Send them here to make more money with your friends!",
+          DCSW_EMPTY_NEIGHBORS_BUTTON: "Send Neighbors Request",
+          DCSW_EMPTY_PARTNERS_BUTTON: "Send Business Partner Request",
+          FGT_TITLE: "Send a gift to your friends",
+          MYNEIGHBORS_TAB: "My Neighbors",
+          INVITE_FRIENDS: "Invite friends",
+          MNT_TITLE: "Add more neighbors!",
+          MNT_SEND_BUTTON: "Add as a neighbor",
+          MNT_SEND_REMINDER_BUTTON: "Send reminder",
+          MNT_ADDME: "Add me as a neighbor!",
+          MNT_PENDING: "Neighbor request pending",
+          MNT_REMOVE: "Remove",
+          FGT_SEND_BUTTON: "Send Gift"
+        });
+        var socialConfig = {
+          ASSETS_PATH: ${socialAssetsPathJson},
+          GIFT_BACK_CALLBACK: launchFacebookRequest,
+          LOCALE: ${launcherLocaleJson}
+        };
+        window.DCSW = new window.DC_SocialWall("dcsw", "dcsw_requests_counter", socialConfig);
+        window.DCNB = new window.DC_Neighbors("neighbors", LOCAL_USER_ID, "local", "local", socialConfig);
+        window.DCSW.getAllRequests(LOCAL_USER_ID, "local", false);
+        window.DCSW.show();
+        setInterval(function() { window.DCSW.getNewRequests(LOCAL_USER_ID, "local", false); }, 60000);
+        setInterval(function() { window.DCNB.reload(); }, 60000);
+        var username = document.getElementById("username");
+        if (username) {
+          username.textContent = LOCAL_ADVISOR_NAME;
+        }
       }
 
       function launchCashShop() {
@@ -936,13 +1002,11 @@ ${freeGiftCardsHtml}
       }
 
       function launchBecomeFan() {
-        notify("Fan status enabled in private-server mode.", "status-ok");
         sendTask_to_flash("messageFanPopupClosed");
       }
 
       function launchFacebookCredits() {
         sendTask_to_flash("messageResponseFacebookCredits:1");
-        notify("Purchase completed in private-server free mode.", "status-ok");
       }
 
       function launchGetFBCreditsBalance() {
@@ -955,7 +1019,6 @@ ${freeGiftCardsHtml}
 
       function fedPayment() {
         sendTask_to_flash("messageResponseFacebookCredits:1");
-        notify("Purchase completed in private-server free mode.", "status-ok");
       }
 
       function showCRM() {
@@ -963,11 +1026,11 @@ ${freeGiftCardsHtml}
       }
 
       function launchBookmark() {
-        notify("Bookmark flow is unavailable in local mode.", "status-warn");
+        return undefined;
       }
 
       function showGamePopup() {
-        notify("Popup flow is unavailable in local mode.", "status-warn");
+        return undefined;
       }
 
       function checkInGameAdInventory(availableCallbackName) {
@@ -1044,7 +1107,6 @@ ${freeGiftCardsHtml}
         }
         if (task === "ready") {
           FLASH_READY = true;
-          notify("Flash bridge ready.", "status-ok");
           pushInitialLocalProfileToFlash();
           sendDelayedTaskToFlash();
           return;
@@ -1054,7 +1116,7 @@ ${freeGiftCardsHtml}
           unlockFreeGifts(levelData.level || 0);
           return;
         }
-        notify("Flash task: " + task, "status-ok");
+        return undefined;
       }
 
       function setLocalProfileStatus(message, isError) {
@@ -1466,6 +1528,8 @@ ${freeGiftCardsHtml}
       window.getLocalProfileSettingsVisible = getLocalProfileSettingsVisible;
       window.setLocalProfileSettingsVisible = setLocalProfileSettingsVisible;
 
+      initializeOriginalSocialPanels();
+
       document.getElementById("labelFor_gifts").addEventListener("click", function() {
         clickOnTab("labelFor_gifts");
       });
@@ -1476,15 +1540,6 @@ ${freeGiftCardsHtml}
         clickOnTab("labelFor_dcsw");
       });
       document.getElementById("gifts_close").addEventListener("click", closeGiftTab);
-      document.getElementById("neighbors_close").addEventListener("click", closeGiftTab);
-      document.getElementById("dcsw_close").addEventListener("click", closeGiftTab);
-      document.getElementById("nb_footer").addEventListener("click", launchFacebookInvite);
-      document.getElementById("sendFreeGifts").addEventListener("click", function() {
-        clickOnTab("labelFor_gifts");
-      });
-      document.getElementById("sendPartnerRequest").addEventListener("click", function() {
-        launchFacebookRequest({ action: "partnerRequest", useNeighborList: "1" });
-      });
       document.querySelectorAll(".freeGiftButton").forEach(function(button) {
         button.addEventListener("click", function() {
           if (button.closest(".locked-gift")) {
@@ -1512,9 +1567,6 @@ ${freeGiftCardsHtml}
       bindLocalResourceSettings();
       setInterval(sendDelayedTaskToFlash, 1000);
       showGameOnly();
-      setTimeout(function() {
-        notify("Launcher ready at ${options.appUrl}", "status-ok");
-      }, 50);
     </script>
   </body>
 </html>`;

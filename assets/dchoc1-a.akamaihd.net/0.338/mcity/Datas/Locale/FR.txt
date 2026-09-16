@@ -1,0 +1,1972 @@
+Millionaire City
+Chargement
+Revenez tous les jours à Millionaire City et remportez tous les jours un superbe prix ! Ouvrez les boîtes cadeaux et découvrez les surprises qui vous attendent
+De nouvelles récompenses sont disponibles !
+Action
+Parcelles : %U$
+Objets de collection
+Missions
+Routes
+Magasin
+Gérants
+Bulldozer
+Accueil
+Améliorations
+Acheter
+Il vous faut %U XP pour le niveau %U1
+Dollars Millionnaire
+Or Millionnaire
+Facebook Credits
+Valeur de la société
+Nom de la ville
+Activer son
+Désactiver son
+Activer musique
+Désactiver musique
+Photo
+Zoom avant
+Zoom arrière
+Entrepreneur
+Contrats
+Déplacer
+Collecter
+Plein écran
+Ajouter or
+Ajouter dollars
+Ajouter
+Publier Invest.
+OK
+Confirmer
+Retour
+En savoir plus
+Passer
+Choisir contrat
+Qualité
+Récompense
+ 
+,
+Valeur de la société
+Noël I
+QG Spécial
+Aviation 1
+QG Luxueux
+Aviation 2
+QG Ultime
+Aviation 3
+Veille du Nouvel-an
+Bijoux
+Ingrédients
+Equipement de sport
+Shopping
+Loisirs
+Luxe
+Ceinture
+Jumelles
+Briquet
+Montre
+Anneau
+Portable
+Écouteurs
+Téléphone portable
+Horloge
+Boutons de manchette
+Chandelier
+Lunettes de soleil
+Avion en papier
+Bandeau pour dormir
+Chapeau de pilote
+Repas en avion
+Parfum détaxé
+Ticket
+Bagage
+Champagne
+Ailes de compagnie aérienne
+Lunettes de soleil de pilote
+Maquette d'avion
+Passeport
+Canne en sucre
+Chaussette cadeau
+Bougie de Noël
+Chapeau de lutin
+Feux d'artifice
+Coupes de champagne
+Kit fêtes
+Ballons de Nouvel An
+Emeraude
+Saphir
+Rubis
+Diamant
+Fromage
+Riz
+Petit pain
+Lait
+Casque
+Gants de boxe
+Ballon de basket
+Gant de baseball
+Caisse enregistreuse
+Panier de marché
+Reçu
+Sac en papier
+Ticket
+T-shirt M-City
+Guérite de cinéma
+Mug M-City 
+Bouteille de bourbon
+Lampe
+Chaise Rococo
+Jacuzzi
+Quartier général spécial
+Quartier général luxueux
+Quartier général ultime
+Avion ancien
+Zeppelin
+Spectacle d'aviation
+Boule de neige géante
+Place du Nouvel An
+Etang japonais
+Récompense
+Récompense
+Récompense
+Récompense
+Récompense
+%U XP
+$ %U
+Siège
+Description du siège
+Bungalow
+Bâtiment isolé bien entretenu avec 3 chambres, 2 salles de bains et un terrain d'environ 60 mètres carrés.
+Bungalow de luxe
+2 lits spacieux, 2 bains turcs avec hall d'entrée, salon, salle à manger et cuisine.
+Pavillon
+3 lits confortables, 2 bains turcs avec séjour, salle à manger et garage.
+Pavillon de luxe
+Magnifique maison de 3 chambres avec patios avant et arrière, 2 places de parking et salle à manger.
+Duplex
+Superbe cuisine, salon, salle à manger, garde-manger, buanderie, somptueux jardin et terrasse. 
+Duplex de luxe
+Maison rénovée avec tapis, carrelage et appareils dernier cri dans la cuisine et la salle de bains.
+Manoir
+Intérieur en bois laqué, cuisine, salon, salle à manger, air conditionné, patio et terrasse.
+Manoir de luxe
+Sous-sol conçu pour les divertissements, buanderie, remise, cuisine, salon, salle à manger et patio avec jacuzzi.
+Résidence
+Complexe de 600 mètres carrés composé de 6 magnifiques pièces et d'un jardin (jardinier inclus).
+Résidence de luxe
+Complexe de 6 pièces avec piscines. Idéal pour les familles.
+Villa
+Six pièces isolées en parquet massif, cuisinière, four, lave-vaisselle, machine à laver et garage. 
+Loft
+Idéal pour les artistes. 100 mètres carrés avec un grand hall et 2 chambres.
+Villa de luxe
+Six pièces isolées avec garage pour 2 voitures. Comprend piscine, sauna, grande terrasse et jardin.
+Gratte-ciel
+Grand bâtiment de 20 mètres avec 6 chambres et une réception.
+Loft de luxe
+Idéal pour les célibataires et les acteurs.
+Château
+Château du 19e siècle entièrement restauré avec 500 mètres carrés d'espace habitable et 14 chambres.
+Gratte-ciel de luxe
+Grand bâtiment de 30 mètres avec une vue imprenable depuis les 8 magnifiques chambres.
+Maison coloniale
+Cachet et confort historiques, 4 chambres, salon lumineux et grand garage.
+Futuriste
+Des appartements luxueux dans un bâtiment du futur. Une conception high-tech et beaucoup de terrasses.
+Super gratte-ciel
+Bâtiment de 50 mètres de haut. Superbes vues, piscines, salle de gym, restaurants et ascenseurs panoramiques.
+Maison écologique
+This ecological house is filled with natural light and charm. Includes three earth friendly bedrooms.
+Château écossais
+Ce château de style écossais est gigantesque. Il a 20 chambres, une bonne, un majordome, un chauffeur et un fantôme.
+Maison Kioko
+La maison Kioko est petite mais fonctionnelle. Des murs en papier et un sol en tatamis permettent de vivre l'insoutenable légèreté de chaque jour.
+Maison de l'harmonie
+Style japonais pleine de tranquillité. Parfait pour une petite famille qui aime à s'occuper d'une mare Koi.
+Bayern Haus
+Maison à trois étages, basée sur l'architecture bavaroise. Elle est représentative des gens chaleureux vivant dans les montagnes d'Allemagne.
+Bayern Haus II
+Cette maison a été conçue pour abriter Fürsten et Herzöge de la lignée bavaroise. Une maison de fierté et de prestige royal.
+Bayern Haus
+Maison à trois étages, basée sur l'architecture bavaroise. Elle est représentative des gens chaleureux vivant dans les montagnes d'Allemagne.
+Bayern Haus II
+Cette maison a été conçue pour abriter Fürsten et Herzöge de la lignée bavaroise. Une maison de fierté et de prestige royal.
+Palais vénitien
+Voyagez dans le temps jusqu'à la Renaissance avec ce palais Vénitien plein d'histoire et de grandeur.
+Maison de Toscane
+Vivez un rêve dans cette maison de campagne avec plusieurs terrasses et un jardin.
+Maison arboricole
+Cette habitation originale dispose d'une chambre et permet de communier avec la nature tous les jours.
+Eco-maison luxueuse
+Cette Eco-maison luxueuse dispose de trois chambres, d'un système de recyclage de l'eau, d'énergie solaire et d'une isolation maximum.
+Maison hantée
+Si vous pouvez tenir une nuit dans cette maison, elle sera à vous pour toute l'éternité...
+Maison citrouille
+Passez un Halloween confortable dans cette maison charmante adaptée pour toutes les sorcières débutantes.
+Maison d'architecte
+Vivez avec classe dans un cocon luxueux baigné de lumière et comprenant 2 chambres.
+Gratte-ciel ultime
+Gratte-ciel ultime : une touche urbaine-chic à votre ville et beaucoup d'espace pour accueillir vos activités en expansion.
+Propriété de luxe
+Propriété de style hollywoodien pour ceux ayant réussi. Huit chambres et cinq salles de bains pour tous vos invités.  
+Propriété de luxe II
+Goûtez au luxe extrême de cette propriété. Avec installations high-tech et salle de cinéma privée.
+La Maisonnette
+Deux chambres idylliques font de cette maison un lieu de rêve pour toute famille aimant le calme.
+Immeuble parisien
+Cet immeuble a des appartements merveilleusement restaurés, pleins de lumière et d'un charme suranné.
+Chaumière de colon
+Vivez comme un colon dans cette charmante chaumière avec de la place pour une famille de colons et une dinde.
+Chrysler Building
+Des possibilités d'espace infinies pour toutes sortes de locataires dans ce gratte-ciel célèbre.
+Maison Blanche
+Si ça convient au président, ça conviendra à nous autres.
+Maison de pain
+Il n'y a rien de plus délicieux que cette maison de pain d'épice, idéale pour les vacances. Peut être mangée après Noël.
+Grotte du P. Noël
+Invitez vos locataires à apprécier l'authentique esprit de Noël dans cette maison magique de Finlande.
+Igloo
+Très écologique et étonnamment chaud. Chiens compris.
+Maison de Noël
+Profitez de l'esprit de Noël dans cette maison de rêve magnifique et spacieuse.
+Maison du rire
+Entrez dans cette maison pas comme les autres et faites bondir vos locataires de joie !
+Luxe futuriste
+Cette maison vous apporte le style de vie du futur avec ses équipements high tech de l'ère de l'espace.
+Bloc urbain futuriste
+Proposez à vos locataires le style de vie du futur dans ce spacieux bloc d'appartements. Les services gratuits de téléportation sont compris dans le loyer.
+Palais Escorial
+Voilà votre chance de vivre comme un roi. Placez autant de locataires royaux que possible pour un profit maximum.
+Maison espagnole
+Une vie paisible dans la campagne espagnole. Vos locataires tomberont amoureux de cette maison !
+Résidence de star de tennis
+Vivez et entraînez-vous au niveau professionnel directement depuis le confort de votre maison.Entraîneur inclus.
+Demeure de star de la F1
+Grande demeure fastueuse pour ceux qui vivent leur vie à cent à l'heure.
+Casa mexicaine
+Proposez à vos locataires le style de vie mexicain dans cette maison charmant et spacieuse.
+Casa mexicaine II
+Proposez à vos locataires le style de vie mexicain dans cette maison charmant et spacieuse.
+Château médiéval
+Tes locataires ne pourront être qu'impressionnés par cet imposant et robuste monument nimbé de mystère, tout droit sorti de la période la plus sombre du moyen-âge !
+Maison de style Tudor
+Grâce à ces superbes murs en colombage et toit à forte pente, tes locataires feront un bond dans le passé au temps de la quiétude et de la simplicité médiévale.
+Maison indienne
+Une maison solide qui reflète tout l'art de vivre indien - le tout avec un sublime jardin.
+Palais indien
+Un somptueux palais exotique attend tes locataires friands d'espace et de luxe !
+Maison brésilienne
+Un lieu époustouflant où tes locataires pourront se détendre - cette maison est le nec plus ultra des habitations brésiliennes.
+Immeuble brésilien
+Célèbre ta réussite avec ce gratte-ciel d'une rare hauteur - conçu dans le plus pur style brésilien !
+Maison St Patrick
+Une maison magique où tes locataires pourront se reposer, avec une touche de folie verte dans toutes les pièces !
+Cabane de Leprechaun
+Conçue pour un maximum de plaisir, laisse tes locataires passer un moment inoubliable dans cette cabane nichée dans un arbre.
+Maison en fleur
+Les fleurs imprègnent cet environnement luxuriant, un véritable plaisir pour tous les sens !
+Appartement jardin
+Un magnifique édifice qui place l'emphase sur la fraîcheur du sublime jardin - profitez des merveilles de la nature !
+Motel
+Avec chambres comprenant des lits grande taille, internet à haut débit gratuit, une salle d'arcade et une blanchisserie gratuite.
+Gratte-ciel doré
+Repousse le plafond avec ce gratte-ciel rare et somptueux. Plus de 100 étages d'opulence dans le plus pur style Vegas !
+Tipi
+Communie avec la nature grâce à cet habitat typique des Indiens d'Amérique. Merveilleuse ambiance et proximité de la faune et de la flore.
+Ranch
+Goûte au style de vie des cow-boys avec cette superbe ferme entièrement autonome !
+Cottage de campagne
+Le charme de la campagne anglaise se lit à travers ce mignon cottage. Jardin en option.
+Buckingham Palace
+Tes locataires peuvent vivre comme des souverains dans ce château épique. Ils n’y manqueront pas d’espace.
+Résidence de luxe
+Le nec plus ultra en matière d’habitation, ce bâtiment dispose de tout pour répondre aux besoins des locataires les plus exigeants !
+Hôtel Platinum
+Le meilleur sur le marché, cet hôtel est réputé ne manquer de rien dans le département Bling Bling !
+Pizzeria
+Café
+Fleuriste
+Bowling
+Bijouterie
+Boîte de nuit
+Centre commercial
+Banque
+Hôpital
+Casino
+Animalerie
+Stade
+Gymnase
+Bar à Sushis
+Bräuhaus
+Concessionnaire Italien
+Complexe écologique
+Boutique des horreurs
+Hôtel Midas
+Cinéma Hollywood 
+Galerie Midas
+Le Louvre
+Bar Vegas 
+Tente de Thanksgiving 
+Château de conte de fées
+McDollars
+Lutin d'usine de jouets
+Boutique de traîneaux
+Barbe à papa
+Tente de cirque
+Usine de robots
+Restaurant de paella
+Musée d'art moderne
+Stade de baseball
+Centre équestre
+Usine à tequila
+Restaurant de tacos
+Opéra
+Studio Bollywood
+Bar Caipirinha 
+Boutique de costumes
+Pub irlandais
+Boutique du miel
+Bar à jus
+Flèche Vegas
+Chapelle
+Hôtel Vegas
+Saloon
+Mine d'or
+Restau Fish&Chips
+Salon de thé
+Cyprès
+Chêne
+Palmier
+Fontaine
+Oranger
+Cerisier
+Grand jardin
+Pommier
+Arche de triomphe
+Fontaine II
+Baby Palm
+Erable à sucre
+Fontaine de riche
+Cactus
+Bouleau
+Érable d'or
+Enfant au ballon
+Érable d'argent
+Arbre nuage
+Bambou
+Arche du succès
+Épicéa 
+Colonne de la fête de la bière
+Tente à bières
+Statue de David
+Ruines du Comitium
+Fontaine des Quatre-Fleuves
+Moulin à vent
+Station de recyclage
+Jardin bio
+Arbre maudit
+Jardin des friandises
+Cimetière à zombies
+Arbre en or
+Arbre de diamants
+Aéroport privé
+Piscine de luxe
+Moulin Rouge
+Lampe Art Nouveau
+Corne d'abondance
+Patinoire
+La sculpture sur glace
+Bonhomme de neige
+Arbre classique
+Arbre lumineux
+Arbre enneigé
+Boule de neige géante
+Totem Island God
+Arbre de Noël doré
+Lumières de Noël
+Place du Nouvel An
+Carrousel
+Grande roue
+Arbre de l'ère spatiale
+Fontaine des elfes
+Parc El Retiro 
+Statue andalouse
+Aqueduc de Ségovie
+Etang japonais
+Mini golf
+Piscine olympique
+Coupe du monde
+Agave
+Statue moai
+Guerriers Xi'an
+Statue égyptienne
+Tête olmèque
+Parthénon
+Statue d'éléphant
+Pavillon indien
+Chafa
+Marché aux épices
+Parade de carnaval
+Arbre d'Amazonie
+Plante de Guarana
+Chaudron d'or
+Statue de Leprechaun
+Fontaine trèfle
+Parterre
+Hortensia
+Arbre en fleurs
+Aire de jeu
+Vache néon
+Signe Bienvenue
+Cactus néon
+Charrette de pépites d'or
+Charriot Far West
+Locomotive
+TNT
+Enseigne néon
+Cabine téléphonique
+Colonne de Nelson
+Cimetière à zombies
+Statue en or
+Discovery
+Pyramide
+Tour Eiffel
+Statue-Ronald 
+Statue-Cindy
+Statue de la Liberté
+Tour de Chronos
+Colisée
+Château de Dracula
+Dollars Bin
+Compt. Nouvel An
+Atomium
+La Sagrada Familia
+Chichen Itza
+Stonehenge
+Taj-Mahal
+Corcovado 
+Sous-marin jaune
+Niveau %U requis
+Taille parcelle :
+Bonus maisons :
+Bénéfices
+Cette merveille augmente votre bonus quotidien de %U Dollars.
+Cette merveille te donne %U% de probabilité de doubler ton loyer.
+Cette merveille augmente de %U% le bonus de revenu de toutes vos maisons.
+Cette merveille augmente de %U% le revenu des commerces.
+Acheter pour :
+Jours
+Jour
+Heures
+Heure
+Mins
+Secs
+Dollars
+Or
+Permis
+%U%
+Gratuit
+Grat.
+Annuler
+Nouv.
+Ajouter Ami !
+Félicitations !
+Niveau %U
+Nouveaux éléments :
+Bonus quotidien actuel
+Revenez chaque jour pour recevoir votre bonus quotidien !
+%U
+%U Or
+%U XP
+%U parcelles
+Continuer
+OK
+Bâtiments
+Maisons
+Commerces
+Décorations
+Merveilles
+Le tour du monde en 7 jours
+Specials
+Cadeau
+Partager avec vos amis
+Oui
+Non
+OK
+Votre société
+Construire le Siège
+Acheter des parcelles
+Construire une maison
+Construire une route
+Construction rapide
+Signer un contrat
+Acheter une décoration
+Prélever le loyer
+\nBonjour, je m'appelle %U. Voici Chocoville, où vous commencerez votre propre entreprise immobilière.\n\nVotre objectif est de transformer cette petite ville en une métropole et devenir millionnaire.
+\nDans Millionaire City, vous pouvez acheter et louer des maisons pour gagner de l'argent et de l'expérience tout en construisant une superbe ville.\n\nCommencez par construire votre siège dans les parcelles indiquées par la flèche.
+\nAvant de construire une maison, vous devez acheter des parcelles.\n\nCliquez sur l'icône Parcelles et achetez les 2 parcelles manquantes.
+\nCliquez sur l'icône Magasin et achetez un Bungalow.\n\nPlacez-le ensuite sur une parcelle 2x2.
+\nAvant de commencer la construction, le site doit être relié au Siège.\n\nSélectionnez l'icône Routes et construisez les 2 morceaux manquants pour relier la maison à la route principale.
+\nLa construction a commencé et prendra un certain temps.\n\nCliquez sur le Bungalow et acceptez la Construction rapide pour terminer la construction.
+\nC'est l'heure de trouver vos premiers locataires.\n\nCliquez sur le Bungalow et signez un contrat de location.\n\nNotez qu'un tel contrat coûte 90$.
+Pour augmenter les frais de location, placez des décorations près de vos maisons.\n\nAllez au Magasin et achetez un Cyprès dans l'onglet Décorations. Placez-le près du Bungalow.Remarquez que le Bungalow a maintenant un bonus de revenu de 2%.
+\nVotre loyer est prêt à être prélevé !\n\nCliquez sur le Bungalow pour le prélever.
+\nVous maîtrisez les bases du business !\nMissions suivantes :\n- Construire d'autres maisons\n- Rendre visite à des amis\n- Vous pouvez terminer les missions et gagner de l'argent en cliquant sur le bouton Missions ci-dessous.\nBonne chance !
+Étape %U/%U1
+Choisir un conseiller
+$
+Baptisez-la
+Écris le NOM de ta ville dans le champ ci-dessous et clique sur 'Terminé'.
+Un amour de pizza
+Achète la Pizzeria qui est 'A Vendre' à proximité de Siège. Reviens ici pour obtenir ta récompense. 
+Coup de main
+Demander de l'aide
+\n\nCliquez sur la Merveille en construction et Demander de l'aide de vos amis. Chaque aide de vos amis permettra une construction plus rapide de la Merveille.
+Question de taille
+Achète une extension ! Les extensions te donnent plus d’espace pour construire ta ville et te rendre plus riche.
+\n\nAstuce : achète-les en cliquant sur le panneau 'Extension à vendre' au-delà des limites de ta ville.
+Construction rapide
+Clique sur une propriété en cours de construction pour réaliser une Construction Instantanée.
+\n\nAstuce :  Construis une maison, relie-la au QG et une fois la minuterie de construction lancée, clique sur la maison pour confirmer la Construction Instantanée !
+Construction 1
+Construis une maison !
+\n\n Astuce : achète une parcelle de 2x2 à l’aide de l’outil Achat de parcelle. Vas à la Boutique, sélectionne Bungalow de luxe et place-la sur la parcelle de terrain.
+Construction 2
+Construis 1 Pavillon pour les habitants les plus exigeants de ta ville.
+\n\n Astuce : achète une parcelle d’une superficie adéquate à l’aide de l’outil Achat de parcelle. Vas à la Boutique, sélectionne Bungalow de luxe et place-la sur la parcelle de terrain.
+Expresso express
+Construis 1 Café.
+\n\nAstuce : place ton commerce à proximité des maisons pour encourager les habitants à y faire leurs courses régulièrement.
+Diversification
+Diversifie ton portfolio d’affaires en devenant propriétaire de 5 types de commerces différents. \n\nAstuce : définis tout d’abord tes parcelles de terrain, puis rends-toi à la Boutique et achète le commerce.
+Diversifie ton portfolio d’affaires en devenant propriétaire de 5 types de commerces différents. \n\nAstuce : définis tout d’abord tes parcelles de terrain, puis rends-toi à la Boutique et achète le commerce.
+Main verte 1
+Construis 2 arbres.
+\n\nAstuce : vas à la Boutique et sélectionne l’onglet Décorations. Achète un arbre et place-le à côté d’une maison pour en accroître le Bonus. Fais-le une fois de plus !
+Fontaines
+Construis 3 autres Fontaines dans ta ville. Les fontaines que tu as peut-être déjà dans ta ville ne comptent pas.
+\n\n Astuce : place-les à proximité de tes maisons pour augmenter la valeur de leur Bonus.
+Main verte 2
+Construis 1 Grand jardin dans ta ville pour faire plaisir à tes habitants.
+\n\nAstuce : Place-les à proximité des maisons que tu possèdes pour augmenter leur Bonus Maison.
+Maisons de luxe 1
+Construis 1 Pavillon de luxe.
+\n\nAstuce : place-la à proximité d’un Commerce, pour que celui-ci attire de nouveaux clients !
+Maisons de luxe 2
+Construis 1 Duplex de luxe.
+\n\n Astuce : place-le à proximité d’un Commerce, pour que celui-ci attire de nouveaux clients !
+Vie de château
+Construis 2 Châteaux pour répondre aux exigences de tes habitants VIP, tels que les stars de Hollywood.
+\n\nAstuce : place-les à proximité d’un Commerce, pour que celui-ci attire de nouveaux clients ! 
+Plus près des étoiles
+Construis 3 Gratte-ciels pour apporter une touche de grande métropole à ta ville.
+\n\n Astuce : les gratte-ciels peuvent accueillir de nombreux habitants, ce qui peut être très bénéfique pour ton Commerce !
+Merveille du monde
+Les merveilles sont excellentes pour empocher les gros Bonus ! Construis 1 Statue en or 
+\n\nAstuce : positionne tout d’abord des parcelles 4x4, puis vas à la Boutique et sélectionne l’onglet Merveilles et clique sur Statue en or. Place-la ensuite sur ta parcelle de terrain. 
+Pizzalicieux 1
+Augmente le nombre de tes clients à 3 dans le Pizzeria.
+\n\n Astuce : achète tout d’abord une parcelle 2x2 à côté du Pizzeria puis vas à la Boutique, achète une maison et place-la sur la parcelle. Signe un bail pour avoir des locataires.
+Pizzalicieux 2
+Construis davantage de maisons autour du Pizzeria pour augmenter le nombre de clients à 10.
+\n\n Astuce : achète des parcelles à côté du Pizzeria, vas à la Boutique, achète des maisons et signe un bail pour avoir des locataires.
+Pizzalicieux 3
+Construis davantage de maisons autour du Pizzeria pour augmenter le nombre de clients à 16.
+\n\n Astuce : achète des parcelles à côté du Pizzeria, vas à la Boutique, achète des maisons et signe un bail pour avoir des locataires.
+Par amour du café 1
+Augmente le nombre de tes clients à 12 dans le Café.
+\n\n Astuce : construis des maisons autour du Café.
+Par amour du café 2
+Augmente le nombre de tes clients à 24 dans le Café.
+\n\n Astuce : construis des maisons autour du Café.
+Au paradis des fleurs
+Construis 1 Fleuriste et attire 30 clients. \n\n Astuce : construis des maisons autour du Fleuriste.
+Construis 1 Fleuriste et attire 30 clients. \n\n Astuce : construis des maisons autour du Fleuriste.
+Clubbeurs
+Construis 1 Boîte de nuit et organise-y 36 enterrements de vie de garçon. \n\n Astuce : Construis des maisons à côté du Boîte de nuit.
+Construis 1 Boîte de nuit et organise-y 36 enterrements de vie de garçon. \n\n Astuce : Construis des maisons à côté du Boîte de nuit.
+Urbaniste 1
+Ajoute des Décorations à côté de n’importe quel Bungalow qui t’appartient pour obtenir un Bonus Maison de 12%. \n\n Astuce : les Décorations sont disponibles dans la Boutique.
+Ajoute des Décorations à côté de n’importe quel Bungalow qui t’appartient pour obtenir un Bonus Maison de 12%. \n\n Astuce : les Décorations sont disponibles dans la Boutique.
+Urbaniste 2
+Ajoute des Décorations à côté de n’importe quel Bungalow qui t’appartient pour obtenir un Bonus Maison de 16%. \n\n Astuce : les Décorations sont disponibles dans la Boutique.
+Ajoute des Décorations à côté de n’importe quel Bungalow qui t’appartient pour obtenir un Bonus Maison de 16%. \n\n Astuce : les Décorations sont disponibles dans la Boutique.
+Urbaniste 3
+Ajoute des Décorations à côté d’une Pavillon pour obtenir un Bonus Maison de 30%.
+\n\n Astuce : les Décorations sont disponibles dans la Boutique.
+Urbaniste 4
+Ajoute des Décorations à côté d’une Pavillon pour obtenir un Bonus Maison de 60%.
+\n\n Astuce : les Décorations sont disponibles dans la Boutique.
+Villa de rocker
+Une célèbre rock star, 'Billy Dollars' recherche une Villa avec un Bonus Maison de  90%.
+\n\nAstuce : augmente tes Bonus Maison à l’aide de Décorations.
+Château de star
+Un nabab des médias recherche une somptueuse Château, construis-en une avec un Bonus Maison de 110%.
+\n\n Astuce : augmente tes Bonus Maison à l’aide de Décorations.
+Vente de pizzas 1
+Organise 1 vente de Pizzeria en percevant le revenu d’une Pizzeria
+\n\nAstuce : plus tu auras de maisons à proximité d’une pizzeria, plus tu gagneras de l’argent !
+Vente de pizzas 2
+Organise une vente de Pizzeria Sale à 5 reprises.
+\n\n Astuce : Clique sur la Pizzeria après 5 décomptes de la minuterie !
+Vente de café 1
+Organise une grande vente de Café à 10 reprises.
+\n\nAstuce : perçois les revenus de ton Café à 10 reprises !
+Vente de café 2
+Organise une grande vente de Café à 50 reprises.
+\n\nAstuce : perçois les revenus de ton Café à 50 reprises !
+Ça va se payer 1
+Perçois 10 loyers de tes maisons.
+\n\n Astuce : utilise des baux de courte durée pour terminer ta Mission plus rapidement.
+Ça va se payer 2
+Perçois 50 loyers de tes maisons.
+\n\n Astuce : utilise des baux de courte durée pour terminer ta Mission plus rapidement.
+Ça va se payer 3
+Perçois 100 loyers de tes maisons.
+\n\n Astuce : utilise des baux de courte durée pour terminer ta Mission plus rapidement.
+Ça va se payer 4
+Perçois 200 loyers de tes maisons.
+\n\n Astuce : utilise des baux de courte durée pour terminer ta Mission plus rapidement.
+Autres horizons
+Visite les villes de tes amis ou la ville de %U en cliquant sur la barre en bas du jeu.
+\n\n Astuce : visite %U quotidiennement pour obtenir un Bonus Quotidien
+Aide à un ami 1
+Visite les villes de tes amis et améliore 6 maisons au total dans toutes leurs villes.
+\n\nAstuce : clique sur un(e) ami(e) dans la barre ci-dessous pour lui rendre visite, puis clique sur ses maisons pour les améliorer !
+Aide à un ami 2
+Visite les villes de tes amis et améliore 20 maisons au total dans toutes leurs villes.
+\n\nAstuce : clique sur un(e) ami(e) dans la barre ci-dessous pour lui rendre visite, puis clique sur ses maisons pour les améliorer !
+Aide à un ami 3
+Visite les villes de tes amis et améliore 50 maisons au total dans toutes leurs villes.
+\n\nAstuce : clique sur un(e) ami(e) dans la barre ci-dessous pour lui rendre visite, puis clique sur ses maisons pour les améliorer !
+L'argent est roi 1
+Économise jusqu’à 1 000 000$ en dollars Millionaire et deviens riche comme Crésus.
+\n\n Astuce : tu peux convertir des Lingots d’or en dollars Millionaire en cliquant sur le bouton 'Ajouter des Dollars' !
+Le million 1
+Accumule un total Valeur de la société de plus de 1 000 000$.
+\n\nAstuce : perçois la valeur des maisons et commerces à bail de plus courte durée pour augmenter rapidement tes liquidités !
+Le million 2
+Accumule un total Valeur de la société de 5 000 000$. Est-ce que tu pourras y arriver ?
+\n\nAstuce : perçois la valeur des maisons et commerces à bail de plus courte durée pour augmenter rapidement tes liquidités !
+Le million 3
+Accumule un total Valeur de la société de 10 000 000$.
+\n\nAstuce : perçois la valeur des maisons et commerces à bail de plus courte durée pour augmenter rapidement tes liquidités !
+Ça va se payer 5
+Perçois 600 loyers des maisons qui t’appartiennent. 
+\n\n Astuce : utilise des baux à courte durée pour terminer ta Mission plus rapidement.
+Ça va se payer 6
+Perçois 950 loyers des maisons qui t’appartiennent. 
+\n\n Astuce : utilise des baux à courte durée pour terminer ta Mission plus rapidement.
+Aide à un ami 4
+Visite les villes de tes amis et améliore 650 maisons au total dans toutes leurs villes. 
+\n\nAstuce : clique sur un(e) ami(e) dans la barre ci-dessous pour lui rendre visite, puis clique sur ses maisons pour les améliorer !
+Aide à un ami 5
+Visite les villes de tes amis et améliore 850 maisons au total dans toutes leurs villes.
+\n\nAstuce : clique sur un(e) ami(e) dans la barre ci-dessous pour lui rendre visite, puis clique sur ses maisons pour les améliorer !
+Le million 4
+Accumule un total Valeur de la société de 375 000 000$.
+\n\nAstuce : perçois la valeur des maisons et commerces à bail de plus courte durée pour augmenter rapidement tes liquidités !
+Le million 5
+Accumule un total Valeur de la société de 475 000 000$.
+\n\nAstuce : perçois la valeur des maisons et commerces à bail de plus courte durée pour augmenter rapidement tes liquidités !
+L'argent est roi 2
+Accumule 10 000 000$ en dollars Millionaire et deviens riche comme Crésus. 
+\n\n Astuce : tu peux convertir des Lingots d’or en dollars Millionaire en cliquant sur le bouton 'Ajouter des Dollars' !
+L'argent est roi 3
+Économise jusqu’à 20 000 000$ en dollars Millionaire et deviens riche comme Crésus. 
+\n\n Astuce : tu peux convertir des Lingots d’or en dollars Millionaire en cliquant sur le bouton 'Ajouter des Dollars' !
+Rock'n roll
+Perçois 200  loyers de ton bail Rock Star. 
+\n\n Astuce : construis de nombreuses maisons pour obtenir davantage de baux en même temps !
+Le défi de Sheik 
+Sheik Oilfinger est un célèbre millionnaire qui aime les gros cigares. Porte la valeur de ta société à plus de 900 millions de $ et montre à Sheik Oilfinger qui est vraiment le roi des affaires !  
+\n\nAstuce : perçois la valeur des maisons et commerces à bail de plus courte durée pour augmenter rapidement tes liquidités !
+Ça va se payer 7
+Perçois 5 000 loyers des maisons qui t’appartiennent. 
+\n\n Astuce : utilise des baux à courte durée pour terminer ta Mission plus rapidement.
+Aide à un ami 6
+Visite les villes de tes amis et améliore 2 000 maisons au total dans toutes leurs villes. 
+\n\nAstuce : clique sur un(e) ami(e) dans la barre ci-dessous pour lui rendre visite, puis clique sur ses maisons pour les améliorer !
+Le million 6
+Accumule un total Valeur de la société de 2 000 000 000$.
+\n\nAstuce : perçois la valeur des maisons et commerces à bail de plus courte durée pour augmenter rapidement tes liquidités !
+L'argent est roi 4
+Économise 300 000 000 en dollars Millionaire et deviens riche comme Crésus. 
+\n\n Astuce : tu peux convertir des Lingots d’or en dollars Millionaire en cliquant sur le bouton 'Ajouter des Dollars' !
+Super maison coloniale
+Ajoute des Décorations à côté d’une Maison coloniale pour obtenir un Bonus Maison de 360%.
+\n\n Astuce : vérifie la valeur du Bonus Maison dans la Boutique avant d’acheter ta décoration !
+Clients de la banque
+Construis 1 Banque et attire 529 clients. 
+\n\n Astuce : construis des maisons autour du Banque pour y faire venir des clients !
+Clients du Bowling
+Construis 1 Bowling et attire 243 clients.
+\n\n Astuce : construis des maisons autour du Banque pour y faire venir des clients !
+Club VIP M-City
+Cindy et Ronald sont déjà membres du très sélect Club VIP Millionaire City et tu peux désormais les rejoindre ! Profite d’avantages exclusifs tels que l’actualité, des cadeaux et des récompenses. 
+\n\n Astuce : saisis ton adresse email et obtiens ta carte de membre.
+Affaires avec vos Associés
+Tes associés d’affaires comptent sur toi ! Fais fructifier toutes les affaires en visitant les villes de 40 de tes associés. 
+\n\n Astuce : tu peux retrouver tes associés dans la barre des Amis au bas de l’écran de jeu !
+Investissement
+Les investissements sont toujours rentables pour un millionnaire. Investis dans 10 ami(e)s qui acceptent ton invitation et profite de ta récompense une fois l’invitation arrivée à son terme. 
+\n\n Astuce : envoie des  demandes   d’investissement en cliquant sur l’icône Investissements dans le coin inférieur gauche de l’écran de jeu.
+Investissement malin
+Fais de judicieux investissements. Deviens un gourou de la finance en réalisant %U d’investissements réussis et profite de ta récompense une fois l’invitation arrivée à son terme. 
+\n\n Astuce : une fois que tu as investi sur un(e) ami(e), tu peux lui envoyer un rappel en cliquant sur “ Portfolio des investissements”.
+Visite amicale I
+Visite les villes de tes amis et améliore 70 Résidence de luxe dans toutes leurs villes. 
+\n\nAstuce : visite les villes de tes amis et clique sur Résidence de luxe s’ils les possèdent !
+Visite amicale II
+Visite les villes de tes amis et améliore 50 Gratte-ciel dans toutes leurs villes. 
+\n\nAstuce : visite les villes de tes amis et clique sur Gratte-ciel s’ils les possèdent !
+Visite amicale IV
+Visite les villes de tes amis et améliore 30 Gratte-ciel de luxe dans toutes leurs villes. 
+\n\nAstuce : visite les villes de tes amis et clique sur Gratte-ciel de luxe s’ils les possèdent !
+Visite amicale VI
+Visite les villes de tes amis et améliore 20 Super gratte-ciel dans toutes leurs villes. 
+\n\nAstuce : visite les villes de tes amis et clique sur Super gratte-ciel s’ils les possèdent !
+Visite amicale III
+Visite les villes de tes amis et améliore 40 Maison écologique dans toutes leurs villes.
+\n\nAstuce : visite les villes de tes amis et clique sur Maison écologique s’ils les possèdent !
+Visite amicale V
+Visite les villes de tes amis et améliore 25 Futuriste dans toutes leurs villes.
+ \n\nAstuce : visite les villes de tes amis et clique sur Futuriste s’ils les possèdent !
+Visite amicale VII
+Visite les villes de tes amis et améliore 10 Château écossais dans toutes leurs villes. 
+ \n\nAstuce : visite les villes de tes amis et clique sur Château écossais s’ils les possèdent !
+Clients de l'animalerie
+Construis 1 Animalerie et vends 32 adorables petits chiots. 
+\n\n Astuce : construis davantage de maisons autour du Animalerie pour y attirer les clients !
+Clients de la bijouterie
+Construis 1 Bijouterie vends 34 somptueux bijoux.  
+ \n\n Astuce : construis davantage de maisons autour duBijouterie pour y attirer les clients !
+Affaire partagée I
+Demande à tes amis d’améliorer tes maisons, puis perçois 50 loyers revus à la hausse. Partager c’est aimer !
+\n\nAstuce : n’oublie pas d’inviter tes amis à venir jouer à Millionaire City pour que vous puissiez vous entraider à améliorer vos maisons.
+Affaire partagée II
+Demande à tes amis d’améliorer tes maisons, puis perçois 100 loyers revus à la hausse. Partager c’est aimer ! 
+\n\nAstuce : n’oublie pas d’inviter tes amis à venir jouer à Millionaire City pour que vous puissiez vous entraider à améliorer vos maisons.
+Affaire partagée III
+Demande à tes amis d’améliorer tes maisons, puis perçois 200 loyers revus à la hausse. Partager c’est aimer ! 
+\n\nAstuce : n’oublie pas d’inviter tes amis à venir jouer à Millionaire City pour que vous puissiez vous entraider à améliorer vos maisons.
+Affaire partagée IV
+Demande à tes amis d’améliorer tes maisons, puis perçois 400 loyers revus à la hausse. Partager c’est aimer ! 
+\n\nAstuce : n’oublie pas d’inviter tes amis à venir jouer à Millionaire City pour que vous puissiez vous entraider à améliorer vos maisons.
+Affaire partagée V
+Demande à tes amis d’améliorer tes maisons, puis perçois 800 loyers revus à la hausse. Partager c’est aimer ! 
+\n\nAstuce : n’oublie pas d’inviter tes amis à venir jouer à Millionaire City pour que vous puissiez vous entraider à améliorer vos maisons.
+Affaire partagée VI
+Demande à tes amis d’améliorer tes maisons, puis perçois 1600 loyers revus à la hausse. Partager c’est aimer !
+\n\nAstuce : n’oublie pas d’inviter tes amis à venir jouer à Millionaire City pour que vous puissiez vous entraider à améliorer vos maisons.
+Affaire partagée VII
+Demande à tes amis d’améliorer tes maisons, puis perçois 3200 loyers revus à la hausse. Partager c’est aimer ! 
+\n\nAstuce : n’oublie pas d’inviter tes amis à venir jouer à Millionaire City pour que vous puissiez vous entraider à améliorer vos maisons.
+Affaire partagée VIII
+Demande à tes amis d’améliorer tes maisons, puis perçois 6400 loyers revus à la hausse. Partager c’est aimer ! 
+\n\nAstuce : n’oublie pas d’inviter tes amis à venir jouer à Millionaire City pour que vous puissiez vous entraider à améliorer vos maisons.
+Affaire partagée IX
+Demande à tes amis d’améliorer tes maisons, puis perçois 7400 loyers revus à la hausse. Partager c’est aimer ! 
+\n\nAstuce : n’oublie pas d’inviter tes amis à venir jouer à Millionaire City pour que vous puissiez vous entraider à améliorer vos maisons.
+Affaire partagée X
+Demande à tes amis d’améliorer tes maisons, puis perçois 8500 loyers revus à la hausse. Partager c’est aimer ! 
+\n\nAstuce : n’oublie pas d’inviter tes amis à venir jouer à Millionaire City pour que vous puissiez vous entraider à améliorer vos maisons.
+Transplantation
+Accède au menu Entrepreneur signalé par l'icône d'un attaché-case, et utilise l'outil Déplacer pour transplanter un arbre existant vers un nouvel emplacement. 
+\n\n Astuce : l’outil Déplacer est très utile pour réaménager ta ville –tu peux également l’envoyer comme cadeau gratuit !
+Mission accomplie
+Revenu
+XP :
+Temps revenu :
+Construction :
+Influence :
+Locataires :
+Clients :
+Tu peux accélérer le temps de construction en demandant de l’aide à tes amis.
+%U amis vous ont donné à construire ce bâtiment. Chacun d'entre eux réduit le temps total de construction de %U1%.
+Devenir fan de Millionaire City
+Les fans de Millionaire City recevront les dernières infos, des cadeaux et pourront débloquer le Manoir !
+Bienvenue !
+%U amis vous ont dépassé au classement.
+%U amis vous ont aidé.
+%U amis ont investi dans votre ville.
+%U constructions terminées !
+%U essaie aussi de devenir Millionnaire, mais il a besoin de vous.\nPouvez-vous l'aider ?
+Ronald Goldtooth
+Cindy Jewels
+Sheik Oilfinger
+Ronald
+Cindy
+Sheik
+Vous devez construire ce bâtiment sur une parcelle %U. Pour cela, utilisez l'icône Parcelles.
+Apparemment, vous avez besoin de {0xFF6600}%U1{/} lingots d'or de plus pour obtenir cet élément.
+Appramment, vous avez besoin de {0x009932}%U1{/} dollars en plus pour obtenir cet élément. Voulez-vous changer {0xFF6600}%U{/}  lingots d'or contre ce montant en dollars ?
+Vous n'avez pas assez d'argent. Je pourrais vous donner {0x009932}%U{/} contre {0xFF6600}%U1{/} lingot(s) d'or, mais vous n'avez que {0xFF6600}%U2{/} lingots d'or.
+Argent insuffisant
+Or insuffisant
+Envoyer cadeau
+Cliquez ici
+Mission %U requise
+Touristes
+Étudiants
+Famille
+Retraités
+Athlètes
+Pilotes
+Hôtesses
+Artistes
+Amis
+Rockstar
+Footballeur
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+placeholder
+Inviter
+Demander de l'aide
+Récompense
+Voulez-vous vraiment résilier le contrat ?
+Voulez-vous vraiment détruire ?\nVous recevrez {0x009932}%U{/}.
+Les locataires en avaient assez d'attendre votre prélèvement et ont quitté la maison.
+Cliquez pour restaurer la maison
+Chocoville
+Vous devez attendre %U pour demander d'accélérer
+Vous devez attendre %U pour vous vanter.
+Qu'allez-vous acheter ensuite ?
+Niveau supérieur à Millionaire City.
+%U est maintenant niveau %U1 à Millionaire City et pour célébrer son succès il veut partager du Bonus d'Expérience avec tous ses amis!
+Obtenir Expérience
+Besoin d'aide ?
+%U a besoin d'aide pour construire la merveille du monde : %U1.
+%U a besoin d'aide pour finir %U1. Vous pouvez construire votre propre ville tout en gagnant des millions dans Millionaire City.
+Aider %U
+Alors, on se sent riche ?
+Wahou, %U est en couverture du 'Journal de Choco Street'.
+%U est un chef couronné de succès et fera bientôt partie des personnes les plus riches de Millionaire City.
+Jouer à Millionaire City
+Qu'est-ce que cela fait d'être millionnaire ?
+%U est Millionnaire
+%U est un millionnaire dans Millionaire City. Vous pouvez battre %U et vos autres amis en achetant des maisons, des casinos, des hôtels, des bijouteries et en bâtissant une métropole : tout est possible dans Millionaire City.
+Jouer à Millionaire City
+La mission était-elle difficile à accomplir ?
+Mission accomplie !
+%U a gagné une grosse récompense en terminant la mission '%U1' et il veut partager des Dollars bonus qui peuvent vous rendre riche !
+Obt. Dollars Bon.
+Contrat \nsigné !
+Propriété connectée !
+Amélioration ami
+Visitez les villes de vos amis et améliorez leurs maisons !
+Vous recevrez de l'argent et de l'expérience.
+Si vous êtes en retard pour prélever le loyer, les locataires partiront sans payer !
+N'oubliez pas d'accomplir des missions pour gagner de l'argent.
+Notez bien que vous pouvez échanger votre or contre de l'argent.
+Le revenu des commerces dépend du nombre de clients.
+Acheter avec de l'argent ?
+Acheter avec de l'or ?
+Acheter avec de l'argent et l'aide des investissements ?
+Acheter extension
+Il vous faut un terrain libre pour construire cette décoration.
+Cette maison n'est pas reliée au Siège.
+Construire routes pour la relier.
+Cliquez pour acheter
+Vous avez besoin de %U investissement(s) réussi(s).
+Vous avez %U investissement(s) réussi(s).
+Vous avez d'abord besoin d'acheter les extensions débloquées.
+Bloqué
+Votre ville n'est plus connectée avec le serveur. Veuillez actualiser la page pour continuer.
+Navré, une erreur inopinée est survenue lors du chargement de ta ville. Réessaye ultérieurement !
+Vous ne pouvez demander de l'aide qu'une fois toutes les 12 heures.
+Investissements
+Portfolio d'Invest.
+Nouveaux invest.
+Portfolio d'Invest.
+Investir
+Aidez {0x009932}%U{/} à créer une société millionnaire. Investissez dès à présent {0x009932}%U1{/} dans la nouvelle société et si dans {0x009932}%U2{/} jours, la valeur de la société a atteint {0x009932}%U3{/} vous recevrez {0x009932}%U4{/} pour votre placement judicieux.
+Qu'achèteriez-vous avec un million de dollars ?
+%U, voulez-vous devenir Millionnaire ?
+%U, pouvez-vous construire la ville de vos rêves et aider vos amis ? %U1 veut que vous bâtissiez une ville dans Millionaire City. Vous pouvez accepter son offre et construire votre ville tout en aidant vos amis à gagner de l'argent en plus.
+Accepter
+J. restants
+H. restantes
+Publier vite !
+Rappel de publication
+Résultats
+Combien de jours reste-t-il dans l'investissement ?
+%U, vite ! Il faut plus d'argent !
+Merci d'avoir accepté l'investissement mais vous devez faire plus d'argent. L'horloge tourne !
+Jouer à Millionaire City
+Bien joué !
+Votre ami(e) a atteint son objectif et vous recevrez donc les bénéfices de votre investissement. Vous devriez travailler à Wall Street !
+Remercier
+Mauvais placement !
+Votre ami(e) n'a pas atteint son objectif à temps. Vous perdez donc votre investissement !
+Es-tu sûr de vouloir annuler cet investissement ?
+N'oubliez pas que votre ami(e) a investi dans votre société dans Millionaire City. Si vous parvenez à porter la valeur de votre société à %U en %U1 jours, votre partenaire recevra beaucoup d'argent et n'hésitera pas à vous remercier.
+N'oubliez pas vos objectifs !! Je veux mes bénéfices !
+Aide
+Devenez riche en aidant vos amis à créer de nouvelles entreprises brassant des millions de dollars. Cliquez sur le bouton 'Envoyer une demande d'investissement' pour sélectionner les amis qui selon vous feraient de bons dirigeants d'entreprise et envoyez-leur une invitation.
+Statut d'investissement 1 : votre ami(e) n'a pas encore accepté votre investissement. Envoyez-lui un Rappel d'investissement ou annulez l'investissement pour libérer de l'espace dans votre  'Portefeuille d'investissement'.
+Statut d'investissement 2 : ceci signifie que votre ami(e) a décliné votre investissement. Vous pouvez donc l'annuler pour libérer de l'espace dans votre  'Portefeuille d'investissement'.
+Statut d'investissement 3 : votre ami(e) a accepté votre investissement. Vous pouvez vérifier l'état d'avancement de l'investissement et demander à votre ami(e) de se 'Dépêcher'.
+Statut d'investissement 4 : ceci signifie que votre ami(e) a accepté l'investissement ! Cliquez pour voir si cela vous a ou non rapporté de l'argent.
+Mettez à jour Flash Player
+Ici
+Si le jeu ne se lance pas ou si vous rencontrez des difficultés, veuillez mettre à jour votre version de Flash en cliquant ICI.
+Statistiques
+Invest. acceptés :
+Invest. réussis :
+Taux de réussite :
+Nouvelles missions prochainement !
+À VENDRE
+EXTENSION À VENDRE
+Devenir fan
+Vous voulez dire 'merci' à votre ami(e) ?
+%U vient de se faire un max de $$$ dans Millionaire City et tient à remercier %U1 !
+%U a eu du nez en investissant dans la société de %U1. Bien joué !
+Jouer à Millionaire City
+Investissement réussi !
+Tu avais raison - j'étais digne de ton investissement !
+Tu as été bien avisé(e) d'investir sur moi !  J'ai atteint la limite des 4 millions de dollars et maintenant nous allons tous les deux engranger d'hallucinants bénéfices.
+Jouer à Millionaire City
+Vous ne pouvez plus améliorer de maisons aujourd'hui ! Réessayez demain !
+Échange d'argent
+Échanger
+Vous avez :
+Vous pouvez échanger :
+Investissements
+Bâtiments et décorations
+Parcelles et extensions
+Total
+Pavillons
+Fontaines
+Gratte-ciels
+Châteaux
+Obtenez Millionaire Gold
+Sélectionnez le coffret :
+Payez avec FB Credits
+Affaire en or !
+Digital Chocolate utilise le propre sytème de Facebook, les Facebook Credits, comme moyen de paiement sur Millionaire City.  Les Facebook Credits utilisent les systèmes anti-fraude dernière génération afin de vous assurer des achats fiables et sécurisés.
+Toutes les offres
+Contrat Percepteur
+Contrat
+Bientôt disponible !
+Voulez-vous vraiment le déplacer ici ?
+Déplacements {0xf33300}GRATUITS{/} toute une {0xf33300}JOURNEE{/}.
+Déplacer des propriétés
+Déplacer des propriétés
+Je peux vous aider à déplacer des propriétés.
+Cliquez sur une propriété puis placez-la sur un emplacement disponible.
+Vous ne pouvez pas insérer du texte en mode Plein écran. \nVoulez-vous passer au mode normal?
+%U a besoin d'aide pour construire %U1 .
+ :
+Disponible en %U
+Ajouter aux favoris
+Associés
+Demande à tes amis de devenir tes Associés et accède à de meilleures améliorations.
+Envoyer demande
+Envoyer un rappel
+Choisis des amis à ajouter comme associés
+Salut l'ami ! Deviens mon Associé dans Millionaire City et nous pourrons tous les deux faire de supers améliorations aux bâtiments et devenir Millionnaires plus rapidement !
+Envoyer demande d'Associé
+Accepter
+Maintenant, fais savoir à ton ami que tu l'as aidé(e), afin qu'il/elle te retourne la faveur !
+Info aide faite
+Ami aidé
+Ajouter message pour tes amis
+%U vient d'améliorer vos maisons dans Millionaire City ! - Dollars Bonus disponibles !
+%U a visité ta ville et amélioré tes maisons. Tu peux aider %U en lui retournant la faveur.
+Obtenir Dollars Bonus
+Tu as aidé %U à construire  '%U1'. Dis à tes amis à quel point tu es un bon ami et ils te rendront la pareille.
+Info aide donnée
+Aide construction donnée
+Ajoute un message pour tes amis
+%U a aidé %U1 dans Millionaire City !
+%U vient juste d'aider %U1 à gagner plus d'argent an accélérant la construction de '%U2'. Tu peux aller voir si c'est terminé.
+Obtenir Dollars Bonus
+Grâce à tes amis, ton nouveau bâtiment à été construit. Dis-leur merci.
+Partager merci
+Bâtiment terminé
+Tu veux dire merci à tes amis ?
+%U a terminé de construire de nouveaux bâtiments en ville. Merci à tous ceux qui ont aidé !
+%U vient juste de finir de construire des bâtiments dans Millionaire City et il souhaite remercier ceux qui l'ont aidé en partageant des dollars bonus.
+Obtenir Dollars Bonus
+Super Améliorations
+Vous venez de signer avec succès avec de nouveaux associés ! Prévenez vos amis que vous avez de nouveaux associés.
+Partager avec des amis
+Nouveaux associés
+Souhaitez-vous poster un message à vos amis ?
+%U a de nouveaux associés à Millionaire City !
+%U vient de signer avec de nouveaux associés dans Millionaire City et il peut maintenant réaliser des 'Super Améliorations'. Vous pouvez également vous associer avec %U et obtenir ces bénéfices.
+Obtenir Dollars Bonus
+Nouveaux Bonus
+some experience
+Votre ami vous donne du bonus d'Expérience
+some dollars
+Votre ami vous donne des Dollars Bonus
+Pour fêter votre gain de niveau, voulez-vous offrir du bonus d'Expérience à vos amis ?
+Mission terminée,  voulez-vous offrir des Dollars Bonus à vos amis ?
+placeholder
+Vous pouvez toujours offrir des Dollars Bonus à vos amis !
+Pour fêter la croissance de votre empire des affaires, vous pouvez partager des Dollars Bonus avec vos amis !
+Pour fêter la croissance de votre empire des affaires, vous pouvez partager des Dollars Bonus avec vos amis !
+Vous pouvez toujours offrir des Dollars Bonus avec vos amis !
+placeholder
+Pour fêter la croissance de votre empire,  vous pouvez partager des Dollars Bonus avec vos amis !
+Vous pouvez toujours offrir des Dollars Bonus à vos amis !
+Vous pouvez toujours offrir des Dollars Bonus à vos amis !
+Vous pouvez toujours offrir des Dollars Bonus à vos amis !
+Vous pouvez toujours offrir des Dollars Bonus à vos amis !
+Vous pouvez toujours offrir des Dollars Bonus à vos amis !
+Ajouter un message pour vos amis
+%U vient de commencer à jouer à Millionaire City !
+%U vient juste de commencer à devenir riche en jouant à Millionaire City et il veut partager des Dollars Bonus avec ses amis !
+Obtenir Dollars Bonus
+Ajouter un message pour vos amis
+%U développe sa ville dans Millionaire City !
+Les affaires marchent bien et %U vient de développer sa ville et veut fêter son succès en offrant des Dollars Bonus à ses amis.
+Obtenir Dollars Bonus
+Et maintenant, faites savoir à vos amis que vous avez acheté une nouvelle extension de terrain.
+Nouvelle extension
+Sélectionner l'entrepreneur
+Nous vous avons envoyé un email avec votre carte de membre. Ouvrez-le, cliquez sur le lien pour rejoindre le Club VIP et obtenez votre récompense, Si vous ne recevez pas cet email d'ici 4 jours, merci de recommencer avec un compte email différent.
+Adresse email
+Entrez à nouveau l'adresse email
+Il y a une erreur de syntaxe dans l'adresse email
+Les adresses emails ne sont pas identiques
+Un compte avec cette adresse email existe déjà
+Ce compte email a déjà été enregistré
+Erreur de domaine, merci de vérifier
+J'accepte les Conditions de Confidentialité et de Sécurité
+Déverrouiller
+Déverrouiller le Gymnase !
+Vous voulez offrir à vos citoyens l'opportunité de faire de l'exercice et de rester en forme ? Vous pouvez déverrouiller le Gymnase en effectuant des exercices dans le jeu MMA Pro Fighter. Etes-vous prêt à relever le défi ?
+Ouvrez le théâtre !
+Lumière, caméra, action!  Ouvrez le Théâtre d' Hollywood en jouant à Hollywood City et vivez la magie et la célébrité de l'industrie du cinéma.
+Déverrouillez la barre Vegas !
+Il y a une table de roulette à Las Vegas avec votre nom dessus ! Débloquez la barre Vegas en jouant à Vegas City et gagnez beaucoup d'argent dans la capitale mondiale du jeu.
+Débloquez le Totem Island God !
+On recherche : un Dieu pour une île lointaine avec des habitants sympathiques. Débloquez le totem Island God en atteignant le niveau 5 d'Island God de Digital Chocolate.
+Déverrouiller la Fontaine des elfes
+Récupérez cette superbe fontaine des elfes en jouant à Epic Fighters, un superbe jeu fantastique de Digital Chocolate.
+Déverrouille le cimetière des zombies !
+C’est l’apocalypse des zombies ! Déverrouille le nouveau cimetière des zombies en jouant à Zombie Lane et découvre combien de temps tu peux survivre à une attaque de zombies.
+Objets de collection déverrouillés au niveau %U
+Investissements déverrouillés au niveau %U
+4 POUR 1
+Un acheté, le deuxième gratuit
+%U DE RÉDUCTION
+Gratuit
+Offre limitée dans le temps
+Avez-vous d'autres voisins en attente à accepter ?
+Rejoindre le club
+Erreur lors de l'envoi de l'email. Merci de réessayer plus tard.
+Entrepreneur
+Montrez à vos amis que vous réarrangez votre ville avec le Déménageur !
+Partager cette astuce
+Ajouter un message pour vos amis
+%U vient juste de louer les services du Déménageur et réarrange la ville !
+%U veut partager des Dollars Bonus avec ses amis. Le Déménageur s'occupera de porter toutes les lourdes charges pour vous et votre ville sera encore plus chouette.
+Obtenir des Dollars Bonus
+Entrepreneur
+Montrez à vos amis comment faire marcher les affaires en récupérant plus rapidement les loyers grâce au Collecteur de Loyers !
+Partager cette astuce
+Ajouter un message pour vos amis
+%U vient juste de récupérer plus rapidement ses loyers grâce au Collecteur de Loyers !
+%U veut partager des Dollars Bonus avec ses amis. Ce type vous facilitera la vie et vous permettra de vous occuper d'autres choses dans Millionaire City.
+Obtenir des Dollars Bonus
+Entrepreneur
+Annoncez à vos amis comment la vie peut être plus facile grâce à la Reconductrice de Contrats !
+Partager cette astuce
+Ajouter un message pour vos amis
+%U vient juste de se faciliter la vie dans Millionaire City en embauchant une Reconductrice de Contrats !
+%U veut partager des Dollars Bonus avec ses amis. Cette femme reconduira vos contrats plus facilement et plus rapidement que jamais. Vous n'avez jamais gagné d'argent aussi facilement.
+Obtenir des Dollars Bonus
+Inviter des amis
+Vos amis vous manquent dans Millionaire City? Avec des amis, vous pouvez obtenir plus de dollars, plus d'XP et construire plus rapidement !
+Inviter des amis
+Obtenir des Associés
+Faites l'affaire de votre vie ! Associez-vous avec des amis pour obtenir plus d'argent et plus d'XP.
+Obtenir des Associés
+Aidez %U !
+C'est sympa de visiter les villes voisines, mais ce n'est pas qu'une visite amicale : cliquez sur les maisons de vos amis pour obtenir plus d'argent et d'XP !
+Rendre visite à un ami
+Embauchez de l'aide !
+Votre ville est en plein désordre? Embauchez le Déménageur pendant 24 heures et réarrangez toute votre ville !
+Embaucher de l'aide
+Embauchez de l'aide !
+Vous en avez marre de cliquer ?  Embauchez le Percepteur pour faire le sale boulot à votre place !
+Embaucher de l'aide
+Embauchez de l'aide !
+Vous en avez marre de cliquer ?  Embauchez le reconducteur de contrat pour vous rendre la vie plus facile !
+Embaucher de l'aide
+Citoyens en bonne santé
+Vos citoyens ne sont pas en forme. Débloquez le commerce spécial du Gymnase et aidez-les à mener une vie plus saine.
+Obtenir le Gymnase
+Investir dans un ami !
+Aidez votre ami à démarrer son entreprise. Si son entreprise a du succès, votre investissement vaudra bientôt 100x plus !
+Investir
+Club VIP 
+Rejoignez le prestigieux Club VIP de Millionaire City et profitez des avantages exclusifs comme les cadeaux et les prix !
+Rejoindre
+Demandez de l'aide !
+Ajouter un message pour vos amis
+%U vous demande d'améliorer ses maisons !
+Bâtissez votre réputation en aidant d'autres gens à bâtir la leur ! En améliorant les maisons de vos amis, vous obtenez plus de Dollars et d'XP. Partagez la fortune !
+Améliorer des maisons
+Essai gratuit
+Studio d'Architectes 
+%U demande plus d'expérience dans les affaires immobilières, mais avec le {0xFF6600}%U1{/} Or vous pouvez rencontrer l'Architecte et obtenir les plans.
+Acheter les plans
+%U restants
+Cette horloge est une merveille ! Elle donne l'heure réelle à tes habitants et te donne %U% de probabilité de doubler ton loyer.
+Demandes de cadeaux en attente
+Comme c'est gentil, vos amis vous ont envoyé %U cadeaux !
+Accepter
+Vous avez trouvé un nouvel objet de collection !
+Félicitations, vous avez trouvé un nouvel objet de collection !
+Garder
+Cadeau
+Vous avez trouvé un objet de collection !
+Vous avez trouvé un objet de collection que vous possédez déjà. Soyez un gentil millionnaire et offrez-le à un ami dans le besoin !
+Vendre
+Cadeau
+Choisir un ami à qui offrir un objet de collection
+Envoyez un objet de collection à votre ami(e) !
+Envoyer un cadeau
+Félicitations !
+Félicitations, vous venez juste de terminer votre collection de %U. C'est le moment de récupérer votre récompense !
+Récupérer la récompense
+ECHANGE
+Bien joué !
+Vous avez réussi à compléter une collection et maintenant c'est le moment de faire des étincelles ! Faites connaître à vos amis votre nouveau et chouette %U et partagez des dollars bonus.
+Partager votre succès
+Acheter un objet de collection !
+Pour accélérer votre collection, vous pouvez acheter cet objet de collection avec %U or.
+Acheter
+Des amis peuvent aider !
+Partager, c'est aimer - demandez cet objet de collection à vos amis !
+Demander
+Envoyer un objet de collection en cadeau à votre ami !
+%U vient juste de vous envoyer un objet de collection en cadeau ! Quel bon ami !
+Découvrez ce paquet prometteur et voyez si vous pouvez trouver plus d'objets de collection luxueux dans Millionaire City.
+Accepter le cadeau
+Demandez de l'aide en prévenant vos amis que vous cherchez cet objet de collection.
+%U0 veut vraiment %U1 !
+Rendez %U0 heureux en envoyant un %U1 ! Allez à Millionaire City pour trouver des collections de luxe autour de la ville.
+Envoyer un objet de collection
+C'est le moment de se vanter ! Vous avez collectionné comme un véritable millionnaire et vous avez finalement obtenu %U que tout le monde désire. Partagez la bonne nouvelle avec des dollars bonus !
+%U0 a finalement obtenu %U1 !
+ %U0 a terminé %U1 et veut fêter cela en offrant des dollars bonus. Allez dans Millionaire City et trouvez des objets de collection un peu partout en ville.
+Obtenir les dollars bonus
+Collections
+Coffre
+Collections résidentielles
+Collections commerciales
+Objets de collection
+Vous avez déjà accepté ce cadeau.
+Le coffre est l'endroit où vous conservez toutes les collections terminées. Bonne chance !
+Félicitations ! Vous avez rassemblé toutes les collections\nDe nouvelles collections seront bientôt à découvrir !
+Voulez-vous vraiment vendre ceci ?
+Vous pouvez trouver des objets de collection en percevant les loyers et les revenus commerciaux de votre ville. Plus vous jouez et plus vous acquérez de maisons et de commerces, plus vous aurez de chances d'en trouver. Vous pouvez également les acheter, les demander à vos amis ou les offrir à vos amis.
+Regardez votre collection dans la fenêtre Collection, que vous pouvez ouvrir en cliquant sur l'icône paquet cadeau. Vous pouvez accepter les cadeaux de vos amis dans votre profil Facebook, dans la section  'Invitations à des jeux'.
+Vous pouvez garder jusqu'à 99 objets, mais vous n'en avez besoin que d'un pour compléter une collection. Le reste est à partager avec vos amis !
+Lorsque vous complétez une collection de maisons, vous pouvez demander une Récompense exclusive pour votre ville. Lorsque vous complétez une collection de commerces, vous aurez la possibilité de l'échanger contre davantage d'argent et des points d'expérience. Bonne chance !
+%U requis.
+Obtenez
+Obtenez un objet de collection
+Demandez cet objet de collection à vos amis ou achetez-le à l'aide de {0xFF6600}%U{/} lingots d'or.
+Demande cet objet à tes amis
+Vous n'avez plus de %U à offrir.
+Souhaitez-vous faire cadeau de %U à %U1 ? Il vous en reste encore %U2.
+Envoyer un cadeau
+Envoyer un cadeau
+Vous ne pouvez pas garder plus de %U copies
+Offre spéciale
+Dites Merci !
+Vous avez reçu des objets de collection de vos amis, partagez des pièces avec eux.
+Partagez des pièces de monnaie
+Voulez-vous dire « Merci » ?
+Merci de m'avoir donné un objet de collection !
+Faire cadeau d'objets de collection aide à terminer une collection plus rapidement.
+Obtenir les dollars bonus
+Etes-vous sûr de vouloir détruire ceci ?
+%U objets débloqués
+Déblocage objets de collection !
+Déblocage investissements !
+Tous les amis
+Amis Millionaires
+Recommandé
+Aidez vos amis à lancer leur entreprise. Si vous arrivez à amasser %U en Valeur de la société en %U1 jours, vous aurez accès à des Extensions moins chères et à une prime de %U2!
+Envoyer une demande d'investissement
+Rappel d'investissement
+Votre ami %U compte sur vous ! Il vous reste %U1 pour récupérer $%U2 en Valeur de société. Dépêchez-vous !
+Echec de l'investissement
+Vous n'avez pas été assez rapide pour aider %U à obtenir une prime suite à un investissement sur vous. Montrez à %U que vous avez tout de même la bosse des affaires et gagner des millions à MCity !
+Investissement réussi
+Bravo ! Vous avez montré à %U que vous aviez la bosse des affaires en amassant $4000000 en 20 jours ! Félicitations.
+Renouveler l'entrepreneur
+Aïe, votre Renouveleur de contrats n'a plus de contrat. Si vous renouvelez votre contract avec lui maintenant, vous pourrez bénéficier d'une bonne remise !
+Sélectionner l'affaire
+Renouveler l'entrepreneur
+Aïe, votre Récupérateur de loyers n'a plus de contrat. Si vous renouvelez votre contract avec lui maintenant, vous pourrez bénéficier d'une bonne remise !
+Sélectionner l'affaire
+Ce mode de paiement n'est pas disponible pour le moment. Veuillez réesayer ultérieurement ou utilisez d'autres modes de paiement.
+%u XP !
+%U $ !
+%U Or !
+Des prix de plus en plus magnifiques pour chaque jour consécutif passé à jouer !
+Prix quotidiens !
+Jour %U
+Jouer
+Partager la Fortune
+Montrez à vos amis à quel point la vie peut être facile lorsque l'on achète de l'Or Milionaire City !\n\nVous pouvez le dire à vos amis et partager des dollars bonus avec eux !
+Partager avec des amis
+Ajouter un message pour vos amis
+%U vient juste d'acheter de l'or à Milionaire City !
+%U vient juste d'acheter de l'or pour acquérir les biens les plus haut de gamme à Milionaire City ! - Des dollars bonus sont disponibles !
+Obtenir des dollars bonus
+Oups, vous venez juste de dépenser votre dernier lingot d'or. Procurez-vous plus d'or pour continuer à profiter de la vie !
+Completed
+Nous venons de mettre à jour Millionaire City, merci d'actualiser ton navigateur et de vérifier la nouvelle version.
+Une erreur est survenue avec Millionaire City, essaye d'actualiser ton navigateur !
+Oups, le réseau semble occupé. Merci de patienter, tu devrais pouvoir jouer très bientôt !
+Malheureusement, tes dernières actions n'ont pas pu être sauvegardées. Assure-toi de n'avoir qu'un seul jeu ouvert à la fois.
+Oups, la ville de ton ami(e) a beaucoup de visiteurs. Réessaye dans un instant.
+Déplacement gratuit
+Citronnier
+Malette mystère
+%U déplacements gratuits
+Fleur de printemps
+Stockage
+Inventaire
+Utiliser
+Les cadeaux que tu as reçus apparaissent ici ! \n Tu peux maintenant envoyer des cadeaux à tes amis depuis l’onglet « Cadeaux gratuits », dans le coin en haut à gauche !
+Félicitations ! Tu as :
+Je viens d'ouvrir un cadeau mystère !
+Partager c'est aimer. Entre amis millionnaires, tu peux envoyer et recevoir les cadeaux les plus sympas. 
+Obtenir des dollars bonus
+%U a besoin de plus d’expérience dans le monde de l’immobilier, mais grâce aux Crédits Facebook tu peux rencontrer l’architecte et obtenir les plans. 
+Crédits Facebook insuffisants
+On dirait qu’il te manque %U Crédits Facebook pour obtenir cet élément !
+Ajouter 
+Déblocage anticipé
+Deviens plus riches avec des voisins !
+Tu peux construire plus rapidement et gagner davantage d'argent avec tes voisins ! 
+Invite des voisins
+Deviens plus riches avec des voisins !
+Nouveau ! N’oublie pas d’inviter tes amis pour qu’ils deviennent tes voisins afin qu’ensemble vous construisiez plus vite et gagniez plus d’argent !
+Your Brand New City!
+Hi there! I’m your Millionaire Mentor X. I've been helping people make obscene amounts of money for years. Together we will create the most affluent Millionaire City ever! Let’s start with the basics.
+House Boom!
+Rapid growth and expansion is available for those clever enough to invest wisely. I expect you to be savvy as you progress further with my Missions! All of these next missions involve exploiting this expanding market opportunity – make the most of it for maximum growth.
+Garden Glory!
+There are extra Dollars to be made through well placed Decorations – these increase the worth of affected buildings in Bonuses. These next Missions are about maximizing the profit of your real estate with clever landscaping!
+House Boom II!
+You have showed enormous Millionaire potential by getting this far! Now it’s time to invest heavily in Housing and Commerce to develop your City to new heights! I am about to set you many Assignments that will greatly increase your City Value. After completing them your Millionaire City will be worth countless piles of Millionaire Dollars!
+Leisure and Luxury!
+Another key strategy to building a wealthy Millionaire City is to build plenty of places for your Tenants to relax and enjoy themselves. My next Assignments all focus on providing maximum recreation and pleasure activities for your Tenants to spend their Dollars in!
+Culture Cultivation!
+The essence of style lies in elegance, so it is worth nurturing sophistication within your City. The following Assignments all revolve around culture, as it is important to show Class through your Millionaire City design to get even the snobbiest of citizens to spend their Dollars!
+Back In Business!
+The time has come for you to consider your City Value Ranking against your Friendly Rivals. Have you already beaten Me, Cindy/Ronald and the infamous Sheik Oilfinger? Together we motivate each other to new echelons of success! In this set of Assignments I encourage you to focus on expanding Commercial Enterprise for maximum profit.
+Garden Glory II!
+Well done - congratulations for getting this far! You’re now ready for higher level of challenges. Let’s start thinking about tactical Decoration placement again! The art of maximized profit lies in the skillful use of all the land in your City. These next tasks focus on garnishing further with elaborate decorations.
+Leisure and Luxury II!
+There are still many more Commerces available to build to make your Tenants happy. It’s time to focus again on building indulgent places that offer convenience and recreation. An enjoyable, comfortable Millionaire City is ideal for your Tenants and ideal for your profit!
+High Level Lavishness!
+Wow – I am very impressed by your journey so far! Your City Value is a fantastic reflection of your decisions. These next Assignments are designed to really add that extra layer of polished exuberance to your brilliant Millionaire City. Don’t hold back – Go for that extra Dollar!
+Stunning Skyscrapers!
+It’s time to build Big! Skyscrapers are the ultimate demonstration of urban power. When you build your first Skyscraper, you know you have arrived as a powerful real estate magnate. The Next Assignments will revolve around the mighty Skyscraper Buildings available. Good luck and stay ambitious!
+Name The City
+Choose a powerful name for your new City - something that reflects your Millionaire personality!
+Pizza Paradise
+Your Tenants will need somewhere to eat – and Commerce’s are a brilliant source of regular income! Buy the Pizza Commerce that is near your Headquarters.
+Instant Build Magic!
+Clicking on Buildings under construction allows you to build faster – a really useful feature when you can afford it! Create your first Instant Build!
+Tree Time
+Decorations are more than just beautiful. Each has an influence area that increases the worth of affected Buildings. Place 2 Cypress Trees around any House you own, and note how the bonuses go up!
+Customer Cash
+The amount of money each Commerce generates is proportional to the number of Tenants living around it. Set up Houses around the Pizza Commerce, so that at least 5 Customers can begin eating there!
+Join the Club!
+The prestigious Millionaire City VIP Club allows me to send you news, exclusive gifts and prizes via email. Enter your Email for your very own membership card!
+Commerce Collect
+The Pizza Commerce you built is a great success! Regularly checking back to collect your earnings is one of the key methods to accumulating lots of Millionaire City Dollars. Collect 5 Payments from it!
+Bungalow Bonanza
+More demanding Citizens want you to build a Luxury Bungalow! Build one and start getting more dollars and XP immediately.
+Your Friends
+Friends you add to Millionaire City appear in the Ranking Bar across the bottom of the Game. You and they can help each other out to create the most successful City! Visit one of them to see what tactics and strategies they are utilizing.
+A Real Millionaire City!
+Beat your friends in the ranking bar and gather a City Value of 1,000,000 Dollars to prove to me and them just how successfully rich you can be!
+Bungalow Bonus: 12%
+Get a 12% Income Bonus added to a single Bungalow, by using the decorations cleverly.
+World Of Wonder: Gold Statue 
+Wonders are special Buildings - they take a long time to construct but give exceptional bonuses as well. Build the Gold Statue Wonder to increase the Income Bonus by 5% on all Houses you own!
+Rent Collection: 12
+Collect 10 rents from any Houses.
+Commerce Construction: Coffee Shop
+Remember that your Tenants will always need somewhere to relax and drink coffee! Make the most of this market opportunity and build one Coffee Shop.
+House Construction: Townhouse Luxury
+More spacious than the standard Townhouse, this is an ideal place for Tenants to stay who have a few more Millionaire Dollars to spend!
+Upgraded Income Collection: 52
+When you houses are glittering like diamonds, it means your Friends have visited your City and upgraded the houses. Collect 50 rents from these upgraded buildings.
+Commerce Collection: 10 Coffee Shop
+Collect 10 Income Payments from the Coffee Shop.
+Coffee Shop Clients: 14
+Set up Houses around the Coffee Shop, so that at least 12 Customers can visit there regularly.
+Upgrade Friends Townhouse Luxury: 27
+Visit your Friends Cities and Upgrade 25 Townhouse Luxury Houses by clicking on them!
+House Construction: Duplex
+More spacious than the standard Townhouse, this is an ideal place for Tenants with a few more Millionaire Dollars to spend!
+Investment Invitations: 12
+Send out 10 Investment Requests to your Friends, offering to help them start their businesses and get royally rewarded!
+Tool Techniques: Move Tool
+The Move Tool is very handy when you want to rearrange your City. Use it to move a Cypress Tree Decoration.
+Commerce Construction: Sushi Bar
+This Commerce will allow your Tenants another place to eat, and there can never be too many choices! Provide this feast of fresh Sushi to your citizens.
+House Construction: Duplex Luxury
+This model of the Duplex House makes room for a few more Tenants and is an ideal way for you to make more Millionaire Dollars from them.
+Rent Collection: 52
+Collect 50 rents from any Houses.
+Commerce Construction: Flower Shop
+Build a Flower Shop so that your tenants can enjoy the sweet scent of fresh flowers in their luxurious homes. Make the most of this market opportunity.
+Decoration Placement: Windmill
+Wealth comes with responsibility- build a source of renewable energy in your City. With a massive Influence area, the Windmill looks great in any City.
+Upgrade Friends Duplex Luxury: 52
+Visit your Friends Cities and Upgrade 50 Duplex Luxury Houses by clicking on them!
+Decoration Placement: 4 Palms
+Essential for a rich, breathing eco-system are as many plants as you can place! These Palms also have the added bonus of a tropical feel.
+Decoration Placement: 2 Agave Plants
+A pair of these Agave Plants will offer a wide Influence area for your House Income Bonuses and fresh cultivated feel for your City!
+Duplex Luxury Bonus: 30%
+Get a 30% Income Bonus on a single Duplex Luxury by being clever with your Decorations!
+Flower Shop Clients: 32
+Set up Houses around the Flower Shop, so that at least 30 Customers can shop there regularly.
+Decoration Placement: 3 Balloon Boys
+A Guaranteed way to make any area instantly more fun are the Balloon Boys. Buy 3 to get three times more color and fun!
+Millionaire Dollar count: 1,000,002
+Through continued growth, it is possible to accumulate impressive fortunes. Show your potential as a magnate and gather 1,000,000 Millionaire Dollars!
+Commerce Collection: 50 Flower Shop
+Collect 50 Incomes from the Flower Shop.
+Decoration Placement: Silver Maple
+The nature of these beautiful plants offer a large House Income Bonus. Let your Tenants chill in its silvery shadow.
+Investment Successes: 7
+Make 5 successful Investments on Friends. Remember that you both benefit from this deal!
+Decoration Placement: 3 Fountains
+Fresh water features are great for making any City luxuriously flowing. Build 3 for maximum bonuses anywhere in your Millionaire City.
+Decoration Placement: 5 Apple Trees
+Planting these 5 Apple Trees will guarantee organic apples for your selective Tenants! They are great for little gaps around Houses.
+Tool Techniques: Collect Tool
+Collecting individual Rent Payments can sometimes be a chore if you have a lot, but Rent Collector is here to help you! Try him out with a 6 minute free trial.
+House Construction: Three Story Luxury 
+An exemplary place to stay, as this model of the Three Story House offers much more for the discriminatory Tenant.
+Commerce Construction: McDollars
+More Houses means more Tenants, and they will always pay for somewhere to eat delicious fast food. A prospect well worth investing in.
+Investment Invitations: 20 More
+Send out 20 more Investment Requests to your Friends, offering to help them start their businesses and grow your own portfolio at the same time!
+Friend Visit: 42
+Visit Friends Cities at least 40 times. This is a good way to evaluate your competition!
+Contract Collection: 102
+Collect 100 Rents from any Houses and see the Dollars flowing in.
+House Construction: Apartment Block
+Four Stories tall, this House allows many more Tenants to stay - which means many more Millionaire Dollars when you build one!
+Decoration Placement: 6 Orange Trees
+The scent and sight of Orange Trees are sure to tantalize the senses of your Tenants. Plant 6 so you can spread the fruity benefits everywhere!
+Commerce Construction: Pet Shop
+As your Tenants settle into domestic bliss, often they will purchase animal companions. Provide them with a Pet Shop to pamper man’s best friends!
+Upgrade Friends Eco-Home: 62
+Visit your Friends Cities and Upgrade 60 Eco-Home Houses by clicking on them!
+Tool Techniques: Contract Tool
+Similar to the Rent Collector, the Contractor Lady is useful when you have a lot of Rent Contracts to sign all at once. Try her out with a 6 minute free trial!
+Rock Star Contract Collection: 202
+Utilize the Rock Star Contract 200 times by signing in Rock Star Tenants to your Houses.
+Commerce Collection: 100 Pet Shop
+Collect 100 Income Payments from the Pet Shop.
+Upgrade Friends Apartment Block Luxury: 72
+Visit your Friends Cities and Upgrade 70 Apartment Block Luxury Houses by clicking on them!
+Apartment Block Luxury Bonus: 60%
+Get a 60% Income Bonus added to a single Apartment Block Luxury, by shrewdly placing your Decorations in strategic places.
+Pet Shop Clients: 52
+Set up Houses around the Pet Shop, so that at least 50 Customers can visit there regularly.
+Commerce Construction: Bowling Alley
+An extremely fun way for your Tenants to spend their leisure time. Build a Bowling Alley to entertain your Tenants of all ages!
+House Construction: House of Harmony
+A lovely place of peace and quiet with a big front garden, where your Tenants can live in a totally zen environment.
+Friend Visit: 82
+Go to your Friends Cities at least 80 times and have a look at how they are developing. This is a good way to evaluate your own play style!
+Commerce Construction: Jewelry Shop
+Nothing says luxury like Diamonds! Setting up a Jewelry Business is an opportunity not to be missed!
+World of Wonder: Two More
+Wonders are always worth it - they take a long time to construct but the bonuses make them worthwhile. Build any 2 more Wonders of your choice to boost your income!
+Villa Bonus: 90%
+Get a 90% Income Bonus added to a single Villa, by cleverly placing Decorations.
+Bowling Alley Clients: 202
+Set up Houses around the Bowling Alley, so that at least 200 Customers can visit there regularly.
+Expansion!
+The time has come for you to purchase an expansion so you can further extend your ever growing Millionaire City. Buy any that is unlocked and get ready to further expand your Empire!
+Contract Collection: 202
+Collect 200 Rents from any Houses.
+House Construction: Loft Block
+The height of 5 Stories sets this House apart from many others. Invest in one to allow a similarly gigantic number of Tenants to stay all at once!
+Investment Successes: 12
+Complete 10 Investments successfully with Friends. Remember that you both benefit from this business affiliation!
+Commerce Construction: Night Club
+An ideal way to provide night time entertainment, and a brilliant source of income for you. Building a Night Club is the best way to get those party dollars in your pocket.
+Jewelry Store Clients: 152
+Set up Houses around the Jewelry Store, so that at least 150 Customers can visit there regularly.
+Upgrade Friends Loft Block: 102
+Visit your Friends Cities and Upgrade 100 Loft Block Houses by clicking on them!
+Commerce Collection: 150 Bowling Alley
+Collect 150 Income Payments from the Bowling Alley.
+House Construction: 2 Villa Luxury
+A more lavish model of the Villa, which is perfect for allowing more refined Tenants with style to stay. Build a pair to maximize your future profit margins!
+House Construction: 2 Colonial House
+An amazing place for your Tenants that prefer a slower pace of life, with an elegant historical style. Build 2 so that more potential Tenants can experience simplicity.
+Decoration Placement: 6 Art Nouveau Lamps
+These Lamps are sophistication defined! Building 6 will artistically light the way across your Millionaire City.
+Commerce Construction: Mall
+Although far from classically sophisticated, the Mall is certainly a symbol of modern Western Culture and a great way to make many Millionaire Dollars! Give your Tenants somewhere to shop ‘til they drop.
+Villa Luxury Bonus: 100%
+Get a 100% Income Bonus added to a single Villa Luxury, with the cunning use of your Decoration purchases.
+House Construction: 2 Parisian Town House
+7 whole Stories of beautifully polished Parisian style. Construct 2 so that twice as many Tenants can bask in its sumptuous luxury!
+Decoration Placement: 4 Japanese Trees
+A beautiful example of Eastern Culture - they have an unusual wide Influence, so they can be strategically planted to maximize House Income Bonus.
+Decoration Placement: 5 Bamboos
+Represent more Eastern Culture by sowing these 5 Bamboo plants. Their appeal means they have a big Influence!
+Decoration Placement: Big Garden
+Although expensive, the massive Influence and House Income Bonus combined with extraordinary attractiveness make this Big Garden well worth investing in.
+Mall Clients: 252
+Set up Houses around the Mall, so that at least 250 Customers can visit there regularly.
+Friend Visit: 122
+Go to your Friends Cities at least 120 times and have a look at how they are developing. This is a good way to evaluate your own play style and competition!
+Investment Invitations: 30 More
+Send out 30 more Investment Requests to your Friends, offering to help them start their businesses and improve your own portfolio at the same time!
+Decoration Placement: Statue of David
+A rare masterpiece Statue that will look perfect adorning any Millionaire City. Straight from Renaissance Italy – a true work of Art.
+Decoration Placement: 2 Arch of Success
+More indication of Eastern Culture can be benefitted from with this decorative Arch. Build a pair so your Millionaire City can become a Success too!
+Upgrade Friends Parisian Town House: 152
+Visit your Friends Cities and Upgrade 150 Parisian Town Houses by clicking on them!
+Contract Collection: 602
+Acquire 600 elapsed Rental Contracts from any Houses.
+Decoration Placement: Triumph Arch
+Another Decoration that allows massive House Income Bonus and Influence. Building one of these is ideal for increasing City Value.
+Upgrade Friends Skyscraper: 182
+Visit your Friends Cities and Upgrade 180 Skyscraper Houses by clicking on them!
+Commerce Construction: Bank
+All thriving Business and Commercial capitalists need a good Bank to store all of their money! A Bank Commerce will never be out of business.
+Commerce Construction: Hospital
+Looking after your Tenants is of paramount importance, and a Hospital allows strong growth in the long run. Construct a Hospital to keep your Tenants in good health!
+Spy Scheme
+My Friendly Rivals Ronald Goldtooth/Cindy Jewels and Sheik Oilfinger seem to be plotting again. Click on them in the Ranking Bar to access their City’s and have a sneaky peek what they are up to!
+House Construction: Futuristic City Block
+Industry thrives on cutting-edge technology, so allow your Tenants to live in only the most automated environment offered!
+Investment Successes: 22
+Complete 20 Investment Partnerships successfully with Friends! You both benefit from this business affiliation.
+House Construction: 2 Skyscraper Luxury
+Dazzling and designed with maximum efficiency in mind, the Skyscraper Luxury is perfect for creating bustling hives of activity. Build 2 for twice as much capital to be generated!
+Overtake Sheik
+I have known Sheik Oilfinger a long time, but not even I have known him to be this rich! Pass this Mission by developing more Company Value than Sheik!
+Loft Block Luxury Bonus: 150%
+Get a 150% Income Bonus added to a single Loft Block Luxury, by being smart with your Decorations.
+Commerce Collection: 300 Bank
+Obtain 300 Income Payments from the Bank.
+Friend Visit: 152
+Go to your Friends Cities at least 150 times and have a look at how they are developing and progressing. This is a good way to evaluate your own play style!
+House Construction: Chrysler Building
+The Art Deco classic straight from New York is the ideal place to inspire your Tenants working in your City. Invest in one to aggressively expand your profit margins.
+Expansion II!
+The time has come for you to purchase another expansion – the missing piece of your ever expanding Empire. Buy any that is unlocked and get ready to further extend your City.
+Decoration Placement: 20 Gold Maple
+These beautiful Gold Maples are ideal replacements for lesser Decorations, with their added Bonus percentage!
+Hospital Clients: 302
+Set up Houses around the Hospital, so that at least 300 Customers can be treated there regularly.
+Decoration Placement: 10 Spruce
+The Spruce Decoration is an ideal method to make any Millionaire City look more green and healthy. It also offers a healthy Bonus for you!
+Investment Invitations: 40 More
+Send out 40 more Investment Requests to your Friends, offering to help them start their businesses.
+Decoration Placement: 15 Birch Tree
+These are a great way to fill in the little gaps around your Millionaire City, since each of them maintain a strong Influence.
+Upgrade Friends Loft Block Luxury: 302
+Visit your Friends Cities and Upgrade 300 Loft Block Luxury Houses by clicking on them!
+House Construction: Designer House
+The world of Design collides with business in this cutting edge House. Perfect for the modern Tenant.
+House Construction: Chateau
+A gorgeous House to satisfy any Tenant. Looks spectacularly good in any garden area!
+Designer House Bonus: 200%
+Get a 200% Income Bonus added to a single Designer House, by placing Decorations in cunning positions!
+Football Star Contract Collection: 402
+Utilize the Football Star Contract 400 times when signing in Football Star Tenants to your Houses.
+Decoration Placement: 5 Chafa
+Chafas are very special garden Decorations with a massively strong Influence. Perfect for boosting the Bonuses of Houses.
+Commerce Construction: Opera House
+Build a busy Performing Arts centre for your Tenants! Guaranteed to quickly turn into profit with style.
+Friend Visit: 202
+Go to your Friends Cities 200 times and have a look at how they are developing. This is a good way to evaluate your own play style!
+Upgrade Friends Chateau Houses: 352
+Visit your Friends Cities and Upgrade 350 Chateau Houses by clicking on them!
+Decoration Placement: 3 Fountain II
+These Fantastic Fountains offer a wider influence than the first Fountain incarnation - ideal for any garden area or plaza.
+Contract Collection: 1002
+Acquire 1000 elapsed Rental Contracts from any Houses.
+Opera House Clients: 352
+Set up Houses around the Opera House, so that at least 350 Customers can find entertainment there.
+Commerce Collection: 600 Opera House
+Collect 600 Income Payments from the Opera House.
+Decoration Placement: 1 Pond of Wealth
+An amazing water feature that brings tranquility to any City, combined with a massive House Income Bonus!
+World of Wonder: Three More
+They take a long time to construct but the bonuses of built Wonders make them worth the wait! Build any 3 more Wonders of your choice to make your Tenants and Visitors gasp at their amazing scale!
+Commerce Construction: Casino
+Some would say this is an ultimate place for entertainment. Let your Tenants revel in the glitz and glamour whilst handing over their Dollars to You!
+Commerce Construction: Stadium
+An amazing place for your Tenants to view all of the latest live outdoor Sports! Build it as another leisure facility for their use.
+Casino Clients: 402
+Set up Houses around the Casino, so that at least 400 Customers can find entertainment there regularly.
+House Construction: Futuristic
+Straight from the future is this super space-age living facility. The pinnacle of modern architecture, it is complete with massive glass walls for panoramic views.
+Expansion III!
+Another Expansion is needed if you are to fully realize the potential of your Millionaire City! You can only grow through aggressive expanding!
+Upgrade Friends Futuristic Houses: 452
+Visit your Friends Cities and Upgrade 450 Futuristic Houses by clicking on them!
+Investment Successes: 32
+Complete 30 Investment Partnerships successfully with Friends and remember that you both benefit from this business affiliation.
+Commerce Construction: Hotel Midas
+A brilliant place for holidays and vacations, this exclusive luxury Commerce is ideal for the more discerning Tenant.
+Stadium Clients: 402
+Set up Houses around the Stadium, so that at least 400 Customers can go and see live Sports there.
+Hostesses Contract Collection: 502
+Use Hostesses Contract 400 times when signing in Hostess Tenants to your Houses.
+Commerce Construction: Midas Mall
+Building this Commerce results in a gigantic Influence over the neighboring Houses, and is certainly one of the best places your Tenants can spend their money!
+Commerce Collection: 800 Casino
+Obtain 800 Income Payments from the Casino.
+Commerce Collection: 1000 Stadium
+Collect 1000 Income Payments from the Stadium.
+Hotel Midas Clients: 452
+Set up Houses around the Hotel Midas, so that at least 450 Customers can find go and relax there regularly.
+Futuristic House Bonus: 230%
+Get a 230% Income Bonus added to a single Futuristic House, by being shrewd with Decorations!
+Commerce Collection: 1200 Hotel Midas
+Collect 1200 Income Payments from the Hotel Midas.
+Contract Collection: 1252
+Collect 1250 Rents Contracts from any Houses.
+Friend Visit: 302
+Go to your Friends Cities at least 300 times and have a look at how they are developing. This is a good way to size up your competition!
+Midas Mall Clients: 452
+Set up Houses around the Midas Mall, so that at least 450 Customers can go and shop there often.
+Commerce Collection: 1500 Midas Mall
+Collect 1500 Income Payments from the Midas Mall.
+House Construction: Luxury Mansion 
+A beautiful place to stay for the most demanding of Tenants! Polished marble floors and solid Gold window frames add to the abundant sumptuousness.
+Investment Invitations: 50 More
+Send out 50 more Investment Requests to your Friends, offering to help them start their businesses and help your own portfolio at the same time.
+Expansion IV!
+Time to Expand your City again! You can’t have too much space for luxury. Buy any expansion that is currently unlocked.
+Upgrade Friends Luxury Mansion Houses: 502
+Visit your Friends Cities and Upgrade 500 Luxury Mansion Houses by clicking on them!
+Luxury Mansion Bonus: 250%
+Get a 250% Income Bonus added to a single Luxury Mansion, by placing your Decorations in the best areas!
+Commerce Construction: Baseball Stadium
+One of the greatest Commerces available for purchase - absolutely guaranteed to create a massive profit with each payment turnover for you, should you invest.
+Artists Contract Collection: 802
+Use Artists Contract 800 times when signing in Artist Tenants to your Houses.
+House Construction: Luxury Mansion II
+Twice as opulent as the original Luxury Mansion, this is ideal for Tenants who are twice as wealthy as well! Excessively extravagance for those who can afford it.
+Baseball Stadium Clients: 502
+Set up Houses around the Baseball Stadium, so that at least 500 Customers can go and watch Games there!
+Upgrade Friends Luxury Mansion II Houses: 602
+Visit your Friends Cities and Upgrade 600 Luxury Mansion II Houses by clicking on them!
+Luxury Mansion II Bonus: 280%
+Get a 280% Income Bonus added to a single Luxury Mansion II, by being extra clever with Decoration placement.
+Commerce Collection: 1750 Baseball Stadium
+Collect 1750 Income Payments from the Baseball Stadium.
+Friend Visit: 402
+Go to your Friends Cities at least 400 times and have a look at how they are developing. A Chance to size up the competition.
+Contract Collection: 1502
+Collect 1500 Rents from any Houses.
+House Construction: Super Skyscraper
+The next in the Skyscraper range is the Super model of skyscrapers. It will gloriously stand above your other City buildings.
+House Construction: Skyscraper Ultimate
+Habitable by even more Tenants than the Super Skyscraper, the Ultimate offers even more architectural excellence in a brilliant aerodynamic shape.
+Friends Contract Collection: 1002
+Use Friends Contract 1000 times when signing in Friends Tenants to your Houses.
+Investment Successes: 42
+Make 40 successful Investments on Friends and see your portfolio explode!
+Upgrade Friends Super Skyscraper Houses: 702
+Visit your Friends Cities and Upgrade 700 Super Skyscraper Houses by clicking on them!
+House Construction: Highland Castle
+A magnificently beautiful country Castle that offers culturally significant luxury! Just be careful around midnight, this Castle might be haunted…
+Skyscraper Ultimate Bonus: 290%
+Get a 290% Income Bonus added to a single Skyscraper Ultimate, by being a shrewd Decoration placer!
+Contract Collection: 2002
+Acquire 2000 elapsed Rental Contracts from any Houses.
+Expansion V!
+Once again, it is worth buying an unlocked Expansion for your City! Certainly a wise purchase since you’ll need loads of space for your most ambitious real estate ventures to date!
+World of Wonder: Four More
+Wonders always give fantastic Bonuses that make up for their long construction time. Build any 4 more so that your Tenants can enjoy their colossal scale, while you enjoy their colossal Bonuses!
+House Construction: Brazilian Skyscraper
+The pinnacle of the Skyscraper range offers an unprecedented amount of Tenants to stay. Truly the crown jewel of all Skyscrapers, enough to impress any magnate!
+Commerce Collection: 50 Coffee Shop
+Obtain 50 Income Payments from the Coffee Shop.
+Commerce Collection: 100 Flower Shop
+Obtain 50 Income Payments from the Flower Shop. 
+Commerce Collection: 200 Pet Shop
+Obtain 200 Income Payments from the Pet Shop.
+Commerce Collection: 300 Bowling Alley
+Obtain 300 Income Payments from the Bowling Alley.
+Commerce Collection: 600 Bank
+Obtain 600 Income Payments from the Bank.
+Commerce Collection: 800 Opera House
+Obtain 800 Income Payments from the Opera House.
+Commerce Collection: 1000 Casino
+Obtain 1000 Income Payments from the Casino.
+Commerce Collection: 1200 Stadium
+Obtain 1200 Income Payments from the Stadium.
+Commerce Collection: 1500 Hotel Midas
+Obtain 1500 Income Payments from the Hotel Midas.
+Commerce Collection: 2000 Midas Mall
+Obtain 2000 Income Payments from the Midas Mall.
+Commerce Collection: 2500 Baseball Stadium
+Obtain 2500 Income Payments from the Baseball Stadium.
+Pizzeria Clients: 12
+Set up Houses around the Pizzeria, so that at least 10 Customers can visit there regularly.
+Coffee Shop Clients: 26
+Set up Houses around the Coffee Shop, so that at least 24 Customers can visit there regularly.
+Flower Shop Clients: 52
+Set up Houses around the Flower Shop, so that at least 50 Customers can visit there regularly.
+Pet Shop Clients: 82
+Set up Houses around the Pet Shop, so that at least 80 Customers can visit there regularly.
+Bowling Alley Clients: 252
+Set up Houses around the Bowling Alley, so that at least 250 Customers can visit there regularly.
+Jewelry Store Clients: 222
+Set up Houses around the Jewelry Store, so that at least 150 Customers can visit there regularly.
+Mall Clients: 302
+Set up Houses around the Mall, so that at least 300 Customers can visit there regularly.
+Hospital Clients: 352
+Set up Houses around the Hospital, so that at least 350 Customers can be treated there regularly.
+Opera House Clients: 402
+Set up Houses around the Opera House, so that at least 400 Customers can find entertainment there often.
+Casino Clients: 452
+Set up Houses around the Casino, so that at least 450 Customers can find entertainment there regularly.
+Stadium Clients: 452
+Set up Houses around the Stadium, so that at least 450 Customers can find go and see live Sports there often.
+Hotel Midas Clients: 502
+Set up Houses around the Hotel Midas, so that at least 500 Customers can find go and relax there regularly.
+Midas Mall Clients: 502
+Set up Houses around the Midas Mall, so that at least 500 Customers can go and shop there often.
+Baseball Stadium Clients: 552
+Set up Houses around the Baseball Stadium, so that at least 550 Customers can go and watch Games there!
+Upgrade Your Friends Buildings: 8
+Upgrade any 6 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 22
+Upgrade any 20 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 52
+Upgrade any 50 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 102
+Upgrade any 100 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 202
+Upgrade any 200 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 402
+Upgrade any 400 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 652
+Upgrade any 650 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 852
+Upgrade any 850 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 1002
+Upgrade any 1000 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 1252
+Upgrade any 1250 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 1502
+Upgrade any 1500 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 1752
+Upgrade any 1750 of your Friends Buildings by clicking on them in their City!
+Upgrade Your Friends Buildings: 2002
+Upgrade any 2000 of your Friends Buildings by clicking on them in their City!
+Upgraded Income Collection: 102
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 100 from these specially granted Buildings.
+Upgraded Income Collection: 202
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 200 from these specially granted Buildings.
+Upgraded Income Collection: 402
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 400 from these specially granted Buildings.
+Upgraded Income Collection: 802
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 400 from these specially granted Buildings.
+Upgraded Income Collection: 1202
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 1200 from these specially granted Buildings.
+Upgraded Income Collection: 1602
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 1600 from these specially granted Buildings.
+Upgraded Income Collection: 2002
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 2000 from these specially granted Buildings.
+Upgraded Income Collection: 2502
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 2500 from these specially granted Buildings.
+Upgraded Income Collection: 3002
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 3000 from these specially granted Buildings.
+Upgraded Income Collection: 3502
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 3500 from these specially granted Buildings.
+Upgraded Income Collection: 4002
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 4000 from these specially granted Buildings.
+Upgraded Income Collection: 5002
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 5000 from these specially granted Buildings.
+Upgraded Income Collection: 6402
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 6400 from these specially granted Buildings.
+Upgraded Income Collection: 7402
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 7400 from these specially granted Buildings.
+Upgraded Income Collection: 8502
+A flashing Star Halo appears around your Houses, after your Friends have visited your City and Upgraded them. Collect 8500 from these specially granted Buildings.
+City Value: 5 Million
+Accumulate a total City Value of 5,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 10 Million
+Accumulate a total City Value of 10,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 50 Million
+Accumulate a total City Value of 50,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 120 Million
+Accumulate a total City Value of 120,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 240 Million
+Accumulate a total City Value of 240,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 500 Million
+Accumulate a total City Value of 500,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 1000 Million
+Accumulate a total City Value of 1000,000,000 Dollars to prove to me and them just how successfully rich you can be!
+City Value: 2000 Million
+Accumulate a total City Value of 2000,000,000 Dollars to prove to me and them just how successfully rich you can be!
+Millionaire Dollar count: 5,000,002
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 5,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 10,000,002
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 10,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 20,000,002
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 20,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 40,000,002
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 40,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 80,000,002
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 80,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 150,000,002
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 150,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 250,000,002
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 250,000,000 Millionaire Dollars ready to spend!
+Millionaire Dollar count: 400,000,002
+Through continued prosperous growth, it is possible to accumulate an upward spiral of wealth. Prove to me you can make 400,000,000 Millionaire Dollars ready to spend!
+Pâtis. d'Irlande
+Gratteciel jardin
+Jardins hydroponiques, boutiques, appartements et ravissantes places, tous reliés par des passerelles de verre
+La Villa verte
+Dans un écrin de verdure, cette villa luxuriante vous plonge au cœur de la nature.
+Immeuble Quad
+Une tour à 4 blocs, chacun suspendu à la même barre centrale.
+La maison Botte
+Maison en teck en forme de chaussure !
+La maison Inverto
+Une maison familiale équipée de tout le confort, au charme complètement renversant
+Bout Livres Géants 
+Grand Panier 
+Tour penchée de Wanaka
+Magic Tap
+Tour œuf Pâques
+Invitez vos locataires dans ce gratte-ciel en forme d'œuf.
+Mais. œuf
+Vos locataires et leurs enfants vont adorer cette adorable petite maison œuf.
+Magasin de gâteaux
+Panier œuf
+Lapin de Pâques
+Œuf de Pâques
+Villa de star du foot 
+6 chambres luxueuses, une piscine et toutes les commodités dont vous avez besoin pour vous entraîner comme un champion de football.
+Gratte-ciel Super Sports
+Cet incroyable gratte-ciel au style unique vous permet de profiter d'installations sportives de pointe dans votre propre maison. 
+Boutique de sport
+Bar sports et dollars
+Gratte-ciel super technologique
+Conçu par les plus célèbres technologues de la planète, ce gratte-ciel offre à vos locataires la possibilité de profiter de gadgets et d’installations à la pointe de la technologie directement depuis le pas de leur porte ! 
+Boutique SuperOrdi
+Ballon étourneaux
+Robbie le Robot
+Communicateur satellite 
+Débloquez le ballon étourneaux !
+Débloquez le ballon étourneaux en vous lançant dans l’exaltante aventure Galaxy Life ! Un tout nouveau jeu de Digital Chocolate.
+Débloquer
+Semaine En construction
+Stop 
+Construction place de stationement
+15 Penn Plaza
+68 étages de classe, d'élégance et de sophistication pures
+Grue MCity 
+World One
+Construisez la plus haute résidence du monde, rentrez dans l'histoire moderne avant même qu'elle n'ait lieu!
+Tour Fédération
+Ensemble de gratte-ciels à la pointe de l'équipement pour époustoufler tous les locataires!
+Tour Verre
+Gratte-ciel de luxe ultramoderne avec des tours jumelles.
+Semaine des sites de construction! Une vraie ville est toujours en mouvement, il se construit partout quelque chose! Construis d'imposants sites de construction et des merveilles d'architecture!
+Semaine El Dorado
+Bout. d'artef
+Pièce azt.
+Le Totem
+Fontaine d'or
+Tour du Temple d'or
+Eblouissez vos locataires avec cette tour d'or et de pierres précieuses! Vivez dans une superstructure légendaire.
+Maison El Dorado
+Creusée dans de l'or 24 carats, elle recèle de rares trésors enfouis.
+Semaine El Dorado! Vive la légende de l'El Dorado! Cette semaine, décore ta ville grâce aux trésors incroyables de la cité perdue d'or.
+Anniversaire Millionaire City
+Mais. gât. II
+Une délicieuse maison gâteau pour ravir les papilles de vos locataires et de leurs enfants. Ne dévorez pas tout!
+Tour d'anniv.
+Eblouissez vos locataires avec ce gratte-ciel à panneau LED.
+Tour célébration
+Le lieu parfait pour une fête grandiose entre amis millionnaires!
+Hôtel des million.
+Col. de dollars
+Clown d'anniv.
+Bouquet fleurs
+Joyeux anniversaire Millionaire City ! Millionaire City a 2 ans. Allons fêter ça ! De superbes décorations et des bâtiments t'attendent dans la boutique. Va jeter un coup d'oeil !
+Motel
+Avec chambres comprenant des lits grande taille, internet à haut débit gratuit, une salle d'arcade et une blanchisserie gratuite.
+Gratte-ciel doré
+Repousse le plafond avec ce gratte-ciel rare et somptueux. Plus de 100 étages d'opulence dans le plus pur style Vegas !
+Tour Mirage
+En route pour l'exotisme dans ce gratte-ciel de luxe. Entrez et tombez en émoi devant le luxe ultime!
+Tour de charme
+Gratte-ciel ultramoderne de 65 étages aux appartements ciselés de luxe pour éblouir vos locataires.
+Maison casino
+Luxueuse, vaste et surprenante! Tentez votre chance aux machines à sous ou au poker dans cette maison casino.
+Cowboy néon
+Signe Bienvenue
+Cactus néon
+Tour Vegas
+Hôtel Vegas
+Vegas !
+Ce qui se passe à Vegas, reste à Vegas ! Alors amuse-toi avec les tout nouveaux buildings !
+Aquarium
+
+Tour étoile
+Une tour résidentielle de classe internationale fonctionnant en autonomie pour un an sans rien coûter à la ville.
+Tour de la charrette
+Un bel exemple d'architecture moderne. Invitez et séduisez vos locataires par les technologies de la tour.
+Tour T
+Explorez le potentiel infini de ce gratte-ciel unique en forme de T : sa superbe vue et ses installations épurées !
+Tour Bitexco
+Gratte-ciel de 68 étages et 6 ascenseurs avec héliport privé s'élançant hors de la tour.
+Wall Centre
+Un bijou en provenance du Canada. Plus de 40 étages de confort, d'élégance et de beauté.
+Sublime Skyscraper
+Cet incroyable gratte-ciel au style unique vous permet de profiter d'installations sportives de pointe dans votre propre maison. 
+Galerie d'art
+Super argent
+Ghost Biker
+Marteau
+Hélico privé
+Arbre à dollars
+
+Luxe, luxe, luxe
+Que serait un millionnaire sans le luxe? Profite de ta fortune et offre-toi les édifices les plus spectaculaires jamais vus à Millionaire City! Va faire un tour à la boutique! 
+
+Spa de luxe
+Café Rich Rock
+Dollars de football
+Parc aquatique
+Zoo
+Station de MCTV
+CN Tower
+Station spatial privée
+Croisière casino
+Boutique
+Stand de hot-dogs
+Kodak Theater
+Club de Yatch
+Space needle de Seattle
+Opera House de Sydney
+Tour du football
+Statue de la botte de football
+Drapeau croate
+Drapeau danois
+Drapeau anglais
+Drapeau français
+Drapeau allemand
+Drapeau grec
+Drapeau irlandais
+Drapeau italien
+Drapeau hollandais
+Drapeau polonais
+Drapeau portugais 
+Drapeau russe
+Drapeau espagnol
+Drapeau suédois
+Drapeau tchèque
+Drapeau ukrainien
+
+Projection publique
+Stade de football
+Quartier général de la fédération de football
+
+Hôtel des footballeurs
+Les meilleurs joueurs de foot viennent se reposer ici entre les matchs importants. Ces confortables chambres de luxe répondent à tous les besoins des joueurs pour se préparer et faire le plein d'énergie pour les matchs à venir.
+
+Terrain de beach volley
+Stand de limonade
+Stand de glaces
+Plantes méditerranéennes
+Grand aquarium
+
+Agence de voyage
+Piscine en plein air
+Cinéma en plein air
+Parc d'aventures estival
+Marchand de surfs
+Terrain de kart
+Loueur de jet ski
+
+Hôtel de vacances
+Passe tes vacances à côté de la piscine de l'hôtel avec tout le luxe dont tu rêves !
+Camping de luxe
+C'est l'hébergement parfait, si tu veux sortir de la ville bruyante, passer tes nuits autour d'un feu de camp et dormir sous les étoiles !
+
+Famille extra-terrestre
+Lieu d'atterrissage
+Signes dans les champs de maïs
+
+
+OVNI Express
+
+Maison flottante
+Le paiement se fait toujours en avance. Pas eu beaucoup de locataires après le déménagement.
+Maison OVNI
+Beaucoup ont peur du générateur d'énergie tout en haut du bâtiment. Mais il n'y a pas de danger. Probablement pas.
+Tour extra-terrestre
+Un cadeau d'une autre galaxie. L'espace dans le bâtiment est courbé pour que les locataires aient deux fois plus d'espace que d'habitude. 
+Tour OVNI
+Seulement les plus riches peuvent se permettre d'acheter un appartement dans ce bâtiment.
+
+Oie en or
+
+Calèche citrouille
+La lampe magique
+Excalibur
+
+Tour de Raiponce
+La vue est belle d'en haut et la propriétaire est très gentille. Mais l'évier est souvent bouché à cause des cheveux.
+Maison des 3 petits cochons
+Maisons justes reconstruites. Les loups ne sont pas les bienvenus ici !
+
+Bateau de pirates
+
+Café des Amoureux
+Mariage à Vegas
+
+Studios d'Abbey Road
+Stade de Wembley
+
+Chocolaterie
+
+Salon de thé japonais
+
+Fromagerie
+
+Planet Hollywood
+
+Salle zombie

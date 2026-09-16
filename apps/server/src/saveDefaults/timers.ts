@@ -1,6 +1,5 @@
 import fs from "fs";
 import type { JsonObject } from "@mcity/shared/dist/types.js";
-import { loadConstructionTimeBySku } from "../rules.js";
 import { leafElement } from "../saveTree.js";
 import {
   DEFAULT_ABANDON_MINUTES,
@@ -8,13 +7,60 @@ import {
 } from "./constants.js";
 import {
   CONTRACTS_PATH,
-  ITEM_DEFINITIONS_PATH,
   SETTINGS_PATH
 } from "./paths.js";
 
 const CONTRACT_INCOME_TIME_BY_SKU = loadContractIncomeTimeBySku(CONTRACTS_PATH);
-const CONSTRUCTION_TIME_BY_SKU = loadConstructionTimeBySku(ITEM_DEFINITIONS_PATH);
 const { minTimeMs: ABANDON_MIN_TIME_MS, percentage: ABANDON_TIME_PERCENTAGE } = loadAbandonTimingSettings(SETTINGS_PATH);
+
+/**
+ * Reconciles the wall-clock timer used by the recovered backend for item
+ * states 0 through 6. Saves created before savedAt was introduced are
+ * migrated by establishing a baseline instead of consuming an unknown amount
+ * of time.
+ */
+export function normalizeOfflineTimerState(
+  state: JsonObject,
+  nowMs: number,
+  isSuspended = false
+): boolean {
+  if (isSuspended) {
+    return false;
+  }
+
+  const stateId = Number(state.id);
+  if (!Number.isInteger(stateId) || stateId < 0 || stateId > 6) {
+    return false;
+  }
+
+  const currentTime = Number(state.time ?? "0");
+  if (!Number.isFinite(currentTime) || currentTime <= 0) {
+    if (String(state.time ?? "0") !== "0") {
+      state.time = "0";
+      return true;
+    }
+    return false;
+  }
+
+  const savedAt = Number(state.savedAt ?? "0");
+  if (!Number.isFinite(savedAt) || savedAt <= 0) {
+    state.savedAt = String(nowMs);
+    return true;
+  }
+
+  const elapsed = Math.max(0, nowMs - savedAt);
+  const nextTime = Math.max(0, currentTime - elapsed);
+  let changed = false;
+  if (String(state.time ?? "") !== String(nextTime)) {
+    state.time = String(nextTime);
+    changed = true;
+  }
+  if (String(state.savedAt ?? "") !== String(nowMs)) {
+    state.savedAt = String(nowMs);
+    changed = true;
+  }
+  return changed;
+}
 
 export function normalizeHouseRentState(state: JsonObject | undefined, itemChildren: JsonObject[], nowMs: number): boolean {
   if (!state) {
@@ -44,6 +90,11 @@ export function normalizeHouseRentState(state: JsonObject | undefined, itemChild
 
   const contractSku = String(state.contractSku ?? "").trim();
   if (contractSku.length > 0) {
+    const parsedTime = Number(state.time ?? "0");
+    if (!Number.isFinite(parsedTime) || parsedTime < 0) {
+      state.time = "0";
+      changed = true;
+    }
     let normalizedMode = String(state.mode ?? "");
     if (normalizedMode === "14" || normalizedMode === "15") {
       state.mode = "1";
@@ -189,35 +240,7 @@ export function normalizeHouseRentState(state: JsonObject | undefined, itemChild
 }
 
 export function normalizeConstructionState(_itemSku: string, state: JsonObject, nowMs: number): boolean {
-  const currentTime = Number(state.time ?? "0");
-  const mode = String(state.mode ?? "");
-  const savedAt = Number(state.savedAt ?? "0");
-  const hasValidSavedAt = Number.isFinite(savedAt) && savedAt > 0;
-  if (!Number.isFinite(currentTime) || currentTime <= 0) {
-    if (String(state.time ?? "") !== "0") {
-      state.time = "0";
-      return true;
-    }
-    return false;
-  }
-
-  if (!hasValidSavedAt) {
-    state.savedAt = String(nowMs);
-    return true;
-  }
-
-  const elapsed = Math.max(0, nowMs - savedAt);
-  const nextTime = Math.max(0, currentTime - elapsed);
-  let changed = false;
-  if (nextTime !== currentTime) {
-    state.time = String(nextTime);
-    changed = true;
-  }
-  if (String(state.savedAt ?? "") !== String(nowMs)) {
-    state.savedAt = String(nowMs);
-    changed = true;
-  }
-  return changed;
+  return normalizeOfflineTimerState(state, nowMs);
 }
 
 function getAbandonTimeMs(contractSku: string, fallbackTimeMs = 0): number {

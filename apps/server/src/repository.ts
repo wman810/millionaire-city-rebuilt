@@ -1,26 +1,40 @@
 import crypto from "crypto";
 import {
   DEFAULT_ADVISOR_IDS,
+  DEFAULT_GAME_VARIANT,
   DEFAULT_SYNC,
   DEFAULT_USER_EXT_ID,
   DEFAULT_USER_ID,
-  SAVE_TAGS
+  SAVE_TAGS,
+  type GameVariant
 } from "@mcity/shared";
 import type { JsonObject, LoginResponseData } from "@mcity/shared/dist/types.js";
 import type { SaveBundle } from "./saveDefaults.js";
-import { createFreshSaveBundle, normalizeCompletedTutorialUniverse, normalizeIncompleteTutorialUniverse } from "./saveDefaults.js";
-import { STARTER_COMPANY_VALUE } from "./saveDefaults/constants.js";
+import {
+  createFreshSaveBundle,
+  normalizeCompletedTutorialTimedItems,
+  normalizeCompletedTutorialUniverse,
+  normalizeDailyBonusDefaults,
+  normalizeIncompleteTutorialUniverse,
+  normalizeWelcomeDefaults
+} from "./saveDefaults.js";
+import { getStarterEconomy } from "./saveDefaults/constants.js";
 import type { MCityDatabase, SessionRow, UserRow } from "./database.js";
 
-const SAVE_SCHEMA_VERSION = "8";
+const SAVE_SCHEMA_VERSION = "10";
 const GAME_CONFIG_DEFAULTS_META_KEY = "game_config_defaults_version";
 const GAME_CONFIG_DEFAULTS_VERSION = "1";
+const GAME_VARIANT_META_KEY = "game_variant";
 const CASH_TO_COINS = 60000;
 
 export class SaveRepository {
-  constructor(private readonly database: MCityDatabase) {}
+  constructor(
+    private readonly database: MCityDatabase,
+    private readonly gameVariant: GameVariant = DEFAULT_GAME_VARIANT
+  ) {}
 
   ensureDefaultUser(): UserRow {
+    this.ensureDatabaseVariant();
     const now = new Date().toISOString();
     const existing = this.database.db
       .prepare("SELECT id, ext_id, name, created_at FROM users WHERE id = ?")
@@ -76,7 +90,7 @@ export class SaveRepository {
   }
 
   seedFreshSave(userId: number, userExtId: string): void {
-    const bundle = createFreshSaveBundle(userExtId);
+    const bundle = createFreshSaveBundle(userExtId, this.gameVariant);
     const stmt = this.database.db.prepare(
       "INSERT OR REPLACE INTO save_documents (user_id, tag, json, updated_at) VALUES (?, ?, ?, ?)"
     );
@@ -95,6 +109,12 @@ export class SaveRepository {
           "INSERT OR REPLACE INTO meta (key, value, updated_at) VALUES (?, ?, ?)"
         )
         .run(GAME_CONFIG_DEFAULTS_META_KEY, GAME_CONFIG_DEFAULTS_VERSION, now);
+      this.database.db
+        .prepare("INSERT OR REPLACE INTO meta (key, value, updated_at) VALUES (?, ?, ?)")
+        .run(GAME_VARIANT_META_KEY, this.gameVariant, now);
+      this.database.db
+        .prepare("DELETE FROM meta WHERE key = ?")
+        .run(`collectible_slots:${userId}`);
     });
     tx(bundle);
   }
@@ -174,6 +194,8 @@ export class SaveRepository {
     const gameConfig = this.database.db
       .prepare("SELECT json FROM save_documents WHERE user_id = ? AND tag = ?")
       .get(userId, SAVE_TAGS.gameConfig) as { json: string } | undefined;
+    const dailyBonus = this.getOptionalDocument<JsonObject>(userId, SAVE_TAGS.dailyBonus);
+    const welcome = this.getOptionalDocument<JsonObject>(userId, SAVE_TAGS.welcome);
 
     if (!universe || !gameConfig) {
       this.backupAndSeedFreshSave(userId, userExtId, "missing-save-documents");
@@ -196,8 +218,19 @@ export class SaveRepository {
       return;
     }
 
-    if (normalizeCompletedTutorialUniverse(universeDoc)) {
+    const needsSaveSchemaMigration = schemaVersion?.value !== SAVE_SCHEMA_VERSION;
+    const normalizedTimedItems = normalizeCompletedTutorialTimedItems(universeDoc);
+    const migratedCompletedTutorial =
+      needsSaveSchemaMigration && normalizeCompletedTutorialUniverse(universeDoc);
+    if (normalizedTimedItems || migratedCompletedTutorial) {
       this.setDocument(userId, SAVE_TAGS.universe, universeDoc);
+    }
+
+    if (dailyBonus && normalizeDailyBonusDefaults(dailyBonus)) {
+      this.setDocument(userId, SAVE_TAGS.dailyBonus, dailyBonus);
+    }
+    if (welcome && normalizeWelcomeDefaults(welcome)) {
+      this.setDocument(userId, SAVE_TAGS.welcome, welcome);
     }
 
     if (
@@ -212,7 +245,7 @@ export class SaveRepository {
         .run(GAME_CONFIG_DEFAULTS_META_KEY, GAME_CONFIG_DEFAULTS_VERSION, new Date().toISOString());
     }
 
-    if (isTutorialIncomplete(universeDoc)) {
+    if (needsSaveSchemaMigration && isTutorialIncomplete(universeDoc)) {
       if (shouldResetIncompleteTutorialSave(universeDoc)) {
         const premiumCurrency = extractPremiumCurrencyState(universeDoc);
         this.backupAndSeedFreshSave(userId, userExtId, "incomplete-tutorial-reset");
@@ -227,7 +260,7 @@ export class SaveRepository {
       }
     }
 
-    if (schemaVersion?.value !== SAVE_SCHEMA_VERSION) {
+    if (needsSaveSchemaMigration) {
       this.setMeta("save_schema_version", SAVE_SCHEMA_VERSION);
       console.log(`[mcity] Migrated compatible save schema from ${schemaVersion?.value ?? "unknown"} to ${SAVE_SCHEMA_VERSION}.`);
     }
@@ -257,7 +290,9 @@ export class SaveRepository {
     const safePaidCash = Number.isFinite(paidCash) ? Math.max(0, paidCash) : 0;
     profile.DCCash = String(safeCash);
     profile.DCCashPaid = String(safePaidCash);
-    profile.companyValue = String(STARTER_COMPANY_VALUE + safeCash * CASH_TO_COINS);
+    const starterEconomy = getStarterEconomy(this.gameVariant);
+    const nonCashStarterValue = starterEconomy.companyValue - starterEconomy.cash * CASH_TO_COINS;
+    profile.companyValue = String(nonCashStarterValue + safeCash * CASH_TO_COINS);
     this.setDocument(userId, SAVE_TAGS.universe, universe);
   }
 
@@ -265,6 +300,27 @@ export class SaveRepository {
     const backupPath = this.database.createBackup(reason);
     console.warn(`[mcity] Backed up the existing save to ${backupPath} before resetting it.`);
     this.seedFreshSave(userId, userExtId);
+  }
+
+  private ensureDatabaseVariant(): void {
+    const storedVariant = this.getMeta(GAME_VARIANT_META_KEY);
+    if (storedVariant === this.gameVariant) {
+      return;
+    }
+    if (storedVariant) {
+      throw new Error(
+        `This save belongs to the ${storedVariant} game variant, but the ${this.gameVariant} variant was selected.`
+      );
+    }
+
+    const userCount = this.database.db.prepare("SELECT COUNT(*) AS count FROM users").get() as { count: number };
+    if (userCount.count > 0 && this.gameVariant !== DEFAULT_GAME_VARIANT) {
+      throw new Error(
+        "The selected original version was pointed at an unmarked existing save. Use its separate original save path instead."
+      );
+    }
+
+    this.setMeta(GAME_VARIANT_META_KEY, this.gameVariant);
   }
 }
 

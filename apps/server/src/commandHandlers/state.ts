@@ -2,7 +2,7 @@ import type { JsonObject } from "@mcity/shared/dist/types.js";
 import { cloneJsonValue, createElement, findElementChild } from "../saveTree.js";
 import type { MutableNode } from "./universe.js";
 
-const STATE_ATTRIBUTE_KEYS = ["mode", "time", "contractSku", "accelerated"] as const;
+const STATE_ATTRIBUTE_KEYS = ["mode", "time", "contractSku", "contractGroupSku", "accelerated"] as const;
 
 export function hasStateMutation(payload: Record<string, unknown>): boolean {
   return payload.state != null || STATE_ATTRIBUTE_KEYS.some((key) => payload[key] != null);

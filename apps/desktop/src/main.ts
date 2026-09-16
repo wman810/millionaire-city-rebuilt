@@ -5,6 +5,7 @@ import http, { type IncomingMessage } from "http";
 import https from "https";
 import { spawn, spawnSync, type ChildProcess } from "child_process";
 import { app, BrowserWindow, dialog, Menu, session, type MenuItem, type MenuItemConstructorOptions } from "electron";
+import { DEFAULT_GAME_VARIANT, isGameVariant, type GameVariant } from "@mcity/shared";
 import { configureFlash } from "./flash-loader";
 
 const workspaceRoot = path.resolve(__dirname, "../../..");
@@ -54,6 +55,7 @@ let swfDebugMode = getEnvBoolean("MCITY_SWF_DEBUG") ?? desktopSettings.swfDebugM
 let climateMode = getEnvBoolean("MCITY_USE_CLIMATE") ?? desktopSettings.climateMode ?? false;
 let oldItemDesigns = getEnvBoolean("MCITY_OLD_ITEM_DESIGNS") ?? desktopSettings.oldItemDesigns ?? false;
 let localProfileSettingsVisible = true;
+let gameVariant: GameVariant = DEFAULT_GAME_VARIANT;
 
 installFileLogging();
 installCertificatePolicy();
@@ -275,7 +277,7 @@ function saveDesktopSettings(): void {
 function reloadWithCurrentLauncherOptions(win: BrowserWindow): void {
   saveDesktopSettings();
   if (!win.isDestroyed()) {
-    void win.loadURL(getLauncherUrl());
+    void loadLauncher(win);
   }
 }
 
@@ -293,6 +295,12 @@ function getLauncherUrl(): string {
 
   const query = params.toString();
   return query ? `${launcherBaseUrl}?${query}` : launcherBaseUrl;
+}
+
+function loadLauncher(win: BrowserWindow): Promise<void> {
+  return win.loadURL(getLauncherUrl(), {
+    extraHeaders: `X-MCity-Launch-Token: ${serverLaunchSecret}\r\n`
+  });
 }
 
 function installAppMenu(win: BrowserWindow): void {
@@ -675,6 +683,7 @@ async function startEverything(): Promise<void> {
       MCITY_FACEBOOK_PORT: String(facebookShimPort),
       MCITY_HTTP_PORT: "31803",
       MCITY_HTTPS_PORT: "31804",
+      MCITY_GAME_VARIANT: gameVariant,
       MCITY_LAUNCH_SECRET: serverLaunchSecret,
       MCITY_REQUIRE_FB_SHIM: "1"
     },
@@ -711,10 +720,40 @@ async function startEverything(): Promise<void> {
 
   await waitForServer();
   setStatus("Local backend ready. Loading Flash client...");
-  await mainWindow?.loadURL(getLauncherUrl());
+  if (mainWindow) {
+    await loadLauncher(mainWindow);
+  }
   if (mainWindow && !mainWindow.isDestroyed()) {
     mainWindow.show();
   }
+}
+
+async function chooseGameVariant(): Promise<GameVariant | undefined> {
+  const configuredVariant = process.env.MCITY_GAME_VARIANT?.trim().toLowerCase();
+  if (configuredVariant) {
+    if (!isGameVariant(configuredVariant)) {
+      throw new Error(
+        `Unknown MCITY_GAME_VARIANT: ${process.env.MCITY_GAME_VARIANT}. Expected "current" or "original".`
+      );
+    }
+    return configuredVariant;
+  }
+
+  const choice = await dialog.showMessageBox({
+    type: "question",
+    title: "Choose Millionaire City version",
+    message: "Which version would you like to play?",
+    detail: "The current and original archived versions keep completely separate city saves.",
+    buttons: ["Current revival (0.501)", "Original archived (0.338)", "Quit"],
+    defaultId: 0,
+    cancelId: 2,
+    noLink: true
+  });
+
+  if (choice.response === 2) {
+    return undefined;
+  }
+  return choice.response === 1 ? "original" : "current";
 }
 
 function handleServerProcessFailure(message: string): void {
@@ -791,15 +830,23 @@ async function shutdown(): Promise<void> {
 }
 
 app.whenReady().then(async () => {
-  installDefaultSessionSecurity();
-  mainWindow = createWindow();
-
   try {
+    installDefaultSessionSecurity();
+    const selectedVariant = await chooseGameVariant();
+    if (!selectedVariant) {
+      shuttingDown = true;
+      app.quit();
+      return;
+    }
+    gameVariant = selectedVariant;
+    mainWindow = createWindow();
     await startEverything();
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
     setStatus(message);
     dialog.showErrorBox("Millionaire City Private Server", message);
+    await shutdown();
+    app.quit();
   }
 });
 

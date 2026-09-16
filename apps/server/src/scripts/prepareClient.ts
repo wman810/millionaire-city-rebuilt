@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { spawnSync } from "child_process";
-import { getServerConfig } from "../config.js";
+import { getServerConfig, type ServerConfig } from "../config.js";
 
 interface ClientPatch {
   className: string;
@@ -10,8 +10,8 @@ interface ClientPatch {
   errorMessage: string;
 }
 
-const config = getServerConfig();
-const clientDir = path.dirname(config.privateClientSwfPath);
+const config = getServerConfig("current");
+const originalConfig = getServerConfig("original");
 const clientPatchSourcesDir = path.join(config.workspaceRoot, "client-patch-sources");
 const FFDEC_VERSION = "26.0.0";
 const FFDEC_ARCHIVE_URL = `https://github.com/jindrapetrik/jpexs-decompiler/releases/download/version${FFDEC_VERSION}/ffdec_${FFDEC_VERSION}.zip`;
@@ -121,26 +121,98 @@ const clientPatches: ClientPatch[] = [
   }
 ];
 
-fs.mkdirSync(clientDir, { recursive: true });
-fs.copyFileSync(config.sourceClientSwfPath, config.privateClientSwfPath);
-patchPrivateClientSwf();
-writeClientBuildManifest();
+const originalClientPatches: ClientPatch[] = [
+  {
+    className: "Config",
+    sourcePath: path.join(clientPatchSourcesDir, "0.338", "Config.as"),
+    note: "Config patched to use server-backed social data, disable retired analytics, and allow original-client runtime toggles.",
+    errorMessage: "Failed to patch Config in the original 0.338 client SWF."
+  },
+  {
+    className: "Dollars",
+    sourcePath: path.join(clientPatchSourcesDir, "0.338", "Dollars.as"),
+    note: "Dollars patched to read launcher debug and climate switches without replacing the original startup flow.",
+    errorMessage: "Failed to patch Dollars in the original 0.338 client SWF."
+  },
+  {
+    className: "com.dchoc.dollars.GUI.PopupGold",
+    sourcePath: path.join(clientPatchSourcesDir, "0.338", "scripts", "com", "dchoc", "dollars", "GUI", "PopupGold.as"),
+    note: "PopupGold patched to award archived gold packages locally and persist each purchase exactly once.",
+    errorMessage: "Failed to patch PopupGold in the original 0.338 client SWF."
+  },
+  {
+    className: "com.dchoc.dollars.GUI.PopupEmail",
+    sourcePath: path.join(clientPatchSourcesDir, "0.338", "scripts", "com", "dchoc", "dollars", "GUI", "PopupEmail.as"),
+    note: "PopupEmail patched to complete local VIP Club confirmation after a valid email is accepted.",
+    errorMessage: "Failed to patch PopupEmail in the original 0.338 client SWF."
+  },
+  {
+    className: "com.dchoc.dollars.friends.FriendsBarContentFriend",
+    sourcePath: path.join(
+      clientPatchSourcesDir,
+      "0.338",
+      "scripts",
+      "com",
+      "dchoc",
+      "dollars",
+      "friends",
+      "FriendsBarContentFriend.as"
+    ),
+    note: "FriendsBarContentFriend patched to repaint local names and reload changed profile portraits using the original loader architecture.",
+    errorMessage: "Failed to patch FriendsBarContentFriend in the original 0.338 client SWF."
+  },
+  {
+    className: "com.dchoc.dollars.utils.Mouse.MouseWheelEnabler",
+    sourcePath: path.join(
+      clientPatchSourcesDir,
+      "0.338",
+      "scripts",
+      "com",
+      "dchoc",
+      "dollars",
+      "utils",
+      "Mouse",
+      "MouseWheelEnabler.as"
+    ),
+    note: "MouseWheelEnabler patched to remove console spam and support modern non-passive wheel events.",
+    errorMessage: "Failed to patch MouseWheelEnabler in the original 0.338 client SWF."
+  },
+  {
+    className: "com.dchoc.dollars.server.Server",
+    sourcePath: path.join(clientPatchSourcesDir, "0.338", "scripts", "com", "dchoc", "dollars", "server", "Server.as"),
+    note: "Server patched to accept local stat and profile refreshes without reloading the original SWF.",
+    errorMessage: "Failed to patch Server in the original 0.338 client SWF."
+  }
+];
 
-console.log(`[mcity] Prepared private client copy at ${config.privateClientSwfPath}`);
+preparePrivateClient(config, clientPatches, "Current 0.501 private client copy isolated from the recovered archive.");
+preparePrivateClient(
+  originalConfig,
+  originalClientPatches,
+  "Original 0.338 client with archived developer-path/debug metadata removed and version-adapted local compatibility patches. Classic item art is already native to this client, and its archived rules contain no cross-promotion item locks."
+);
 
-function patchPrivateClientSwf(): void {
+function preparePrivateClient(targetConfig: ServerConfig, patches: ClientPatch[], description: string): void {
+  fs.mkdirSync(path.dirname(targetConfig.privateClientSwfPath), { recursive: true });
+  fs.copyFileSync(targetConfig.sourceClientSwfPath, targetConfig.privateClientSwfPath);
+  patchPrivateClientSwf(targetConfig, patches);
+  writeClientBuildManifest(targetConfig, patches, description);
+  console.log(`[mcity] Prepared private client copy at ${targetConfig.privateClientSwfPath}`);
+}
+
+function patchPrivateClientSwf(targetConfig: ServerConfig, patches: ClientPatch[]): void {
   ensureFfdecInstalled();
-  for (const patch of clientPatches) {
-    replaceClassInPrivateClient(patch);
+  for (const patch of patches) {
+    replaceClassInPrivateClient(targetConfig, patch);
   }
 }
 
-function replaceClassInPrivateClient(patch: ClientPatch): void {
+function replaceClassInPrivateClient(targetConfig: ServerConfig, patch: ClientPatch): void {
   if (!fs.existsSync(patch.sourcePath)) {
     throw new Error(`Client patch source not found: ${patch.sourcePath}`);
   }
 
-  const temporaryOutputPath = path.join(clientDir, "Dollars.private.tmp.swf");
+  const temporaryOutputPath = path.join(path.dirname(targetConfig.privateClientSwfPath), "Dollars.private.tmp.swf");
   if (fs.existsSync(temporaryOutputPath)) {
     fs.rmSync(temporaryOutputPath, { force: true });
   }
@@ -151,36 +223,46 @@ function replaceClassInPrivateClient(patch: ClientPatch): void {
       "-jar",
       ffdecJarPath,
       "-replace",
-      config.privateClientSwfPath,
+      targetConfig.privateClientSwfPath,
       temporaryOutputPath,
       patch.className,
       patch.sourcePath
     ],
     patch.errorMessage
   );
-  fs.copyFileSync(temporaryOutputPath, config.privateClientSwfPath);
+  fs.copyFileSync(temporaryOutputPath, targetConfig.privateClientSwfPath);
   fs.rmSync(temporaryOutputPath, { force: true });
 }
 
-function writeClientBuildManifest(): void {
-  const manifestPath = path.join(clientDir, "client-build.json");
+function writeClientBuildManifest(
+  targetConfig: ServerConfig,
+  patches: ClientPatch[],
+  description: string
+): void {
+  const manifestPath = path.join(path.dirname(targetConfig.privateClientSwfPath), "client-build.json");
   fs.writeFileSync(
     manifestPath,
     JSON.stringify(
       {
-        source: config.sourceClientSwfPath,
-        output: config.privateClientSwfPath,
+        gameVariant: targetConfig.gameVariant,
+        gameVersion: targetConfig.gameVersion,
+        source: toPortableWorkspacePath(targetConfig.workspaceRoot, targetConfig.sourceClientSwfPath),
+        output: toPortableWorkspacePath(targetConfig.workspaceRoot, targetConfig.privateClientSwfPath),
         preparedAt: new Date().toISOString(),
         notes: [
-          "Private client copy isolated from the recovered archive.",
+          description,
           "Runtime compatibility provided by the local launcher and HTTPS Facebook shim.",
-          ...clientPatches.map((patch) => patch.note)
+          ...patches.map((patch) => patch.note)
         ]
       },
       null,
       2
     )
   );
+}
+
+function toPortableWorkspacePath(workspaceRoot: string, targetPath: string): string {
+  return path.relative(workspaceRoot, targetPath).split(path.sep).join("/");
 }
 
 function ensureFfdecInstalled(): void {

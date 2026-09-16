@@ -3,21 +3,19 @@ import fs from "node:fs";
 import net from "node:net";
 import os from "node:os";
 import path from "node:path";
-import { afterEach, describe, expect, test } from "vitest";
-import type { PacketCommand } from "@mcity/shared";
+import { afterEach, describe, expect, test, vi } from "vitest";
+import { SAVE_TAGS, type PacketCommand } from "@mcity/shared";
 import type { JsonObject } from "@mcity/shared/dist/types.js";
 import { createServerApp as createServerAppBase } from "../src/serverApp.js";
 import { getServerConfig, type ServerConfig } from "../src/config.js";
 import { renderLauncherHtml } from "../src/launcherHtml.js";
-import { createEmptyCollectiblesDocument, normalizeCompletedTutorialUniverse } from "../src/saveDefaults.js";
-import { RONALD_LAYOUT_ITEMS, RONALD_PLOTS_TYPE } from "../src/saveDefaults/ronaldLayout.js";
+import { createEmptyCollectiblesDocument, normalizeCompletedTutorialTimedItems } from "../src/saveDefaults.js";
 import { createStarterDecorationItems } from "../src/saveDefaults/starterDecorations.js";
 import { loadCashToCoins } from "../src/rules.js";
 
 const activeApps: Array<ReturnType<typeof createServerApp>> = [];
-const HOUSE_COLLECTIBLE_DROP_DIVISOR = 8;
 const EXPECTED_STARTER_DECORATION_SKUS = createStarterDecorationItems("1").map((entry) => String(entry.sku));
-const EXPECTED_STARTER_DECORATION_VALUE = 299_000;
+const EXPECTED_STARTER_DECORATION_VALUE = 326_000;
 const archivedAssetTest = hasArchivedAssetFiles() ? test : test.skip;
 
 function createServerApp(config: ServerConfig): ReturnType<typeof createServerAppBase> {
@@ -40,6 +38,7 @@ function hasArchivedAssetFiles(): boolean {
     path.join(config.assetRoot, "Datas", "rules", "XPTable.xml"),
     path.join(config.assetRoot, "Datas", "rules", "fbcredits.xml"),
     path.join(config.assetRoot, "Datas", "rules", "collectiblesDefinitions.xml"),
+    path.join(config.assetRoot, "Datas", "rules", "collectiblesChances.xml"),
     path.join(config.assetRoot, "Datas", "rules", "collectiblesGroupsDefinitions.xml"),
     path.join(config.assetRoot, "Datas", "rules", "collectiblesRewardDefinitions.xml"),
     path.join(config.assetRoot, "Datas", "feed", "new_feed_upgrades_0.jpg"),
@@ -49,27 +48,8 @@ function hasArchivedAssetFiles(): boolean {
   return requiredFiles.every((filePath) => fs.existsSync(filePath));
 }
 
-function stableTestHash(value: string): number {
-  let hash = 17;
-  for (let index = 0; index < value.length; index += 1) {
-    hash = (hash * 31 + value.charCodeAt(index)) | 0;
-  }
-  return hash;
-}
-
-function findCollectibleSavedAt(sid: string, sku: string, contractSku: string, shouldAward: boolean): string {
-  for (let offset = 0; offset < 2048; offset += 1) {
-    const savedAt = String(1_700_000_000_000 + offset);
-    const roll = Math.abs(stableTestHash(`${sid}:${sku}:${contractSku}:${savedAt}`));
-    if ((roll % HOUSE_COLLECTIBLE_DROP_DIVISOR === 0) === shouldAward) {
-      return savedAt;
-    }
-  }
-
-  throw new Error(`Unable to find collectible test seed for ${sid}/${sku}/${contractSku}`);
-}
-
 afterEach(async () => {
+  vi.restoreAllMocks();
   while (activeApps.length > 0) {
     const app = activeApps.pop();
     if (app) {
@@ -97,6 +77,15 @@ describe("Millionaire City server", () => {
       profile.userName = "Preserved Mayor";
     }
     firstApp.repository.setDocument(1, "universe", universe);
+    firstApp.repository.setDocument(1, SAVE_TAGS.dailyBonus, {
+      dailyBonusInfo: [],
+      dailyRewardsCount: "4"
+    });
+    firstApp.repository.setDocument(1, "welcome", {
+      welcome: [],
+      vip: "1",
+      npcRonaldTimeLeft: "25"
+    });
     firstApp.repository.setMeta("save_schema_version", "7");
     await firstApp.stop();
     activeApps.pop();
@@ -105,8 +94,21 @@ describe("Millionaire City server", () => {
     activeApps.push(restartedApp);
     const migratedUniverse = restartedApp.repository.getDocument<JsonObject>(1, "universe");
     const migratedProfile = (migratedUniverse.universe as JsonObject[]).find((entry) => Array.isArray(entry.Profile));
+    const migratedDailyBonus = restartedApp.repository.getDocument<JsonObject>(1, SAVE_TAGS.dailyBonus);
+    const migratedWelcome = restartedApp.repository.getDocument<JsonObject>(1, "welcome");
     expect(migratedProfile?.userName).toBe("Preserved Mayor");
-    expect(restartedApp.repository.getMeta("save_schema_version")).toBe("8");
+    expect(migratedDailyBonus).toMatchObject({
+      dailyRewardsCount: "4",
+      dailyRewardsLastGivenDate: "0",
+      dailyRewardsNextRewardId: ""
+    });
+    expect(migratedWelcome).toMatchObject({
+      vip: "1",
+      npcRonaldTimeLeft: "25",
+      npcCindyTimeLeft: "100000",
+      npcSheikTimeLeft: "100000"
+    });
+    expect(restartedApp.repository.getMeta("save_schema_version")).toBe("10");
   });
 
   test("rolls back the HTTP listener when HTTPS startup fails", async () => {
@@ -315,22 +317,14 @@ describe("Millionaire City server", () => {
       | undefined;
     const terrainTiles = new Set(String(terrainChunk?.chunk ?? "").split(",").filter(Boolean));
     const roadTiles = new Set(String(roadChunk?.chunk ?? "").split(",").filter(Boolean));
-    expect(terrainTiles.size).toBe(41);
+    expect([...terrainTiles].sort()).toEqual([
+      "-1:-3", "0:-3", "1:-3", "2:-3", "4:2", "4:3", "-1:-1",
+      "-1:-2", "0:-2", "1:-2", "2:-2", "2:-1", "1:-1", "0:-1"
+    ].sort());
     expect([...terrainTiles].filter((tile) => roadTiles.has(tile))).toEqual([]);
     expect(["0:1", "1:1", "0:2", "1:2", "0:3", "1:3"].filter((tile) => terrainTiles.has(tile))).toEqual([]);
     expect(terrainTiles.has("10:-2")).toBe(false);
     expect(380_000 + EXPECTED_STARTER_DECORATION_VALUE + terrainTiles.size * 1_000).toBe(720_000);
-    expect(terrainTiles.has("-1:-3")).toBe(true);
-    expect(terrainTiles.has("2:-1")).toBe(true);
-    expect(terrainTiles.has("-7:-2")).toBe(true);
-    expect(terrainTiles.has("-13:1")).toBe(true);
-    expect(terrainTiles.has("-12:2")).toBe(true);
-    expect(terrainTiles.has("-4:1")).toBe(true);
-    expect(terrainTiles.has("-2:3")).toBe(true);
-    expect(terrainTiles.has("9:-3")).toBe(true);
-    expect(terrainTiles.has("11:-1")).toBe(true);
-    expect(terrainTiles.has("4:2")).toBe(true);
-    expect(terrainTiles.has("4:3")).toBe(true);
     expect(roadTiles.has("-7:0")).toBe(true);
     expect(roadTiles.has("11:0")).toBe(true);
     expect(roadTiles.has("-1:4")).toBe(true);
@@ -433,39 +427,84 @@ describe("Millionaire City server", () => {
     const sheikProfile = sheikUniverse.find((entry) => Array.isArray(entry.Profile)) as Record<string, unknown>;
     const advisorWorld = advisorUniverse.find((entry) => Array.isArray(entry.World)) as { World: Array<Record<string, unknown>> };
     const sheikWorld = sheikUniverse.find((entry) => Array.isArray(entry.World)) as { World: Array<Record<string, unknown>> };
-    const advisorMine = advisorWorld.World.find((entry) => Array.isArray(entry.Company) && entry.whose === "0") as
+    const advisorCompanies = advisorWorld.World.filter((entry) => Array.isArray(entry.Company)) as Array<{
+      Company: Array<Record<string, unknown>>;
+      whose?: string;
+    }>;
+    const sheikCompanies = sheikWorld.World.filter((entry) => Array.isArray(entry.Company)) as Array<{
+      Company: Array<Record<string, unknown>>;
+      whose?: string;
+    }>;
+    const advisorMine = advisorCompanies.find((entry) => entry.whose === "0") as
       | { Company: Array<Record<string, unknown>> }
       | undefined;
-    const sheikMine = sheikWorld.World.find((entry) => Array.isArray(entry.Company) && entry.whose === "0") as
+    const advisorRival = advisorCompanies.find((entry) => entry.whose === "1") as
       | { Company: Array<Record<string, unknown>> }
       | undefined;
+    const sheikMine = sheikCompanies.find((entry) => entry.whose === "0") as
+      | { Company: Array<Record<string, unknown>> }
+      | undefined;
+    const sheikRival = sheikCompanies.find((entry) => entry.whose === "1") as
+      | { Company: Array<Record<string, unknown>> }
+      | undefined;
+    const advisorItems = advisorCompanies.flatMap((entry) => entry.Company);
+    const sheikItems = sheikCompanies.flatMap((entry) => entry.Company);
     const sheikPlots = sheikProfile.Profile.find((entry) => Array.isArray((entry as { Plots?: unknown }).Plots)) as
       | { type?: string }
       | undefined;
     const advisorPlots = advisorProfile.Profile.find((entry) => Array.isArray((entry as { Plots?: unknown }).Plots)) as
       | { type?: string }
       | undefined;
-    const advisorHq = advisorMine?.Company.find((entry) => entry.sku === "HeadQuarter");
+    const advisorHq = advisorRival?.Company.find((entry) => entry.sku === "HeadQuarter");
     const sheikHq = sheikMine?.Company.find((entry) => entry.sku === "HeadQuarter");
     const advisorRoadTiles = extractRoadTiles(advisorWorld);
     const sheikRoadTiles = extractRoadTiles(sheikWorld);
+    const advisorTerrainTiles = extractMapTiles(advisorWorld, "Terrain");
+    const sheikTerrainTiles = extractMapTiles(sheikWorld, "Terrain");
+    const advisorModeFive = advisorMine?.Company.find((entry) => entry.sid === "916");
+    const advisorModeFiveState = (advisorModeFive?.Item as Array<Record<string, unknown>> | undefined)?.find(
+      (entry) => Array.isArray(entry.State)
+    );
+    const sheikRenting = sheikMine?.Company.find((entry) => entry.sid === "820");
+    const sheikRentingState = (sheikRenting?.Item as Array<Record<string, unknown>> | undefined)?.find(
+      (entry) => Array.isArray(entry.State)
+    );
 
     expect(advisorProfile.userName).toBe("Cindy");
     expect(advisorProfile.cityname).toBe("Chocolate Fields");
     expect(advisorProfile.planeSku).toBe("plane_03");
-    expect(sheikProfile.cityname).toBe("Sheik&apos;s City");
+    expect(sheikProfile.cityname).toBe("Sheik`s City");
     expect(advisorHq?.x).toBe("-1");
     expect(advisorHq?.y).toBe("-4");
+    expect(advisorHq?.sid).toBe("271");
+    expect(advisorHq?.csid).toBe("2");
+    expect(getHeadQuarterSkin(advisorHq)).toBe("HeadQuarter_03");
     expect(sheikHq?.x).toBe("-1");
     expect(sheikHq?.y).toBe("-3");
-    expect(advisorMine?.Company).toHaveLength(RONALD_LAYOUT_ITEMS.length);
-    expect(sheikMine?.Company).toHaveLength(483);
-    expect(advisorPlots?.type).toBe(RONALD_PLOTS_TYPE);
+    expect(sheikHq?.sid).toBe("324");
+    expect(advisorMine?.Company).toHaveLength(402);
+    expect(advisorRival?.Company).toHaveLength(1);
+    expect(advisorItems).toHaveLength(403);
+    expect(sheikMine?.Company).toHaveLength(496);
+    expect(sheikRival?.Company).toHaveLength(0);
+    expect(sheikItems).toHaveLength(496);
+    expect(advisorPlots?.type).toBe("2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2");
     expect(sheikPlots?.type).toBe("0,2,2,2,0,1,2,2,2,1,1,2,2,2,1,1,2,2,2,1,0,2,2,2,0");
-    expect(advisorMine?.Company.some((entry) => entry.sku === "wonder_npc_Ronald")).toBe(true);
+    expect(advisorMine?.Company.some((entry) => entry.sku === "wonder_npc_Cindy")).toBe(true);
+    expect(advisorMine?.Company.some((entry) => entry.sku === "wonder_npc_Ronald")).toBe(false);
     expect(sheikMine?.Company.some((entry) => entry.sku === "commerce_casino")).toBe(true);
-    expect(getItemsOverlappingRoads(advisorMine?.Company ?? [], advisorRoadTiles)).toEqual([]);
-    expect(getItemsOverlappingRoads(sheikMine?.Company ?? [], sheikRoadTiles)).toEqual([]);
+    expect(advisorModeFiveState).toMatchObject({ id: "1", mode: "5", time: "0" });
+    expect(sheikRentingState).toMatchObject({ id: "1", mode: "4", time: "111953" });
+    expect(extractMapChunks(advisorWorld, "Terrain")).toHaveLength(17);
+    expect(extractMapChunks(advisorWorld, "Road")).toHaveLength(9);
+    expect(extractMapChunks(sheikWorld, "Terrain")).toHaveLength(25);
+    expect(extractMapChunks(sheikWorld, "Road")).toHaveLength(11);
+    expect(advisorTerrainTiles).toHaveLength(1040);
+    expect(advisorRoadTiles.size).toBe(520);
+    expect(sheikTerrainTiles).toHaveLength(1537);
+    expect(sheikRoadTiles.size).toBe(645);
+    expect(getItemsOverlappingRoads(advisorItems, advisorRoadTiles)).toEqual([]);
+    expect(getItemsOverlappingRoads(sheikItems, sheikRoadTiles)).toEqual([]);
 
     if (playerProfile) {
       playerProfile.bossGenre = "0";
@@ -499,24 +538,35 @@ describe("Millionaire City server", () => {
     const ronaldUniverse = extractCommands(ronaldPayload)[0]._dat.universe as Array<Record<string, unknown>>;
     const ronaldProfile = ronaldUniverse.find((entry) => Array.isArray(entry.Profile)) as Record<string, unknown>;
     const ronaldWorld = ronaldUniverse.find((entry) => Array.isArray(entry.World)) as { World: Array<Record<string, unknown>> };
-    const ronaldMine = ronaldWorld.World.find((entry) => Array.isArray(entry.Company) && entry.whose === "0") as
+    const ronaldCompanies = ronaldWorld.World.filter((entry) => Array.isArray(entry.Company)) as Array<{
+      Company: Array<Record<string, unknown>>;
+      whose?: string;
+    }>;
+    const ronaldMine = ronaldCompanies.find((entry) => entry.whose === "0") as
+      | { Company: Array<Record<string, unknown>> }
+      | undefined;
+    const ronaldRival = ronaldCompanies.find((entry) => entry.whose === "1") as
       | { Company: Array<Record<string, unknown>> }
       | undefined;
     const ronaldPlots = ronaldProfile.Profile.find((entry) => Array.isArray((entry as { Plots?: unknown }).Plots)) as
       | { type?: string }
       | undefined;
-    const ronaldHq = ronaldMine?.Company.find((entry) => entry.sku === "HeadQuarter");
+    const ronaldHq = ronaldRival?.Company.find((entry) => entry.sku === "HeadQuarter");
     const ronaldRoadTiles = extractRoadTiles(ronaldWorld);
+    const ronaldItems = ronaldCompanies.flatMap((entry) => entry.Company);
 
     expect(ronaldProfile.userName).toBe("Ronald");
     expect(ronaldProfile.cityname).toBe("Chocolate Fields");
     expect(ronaldProfile.planeSku).toBe("plane_03");
     expect(ronaldHq?.x).toBe("-1");
     expect(ronaldHq?.y).toBe("-4");
-    expect(ronaldMine?.Company).toHaveLength(RONALD_LAYOUT_ITEMS.length);
-    expect(ronaldPlots?.type).toBe(RONALD_PLOTS_TYPE);
+    expect(getHeadQuarterSkin(ronaldHq)).toBe("HeadQuarter_02");
+    expect(ronaldMine?.Company).toHaveLength(402);
+    expect(ronaldRival?.Company).toHaveLength(1);
+    expect(ronaldPlots?.type).toBe("2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2");
     expect(ronaldMine?.Company.some((entry) => entry.sku === "wonder_npc_Ronald")).toBe(true);
-    expect(getItemsOverlappingRoads(ronaldMine?.Company ?? [], ronaldRoadTiles)).toEqual([]);
+    expect(ronaldMine?.Company.some((entry) => entry.sku === "wonder_npc_Cindy")).toBe(false);
+    expect(getItemsOverlappingRoads(ronaldItems, ronaldRoadTiles)).toEqual([]);
   });
 
   test("allows up to five daily visitor upgrades per NPC city and persists upgraded buildings", async () => {
@@ -597,10 +647,10 @@ describe("Millionaire City server", () => {
 
     const mutationData = JSON.stringify({
       _cmdList: [
-        { _cmd: "add_upgrade_item", _dat: { visitorId: 1, ownerId: 101, sid: "2001", type: "0" }, _cnt: 1 },
-        { _cmd: "add_upgrade_item", _dat: { visitorId: 1, ownerId: 101, sid: "4008", type: "0" }, _cnt: 2 },
-        { _cmd: "add_upgrade_item", _dat: { visitorId: 1, ownerId: 101, sid: "4030", type: "0" }, _cnt: 3 },
-        { _cmd: "add_upgrade_item", _dat: { visitorId: 1, ownerId: 101, sid: "2001", type: "0" }, _cnt: 4 }
+        { _cmd: "add_upgrade_item", _dat: { visitorId: 1, ownerId: 101, sid: "820", type: "0" }, _cnt: 1 },
+        { _cmd: "add_upgrade_item", _dat: { visitorId: 1, sid: "683", type: "0" }, _cnt: 2 },
+        { _cmd: "add_upgrade_item", _dat: { visitorId: 1, ownerId: 101, sid: "684", type: "0" }, _cnt: 3 },
+        { _cmd: "add_upgrade_item", _dat: { visitorId: 1, ownerId: 101, sid: "820", type: "0" }, _cnt: 4 }
       ],
       _msgCount: 0,
       _sync: 1
@@ -636,9 +686,9 @@ describe("Millionaire City server", () => {
     const upgraded = extractCommands(upgradedPayload)[0]._dat;
     expect(upgraded.upgradesUniverseAvailable).toBe("2");
     expect((upgraded.upgradesList as Array<Record<string, unknown>>).map((entry) => entry.sid)).toEqual([
-      "2001",
-      "4008",
-      "4030"
+      "820",
+      "683",
+      "684"
     ]);
     expect((upgraded.upgradesList as Array<Record<string, unknown>>).every((entry) => entry.extId === config.launcherUserId)).toBe(true);
   });
@@ -675,7 +725,7 @@ describe("Millionaire City server", () => {
           },
           {
             _cmd: "update_item",
-            _dat: { action: "build", sid: "2", sku: "houses_001_002", x: 24, y: 20, state: 1 },
+            _dat: { action: "new_item", sid: "2", sku: "houses_001_002", x: 24, y: 20, state: 1 },
             _cnt: 2
           },
           {
@@ -2478,6 +2528,7 @@ describe("Millionaire City server", () => {
         }
       );
       serverApp.repository.setDocument(1, "universe", universe);
+      serverApp.repository.setMeta("save_schema_version", "9");
 
       await serverApp.stop();
       activeApps.pop();
@@ -2862,7 +2913,7 @@ describe("Millionaire City server", () => {
       expect(state?.mode).toBe("2");
       expect(state?.time).toBe("0");
 
-      const normalizedAgain = normalizeCompletedTutorialUniverse(universe as JsonObject, Date.now());
+      const normalizedAgain = normalizeCompletedTutorialTimedItems(universe as JsonObject, Date.now());
       const normalizedState = item?.Item?.find((entry) => Array.isArray(entry.State)) as Record<string, unknown> | undefined;
 
       expect(normalizedAgain).toBe(false);
@@ -2995,8 +3046,8 @@ describe("Millionaire City server", () => {
               action: "update",
               sku: "6",
               security: {
-                expGain: -170,
-                coinsGain: -60000,
+                expGain: 0,
+                coinsGain: 0,
                 cashGain: 0,
                 compValueGain: 0
               }
@@ -3004,9 +3055,37 @@ describe("Millionaire City server", () => {
             _cnt: 3
           },
           {
+            _cmd: "update_missions",
+            _dat: {
+              action: "update",
+              sku: "6",
+              security: {
+                expGain: 0,
+                coinsGain: 0,
+                cashGain: 0,
+                compValueGain: 0
+              }
+            },
+            _cnt: 4
+          },
+          {
+            _cmd: "update_missions",
+            _dat: {
+              action: "update",
+              sku: "6",
+              security: {
+                expGain: 0,
+                coinsGain: 0,
+                cashGain: 0,
+                compValueGain: 0
+              }
+            },
+            _cnt: 5
+          },
+          {
             _cmd: "update_profile",
             _dat: { action: "tutorial_completed" },
-            _cnt: 4
+            _cnt: 6
           }
         ],
         _msgCount: 0,
@@ -3131,7 +3210,20 @@ describe("Millionaire City server", () => {
           },
           {
             _cmd: "update_item",
-            _dat: { action: "build", sid: "99", sku: "HeadQuarter", x: 1, y: -4, state: 4 },
+            _dat: {
+              action: "new_item",
+              sid: "99",
+              sku: "HeadQuarter",
+              item: {
+                Item: [{ State: [], id: "4" }],
+                sid: "99",
+                csid: "1",
+                sku: "HeadQuarter",
+                x: "1",
+                y: "-4",
+                isSuspended: "0"
+              }
+            },
             _cnt: 2
           }
         ],
@@ -3158,6 +3250,7 @@ describe("Millionaire City server", () => {
         flash_version: "WIN 32,0,0,0",
         sig
       });
+      serverApp.repository.setMeta("save_schema_version", "9");
 
       await serverApp.stop();
       activeApps.pop();
@@ -3237,6 +3330,7 @@ describe("Millionaire City server", () => {
       const serverApp = createServerApp(config);
       activeApps.push(serverApp);
       await serverApp.start();
+      serverApp.repository.setMeta("save_schema_version", "9");
 
       const universe = serverApp.repository.getDocument<Record<string, unknown>>(1, "universe");
       const root = universe.universe as Array<Record<string, unknown>>;
@@ -3433,6 +3527,7 @@ describe("Millionaire City server", () => {
         }
       );
       serverApp.repository.setDocument(1, "universe", universe);
+      serverApp.repository.setMeta("save_schema_version", "9");
 
       await serverApp.start();
 
@@ -3548,6 +3643,7 @@ describe("Millionaire City server", () => {
       const serverApp = createServerApp(config);
       activeApps.push(serverApp);
       await serverApp.start();
+      serverApp.repository.setMeta("save_schema_version", "9");
 
       const universe = serverApp.repository.getDocument<Record<string, unknown>>(1, "universe");
       const root = universe.universe as Array<Record<string, unknown>>;
@@ -3675,6 +3771,7 @@ describe("Millionaire City server", () => {
       const serverApp = createServerApp(config);
       activeApps.push(serverApp);
       await serverApp.start();
+      serverApp.repository.setMeta("save_schema_version", "9");
 
       const universe = serverApp.repository.getDocument<Record<string, unknown>>(1, "universe");
       const root = universe.universe as Array<Record<string, unknown>>;
@@ -3782,6 +3879,7 @@ describe("Millionaire City server", () => {
       const serverApp = createServerApp(config);
       activeApps.push(serverApp);
       await serverApp.start();
+      serverApp.repository.setMeta("save_schema_version", "9");
 
       const universe = serverApp.repository.getDocument<Record<string, unknown>>(1, "universe");
       const root = universe.universe as Array<Record<string, unknown>>;
@@ -4170,6 +4268,7 @@ describe("Millionaire City server", () => {
       const serverApp = createServerApp(config);
       activeApps.push(serverApp);
       await serverApp.start();
+      serverApp.repository.setMeta("save_schema_version", "9");
 
       const universe = serverApp.repository.getDocument<Record<string, unknown>>(1, "universe");
       const root = universe.universe as Array<Record<string, unknown>>;
@@ -4279,6 +4378,7 @@ describe("Millionaire City server", () => {
       const serverApp = createServerApp(config);
       activeApps.push(serverApp);
       await serverApp.start();
+      serverApp.repository.setMeta("save_schema_version", "9");
 
       const universe = serverApp.repository.getDocument<Record<string, unknown>>(1, "universe");
       const root = universe.universe as Array<Record<string, unknown>>;
@@ -4433,17 +4533,10 @@ describe("Millionaire City server", () => {
     activeApps.push(serverApp);
     await serverApp.start();
 
-    const response = await fetch(
-      `http://127.0.0.1:${config.httpPort}/mcity/0.501/Datas/Assets/items/houses_definitely_missing.swf`
-    );
-    expect(response.status).toBe(404);
-
     const missingMainSwfCases = [
-      "houses_015_002.swf",
-      "houses_012_003.swf",
-      "decorations_statue_03.swf",
-      "decorations_shop_01.swf",
-      "decorations_halloween_03.swf"
+      "houses_definitely_missing.swf",
+      "commerce_definitely_missing.swf",
+      "decorations_definitely_missing.swf"
     ];
     for (const requested of missingMainSwfCases) {
       const missingResponse = await fetch(
@@ -4482,20 +4575,40 @@ describe("Millionaire City server", () => {
     ).text();
 
     const archivedLimitedHouse = extractDefinitionTag(itemDefinitions, "houses_014_001");
+    const recoveredLimitedHouse = extractDefinitionTag(itemDefinitions, "houses_015_001");
+    const recoveredLimitedCommerce = extractDefinitionTag(commerceDefinitions, "commerce_bollywood");
+    const recoveredLimitedDecoration = extractDefinitionTag(decorationDefinitions, "decorations_halloween_03");
     const vipClub = extractDefinitionTag(commerceDefinitions, "commerce_vip");
     const vipMission = extractDefinitionTag(missionDefinitions, "64");
     const archivedLimEdWonder = extractDefinitionTag(wonderDefinitions, "wonder_buda");
+    const recoveredLimitedWonder = extractDefinitionTag(wonderDefinitions, "wonder_dracula_castle");
     const advisorVariantRewardHouse = extractDefinitionTag(itemDefinitions, "houses_037_001");
+    const hiddenDuplicateDefinitions = [
+      [commerceDefinitions, "commerces_eco_resort"],
+      [decorationDefinitions, "decorations_tree_17"],
+      [itemDefinitions, "houses_012_002"],
+      [itemDefinitions, "houses_012_003"],
+      [itemDefinitions, "houses_015_001_bavarian"],
+      [itemDefinitions, "houses_015_002_bavarian"],
+      [wonderDefinitions, "wonder_new_year"]
+    ];
 
     expect(archivedLimitedHouse).not.toContain("expireTime=");
+    expect(recoveredLimitedHouse).not.toContain("expireTime=");
+    expect(recoveredLimitedCommerce).not.toContain("expireTime=");
+    expect(recoveredLimitedDecoration).not.toContain("expireTime=");
+    expect(recoveredLimitedWonder).not.toContain("expireTime=");
     expect(vipClub).not.toContain("expireTime=");
     expect(vipClub).toContain('freeGift="1"');
     expect(vipMission).toContain('rewardType="commerce_vip"');
     expect(advisorVariantRewardHouse).toContain('useAdvisor="1"');
-    expect(findDefinitionTag(itemDefinitions, "houses_015_001")).toBeUndefined();
-    expect(findDefinitionTag(commerceDefinitions, "commerce_bollywood")).toBeUndefined();
-    expect(findDefinitionTag(decorationDefinitions, "decorations_halloween_03")).toBeUndefined();
-    expect(findDefinitionTag(wonderDefinitions, "wonder_dracula_castle")).toBeUndefined();
+    for (const [xml, sku] of hiddenDuplicateDefinitions) {
+      expect(extractDefinitionTag(xml, sku)).toContain('freeGift="1"');
+    }
+    expect(findShopVisibleDuplicateTids(itemDefinitions)).toEqual([]);
+    expect(findShopVisibleDuplicateTids(commerceDefinitions)).toEqual([]);
+    expect(findShopVisibleDuplicateTids(decorationDefinitions)).toEqual([]);
+    expect(findShopVisibleDuplicateTids(wonderDefinitions)).toEqual([]);
     expect(archivedLimEdWonder).not.toContain('shopTab="limEd"');
     expect(archivedLimEdWonder).not.toContain("releaseTime=");
     expect(archivedLimEdWonder).not.toContain("unitsAmount=");
@@ -4627,7 +4740,7 @@ describe("Millionaire City server", () => {
     expect(await after.text()).toBe("1");
   });
 
-  test("accepts invalid signatures in offline mode", async () => {
+  test("rejects invalid signatures without returning game state", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-sig-"));
     const config = {
       ...getServerConfig(),
@@ -4663,8 +4776,9 @@ describe("Millionaire City server", () => {
     });
 
     const response = extractCommands(payload)[0];
-    expect(response._cmd).toBe("get_world");
-    expect(response._dat.universe).toBeTruthy();
+    expect(response._cmd).toBe("logOut");
+    expect(response._dat.reason).toBe("signature");
+    expect(response._dat.universe).toBeUndefined();
   });
 
   test("sanitizes startup XML-backed values before sending them to the client", async () => {
@@ -4775,7 +4889,8 @@ describe("Millionaire City server", () => {
 
     expect(paymentCommands).toHaveLength(1);
     expect(paymentCommands[0]._cmd).toBe("payments");
-    expect(paymentCommands[0]._dat.success).toBe("1");
+    expect((paymentCommands[0] as PacketCommand<JsonObject> & { success?: string }).success).toBe("1");
+    expect(paymentCommands[0]._dat.success).toBeUndefined();
     expect(paymentCommands[0]._dat.privateServerFreePurchase).toBe("1");
     expect(paymentCommands[0]._dat.awardedGold).toBe("0");
   });
@@ -5062,11 +5177,11 @@ describe("Millionaire City server", () => {
       localProfilePictureUrl: "/local/profile-picture?v=default"
     });
 
-    expect(html).toContain('id="nb_tabs"');
-    expect(html).toContain('id="dcsw_tabs"');
+    expect(html).toContain('<div id="neighbors" class="tab-content rounded-shadow"></div>');
+    expect(html).toContain('<div id="dcsw" class="tab-content rounded-shadow"></div>');
+    expect(html).toContain('new window.DC_Neighbors("neighbors"');
+    expect(html).toContain('new window.DC_SocialWall("dcsw"');
     expect(html).toContain('class="gifts_close"');
-    expect(html).toContain('class="nb_close"');
-    expect(html).toContain('class="dcsw_close"');
     expect(html).toContain("You don't have any messages at the moment.");
     expect(html).toContain("or choose a gift below!");
     expect(html).toContain('<span id="username"></span> and some other friends');
@@ -5129,9 +5244,9 @@ describe("Millionaire City server", () => {
     expect(response.status).toBe(200);
     expect(contentSecurityPolicy).toContain("default-src 'self'");
     expect(contentSecurityPolicy).toContain("object-src 'self'");
-    expect(contentSecurityPolicy).toContain(
-      "connect-src 'self' https://graph.facebook.com https://api.facebook.com"
-    );
+    expect(contentSecurityPolicy).toContain("connect-src 'self'");
+    expect(contentSecurityPolicy).not.toContain("graph.facebook.com");
+    expect(contentSecurityPolicy).not.toContain("api.facebook.com");
     expect(contentSecurityPolicy).toContain("base-uri 'none'");
     expect(contentSecurityPolicy).toContain("frame-ancestors 'none'");
     expect(response.headers.get("referrer-policy")).toBe("no-referrer");
@@ -5374,7 +5489,7 @@ describe("Millionaire City server", () => {
     expect(profile?.level).toBe("1");
   });
 
-  archivedAssetTest("awards a pending house collectible when an eligible level-6 house becomes rent-ready", async () => {
+  archivedAssetTest("guarantees the first house collectible before using the normal chance and slot", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-house-collectible-award-"));
     const config = {
       ...getServerConfig(),
@@ -5394,10 +5509,9 @@ describe("Millionaire City server", () => {
       (entry: { Company?: Array<Record<string, unknown>>; whose?: string }) =>
         Array.isArray(entry.Company) && entry.whose === "0"
     ) as { Company: Array<Record<string, unknown>>; sid?: string };
-    const savedAt = findCollectibleSavedAt("9020", "houses_001_001", "1", true);
-
     profile.tutorialEnd = "1";
     profile.level = "6";
+    profile.firstGift = "0";
     mineCompany.Company.push({
       Item: [{ State: [], id: "4" }],
       sid: "9900",
@@ -5412,16 +5526,30 @@ describe("Millionaire City server", () => {
         {
           State: [],
           id: "1",
-          mode: "4",
-          time: "1800000",
-          contractSku: "1",
-          savedAt
+          mode: "1",
+          time: "0"
         }
       ],
       sid: "9020",
       csid: String(mineCompany.sid ?? "1"),
       sku: "houses_001_001",
       x: "12",
+      y: "8",
+      isSuspended: "0"
+    });
+    mineCompany.Company.push({
+      Item: [
+        {
+          State: [],
+          id: "1",
+          mode: "1",
+          time: "0"
+        }
+      ],
+      sid: "9026",
+      csid: String(mineCompany.sid ?? "1"),
+      sku: "houses_001_001",
+      x: "13",
       y: "8",
       isSuspended: "0"
     });
@@ -5435,24 +5563,7 @@ describe("Millionaire City server", () => {
       flash_version: "WIN 32,0,0,0"
     });
     const token = String(extractCommands(loginPayload)[0]._dat.token);
-    const universeAfterLogin = serverApp.repository.getDocument<Record<string, unknown>>(1, "universe");
-    const worldAfterLogin = (universeAfterLogin.universe as Array<Record<string, unknown>>).find((entry) =>
-      Array.isArray(entry.World)
-    ) as { World: Array<Record<string, unknown>> };
-    const mineAfterLogin = worldAfterLogin.World.find(
-      (entry: { Company?: Array<Record<string, unknown>>; whose?: string }) =>
-        Array.isArray(entry.Company) && entry.whose === "0"
-    ) as { Company: Array<Record<string, unknown>> };
-    const houseAfterLogin = mineAfterLogin.Company.find((entry: { sid?: string }) => entry.sid === "9020") as
-      | { Item?: Array<Record<string, unknown>> }
-      | undefined;
-    const stateAfterLogin = houseAfterLogin?.Item?.find((entry) => Array.isArray(entry.State)) as
-      | Record<string, unknown>
-      | undefined;
-    if (stateAfterLogin) {
-      stateAfterLogin.savedAt = savedAt;
-    }
-    serverApp.repository.setDocument(1, "universe", universeAfterLogin);
+    vi.spyOn(Math, "random").mockReturnValueOnce(0.99).mockReturnValueOnce(0).mockReturnValueOnce(0);
 
     const mutationData = JSON.stringify({
       _cmdList: [
@@ -5461,11 +5572,24 @@ describe("Millionaire City server", () => {
           _dat: {
             action: "new_mode",
             sid: "9020",
-            mode: 5,
-            time: 0,
-            contractSku: 1
+            mode: 4,
+            time: 180000,
+            contractSku: 1,
+            contractGroupSku: 1
           },
           _cnt: 1
+        },
+        {
+          _cmd: "update_item",
+          _dat: {
+            action: "new_mode",
+            sid: "9026",
+            mode: 4,
+            time: 180000,
+            contractSku: 1,
+            contractGroupSku: 1
+          },
+          _cnt: 2
         }
       ],
       _msgCount: 0,
@@ -5491,12 +5615,17 @@ describe("Millionaire City server", () => {
     });
 
     const commands = extractCommands(payload);
-    expect(commands).toHaveLength(2);
+    expect(commands).toHaveLength(4);
     expect(commands[0]._cmd).toBe("update_item");
     expect(commands[1]._cmd).toBe("update_item");
     expect(commands[1]._dat.action).toBe("give_collectible");
     expect(commands[1]._dat.sid).toBe("9020");
     expect(String(commands[1]._dat.sku)).toMatch(/^gift_/);
+    expect(commands[2]._cmd).toBe("update_item");
+    expect(commands[3]._cmd).toBe("update_item");
+    expect(commands[3]._dat.action).toBe("give_collectible");
+    expect(commands[3]._dat.sid).toBe("9026");
+    expect(String(commands[3]._dat.sku)).toMatch(/^gift_/);
 
     const collectiblesData = JSON.stringify({
       _cmdList: [{ _cmd: "get_collectibles_list", _dat: {}, _cnt: 1 }],
@@ -5528,6 +5657,24 @@ describe("Millionaire City server", () => {
     ) as { tupla?: string } | undefined;
 
     expect(pendingEntry?.tupla).toContain(`9020:${commands[1]._dat.sku}`);
+    expect(pendingEntry?.tupla).toContain(`9026:${commands[3]._dat.sku}`);
+    expect(JSON.parse(serverApp.repository.getMeta("collectible_slots:1") ?? "[]")).toHaveLength(1);
+    const savedUniverse = serverApp.repository.getDocument<Record<string, unknown>>(1, "universe");
+    const savedProfile = (savedUniverse.universe as Array<Record<string, unknown>>).find((entry) =>
+      Array.isArray(entry.Profile)
+    );
+    expect(savedProfile?.firstGift).toBe("1");
+    const savedWorld = (savedUniverse.universe as Array<Record<string, unknown>>).find((entry) =>
+      Array.isArray(entry.World)
+    ) as { World: Array<Record<string, unknown>> };
+    const savedCompany = savedWorld.World.find((entry) => Array.isArray(entry.Company) && entry.whose === "0") as {
+      Company: Array<Record<string, unknown>>;
+    };
+    const savedHouse = savedCompany.Company.find((entry) => entry.sid === "9020") as {
+      Item: Array<Record<string, unknown>>;
+    };
+    const savedState = savedHouse.Item.find((entry) => Array.isArray(entry.State));
+    expect(savedState?.contractGroupSku).toBe("1");
   });
 
   test("does not award a house collectible before the level-6 unlock", async () => {
@@ -5550,8 +5697,6 @@ describe("Millionaire City server", () => {
       (entry: { Company?: Array<Record<string, unknown>>; whose?: string }) =>
         Array.isArray(entry.Company) && entry.whose === "0"
     ) as { Company: Array<Record<string, unknown>>; sid?: string };
-    const savedAt = findCollectibleSavedAt("9023", "houses_001_001", "1", true);
-
     profile.tutorialEnd = "1";
     profile.level = "5";
     mineCompany.Company.push({
@@ -5568,10 +5713,8 @@ describe("Millionaire City server", () => {
         {
           State: [],
           id: "1",
-          mode: "4",
-          time: "1800000",
-          contractSku: "1",
-          savedAt
+          mode: "1",
+          time: "0"
         }
       ],
       sid: "9023",
@@ -5599,9 +5742,10 @@ describe("Millionaire City server", () => {
           _dat: {
             action: "new_mode",
             sid: "9023",
-            mode: 5,
-            time: 0,
-            contractSku: 1
+            mode: 4,
+            time: 180000,
+            contractSku: 1,
+            contractGroupSku: 1
           },
           _cnt: 1
         }
@@ -5639,7 +5783,7 @@ describe("Millionaire City server", () => {
     expect(pendingEntry?.tupla ?? "").not.toContain("9023:");
   });
 
-  test("does not award a collectible on every completed house contract", async () => {
+  test("does not award a collectible on every started house contract", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-house-collectible-rarity-"));
     const config = {
       ...getServerConfig(),
@@ -5659,10 +5803,9 @@ describe("Millionaire City server", () => {
       (entry: { Company?: Array<Record<string, unknown>>; whose?: string }) =>
         Array.isArray(entry.Company) && entry.whose === "0"
     ) as { Company: Array<Record<string, unknown>>; sid?: string };
-    const savedAt = findCollectibleSavedAt("9024", "houses_001_001", "1", false);
-
     profile.tutorialEnd = "1";
     profile.level = "6";
+    profile.firstGift = "1";
     mineCompany.Company.push({
       Item: [{ State: [], id: "4" }],
       sid: "9902",
@@ -5677,10 +5820,8 @@ describe("Millionaire City server", () => {
         {
           State: [],
           id: "1",
-          mode: "4",
-          time: "1800000",
-          contractSku: "1",
-          savedAt
+          mode: "1",
+          time: "0"
         }
       ],
       sid: "9024",
@@ -5700,6 +5841,7 @@ describe("Millionaire City server", () => {
       flash_version: "WIN 32,0,0,0"
     });
     const token = String(extractCommands(loginPayload)[0]._dat.token);
+    vi.spyOn(Math, "random").mockReturnValue(0.99);
 
     const mutationData = JSON.stringify({
       _cmdList: [
@@ -5708,9 +5850,10 @@ describe("Millionaire City server", () => {
           _dat: {
             action: "new_mode",
             sid: "9024",
-            mode: 5,
-            time: 0,
-            contractSku: 1
+            mode: 4,
+            time: 180000,
+            contractSku: 1,
+            contractGroupSku: 1
           },
           _cnt: 1
         }
@@ -5746,6 +5889,104 @@ describe("Millionaire City server", () => {
       .collectiblesList as Array<Record<string, unknown>>;
     const pendingEntry = collectiblesList.find((entry) => Array.isArray(entry.Pending)) as { tupla?: string } | undefined;
     expect(pendingEntry?.tupla ?? "").not.toContain("9024:");
+  });
+
+  archivedAssetTest("uses the original one-percent collectible roll when a commerce cycle resets", async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-commerce-collectible-award-"));
+    const config = {
+      ...getServerConfig(),
+      dbPath: path.join(tempDir, "save.sqlite"),
+      useHttpsFacebookShim: false
+    };
+
+    const serverApp = createServerApp(config);
+    activeApps.push(serverApp);
+    await serverApp.start();
+
+    const universe = serverApp.repository.getDocument<Record<string, unknown>>(1, "universe");
+    const root = universe.universe as Array<Record<string, unknown>>;
+    const profile = root.find((entry) => Array.isArray(entry.Profile)) as Record<string, unknown>;
+    const worldContainer = root.find((entry) => Array.isArray(entry.World)) as { World: Array<Record<string, unknown>> };
+    const mineCompany = worldContainer.World.find(
+      (entry: { Company?: Array<Record<string, unknown>>; whose?: string }) =>
+        Array.isArray(entry.Company) && entry.whose === "0"
+    ) as { Company: Array<Record<string, unknown>>; sid?: string };
+
+    profile.tutorialEnd = "1";
+    profile.level = "1";
+    mineCompany.Company.push({
+      Item: [{ State: [], id: "4" }],
+      sid: "9904",
+      csid: String(mineCompany.sid ?? "1"),
+      sku: "HeadQuarter",
+      x: "1",
+      y: "1",
+      isSuspended: "0"
+    });
+    mineCompany.Company.push({
+      Item: [{ State: [], id: "1", mode: "6", time: "0" }],
+      sid: "9025",
+      csid: String(mineCompany.sid ?? "1"),
+      sku: "commerce_pizza",
+      x: "16",
+      y: "8",
+      isSuspended: "0"
+    });
+    serverApp.repository.setDocument(1, "universe", universe);
+
+    const loginPayload = await postForm(config.httpPort, {
+      uid: config.launcherUserId,
+      cmd: "login",
+      version: "0.501",
+      data: "{}",
+      flash_version: "WIN 32,0,0,0"
+    });
+    const token = String(extractCommands(loginPayload)[0]._dat.token);
+    vi.spyOn(Math, "random").mockReturnValueOnce(0).mockReturnValueOnce(0);
+
+    const mutationData = JSON.stringify({
+      _cmdList: [
+        {
+          _cmd: "update_item",
+          _dat: {
+            action: "new_mode",
+            sid: "9025",
+            mode: 4,
+            time: 30000
+          },
+          _cnt: 1
+        }
+      ],
+      _msgCount: 0,
+      _sync: 1
+    });
+
+    const payload = await postForm(config.httpPort, {
+      uid: config.launcherUserId,
+      cmd: "cmdList",
+      version: "0.501",
+      data: mutationData,
+      flash_version: "WIN 32,0,0,0",
+      sig: signPayload(
+        {
+          uid: config.launcherUserId,
+          cmd: "cmdList",
+          version: "0.501",
+          data: mutationData,
+          flash_version: "WIN 32,0,0,0"
+        },
+        token
+      )
+    });
+
+    const commands = extractCommands(payload);
+    expect(commands).toHaveLength(2);
+    expect(commands[1]._dat).toMatchObject({ action: "give_collectible", sid: "9025", sku: "gift_037" });
+    const collectiblesList = serverApp.repository.getDocument<Record<string, unknown>>(1, "collectiblesList")
+      .collectiblesList as Array<Record<string, unknown>>;
+    const pendingEntry = collectiblesList.find((entry) => Array.isArray(entry.Pending)) as { tupla?: string } | undefined;
+    expect(pendingEntry?.tupla).toContain("9025:gift_037");
+    expect(serverApp.repository.getMeta("collectible_slots:1")).toBeUndefined();
   });
 
   test("keeps a collected house collectible and clears it from the pending list", async () => {
@@ -5951,6 +6192,12 @@ describe("Millionaire City server", () => {
     activeApps.push(serverApp);
     await serverApp.start();
 
+    const collectiblesDocument = createEmptyCollectiblesDocument();
+    (collectiblesDocument.collectiblesList as Array<Record<string, unknown>>).find((entry) =>
+      Array.isArray(entry.Objects)
+    )!.skus = "gift_013,gift_014,gift_015,gift_016";
+    serverApp.repository.setDocument(1, "collectiblesList", collectiblesDocument);
+
     const loginPayload = await postForm(config.httpPort, {
       uid: config.launcherUserId,
       cmd: "login",
@@ -6056,6 +6303,12 @@ describe("Millionaire City server", () => {
         isSuspended: "0"
       });
       serverApp.repository.setDocument(1, "universe", universe);
+
+      const collectiblesDocument = createEmptyCollectiblesDocument();
+      (collectiblesDocument.collectiblesList as Array<Record<string, unknown>>).find((entry) =>
+        Array.isArray(entry.Objects)
+      )!.skus = "gift_001,gift_002,gift_003,gift_004";
+      serverApp.repository.setDocument(1, "collectiblesList", collectiblesDocument);
 
       const loginPayload = await postForm(config.httpPort, {
         uid: config.launcherUserId,
@@ -6262,7 +6515,7 @@ describe("Millionaire City server", () => {
     }
   });
 
-  test("projects pending house collectibles back into the world on restart", async () => {
+  test("keeps a pre-rolled house collectible hidden while its contract is still renting after restart", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-house-collectible-restart-"));
     const dbPath = path.join(tempDir, "save.sqlite");
 
@@ -6302,8 +6555,10 @@ describe("Millionaire City server", () => {
           {
             State: [],
             id: "1",
-            mode: "1",
-            time: "0"
+            mode: "4",
+            time: "180000",
+            contractSku: "1",
+            contractGroupSku: "1"
           }
         ],
         sid: "9022",
@@ -6380,8 +6635,9 @@ describe("Millionaire City server", () => {
       const state = house?.Item?.find((entry) => Array.isArray(entry.State)) as Record<string, unknown> | undefined;
 
       expect(state?.id).toBe("1");
-      expect(state?.mode).toBe("14");
-      expect(state?.time).toBe("0");
+      expect(state?.mode).toBe("4");
+      expect(Number(state?.time)).toBeGreaterThan(0);
+      expect(state?.contractSku).toBe("1");
     }
   });
 });
@@ -6425,6 +6681,34 @@ function findDefinitionTag(xml: string, sku: string): string | undefined {
   return match?.[0];
 }
 
+function findShopVisibleDuplicateTids(xml: string): string[] {
+  const definitionsByTid = new Map<string, string[]>();
+  for (const match of xml.matchAll(/<Definition\b([^>]*)\/>/g)) {
+    const attributes = match[1] ?? "";
+    const tid = getDefinitionXmlAttribute(attributes, "tid");
+    if (!tid || getDefinitionXmlAttribute(attributes, "freeGift") === "1" || !isDefinitionVisibleInShop(attributes)) {
+      continue;
+    }
+
+    const sku = getDefinitionXmlAttribute(attributes, "sku") ?? "(unknown)";
+    definitionsByTid.set(tid, [...(definitionsByTid.get(tid) ?? []), sku]);
+  }
+
+  return [...definitionsByTid.entries()]
+    .filter(([, skus]) => skus.length > 1)
+    .map(([tid, skus]) => `${tid}: ${skus.join(", ")}`);
+}
+
+function isDefinitionVisibleInShop(attributes: string): boolean {
+  const where = getDefinitionXmlAttribute(attributes, "where");
+  return !where || where.split(",").map((entry) => entry.trim()).includes("shop");
+}
+
+function getDefinitionXmlAttribute(attributes: string, name: string): string | undefined {
+  const match = attributes.match(new RegExp(`(?:^|\\s)${name}="([^"]*)"`));
+  return match?.[1];
+}
+
 function signPayload(payload: Record<string, string>, token: string): string {
   const serialized = Object.entries(payload)
     .sort(([a], [b]) => a.localeCompare(b, undefined, { sensitivity: "base" }))
@@ -6435,14 +6719,34 @@ function signPayload(payload: Record<string, string>, token: string): string {
 }
 
 function extractRoadTiles(worldEntry: { World: Array<Record<string, unknown>> }): Set<string> {
+  return new Set(extractMapTiles(worldEntry, "Road"));
+}
+
+function getHeadQuarterSkin(item: Record<string, unknown> | undefined): string | undefined {
+  const itemChildren = item?.Item as Array<Record<string, unknown>> | undefined;
+  const decorations = itemChildren?.find((entry) => Array.isArray(entry.Decorations));
+  const decorationChildren = decorations?.Decorations as Array<Record<string, unknown>> | undefined;
+  return String(decorationChildren?.find((entry) => Array.isArray(entry.Decoration))?.currentSku ?? "") || undefined;
+}
+
+function extractMapTiles(
+  worldEntry: { World: Array<Record<string, unknown>> },
+  tagName: "Terrain" | "Road"
+): string[] {
+  return extractMapChunks(worldEntry, tagName).flatMap((chunk) => chunk.split(",").filter(Boolean));
+}
+
+function extractMapChunks(
+  worldEntry: { World: Array<Record<string, unknown>> },
+  tagName: "Terrain" | "Road"
+): string[] {
   const mapEntry = worldEntry.World.find((entry) => Array.isArray(entry.Map)) as
     | { Map: Array<Record<string, unknown>> }
     | undefined;
-  const roadEntry = mapEntry?.Map.find((entry) => Array.isArray(entry.Road)) as
-    | { chunk?: string }
-    | undefined;
 
-  return new Set((roadEntry?.chunk ?? "").split(",").filter(Boolean));
+  return (mapEntry?.Map ?? [])
+    .filter((entry) => Array.isArray(entry[tagName]))
+    .map((entry) => String(entry.chunk ?? ""));
 }
 
 function getItemsOverlappingRoads(items: Array<Record<string, unknown>>, roadTiles: Set<string>): string[] {

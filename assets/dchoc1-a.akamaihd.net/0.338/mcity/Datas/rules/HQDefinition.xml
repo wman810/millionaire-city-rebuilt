@@ -1,0 +1,7 @@
+<HQDefinition>
+	<upgrade id="0" permits="1000" levelreq="0" price="1000"/>
+	<upgrade id="1" permits="12" levelreq="2" price="1000"/>
+	<upgrade id="2" permits="16" levelreq="6" price="96000"/>
+	<upgrade id="3" permits="20" levelreq="12" price="96000"/>
+	<upgrade id="4" permits="25" levelreq="20" price="96000"/>
+</HQDefinition>

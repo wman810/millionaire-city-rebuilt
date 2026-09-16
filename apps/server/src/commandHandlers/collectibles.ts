@@ -2,35 +2,49 @@ import fs from "fs";
 import path from "path";
 import type { JsonObject } from "@mcity/shared/dist/types.js";
 import { createEmptyCollectiblePendingDocument, createEmptyCollectiblesDocument } from "../saveDefaults.js";
+import { ITEM_ASSETS_ROOT, RULES_ROOT } from "../saveDefaults/paths.js";
 import { loadCollectibleUnlockLevel, loadDefinitionAttributes, loadLevelXpThresholds } from "../rules.js";
 import { createElement, findElementChild, getElementChildren } from "../saveTree.js";
-import { getCompanyEntryByWhose, isHouseSku, isItemElement, type MutableNode } from "./universe.js";
+import { isHouseSku, type MutableNode } from "./universe.js";
 
-type CollectibleDefinition = {
+export type CollectibleDefinition = {
   sku: string;
   collection: string;
   contractGroups: string[];
+  commerceSkus: string[];
+  rarity: number;
+  minRarity: number;
+  dependency: number;
+  buyPriceCash: number;
+  sellPriceCoins: number;
 };
 
-type CollectibleGroupDefinition = {
+export type CollectibleGroupDefinition = {
   sku: string;
   rewardSku: string;
   rewardType: string;
+  requirement: string;
+  tradeable: boolean;
+  collectibleSkus: string[];
+  rewardValue?: {
+    cash: number;
+    coins: number;
+    exp: number;
+  };
 };
 
-type CollectiblesState = {
+export type CollectiblesState = {
   objectCounts: Map<string, number>;
   rewards: Set<string>;
   pendingBySid: Map<string, string>;
 };
 
-const RULES_ROOT = path.resolve(__dirname, "../../../../assets/dchoc1-a.akamaihd.net/0.501/mcity/Datas/rules");
-const ITEM_ASSETS_ROOT = path.resolve(
-  __dirname,
-  "../../../../assets/dchoc1-a.akamaihd.net/0.501/mcity/Datas/Assets/items"
-);
+export type RandomSource = () => number;
+
 const SETTINGS_PATH = path.join(RULES_ROOT, "settings.xml");
 const XP_TABLE_PATH = path.join(RULES_ROOT, "XPTable.xml");
+const CONTRACTS_PATH = path.join(RULES_ROOT, "contracts.xml");
+const COLLECTIBLE_CHANCES_PATH = path.join(RULES_ROOT, "collectiblesChances.xml");
 const ADVISOR_VARIANT_ITEM_SKUS = loadAdvisorVariantItemSkus(path.join(RULES_ROOT, "itemDefinitions.xml"));
 const AVAILABLE_COLLECTIBLE_GROUPS = loadAvailableCollectibleGroupSkus(
   path.join(RULES_ROOT, "collectiblesGroupsDefinitions.xml"),
@@ -44,6 +58,8 @@ const COLLECTIBLE_DEFINITIONS = loadCollectibleDefinitions(
 );
 const COLLECTIBLE_GROUP_DEFINITIONS_BY_SKU = loadCollectibleGroupDefinitionMap(
   path.join(RULES_ROOT, "collectiblesGroupsDefinitions.xml"),
+  path.join(RULES_ROOT, "collectiblesRewardDefinitions.xml"),
+  COLLECTIBLE_DEFINITIONS,
   AVAILABLE_COLLECTIBLE_GROUPS
 );
 const COLLECTIBLE_PLANE_REWARD_BY_GROUP = loadCollectiblePlaneRewardMap(
@@ -58,9 +74,33 @@ const COLLECTIBLE_HQ_REWARD_BY_GROUP = loadCollectibleRewardMapByType(
   "hq"
 );
 const COLLECTIBLES_BY_CONTRACT_GROUP = groupCollectiblesByContractGroup(COLLECTIBLE_DEFINITIONS);
+const COLLECTIBLES_BY_COMMERCE_SKU = groupCollectiblesByCommerceSku(COLLECTIBLE_DEFINITIONS);
+const CONTRACT_INCOME_HOURS_BY_SKU = loadContractIncomeHoursBySku(CONTRACTS_PATH);
+const COLLECTIBLE_DROP_CHANCE_BY_HOURS = loadCollectibleDropChanceByHours(COLLECTIBLE_CHANCES_PATH);
 const COLLECTIBLE_UNLOCK_LEVEL = loadCollectibleUnlockLevel(SETTINGS_PATH);
 const LEVEL_XP_THRESHOLDS = loadLevelXpThresholds(XP_TABLE_PATH);
-const HOUSE_COLLECTIBLE_DROP_DIVISOR = 8;
+const COLLECTIBLE_SETTINGS = loadDefinitionAttributes(SETTINGS_PATH)[0] ?? {};
+const COLLECTIBLE_MAX_UNITS_PER_ITEM = readNonNegativeInteger(
+  COLLECTIBLE_SETTINGS.collectibleMaxUnitsPerItem,
+  99
+);
+const COMMERCE_COLLECTIBLE_DROP_CHANCE =
+  readNonNegativeInteger(COLLECTIBLE_SETTINGS.collectRewardInCommerceChances, 1) / 100;
+export const HOUSE_COLLECTIBLE_SLOT_COUNT = 3;
+export const HOUSE_COLLECTIBLE_SLOT_EXPIRE_MS =
+  readPositiveNumber(COLLECTIBLE_SETTINGS.collectibleSlotExpire, 8) * 60 * 60 * 1000;
+
+export function getCollectibleMaximumUnits(): number {
+  return COLLECTIBLE_MAX_UNITS_PER_ITEM;
+}
+
+export function getCollectibleDefinitionForMutation(sku: string): CollectibleDefinition | undefined {
+  return COLLECTIBLE_DEFINITIONS.find((definition) => definition.sku === sku);
+}
+
+export function getCollectibleGroupForClaim(sku: string): CollectibleGroupDefinition | undefined {
+  return COLLECTIBLE_GROUP_DEFINITIONS_BY_SKU.get(sku);
+}
 
 export function normalizeCollectiblesDocument(document: JsonObject): boolean {
   const normalized = createEmptyCollectiblesDocument();
@@ -150,117 +190,160 @@ export function removePendingFriendCollectible(document: JsonObject, extId: stri
   return true;
 }
 
-export function projectPendingCollectiblesOnUniverse(universe: JsonObject, collectiblesDocument: JsonObject): JsonObject {
-  const pendingBySid = readCollectiblesState(collectiblesDocument).pendingBySid;
-  if (pendingBySid.size === 0) {
-    return universe;
-  }
+export type CollectibleAwardSource = "house" | "commerce";
 
-  const company = getCompanyEntryByWhose(universe, "0");
-  if (!company) {
-    return universe;
-  }
-
-  for (const item of getElementChildren(company, "Company")) {
-    if (!isItemElement(item)) {
-      continue;
-    }
-
-    const sid = String(item.sid ?? "");
-    if (!pendingBySid.has(sid) || !isHouseSku(String(item.sku ?? ""))) {
-      continue;
-    }
-
-    const state = ensureProjectedHouseState(item);
-    const currentMode = String(state.mode ?? "1");
-    if (currentMode === "5" || currentMode === "6") {
-      continue;
-    }
-
-    state.id = "1";
-    state.mode = "14";
-    state.time = "0";
-    for (const staleKey of ["contractSku", "contractGroupSku", "savedAt", "accelerated", "doubleRent"]) {
-      if (staleKey in state) {
-        delete state[staleKey];
-      }
-    }
-  }
-
-  return universe;
-}
-
-export function collapsePendingCollectibleState(state: MutableNode): void {
-  state.id = "1";
-  state.mode = "1";
-  state.time = "0";
-  for (const staleKey of ["contractSku", "contractGroupSku", "savedAt", "accelerated", "doubleRent"]) {
-    if (staleKey in state) {
-      delete state[staleKey];
-    }
-  }
-}
-
-export function isCollectibleAwardMutation(payload: Record<string, unknown>, state: MutableNode): boolean {
+export function getCollectibleAwardSource(
+  payload: Record<string, unknown>,
+  itemSku: string,
+  previousMode: string,
+  state: MutableNode
+): CollectibleAwardSource | undefined {
   const action = String(payload.action ?? "").toLowerCase();
-  return (
-    (action === "new_mode" || action === "new_state") &&
-    String(state.id ?? "") === "1" &&
-    String(state.mode ?? "") === "5"
-  );
+  if ((action !== "new_mode" && action !== "new_state") || String(state.mode ?? "") !== "4") {
+    return undefined;
+  }
+
+  if (isHouseSku(itemSku) && previousMode === "1") {
+    return "house";
+  }
+
+  if (COLLECTIBLES_BY_COMMERCE_SKU.has(itemSku) && (previousMode === "6" || previousMode === "14")) {
+    return "commerce";
+  }
+
+  return undefined;
 }
 
 export function isCollectibleFeatureUnlocked(profile: MutableNode | undefined): boolean {
   return getProfileLevel(profile) >= COLLECTIBLE_UNLOCK_LEVEL;
 }
 
-export function shouldAwardCollectibleDrop(itemEntry: MutableNode, state: MutableNode): boolean {
-  const sid = String(itemEntry.sid ?? "").trim();
-  const itemSku = String(itemEntry.sku ?? "").trim();
+export function shouldAwardHouseCollectibleDrop(
+  state: MutableNode,
+  random: RandomSource = Math.random
+): boolean {
   const contractSku = String(state.contractSku ?? "").trim();
-  const savedAt = String(state.savedAt ?? "").trim();
-  if (sid.length === 0 || itemSku.length === 0 || contractSku.length === 0 || savedAt.length === 0) {
+  const incomeHours = CONTRACT_INCOME_HOURS_BY_SKU.get(contractSku);
+  if (incomeHours == null) {
     return false;
   }
 
-  const cycleKey = `${sid}:${itemSku}:${contractSku}:${savedAt}`;
-  const roll = Math.abs(stableStringHash(cycleKey));
-  return roll % HOUSE_COLLECTIBLE_DROP_DIVISOR === 0;
+  const chance = COLLECTIBLE_DROP_CHANCE_BY_HOURS.get(incomeHours);
+  return chance != null && normalizeRandomRoll(random()) <= chance;
 }
 
-export function pickCollectibleSkuForHouse(itemSku: string, sid: string, state: CollectiblesState): string | undefined {
-  const contractGroup = ITEM_CONTRACT_GROUP_BY_SKU.get(itemSku);
+export function shouldAwardCommerceCollectibleDrop(random: RandomSource = Math.random): boolean {
+  return normalizeRandomRoll(random()) <= COMMERCE_COLLECTIBLE_DROP_CHANCE;
+}
+
+export function reserveHouseCollectibleDropSlot(
+  currentExpirations: readonly number[],
+  nowMs: number
+): number[] | undefined {
+  const expirations = currentExpirations
+    .filter((value) => Number.isFinite(value) && value >= 0)
+    .slice(0, HOUSE_COLLECTIBLE_SLOT_COUNT);
+  const nextExpiration = nowMs + HOUSE_COLLECTIBLE_SLOT_EXPIRE_MS;
+
+  if (expirations.length < HOUSE_COLLECTIBLE_SLOT_COUNT) {
+    expirations.push(nextExpiration);
+    return expirations;
+  }
+
+  const reusableIndex = expirations.findIndex((expiration) => expiration < nowMs);
+  if (reusableIndex === -1) {
+    return undefined;
+  }
+
+  expirations[reusableIndex] = nextExpiration;
+  return expirations;
+}
+
+export function pickCollectibleSkuForHouse(
+  itemSku: string,
+  contractGroupSku: string,
+  state: CollectiblesState,
+  random: RandomSource = Math.random
+): string | undefined {
+  const contractGroup = contractGroupSku.trim() || ITEM_CONTRACT_GROUP_BY_SKU.get(itemSku);
   if (!contractGroup) {
     return undefined;
   }
 
   const candidates = COLLECTIBLES_BY_CONTRACT_GROUP.get(contractGroup) ?? [];
+  return pickCollectibleSkuFromPossibleList(candidates, state, random);
+}
+
+export function pickCollectibleSkuForCommerce(
+  itemSku: string,
+  state: CollectiblesState,
+  random: RandomSource = Math.random
+): string | undefined {
+  const candidates = COLLECTIBLES_BY_COMMERCE_SKU.get(itemSku) ?? [];
+  return pickCollectibleSkuFromPossibleList(candidates, state, random);
+}
+
+function pickCollectibleSkuFromPossibleList(
+  candidates: readonly CollectibleDefinition[],
+  state: CollectiblesState,
+  random: RandomSource
+): string | undefined {
   if (candidates.length === 0) {
     return undefined;
   }
 
-  const pendingCounts = new Map<string, number>();
-  for (const sku of state.pendingBySid.values()) {
-    pendingCounts.set(sku, (pendingCounts.get(sku) ?? 0) + 1);
+  const candidatesByCollection = new Map<string, CollectibleDefinition[]>();
+  for (const candidate of candidates) {
+    const collection = candidatesByCollection.get(candidate.collection) ?? [];
+    collection.push(candidate);
+    candidatesByCollection.set(candidate.collection, collection);
   }
 
-  return candidates
-    .slice()
-    .sort((left, right) => {
-      const leftCount = (state.objectCounts.get(left) ?? 0) + (pendingCounts.get(left) ?? 0);
-      const rightCount = (state.objectCounts.get(right) ?? 0) + (pendingCounts.get(right) ?? 0);
-      if (leftCount !== rightCount) {
-        return leftCount - rightCount;
+  const weightedCandidates: Array<{ sku: string; weight: number }> = [];
+  for (const collection of candidatesByCollection.values()) {
+    const isComplete = collection.every((candidate) => (state.objectCounts.get(candidate.sku) ?? 0) > 0);
+    const dependencySum = collection.reduce(
+      (sum, candidate) =>
+        sum + ((state.objectCounts.get(candidate.sku) ?? 0) > 0 ? candidate.dependency : 0),
+      0
+    );
+
+    for (const candidate of collection) {
+      const count = state.objectCounts.get(candidate.sku) ?? 0;
+      const baseWeight = Math.max(candidate.rarity, candidate.minRarity);
+      let weight = baseWeight;
+      if (!isComplete && count > 0) {
+        weight =
+          count >= COLLECTIBLE_MAX_UNITS_PER_ITEM
+            ? 0
+            : Math.max(baseWeight - dependencySum, candidate.minRarity);
       }
 
-      const leftHash = stableStringHash(`${sid}:${left}`);
-      const rightHash = stableStringHash(`${sid}:${right}`);
-      if (leftHash !== rightHash) {
-        return leftHash - rightHash;
-      }
+      weightedCandidates.push({ sku: candidate.sku, weight });
+    }
+  }
 
-      return left.localeCompare(right);
-    })[0];
+  const totalWeight = weightedCandidates.reduce((sum, candidate) => sum + candidate.weight, 0);
+  if (totalWeight <= 0) {
+    return undefined;
+  }
+
+  const roll = Math.floor(normalizeRandomRoll(random()) * totalWeight);
+  let cumulativeWeight = 0;
+  for (const candidate of weightedCandidates) {
+    cumulativeWeight += candidate.weight;
+    if (roll < cumulativeWeight) {
+      return candidate.sku;
+    }
+  }
+
+  for (let index = weightedCandidates.length - 1; index >= 0; index -= 1) {
+    if (weightedCandidates[index].weight > 0) {
+      return weightedCandidates[index].sku;
+    }
+  }
+
+  return undefined;
 }
 
 export function resolvePlaneRewardSkuForCollectibleClaim(groupSku: string): string | undefined {
@@ -315,7 +398,7 @@ function parseSkuCountMap(value: string): Map<string, number> {
     const [sku, countValue] = trimmed.split(":");
     const count = countValue == null ? 1 : Number(countValue);
     if (sku && Number.isFinite(count) && count > 0) {
-      counts.set(sku, count);
+      counts.set(sku, Math.min(COLLECTIBLE_MAX_UNITS_PER_ITEM, Math.trunc(count)));
     }
   }
   return counts;
@@ -371,19 +454,7 @@ function serializePendingCollectibleMap(values: Map<string, string>): string {
     .join(",");
 }
 
-function ensureProjectedHouseState(item: MutableNode): MutableNode {
-  const itemChildren = getElementChildren(item, "Item");
-  const existing = findElementChild(itemChildren, "State");
-  if (existing) {
-    return existing;
-  }
-
-  const state = createElement("State", { id: "1", mode: "1", time: "0" });
-  itemChildren.unshift(state);
-  return state;
-}
-
-function getProfileLevel(profile: MutableNode | undefined): number {
+export function getProfileLevel(profile: MutableNode | undefined): number {
   const explicitLevel = Number(profile?.level ?? "");
   if (Number.isFinite(explicitLevel) && explicitLevel >= 1) {
     return Math.floor(explicitLevel);
@@ -405,12 +476,30 @@ function getProfileLevel(profile: MutableNode | undefined): number {
   return Math.max(1, LEVEL_XP_THRESHOLDS.length);
 }
 
-function stableStringHash(value: string): number {
-  let hash = 17;
-  for (let index = 0; index < value.length; index += 1) {
-    hash = (hash * 31 + value.charCodeAt(index)) | 0;
+function normalizeRandomRoll(value: number): number {
+  if (!Number.isFinite(value) || value <= 0) {
+    return 0;
   }
-  return hash;
+  if (value >= 1) {
+    return 1 - Number.EPSILON;
+  }
+  return value;
+}
+
+function readNonNegativeInteger(value: string | undefined, fallback: number): number {
+  if (value == null || value.trim().length === 0) {
+    return fallback;
+  }
+  const parsed = Number(value);
+  return Number.isFinite(parsed) && parsed >= 0 ? Math.trunc(parsed) : fallback;
+}
+
+function readPositiveNumber(value: string | undefined, fallback: number): number {
+  if (value == null || value.trim().length === 0) {
+    return fallback;
+  }
+  const parsed = Number(value);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
 }
 
 function loadItemContractGroupMap(filePath: string): Map<string, string> {
@@ -435,21 +524,93 @@ function loadCollectibleDefinitions(filePath: string, availableGroupSkus: Set<st
         .split(",")
         .map((entry) => entry.trim())
         .filter((entry) => entry.length > 0);
-      return { sku, collection, contractGroups };
+      const commerceSkus = (definition.commerce ?? "")
+        .split(",")
+        .map((entry) => entry.trim())
+        .filter((entry) => entry.length > 0);
+      const rarity = readNonNegativeInteger(definition.prioritySku, 0);
+      const minRarity = readNonNegativeInteger(definition.minPriority, 0);
+      const dependency = readNonNegativeInteger(definition.dependency, 0);
+      const buyPriceCash = readNonNegativeInteger(definition.priceCash, 0);
+      const sellPriceCoins = readNonNegativeInteger(definition.priceCoins, 0);
+      return {
+        sku,
+        collection,
+        contractGroups,
+        commerceSkus,
+        rarity,
+        minRarity,
+        dependency,
+        buyPriceCash,
+        sellPriceCoins
+      };
     })
     .filter(
       (definition) =>
         definition.sku.length > 0 &&
         definition.collection.length > 0 &&
         availableGroupSkus.has(definition.collection) &&
-        definition.contractGroups.length > 0
+        definition.rarity > 0 &&
+        (definition.contractGroups.length > 0 || definition.commerceSkus.length > 0)
     );
+}
+
+function loadContractIncomeHoursBySku(filePath: string): Map<string, number> {
+  const mapping = new Map<string, number>();
+  for (const definition of loadDefinitionAttributes(filePath)) {
+    const sku = definition.sku?.trim();
+    const incomeHours = Number(definition.incomeTime ?? "");
+    if (sku && Number.isFinite(incomeHours) && incomeHours > 0) {
+      mapping.set(sku, incomeHours);
+    }
+  }
+  return mapping;
+}
+
+function loadCollectibleDropChanceByHours(filePath: string): Map<number, number> {
+  const mapping = new Map<number, number>();
+  for (const definition of loadDefinitionAttributes(filePath)) {
+    const incomeHours = Number(definition.hours ?? "");
+    const percentage = Number(definition.finalResult ?? "");
+    if (
+      Number.isFinite(incomeHours) &&
+      incomeHours > 0 &&
+      Number.isFinite(percentage) &&
+      percentage >= 0
+    ) {
+      mapping.set(incomeHours, Math.min(1, percentage / 100));
+    }
+  }
+  return mapping;
 }
 
 function loadCollectibleGroupDefinitionMap(
   groupsPath: string,
+  rewardsPath: string,
+  collectibleDefinitions: CollectibleDefinition[],
   availableGroupSkus: Set<string>
 ): Map<string, CollectibleGroupDefinition> {
+  const rewardValues = new Map<string, CollectibleGroupDefinition["rewardValue"]>();
+  for (const definition of loadDefinitionAttributes(rewardsPath)) {
+    const sku = definition.sku?.trim() ?? "";
+    const parts = (definition.value ?? "").split(":").map(Number);
+    if (sku.length === 0 || parts.length !== 3 || parts.some((value) => !Number.isFinite(value))) {
+      continue;
+    }
+    rewardValues.set(sku, {
+      cash: Math.trunc(parts[0]),
+      coins: Math.trunc(parts[1]),
+      exp: Math.trunc(parts[2])
+    });
+  }
+
+  const collectibleSkusByGroup = new Map<string, string[]>();
+  for (const definition of collectibleDefinitions) {
+    const members = collectibleSkusByGroup.get(definition.collection) ?? [];
+    members.push(definition.sku);
+    collectibleSkusByGroup.set(definition.collection, members);
+  }
+
   const groups = new Map<string, CollectibleGroupDefinition>();
   for (const definition of loadDefinitionAttributes(groupsPath)) {
     const sku = definition.sku?.trim() ?? "";
@@ -459,7 +620,15 @@ function loadCollectibleGroupDefinitionMap(
       continue;
     }
 
-    groups.set(sku, { sku, rewardSku, rewardType });
+    groups.set(sku, {
+      sku,
+      rewardSku,
+      rewardType,
+      requirement: definition.requirements?.trim() ?? "",
+      tradeable: definition.tradein === "1",
+      collectibleSkus: collectibleSkusByGroup.get(sku) ?? [],
+      rewardValue: rewardValues.get(rewardSku)
+    });
   }
 
   return groups;
@@ -571,13 +740,25 @@ function createArchivedItemSwfSet(itemAssetsRoot: string): Set<string> {
   );
 }
 
-function groupCollectiblesByContractGroup(definitions: CollectibleDefinition[]): Map<string, string[]> {
-  const mapping = new Map<string, string[]>();
+function groupCollectiblesByContractGroup(definitions: CollectibleDefinition[]): Map<string, CollectibleDefinition[]> {
+  const mapping = new Map<string, CollectibleDefinition[]>();
   for (const definition of definitions) {
     for (const group of definition.contractGroups) {
       const current = mapping.get(group) ?? [];
-      current.push(definition.sku);
+      current.push(definition);
       mapping.set(group, current);
+    }
+  }
+  return mapping;
+}
+
+function groupCollectiblesByCommerceSku(definitions: CollectibleDefinition[]): Map<string, CollectibleDefinition[]> {
+  const mapping = new Map<string, CollectibleDefinition[]>();
+  for (const definition of definitions) {
+    for (const commerceSku of definition.commerceSkus) {
+      const current = mapping.get(commerceSku) ?? [];
+      current.push(definition);
+      mapping.set(commerceSku, current);
     }
   }
   return mapping;
