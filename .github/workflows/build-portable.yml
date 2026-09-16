@@ -22,6 +22,10 @@ jobs:
             os: ubuntu-latest
             package_script: package:linux
             artifact_name: portable-linux-x64
+          - label: macOS Intel x64
+            os: macos-15-intel
+            package_script: package:mac:x64
+            artifact_name: portable-macos-x64
 
     steps:
       - name: Check out repository
