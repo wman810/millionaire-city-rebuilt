@@ -12,4 +12,20 @@ if (process.platform !== "win32") {
   fs.chmodSync(targetNodePath, 0o755);
 }
 
+if (process.platform === "darwin") {
+  const flashExecutablePath = path.join(
+    workspaceRoot,
+    "apps",
+    "desktop",
+    "assets",
+    "flash",
+    "PepperFlashPlayer.plugin",
+    "Contents",
+    "MacOS",
+    "PepperFlashPlayer"
+  );
+  fs.chmodSync(flashExecutablePath, 0o755);
+  console.log(`[mcity] Marked Flash plugin executable at ${flashExecutablePath}`);
+}
+
 console.log(`[mcity] Copied Node runtime from ${sourceNodePath} to ${targetNodePath}`);

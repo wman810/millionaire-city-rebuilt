@@ -8,6 +8,8 @@ import { app, BrowserWindow, dialog, Menu, session, type MenuItem, type MenuItem
 import { configureFlash } from "./flash-loader";
 
 const workspaceRoot = path.resolve(__dirname, "../../..");
+const generatedRoot = path.join(workspaceRoot, "generated");
+const mutableDataRoot = getMutableDataRoot();
 const serverDistPath = path.join(workspaceRoot, "apps", "server", "dist", "main.js");
 const launcherBaseUrl = "https://127.0.0.1:31804/launcher";
 const healthUrl = "https://127.0.0.1:31804/health";
@@ -15,8 +17,9 @@ const healthChallengeHeader = "x-mcity-health-challenge";
 const healthProofHeader = "x-mcity-health-proof";
 const serverLaunchSecret = crypto.randomBytes(32).toString("hex");
 const launcherOrigin = new URL(launcherBaseUrl).origin;
-const desktopLogPath = path.join(workspaceRoot, "generated", "logs", "desktop.log");
-const desktopSettingsPath = path.join(workspaceRoot, "generated", "settings", "desktop.json");
+const desktopLogPath = path.join(mutableDataRoot, "logs", "desktop.log");
+const desktopSettingsPath = path.join(mutableDataRoot, "settings", "desktop.json");
+const serverDatabasePath = path.join(mutableDataRoot, "data", "mcity.sqlite");
 const facebookShimPort = getFacebookShimPort();
 const facebookShimOrigin = `https://127.0.0.1:${facebookShimPort}`;
 const trustedRuntimeOrigins = new Set([launcherOrigin, facebookShimOrigin]);
@@ -48,6 +51,7 @@ const desktopSettings = readDesktopSettings();
 let mainWindow: BrowserWindow | null = null;
 let serverProcess: ChildProcess | null = null;
 let serverExitError: Error | null = null;
+let serverOutputTail = "";
 let localServerAuthenticated = false;
 let shuttingDown = false;
 let swfDebugMode = getEnvBoolean("MCITY_SWF_DEBUG") ?? desktopSettings.swfDebugMode ?? false;
@@ -228,6 +232,17 @@ function getEnvBoolean(name: string): boolean | undefined {
     return false;
   }
   return undefined;
+}
+
+function getMutableDataRoot(): string {
+  // A downloaded macOS app may be launched from a read-only App Translocation
+  // mount. Runtime data therefore cannot live inside the packaged .app bundle.
+  // Keep the existing portable/dev layout on other platforms for compatibility.
+  if (app.isPackaged && process.platform === "darwin") {
+    return app.getPath("userData");
+  }
+
+  return generatedRoot;
 }
 
 function readDesktopSettings(): DesktopSettings {
@@ -665,6 +680,7 @@ async function startEverything(): Promise<void> {
   const nodeExecutable = resolveNodeExecutable();
 
   serverExitError = null;
+  serverOutputTail = "";
   localServerAuthenticated = false;
 
   const launchedProcess = spawn(nodeExecutable, [serverDistPath], {
@@ -675,6 +691,7 @@ async function startEverything(): Promise<void> {
       MCITY_FACEBOOK_PORT: String(facebookShimPort),
       MCITY_HTTP_PORT: "31803",
       MCITY_HTTPS_PORT: "31804",
+      MCITY_DB_PATH: process.env.MCITY_DB_PATH ?? serverDatabasePath,
       MCITY_LAUNCH_SECRET: serverLaunchSecret,
       MCITY_REQUIRE_FB_SHIM: "1"
     },
@@ -683,6 +700,7 @@ async function startEverything(): Promise<void> {
   serverProcess = launchedProcess;
 
   launchedProcess.stdout?.on("data", (chunk: Buffer | string) => {
+    appendServerOutput(chunk);
     const text = String(chunk).trim();
     if (text) {
       console.log(`[server] ${text}`);
@@ -691,6 +709,7 @@ async function startEverything(): Promise<void> {
   });
 
   launchedProcess.stderr?.on("data", (chunk: Buffer | string) => {
+    appendServerOutput(chunk);
     const text = String(chunk).trim();
     if (text) {
       console.error(`[server] ${text}`);
@@ -699,14 +718,18 @@ async function startEverything(): Promise<void> {
   });
 
   launchedProcess.once("error", (error) => {
-    handleServerProcessFailure(`Local backend failed to start: ${error.message}`);
+    handleServerProcessFailure(
+      formatServerFailure(`Local backend failed to start: ${error.message}`)
+    );
   });
-  launchedProcess.once("exit", (code, signal) => {
+  launchedProcess.once("close", (code, signal) => {
     if (serverProcess === launchedProcess) {
       serverProcess = null;
     }
     const reason = signal ? `signal ${signal}` : `exit code ${code ?? "unknown"}`;
-    handleServerProcessFailure(`Local backend stopped unexpectedly (${reason}).`);
+    handleServerProcessFailure(
+      formatServerFailure(`Local backend stopped unexpectedly (${reason}).`)
+    );
   });
 
   await waitForServer();
@@ -715,6 +738,17 @@ async function startEverything(): Promise<void> {
   if (mainWindow && !mainWindow.isDestroyed()) {
     mainWindow.show();
   }
+}
+
+function appendServerOutput(chunk: Buffer | string): void {
+  const maxLength = 2_000;
+  serverOutputTail = `${serverOutputTail}${String(chunk)}`.slice(-maxLength);
+}
+
+function formatServerFailure(summary: string): string {
+  const output = serverOutputTail.trim();
+  const details = output ? `\n\nLast backend output:\n${output}` : "";
+  return `${summary}${details}\n\nDesktop log: ${desktopLogPath}`;
 }
 
 function handleServerProcessFailure(message: string): void {

@@ -612,10 +612,12 @@ function getListeningPort(server: Server | https.Server, fallback: number): numb
 }
 
 function ensurePrivateClientExists(config: ServerConfig): void {
-  fs.mkdirSync(path.dirname(config.privateClientSwfPath), { recursive: true });
-  if (!fs.existsSync(config.privateClientSwfPath)) {
-    fs.copyFileSync(config.sourceClientSwfPath, config.privateClientSwfPath);
+  if (fs.existsSync(config.privateClientSwfPath)) {
+    return;
   }
+
+  fs.mkdirSync(path.dirname(config.privateClientSwfPath), { recursive: true });
+  fs.copyFileSync(config.sourceClientSwfPath, config.privateClientSwfPath);
 }
 
 function dataAssetPath(config: ServerConfig, ...segments: string[]): string {
