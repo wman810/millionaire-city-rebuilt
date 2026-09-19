@@ -993,10 +993,28 @@ function createLocalhostTlsOptions(): https.ServerOptions {
       { name: "organizationName", value: "Millionaire City Revival" }
     ],
     {
-      days: 3650,
+      // Apple platforms reject TLS server certificates whose lifetime is
+      // longer than 398 days, even when Chromium handles trust separately.
+      days: 365,
+      notBeforeDate: new Date(Date.now() - 5 * 60 * 1000),
       keySize: 2048,
       algorithm: "sha256",
       extensions: [
+        {
+          name: "basicConstraints",
+          critical: true,
+          cA: false
+        },
+        {
+          name: "keyUsage",
+          critical: true,
+          digitalSignature: true,
+          keyEncipherment: true
+        },
+        {
+          name: "extKeyUsage",
+          serverAuth: true
+        },
         {
           name: "subjectAltName",
           altNames: [

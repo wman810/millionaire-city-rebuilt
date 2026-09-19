@@ -1,8 +1,10 @@
 import crypto from "node:crypto";
 import fs from "node:fs";
+import https from "node:https";
 import net from "node:net";
 import os from "node:os";
 import path from "node:path";
+import type { TLSSocket } from "node:tls";
 import { afterEach, describe, expect, test } from "vitest";
 import type { PacketCommand } from "@mcity/shared";
 import type { JsonObject } from "@mcity/shared/dist/types.js";
@@ -209,6 +211,39 @@ describe("Millionaire City server", () => {
 
     const address = serverApp.facebookShim?.server.address();
     expect(address && typeof address === "object" ? address.address : undefined).toBe("127.0.0.1");
+  });
+
+  test("uses macOS-compatible certificates for both local HTTPS servers", async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "mcity-local-tls-"));
+    const serverApp = createServerApp({
+      ...getServerConfig(),
+      dbPath: path.join(tempDir, "save.sqlite"),
+      useHttpsFacebookShim: true,
+      requireHttpsFacebookShim: true
+    });
+    activeApps.push(serverApp);
+    await serverApp.start();
+
+    const facebookAddress = serverApp.facebookShim?.server.address();
+    expect(facebookAddress && typeof facebookAddress === "object").toBe(true);
+    const facebookPort =
+      facebookAddress && typeof facebookAddress === "object" ? facebookAddress.port : 0;
+    const certificates = await Promise.all([
+      readLocalServerCertificate(serverApp.config.httpsPort, "/health"),
+      readLocalServerCertificate(facebookPort, "/me")
+    ]);
+
+    for (const certificate of certificates) {
+      const lifetimeMs = Date.parse(certificate.validTo) - Date.parse(certificate.validFrom);
+      expect(lifetimeMs).toBeLessThanOrEqual(366 * 24 * 60 * 60 * 1000);
+      expect(certificate.checkIP("127.0.0.1")).toBe("127.0.0.1");
+      expect(certificate.keyUsage).toContain("1.3.6.1.5.5.7.3.1");
+      expect(certificate.publicKey.asymmetricKeyDetails?.modulusLength).toBeGreaterThanOrEqual(2048);
+    }
+
+    expect(certificates[0].checkHost("localhost")).toBe("localhost");
+    expect(certificates[1].checkHost("graph.facebook.com")).toBe("graph.facebook.com");
+    expect(certificates[1].checkHost("api.facebook.com")).toBe("api.facebook.com");
   });
 
   test("returns logOK and startup documents", async () => {
@@ -6385,6 +6420,29 @@ describe("Millionaire City server", () => {
     }
   });
 });
+
+function readLocalServerCertificate(port: number, requestPath: string): Promise<crypto.X509Certificate> {
+  return new Promise((resolve, reject) => {
+    const request = https.get(
+      {
+        hostname: "127.0.0.1",
+        port,
+        path: requestPath,
+        rejectUnauthorized: false
+      },
+      (response) => {
+        const peer = (response.socket as TLSSocket).getPeerCertificate();
+        response.resume();
+        if (!peer.raw) {
+          reject(new Error("Local HTTPS server did not provide a certificate."));
+          return;
+        }
+        resolve(new crypto.X509Certificate(peer.raw));
+      }
+    );
+    request.once("error", reject);
+  });
+}
 
 async function postForm(port: number, form: Record<string, string>): Promise<string> {
   const response = await fetch(`http://127.0.0.1:${port}/Game`, {

@@ -96,10 +96,26 @@ export async function startFacebookShim(options: FacebookShimOptions): Promise<F
       { name: "organizationName", value: "Millionaire City Revival" }
     ],
     {
-      days: 3650,
+      days: 365,
+      notBeforeDate: new Date(Date.now() - 5 * 60 * 1000),
       keySize: 2048,
       algorithm: "sha256",
       extensions: [
+        {
+          name: "basicConstraints",
+          critical: true,
+          cA: false
+        },
+        {
+          name: "keyUsage",
+          critical: true,
+          digitalSignature: true,
+          keyEncipherment: true
+        },
+        {
+          name: "extKeyUsage",
+          serverAuth: true
+        },
         {
           name: "subjectAltName",
           altNames: [

@@ -132,7 +132,7 @@ function installCertificatePolicy(): void {
         trusted =
           localServerAuthenticated &&
           contents === mainWindow?.webContents &&
-          error === "net::ERR_CERT_AUTHORITY_INVALID" &&
+          error.startsWith("net::ERR_CERT_") &&
           url.protocol === "https:" &&
           url.hostname === "127.0.0.1" &&
           url.username === "" &&
@@ -143,6 +143,12 @@ function installCertificatePolicy(): void {
       }
 
       if (trusted) {
+        // macOS can classify the same ephemeral self-signed certificate as
+        // ERR_CERT_INVALID or ERR_CERT_VALIDITY_TOO_LONG instead of the
+        // ERR_CERT_AUTHORITY_INVALID result used on Windows. The HMAC health
+        // challenge has already authenticated the process serving this exact
+        // loopback origin before any certificate exception is accepted.
+        console.log(`[desktop] Accepted local certificate error (${error}) for ${formatUrlForLog(rawUrl)}`);
         event.preventDefault();
         callback(true);
         return;
